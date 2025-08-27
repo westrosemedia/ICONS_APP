@@ -25,19 +25,20 @@ A full-stack Next.js 14 application for branding clients and admins to manage co
    - Copy `.env.local` and fill in your Firebase and Stripe project values. All keys must start with `NEXT_PUBLIC_` for Next.js compatibility.
 
    ```env
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-   STRIPE_SECRET_KEY=your_stripe_secret_key
-   NEXT_PUBLIC_BASE_URL=https://your-vercel-app-url.vercel.app
+   NEXT_PUBLIC_FIREBASE_API_KEY=xxxx
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=xxxx
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=xxxx
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=xxxx
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=xxxx
+NEXT_PUBLIC_FIREBASE_APP_ID=xxxx
+STRIPE_SECRET_KEY=xxxx
+NEXT_PUBLIC_BASE_URL=http://localhost:3004
    ```
 
 3. **Run the development server:**
    ```bash
-   npm run dev
+   
+  npm run dev
    ```
 
 ## Firebase Setup
