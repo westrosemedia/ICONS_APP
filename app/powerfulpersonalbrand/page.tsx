@@ -1,9 +1,64 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { createPPBCheckout } from "./book/ppb/actions";
+
+type FormState = {
+  fullName: string;
+  businessName: string;
+  instagram: string;
+  pronouns: string;
+  phone: string;
+  email: string;
+  mailingAddress: string;
+  howDidYouHear: string;
+  city: string;
+  bigLaunch: string;
+  incomeGoal: string;
+};
 
 export default function Page() {
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState<FormState>({
+    fullName: "",
+    businessName: "",
+    instagram: "",
+    pronouns: "",
+    phone: "",
+    email: "",
+    mailingAddress: "",
+    howDidYouHear: "",
+    city: "",
+    bigLaunch: "",
+    incomeGoal: ""
+  });
+
+  const submit = async () => {
+    // Validate required fields
+    if (!form.fullName.trim()) {
+      alert("Please enter your full name");
+      return;
+    }
+    if (!form.email.trim() || !form.email.includes('@')) {
+      alert("Please enter a valid email address");
+      return;
+    }
+    if (!form.businessName.trim()) {
+      alert("Please enter your business name");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await createPPBCheckout(form);
+    } catch (e) {
+      console.error(e);
+      setSubmitting(false);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <main className="w-full bg-white text-black">
       {/* Hero Section */}
@@ -29,12 +84,12 @@ export default function Page() {
             <p className="text-large text-black/90 max-w-3xl leading-relaxed mb-8">
               8 Week Live Course — The signature program of West Rose Media, completely revamped and leveled up for maximum transformation.
             </p>
-            <a 
-              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors" 
-              href="/checkout/ppb"
+            <button 
+              onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
             >
               Enroll Now
-            </a>
+            </button>
           </div>
         </motion.div>
       </section>
@@ -115,12 +170,165 @@ export default function Page() {
                 </div>
               </div>
               
-              <a 
-                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors" 
-                href="/checkout/ppb"
+              <button 
+                onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll Now
-              </a>
+              </button>
+            </motion.div>
+
+            {/* Intake Form */}
+            <motion.div
+              id="intake-form"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-2xl p-8"
+            >
+              <h3 className="text-3xl font-bold text-black mb-6 text-center">Ready to Transform Your Brand?</h3>
+              <p className="text-editorial text-center mb-8">
+                Fill out the form below to secure your spot in Powerful Personal Brand.
+              </p>
+              
+              <div className="max-w-2xl mx-auto space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Full Name *</label>
+                    <input
+                      type="text"
+                      value={form.fullName}
+                      onChange={(e) => setForm({...form, fullName: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Business Name *</label>
+                    <input
+                      type="text"
+                      value={form.businessName}
+                      onChange={(e) => setForm({...form, businessName: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="Your business name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Instagram Handle</label>
+                    <input
+                      type="text"
+                      value={form.instagram}
+                      onChange={(e) => setForm({...form, instagram: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="@yourhandle"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Pronouns</label>
+                    <input
+                      type="text"
+                      value={form.pronouns}
+                      onChange={(e) => setForm({...form, pronouns: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="she/her, he/him, they/them"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) => setForm({...form, phone: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-black mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({...form, email: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-black mb-2">Mailing Address</label>
+                  <textarea
+                    value={form.mailingAddress}
+                    onChange={(e) => setForm({...form, mailingAddress: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    rows={3}
+                    placeholder="Your mailing address"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-black mb-2">How did you hear about West Rose Media?</label>
+                  <input
+                    type="text"
+                    value={form.howDidYouHear}
+                    onChange={(e) => setForm({...form, howDidYouHear: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    placeholder="Social media, referral, search, etc."
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-black mb-2">What city are you in?</label>
+                  <input
+                    type="text"
+                    value={form.city}
+                    onChange={(e) => setForm({...form, city: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    placeholder="Your city"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-black mb-2">What big launch or offer are you focused on right now?</label>
+                  <textarea
+                    value={form.bigLaunch}
+                    onChange={(e) => setForm({...form, bigLaunch: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    rows={3}
+                    placeholder="Tell us about your current focus"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-black mb-2">What is your income goal for the next 12 months?</label>
+                  <input
+                    type="text"
+                    value={form.incomeGoal}
+                    onChange={(e) => setForm({...form, incomeGoal: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                    placeholder="Your income goal"
+                  />
+                </div>
+                
+                <div className="text-center pt-6">
+                  <button
+                    onClick={submit}
+                    disabled={submitting}
+                    className="px-8 py-4 bg-black text-white rounded-xl text-lg font-semibold hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? "Processing..." : "Complete Enrollment - $2,000"}
+                  </button>
+                  <p className="text-sm text-gray-600 mt-4">
+                    You'll be redirected to secure payment processing
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
