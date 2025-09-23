@@ -2,7 +2,7 @@
   "name": "icons_app",
   "version": "1.0.0",
   "description": "A full-stack Next.js 14 application for branding clients and admins to manage content, contracts, payments, and voice notes.",
-  "main": "postcss.config.js",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
