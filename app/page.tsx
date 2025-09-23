@@ -274,7 +274,7 @@ export default function HomePage() {
       <section className="relative w-full bg-black overflow-hidden">
         <video
           className="w-full h-auto sm:h-[60vh] object-cover"
-          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/ASR_BTS.mp4?alt=media"
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Stephanie%20Rose%20Intro%20Video%20-%20ASR3-%20(1).mp4?alt=media&token=ee1ea2d1-3e5d-48b7-9a9b-fcd830bf3f92"
           autoPlay
           loop
           muted
