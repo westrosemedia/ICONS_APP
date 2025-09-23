@@ -19,7 +19,12 @@ export default function HomePage() {
           loop
           muted
           playsInline
-          style={{ minWidth: '100vw', minHeight: '100vh' }}
+          style={{ 
+            minWidth: '100vw', 
+            minHeight: '100vh',
+            objectFit: 'cover',
+            objectPosition: 'center center'
+          }}
         />
         <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
         
@@ -27,12 +32,12 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-24 max-w-5xl mx-auto"
+          className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-12 sm:py-24 max-w-5xl mx-auto"
         >
-          <h1 className="text-hero text-white mb-8 drop-shadow-lg">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 drop-shadow-lg">
             Where ICONS come to rise.
           </h1>
-          <p className="text-large text-white/90 max-w-3xl leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl leading-relaxed mb-8 sm:mb-12 px-4">
             The future of personal branding is cinematic, strategic, and unforgettable. Welcome to ICONS.
           </p>
           <Button asChild size="lg" className="group">
@@ -266,15 +271,19 @@ export default function HomePage() {
       </section>
 
       {/* Video Showcase */}
-      <section className="relative w-full bg-black">
+      <section className="relative w-full bg-black overflow-hidden">
         <video
-          className="w-full h-auto object-cover"
+          className="w-full h-auto sm:h-[60vh] object-cover"
           src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/ASR_BTS.mp4?alt=media"
           autoPlay
           loop
           muted
           playsInline
-          style={{ minHeight: '60vh' }}
+          style={{ 
+            minHeight: '50vh',
+            objectFit: 'cover',
+            objectPosition: 'center center'
+          }}
         />
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         
