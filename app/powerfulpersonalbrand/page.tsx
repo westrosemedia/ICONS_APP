@@ -66,7 +66,7 @@ export default function Page() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4830.jpg?alt=media&token=82f77039-1b7d-4cf8-886f-89591e213ad2')"
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
