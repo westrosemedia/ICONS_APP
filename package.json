@@ -10,21 +10,35 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "seed": "tsx scripts/seedPackages.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@types/nodemailer": "^7.0.1",
     "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.2.2",
     "firebase": "^11.10.0",
+    "firebase-admin": "^13.5.0",
+    "framer-motion": "^12.23.18",
+    "lucide-react": "^0.544.0",
     "next": "^15.3.5",
+    "nodemailer": "^7.0.6",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.62.0",
     "stripe": "^18.3.0",
-    "tailwindcss": "^3.4.17"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.4.17",
+    "zod": "^4.1.5"
   },
   "type": "commonjs",
   "devDependencies": {
@@ -40,6 +54,7 @@
     "eslint-config-next": "15.3.5",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "tsx": "^4.20.5",
     "typescript": "5.8.3"
   }
 }

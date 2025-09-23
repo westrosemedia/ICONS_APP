@@ -1,81 +1,164 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=cooper-hewiit@700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #fff;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cooper Hewitt Bold', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-transform: none;
-}
-
-button, .btn {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  border-radius: 0.5rem;
-  transition: all 0.2s cubic-bezier(.4,0,.2,1);
-  padding: 0.75rem 2rem;
-  background: #fff;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  box-shadow: none;
-}
-
-button.black, .btn-black {
-  background: #000;
-  color: #fff;
-}
-
-button.accent, .btn-accent {
-  background: #ff3131;
-  color: #fff;
-}
-
-button:hover, .btn:hover {
-  opacity: 0.85;
-  text-decoration: underline;
-}
-
-hr, .divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  margin: 2.5rem 0;
-}
-
-.section {
-  padding: 4rem 0 3rem 0;
-  margin: 0 auto;
-  max-width: 1440px;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 2rem 0 1.5rem 0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
-  button, .btn {
-    padding: 0.5rem 1.25rem;
-    font-size: 1rem;
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant-garamond);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer components {
+  /* Premium Editorial Typography */
+  .text-elegant {
+    font-family: var(--font-cormorant-garamond);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .text-large {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #525252;
+    font-weight: 400;
+  }
+
+  .text-hero {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.05;
+    font-weight: 600;
+    font-family: var(--font-cormorant-garamond);
+    letter-spacing: -0.03em;
+  }
+
+  .text-display {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 600;
+    font-family: var(--font-cormorant-garamond);
+    letter-spacing: -0.02em;
+  }
+
+  /* Editorial Layout */
+  .section-padding {
+    padding: clamp(4rem, 12vw, 8rem) 0;
+  }
+
+  .container-elegant {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+  }
+
+  /* Premium Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium transition-all duration-300 ease-out;
+    @apply bg-black text-white border-0 rounded-sm;
+    @apply hover:bg-gray-800 hover:transform hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2;
+    font-family: var(--font-dm-sans);
+    letter-spacing: 0.025em;
+    text-decoration: none;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-600;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-black text-black hover:bg-black hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-black hover:bg-gray-100;
+  }
+
+  /* Editorial Dividers */
+  .divider {
+    @apply border-0 border-t border-gray-200 my-12;
+  }
+
+  .divider-thick {
+    @apply border-0 border-t-2 border-black my-16;
+  }
+
+  /* Premium Cards */
+  .card {
+    @apply bg-white border border-gray-200 rounded-none shadow-sm;
+    @apply hover:shadow-md transition-shadow duration-300;
+  }
+
+  .card-elevated {
+    @apply bg-white shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Editorial Sections */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-tight {
+    @apply py-8 md:py-12;
+  }
+
+  .section-loose {
+    @apply py-20 md:py-32;
+  }
+
+  /* Text Styles */
+  .text-editorial {
+    @apply text-gray-600 leading-relaxed;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .text-caption {
+    @apply text-sm text-gray-500 uppercase tracking-wider;
+    font-family: var(--font-dm-sans);
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .btn {
+      @apply px-6 py-3 text-sm;
+    }
+    
+    .section {
+      @apply py-12;
+    }
+    
+    .container-elegant {
+      @apply px-6;
+    }
   }
 }
 

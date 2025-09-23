@@ -1,13 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { auth, db } from "../../lib/firebase";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import Button from "../../components/Button";
 import { useRouter } from "next/navigation";
-import Onboarding from "../../components/Onboarding";
-import PermissionsHandler from "../../components/PermissionsHandler";
-import notificationService from "../../lib/notifications";
+import { Button } from "@/components/ui/button";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Force dynamic rendering to prevent build-time issues
+export const dynamic = 'force-dynamic';
 
 interface UserData {
   fullName?: string;
@@ -20,90 +18,46 @@ export default function Dashboard() {
   const [user, setUser] = useState<any>(null);
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [showOnboarding, setShowOnboarding] = useState(false);
-  const [showPermissions, setShowPermissions] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        setUser(user);
-        // Fetch user data from Firestore
-        try {
-          const userDoc = await getDoc(doc(db, "users", user.uid));
-          if (userDoc.exists()) {
-            const data = userDoc.data() as UserData;
-            setUserData(data);
-            
-            // Check if user needs onboarding
-            if (!data.onboardingCompleted) {
-              setShowOnboarding(true);
-            } else {
-              // Initialize notifications
-              await notificationService.initialize();
-            }
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-        }
-      } else {
-        setUser(null);
-        setUserData(null);
+    // Simulate authentication check
+    // In production, this would use Firebase Auth
+    const checkAuth = async () => {
+      try {
+        // Mock authentication - replace with actual Firebase Auth
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Mock user data
+        const mockUser = {
+          uid: "mock-user-id",
+          email: "user@example.com"
+        };
+        
+        const mockUserData: UserData = {
+          fullName: "John Doe",
+          businessName: "Example Business",
+          packageType: "spotlight",
+          onboardingCompleted: true
+        };
+        
+        setUser(mockUser);
+        setUserData(mockUserData);
+      } catch (error) {
+        console.error("Auth check failed:", error);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
-    });
+    };
 
-    return () => unsubscribe();
+    checkAuth();
   }, []);
 
   const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
-  };
-
-  const handleOnboardingComplete = async () => {
-    if (user) {
-      try {
-        await updateDoc(doc(db, "users", user.uid), {
-          onboardingCompleted: true,
-          onboardingCompletedAt: new Date().toISOString()
-        });
-        setShowOnboarding(false);
-        setShowPermissions(true);
-      } catch (error) {
-        console.error("Error updating onboarding status:", error);
-      }
-    }
-  };
-
-  const handleOnboardingSkip = async () => {
-    if (user) {
-      try {
-        await updateDoc(doc(db, "users", user.uid), {
-          onboardingCompleted: true,
-          onboardingSkipped: true,
-          onboardingCompletedAt: new Date().toISOString()
-        });
-        setShowOnboarding(false);
-        setShowPermissions(true);
-      } catch (error) {
-        console.error("Error updating onboarding status:", error);
-      }
-    }
-  };
-
-  const handlePermissionsGranted = async () => {
-    setShowPermissions(false);
-    // Initialize notifications after permissions are granted
-    await notificationService.initialize();
-  };
-
-  const handlePermissionsDenied = () => {
-    setShowPermissions(false);
-    // Continue without notifications
+    // Mock sign out - replace with actual Firebase Auth
+    setUser(null);
+    setUserData(null);
+    router.push("/login");
   };
 
   const getPackageDisplayName = (packageType: string) => {
@@ -118,59 +72,43 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-2xl font-heading">Loading your dashboard...</div>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <LoadingSpinner size="lg" text="Loading your dashboard..." />
       </div>
-    );
-  }
-
-  if (showOnboarding) {
-    return (
-      <Onboarding
-        onComplete={handleOnboardingComplete}
-        onSkip={handleOnboardingSkip}
-      />
-    );
-  }
-
-  if (showPermissions) {
-    return (
-      <PermissionsHandler
-        onPermissionsGranted={handlePermissionsGranted}
-        onPermissionsDenied={handlePermissionsDenied}
-      />
     );
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-heading font-bold mb-4">Access Denied</h1>
-          <p className="text-lg font-body text-white/80 mb-8">Please log in to view your dashboard.</p>
-          <Button color="accent" className="w-full">Log In</Button>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto">
+          <h1 className="text-hero text-black mb-6">Access Denied</h1>
+          <p className="text-editorial mb-8">Please log in to view your dashboard.</p>
+          <Button asChild size="lg">
+            <a href="/login">Log In</a>
+          </Button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-white/10 bg-black/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <span className="font-heading text-2xl font-bold">ICONS</span>
-            <span className="text-white/60 font-body">Dashboard</span>
+      <header className="border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container-elegant py-4 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="text-elegant text-2xl">ICONS</span>
+            <span className="text-gray-600">Dashboard</span>
           </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-white/80 font-body">
-              Welcome back, {userData?.fullName || userData?.hostName || "Icon"}
+          <div className="flex items-center gap-4">
+            <span className="text-gray-700">
+              Welcome back, {userData?.fullName || "Icon"}
             </span>
-            <Button color="white" onClick={() => router.push("/settings")} className="text-sm">
+            <Button variant="outline" size="sm" onClick={() => router.push("/settings")}>
               Settings
             </Button>
-            <Button color="white" onClick={handleSignOut} className="text-sm">
+            <Button variant="ghost" size="sm" onClick={handleSignOut}>
               Sign Out
             </Button>
           </div>
@@ -178,13 +116,13 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="container-elegant py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-hero text-black mb-8">
             Your Empire Awaits
           </h1>
-          <p className="text-xl font-body text-white/80 max-w-2xl mx-auto">
+          <p className="text-editorial max-w-3xl mx-auto">
             Welcome to your command center. Here's everything you need to know about your investment in your brand.
           </p>
         </div>
@@ -192,55 +130,55 @@ export default function Dashboard() {
         {/* Purchase Summary */}
         {userData?.packageType && (
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8 text-center">
+            <h2 className="text-display text-black mb-8 text-center">
               Your Current Package
             </h2>
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white/5 border border-white/10 rounded-lg p-8 backdrop-blur-sm">
+              <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl font-heading font-bold text-white">
+                  <h3 className="text-elegant text-2xl text-black">
                     {getPackageDisplayName(userData.packageType)}
                   </h3>
-                  <span className="bg-white/10 px-4 py-2 rounded-full text-sm font-body">
+                  <span className="bg-accent/10 text-accent px-4 py-2 rounded-full text-sm">
                     Active
                   </span>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-lg font-heading font-bold text-white mb-4">Package Details</h4>
+                    <h4 className="text-elegant text-lg text-black mb-4">Package Details</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-white/80 font-body">Status:</span>
-                        <span className="text-white font-body">Active</span>
+                        <span className="text-gray-600">Status:</span>
+                        <span className="text-black font-medium">Active</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-white/80 font-body">Start Date:</span>
-                        <span className="text-white font-body">
+                        <span className="text-gray-600">Start Date:</span>
+                        <span className="text-black font-medium">
                           {new Date().toLocaleDateString()}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-white/80 font-body">Business:</span>
-                        <span className="text-white font-body">{userData.businessName || "N/A"}</span>
+                        <span className="text-gray-600">Business:</span>
+                        <span className="text-black font-medium">{userData.businessName || "N/A"}</span>
                       </div>
                     </div>
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-heading font-bold text-white mb-4">Next Steps</h4>
+                    <h4 className="text-elegant text-lg text-black mb-4">Next Steps</h4>
                     <div className="space-y-3">
                       <div className="flex items-center">
-                        <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                        <span className="text-white/80 font-body">Welcome call scheduled</span>
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="text-gray-700">Welcome call scheduled</span>
                       </div>
                       <div className="flex items-center">
-                        <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                        <span className="text-white/80 font-body">Strategy session booked</span>
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="text-gray-700">Strategy session booked</span>
                       </div>
                       <div className="flex items-center">
-                        <span className="w-2 h-2 bg-white/40 rounded-full mr-3"></span>
-                        <span className="text-white/60 font-body">First shoot planning</span>
+                        <span className="w-2 h-2 bg-gray-300 rounded-full mr-3"></span>
+                        <span className="text-gray-500">First shoot planning</span>
                       </div>
                     </div>
                   </div>
@@ -252,49 +190,37 @@ export default function Dashboard() {
 
         {/* Account Information */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8 text-center">
+          <h2 className="text-display text-black mb-8 text-center">
             Your Information
           </h2>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-8 backdrop-blur-sm">
+            <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-lg font-heading font-bold text-white mb-4">Personal Details</h4>
+                  <h4 className="text-elegant text-lg text-black mb-4">Personal Details</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-white/80 font-body">Name:</span>
-                      <span className="text-white font-body">{userData?.fullName || userData?.hostName || "N/A"}</span>
+                      <span className="text-gray-600">Name:</span>
+                      <span className="text-black font-medium">{userData?.fullName || "N/A"}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-white/80 font-body">Business:</span>
-                      <span className="text-white font-body">{userData?.businessName || "N/A"}</span>
+                      <span className="text-gray-600">Business:</span>
+                      <span className="text-black font-medium">{userData?.businessName || "N/A"}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-white/80 font-body">Pronouns:</span>
-                      <span className="text-white font-body">{userData?.pronouns || "N/A"}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-white/80 font-body">Email:</span>
-                      <span className="text-white font-body">{user.email}</span>
+                      <span className="text-gray-600">Email:</span>
+                      <span className="text-black font-medium">{user.email}</span>
                     </div>
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-heading font-bold text-white mb-4">Contact & Social</h4>
+                  <h4 className="text-elegant text-lg text-black mb-4">Contact & Social</h4>
                   <div className="space-y-3">
-                    {userData?.website && (
-                      <div className="flex justify-between">
-                        <span className="text-white/80 font-body">Website:</span>
-                        <span className="text-white font-body">{userData.website}</span>
-                      </div>
-                    )}
-                    {userData?.instagram && (
-                      <div className="flex justify-between">
-                        <span className="text-white/80 font-body">Instagram:</span>
-                        <span className="text-white font-body">@{userData.instagram}</span>
-                      </div>
-                    )}
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Package:</span>
+                      <span className="text-black font-medium">{getPackageDisplayName(userData?.packageType || "")}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -304,26 +230,26 @@ export default function Dashboard() {
 
         {/* Quick Actions */}
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8">
+          <h2 className="text-display text-black mb-8">
             What's Next?
           </h2>
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
-              <h3 className="text-xl font-heading font-bold text-white mb-3">Schedule Call</h3>
-              <p className="text-white/80 font-body mb-4">Book your welcome call to discuss your strategy</p>
-              <Button color="accent" className="w-full">Book Call</Button>
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-elegant text-xl text-black mb-3">Schedule Call</h3>
+              <p className="text-gray-600 mb-4">Book your welcome call to discuss your strategy</p>
+              <Button className="w-full">Book Call</Button>
             </div>
             
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
-              <h3 className="text-xl font-heading font-bold text-white mb-3">View Portfolio</h3>
-              <p className="text-white/80 font-body mb-4">See examples of our work and style</p>
-                             <Button color="white" className="w-full">Browse Work</Button>
-             </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-elegant text-xl text-black mb-3">View Portfolio</h3>
+              <p className="text-gray-600 mb-4">See examples of our work and style</p>
+              <Button variant="outline" className="w-full">Browse Work</Button>
+            </div>
              
-             <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
-               <h3 className="text-xl font-heading font-bold text-white mb-3">Get Support</h3>
-               <p className="text-white/80 font-body mb-4">Need help? Reach out to our team</p>
-               <Button color="white" className="w-full">Contact Us</Button>
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-elegant text-xl text-black mb-3">Get Support</h3>
+              <p className="text-gray-600 mb-4">Need help? Reach out to our team</p>
+              <Button variant="outline" className="w-full">Contact Us</Button>
             </div>
           </div>
         </div>

@@ -1,120 +1,104 @@
 import "./globals.css";
-import type { ReactNode } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import Button from "../components/Button";
-import ServiceWorkerRegistration from "../components/ServiceWorkerRegistration";
-import ErrorBoundary from "../components/ErrorBoundary";
-import AccessibilityAudit from "../components/AccessibilityAudit";
-import PerformanceMonitor from "../components/PerformanceMonitor";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
+import PerformanceMonitor from "@/components/PerformanceMonitor";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant-garamond",
+  display: "swap",
+});
+
 
 export const metadata = {
-  title: "ICONS by West Rose Media",
-  description: "Your journey to becoming iconic starts here. Professional content creation and community for bold entrepreneurs.",
-  keywords: "content creation, photography, videography, branding, entrepreneurship, business, professional, luxury",
-  authors: [{ name: "West Rose Media" }],
-  creator: "West Rose Media",
-  publisher: "West Rose Media",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://icons.westrosemedia.com'),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    title: "ICONS by West Rose Media",
-    description: "Your journey to becoming iconic starts here. Professional content creation and community for bold entrepreneurs.",
-    url: 'https://icons.westrosemedia.com',
-    siteName: 'ICONS',
-    images: [
-      {
-        url: '/logo-512.png',
-        width: 512,
-        height: 512,
-        alt: 'ICONS App Logo',
-      },
-    ],
-    locale: 'en_CA',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: "ICONS by West Rose Media",
-    description: "Your journey to becoming iconic starts here. Professional content creation and community for bold entrepreneurs.",
-    images: ['/logo-512.png'],
-  },
-  icons: {
-    icon: [
-      { url: '/logo-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/logo-512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/logo-180.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-  manifest: '/manifest.json',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
-  themeColor: '#000000',
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'ICONS',
-  },
-  other: {
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'ICONS',
-    'application-name': 'ICONS',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-  },
+  title: "West Rose Media",
+  description: "ICONS by West Rose Media",
 };
 
-function AppLogo() {
-  return (
-    <div className="flex items-center gap-2">
-      <span className="block dark:hidden">
-        <Image src="/logo.png" alt="West Rose Media Logo" width={40} height={40} priority />
-      </span>
-      <span className="hidden dark:block">
-        <Image src="/logo-inverse.png" alt="West Rose Media Logo (inverse)" width={40} height={40} priority />
-      </span>
-      <span className="font-heading text-xl font-bold tracking-tight text-primary">ICONS_APP</span>
-    </div>
-  );
-}
+const SHOW_NAV = true; // set to false to hide the top bar
 
-function AppErrorBoundary({ children }: { children: ReactNode }) {
-  return <>{children}</>;
-}
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900 font-sans dark:bg-black dark:text-white">
-        <ServiceWorkerRegistration />
-        <ErrorBoundary>
-          <AppErrorBoundary>
-            <header className="w-full px-4 py-3 border-b flex items-center justify-between bg-white dark:bg-black sticky top-0 z-20">
-              <AppLogo />
-            </header>
-            <main className="w-full mx-auto max-w-7xl px-2 sm:px-4 py-6">
-              <div className="p-8 border border-dashed border-gray-400">
-                {children}
+    <html lang="en" className={`h-full w-full ${dmSans.variable} ${cormorantGaramond.variable}`}>
+      <body 
+        className="min-h-screen w-full bg-white text-black font-sans antialiased"
+        suppressHydrationWarning={true}
+      >
+        {SHOW_NAV ? (
+          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+            <div className="container-elegant py-4 flex items-center justify-between">
+                      <Link href="/" className="flex items-center gap-3 group">
+                        <Image
+                          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/icons%20logo%20.png?alt=media"
+                          alt="ICONS"
+                          width={32}
+                          height={32}
+                          priority
+                          className="group-hover:scale-105 transition-transform duration-200"
+                        />
+                        <span className="text-elegant text-xl tracking-wide">ICONS</span>
+                      </Link>
+              <nav className="hidden md:flex items-center gap-8">
+                <Link href="/quiz" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Find Your ICON Package
+                </Link>
+                <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Packages
+                </Link>
+                <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Vault
+                </Link>
+                <Link href="/login" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Login
+                </Link>
+                <Link href="/packages" className="btn btn-sm">
+                  Book now
+                </Link>
+              </nav>
+            </div>
+          </header>
+        ) : null}
+
+        <main className="w-full">{children}</main>
+
+        <footer className="w-full border-t border-gray-200 mt-20">
+          <div className="container-elegant py-12">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/icons%20logo%20.png?alt=media"
+                          alt="ICONS"
+                          width={24}
+                          height={24}
+                        />
+                        <span className="text-elegant text-lg">ICONS</span>
+                      </div>
+              <div className="text-center md:text-right">
+                <p className="text-gray-600 text-sm">
+                  © {new Date().getFullYear()} West Rose Media
+                </p>
+                <div className="flex gap-6 mt-2">
+                  <Link href="/privacy" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Privacy
+                  </Link>
+                  <Link href="/terms" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Terms
+                  </Link>
+                </div>
               </div>
-            </main>
-            <AccessibilityAudit />
-            <PerformanceMonitor />
-          </AppErrorBoundary>
-        </ErrorBoundary>
+            </div>
+          </div>
+        </footer>
+        
+        <PerformanceMonitor />
       </body>
     </html>
   );
