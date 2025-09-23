@@ -67,6 +67,17 @@ export default function Quiz() {
   const currentQ = quizQuestions[currentQuestion];
   const hasAnswer = answers[currentQuestion] !== null;
 
+  // Array of unique images for each question
+  const questionImages = [
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media", 
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8747.jpg?alt=media",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media"
+  ];
+
   return (
     <section className="mx-auto max-w-4xl px-6 py-10 space-y-8">
       <div className="text-center">
@@ -76,7 +87,7 @@ export default function Quiz() {
       <div
         className="relative rounded-2xl overflow-hidden p-8 min-h-[500px] flex flex-col justify-center"
         style={{
-          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR${5983 + currentQuestion}.jpg?alt=media')`,
+          backgroundImage: `url('${questionImages[currentQuestion]}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
