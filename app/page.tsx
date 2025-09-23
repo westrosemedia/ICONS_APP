@@ -7,6 +7,7 @@ import { ArrowRight, Play } from "lucide-react";
 import EditorialGrid from "@/components/EditorialGrid";
 
 export default function HomePage() {
+  // Homepage component
   return (
     <main className="w-full bg-white text-black">
       {/* Hero Section */}
