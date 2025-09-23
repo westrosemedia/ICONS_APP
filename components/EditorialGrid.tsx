@@ -17,28 +17,28 @@ const editorialItems: EditorialItem[] = [
     id: "editorial-looks",
     title: "Editorial looks",
     tagline: "High impact examples from recent shoots",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6059.jpg?alt=media&token=59d64374-c968-4afa-88e2-5020841da75b",
     focalPoint: { x: 0.5, y: 0.22 }
   },
   {
     id: "strategic-storytelling",
     title: "Strategic storytelling",
     tagline: "Where brand meets narrative",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5932.jpg?alt=media&token=980dbfd2-d3d7-4517-9830-686f3a9b53d0",
     focalPoint: { x: 0.5, y: 0.28 }
   },
   {
     id: "location-stories",
     title: "Location based stories",
     tagline: "Every setting tells a story",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4578.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5775.jpg?alt=media&token=30d2adca-c45d-46b1-9972-30b87c4f27d4",
     focalPoint: { x: 0.5, y: 0.26 }
   },
   {
     id: "premium-presence",
     title: "Premium presence",
     tagline: "Elevating your authority through visuals",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8747.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5303.jpg?alt=media&token=7e4aad5b-45a7-4f6e-a3d2-70ff74515c62",
     focalPoint: { x: 0.5, y: 0.25 }
   }
 ];
@@ -60,7 +60,7 @@ export default function EditorialGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {editorialItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -68,7 +68,7 @@ export default function EditorialGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-gray-100 aspect-[4/3] rounded-none"
+              className="group relative overflow-hidden bg-gray-100 aspect-[4/3] sm:aspect-[4/3] rounded-none"
             >
               {/* Image */}
               <div className="absolute inset-0">
@@ -80,13 +80,13 @@ export default function EditorialGrid() {
                   style={{
                     objectPosition: `${item.focalPoint.x * 100}% ${item.focalPoint.y * 100}%`
                   }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8">
+              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -94,10 +94,10 @@ export default function EditorialGrid() {
                   viewport={{ once: true }}
                   className="text-white"
                 >
-                  <h3 className="text-elegant text-2xl md:text-3xl mb-3 group-hover:text-white/90 transition-colors">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 group-hover:text-white/90 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-lg text-white/90 group-hover:text-white transition-colors">
+                  <p className="text-sm sm:text-base lg:text-lg text-white/90 group-hover:text-white transition-colors">
                     {item.tagline}
                   </p>
                 </motion.div>

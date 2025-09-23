@@ -51,11 +51,27 @@ export default function SpotlightPage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
-      <header className="text-center">
-        <h1 className="text-4xl font-bold">{spotlightCopy.heroTitle}</h1>
-        <p className="mt-2 text-lg text-neutral-600">{spotlightCopy.heroSubtitle}</p>
-      </header>
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] w-full flex flex-col items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5005.jpg?alt=media&token=ffcfc151-4b95-4155-8ff7-a9648dd70b09')"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+            {spotlightCopy.heroTitle}
+          </h1>
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-lg">
+            {spotlightCopy.heroSubtitle}
+          </p>
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6 py-10">
 
       <section className="mt-8 space-y-5 text-lg leading-8">
         <p>{spotlightCopy.intro}</p>
@@ -152,6 +168,7 @@ export default function SpotlightPage() {
           <p className="mt-3 text-xs text-neutral-500">{spotlightCopy.priceLine}</p>
         </aside>
       </section>
+      </div>
     </div>
   );
 }

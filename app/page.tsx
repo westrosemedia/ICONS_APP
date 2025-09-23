@@ -32,12 +32,12 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-12 sm:py-24 max-w-5xl mx-auto"
+          className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 drop-shadow-lg">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2">
             Where ICONS come to rise.
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl leading-relaxed mb-8 sm:mb-12 px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
             The future of personal branding is cinematic, strategic, and unforgettable. Welcome to ICONS.
           </p>
           <Button asChild size="lg" className="group">
@@ -82,7 +82,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6695.jpg?alt=media&token=bdc5c5e0-b699-41af-acaf-18962769071b')"
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -119,7 +119,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6476.jpg?alt=media&token=b34539ca-ab1a-4416-b8d3-8e1eb81c7edf')"
           }}
         />
         <div className="absolute inset-0 bg-black/70" />
@@ -163,7 +163,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6175.jpg?alt=media&token=0733ba88-1b27-4ca2-be4d-924b8c175e74')"
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -273,30 +273,31 @@ export default function HomePage() {
       {/* Video Showcase */}
       <section className="relative w-full bg-black overflow-hidden">
         <video
-          className="w-full h-auto sm:h-[60vh] object-cover"
+          className="w-full h-auto object-cover"
           src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Stephanie%20Rose%20Intro%20Video%20-%20ASR3-%20(1).mp4?alt=media&token=ee1ea2d1-3e5d-48b7-9a9b-fcd830bf3f92"
           autoPlay
           loop
           muted
           playsInline
           style={{ 
-            minHeight: '50vh',
+            minHeight: '40vh',
+            maxHeight: '70vh',
             objectFit: 'cover',
             objectPosition: 'center center'
           }}
         />
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10"
-        >
-          <h2 className="text-hero text-white mb-4 drop-shadow-lg">See the Work</h2>
-          <p className="text-large text-white/90 max-w-2xl drop-shadow-lg">Behind the scenes of what we create</p>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg">See the Work</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl drop-shadow-lg">Behind the scenes of what we create</p>
+          </motion.div>
       </section>
     </main>
   );

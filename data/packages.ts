@@ -14,7 +14,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "Photos in 1 week, video in 10 days" },
       { label: "City calendars: Calgary, Vancouver, Toronto" }
     ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5005.jpg?alt=media&token=ffcfc151-4b95-4155-8ff7-a9648dd70b09",
     ctaHref: "/book/spotlight"
   },
   {
