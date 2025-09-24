@@ -21,7 +21,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
       viewport={{ once: true }}
       className="group"
     >
-      <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 hover:shadow-lg overflow-hidden">
+      <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 hover:shadow-xl hover:-translate-y-1 rounded-xl overflow-hidden">
         {/* Image */}
         <div className="aspect-[4/3] overflow-hidden bg-gray-100">
           <img
@@ -32,17 +32,17 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
         </div>
         
         {/* Content */}
-        <div className="p-8">
-          <div className="mb-6">
-            <h3 className="text-elegant text-2xl mb-3">{pkg.title}</h3>
-            <p className="text-editorial mb-4">{pkg.blurb}</p>
-            <div className="text-elegant text-xl font-semibold text-accent mb-6">
+        <div className="p-10">
+          <div className="mb-8">
+            <h3 className="text-elegant text-2xl mb-4">{pkg.title}</h3>
+            <p className="text-editorial mb-6">{pkg.blurb}</p>
+            <div className="text-elegant text-xl font-semibold text-accent mb-8">
               {pkg.priceLabel}
             </div>
           </div>
           
           {/* Highlights */}
-          <div className="space-y-3 mb-8">
+          <div className="space-y-4 mb-10">
             {pkg.highlights.map((highlight, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />

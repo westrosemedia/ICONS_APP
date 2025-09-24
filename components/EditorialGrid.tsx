@@ -50,9 +50,9 @@ export default function EditorialGrid() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-display text-black mb-6">Our Work</h2>
           <p className="text-editorial max-w-2xl mx-auto">
@@ -60,15 +60,15 @@ export default function EditorialGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
           {editorialItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-gray-100 aspect-[4/3] sm:aspect-[4/3] rounded-none"
+              className="group relative overflow-hidden bg-gray-100 aspect-[4/3] sm:aspect-[4/3] rounded-xl"
             >
               {/* Image */}
               <div className="absolute inset-0">
@@ -86,11 +86,11 @@ export default function EditorialGrid() {
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: (index * 0.1) + 0.3 }}
+                  transition={{ duration: 0.7, delay: (index * 0.15) + 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                   viewport={{ once: true }}
                   className="text-white"
                 >
