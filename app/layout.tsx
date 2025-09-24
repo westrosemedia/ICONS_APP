@@ -24,7 +24,7 @@ export const metadata = {
   title: "West Rose Media",
   description: "ICONS by West Rose Media",
 };
-// Force deployment update
+// Force deployment update - latest changes
 
 const SHOW_NAV = true; // set to false to hide the top bar
 
