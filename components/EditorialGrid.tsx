@@ -16,7 +16,7 @@ const editorialItems: EditorialItem[] = [
   {
     id: "editorial-looks",
     title: "Editorial looks",
-    tagline: "High impact examples from recent shoots",
+    tagline: "High impact visuals designed to sell",
     imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6059.jpg?alt=media&token=59d64374-c968-4afa-88e2-5020841da75b",
     focalPoint: { x: 0.5, y: 0.22 }
   },

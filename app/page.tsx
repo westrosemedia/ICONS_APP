@@ -119,7 +119,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6476.jpg?alt=media&token=b34539ca-ab1a-4416-b8d3-8e1eb81c7edf')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7')"
           }}
         />
         <div className="absolute inset-0 bg-black/70" />
@@ -270,35 +270,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Video Showcase */}
-      <section className="relative w-full bg-black overflow-hidden">
-        <video
-          className="w-full h-auto object-cover"
-          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Stephanie%20Rose%20Intro%20Video%20-%20ASR3-%20(1).mp4?alt=media&token=ee1ea2d1-3e5d-48b7-9a9b-fcd830bf3f92"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ 
-            minHeight: '40vh',
-            maxHeight: '70vh',
-            objectFit: 'cover',
-            objectPosition: 'center center'
-          }}
-        />
-        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
-        
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg">See the Work</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl drop-shadow-lg">Behind the scenes of what we create</p>
-          </motion.div>
-      </section>
     </main>
   );
 }
