@@ -1,6 +1,6 @@
 export const iconCopy = {
   heroTitle: "ICON Brand Partnership",
-  heroSubtitle: "White glove brand partnership",
+  heroSubtitle: "Your vision stays alive without you chasing it.",
   intro:
     "You built something real. Clients trust you. Referrals roll in. Your content is good, but it takes too much of your time and still is not matching the level of rooms and revenue you are ready for. Leaders scale faster when their content works harder than they do.",
   bigPromise:
