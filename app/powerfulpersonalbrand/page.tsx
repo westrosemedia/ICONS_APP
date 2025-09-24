@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { createPPBCheckout } from "./book/ppb/actions";
+import { createPPBCheckout } from "../book/ppb/actions";
 
 type FormState = {
   fullName: string;
