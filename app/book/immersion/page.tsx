@@ -109,6 +109,18 @@ export default function ImmersionPage() {
           <p>{immersionCopy.bigPromise}</p>
         </section>
 
+        {/* First Image Section */}
+        <section className="mb-16">
+          <div className="relative w-full h-[50vh] overflow-hidden rounded-2xl">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2308.jpg?alt=media&token=72da2ca9-c31e-4773-85f0-7bea980b4e21"
+              alt="Immersion Experience"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center center' }}
+            />
+          </div>
+        </section>
+
         <section className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 bg-gray-50 border border-gray-200 rounded-lg p-8">
             <h2 className="text-3xl font-heading font-bold mb-8 text-black">{immersionCopy.bulletsTitle}</h2>
@@ -312,7 +324,7 @@ export default function ImmersionPage() {
                   }
                 />
                 <span className="text-sm">
-                  I acknowledge participant content is billed at one thousand CAD per person, up to ten participants.
+                  I acknowledge participant content is billed at one thousand eight hundred CAD per person, up to ten participants.
                 </span>
               </label>
             </div>
@@ -330,34 +342,22 @@ export default function ImmersionPage() {
             </p>
           </aside>
         </section>
+
+        {/* Second Image Section */}
+        <section className="mb-16">
+          <div className="relative w-full h-[50vh] overflow-hidden rounded-2xl">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3492.jpg?alt=media&token=bddf7496-760e-43d9-8b72-5da9f9b036eb"
+              alt="Immersion Experience"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center center' }}
+            />
+          </div>
+        </section>
       </div>
 
-      {/* Bottom Image Section */}
-      <section className="w-full">
-        <div className="relative w-full h-[60vh] overflow-hidden">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2308.jpg?alt=media&token=72da2ca9-c31e-4773-85f0-7bea980b4e21"
-            alt="Immersion Experience"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center center' }}
-          />
-        </div>
-      </section>
-
-      {/* Second Bottom Image Section */}
-      <section className="w-full">
-        <div className="relative w-full h-[60vh] overflow-hidden">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3492.jpg?alt=media&token=bddf7496-760e-43d9-8b72-5da9f9b036eb"
-            alt="Immersion Experience"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center center' }}
-          />
-        </div>
-      </section>
-
-      {/* Third Bottom Image Section */}
-      <section className="w-full">
+      {/* Third Image Section - Full Width */}
+      <section className="w-full mb-16">
         <div className="relative w-full h-[60vh] overflow-hidden">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8009.jpg?alt=media&token=8ada8e3d-d7a8-43f8-8485-6506724dc58d"

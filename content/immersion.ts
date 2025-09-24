@@ -8,13 +8,13 @@ export const immersionCopy = {
   bulletsTitle: "What is included",
   bullets: [
     "Full coverage for the organizer and the event",
-    "Participant content available at one thousand CAD per person",
+    "Participant content available at one thousand eight hundred CAD per person",
     "For groups over four people we include two shooters"
   ],
   delivery:
     "Organizer photos in one week. Organizer videos in ten days. Participant deliveries follow the same schedule.",
   tip:
-    "Participant content is valued at one thousand three hundred CAD. This is a strong upsell and creates a better experience for your group.",
+    "Participant content is valued at one thousand eight hundred CAD. This is a strong upsell and creates a better experience for your group.",
   priceLine:
     "Starting at six thousand CAD for two days. GST included. Travel quoted as needed.",
   scarcity:

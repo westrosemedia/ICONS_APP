@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Script from "next/script";
 import { createPPBCheckout } from "../book/ppb/actions";
 
 type FormState = {
@@ -158,7 +159,7 @@ export default function Page() {
                   
                   <div className="border-t border-white/20 pt-4 mt-6">
                     <p className="text-lg">✨ Use the presale price now: <strong>$2,000</strong></p>
-                    <p className="text-lg">Regular price: <strong>$3,000</strong></p>
+                    <p className="text-lg">Price increases to <strong>$3,000</strong> on <strong>October 10</strong></p>
                     <p className="text-sm text-white/80 mt-2">There will not be another presale for January.</p>
                   </div>
                 </div>
@@ -281,16 +282,10 @@ export default function Page() {
                 </div>
                 
                 <div className="text-center pt-6">
-                  <button
-                    onClick={submit}
-                    disabled={submitting}
-                    className="px-8 py-4 bg-black text-white rounded-xl text-lg font-semibold hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {submitting ? "Processing..." : "Complete Enrollment - $2,000"}
-                  </button>
-                  <p className="text-sm text-gray-600 mt-4">
-                    You'll be redirected to secure payment processing
-                  </p>
+                  <stripe-pricing-table 
+                    pricing-table-id="prctbl_1SAyLHCcsY3WjV3QddOoZFES"
+                    publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav">
+                  </stripe-pricing-table>
                 </div>
               </div>
             </motion.div>
