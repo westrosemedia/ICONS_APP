@@ -8,7 +8,6 @@ type FormState = {
   fullName: string;
   email: string;
   businessUrl: string;
-  niche: string;
   currentRevenue: string;
   goalRevenue: string;
   bottleneck: string;
@@ -24,7 +23,6 @@ export default function IconPage() {
     fullName: "",
     email: "",
     businessUrl: "",
-    niche: "",
     currentRevenue: "",
     goalRevenue: "",
     bottleneck: "",
@@ -34,13 +32,23 @@ export default function IconPage() {
   });
 
   const submit = async () => {
+    // Validate required fields
+    if (!form.fullName || !form.email || !form.businessUrl || !form.currentRevenue || !form.goalRevenue || !form.bottleneck || !form.teamOrSolo || !form.whyNow) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     setSubmitting(true);
     try {
       const res = await submitIconApplication({ intake: form });
-      if (res?.ok) setSubmitted(true);
-      else throw new Error("Failed to submit");
+      if (res?.ok) {
+        setSubmitted(true);
+      } else {
+        const errorMessage = res?.error || "Failed to submit application";
+        alert(`Error: ${errorMessage}`);
+      }
     } catch (e) {
-      console.error(e);
+      console.error("Form submission error:", e);
       alert("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
@@ -205,25 +213,33 @@ export default function IconPage() {
                 value={form.businessUrl}
                 onChange={e => setForm({ ...form, businessUrl: e.target.value })}
               />
-              <input
-                className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                placeholder="Niche"
-                value={form.niche}
-                onChange={e => setForm({ ...form, niche: e.target.value })}
-              />
               <div className="grid grid-cols-2 gap-4">
-                <input
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                  placeholder="Current monthly revenue"
+                <select
+                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
                   value={form.currentRevenue}
                   onChange={e => setForm({ ...form, currentRevenue: e.target.value })}
-                />
-                <input
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                  placeholder="Goal monthly revenue"
+                >
+                  <option value="">Current monthly revenue</option>
+                  <option value="0-5k">$0 - $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-50k">$25,000 - $50,000</option>
+                  <option value="50k-100k">$50,000 - $100,000</option>
+                  <option value="100k+">$100,000+</option>
+                </select>
+                <select
+                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
                   value={form.goalRevenue}
                   onChange={e => setForm({ ...form, goalRevenue: e.target.value })}
-                />
+                >
+                  <option value="">Goal monthly revenue</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-50k">$25,000 - $50,000</option>
+                  <option value="50k-100k">$50,000 - $100,000</option>
+                  <option value="100k-250k">$100,000 - $250,000</option>
+                  <option value="250k-500k">$250,000 - $500,000</option>
+                  <option value="500k+">$500,000+</option>
+                </select>
               </div>
               <textarea
                 className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body resize-none"
