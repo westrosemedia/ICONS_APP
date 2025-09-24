@@ -9,7 +9,6 @@ export const immersionCopy = {
   bullets: [
     "Full coverage for the organizer and the event",
     "Participant content available at one thousand CAD per person",
-    "Maximum ten participants over two days",
     "For groups over four people we include two shooters"
   ],
   delivery:
