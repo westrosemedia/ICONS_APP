@@ -24,11 +24,11 @@ export async function createBookingAndCheckout({
       },
       details: {
         goals: intake.notes || "",
-        brandStyle: intake.niche,
+        brandStyle: "",
         deliverablesFocus: "both" as const,
         requestedDate: "",
         accessibilityNeeds: "",
-        notes: `Niche: ${intake.niche}\nRevenue Range: ${intake.revenueRange}\nTop Platforms: ${intake.topPlatforms.join(", ")}\nApproval Workflow: ${intake.approvalWorkflow}\nBilling Email: ${intake.billingEmail}`,
+        notes: `Top Platforms: ${intake.topPlatforms.join(", ")}\nApproval Workflow: ${intake.approvalWorkflow}`,
         acceptsTerms: true,
         city: "Calgary", // Default for WRM Lite
         preferredNeighborhood: "",

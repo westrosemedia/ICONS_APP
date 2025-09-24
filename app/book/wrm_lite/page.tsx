@@ -9,11 +9,8 @@ type FormState = {
   email: string;
   instagram: string;
   businessUrl: string;
-  niche: string;
-  revenueRange: string;
   topPlatforms: string[];
   approvalWorkflow: string;
-  billingEmail: string;
   notes?: string;
 };
 
@@ -24,11 +21,8 @@ export default function WRMLitePage() {
     email: "",
     instagram: "",
     businessUrl: "",
-    niche: "",
-    revenueRange: "",
     topPlatforms: [],
     approvalWorkflow: "",
-    billingEmail: "",
     notes: ""
   });
 
@@ -138,18 +132,6 @@ export default function WRMLitePage() {
                 value={form.businessUrl}
                 onChange={e => setForm({ ...form, businessUrl: e.target.value })}
               />
-              <input
-                className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                placeholder="Niche"
-                value={form.niche}
-                onChange={e => setForm({ ...form, niche: e.target.value })}
-              />
-              <input
-                className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                placeholder="Current monthly revenue range"
-                value={form.revenueRange}
-                onChange={e => setForm({ ...form, revenueRange: e.target.value })}
-              />
 
               <div className="pt-2">
                 <p className="text-lg font-heading font-semibold mb-3 text-black">Top platforms</p>
@@ -174,12 +156,6 @@ export default function WRMLitePage() {
                 </div>
               </div>
 
-              <input
-                className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                placeholder="Billing email"
-                value={form.billingEmail}
-                onChange={e => setForm({ ...form, billingEmail: e.target.value })}
-              />
               <textarea
                 className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body resize-none"
                 placeholder="Notes"
