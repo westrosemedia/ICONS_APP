@@ -29,7 +29,7 @@ export default function SpotlightSimplePage() {
               A focused 90-minute shoot that delivers scroll-stopping content fast. Perfect for immediate impact and professional presence.
             </p>
             <div className="text-elegant text-3xl text-accent mb-8">
-              $1,200 CAD
+              $1,821 CAD
             </div>
           </motion.div>
         </div>
@@ -58,7 +58,7 @@ export default function SpotlightSimplePage() {
               {
                 icon: DollarSign,
                 title: "Great Value",
-                description: "$1,200 CAD for professional content package"
+                description: "$1,821 CAD for professional content package"
               }
             ].map((feature, index) => (
               <motion.div
@@ -149,14 +149,14 @@ export default function SpotlightSimplePage() {
             
             <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm mb-8">
               <div className="text-elegant text-4xl text-black mb-4">
-                $1,200 CAD
+                $1,821 CAD
               </div>
               <p className="text-gray-600 mb-6">One-time investment</p>
               
               <div className="space-y-3 text-left">
                 <div className="flex justify-between">
                   <span className="text-gray-600">90-minute shoot</span>
-                  <span className="font-medium">$1,200 CAD</span>
+                  <span className="font-medium">$1,821 CAD</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">20 photos + 3 videos</span>
