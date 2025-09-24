@@ -23,7 +23,7 @@ export default function PackagesPage() {
               Choose Your Package
             </h1>
             <p className="text-editorial max-w-3xl mx-auto">
-              Professional content creation tailored to your needs. All packages include GST.
+              Professional content creation tailored to your needs.
             </p>
           </motion.div>
         </div>

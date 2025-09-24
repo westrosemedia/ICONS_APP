@@ -35,13 +35,10 @@ export async function createBookingAndCheckout({
 - Pronouns: ${intake.pronouns}
 - Phone: ${intake.phoneNumber}
 - Email: ${intake.email}
-- Mailing Address: ${intake.mailingAddress}
 
 Business Information:
 - How did you hear about us: ${intake.howDidYouHear}
 - City: ${intake.city}
-- Big Launch/Offer: ${intake.bigLaunch}
-- Income Goal (12 months): ${intake.incomeGoal}
 
 Event Information:
 - Event Type: ${intake.eventType}
@@ -52,7 +49,6 @@ Event Information:
 - Event Schedule: ${intake.eventSchedule}
 - Key Moments: ${intake.keyMoments}
 - Participant Content Quantity: ${intake.participantQuantity}
-- Travel Needed: ${intake.travelNeeded}
 - Participant Billing Acknowledged: ${intake.acknowledgeParticipantBilling}
 - Additional Notes: ${intake.notes || "None"}`,
         acceptsTerms: true,

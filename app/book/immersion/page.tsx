@@ -11,11 +11,8 @@ type FormState = {
   pronouns: string;
   phoneNumber: string;
   email: string;
-  mailingAddress: string;
   howDidYouHear: string;
   city: string;
-  bigLaunch: string;
-  incomeGoal: string;
   eventType: string;
   eventName: string;
   eventDates: string;
@@ -24,7 +21,6 @@ type FormState = {
   eventSchedule: string;
   keyMoments: string;
   participantQuantity: number; // 0 to 10
-  travelNeeded: string; // yes or no
   notes?: string;
   acknowledgeParticipantBilling: boolean;
 };
@@ -38,11 +34,8 @@ export default function ImmersionPage() {
     pronouns: "",
     phoneNumber: "",
     email: "",
-    mailingAddress: "",
     howDidYouHear: "",
     city: "",
-    bigLaunch: "",
-    incomeGoal: "",
     eventType: "",
     eventName: "",
     eventDates: "",
@@ -51,7 +44,6 @@ export default function ImmersionPage() {
     eventSchedule: "",
     keyMoments: "",
     participantQuantity: 0,
-    travelNeeded: "no",
     notes: "",
     acknowledgeParticipantBilling: false
   });
@@ -212,13 +204,6 @@ export default function ImmersionPage() {
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
                 />
-                <textarea
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body resize-none"
-                  placeholder="Mailing Address"
-                  rows={3}
-                  value={form.mailingAddress}
-                  onChange={e => setForm({ ...form, mailingAddress: e.target.value })}
-                />
               </div>
 
               {/* Business Information */}
@@ -235,18 +220,6 @@ export default function ImmersionPage() {
                   placeholder="What city are you booking this Immersion for?"
                   value={form.city}
                   onChange={e => setForm({ ...form, city: e.target.value })}
-                />
-                <input
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body mb-4"
-                  placeholder="What big launch or offer are you focused on right now?"
-                  value={form.bigLaunch}
-                  onChange={e => setForm({ ...form, bigLaunch: e.target.value })}
-                />
-                <input
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body mb-4"
-                  placeholder="What is your income goal for the next 12 months?"
-                  value={form.incomeGoal}
-                  onChange={e => setForm({ ...form, incomeGoal: e.target.value })}
                 />
               </div>
 
@@ -320,17 +293,6 @@ export default function ImmersionPage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-lg font-heading font-semibold mb-3 text-black">Travel needed</label>
-                <select
-                  className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
-                  value={form.travelNeeded}
-                  onChange={e => setForm({ ...form, travelNeeded: e.target.value })}
-                >
-                  <option value="no" className="bg-white text-black">No</option>
-                  <option value="yes" className="bg-white text-black">Yes</option>
-                </select>
-              </div>
 
               <textarea
                 className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body resize-none"
@@ -369,6 +331,42 @@ export default function ImmersionPage() {
           </aside>
         </section>
       </div>
+
+      {/* Bottom Image Section */}
+      <section className="w-full">
+        <div className="relative w-full h-[60vh] overflow-hidden">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2308.jpg?alt=media&token=72da2ca9-c31e-4773-85f0-7bea980b4e21"
+            alt="Immersion Experience"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center center' }}
+          />
+        </div>
+      </section>
+
+      {/* Second Bottom Image Section */}
+      <section className="w-full">
+        <div className="relative w-full h-[60vh] overflow-hidden">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3492.jpg?alt=media&token=bddf7496-760e-43d9-8b72-5da9f9b036eb"
+            alt="Immersion Experience"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center center' }}
+          />
+        </div>
+      </section>
+
+      {/* Third Bottom Image Section */}
+      <section className="w-full">
+        <div className="relative w-full h-[60vh] overflow-hidden">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8009.jpg?alt=media&token=8ada8e3d-d7a8-43f8-8485-6506724dc58d"
+            alt="Immersion Experience"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center center' }}
+          />
+        </div>
+      </section>
     </div>
   );
 }

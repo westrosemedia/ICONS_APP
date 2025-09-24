@@ -9,11 +9,8 @@ type FormState = {
   businessName: string;
   instagram: string;
   pronouns: string;
-  phone: string;
   email: string;
-  mailingAddress: string;
   howDidYouHear: string;
-  city: string;
   bigLaunch: string;
   incomeGoal: string;
 };
@@ -25,11 +22,8 @@ export default function Page() {
     businessName: "",
     instagram: "",
     pronouns: "",
-    phone: "",
     email: "",
-    mailingAddress: "",
     howDidYouHear: "",
-    city: "",
     bigLaunch: "",
     incomeGoal: ""
   });
@@ -238,16 +232,6 @@ export default function Page() {
                     />
                   </div>
                   
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({...form, phone: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="(555) 123-4567"
-                    />
-                  </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-black mb-2">Email Address *</label>
@@ -261,16 +245,6 @@ export default function Page() {
                   </div>
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">Mailing Address</label>
-                  <textarea
-                    value={form.mailingAddress}
-                    onChange={(e) => setForm({...form, mailingAddress: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    rows={3}
-                    placeholder="Your mailing address"
-                  />
-                </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-black mb-2">How did you hear about West Rose Media?</label>
@@ -283,16 +257,6 @@ export default function Page() {
                   />
                 </div>
                 
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">What city are you in?</label>
-                  <input
-                    type="text"
-                    value={form.city}
-                    onChange={(e) => setForm({...form, city: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    placeholder="Your city"
-                  />
-                </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-black mb-2">What big launch or offer are you focused on right now?</label>
