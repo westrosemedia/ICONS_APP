@@ -2,7 +2,7 @@ export const iconCopy = {
   heroTitle: "ICON Brand Partnership",
   heroSubtitle: "White glove brand partnership",
   intro:
-    "You built something real. Clients love you. Referrals come in. Yet your content still looks pieced together and inconsistent. That gap keeps you from the rooms and numbers you want. Leaders do not scale on DIY content.",
+    "You built something real. Clients trust you. Referrals roll in. Your content is good, but it takes too much of your time and still is not matching the level of rooms and revenue you are ready for. Leaders scale faster when their content works harder than they do.",
   bigPromise:
     "ICON turns your brand into a signal. Clear. Confident. Everywhere your clients look. We plan, film, write, edit, schedule, and measure so your presence matches your level. You stay in your lane. We run the machine.",
   bulletsTitle: "What you get",
