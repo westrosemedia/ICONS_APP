@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -99,6 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
         
         <PerformanceMonitor />
+        <Analytics />
       </body>
     </html>
   );
