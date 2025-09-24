@@ -20,10 +20,16 @@ export default function HomePage() {
           muted
           playsInline
           style={{ 
-            minWidth: '100vw', 
-            minHeight: '100vh',
+            width: '100vw',
+            height: '100vh',
             objectFit: 'cover',
-            objectPosition: 'center center'
+            objectPosition: 'center center',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            minWidth: '100%',
+            minHeight: '100%'
           }}
         />
         <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
@@ -34,16 +40,16 @@ export default function HomePage() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
         >
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
             Where ICONS come to rise.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
             The future of personal branding is cinematic, strategic, and unforgettable. Welcome to ICONS.
           </p>
-          <Button asChild size="lg" className="group">
+          <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
             <Link href="/quiz">
               Find out what your next power move is
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </motion.div>
