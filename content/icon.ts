@@ -1,5 +1,5 @@
 export const iconCopy = {
-  heroTitle: "ICON",
+  heroTitle: "ICON Brand Partnership",
   heroSubtitle: "White glove brand partnership",
   intro:
     "You built something real. Clients love you. Referrals come in. Yet your content still looks pieced together and inconsistent. That gap keeps you from the rooms and numbers you want. Leaders do not scale on DIY content.",
@@ -24,7 +24,7 @@ export const iconCopy = {
     "We review fit and scope",
     "If approved we map your first ninety days and begin"
   ],
-  ctaLabel: "Apply for ICON",
+  ctaLabel: "Apply for ICON Brand Partnership",
   successTitle: "Application received",
   successBody:
     "Thank you for applying. We will review your details and respond with next steps. If we are a fit we will book a call and map your first ninety days."

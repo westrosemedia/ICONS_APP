@@ -3,7 +3,7 @@
 export type QuizResult = "spotlight" | "wrm_lite" | "immersion" | "icon";
 
 export const quizIntro =
-  "Ready to find out which ICON package will take your brand to the next level? Answer a few quick questions and get a personalized plan that fits your goals.";
+  "Ready to find out which ICON Brand Partnership will take your brand to the next level? Answer a few quick questions and get a personalized plan that fits your goals.";
 
 export type QuizOption = {
   label: string;
@@ -124,10 +124,10 @@ export const resultCopy: Record<QuizResult, { title: string; body: string; cta: 
     cta: "Book your Immersion Package now."
   },
   icon: {
-    title: "Your Result: The ICON Package",
+    title: "Your Result: The ICON Brand Partnership",
     body:
-      "You're ready to scale in a way that most entrepreneurs only dream about. You've built something incredible, but your next level requires more than effort, it requires partnership.\n\nWith the ICON Package, you get a full brand partner who takes content completely off your plate. Your photos, videos, and strategy are executed at the highest level so you can stay in your genius and scale without limits.\n\nAnd because we know scaling isn't meant to be done alone, your ICON Package also includes free access to the ICON Society, a private community of bold entrepreneurs who are growing just as fast as you are. It's where strategy, content, and high level support all come together.\n\nThis is the move that ensures your vision stays alive without you chasing it.",
-    cta: "Book your ICON Package now."
+      "You're ready to scale in a way that most entrepreneurs only dream about. You've built something incredible, but your next level requires more than effort, it requires partnership.\n\nWith the ICON Brand Partnership, you get a full brand partner who takes content completely off your plate. Your photos, videos, and strategy are executed at the highest level so you can stay in your genius and scale without limits.\n\nAnd because we know scaling isn't meant to be done alone, your ICON Brand Partnership also includes free access to the ICON Society, a private community of bold entrepreneurs who are growing just as fast as you are. It's where strategy, content, and high level support all come together.\n\nThis is the move that ensures your vision stays alive without you chasing it.",
+    cta: "Book your ICON Brand Partnership now."
   }
 };
 
