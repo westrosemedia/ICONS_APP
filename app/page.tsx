@@ -80,9 +80,11 @@ export default function HomePage() {
       {/* About West Rose Media */}
       <section className="relative section-padding overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6695.jpg?alt=media&token=bdc5c5e0-b699-41af-acaf-18962769071b')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6695.jpg?alt=media&token=bdc5c5e0-b699-41af-acaf-18962769071b')",
+            backgroundPosition: "center 25%",
+            transform: "scale(1.05)"
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -117,9 +119,11 @@ export default function HomePage() {
       {/* The ICON Society */}
       <section className="relative section-padding overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7')",
+            backgroundPosition: "center 30%",
+            transform: "scale(1.05)"
           }}
         />
         <div className="absolute inset-0 bg-black/70" />
@@ -161,9 +165,11 @@ export default function HomePage() {
       {/* Powerful Personal Brand */}=
       <section className="relative section-padding overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6175.jpg?alt=media&token=0733ba88-1b27-4ca2-be4d-924b8c175e74')"
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6175.jpg?alt=media&token=0733ba88-1b27-4ca2-be4d-924b8c175e74')",
+            backgroundPosition: "center 25%",
+            transform: "scale(1.05)"
           }}
         />
         <div className="absolute inset-0 bg-black/60" />

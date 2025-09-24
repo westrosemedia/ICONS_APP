@@ -146,6 +146,12 @@
     animation: slideUp 0.8s ease-out forwards;
   }
 
+  /* Parallax Effect */
+  .parallax-bg {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
   /* Responsive Typography */
   @media (max-width: 768px) {
     .btn {
