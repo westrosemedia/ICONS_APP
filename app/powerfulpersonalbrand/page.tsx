@@ -1,61 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Script from "next/script";
-import { createPPBCheckout } from "../book/ppb/actions";
-
-type FormState = {
-  fullName: string;
-  businessName: string;
-  instagram: string;
-  pronouns: string;
-  email: string;
-  howDidYouHear: string;
-  bigLaunch: string;
-  incomeGoal: string;
-};
 
 export default function Page() {
-  const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState<FormState>({
-    fullName: "",
-    businessName: "",
-    instagram: "",
-    pronouns: "",
-    email: "",
-    howDidYouHear: "",
-    bigLaunch: "",
-    incomeGoal: ""
-  });
-
-  const submit = async () => {
-    // Validate required fields
-    if (!form.fullName.trim()) {
-      alert("Please enter your full name");
-      return;
-    }
-    if (!form.email.trim() || !form.email.includes('@')) {
-      alert("Please enter a valid email address");
-      return;
-    }
-    if (!form.businessName.trim()) {
-      alert("Please enter your business name");
-      return;
-    }
-
-    setSubmitting(true);
-    try {
-      await createPPBCheckout(form);
-    } catch (e) {
-      console.error(e);
-      setSubmitting(false);
-      alert("Something went wrong. Please try again.");
-    }
-  };
 
   return (
-    <main className="w-full bg-white text-black">
+    <>
+      <Script
+        src="https://js.stripe.com/v3/pricing-table.js"
+        strategy="afterInteractive"
+      />
+      <main className="w-full bg-white text-black">
       {/* Hero Section */}
       <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <div 
@@ -293,5 +250,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </>
   );
 }
