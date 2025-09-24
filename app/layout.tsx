@@ -49,9 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <span className="text-elegant text-xl tracking-wide">ICONS</span>
                       </Link>
               <nav className="hidden md:flex items-center gap-8">
-                <Link href="/quiz" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Find Your ICON Brand Partnership
-                </Link>
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
