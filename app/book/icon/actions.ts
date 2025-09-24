@@ -12,20 +12,13 @@ export async function submitIconApplication({
     const bookingId = await createDraftBooking({
       packageId: "icon",
       customer: {
-        name: intake.fullName,
+        fullName: intake.fullName,
         email: intake.email,
-        phone: "", // Not collected in this form
-        company: "", // Not collected in this form
-        instagram: "", // Not collected in this form
-        tiktok: "", // Not collected in this form
-        website: intake.businessUrl
+        phone: "" // Not collected in this form
       },
       details: {
-        goals: `Current Revenue: ${intake.currentRevenue}\nGoal Revenue: ${intake.goalRevenue}\nWhy Now: ${intake.whyNow}`,
-        brandStyle: intake.niche,
-        deliverablesFocus: "both" as const,
-        requestedDate: "",
-        accessibilityNeeds: "",
+        intake: intake,
+        preferences: {},
         notes: `ICON Application Details:
 - Business URL: ${intake.businessUrl}
 - Niche: ${intake.niche}
@@ -34,11 +27,7 @@ export async function submitIconApplication({
 - Biggest Content Bottleneck: ${intake.bottleneck}
 - Team or Solo: ${intake.teamOrSolo}
 - Why This Now: ${intake.whyNow}
-- Additional Notes: ${intake.notes || 'None provided'}`,
-        acceptsTerms: true,
-        city: "", // Not specified in ICON applications
-        preferredNeighborhood: "",
-        teamSize: intake.teamOrSolo === "solo" ? 1 : 0 // Estimate based on team/solo
+- Additional Notes: ${intake.notes || 'None provided'}`
       }
     });
 
