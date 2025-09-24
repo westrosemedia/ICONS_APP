@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { wrmLiteCopy } from "@/content/wrmLite";
-import { createBookingAndCheckout } from "./actions";
 
 type FormState = {
   fullName: string;
@@ -48,11 +47,17 @@ export default function WRMLitePage() {
 
     setSubmitting(true);
     try {
-      const { url } = await createBookingAndCheckout({
-        pkg: "lite",
-        intake: form
+      // Send form data to email first
+      await fetch('/api/send-wrm-lite-intake', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
       });
-      window.location.href = url;
+      
+      // Then redirect to Stripe payment
+      window.location.href = 'https://buy.stripe.com/00w00i7gQ4qVe5ZcNn87K0L';
     } catch (e) {
       console.error(e);
       setSubmitting(false);
