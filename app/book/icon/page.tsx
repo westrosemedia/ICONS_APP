@@ -32,6 +32,8 @@ export default function IconPage() {
   });
 
   const submit = async () => {
+    console.log("Form submission started with data:", form);
+    
     // Validate required fields
     if (!form.fullName || !form.email || !form.businessUrl || !form.currentRevenue || !form.goalRevenue || !form.bottleneck || !form.teamOrSolo || !form.whyNow) {
       alert("Please fill in all required fields.");
@@ -39,18 +41,25 @@ export default function IconPage() {
     }
 
     setSubmitting(true);
+    console.log("Form validation passed, calling submitIconApplication...");
+    
     try {
       const res = await submitIconApplication({ intake: form });
+      console.log("Response from submitIconApplication:", res);
+      
       if (res?.ok) {
+        console.log("Form submitted successfully, setting submitted to true");
         setSubmitted(true);
       } else {
         const errorMessage = res?.error || "Failed to submit application";
+        console.error("Form submission failed:", errorMessage);
         alert(`Error: ${errorMessage}`);
       }
     } catch (e) {
       console.error("Form submission error:", e);
       alert("Something went wrong. Please try again.");
     } finally {
+      console.log("Form submission completed, setting submitting to false");
       setSubmitting(false);
     }
   };

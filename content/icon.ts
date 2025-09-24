@@ -28,7 +28,7 @@ export const iconCopy = {
   ctaLabel: "Apply for ICON Brand Partnership",
   successTitle: "Application received",
   successBody:
-    "Thank you for applying. We will review your details and respond with next steps. If we are a fit we will book a call and map your first ninety days."
+    "Thank you for applying to the ICON Brand Partnership. I will contact you shortly to discuss your application and next steps."
 } as const;
 export type IconCopy = typeof iconCopy;
 

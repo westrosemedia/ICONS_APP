@@ -1,6 +1,6 @@
 "use server";
 
-import { createDraftBooking } from "@/lib/booking";
+import { sendIconApplicationEmail } from "@/lib/email";
 
 export async function submitIconApplication({
   intake
@@ -15,32 +15,30 @@ export async function submitIconApplication({
       throw new Error("Missing required fields: fullName and email are required");
     }
 
-    // Create a draft booking with the application data
-    const bookingId = await createDraftBooking({
-      packageId: "icon",
-      customer: {
-        fullName: intake.fullName,
-        email: intake.email,
-        phone: "" // Not collected in this form
-      },
-      details: {
-        intake: intake,
-        preferences: {},
-        notes: `ICON Application Details:
-- Business URL: ${intake.businessUrl || 'Not provided'}
-- Current Monthly Revenue: ${intake.currentRevenue || 'Not provided'}
-- Goal Monthly Revenue: ${intake.goalRevenue || 'Not provided'}
-- Biggest Content Bottleneck: ${intake.bottleneck || 'Not provided'}
-- Team or Solo: ${intake.teamOrSolo || 'Not provided'}
-- Why This Now: ${intake.whyNow || 'Not provided'}
-- Additional Notes: ${intake.notes || 'None provided'}`
-      }
+    // Send email notification
+    const emailResult = await sendIconApplicationEmail({
+      fullName: intake.fullName,
+      email: intake.email,
+      businessUrl: intake.businessUrl,
+      currentRevenue: intake.currentRevenue,
+      goalRevenue: intake.goalRevenue,
+      bottleneck: intake.bottleneck,
+      teamOrSolo: intake.teamOrSolo,
+      whyNow: intake.whyNow,
+      notes: intake.notes
     });
 
-    console.log(`ICON application successfully created with booking ID: ${bookingId}`);
+    if (!emailResult.success) {
+      console.error("Failed to send email notification:", emailResult.error);
+      // Still return success to user, but log the email error
+    }
+
     console.log(`ICON application received from ${intake.fullName} (${intake.email})`);
     
-    return { ok: true, bookingId };
+    // Simulate a brief delay to show the loading state
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    return { ok: true, message: "Application submitted successfully" };
   } catch (error) {
     console.error("Error submitting ICON application:", error);
     return { ok: false, error: error instanceof Error ? error.message : 'Unknown error' };
