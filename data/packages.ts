@@ -14,7 +14,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "Photos in 1 week, video in 10 days" },
       { label: "City calendars: Calgary, Vancouver, Toronto" }
     ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5005.jpg?alt=media&token=ffcfc151-4b95-4155-8ff7-a9648dd70b09",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5932.jpg?alt=media&token=980dbfd2-d3d7-4517-9830-686f3a9b53d0",
     ctaHref: "/book/spotlight"
   },
   {
@@ -37,7 +37,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     blurb: immersionCopy.intro,
     priceLabel: "Starting at $6,000 CAD for 2 days",
     highlights: immersionCopy.bullets.map(bullet => ({ label: bullet })),
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4852.jpg?alt=media&token=4702d0f1-4a37-4fad-8f4b-80019e29f694",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6175.jpg?alt=media&token=0733ba88-1b27-4ca2-be4d-924b8c175e74",
     ctaHref: "/book/immersion"
   },
   {
@@ -46,7 +46,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     blurb: iconCopy.intro,
     priceLabel: "From $5,000 CAD per month",
     highlights: iconCopy.bullets.map(bullet => ({ label: bullet })),
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4795.jpg?alt=media&token=3c99f1e8-2ac0-464a-8488-45177344a65d",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1984.jpg?alt=media&token=f12f7493-bda1-48ff-a343-31502519d648",
     ctaHref: "/book/icon"
   },
   {
