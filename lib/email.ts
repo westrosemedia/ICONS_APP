@@ -1,13 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Email configuration
-const transporter = nodemailer.createTransporter({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendIconApplicationEmail(applicationData: {
   fullName: string;
@@ -21,9 +14,9 @@ export async function sendIconApplicationEmail(applicationData: {
   notes?: string;
 }) {
   try {
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL || 'stephanie@westrosemedia.com',
+    const { data, error } = await resend.emails.send({
+      from: 'ICONS App <noreply@westrosemedia.com>',
+      to: ['stephanie@westrosemedia.com'],
       subject: `New ICON Brand Partnership Application - ${applicationData.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -71,10 +64,14 @@ export async function sendIconApplicationEmail(applicationData: {
           </div>
         </div>
       `
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
-    console.log('ICON application email sent successfully');
+    if (error) {
+      console.error('Resend error:', error);
+      return { success: false, error: error.message };
+    }
+
+    console.log('ICON application email sent successfully via Resend:', data);
     return { success: true };
   } catch (error) {
     console.error('Error sending ICON application email:', error);

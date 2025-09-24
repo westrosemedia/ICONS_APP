@@ -1,5 +1,7 @@
 "use server";
 
+import { sendIconApplicationEmail } from "@/lib/email";
+
 export async function submitIconApplication({
   intake
 }: {
@@ -13,32 +15,24 @@ export async function submitIconApplication({
       throw new Error("Missing required fields: fullName and email are required");
     }
 
-    // For now, just log the application data and return success
-    // We'll add email functionality back once we debug the issue
-    const applicationData = {
-      packageId: "icon",
-      customer: {
-        fullName: intake.fullName,
-        email: intake.email,
-        phone: "" // Not collected in this form
-      },
-      details: {
-        intake: intake,
-        preferences: {},
-        notes: `ICON Application Details:
-- Business URL: ${intake.businessUrl || 'Not provided'}
-- Current Monthly Revenue: ${intake.currentRevenue || 'Not provided'}
-- Goal Monthly Revenue: ${intake.goalRevenue || 'Not provided'}
-- Biggest Content Bottleneck: ${intake.bottleneck || 'Not provided'}
-- Team or Solo: ${intake.teamOrSolo || 'Not provided'}
-- Why This Now: ${intake.whyNow || 'Not provided'}
-- Additional Notes: ${intake.notes || 'None provided'}`
-      },
-      timestamp: new Date().toISOString()
-    };
+    // Send email notification via Resend
+    const emailResult = await sendIconApplicationEmail({
+      fullName: intake.fullName,
+      email: intake.email,
+      businessUrl: intake.businessUrl,
+      currentRevenue: intake.currentRevenue,
+      goalRevenue: intake.goalRevenue,
+      bottleneck: intake.bottleneck,
+      teamOrSolo: intake.teamOrSolo,
+      whyNow: intake.whyNow,
+      notes: intake.notes
+    });
 
-    // Log the complete application data
-    console.log("ICON Application Data:", JSON.stringify(applicationData, null, 2));
+    if (!emailResult.success) {
+      console.error("Failed to send email notification:", emailResult.error);
+      // Still return success to user, but log the email error
+    }
+
     console.log(`ICON application received from ${intake.fullName} (${intake.email})`);
     
     // Simulate a brief delay to show the loading state
