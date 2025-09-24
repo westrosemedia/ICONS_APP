@@ -104,6 +104,55 @@ export default function IconPage() {
               <p className="text-gray-600 mt-2">{iconCopy.scarcity}</p>
             </div>
 
+            {/* The Vault Section */}
+            <div className="mt-8 p-8 bg-black text-white rounded-xl">
+              <h3 className="text-2xl font-heading font-bold mb-4">The Vault: Your Private Content Creation Suite</h3>
+              <p className="text-white/90 mb-6">
+                Every ICON Brand Partner unlocks The Vault, a private space built to turn raw ideas into powerful content. There is nothing else like it in the industry.
+              </p>
+              <p className="text-white/90 mb-6">
+                Here is how it works. You drop voice notes, thoughts, and sparks of inspiration into The Vault. The West Rose Media team takes it from there, transforming your words into polished, on-brand content that keeps your business visible and magnetic.
+              </p>
+              
+              <div className="mb-6">
+                <h4 className="text-lg font-heading font-semibold mb-4">Inside The Vault you get:</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold">Voice Notes & Transcription.</span> Capture your stories in real time and let the team shape them into content that sounds exactly like you.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold">Content Strategy Lab.</span> Proven frameworks, launch calendars, and positioning tools to keep your brand sharp and scalable.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold">Private Coaching Vault.</span> Access to coaching, audits, and direct feedback to refine your message and expand your reach.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <p className="text-white/90 mb-6">
+                The Vault is not available anywhere else. It is the premium creative suite that ensures your ideas never get lost and your brand never goes quiet.
+              </p>
+              <p className="text-white/90 mb-6">
+                When you become an ICON Brand Partner, you gain full access to The Vault. This is where your vision stays alive without you chasing it.
+              </p>
+              
+              <a
+                href="/vault"
+                className="inline-block bg-white text-black hover:bg-gray-100 font-heading font-bold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                Explore The Vault
+              </a>
+            </div>
+
             <div className="mt-8">
               <h3 className="text-2xl font-heading font-bold mb-6 text-black">{iconCopy.howTitle}</h3>
               <ol className="space-y-4">

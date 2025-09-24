@@ -10,6 +10,7 @@ export const iconCopy = {
     "Monthly strategy intensives and a working roadmap",
     "Full content execution with a trusted thought partner",
     "Publishing and analytics that drive real decisions",
+    "Exclusive access to The Vault - your private content creation suite",
     "Free access to ICON Society while you are active"
   ],
   beliefShift:
