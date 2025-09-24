@@ -229,12 +229,12 @@ export default function IconPage() {
                   onChange={e => setForm({ ...form, currentRevenue: e.target.value })}
                 >
                   <option value="">Current monthly revenue</option>
-                  <option value="0-5k">$0 - $5,000</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
                   <option value="10k-25k">$10,000 - $25,000</option>
                   <option value="25k-50k">$25,000 - $50,000</option>
                   <option value="50k-100k">$50,000 - $100,000</option>
-                  <option value="100k+">$100,000+</option>
+                  <option value="100k-250k">$100,000 - $250,000</option>
+                  <option value="250k-500k">$250,000 - $500,000</option>
+                  <option value="500k+">$500,000+</option>
                 </select>
                 <select
                   className="w-full px-6 py-4 bg-white border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-black transition-all duration-200 font-body"
