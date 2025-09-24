@@ -8,7 +8,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     title: "Spotlight",
     blurb:
       "A focused 90 minute shoot that delivers scroll stopping content fast. Calgary, Vancouver, and Toronto calendars are live. Other cities by quote.",
-    priceLabel: "$1,200 CAD",
+    priceLabel: "$1,821 CAD",
     highlights: [
       { label: "20 photos and 3 vertical videos" },
       { label: "Photos in 1 week, video in 10 days" },

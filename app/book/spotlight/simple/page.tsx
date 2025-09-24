@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function SpotlightSimplePage() {
   const handleBookNow = () => {
     // Direct link to your Stripe checkout
-    window.open('https://buy.stripe.com/eVq5kC9oY5uZ1jdfZz87K0N', '_blank');
+    window.open('https://buy.stripe.com/bJecN49oYf5z5zt3cN87K0P', '_blank');
   };
 
   return (

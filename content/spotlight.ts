@@ -17,7 +17,7 @@ export const spotlightCopy = {
   beliefShift:
     "You cannot level up with average content. Show up like the leader you are and let your visuals match your value.",
   priceLine:
-    "One thousand two hundred CAD. GST included.",
+    "One thousand eight hundred twenty one CAD. GST included.",
   scarcity:
     "Spots are limited each month. When the calendar is full you wait for the next round.",
   cityNote:
