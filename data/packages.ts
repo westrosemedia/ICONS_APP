@@ -28,7 +28,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "A monthly strategy call that aligns content to your revenue goals" },
       { label: "Fresh footage captured every other month so your visuals never go stale" }
     ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5003.jpg?alt=media&token=8f0d5362-b07d-496e-b418-95b55af18dc8",
     ctaHref: "/book/wrm_lite"
   },
   {
@@ -37,7 +37,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     blurb: immersionCopy.intro,
     priceLabel: "Starting at $6,000 CAD for 2 days",
     highlights: immersionCopy.bullets.map(bullet => ({ label: bullet })),
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4852.jpg?alt=media&token=4702d0f1-4a37-4fad-8f4b-80019e29f694",
     ctaHref: "/book/immersion"
   },
   {
@@ -46,7 +46,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     blurb: iconCopy.intro,
     priceLabel: "From $5,000 CAD per month",
     highlights: iconCopy.bullets.map(bullet => ({ label: bullet })),
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8747.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4795.jpg?alt=media&token=3c99f1e8-2ac0-464a-8488-45177344a65d",
     ctaHref: "/book/icon"
   },
   {
@@ -59,7 +59,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "October 27 start or save your January seat" },
       { label: "Signature program of West Rose Media" }
     ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4732.jpg?alt=media&token=01261972-fb22-47b0-b772-1fd2a6817369",
     ctaHref: "/powerfulpersonalbrand"
   }
 ];

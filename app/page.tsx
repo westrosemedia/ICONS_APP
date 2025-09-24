@@ -158,7 +158,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Powerful Personal Brand */}
+      {/* Powerful Personal Brand */}=
       <section className="relative section-padding overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
