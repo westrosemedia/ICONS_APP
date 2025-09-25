@@ -19,7 +19,7 @@ export default function IconSocietyPage() {
         <div className="relative z-10 text-center max-w-3xl px-6">
           <h1 className="text-5xl font-bold tracking-tight mb-6">The ICON Society</h1>
           <p className="text-xl leading-relaxed">
-            Not another Facebook group. Not the same complaints every week. This is a movement and a power circle for people who make things happen.
+            We are not your feed echo chamber. We are not a weekly therapy dump. We are not an MLM dressed up as coaching like the other people you follow. We are where action turns into income.
           </p>
         </div>
       </section>
