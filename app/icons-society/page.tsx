@@ -7,13 +7,7 @@ export default function IconSocietyPage() {
     <main className="bg-white text-black">
       {/* Hero */}
       <section className="relative h-[80vh] flex items-center justify-center bg-black text-white">
-        <Image
-          src="/icons-society-hero.jpg"
-          alt="The ICON Society"
-          fill
-          className="object-cover opacity-60"
-          priority
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
         <div className="relative z-10 text-center max-w-3xl px-6">
           <h1 className="text-5xl font-bold tracking-tight mb-6">The ICON Society</h1>
           <p className="text-xl leading-relaxed">
@@ -33,10 +27,10 @@ export default function IconSocietyPage() {
       </section>
 
       {/* What makes it different */}
-      <section className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6 py-20">
-        <div>
-          <h2 className="text-3xl font-bold mb-4">What Makes It Different</h2>
-          <ul className="space-y-4 leading-relaxed">
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold mb-8 text-center">What Makes It Different</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <ul className="space-y-6 leading-relaxed">
             <li>
               <strong>Accountability that moves the needle.</strong> You show up, you take action, and the community holds you to it.
             </li>
@@ -50,15 +44,9 @@ export default function IconSocietyPage() {
               <strong>Private ICON directory.</strong> Hire, collaborate with, and invest in each other instead of searching outside the community.
             </li>
           </ul>
-        </div>
-        <div>
-          <Image
-            src="/icons-society-2.jpg"
-            alt="ICON Society Members"
-            width={900}
-            height={700}
-            className="rounded-2xl shadow-xl object-cover"
-          />
+          <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center">
+            <p className="text-gray-500 text-center">Premium community features coming soon</p>
+          </div>
         </div>
       </section>
 
@@ -68,20 +56,14 @@ export default function IconSocietyPage() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             "Weekly Pitch Sessions",
-            "Private ICON Directory",
+            "Private ICON Directory", 
             "Monthly Masterclasses",
           ].map((item, i) => (
             <div
               key={i}
-              className="relative h-64 rounded-2xl overflow-hidden bg-gray-900 flex items-center justify-center"
+              className="relative h-64 rounded-2xl overflow-hidden bg-gray-900 flex items-center justify-center border border-gray-700"
             >
-              <Image
-                src={`/icons-society-locked-${i + 1}.jpg`}
-                alt={item}
-                fill
-                className="object-cover opacity-40 blur-sm"
-              />
-              <div className="relative z-10 flex flex-col items-center px-4 text-center">
+              <div className="flex flex-col items-center px-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mb-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a5 5 0 0 0-5 5v3H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1h-2V6a5 5 0 0 0-5-5Zm3 8H9V6a3 3 0 0 1 6 0v3Z"/></svg>
                 <p className="text-lg font-semibold">{item}</p>
                 <p className="text-sm text-gray-300">Members Only</p>
@@ -120,19 +102,24 @@ export default function IconSocietyPage() {
             </ul>
           </div>
           <div className="bg-white text-black rounded-2xl p-8 shadow-xl">
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-bold">$97</span>
-              <span className="text-sm opacity-70">per month</span>
+            <div className="text-center mb-6">
+              <div className="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                3-Day Free Trial
+              </div>
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                <span className="text-5xl font-bold">$88</span>
+                <span className="text-sm opacity-70">per month</span>
+              </div>
+              <p className="text-sm opacity-80">
+                After your free trial
+              </p>
             </div>
-            <p className="text-sm mb-6 opacity-80">
-              Founding rate. Price will increase at app launch.
-            </p>
             <CheckoutButton
-              label="Join Now"
+              label="Start Free Trial"
               className="w-full"
             />
-            <p className="text-xs mt-4 opacity-70">
-              You will be redirected to secure checkout.
+            <p className="text-xs mt-4 opacity-70 text-center">
+              Cancel anytime. No commitment.
             </p>
           </div>
         </div>
