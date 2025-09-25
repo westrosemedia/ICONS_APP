@@ -121,15 +121,13 @@ export default function IconSocietyPage() {
           </div>
           <div className="bg-white text-black rounded-2xl p-8 shadow-xl">
             <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-bold">$<span>{process.env.NEXT_PUBLIC_ICON_SOCIETY_PRICE_DISPLAY || "XXX"}</span></span>
+              <span className="text-5xl font-bold">$97</span>
               <span className="text-sm opacity-70">per month</span>
             </div>
             <p className="text-sm mb-6 opacity-80">
               Founding rate. Price will increase at app launch.
             </p>
             <CheckoutButton
-              priceId={process.env.NEXT_PUBLIC_STRIPE_ICON_SOCIETY_PRICE_ID || ""}
-              mode="subscription"
               label="Join Now"
               className="w-full"
             />
