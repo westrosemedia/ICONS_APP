@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { spotlightCopy } from "@/content/spotlight";
-import { createBookingAndCheckout } from "./actions";
 
 type FormState = {
   fullName: string;
@@ -37,12 +36,17 @@ export default function SpotlightPage() {
 
     setSubmitting(true);
     try {
-      const { url } = await createBookingAndCheckout({
-        pkg: "spotlight",
-        intake: form,
-        calendarCity: form.city
+      // Send form data to email first
+      await fetch('/api/send-spotlight-intake', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
       });
-      window.location.href = url;
+      
+      // Then redirect to Stripe payment
+      window.location.href = 'https://buy.stripe.com/bJecN49oYf5z5zt3cN87K0P';
     } catch (e) {
       console.error(e);
       setSubmitting(false);
