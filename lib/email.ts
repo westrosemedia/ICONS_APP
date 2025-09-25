@@ -102,3 +102,37 @@ export async function sendIconApplicationEmail(applicationData: {
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 }
+
+// Generic email sending function
+export async function sendEmail({
+  to,
+  subject,
+  text,
+  html
+}: {
+  to: string | string[];
+  subject: string;
+  text?: string;
+  html?: string;
+}) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'ICONS App <noreply@westrosemedia.com>',
+      to: Array.isArray(to) ? to : [to],
+      subject,
+      text,
+      html
+    });
+
+    if (error) {
+      console.error('Resend error:', error);
+      return { success: false, error: error.message };
+    }
+
+    console.log('Email sent successfully via Resend:', data);
+    return { success: true };
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}

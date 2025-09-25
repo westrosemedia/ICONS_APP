@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Script from "next/script";
 
 export default function Page() {
-
   return (
     <>
       <Script
@@ -37,7 +36,7 @@ export default function Page() {
               8 Week Live Course — The signature program of West Rose Media, completely revamped and leveled up for maximum transformation.
             </p>
             <button 
-              onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('pricing-table')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
             >
               Enroll Now
@@ -123,16 +122,16 @@ export default function Page() {
               </div>
               
               <button 
-                onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('pricing-table')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll Now
               </button>
             </motion.div>
 
-            {/* Intake Form */}
+            {/* Stripe Pricing Table */}
             <motion.div
-              id="intake-form"
+              id="pricing-table"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -141,109 +140,14 @@ export default function Page() {
             >
               <h3 className="text-3xl font-bold text-black mb-6 text-center">Ready to Transform Your Brand?</h3>
               <p className="text-editorial text-center mb-8">
-                Fill out the form below to secure your spot in Powerful Personal Brand.
+                Secure your spot in Powerful Personal Brand today.
               </p>
               
-              <div className="max-w-2xl mx-auto space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      value={form.fullName}
-                      onChange={(e) => setForm({...form, fullName: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Business Name *</label>
-                    <input
-                      type="text"
-                      value={form.businessName}
-                      onChange={(e) => setForm({...form, businessName: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="Your business name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Instagram Handle</label>
-                    <input
-                      type="text"
-                      value={form.instagram}
-                      onChange={(e) => setForm({...form, instagram: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="@yourhandle"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Pronouns</label>
-                    <input
-                      type="text"
-                      value={form.pronouns}
-                      onChange={(e) => setForm({...form, pronouns: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="she/her, he/him, they/them"
-                    />
-                  </div>
-                  
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-black mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => setForm({...form, email: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                
-                
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">How did you hear about West Rose Media?</label>
-                  <input
-                    type="text"
-                    value={form.howDidYouHear}
-                    onChange={(e) => setForm({...form, howDidYouHear: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    placeholder="Social media, referral, search, etc."
-                  />
-                </div>
-                
-                
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">What big launch or offer are you focused on right now?</label>
-                  <textarea
-                    value={form.bigLaunch}
-                    onChange={(e) => setForm({...form, bigLaunch: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    rows={3}
-                    placeholder="Tell us about your current focus"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-black mb-2">What is your income goal for the next 12 months?</label>
-                  <input
-                    type="text"
-                    value={form.incomeGoal}
-                    onChange={(e) => setForm({...form, incomeGoal: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    placeholder="Your income goal"
-                  />
-                </div>
-                
-                <div className="text-center pt-6">
-                  <stripe-pricing-table 
-                    pricing-table-id="prctbl_1SAyLHCcsY3WjV3QddOoZFES"
-                    publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav">
-                  </stripe-pricing-table>
-                </div>
+              <div className="max-w-2xl mx-auto">
+                <stripe-pricing-table 
+                  pricing-table-id="prctbl_1SAyLHCcsY3WjV3QddOoZFES"
+                  publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav">
+                </stripe-pricing-table>
               </div>
             </motion.div>
           </div>
