@@ -70,7 +70,7 @@ export default function HomePage() {
             <p className="text-editorial max-w-2xl mx-auto mb-12">
               Take the quiz to find your perfect path - custom-tailored for where you are and where you're going.
             </p>
-            <Button asChild size="lg" variant="accent" className="group">
+            <Button asChild size="lg" variant="accent" className="group mx-auto">
               <Link href="/quiz">
                 Find out what your next power move is
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
