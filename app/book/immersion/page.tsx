@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { immersionCopy } from "@/content/immersion";
-import { createBookingAndCheckout } from "./actions";
 
 type FormState = {
   fullName: string;
@@ -65,11 +64,17 @@ export default function ImmersionPage() {
     
     setSubmitting(true);
     try {
-      const { url } = await createBookingAndCheckout({
-        pkg: "immersion",
-        intake: form
+      // Send form data to email first
+      await fetch('/api/send-immersion-intake', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
       });
-      window.location.href = url;
+      
+      // Then redirect to Stripe payment
+      window.location.href = 'https://buy.stripe.com/fZu14m58I0aF0f914F87K0K';
     } catch (e) {
       console.error(e);
       setSubmitting(false);
