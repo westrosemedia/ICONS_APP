@@ -39,7 +39,7 @@ const editorialItems: EditorialItem[] = [
     title: "Premium presence",
     tagline: "Elevating your authority through visuals",
     imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5303.jpg?alt=media&token=7e4aad5b-45a7-4f6e-a3d2-70ff74515c62",
-    focalPoint: { x: 0.5, y: 0.45 }
+    focalPoint: { x: 0.5, y: 0.55 }
   }
 ];
 
