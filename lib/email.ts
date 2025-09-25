@@ -2,6 +2,30 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Add contact to Resend audience
+export async function addContactToList(email: string, firstName?: string, lastName?: string, source?: string) {
+  try {
+    const { data, error } = await resend.contacts.create({
+      email: email,
+      firstName: firstName || '',
+      lastName: lastName || '',
+      audienceId: process.env.RESEND_AUDIENCE_ID || 'default', // You'll need to create an audience in Resend
+      unsubscribed: false,
+    });
+
+    if (error) {
+      console.error('Resend contact creation error:', error);
+      return { success: false, error: error.message };
+    }
+
+    console.log('Contact added to Resend list:', data);
+    return { success: true, data };
+  } catch (error) {
+    console.error('Error adding contact to Resend list:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+}
+
 export async function sendIconApplicationEmail(applicationData: {
   fullName: string;
   email: string;

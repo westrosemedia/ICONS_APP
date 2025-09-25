@@ -1,9 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendEmail } from "@/lib/email";
+import { sendEmail, addContactToList } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.json();
+
+    // Add contact to email list
+    const [firstName, ...lastNameParts] = (formData.fullName || '').split(' ');
+    const lastName = lastNameParts.join(' ');
+    
+    const listResult = await addContactToList(
+      formData.email, 
+      firstName, 
+      lastName, 
+      'WRM Lite Intake'
+    );
+
+    if (!listResult.success) {
+      console.error("Failed to add contact to list:", listResult.error);
+    }
 
     const emailContent = `
 New WRM Lite Intake Form Submission:

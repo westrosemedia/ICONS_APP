@@ -1,6 +1,6 @@
 "use server";
 
-import { sendIconApplicationEmail } from "@/lib/email";
+import { sendIconApplicationEmail, addContactToList } from "@/lib/email";
 
 export async function submitIconApplication({
   intake
@@ -13,6 +13,21 @@ export async function submitIconApplication({
     // Validate required fields
     if (!intake.fullName || !intake.email) {
       throw new Error("Missing required fields: fullName and email are required");
+    }
+
+    // Add contact to email list
+    const [firstName, ...lastNameParts] = intake.fullName.split(' ');
+    const lastName = lastNameParts.join(' ');
+    
+    const listResult = await addContactToList(
+      intake.email, 
+      firstName, 
+      lastName, 
+      'ICON Application'
+    );
+
+    if (!listResult.success) {
+      console.error("Failed to add contact to list:", listResult.error);
     }
 
     // Send email notification via Resend
