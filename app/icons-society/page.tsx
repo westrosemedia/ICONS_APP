@@ -8,7 +8,7 @@ export default function IconSocietyPage() {
       {/* Hero */}
       <section className="relative h-[80vh] flex items-center justify-center bg-black text-white">
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7"
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR9804.jpg?alt=media&token=18f1ef3e-da8a-4ee2-bd23-a4a9c8df4c2e"
           alt="The ICON Society"
           fill
           className="object-cover opacity-60"
@@ -54,7 +54,7 @@ export default function IconSocietyPage() {
           </ul>
           <div className="relative h-96 rounded-2xl overflow-hidden">
             <Image
-              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2308.jpg?alt=media&token=72da2ca9-c31e-4773-85f0-7bea980b4e21"
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR9372.jpg?alt=media&token=9b8ba4b7-5acc-4739-8f94-afa51f421f0d"
               alt="ICON Society Members"
               fill
               className="object-cover"
@@ -69,9 +69,9 @@ export default function IconSocietyPage() {
         <h2 className="text-3xl font-bold text-center mb-12">A Glimpse Inside</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
-            { title: "Weekly Pitch Sessions", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3492.jpg?alt=media&token=bddf7496-760e-43d9-8b72-5da9f9b036eb" },
-            { title: "Private ICON Directory", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8009.jpg?alt=media&token=8ada8e3d-d7a8-43f8-8485-6506724dc58d" },
-            { title: "Monthly Masterclasses", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2791.jpg?alt=media&token=980dbfd2-d3d7-4517-9830-686f3a9b53d0" },
+            { title: "Weekly Pitch Sessions", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR9188.jpg?alt=media&token=814572b8-22a5-4a09-83f6-1546c528d742" },
+            { title: "Private ICON Directory", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8823.jpg?alt=media&token=c86b10bb-3abc-470e-9562-42ad16bfff13" },
+            { title: "Monthly Masterclasses", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6405.jpg?alt=media&token=4d35cab4-2fe4-44f3-a385-21ca6bf46270" },
           ].map((item, i) => (
             <div
               key={i}
