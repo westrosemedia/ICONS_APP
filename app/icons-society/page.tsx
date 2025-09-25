@@ -7,7 +7,15 @@ export default function IconSocietyPage() {
     <main className="bg-white text-black">
       {/* Hero */}
       <section className="relative h-[80vh] flex items-center justify-center bg-black text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7"
+          alt="The ICON Society"
+          fill
+          className="object-cover opacity-60"
+          priority
+          style={{ objectPosition: 'center center' }}
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center max-w-3xl px-6">
           <h1 className="text-5xl font-bold tracking-tight mb-6">The ICON Society</h1>
           <p className="text-xl leading-relaxed">
@@ -44,8 +52,14 @@ export default function IconSocietyPage() {
               <strong>Private ICON directory.</strong> Hire, collaborate with, and invest in each other instead of searching outside the community.
             </li>
           </ul>
-          <div className="bg-gray-100 rounded-2xl p-8 flex items-center justify-center">
-            <p className="text-gray-500 text-center">Premium community features coming soon</p>
+          <div className="relative h-96 rounded-2xl overflow-hidden">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2308.jpg?alt=media&token=72da2ca9-c31e-4773-85f0-7bea980b4e21"
+              alt="ICON Society Members"
+              fill
+              className="object-cover"
+              style={{ objectPosition: 'center center' }}
+            />
           </div>
         </div>
       </section>
@@ -55,17 +69,25 @@ export default function IconSocietyPage() {
         <h2 className="text-3xl font-bold text-center mb-12">A Glimpse Inside</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
-            "Weekly Pitch Sessions",
-            "Private ICON Directory", 
-            "Monthly Masterclasses",
+            { title: "Weekly Pitch Sessions", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3492.jpg?alt=media&token=bddf7496-760e-43d9-8b72-5da9f9b036eb" },
+            { title: "Private ICON Directory", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8009.jpg?alt=media&token=8ada8e3d-d7a8-43f8-8485-6506724dc58d" },
+            { title: "Monthly Masterclasses", image: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2791.jpg?alt=media&token=980dbfd2-d3d7-4517-9830-686f3a9b53d0" },
           ].map((item, i) => (
             <div
               key={i}
-              className="relative h-64 rounded-2xl overflow-hidden bg-gray-900 flex items-center justify-center border border-gray-700"
+              className="relative h-64 rounded-2xl overflow-hidden group"
             >
-              <div className="flex flex-col items-center px-4 text-center">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                style={{ objectPosition: 'center center' }}
+              />
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-300"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mb-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a5 5 0 0 0-5 5v3H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1h-2V6a5 5 0 0 0-5-5Zm3 8H9V6a3 3 0 0 1 6 0v3Z"/></svg>
-                <p className="text-lg font-semibold">{item}</p>
+                <p className="text-lg font-semibold">{item.title}</p>
                 <p className="text-sm text-gray-300">Members Only</p>
               </div>
             </div>
