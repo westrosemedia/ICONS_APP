@@ -156,7 +156,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                <Link href="https://buy.stripe.com/fZe4ia1eQ1nc5hu3cK">Join the ICON Society</Link>
+                <Link href="/icons-society">Join the ICON Society</Link>
               </Button>
               <div>
                 <Link href="/login" className="text-white/80 underline hover:text-white transition-colors">
