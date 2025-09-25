@@ -57,7 +57,7 @@ export default function WRMLitePage() {
       });
       
       // Then redirect to Stripe payment
-      window.location.href = 'https://buy.stripe.com/00w00i7gQ4qVe5ZcNn87K0L';
+      window.location.href = 'https://buy.stripe.com/3cI00i7gQ9Lf5ztaFf87K0M';
     } catch (e) {
       console.error(e);
       setSubmitting(false);

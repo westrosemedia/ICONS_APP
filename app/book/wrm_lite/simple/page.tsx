@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function WRMLiteSimplePage() {
   const handleBookNow = () => {
     // Direct link to your Stripe checkout
-    window.open('https://buy.stripe.com/00w00i7gQ4qVe5ZcNn87K0L', '_blank');
+    window.open('https://buy.stripe.com/3cI00i7gQ9Lf5ztaFf87K0M', '_blank');
   };
 
   return (
