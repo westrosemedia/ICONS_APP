@@ -7,21 +7,42 @@ import { useEffect, useState } from "react";
 
 export default function SitePromoBanner() {
   const pathname = usePathname();
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
 
   // Hide the banner on the mastermind page to avoid redundancy
   const shouldHide = pathname?.startsWith(MASTERMIND_ROUTE);
 
   useEffect(() => {
-    setVisible(true);
+    // Reset visibility when pathname changes
+    setVisible(false);
+    setShowBanner(false);
+    
+    // Show banner after 5 seconds
+    const timer = setTimeout(() => {
+      setShowBanner(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
+
+  useEffect(() => {
+    // Animate in the banner when showBanner becomes true
+    if (showBanner) {
+      setVisible(true);
+    }
+  }, [showBanner]);
 
   if (shouldHide || !visible) return null;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40">
       <div className="mx-auto max-w-[1400px] px-4 pb-4">
-        <div className="relative overflow-hidden rounded-2xl bg-black/80 backdrop-blur border border-white/10">
+        <div 
+          className={`relative overflow-hidden rounded-2xl bg-black/80 backdrop-blur border border-white/10 transition-all duration-500 ease-out ${
+            visible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+          }`}
+        >
           <div className="absolute inset-0">
             {/* Subtle gradient glow */}
             <div className="absolute -inset-x-10 -inset-y-10 bg-gradient-to-r from-white/10 via-white/5 to-white/10 blur-3xl opacity-30" />
