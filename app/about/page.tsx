@@ -66,6 +66,19 @@ export default function AboutPage() {
             My Story
           </h2>
           
+          {/* Story Image */}
+          <div className="mb-12">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+                alt="Stephanie Rose - Personal Branding Photographer and Business Coach Story"
+                fill
+                className="object-cover"
+                title="Stephanie Rose | My Story - Building West Rose Media"
+              />
+            </div>
+          </div>
+          
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <p>
               I did not inherit this business. I built it from the ground up after burning my old life to the ground.

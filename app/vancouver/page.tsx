@@ -33,11 +33,11 @@ export default function VancouverPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Vancouver's Premier
+            Vancouver's
             <br />
             <span className="text-[#38b6ff]">Luxury Personal Branding</span>
             <br />
-            for Online Coaches & Service Providers
+            for Coaches, Entrepreneurs & Founders
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
             Professional photography, content creation, and business coaching for online coaches, service providers, and women in business across Vancouver, BC
@@ -65,6 +65,19 @@ export default function VancouverPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">
             Why Vancouver Online Coaches & Service Providers Choose West Rose Media
           </h2>
+          
+          {/* Image Showcase */}
+          <div className="mb-16">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797"
+                alt="Luxury Personal Branding Photography Session in Vancouver BC - Professional Content Creation for Entrepreneurs"
+                fill
+                className="object-cover"
+                title="Vancouver Brand Photography | Professional Content Creation"
+              />
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-gray-50 rounded-2xl">
@@ -118,6 +131,19 @@ export default function VancouverPage() {
           <p className="text-xl text-white/90 mb-12">
             Based in Vancouver, serving ambitious online coaches, service providers, and women in business across BC and Canada
           </p>
+          
+          {/* Image Showcase */}
+          <div className="mb-12">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1262.jpg?alt=media&token=6c1ead01-d7f2-4d20-834a-2c64c0ccfdd5"
+                alt="Professional Brand Photography for Vancouver Entrepreneurs - Luxury Content Creation and Business Coaching"
+                fill
+                className="object-cover"
+                title="Vancouver Business Photography | Professional Brand Sessions"
+              />
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="p-6 bg-white/10 rounded-xl">

@@ -33,11 +33,11 @@ export default function CalgaryPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Your Calgary Brand Deserves to be
+            Calgary's
             <br />
-            <span className="text-[#fbf5a6]">Iconic</span>
+            <span className="text-[#fbf5a6]">Luxury Personal Branding</span>
             <br />
-            Photography + Content Strategy for Entrepreneurs in Calgary AB
+            for Coaches, Entrepreneurs & Founders
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
             From Calgary photoshoot to consistent brand presence. Strategic brand photography and content that drives sales for entrepreneurs, coaches, and consultants in Calgary AB and Southern Alberta.

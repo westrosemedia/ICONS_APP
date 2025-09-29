@@ -85,6 +85,43 @@ export default function HomePage() {
       {/* Editorial Grid */}
       <EditorialGrid />
 
+      {/* Featured Image Showcase */}
+      <section className="relative w-full bg-black overflow-hidden">
+        <div className="relative w-full h-[70vh] min-h-[500px]">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_18.jpg?alt=media&token=e193eea2-a066-46df-b0b6-781a781ead76"
+            alt="Luxury brand photography and content creation for entrepreneurs in Canada - West Rose Media"
+            className="w-full h-full object-cover object-center"
+            style={{ 
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center center'
+            }}
+          />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
+            className="absolute inset-0 flex items-center justify-center z-10"
+          >
+            <div className="text-center px-4">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+                Where Vision Meets
+                <br />
+                <span className="text-[#c1ff72]">Reality</span>
+              </h2>
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                Every frame tells a story. Every story builds a legacy.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* About West Rose Media */}
       <section className="relative section-padding overflow-hidden">
         <div 
@@ -119,6 +156,20 @@ export default function HomePage() {
               <p className="text-editorial text-white/90">
                 My clients don't hire me for photos. They partner with me to amplify their presence, elevate their brand, and unlock the kind of influence that turns into serious revenue. If you're scaling fast and ready to look, sound, and feel like the leader you are, this is your next move.
               </p>
+            </div>
+            
+            {/* Featured Image */}
+            <div className="mt-16 max-w-2xl mx-auto">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+                alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
+                className="w-full h-auto rounded-lg shadow-2xl"
+                style={{ 
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover'
+                }}
+              />
             </div>
           </motion.div>
         </div>

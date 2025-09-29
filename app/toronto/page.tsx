@@ -33,11 +33,11 @@ export default function TorontoPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Toronto's Premier
+            Toronto's
             <br />
             <span className="text-[#38b6ff]">Luxury Personal Branding</span>
             <br />
-            for Online Coaches & Service Providers
+            for Coaches, Entrepreneurs & Founders
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
             Professional photography, content creation, and business coaching for online coaches, service providers, and women in business across Toronto, Ontario
@@ -65,6 +65,19 @@ export default function TorontoPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">
             Why Toronto Online Coaches & Service Providers Choose West Rose Media
           </h2>
+          
+          {/* Image Showcase */}
+          <div className="mb-16">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0"
+                alt="Luxury Personal Branding Photography Session in Toronto ON - Professional Content Creation for Entrepreneurs"
+                fill
+                className="object-cover"
+                title="Toronto Brand Photography | Professional Content Creation"
+              />
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-gray-50 rounded-2xl">
@@ -118,6 +131,19 @@ export default function TorontoPage() {
           <p className="text-xl text-white/90 mb-12">
             Based in Toronto, serving ambitious online coaches, service providers, and women in business across Ontario and Canada
           </p>
+          
+          {/* Image Showcase */}
+          <div className="mb-12">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
+                alt="Professional Brand Photography for Toronto Entrepreneurs - Luxury Content Creation and Business Coaching"
+                fill
+                className="object-cover"
+                title="Toronto Business Photography | Professional Brand Sessions"
+              />
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="p-6 bg-white/10 rounded-xl">
