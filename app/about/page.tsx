@@ -67,23 +67,15 @@ export default function AboutPage() {
           
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <p>
-              I wasn't always the photographer and business coach you see today. Like many ambitious women, I started in the corporate world, climbing ladders that weren't mine to climb, building someone else's dream while mine sat quietly in the corner.
+              I did not inherit this business. I built it from the ground up after burning my old life to the ground.
             </p>
             
             <p>
-              But here's what I learned: <strong>brilliant entrepreneurs get overlooked every single day</strong>. Not because they lack talent, vision, or drive, but because they lack the visual presence and strategic positioning that makes the world sit up and take notice.
+              I walked away from a marriage that kept me small. I came out in my thirties and finally claimed who I am. I raised three kids on my own while building a company with nothing but my camera, my vision, and an unshakable belief that life could be bigger.
             </p>
             
             <p>
-              That's when I realized my calling wasn't just to take beautiful photos – it was to <strong>amplify the voices of women who are changing the world</strong>. To help them build brands that are as magnetic as they are, as strategic as they are smart, and as unforgettable as their impact.
-            </p>
-            
-            <p>
-              Today, based in Calgary and serving ambitious women across Canada, I've had the privilege of working with hundreds of female entrepreneurs who've gone from invisible to iconic. From six-figure launches to seven-figure exits, from local recognition to international influence.
-            </p>
-            
-            <p>
-              <strong>My clients don't hire me for photos. They partner with me to become the leader they already are.</strong>
+              That is why West Rose Media exists. It is not just about photos. It is about proof that you can rewrite everything and rise higher than you ever imagined. My work is born from that fire. I help leaders step into their own power, show the world who they really are, and become unforgettable.
             </p>
           </div>
         </div>
@@ -100,39 +92,38 @@ export default function AboutPage() {
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
               <h3 className="text-2xl font-bold mb-4 text-black">Luxury Photography</h3>
               <p className="text-gray-600 mb-6">
-                Professional personal branding photography that captures your authentic leadership and elevates your online presence.
+                High end photography that makes your audience stop scrolling and take you seriously.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Personal brand photography</li>
-                <li>• Professional headshots</li>
-                <li>• Content creation sessions</li>
-                <li>• Social media assets</li>
+                <li>• Branding sessions</li>
+                <li>• High impact headshots</li>
+                <li>• Content days and reels</li>
+                <li>• Social media visuals</li>
               </ul>
             </div>
             
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Business Coaching</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Brand Partnership</h3>
               <p className="text-gray-600 mb-6">
-                Strategic business coaching and mastermind programs designed for ambitious female entrepreneurs ready to scale.
+                Ongoing collaboration that keeps your vision alive without you chasing it.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Mastermind retreats</li>
-                <li>• 1:1 business coaching</li>
-                <li>• Content strategy</li>
-                <li>• Brand positioning</li>
+                <li>• Strategy and execution</li>
+                <li>• Content management</li>
+                <li>• Storytelling that feels like you</li>
+                <li>• Consistency that scales your revenue</li>
               </ul>
             </div>
             
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Brand Strategy</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Intensives and Retreats</h3>
               <p className="text-gray-600 mb-6">
-                Complete brand transformation that positions you as the leader in your industry and attracts your ideal clients.
+                Spaces designed for bold leaders who want more visibility, more influence, and more money.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Brand messaging</li>
-                <li>• Visual identity</li>
-                <li>• Content strategy</li>
-                <li>• Market positioning</li>
+                <li>• Strategic intensives</li>
+                <li>• Luxury retreats</li>
+                <li>• Masterclasses and workshops</li>
               </ul>
             </div>
           </div>
@@ -148,19 +139,28 @@ export default function AboutPage() {
           
           <div className="space-y-8 text-lg text-white/90 leading-relaxed">
             <p className="text-2xl font-medium text-[#c1ff72]">
-              "You don't need more to-do's. You need a partner who gets it, owns it, and delivers."
+              "You do not need another course. You do not need a million to do lists. You need a partner who understands your vision and makes it real."
             </p>
             
             <p>
-              I believe that every ambitious woman deserves to be seen, heard, and paid what she's worth. Not through hustle culture or burnout, but through strategic positioning, authentic storytelling, and visual presence that commands respect.
+              My work is not about creating an illusion. It is about building a brand that mirrors the power you already hold. When you look, sound, and move like the leader you are, the market responds.
             </p>
-            
+          </div>
+        </div>
+      </section>
+
+      {/* Today Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+            Today
+          </h2>
+          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
-              My approach isn't about creating a facade – it's about <strong>revealing the leader you already are</strong>. Through luxury photography, strategic content, and business coaching, I help you build a brand that's as powerful as your vision.
+              From my home base in Calgary, I partner with leaders across Canada who are scaling past six and seven figures. They do not hire me for photos. They hire me because I think like a strategist, create like a visionary, and deliver like a machine.
             </p>
-            
             <p>
-              Because when you look, sound, and feel like the leader you are, the world has no choice but to follow.
+              My clients walk away with more than content. They walk away with a brand that commands attention, fuels growth, and builds legacy.
             </p>
           </div>
         </div>
