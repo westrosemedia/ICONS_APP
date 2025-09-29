@@ -44,7 +44,7 @@ export default function HomePage() {
             Where ICONS come to rise.
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
-            The future of personal branding is cinematic, strategic, and unforgettable. Welcome to ICONS.
+            Luxury personal branding photography and business coaching for female entrepreneurs in Calgary, Alberta and across Canada. The future of personal branding is cinematic, strategic, and unforgettable.
           </p>
           <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
             <Link href="/quiz">

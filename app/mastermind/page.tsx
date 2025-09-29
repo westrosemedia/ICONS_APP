@@ -1,5 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada",
+  description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business.",
+  keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, content creation mastermind, tapping therapy business, Kelowna retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching",
+  openGraph: {
+    title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    type: "website",
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+  },
+};
 
 export default function MastermindPage() {
   return (
@@ -9,10 +27,11 @@ export default function MastermindPage() {
         <div className="absolute inset-0">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
-            alt="Luxury Content Mastermind"
+            alt="Luxury Content Creation Photography and Social Media Mastermind Retreat for Female Entrepreneurs in Calgary Alberta Canada - Stephanie Rose West Rose Media Photographer"
             fill
             className="object-cover object-center"
             priority
+            title="Content & Tapping Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -58,9 +77,10 @@ export default function MastermindPage() {
             <div className="relative h-96 rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0"
-                alt="Luxury retreat experience"
+                alt="Luxury Content Creation Photography and Social Media Retreat Experience for Female Entrepreneurs in Calgary Alberta Canada - West Rose Media Photographer"
                 fill
                 className="object-cover"
+                title="Luxury Content Retreat for Female Entrepreneurs | Calgary Alberta Business Coaching"
               />
             </div>
           </div>
@@ -69,9 +89,10 @@ export default function MastermindPage() {
             <div className="relative h-96 rounded-2xl overflow-hidden order-2 md:order-1">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
-                alt="Weekly support and mentorship"
+                alt="Weekly Social Media Marketing and Photography Business Coaching for Female Entrepreneurs in Calgary Alberta - Stephanie Rose West Rose Media Photographer"
                 fill
                 className="object-cover"
+                title="Weekly Business Coaching for Female Entrepreneurs | Calgary Alberta Mentorship"
               />
             </div>
             <div className="order-1 md:order-2">
@@ -93,9 +114,10 @@ export default function MastermindPage() {
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797"
-                alt="Mastermind experience"
+                alt="Exclusive Mastermind Experience for Female Entrepreneurs in Calgary Alberta Canada - West Rose Media Business Coaching"
                 fill
                 className="object-cover"
+                title="Exclusive Mastermind Experience | Female Entrepreneurs Calgary Alberta"
               />
             </div>
           </div>
@@ -105,9 +127,10 @@ export default function MastermindPage() {
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6644.jpg?alt=media&token=78c2fc79-1d50-427a-9acd-2acc82681c8c"
-                alt="Luxury retreat setting"
+                alt="Luxury Business Retreat Setting for Female Entrepreneurs in Calgary Alberta Canada - Stephanie Rose West Rose Media"
                 fill
                 className="object-cover"
+                title="Luxury Business Retreat | Female Entrepreneurs Calgary Alberta Canada"
               />
             </div>
           </div>

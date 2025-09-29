@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
 import SitePromoBanner from "@/components/site-promo-banner";
+import StructuredData from "@/components/StructuredData";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -23,8 +24,31 @@ const cormorantGaramond = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: "West Rose Media",
-  description: "ICONS by West Rose Media",
+  title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs in Canada",
+  description: "Transform your brand with luxury content creation, personal branding, and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs. ICONS by West Rose Media.",
+  keywords: "luxury personal branding, female entrepreneurs Canada, content creation, mastermind retreats, personal brand photography, business coaching, luxury lifestyle, Canadian entrepreneurs",
+  openGraph: {
+    title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs",
+    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs.",
+    type: "website",
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs",
+    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 // Force deployment update - latest changes
 
@@ -56,6 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <nav className="hidden md:flex items-center gap-8">
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
+                </Link>
+                <Link href="/calgary" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Calgary
                 </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
@@ -108,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         
+        <StructuredData />
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
