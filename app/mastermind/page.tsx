@@ -104,7 +104,7 @@ export default function MastermindPage() {
           <div className="mt-20">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1262.jpg?alt=media&token=6c1ead01-d7f2-4d20-834a-2c64c0ccfdd5"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6644.jpg?alt=media&token=78c2fc79-1d50-427a-9acd-2acc82681c8c"
                 alt="Luxury retreat setting"
                 fill
                 className="object-cover"
