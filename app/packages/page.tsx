@@ -40,6 +40,70 @@ export default function PackagesPage() {
         </div>
       </section>
 
+      {/* Mastermind Section */}
+      <section className="section-padding bg-black text-white">
+        <div className="container-elegant">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-display text-white mb-8">
+              Ready for the Next Level?
+            </h2>
+            <p className="text-editorial text-white/90 max-w-3xl mx-auto mb-12">
+              Join Canada's most exclusive 6-month mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#c1ff72]">What's Included:</h3>
+                  <ul className="space-y-3 text-white/90">
+                    <li>• 6 months of weekly group coaching</li>
+                    <li>• Luxury retreat in Kelowna BC</li>
+                    <li>• Tapping therapy for emotional mastery</li>
+                    <li>• Content strategy and creation</li>
+                    <li>• 1:1 sessions with both coaches</li>
+                    <li>• Exclusive community access</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#c1ff72]">Perfect For:</h3>
+                  <ul className="space-y-3 text-white/90">
+                    <li>• Entrepreneurs ready to scale</li>
+                    <li>• Coaches and consultants</li>
+                    <li>• Service-based professionals</li>
+                    <li>• Anyone seeking emotional mastery</li>
+                    <li>• Leaders wanting magnetic marketing</li>
+                    <li>• Those ready for transformation</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <Button asChild size="lg" className="bg-[#c1ff72] text-black hover:bg-[#a8e65a] transition-colors">
+                  <Link href="/mastermind">
+                    Join the Mastermind
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Video Showcase */}
       <section className="relative w-full bg-black overflow-hidden">
         <video

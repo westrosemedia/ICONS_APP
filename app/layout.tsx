@@ -79,6 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center gap-8">
+                <Link href="/about" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  About
+                </Link>
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>

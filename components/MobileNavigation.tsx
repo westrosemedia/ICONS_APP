@@ -22,6 +22,13 @@ export default function MobileNavigation() {
         <div className="md:hidden border-t border-gray-200 bg-white">
           <nav className="container-elegant py-4 flex flex-col gap-4">
             <Link 
+              href="/about" 
+              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
               href="/packages" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
