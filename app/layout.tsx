@@ -25,19 +25,19 @@ const cormorantGaramond = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs in Canada",
-  description: "Transform your brand with luxury content creation, personal branding, and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs. ICONS by West Rose Media.",
-  keywords: "luxury personal branding, female entrepreneurs Canada, content creation, mastermind retreats, personal brand photography, business coaching, luxury lifestyle, Canadian entrepreneurs",
+  title: "West Rose Media | Luxury Personal Branding for Entrepreneurs in Canada",
+  description: "Transform your brand with luxury content creation, personal branding, and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs. ICONS by West Rose Media.",
+  keywords: "luxury personal branding, entrepreneurs Canada, content creation, mastermind retreats, personal brand photography, business coaching, luxury lifestyle, Canadian entrepreneurs",
   openGraph: {
-    title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs",
-    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs.",
+    title: "West Rose Media | Luxury Personal Branding for Entrepreneurs",
+    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs.",
     type: "website",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "West Rose Media | Luxury Personal Branding for Female Entrepreneurs",
-    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious female entrepreneurs.",
+    title: "West Rose Media | Luxury Personal Branding for Entrepreneurs",
+    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs.",
   },
   robots: {
     index: true,

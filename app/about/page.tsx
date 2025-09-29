@@ -25,7 +25,7 @@ export default function AboutPage() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight">
                 Hi, I'm
                 <br />
-                <span className="text-[#c1ff72]">Stephanie Rose</span>
+                <span className="text-[#ff914d]">Stephanie Rose</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Calgary's premier luxury personal branding photographer and business coach for female entrepreneurs who are ready to build iconic brands that command attention and convert.
@@ -47,7 +47,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
                 alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Female Entrepreneurs"
                 fill
                 className="object-cover"
@@ -138,7 +138,7 @@ export default function AboutPage() {
           </h2>
           
           <div className="space-y-8 text-lg text-white/90 leading-relaxed">
-            <p className="text-2xl font-medium text-[#c1ff72]">
+            <p className="text-2xl font-medium text-[#ff914d]">
               "You do not need another course. You do not need a million to do lists. You need a partner who understands your vision and makes it real."
             </p>
             
@@ -185,7 +185,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/mastermind"
-              className="inline-block bg-[#c1ff72] text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#a8e65a] transition-colors"
+              className="inline-block bg-[#ff914d] text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#e67e22] transition-colors"
             >
               Join the Mastermind
             </Link>
