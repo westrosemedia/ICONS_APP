@@ -25,7 +25,7 @@ export default function AboutPage() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight">
                 Hi, I'm
                 <br />
-                <span className="text-[#ff914d]">Stephanie Rose</span>
+                <span className="text-orange-500" style={{color: '#ff914d'}}>Stephanie Rose</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Calgary's premier luxury personal branding photographer and business coach for female entrepreneurs who are ready to build iconic brands that command attention and convert.
@@ -139,7 +139,7 @@ export default function AboutPage() {
           </h2>
           
           <div className="space-y-8 text-lg text-white/90 leading-relaxed">
-            <p className="text-2xl font-medium text-[#ff914d]">
+            <p className="text-2xl font-medium text-orange-500" style={{color: '#ff914d'}}>
               "You do not need another course. You do not need a million to do lists. You need a partner who understands your vision and makes it real."
             </p>
             
@@ -186,7 +186,10 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/mastermind"
-              className="inline-block bg-[#ff914d] text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#e67e22] transition-colors"
+              className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors"
+              style={{backgroundColor: '#ff914d'}}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#e67e22'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#ff914d'}
             >
               Join the Mastermind
             </Link>
