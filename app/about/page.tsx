@@ -82,7 +82,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
                 alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
                 fill
                 className="object-cover"
