@@ -179,6 +179,36 @@ export default function MastermindPage() {
           </div>
         </div>
       </section>
+
+      {/* Video Showcase */}
+      <section className="relative w-full bg-black overflow-hidden">
+        <video
+          className="w-full h-auto object-cover"
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%20Reel%202_1.mp4?alt=media&token=e093c1dc-3441-4573-9f81-ce7dfa29efce"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ 
+            width: '100%',
+            height: 'auto',
+            minHeight: '50vh',
+            maxHeight: '80vh',
+            objectFit: 'cover',
+            objectPosition: 'center center'
+          }}
+        />
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+        
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg leading-tight">
+            See the Mastermind Experience
+          </h2>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 max-w-2xl drop-shadow-lg">
+            Behind the scenes of what we create together
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
