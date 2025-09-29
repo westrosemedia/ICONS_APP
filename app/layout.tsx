@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
 import SitePromoBanner from "@/components/site-promo-banner";
 import StructuredData from "@/components/StructuredData";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -81,9 +82,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
-                <Link href="/calgary" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Calgary
-                </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
                 </Link>
@@ -119,6 +117,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <span className="text-elegant text-lg">ICONS</span>
                       </div>
               <div className="text-center md:text-right">
+                <div className="mb-4">
+                  <SocialMediaLinks />
+                </div>
                 <p className="text-gray-600 text-sm">
                   © {new Date().getFullYear()} West Rose Media
                 </p>

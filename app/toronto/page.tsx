@@ -3,44 +3,44 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luxury Personal Branding & Photography for Online Coaches & Service Providers in Calgary Alberta | West Rose Media",
-  description: "Calgary's premier luxury personal branding photographer and business coach for online coaches, service providers, and women in business. Professional photography, content creation, and mastermind retreats. Transform your brand with Stephanie Rose.",
-  keywords: "Calgary photographer, personal branding Calgary, online coaches Calgary, service providers Calgary, business photography Calgary, social media marketing Calgary, luxury photography Alberta, business coach Calgary, content creation Calgary, mastermind retreat Calgary, Stephanie Rose Calgary, women in business Calgary",
+  title: "Luxury Personal Branding & Photography for Online Coaches & Service Providers in Toronto ON | West Rose Media",
+  description: "Toronto's premier luxury personal branding photographer and business coach for online coaches, service providers, and women in business. Professional photography, content creation, and mastermind retreats. Transform your brand with Stephanie Rose.",
+  keywords: "Toronto photographer, personal branding Toronto, online coaches Toronto, service providers Toronto, business photography Toronto, social media marketing Toronto, luxury photography Ontario, business coach Toronto, content creation Toronto, mastermind retreat Toronto, Stephanie Rose Toronto, women in business Toronto",
   openGraph: {
-    title: "Luxury Personal Branding for Online Coaches & Service Providers in Calgary Alberta",
-    description: "Calgary's premier luxury personal branding photographer and business coach for online coaches, service providers, and women in business.",
+    title: "Luxury Personal Branding for Online Coaches & Service Providers in Toronto ON",
+    description: "Toronto's premier luxury personal branding photographer and business coach for online coaches, service providers, and women in business.",
     type: "website",
     locale: "en_CA",
   },
 };
 
-export default function CalgaryPage() {
+export default function TorontoPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
-            alt="Luxury Personal Branding Photography for Online Coaches and Service Providers in Calgary Alberta Canada - Stephanie Rose West Rose Media"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
+            alt="Luxury Personal Branding Photography for Online Coaches and Service Providers in Toronto ON Canada - Stephanie Rose West Rose Media"
             fill
             className="object-cover object-center"
             priority
-            title="Calgary Personal Branding Photographer | Online Coaches and Service Providers Alberta"
+            title="Toronto Personal Branding Photographer | Online Coaches and Service Providers Ontario"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Calgary's Premier
+            Toronto's Premier
             <br />
             <span className="text-[#38b6ff]">Luxury Personal Branding</span>
             <br />
             for Online Coaches & Service Providers
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Professional photography, content creation, and business coaching for online coaches, service providers, and women in business across Calgary, Alberta
+            Professional photography, content creation, and business coaching for online coaches, service providers, and women in business across Toronto, Ontario
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -63,7 +63,7 @@ export default function CalgaryPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">
-            Why Calgary Online Coaches & Service Providers Choose West Rose Media
+            Why Toronto Online Coaches & Service Providers Choose West Rose Media
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -116,7 +116,7 @@ export default function CalgaryPage() {
             Perfect for Online Coaches & Service Providers
           </h2>
           <p className="text-xl text-white/90 mb-12">
-            Based in Calgary, serving ambitious online coaches, service providers, and women in business across Alberta and Canada
+            Based in Toronto, serving ambitious online coaches, service providers, and women in business across Ontario and Canada
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -144,7 +144,7 @@ export default function CalgaryPage() {
             href="/packages"
             className="inline-block bg-[#38b6ff] text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#2a9ce6] transition-colors"
           >
-            Book Your Calgary Photography Session
+            Book Your Toronto Photography Session
           </Link>
         </div>
       </section>
