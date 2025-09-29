@@ -3,14 +3,49 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Stephanie Rose | Calgary Personal Branding Photographer & Business Coach",
-  description: "Meet Stephanie Rose, Calgary's premier luxury personal branding photographer and business coach for female entrepreneurs. Learn about her journey from corporate to helping ambitious women build iconic brands across Canada.",
-  keywords: "Stephanie Rose, Calgary photographer, personal branding photographer, business coach Calgary, female entrepreneur coach, luxury photography Calgary, West Rose Media founder, about Stephanie Rose",
+  title: "About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist | West Rose Media",
+  description: "Meet Stephanie Rose, Calgary's premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media from the ground up, helping entrepreneurs across Canada create iconic brands through strategic photography and content creation.",
+  keywords: "Stephanie Rose, about Stephanie Rose, Calgary brand photographer, Calgary photographer, personal branding photographer, business coach Calgary, social media strategist, luxury photography Calgary, West Rose Media founder, brand photographer Calgary, entrepreneur coach, content creator Calgary, social media help, photographer Calgary, business photography Calgary, personal brand strategist",
+  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
+  creator: "Stephanie Rose",
+  publisher: "West Rose Media",
+  metadataBase: new URL('https://westrosemedia.com'),
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
-    title: "About Stephanie Rose | Calgary Personal Branding Photographer",
-    description: "Meet Stephanie Rose, Calgary's premier luxury personal branding photographer and business coach for female entrepreneurs.",
+    title: "About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist",
+    description: "Meet Stephanie Rose, Calgary's premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media and helping entrepreneurs create iconic brands.",
+    url: 'https://westrosemedia.com/about',
+    siteName: 'West Rose Media',
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7',
+        width: 1200,
+        height: 630,
+        alt: 'Stephanie Rose - Calgary Brand Photographer and Social Media Strategist',
+      },
+    ],
     type: "website",
     locale: "en_CA",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist',
+    description: 'Meet Stephanie Rose, Calgary\'s premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media.',
+    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
+    creator: '@westrosemedia',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

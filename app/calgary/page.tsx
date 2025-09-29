@@ -3,14 +3,49 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best Brand Photographer in Calgary AB | Luxury Brand Photography for Entrepreneurs | West Rose Media",
-  description: "Calgary's premier luxury brand photographer and strategist for entrepreneurs. Professional brand photography, content strategy, and social media photography in Calgary AB. Content that drives sales and photos that make you unforgettable.",
-  keywords: "Calgary brand photographer, Calgary branding photography, Calgary brand strategist and photographer, Calgary personal brand photography, Calgary entrepreneur branding photoshoot, Calgary content photographer for entrepreneurs, Calgary brand videography, Calgary content strategy and photography, luxury brand photographer Calgary, Calgary business branding photoshoot, best brand photographer in Calgary for entrepreneurs, Calgary content photography for coaches and consultants, where to book a brand photoshoot in Calgary, how to get luxury brand photos in Calgary, personal brand photography packages Calgary, social media content creator Calgary, corporate branding photographer Calgary AB, entrepreneur photoshoot Calgary, professional photos for coaches in Calgary, Okotoks, Airdrie, Cochrane, Canmore, Banff, Southern Alberta",
+  title: "Stephanie Rose | Best Brand Photographer in Calgary AB | Luxury Brand Photography for Entrepreneurs",
+  description: "Stephanie Rose is Calgary's #1 luxury brand photographer and social media strategist for entrepreneurs. Professional brand photography, content strategy, and social media help in Calgary AB. Book your luxury brand photoshoot today - content that drives sales and photos that make you unforgettable.",
+  keywords: "Stephanie Rose Calgary, Calgary brand photographer, Calgary branding photography, Calgary brand strategist and photographer, Calgary personal brand photography, Calgary entrepreneur branding photoshoot, Calgary content photographer for entrepreneurs, Calgary brand videography, Calgary content strategy and photography, luxury brand photographer Calgary, Calgary business branding photoshoot, best brand photographer in Calgary for entrepreneurs, Calgary content photography for coaches and consultants, where to book a brand photoshoot in Calgary, how to get luxury brand photos in Calgary, personal brand photography packages Calgary, social media content creator Calgary, corporate branding photographer Calgary AB, entrepreneur photoshoot Calgary, professional photos for coaches in Calgary, social media help Calgary, photographer Calgary, Okotoks, Airdrie, Cochrane, Canmore, Banff, Southern Alberta, West Rose Media",
+  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
+  creator: "Stephanie Rose",
+  publisher: "West Rose Media",
+  metadataBase: new URL('https://westrosemedia.com'),
+  alternates: {
+    canonical: '/calgary',
+  },
   openGraph: {
-    title: "Best Brand Photographer in Calgary AB | Luxury Brand Photography for Entrepreneurs",
-    description: "Calgary's premier luxury brand photographer and strategist for entrepreneurs. Professional brand photography and content strategy in Calgary AB.",
+    title: "Stephanie Rose | Best Brand Photographer in Calgary AB | Luxury Brand Photography for Entrepreneurs",
+    description: "Calgary's #1 luxury brand photographer and social media strategist for entrepreneurs. Professional brand photography and content strategy in Calgary AB.",
+    url: 'https://westrosemedia.com/calgary',
+    siteName: 'West Rose Media',
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_038.jpg?alt=media&token=93446e09-e15f-4253-add9-a4ba78f05bdf',
+        width: 1200,
+        height: 630,
+        alt: 'Stephanie Rose - Best Brand Photographer in Calgary AB for Entrepreneurs',
+      },
+    ],
     type: "website",
     locale: "en_CA",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Stephanie Rose | Best Brand Photographer in Calgary AB',
+    description: 'Calgary\'s #1 luxury brand photographer and social media strategist for entrepreneurs. Professional brand photography and content strategy.',
+    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_038.jpg?alt=media&token=93446e09-e15f-4253-add9-a4ba78f05bdf'],
+    creator: '@westrosemedia',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -149,6 +184,41 @@ export default function CalgaryPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-black">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-8">
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-black">How much does brand photography cost in Calgary?</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Brand photography packages in Calgary start at $2,500 for a comprehensive session including professional photography, content strategy, and social media assets. Investment varies based on session type, location, and deliverables needed.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-black">Where to book a brand photoshoot in Calgary?</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                You can book your Calgary brand photoshoot directly through West Rose Media. We offer both studio and on-location sessions throughout Calgary, including luxury venues, outdoor locations, and your business premises.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-black">What is included in a brand photography package?</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Our Calgary brand photography packages include professional photography, content strategy consultation, edited high-resolution images, social media assets, and usage rights. We also provide guidance on how to use your photos for maximum business impact.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-black">How to get luxury brand photos in Calgary?</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                To get luxury brand photos in Calgary, work with a professional brand photographer who understands your business goals. We specialize in creating high-end, editorial-style photography that elevates your brand and attracts your ideal clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -175,6 +245,51 @@ export default function CalgaryPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does brand photography cost in Calgary?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Brand photography packages in Calgary start at $2,500 for a comprehensive session including professional photography, content strategy, and social media assets. Investment varies based on session type, location, and deliverables needed."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where to book a brand photoshoot in Calgary?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can book your Calgary brand photoshoot directly through West Rose Media. We offer both studio and on-location sessions throughout Calgary, including luxury venues, outdoor locations, and your business premises."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is included in a brand photography package?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Calgary brand photography packages include professional photography, content strategy consultation, edited high-resolution images, social media assets, and usage rights. We also provide guidance on how to use your photos for maximum business impact."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How to get luxury brand photos in Calgary?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "To get luxury brand photos in Calgary, work with a professional brand photographer who understands your business goals. We specialize in creating high-end, editorial-style photography that elevates your brand and attracts your ideal clients."
+                }
+              }
+            ]
+          }),
+        }}
+      />
     </div>
   );
 }

@@ -25,30 +25,59 @@ const cormorantGaramond = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: "West Rose Media | Luxury Personal Branding for Entrepreneurs in Canada",
-  description: "Transform your brand with luxury content creation, personal branding, and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs. ICONS by West Rose Media.",
-  keywords: "luxury personal branding, entrepreneurs Canada, content creation, mastermind retreats, personal brand photography, business coaching, luxury lifestyle, Canadian entrepreneurs",
+  title: "Stephanie Rose | Luxury Brand Photographer & Social Media Strategist | Calgary AB",
+  description: "Stephanie Rose is Calgary's premier luxury brand photographer and social media strategist. Transform your business with professional brand photography, content strategy, and personal branding for entrepreneurs across Canada. Book your luxury brand photoshoot today.",
+  keywords: "Stephanie Rose, brand photographer Calgary, luxury brand photography, social media strategist, personal branding photographer, business photography Calgary, content creation, brand strategy, entrepreneur photography, Calgary photographer, social media help, brand photoshoot, professional headshots Calgary, business branding, content marketing, luxury lifestyle photography, Canadian entrepreneurs, West Rose Media, ICON Society, mastermind retreats",
+  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
+  creator: "Stephanie Rose",
+  publisher: "West Rose Media",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://westrosemedia.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: "West Rose Media | Luxury Personal Branding for Entrepreneurs",
-    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs.",
-    type: "website",
-    locale: "en_CA",
+    title: "Stephanie Rose | Luxury Brand Photographer & Social Media Strategist | Calgary AB",
+    description: "Calgary's premier luxury brand photographer and social media strategist. Professional brand photography and content strategy for entrepreneurs across Canada.",
+    url: 'https://westrosemedia.com',
+    siteName: 'West Rose Media',
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7',
+        width: 1200,
+        height: 630,
+        alt: 'Stephanie Rose - Calgary Luxury Brand Photographer and Social Media Strategist',
+      },
+    ],
+    locale: 'en_CA',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "West Rose Media | Luxury Personal Branding for Entrepreneurs",
-    description: "Transform your brand with luxury content creation and mastermind retreats. Join Canada's most exclusive community of ambitious entrepreneurs.",
+    card: 'summary_large_image',
+    title: 'Stephanie Rose | Luxury Brand Photographer & Social Media Strategist',
+    description: 'Calgary\'s premier luxury brand photographer and social media strategist. Professional brand photography and content strategy for entrepreneurs.',
+    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
+    creator: '@westrosemedia',
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'your-google-verification-code', // You'll need to add your actual verification code
   },
 };
 // Force deployment update - latest changes
