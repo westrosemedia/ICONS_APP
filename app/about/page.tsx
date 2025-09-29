@@ -250,10 +250,8 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/mastermind"
-              className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors"
+              className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
               style={{backgroundColor: '#ff914d'}}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#e67e22'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#ff914d'}
             >
               Join the Mastermind
             </Link>
