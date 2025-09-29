@@ -21,7 +21,7 @@ export default function MastermindPage() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Content & Tapping
             <br />
-            <span className="text-white/80">Mastermind + Retreat</span>
+            <span className="text-[#c1ff72]">Mastermind + Retreat</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
             Become the woman whose brand is seen, felt, and followed without burning out or playing small

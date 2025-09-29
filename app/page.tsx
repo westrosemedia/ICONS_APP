@@ -206,11 +206,6 @@ export default function HomePage() {
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
                 <Link href="/mastermind">Join the Mastermind</Link>
               </Button>
-              <div>
-                <p className="text-white/80 text-sm">
-                  Investment: $12,000 ($2,000 deposit + 6 monthly payments of $1,666)
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>

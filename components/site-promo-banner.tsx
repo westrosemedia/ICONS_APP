@@ -28,8 +28,8 @@ export default function SitePromoBanner() {
           </div>
           <div className="relative flex flex-col gap-2 p-4 md:flex-row md:items-center md:justify-between md:gap-6 md:p-5">
             <p className="text-white text-base md:text-lg leading-tight">
-              Do you want a luxury content weekend and weekly support from two of the best in the industry
-              <span className="text-white/60">. Content and Tapping Mastermind + Retreat. </span>
+              Step into six months of unstoppable growth. A luxury content retreat and weekly support from two industry leaders
+              <span className="text-[#c1ff72]">. Content and Tapping Mastermind + Retreat. </span>
             </p>
             <div className="flex items-center gap-3">
               <Link
