@@ -6,7 +6,6 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
-import SitePromoBanner from "@/components/site-promo-banner";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
@@ -114,6 +113,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
+                <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Mastermind
+                </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
                 </Link>
@@ -132,9 +134,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ) : null}
 
         <main className="w-full">{children}</main>
-
-        {/* Sitewide banner */}
-        <SitePromoBanner />
 
         <footer className="w-full border-t border-gray-200 mt-20">
           <div className="container-elegant py-12">

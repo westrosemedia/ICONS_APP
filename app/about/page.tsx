@@ -215,6 +215,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_177.jpg?alt=media&token=21413e35-7e22-43cc-aeb3-00de57bb2ea5"
+            alt="Stephanie Rose - Calgary Brand Photographer and Social Media Strategist for Entrepreneurs"
+            className="w-full h-auto rounded-lg shadow-2xl"
+            style={{ 
+              width: '100%',
+              height: 'auto',
+              objectFit: 'cover'
+            }}
+          />
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
