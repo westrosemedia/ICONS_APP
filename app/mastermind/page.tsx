@@ -24,13 +24,13 @@ export default function MastermindPage() {
             <span className="text-white/80">Mastermind + Retreat</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Become the woman whose brand is seen, felt, and followed — without burning out or playing small
+            Become the woman whose brand is seen, felt, and followed without burning out or playing small
           </p>
           <Link
             href="#apply"
             className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
           >
-            Apply Now
+            Join Now
           </Link>
         </div>
       </section>

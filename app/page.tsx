@@ -170,6 +170,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Content & Tapping Mastermind */}
+      <section className="relative section-padding overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
+          style={{
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285')",
+            backgroundPosition: "center center",
+            transform: "scale(1.05)"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 container-elegant text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-hero text-white mb-12 drop-shadow-lg">
+              Content & Tapping Mastermind
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-8 mb-12">
+              <p className="text-editorial text-white/90">
+                Become the woman whose brand is seen, felt, and followed without burning out or playing small.
+              </p>
+              <p className="text-editorial text-white/90">
+                A 6-month mastermind experience combining emotional mastery (Tapping with Jackie) + magnetic marketing (Content with Stephanie) to help you scale your visibility, elevate your brand, and be seen as the leader you already are.
+              </p>
+              <p className="text-editorial text-white/90">
+                Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
+                <Link href="/mastermind">Join the Mastermind</Link>
+              </Button>
+              <div>
+                <p className="text-white/80 text-sm">
+                  Investment: $12,000 ($2,000 deposit + 6 monthly payments of $1,666)
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Powerful Personal Brand */}=
       <section className="relative section-padding overflow-hidden">
         <div 
