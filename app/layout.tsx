@@ -175,3 +175,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+// Force deployment update - Mon Sep 29 15:18:35 MDT 2025
