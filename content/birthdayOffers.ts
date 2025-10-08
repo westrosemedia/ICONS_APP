@@ -12,7 +12,7 @@ export const birthdayOffers = [
       "Clarity on your next moves in real time",
     ],
     ctaText: "Grab your spot",
-    ctaHref: "/contact", // replace with direct checkout link if you have it
+    ctaHref: "https://buy.stripe.com/14A4gyeJiaPj0f94gR87K0R",
     ribbon: "Limited window",
   },
   {
@@ -44,7 +44,7 @@ export const birthdayOffers = [
       "Clear plan that compounds each month",
     ],
     ctaText: "Apply now",
-    ctaHref: "/contact",
+    ctaHref: "/book/icon",
     ribbon: "Application",
   },
   {
