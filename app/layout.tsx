@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import StickyBanner from "@/components/StickyBanner";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -168,6 +169,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
         
         <StructuredData />
+        <StickyBanner />
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
