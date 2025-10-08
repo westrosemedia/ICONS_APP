@@ -76,7 +76,7 @@ export const birthdayOffers = [
       "Immediate strategy with a clear plan",
     ],
     ctaText: "Request dates",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/aFabJ0bx6g9D1jd6oZ87K0I",
     ribbon: "Very limited",
   },
 ];
