@@ -28,7 +28,7 @@ export const birthdayOffers = [
       "Two 60 minute strategy calls",
     ],
     ctaText: "Book the shoot",
-    ctaHref: "/contact", // replace with checkout or intake
+    ctaHref: "https://buy.stripe.com/9B69ASfNmbTn7HB7t387K0S",
     ribbon: "Ends Oct 13",
   },
   {
