@@ -82,7 +82,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
                 alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
                 fill
                 className="object-cover"
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div className="mb-12">
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_012.jpg?alt=media&token=d22f0bf0-f15c-458c-bcc7-421c4006bc28"
                 alt="Stephanie Rose - Personal Branding Photographer and Business Coach Story"
                 fill
                 className="object-cover"
