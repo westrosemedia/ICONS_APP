@@ -17,7 +17,7 @@ export default function StickyBanner() {
   return (
     <div className="fixed bottom-4 inset-x-4 z-50">
       <div className="mx-auto max-w-4xl rounded-2xl bg-black text-white px-4 py-3 shadow-2xl flex items-center justify-between gap-3">
-        <span className="text-sm">Birthday Week offers are live now. Prices revert after Oct 13.</span>
+        <span className="text-sm">Birthday Week offers are live now. Offers end Oct 13.</span>
         <div className="flex items-center gap-2">
           <Link href="/birthday-week" className="rounded-xl bg-white text-black px-3 py-2 text-sm font-semibold">
             See offers
