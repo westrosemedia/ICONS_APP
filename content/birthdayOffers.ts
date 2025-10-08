@@ -48,22 +48,6 @@ export const birthdayOffers = [
     ribbon: "Application",
   },
   {
-    id: "icon-society",
-    name: "ICON Society Annual Access",
-    price: "$777",
-    tag: "Community",
-    blurb:
-      "Join the movement. Masterclasses, directory, collaborations, and live support. Be in rooms where people make things happen.",
-    bullets: [
-      "One year inside the ICON Society",
-      "Member directory and collab threads",
-      "Monthly masterclasses and support",
-    ],
-    ctaText: "Join now",
-    ctaHref: "/contact",
-    ribbon: "Member favorite",
-  },
-  {
     id: "vip-day",
     name: "VIP Content Day",
     price: "$5000",
