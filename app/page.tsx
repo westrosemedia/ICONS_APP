@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
@@ -19,6 +20,8 @@ export default function HomePage() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
           style={{ 
             width: '100vw',
             height: '100vh',
@@ -96,16 +99,14 @@ export default function HomePage() {
       {/* Featured Image Showcase */}
       <section className="relative w-full bg-black overflow-hidden">
         <div className="relative w-full h-[70vh] min-h-[500px]">
-          <img
+          <Image
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_18.jpg?alt=media&token=e193eea2-a066-46df-b0b6-781a781ead76"
             alt="Luxury brand photography and content creation for entrepreneurs in Canada - West Rose Media"
-            className="w-full h-full object-cover object-center"
-            style={{ 
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center center'
-            }}
+            fill
+            className="object-cover"
+            style={{ objectPosition: "center 30%" }}
+            sizes="100vw"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
           
@@ -167,16 +168,14 @@ export default function HomePage() {
             </div>
             
             {/* Featured Image */}
-            <div className="mt-16 max-w-2xl mx-auto">
-              <img
+            <div className="mt-16 max-w-2xl mx-auto relative aspect-[4/5]">
+              <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
                 alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
-                className="w-full h-auto rounded-lg shadow-2xl"
-                style={{ 
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'cover'
-                }}
+                fill
+                className="object-cover rounded-lg shadow-2xl"
+                sizes="(max-width: 768px) 100vw, 672px"
+                loading="lazy"
               />
             </div>
           </motion.div>

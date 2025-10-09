@@ -24,7 +24,9 @@ export default function BirthdayWeekPage() {
             alt="Stephanie Rose - Birthday Week Special Offers"
             fill
             className="object-cover object-center"
+            sizes="100vw"
             priority
+            quality={85}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -53,6 +55,9 @@ export default function BirthdayWeekPage() {
             alt="West Rose Media Birthday Week"
             fill
             className="object-cover object-center"
+            sizes="100vw"
+            quality={85}
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-white/90" />
         </div>
@@ -87,6 +92,9 @@ export default function BirthdayWeekPage() {
             alt="Stephanie Rose - West Rose Media Birthday Week"
             fill
             className="object-cover object-center"
+            sizes="100vw"
+            quality={85}
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>

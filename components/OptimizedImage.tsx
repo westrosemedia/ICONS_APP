@@ -30,12 +30,12 @@ export default function OptimizedImage({
   placeholder = "empty",
   blurDataURL,
   sizes,
-  quality = 75,
+  quality = 85,
   fill = false,
   style,
   ...props
 }: OptimizedImageProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!priority);
   const [hasError, setHasError] = useState(false);
 
   const handleLoad = () => {
