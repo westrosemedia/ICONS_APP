@@ -45,9 +45,19 @@ export default function BirthdayWeekPage() {
         </div>
       </section>
 
-      {/* Offers Section */}
-      <section className="relative isolate bg-white">
-        <div className="mx-auto max-w-6xl px-6 pt-10 pb-16 md:pt-16 md:pb-20">
+      {/* Offers Section with Background */}
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/DJI_0112.jpg?alt=media&token=fbb4c92f-8d48-4b23-8e89-4abebc7652f6"
+            alt="West Rose Media Birthday Week"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-white/90" />
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-10 pb-16 md:pt-16 md:pb-20">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">Choose Your Offer</h2>
             <p className="text-lg text-gray-700">Four exclusive opportunities. One powerful week.</p>
@@ -62,6 +72,19 @@ export default function BirthdayWeekPage() {
           <div className="mt-16 mx-auto max-w-3xl text-center text-sm text-gray-600">
             Prices revert after the deadline. Availability may be limited due to scheduling. If you have questions, contact us and we will guide you to the right fit.
           </div>
+        </div>
+      </section>
+
+      {/* Featured Image Section */}
+      <section className="relative w-full bg-black overflow-hidden">
+        <div className="relative w-full h-[70vh] min-h-[500px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_18.jpg?alt=media&token=e193eea2-a066-46df-b0b6-781a781ead76"
+            alt="Stephanie Rose - West Rose Media Birthday Week"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
       </section>
     </>
