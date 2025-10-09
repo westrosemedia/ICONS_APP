@@ -8,7 +8,7 @@ export const birthdayOffers = [
       "Spend a full day in my ear. Strategy, storytelling, content ideas, mindset support. We move fast and we make decisions.",
     bullets: [
       "One full day of voice note coaching",
-      "On call between 9 am and 4 pm America Edmonton",
+      "On call for real time support and guidance",
       "Clarity on your next moves in real time",
     ],
     ctaText: "Grab your spot",
