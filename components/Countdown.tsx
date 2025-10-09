@@ -22,13 +22,13 @@ export default function Countdown() {
       ) : (
         <div className="grid grid-cols-4 gap-3 text-center">
           {[
-            { label: "days", value: days },
-            { label: "hours", value: hours },
-            { label: "minutes", value: minutes },
-            { label: "seconds", value: seconds },
+            { label: "days", value: days, color: "#E46C32" },
+            { label: "hours", value: hours, color: "#5EB298" },
+            { label: "minutes", value: minutes, color: "#E46C32" },
+            { label: "seconds", value: seconds, color: "#5EB298" },
           ].map((b) => (
             <div key={b.label} className="bg-black text-white rounded-2xl py-4">
-              <div className="text-3xl font-semibold tracking-tight">{String(b.value).padStart(2, "0")}</div>
+              <div className="text-3xl font-semibold tracking-tight" style={{color: b.color}}>{String(b.value).padStart(2, "0")}</div>
               <div className="text-xs uppercase opacity-80">{b.label}</div>
             </div>
           ))}

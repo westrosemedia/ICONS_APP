@@ -13,10 +13,20 @@ type Offer = {
 };
 
 export default function OfferCard({ offer }: { offer: Offer }) {
+  const ribbonColors: Record<string, string> = {
+    "Limited window": "#E46C32",
+    "Ends Oct 13": "#5EB298",
+    "Application": "#E46C32",
+    "Very limited": "#5EB298",
+  };
+  
   return (
     <div className="relative bg-white rounded-3xl shadow-xl ring-1 ring-black/5 overflow-hidden hover:shadow-2xl transition-all">
       {offer.ribbon ? (
-        <div className="absolute right-3 top-3 bg-black text-white text-xs px-3 py-1 rounded-full">
+        <div 
+          className="absolute right-3 top-3 text-white text-xs px-3 py-1 rounded-full font-semibold"
+          style={{backgroundColor: ribbonColors[offer.ribbon] || "#000000"}}
+        >
           {offer.ribbon}
         </div>
       ) : null}

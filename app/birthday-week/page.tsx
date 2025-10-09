@@ -59,8 +59,12 @@ export default function BirthdayWeekPage() {
         
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-10 pb-16 md:pt-16 md:pb-20">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">Choose Your Offer</h2>
-            <p className="text-lg text-gray-700">Four exclusive opportunities. One powerful week.</p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">
+              Choose Your <span style={{color: '#E46C32'}}>Offer</span>
+            </h2>
+            <p className="text-lg text-gray-700">
+              Four exclusive opportunities. One <span style={{color: '#5EB298'}} className="font-semibold">powerful</span> week.
+            </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
