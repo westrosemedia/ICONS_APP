@@ -3,19 +3,19 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada",
-  description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business.",
+  title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada",
+  description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business.",
   keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, content creation mastermind, tapping therapy business, Kelowna retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching",
   openGraph: {
-    title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching",
-    description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
     type: "website",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Content & Tapping Mastermind + Retreat | Luxury Business Coaching",
-    description: "Join Canada's most exclusive 6-month mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
   },
 };
 
@@ -31,7 +31,7 @@ export default function MastermindPage() {
             fill
             className="object-cover object-center"
             priority
-            title="Content & Tapping Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada"
+            title="Movement Makers Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -149,7 +149,7 @@ export default function MastermindPage() {
               $2,000 deposit + 6 monthly payments of $1,666
             </p>
             <p className="text-lg text-white/70 mb-8">
-              6-month mastermind experience with luxury retreat included
+              6-month Movement Makers Mastermind experience with luxury retreat included
             </p>
             <div className="text-sm text-white/60 mb-8">
               <p>• Luxury Content Retreat: March 6-9th in Kelowna BC, Canada</p>
@@ -162,7 +162,7 @@ export default function MastermindPage() {
               rel="noopener noreferrer"
               className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
             >
-              Join the Mastermind
+              Join the Movement Makers Mastermind
             </Link>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function MastermindPage() {
               rel="noopener noreferrer"
               className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
             >
-              Join the Mastermind Now
+              Join the Movement Makers Mastermind Now
             </Link>
             
             <p className="text-sm text-white/60 mt-4">

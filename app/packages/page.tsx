@@ -54,7 +54,7 @@ export default function PackagesPage() {
               Ready for the Next Level?
             </h2>
             <p className="text-editorial text-white/90 max-w-3xl mx-auto mb-12">
-              Join Canada's most exclusive 6-month mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included.
+              Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included.
             </p>
           </motion.div>
 
@@ -94,7 +94,7 @@ export default function PackagesPage() {
               <div className="text-center">
                 <Button asChild size="lg" className="bg-[#c1ff72] text-black hover:bg-[#a8e65a] transition-colors">
                   <Link href="/mastermind">
-                    Join the Mastermind
+                    Join the Movement Makers Mastermind
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>

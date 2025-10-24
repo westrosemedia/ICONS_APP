@@ -115,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Packages
                 </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Mastermind
+                  Movement Makers Mastermind
                 </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault

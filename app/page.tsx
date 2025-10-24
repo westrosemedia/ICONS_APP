@@ -58,7 +58,7 @@ export default function HomePage() {
             </Button>
             <Button asChild size="lg" variant="outline" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 border-white text-white hover:bg-white hover:text-black">
               <Link href="/mastermind">
-                Join the Mastermind
+                Join the Movement Makers Mastermind
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -247,14 +247,14 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-hero text-white mb-12 drop-shadow-lg">
-              Content & Tapping Mastermind
+              Movement Makers Mastermind
             </h2>
             <div className="max-w-4xl mx-auto space-y-8 mb-12">
               <p className="text-editorial text-white/90">
                 Become the woman whose brand is seen, felt, and followed without burning out or playing small.
               </p>
               <p className="text-editorial text-white/90">
-                A 6-month mastermind experience combining emotional mastery (Tapping with Jackie) + magnetic marketing (Content with Stephanie) to help you scale your visibility, elevate your brand, and be seen as the leader you already are.
+                A 6-month Movement Makers Mastermind experience combining emotional mastery (Tapping with Jackie) + magnetic marketing (Content with Stephanie) to help you scale your visibility, elevate your brand, and be seen as the leader you already are.
               </p>
               <p className="text-editorial text-white/90">
                 Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
@@ -262,7 +262,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                <Link href="/mastermind">Join the Mastermind</Link>
+                <Link href="/mastermind">Join the Movement Makers Mastermind</Link>
               </Button>
             </div>
           </motion.div>
