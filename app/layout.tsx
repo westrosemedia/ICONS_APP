@@ -9,6 +9,7 @@ import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PowerHourBanner from "@/components/PowerHourBanner";
+import PinterestVerification from "@/components/PinterestVerification";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -78,6 +79,9 @@ export const metadata = {
   },
   verification: {
     google: 'your-google-verification-code', // You'll need to add your actual verification code
+  },
+  other: {
+    'p:domain_verify': '12b6f42affb7537b4f78a6f420394653',
   },
 };
 // Force deployment update - latest changes
@@ -170,6 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <PowerHourBanner />
         <StructuredData />
+        <PinterestVerification />
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
