@@ -8,7 +8,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
-import PowerHourBanner from "@/components/PowerHourBanner";
 import PinterestVerification from "@/components/PinterestVerification";
 
 const dmSans = DM_Sans({
@@ -172,7 +171,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         
-        <PowerHourBanner />
         <StructuredData />
         <PinterestVerification />
         <PerformanceMonitor />
