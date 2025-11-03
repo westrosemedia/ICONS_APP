@@ -30,7 +30,7 @@ export default function LoginPage() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-hero text-black mb-2">ICONS Portal</h1>
+          <h1 className="text-hero text-black mb-2">Client Portal</h1>
           <p className="text-editorial text-gray-600 mb-12">
             Access your exclusive content and resources
           </p>

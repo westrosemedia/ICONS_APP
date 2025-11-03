@@ -98,15 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
             <div className="container-elegant py-4 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-3 group">
-                <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/icons%20logo%20.png?alt=media"
-                  alt="ICONS"
-                  width={32}
-                  height={32}
-                  priority
-                  className="group-hover:scale-105 transition-transform duration-200"
-                />
-                <span className="text-elegant text-xl tracking-wide">ICONS</span>
+                <span className="text-elegant text-xl tracking-wide">West Rose Media</span>
               </Link>
               
               {/* Desktop Navigation */}
@@ -118,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Packages
                 </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Movement Makers Mastermind
+                  Mastermind
                 </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
@@ -143,13 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container-elegant py-12">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                       <div className="flex items-center gap-3">
-                        <Image
-                          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/icons%20logo%20.png?alt=media"
-                          alt="ICONS"
-                          width={24}
-                          height={24}
-                        />
-                        <span className="text-elegant text-lg">ICONS</span>
+                        <span className="text-elegant text-lg">West Rose Media</span>
                       </div>
               <div className="text-center md:text-right">
                 <div className="mb-4">

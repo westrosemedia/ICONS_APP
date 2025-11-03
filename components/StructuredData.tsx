@@ -44,9 +44,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "West Rose Media",
-    "alternateName": ["ICONS by West Rose Media", "West Rose Media Photography"],
+    "alternateName": ["West Rose Media Photography"],
     "url": "https://westrosemedia.com",
-    "logo": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/icons%20logo%20.png?alt=media",
     "description": "Luxury personal branding, content creation, and mastermind retreats for entrepreneurs in Canada. Professional brand photography and social media strategy.",
     "foundingDate": "2020",
     "founder": {
@@ -96,7 +95,7 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Content & Tapping Mastermind + Retreat",
+            "name": "Movement Makers Mastermind + Retreat",
             "description": "6-month mastermind combining emotional mastery and magnetic marketing for entrepreneurs",
             "provider": {
               "@type": "Organization",
@@ -147,7 +146,7 @@ export default function StructuredData() {
   const mastermindSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Content & Tapping Mastermind + Retreat",
+    "name": "Movement Makers Mastermind + Retreat",
     "description": "6-month luxury mastermind combining emotional mastery (Tapping) + magnetic marketing (Content) for female entrepreneurs in Canada",
     "startDate": "2024-03-06",
     "endDate": "2024-03-09",

@@ -44,7 +44,7 @@ export default function HomePage() {
           className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
         >
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
-            Where ICONS come to rise.
+            Where brands come to rise.
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
             Luxury personal branding photography and business coaching for female entrepreneurs in Calgary, Alberta and across Canada. The future of personal branding is cinematic, strategic, and unforgettable.
@@ -182,53 +182,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The ICON Society */}
-      <section className="relative section-padding overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
-          style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2148.jpg?alt=media&token=b84171c2-0c44-40e3-802d-55e90ab4f8f7')",
-            backgroundPosition: "center 30%",
-            transform: "scale(1.05)"
-          }}
-        />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 container-elegant text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-hero text-white mb-12 drop-shadow-lg">
-              The ICON Society
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-8 mb-12">
-              <p className="text-editorial text-white/90">
-                You weren't meant to build your legacy alone.
-              </p>
-              <p className="text-editorial text-white/90">
-                The ICON Society is our private community for rising entrepreneurs. A space where bold, visionary leaders get seen, paid, and supported. This is where real influence is built - in rooms where everyone is playing big.
-              </p>
-              <p className="text-editorial text-white/90">
-                This isn't a cheerleader circle. It's a power table.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                <Link href="/icons-society">Join the ICON Society</Link>
-              </Button>
-              <div>
-                <Link href="/login" className="text-white/80 underline hover:text-white transition-colors">
-                  Already a member? Log in here.
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Content & Tapping Mastermind */}
+      {/* Movement Makers Mastermind */}
       <section className="relative section-padding overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
@@ -246,6 +200,11 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
           >
+            <div className="mb-6">
+              <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold">
+                Black Friday Special: $2,000 OFF - Sign Up Now!
+              </div>
+            </div>
             <h2 className="text-hero text-white mb-12 drop-shadow-lg">
               Movement Makers Mastermind
             </h2>
@@ -258,6 +217,9 @@ export default function HomePage() {
               </p>
               <p className="text-editorial text-white/90">
                 Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
+              </p>
+              <p className="text-editorial text-[#c1ff72] font-semibold">
+                Special pricing valid until Black Friday - sign up now to secure your spot
               </p>
             </div>
             <div className="space-y-4">
@@ -320,7 +282,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-hero text-black mb-8">
-              Welcome back, ICONS.
+              Welcome back.
             </h2>
             <p className="text-editorial max-w-2xl mx-auto mb-12">
               Access your dashboard and get back to building your empire.
@@ -355,7 +317,7 @@ export default function HomePage() {
                 author: "Abby Belin"
               },
               {
-                quote: "Stephanie is the real deal. She's grounded, raw, honest, and brings undeniable fire to every space she leads. I've worked with her inside the Icon Society - the value is consistently next-level. If you're serious about building an iconic brand, you'd be missing out not to have her in your corner.",
+                quote: "Stephanie is the real deal. She's grounded, raw, honest, and brings undeniable fire to every space she leads. The value is consistently next-level. If you're serious about building an iconic brand, you'd be missing out not to have her in your corner.",
                 author: "Gigi Hunt"
               },
               {
