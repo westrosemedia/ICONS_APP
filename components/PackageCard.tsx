@@ -28,7 +28,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
             src={pkg.imageUrl}
             alt={pkg.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            style={pkg.key === "ppb" ? { objectPosition: "center 35%" } : undefined}
+            style={pkg.key === "ppb" ? { objectPosition: "center 25%" } : undefined}
           />
         </div>
         
@@ -37,7 +37,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
           <div className="mb-8">
             <h3 className="text-elegant text-2xl mb-4">{pkg.title}</h3>
             <p className="text-editorial mb-6">{pkg.blurb}</p>
-            {pkg.priceLabel && (
+            {pkg.priceLabel && pkg.priceLabel.trim() !== "" && (
               <div className="text-elegant text-xl font-semibold text-accent mb-8">
                 {pkg.priceLabel}
               </div>
@@ -61,6 +61,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
               {pkg.key === "lite" && "Start WRM Lite"}
               {pkg.key === "immersion" && "Plan Immersion"}
               {pkg.key === "icon" && "Become an ICON"}
+              {pkg.key === "ppb" && "Learn More"}
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
