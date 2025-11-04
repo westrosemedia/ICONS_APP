@@ -231,13 +231,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Powerful Personal Brand */}=
+      {/* Powerful Personal Brand */}
       <section className="relative section-padding overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
           style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6175.jpg?alt=media&token=0733ba88-1b27-4ca2-be4d-924b8c175e74')",
-            backgroundPosition: "center 25%",
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47')",
+            backgroundPosition: "center center",
             transform: "scale(1.05)"
           }}
         />
@@ -254,18 +254,21 @@ export default function HomePage() {
             </h2>
             <div className="max-w-4xl mx-auto space-y-8 mb-12">
               <p className="text-editorial text-white/90">
-                8 Week Live Course — The signature program of West Rose Media.
+                Build your legacy, amplify your voice, and become iconic.
               </p>
               <p className="text-editorial text-white/90">
-                Build a brand that carries you through every season. This is the exact framework I am known for, completely revamped and leveled up for maximum transformation.
+                A step-by-step journey for ambitious women and nonbinary leaders ready to build something bigger than themselves. If 2026 is the year you plan to launch your podcast, publish your book, deliver your TED Talk, or take the keynote spot at the biggest event of your career, this is where you step into that future.
               </p>
               <p className="text-editorial text-white/90">
-                First cohort begins October 27. Presale: $2,000 | Regular: $3,000
+                Choose The One Year Experience or The 16 Week Intensive. Biweekly Q&A and pitch sessions included.
               </p>
             </div>
             <div className="space-y-4">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-                <Link href="/powerfulpersonalbrand">Learn More</Link>
+                <Link href="/ppb">
+                  Learn More About Powerful Personal Brand
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
               </Button>
             </div>
           </motion.div>

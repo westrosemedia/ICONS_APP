@@ -52,14 +52,14 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "ppb",
     title: "Powerful Personal Brand",
-    blurb: "Signature West Rose Media program. Build a brand that carries you through every season.",
-    priceLabel: "Presale: $2,000 | Regular: $3,000",
+    blurb: "Build your legacy, amplify your voice, and become iconic. A step-by-step journey for ambitious leaders ready to launch podcasts, publish books, deliver TED Talks, and step onto the biggest stages.",
+    priceLabel: "Black Friday: $3,500 / $2,500 | Regular: $5,000 / $3,000",
     highlights: [
-      { label: "8 week live course" },
-      { label: "October 27 start or save your January seat" },
-      { label: "Signature program of West Rose Media" }
+      { label: "The One Year Experience or 16 Week Intensive" },
+      { label: "Biweekly Q&A and pitch sessions" },
+      { label: "Transform your personal brand into a legacy" }
     ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4732.jpg?alt=media&token=01261972-fb22-47b0-b772-1fd2a6817369",
-    ctaHref: "/powerfulpersonalbrand"
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47",
+    ctaHref: "/ppb"
   }
 ];
