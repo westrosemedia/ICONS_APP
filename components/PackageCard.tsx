@@ -28,6 +28,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
             src={pkg.imageUrl}
             alt={pkg.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            style={pkg.key === "ppb" ? { objectPosition: "center 35%" } : undefined}
           />
         </div>
         
@@ -36,9 +37,11 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
           <div className="mb-8">
             <h3 className="text-elegant text-2xl mb-4">{pkg.title}</h3>
             <p className="text-editorial mb-6">{pkg.blurb}</p>
-            <div className="text-elegant text-xl font-semibold text-accent mb-8">
-              {pkg.priceLabel}
-            </div>
+            {pkg.priceLabel && (
+              <div className="text-elegant text-xl font-semibold text-accent mb-8">
+                {pkg.priceLabel}
+              </div>
+            )}
           </div>
           
           {/* Highlights */}

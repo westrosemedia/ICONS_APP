@@ -84,17 +84,13 @@ export default function PPBPage() {
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Powerful Personal Brand Program - Build Your Legacy"
             fill
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: "center 35%" }}
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
-          {isBF && isClient && (
-            <div className="mb-6">
-              <Countdown endDate={BF_END_ISO} />
-            </div>
-          )}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white mb-6">
             Build Your Legacy. Amplify Your Voice. Become Iconic.
           </h1>
@@ -113,6 +109,15 @@ export default function PPBPage() {
           </div>
         </div>
       </section>
+
+      {/* Black Friday Countdown */}
+      {isBF && isClient && (
+        <section className="bg-gray-50 py-8">
+          <div className="max-w-5xl mx-auto px-6">
+            <Countdown endDate={BF_END_ISO} />
+          </div>
+        </section>
+      )}
 
       <main className="mx-auto max-w-5xl px-6 py-16 md:py-24">
 
@@ -135,6 +140,7 @@ export default function PPBPage() {
                 alt="Ambitious leaders ready to build their legacy"
                 fill
                 className="object-cover"
+                style={{ objectPosition: "center 35%" }}
               />
             </div>
           </div>
@@ -152,74 +158,91 @@ export default function PPBPage() {
           </p>
         </section>
 
-        {/* What's Included – High Level Journey */}
+        {/* What's Included – The 16 Week Journey */}
         <section className="mt-16 md:mt-20 space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">What You Get Inside This Experience</h2>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-            You get the tools, the strategy, and real world practice to amplify your voice and your
-            impact. Here is the high level journey.
-          </p>
-
           <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8">
             <Image
               src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_096.jpg?alt=media&token=1a62d433-ffc3-4b92-8e5d-5681d2d97e0b"
               alt="Powerful Personal Brand Program Experience"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 35%" }}
             />
           </div>
 
-          <div className="rounded-2xl bg-gray-50 p-8 md:p-12 border border-gray-200">
-            <ul className="space-y-4 list-disc pl-6 text-lg text-gray-700">
-              <li>
-                <strong>Weeks 1 to 2:</strong> Define your purpose and map your vision. Know exactly why you are here
-                and where you are going.
-              </li>
-              <li>
-                <strong>Weeks 3 to 4:</strong> Build unshakable confidence and set boundaries that let you show up
-                boldly without burnout.
-              </li>
-              <li>
-                <strong>Week 5:</strong> Own your story and lead your audience with clarity. Story and leadership in
-                one power packed week.
-              </li>
-              <li>
-                <strong>Weeks 6 to 7:</strong> Brand clarity deep dive. First a full audit, then refine your message
-                and visuals so your ideal client says yes.
-              </li>
-              <li>
-                <strong>Week 8:</strong> Ideal client clarity. Speak directly to the real person you want to reach.
-              </li>
-              <li>
-                <strong>Week 9:</strong> Audience over influence. Prioritize connection and engagement over vanity
-                metrics.
-              </li>
-              <li>
-                <strong>Week 10:</strong> Strategic presence. Races and reps planning for launches and daily content.
-              </li>
-              <li>
-                <strong>Week 11:</strong> Create magnetic content that feels alive and draws your people in. Build a
-                system so batching fits your real life.
-              </li>
-              <li>
-                <strong>Week 12:</strong> Map your client transformation. Before, bridge, and after with stories that
-                show the journey.
-              </li>
-              <li>
-                <strong>Week 13:</strong> Story as strategy. Select key moments and structure them for many formats,
-                including a TED Talk outline.
-              </li>
-              <li>
-                <strong>Week 14:</strong> Prepare your launch or pitch. Get your offer or pitch ready to share.
-              </li>
-              <li>
-                <strong>Week 15:</strong> Visibility era. Share it with the world and gather feedback you can use.
-              </li>
-            </ul>
-            <p className="mt-8 text-base text-gray-600 italic">
-              After you finish, you will have the tools, the confidence, and the strategy to keep
-              growing. Launch offers, pitch to TED, or build a legacy that lasts.
-            </p>
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">The 16 Week Journey</h2>
+              <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                The Powerful Personal Brand program is built as a step-by-step journey designed to take you from invisible to unforgettable. Every week builds on the last, guiding you to master your story, your strategy, and your presence so you can lead with confidence, clarity, and influence that lasts.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 1–2: Purpose</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 1:</strong> Defining Your Why – Reflect on your story, values, and mission.</li>
+                  <li><strong>Week 2:</strong> Vision Mapping – Build a detailed vision for your brand and future.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 3–4: Empowerment</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 3:</strong> Confidence Building – Cultivate self-trust and embodied leadership.</li>
+                  <li><strong>Week 4:</strong> Visibility and Boundaries – Step into visibility while protecting your energy and story.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Week 5: Leadership</h3>
+                <p className="text-lg text-gray-700">
+                  Owning Your Story and Leading Your Audience – Use your personal story as a tool of leadership and connection.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 6–8: Clarity</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 6:</strong> Brand Audit – Review your current brand, voice, and visuals to see what needs alignment.</li>
+                  <li><strong>Week 7:</strong> Refining Your Brand – Polish your voice, visuals, and messaging for magnetic clarity.</li>
+                  <li><strong>Week 8:</strong> Ideal Client Clarity – Define the real person you are speaking to and learn their language.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 9–10: Audience and Strategy</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 9:</strong> Audience Over Influence – Build a loyal audience that cares, not vanity metrics.</li>
+                  <li><strong>Week 10:</strong> Strategic Presence – Plan your races and reps to stay consistent with launches and content.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 11–12: Presence and Content</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 11:</strong> Creating Magnetic Content – Make your content feel alive and sustainable.</li>
+                  <li><strong>Week 12:</strong> Client Transformation Path – Map your client's journey before, bridge, and after.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 13–14: Story and Strategy</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 13:</strong> Story as Strategy – Turn your story into a marketing engine and craft your TED-style narrative.</li>
+                  <li><strong>Week 14:</strong> Preparing Your Launch or Pitch – Translate everything into a clear offer or pitch that lands.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Weeks 15–16: Visibility Era</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li><strong>Week 15:</strong> Preparing Your Launch or Pitch – Finalize your launch materials and ready your message.</li>
+                  <li><strong>Week 16:</strong> Your Visibility Era – Go live, share your story, and embody the leader your audience needs.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -273,6 +296,7 @@ export default function PPBPage() {
                 alt="Stephanie Rose - Founder of West Rose Media and Creator of the Powerful Personal Brand Framework"
                 fill
                 className="object-cover"
+                style={{ objectPosition: "center 35%" }}
               />
             </div>
             <div className="order-1 md:order-2">
@@ -297,6 +321,7 @@ export default function PPBPage() {
               alt="Invest in Your Personal Brand"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 35%" }}
             />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold">Your Investment</h2>

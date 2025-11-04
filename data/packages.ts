@@ -53,7 +53,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     key: "ppb",
     title: "Powerful Personal Brand",
     blurb: "Build your legacy, amplify your voice, and become iconic. A step-by-step journey for ambitious leaders ready to launch podcasts, publish books, deliver TED Talks, and step onto the biggest stages.",
-    priceLabel: "Black Friday: $3,500 / $2,500 | Regular: $5,000 / $3,000",
+    priceLabel: "",
     highlights: [
       { label: "The One Year Experience or 16 Week Intensive" },
       { label: "Biweekly Q&A and pitch sessions" },
