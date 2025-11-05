@@ -41,7 +41,7 @@ export default function PPBPage() {
           blurb:
             "Get an entire year of support, biweekly Q and A and pitch sessions, and a full year to refine your brand and pitches.",
           priceMain: `$3,500 ${CURRENCY}`,
-          priceAlt: `12 month plan available at about $333.33 per month for a total of $4,000`,
+          priceAlt: "12 month payment plan available",
           notes: [
             "Biweekly Q and A calls for a full year",
             "Biweekly pitch sessions with feedback",
