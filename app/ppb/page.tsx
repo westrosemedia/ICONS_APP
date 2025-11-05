@@ -354,11 +354,30 @@ export default function PPBPage() {
             
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Your Investment</h2>
-              <p className="text-lg leading-relaxed text-gray-700">
-                {isBF
-                  ? "Black Friday pricing is live. Secure your spot now."
-                  : "Black Friday has ended. Current pricing is shown below."}
-              </p>
+              <p className="text-xl font-semibold mb-4 text-black">Program begins January 2026</p>
+              {isBF ? (
+                <div className="space-y-4">
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    <strong className="text-black">Black Friday Sale:</strong> This is a limited-time offer. Prices go up soon and will never be this low again.
+                  </p>
+                  <div className="bg-gray-50 border-l-4 border-black p-6 rounded-lg max-w-2xl mx-auto text-left">
+                    <p className="text-base font-semibold text-black mb-3">Regular Pricing:</p>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>The 16 Week Intensive: <span className="line-through">$3,500 USD</span></li>
+                      <li>The One Year Experience: <span className="line-through">$5,000 USD</span></li>
+                    </ul>
+                    <p className="text-base font-semibold text-black mt-4 mb-2">Black Friday Pricing (Ending Soon):</p>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>The 16 Week Intensive: $2,500 USD</li>
+                      <li>The One Year Experience: $3,500 USD</li>
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Black Friday has ended. Current pricing is shown below.
+                </p>
+              )}
             </div>
 
             <Script
