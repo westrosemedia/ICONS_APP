@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
+import Script from "next/script";
 import Countdown from "./Countdown";
 
 const BF_END_ISO = "2025-12-03T07:00:00Z"; // set your end time for Black Friday window
@@ -360,29 +361,14 @@ export default function PPBPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
-              {pricing.map((p, idx) => (
-                <div key={idx} className="bg-white border-2 border-gray-200 p-10 rounded-2xl hover:border-black transition-colors">
-                  <h3 className="text-3xl font-bold mb-4 text-black">{p.title}</h3>
-                  <p className="text-lg text-gray-700 mb-6">{p.blurb}</p>
-                  <p className="text-4xl md:text-5xl font-bold mb-4 text-black">{p.priceMain}</p>
-                  {p.priceAlt && <p className="text-base text-gray-600 mb-6">{p.priceAlt}</p>}
-                  {p.notes && (
-                    <ul className="list-disc space-y-3 pl-5 text-base text-gray-700 mb-8">
-                      {p.notes.map((n, i) => (
-                        <li key={i}>{n}</li>
-                      ))}
-                    </ul>
-                  )}
-                  <a
-                    href="#cta"
-                    className="inline-block rounded-xl bg-black px-8 py-4 text-white text-lg font-medium transition hover:opacity-90 w-full text-center"
-                  >
-                    {isBF ? "Claim Black Friday Pricing" : "Enroll Now"}
-                  </a>
-                </div>
-              ))}
-            </div>
+            <Script
+              src="https://js.stripe.com/v3/pricing-table.js"
+              strategy="lazyOnload"
+            />
+            <stripe-pricing-table
+              pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2"
+              publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"
+            />
           </div>
         </section>
 
