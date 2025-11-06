@@ -109,9 +109,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
-                <Link href="/ppb" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Powerful Personal Brand
-                </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Mastermind
                 </Link>
