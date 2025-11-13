@@ -204,8 +204,8 @@ export default function BlackFridayWaitlistPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-white/60 mb-4">
             Questions? Contact us at{" "}
-            <a href="mailto:hello@westrosemedia.com" className="text-[#c1ff72] hover:underline">
-              hello@westrosemedia.com
+            <a href="mailto:admin@westrosemedia.com" className="text-[#c1ff72] hover:underline">
+              admin@westrosemedia.com
             </a>
           </p>
         </div>

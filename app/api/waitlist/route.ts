@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendEmail, addContactToList } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,18 +22,38 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Here you would typically:
-    // 1. Save to database (Firebase, Supabase, etc.)
-    // 2. Send to email service (SendGrid, Mailchimp, etc.)
-    // 3. Add to CRM (HubSpot, etc.)
+    // Add contact to Resend list with Black Friday tag
+    const [firstName, ...lastNameParts] = (name || '').split(' ');
+    const lastName = lastNameParts.join(' ');
     
-    // For now, we'll just log it and return success
-    // You can integrate with your preferred service
-    console.log("Waitlist signup:", { name, email, timestamp: new Date().toISOString() });
+    const listResult = await addContactToList(
+      email, 
+      firstName, 
+      lastName, 
+      'Black Friday'
+    );
 
-    // TODO: Integrate with your email service or database
-    // Example: await addToMailchimp(email, name);
-    // Example: await saveToFirebase({ name, email, source: 'black-friday-waitlist' });
+    if (!listResult.success) {
+      console.error("Failed to add contact to list:", listResult.error);
+    }
+
+    // Send notification email
+    const emailContent = `
+New Black Friday Waitlist Signup:
+
+- Name: ${name}
+- Email: ${email}
+- Timestamp: ${new Date().toLocaleString()}
+
+---
+This signup was submitted from the Black Friday waitlist page.
+    `;
+
+    await sendEmail({
+      to: "admin@westrosemedia.com",
+      subject: "New Black Friday Waitlist Signup",
+      text: emailContent,
+    });
 
     return NextResponse.json(
       { success: true, message: "Successfully joined waitlist" },
