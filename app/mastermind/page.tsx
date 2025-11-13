@@ -144,23 +144,14 @@ export default function MastermindPage() {
             Investment
           </h2>
           <div className="bg-black/50 rounded-2xl p-8 border border-white/10">
-            <div className="mb-4">
-              <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold mb-4">
-                Black Friday Special: $2,000 OFF - Sign Up Now
-              </div>
-            </div>
             <div className="mb-2">
-              <span className="text-3xl md:text-4xl font-bold text-white/50 line-through mr-4">$12,000</span>
-              <span className="text-6xl md:text-7xl font-bold">$10,000</span>
+              <span className="text-6xl md:text-7xl font-bold">$12,000</span>
             </div>
             <p className="text-xl text-white/80 mb-4">
-              $2,000 deposit + 6 monthly payments of $1,333
+              $2,000 deposit + 6 monthly payments of $1,667
             </p>
             <p className="text-lg text-white/70 mb-2">
               6-month Movement Makers Mastermind experience with luxury retreat included
-            </p>
-            <p className="text-base text-[#c1ff72] mb-8 font-semibold">
-              Special pricing valid until Black Friday - sign up now to secure your spot
             </p>
             <div className="text-sm text-white/60 mb-8">
               <p>• Luxury Content Retreat: March 6-9th in Kelowna BC, Canada</p>

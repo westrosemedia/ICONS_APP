@@ -36,20 +36,6 @@ export default function MobileNavigation() {
               Packages
             </Link>
             <Link 
-              href="/ppb" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Powerful Personal Brand
-            </Link>
-            <Link 
-              href="/black-friday" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Black Friday
-            </Link>
-            <Link 
               href="/mastermind" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
