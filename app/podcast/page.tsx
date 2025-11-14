@@ -23,26 +23,31 @@ const episodes = [
     number: 6,
     title: "Navigating the Future: Embracing AI in Marketing Strategies",
     date: "November 13, 2025",
+    url: "https://icons-west-rose-media.captivate.fm/",
   },
   {
     number: 5,
     title: "Tap In. Show Up. Sell Out.",
     date: "November 5, 2025",
+    url: "https://icons-west-rose-media.captivate.fm/",
   },
   {
     number: 0,
     title: "Manifest your DREAM Life - Live with Jackie McDonald",
     date: "November 3, 2025",
+    url: "https://icons-west-rose-media.captivate.fm/",
   },
   {
     number: 5,
     title: "From Chaos to Creativity: Christine Blosdale's Journey of Reinvention",
     date: "October 28, 2025",
+    url: "https://icons-west-rose-media.captivate.fm/",
   },
   {
     number: 4,
     title: "From Loss to Reproductive Justice- Aditi's story.",
     date: "October 2, 2025",
+    url: "https://icons-west-rose-media.captivate.fm/",
   },
 ];
 
@@ -119,8 +124,15 @@ export default function PodcastPage() {
                       <h3 className="text-xl md:text-2xl font-bold mb-2">
                         Episode {episode.number}
                       </h3>
-                      <h4 className="text-lg md:text-xl mb-2 text-gray-800">
-                        {episode.title}
+                      <h4 className="text-lg md:text-xl mb-2">
+                        <a 
+                          href={episode.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-800 hover:text-black underline transition-colors"
+                        >
+                          {episode.title}
+                        </a>
                       </h4>
                       <p className="text-sm text-gray-600">
                         Published on: {episode.date}
