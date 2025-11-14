@@ -1,19 +1,19 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Podcast | West Rose Media",
-  description: "Listen to the latest episodes from West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
-  keywords: "podcast, business podcast, branding podcast, entrepreneur podcast, West Rose Media podcast",
+  title: "ICONS by West Rose Media | Podcast",
+  description: "Listen to the latest episodes from ICONS by West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
+  keywords: "ICONS podcast, business podcast, branding podcast, entrepreneur podcast, West Rose Media podcast",
   openGraph: {
-    title: "Podcast | West Rose Media",
-    description: "Listen to the latest episodes from West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
+    title: "ICONS by West Rose Media | Podcast",
+    description: "Listen to the latest episodes from ICONS by West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
     type: "website",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Podcast | West Rose Media",
-    description: "Listen to the latest episodes from West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
+    title: "ICONS by West Rose Media | Podcast",
+    description: "Listen to the latest episodes from ICONS by West Rose Media podcast featuring conversations about branding, business, and building iconic brands.",
   },
 };
 
@@ -25,7 +25,7 @@ export default function PodcastPage() {
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-hero mb-6">
-              Podcast
+              ICONS by West Rose Media
             </h1>
             <p className="text-large text-gray-600 max-w-2xl mx-auto">
               Listen to conversations about branding, business, and building iconic brands.
@@ -46,7 +46,7 @@ export default function PodcastPage() {
                 allow="clipboard-write"
                 seamless
                 src="https://player.captivate.fm/show/04e67684-d3b9-4e5b-a75a-c0919acaf7d4/latest/"
-                title="West Rose Media Podcast Player"
+                title="ICONS by West Rose Media Podcast Player"
               />
             </div>
           </div>
