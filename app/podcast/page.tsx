@@ -57,7 +57,7 @@ export default function PodcastPage() {
       {/* Hero Section with Image */}
       <section className="relative min-h-[60vh] w-full flex items-center justify-center overflow-hidden">
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
           alt="ICONS by West Rose Media Podcast"
           fill
           className="object-cover"
