@@ -109,6 +109,10 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
       }
 
       setIsSuccess(true);
+      // Redirect to booking link after 2 seconds
+      setTimeout(() => {
+        window.location.href = "https://westrosemedia.sproutstudio.com/invitation/book-a-meeting";
+      }, 2000);
     } catch (err) {
       console.error("Application submission error:", err);
       alert("Failed to submit application. Please try again.");
@@ -143,15 +147,12 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Your application has been received
               </h2>
-              <p className="text-lg text-white/80 mb-8">
-                We will reach out within twenty four hours to schedule your private call.
+              <p className="text-lg text-white/80 mb-4">
+                Redirecting you to book your call...
               </p>
-              <button
-                onClick={onClose}
-                className="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
-              >
-                Close
-              </button>
+              <p className="text-sm text-white/60 mb-8">
+                If you are not redirected automatically, <a href="https://westrosemedia.sproutstudio.com/invitation/book-a-meeting" className="text-[#c1ff72] underline hover:text-[#c1ff72]/80">click here</a> to book your call.
+              </p>
             </div>
           ) : (
             <>
