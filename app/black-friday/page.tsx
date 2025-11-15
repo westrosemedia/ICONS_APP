@@ -388,7 +388,18 @@ export default function BlackFridayPage() {
               className="object-cover opacity-40"
               priority
             />
-            <div className="absolute inset-0 bg-black/70" />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/70" />
+            {/* Subtle pattern overlay */}
+            <div 
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, rgba(193, 255, 114, 0.3) 1px, transparent 0)`,
+                backgroundSize: '40px 40px'
+              }}
+            />
+            {/* Accent gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#c1ff72]/5 to-transparent" />
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
@@ -419,8 +430,19 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Offer One: The ICON Jumpstart - LOWEST PRICE */}
-        <section id="offers" className="py-20 px-4 border-t border-white/10">
-          <div className="max-w-6xl mx-auto">
+        <section id="offers" className="relative py-20 px-4 border-t border-white/10 overflow-hidden">
+          {/* Background pattern */}
+          <div 
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `linear-gradient(45deg, transparent 30%, rgba(193, 255, 114, 0.1) 50%, transparent 70%),
+                                linear-gradient(-45deg, transparent 30%, rgba(193, 255, 114, 0.1) 50%, transparent 70%)`,
+              backgroundSize: '60px 60px'
+            }}
+          />
+          {/* Gradient accent */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c1ff72]/50 to-transparent" />
+          <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 The ICON Jumpstart
@@ -465,8 +487,28 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Offer Two: Powerful Personal Brand Early Enrollment */}
-        <section className="py-20 px-4 border-t border-white/10 bg-white/5">
-          <div className="max-w-6xl mx-auto">
+        <section className="relative py-20 px-4 border-t border-white/10 bg-white/5 overflow-hidden">
+          {/* Diagonal pattern background */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(193, 255, 114, 0.1) 10px,
+                rgba(193, 255, 114, 0.1) 20px
+              )`
+            }}
+          />
+          {/* Radial gradient accent */}
+          <div 
+            className="absolute top-1/2 left-0 w-1/2 h-full opacity-50"
+            style={{
+              background: 'radial-gradient(circle at left center, rgba(193, 255, 114, 0.1) 0%, transparent 70%)'
+            }}
+          />
+          <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Powerful Personal Brand Early Enrollment
@@ -548,8 +590,19 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Offer Three: The Movement Maker's Mastermind */}
-        <section className="py-20 px-4 border-t border-white/10">
-          <div className="max-w-6xl mx-auto">
+        <section className="relative py-20 px-4 border-t border-white/10 overflow-hidden">
+          {/* Dot pattern background */}
+          <div 
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(193, 255, 114, 0.5) 1px, transparent 0)`,
+              backgroundSize: '30px 30px'
+            }}
+          />
+          {/* Side accent gradients */}
+          <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-[#c1ff72]/5 via-transparent to-transparent" />
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#c1ff72]/5 via-transparent to-transparent" />
+          <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 The Movement Maker's Mastermind
@@ -586,8 +639,21 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Offer Four: The ICON Legacy Experience - HIGHEST PRICE */}
-        <section className="py-20 px-4 border-t border-white/10 bg-white/5">
-          <div className="max-w-6xl mx-auto">
+        <section className="relative py-20 px-4 border-t border-white/10 bg-white/5 overflow-hidden">
+          {/* Mesh gradient background */}
+          <div 
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              background: `
+                radial-gradient(at 0% 0%, rgba(193, 255, 114, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(193, 255, 114, 0.2) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(193, 255, 114, 0.1) 0px, transparent 50%)
+              `
+            }}
+          />
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c1ff72]/30 to-transparent" />
+          <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold mb-4">
                 Three spots only
@@ -630,8 +696,28 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Urgency Section */}
-        <section className="py-20 px-4 border-t border-white/10">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="relative py-20 px-4 border-t border-white/10 overflow-hidden">
+          {/* Subtle wave pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(193, 255, 114, 0.1) 2px,
+                rgba(193, 255, 114, 0.1) 4px
+              )`
+            }}
+          />
+          {/* Center glow */}
+          <div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-20"
+            style={{
+              background: 'radial-gradient(circle, rgba(193, 255, 114, 0.3) 0%, transparent 70%)'
+            }}
+          />
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               This is your turning point
             </h2>
@@ -642,8 +728,22 @@ export default function BlackFridayPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 px-4 border-t border-white/10 bg-white/5">
-          <div className="max-w-4xl mx-auto">
+        <section className="relative py-20 px-4 border-t border-white/10 bg-white/5 overflow-hidden">
+          {/* Subtle grid pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.02]"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(193, 255, 114, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(193, 255, 114, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '50px 50px'
+            }}
+          />
+          {/* Corner accents */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#c1ff72]/5 to-transparent" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-[#c1ff72]/5 to-transparent" />
+          <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
               What Leaders Are Saying
             </h2>
