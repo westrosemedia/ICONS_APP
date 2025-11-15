@@ -491,8 +491,14 @@ export default function BlackFridayPage() {
               <p className="text-xl md:text-2xl text-white/80 mb-2">
                 The ultimate one year private brand transformation
               </p>
-              <div className="text-3xl md:text-4xl font-bold mb-4">
-                $6,000/month or $60,000 paid in full
+              <div className="mb-4">
+                <div className="flex items-center justify-center gap-4 mb-2">
+                  <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$60,000</span>
+                  <span className="text-3xl md:text-4xl font-bold">$55,000</span>
+                </div>
+                <div className="text-xl md:text-2xl text-white/80">
+                  or $6,000/month
+                </div>
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
                 Black Friday Bonus: Enroll by December 1st at midnight and receive December free
