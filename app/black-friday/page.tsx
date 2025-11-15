@@ -327,37 +327,61 @@ export default function BlackFridayPage() {
   // TODO: Add Stripe checkout link for Jumpstart when provided
   const jumpstartStripeLink = "#"; // Placeholder - user will provide
 
-  // Calculate dynamic Jumpstart price based on weeks until December 1st
+  // Calculate dynamic Jumpstart price based on date ranges
   const calculateJumpstartPrice = () => {
     const now = new Date();
     const mstOffset = -7 * 60; // MST is UTC-7
     const mstNow = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
     
-    // Get December 1st at 11:59 PM MST
-    const targetDate = new Date(mstNow);
-    targetDate.setMonth(11); // December is month 11 (0-indexed)
-    targetDate.setDate(1);
-    targetDate.setHours(23, 59, 59, 999);
+    // Create date ranges (all times in MST)
+    const nov15 = new Date(mstNow.getFullYear(), 10, 15, 0, 0, 0); // Nov 15, 2024
+    const nov23 = new Date(mstNow.getFullYear(), 10, 23, 0, 0, 0); // Nov 23, 2024
+    const nov30 = new Date(mstNow.getFullYear(), 10, 30, 0, 0, 0); // Nov 30, 2024
+    const dec8 = new Date(mstNow.getFullYear(), 11, 8, 23, 59, 59); // Dec 8, 2024
     
-    // If we're already past December 1st this year, set it for next year
-    if (targetDate.getTime() < mstNow.getTime()) {
-      targetDate.setFullYear(targetDate.getFullYear() + 1);
+    let currentPrice = 297; // Default to highest price
+    let priceRange = "";
+    let nextPrice = null;
+    let nextDate = null;
+    
+    if (mstNow >= nov15 && mstNow < nov23) {
+      // Nov 15-22: $97
+      currentPrice = 97;
+      priceRange = "Nov 15-22";
+      nextPrice = 197;
+      nextDate = nov23;
+    } else if (mstNow >= nov23 && mstNow < nov30) {
+      // Nov 23-29: $197
+      currentPrice = 197;
+      priceRange = "Nov 23-29";
+      nextPrice = 297;
+      nextDate = nov30;
+    } else if (mstNow >= nov30 && mstNow <= dec8) {
+      // Nov 30-Dec 8: $297
+      currentPrice = 297;
+      priceRange = "Nov 30-Dec 8";
+      nextPrice = null; // No next price after Dec 8
+      nextDate = null;
+    } else if (mstNow < nov15) {
+      // Before Nov 15, show Nov 15-22 price
+      currentPrice = 97;
+      priceRange = "Nov 15-22";
+      nextPrice = 197;
+      nextDate = nov15;
+    } else {
+      // After Dec 8, keep at $297
+      currentPrice = 297;
+      priceRange = "Final Price";
+      nextPrice = null;
+      nextDate = null;
     }
-    
-    const difference = targetDate.getTime() - mstNow.getTime();
-    const weeksUntil = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
-    
-    // Base price is $77, increases by $100 per week
-    // On Black Friday (Dec 1), price is $77
-    // Each week before, add $100
-    const basePrice = 77;
-    const priceIncrease = Math.max(0, weeksUntil) * 100;
-    const currentPrice = basePrice + priceIncrease;
     
     return {
       currentPrice,
-      weeksUntil: Math.max(0, weeksUntil),
-      isBlackFriday: weeksUntil === 0 || difference < 0
+      priceRange,
+      nextPrice,
+      nextDate,
+      isAfterDec8: mstNow > dec8
     };
   };
 
@@ -457,16 +481,19 @@ export default function BlackFridayPage() {
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
                 <span className="text-3xl md:text-4xl font-bold">${jumpstartPricing.currentPrice.toLocaleString()}</span>
               </div>
-              {jumpstartPricing.weeksUntil > 0 && (
-                <div className="text-lg text-white/70 mb-4">
-                  Price increases by $100 each week. Join now to lock in this price.
-                </div>
-              )}
-              {jumpstartPricing.isBlackFriday && (
-                <div className="text-lg text-[#c1ff72] font-semibold mb-4">
-                  Black Friday Special Price
-                </div>
-              )}
+              <div className="text-lg text-white/70 mb-4">
+                {jumpstartPricing.nextPrice && jumpstartPricing.nextDate ? (
+                  <>
+                    Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
+                    <br />
+                    Price increases to <span className="font-semibold text-[#c1ff72]">${jumpstartPricing.nextPrice}</span> on {jumpstartPricing.nextDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}. Join now to lock in this price.
+                  </>
+                ) : (
+                  <>
+                    Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
+                  </>
+                )}
+              </div>
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
