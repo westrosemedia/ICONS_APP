@@ -327,6 +327,42 @@ export default function BlackFridayPage() {
   // TODO: Add Stripe checkout link for Jumpstart when provided
   const jumpstartStripeLink = "#"; // Placeholder - user will provide
 
+  // Calculate dynamic Jumpstart price based on weeks until December 1st
+  const calculateJumpstartPrice = () => {
+    const now = new Date();
+    const mstOffset = -7 * 60; // MST is UTC-7
+    const mstNow = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
+    
+    // Get December 1st at 11:59 PM MST
+    const targetDate = new Date(mstNow);
+    targetDate.setMonth(11); // December is month 11 (0-indexed)
+    targetDate.setDate(1);
+    targetDate.setHours(23, 59, 59, 999);
+    
+    // If we're already past December 1st this year, set it for next year
+    if (targetDate.getTime() < mstNow.getTime()) {
+      targetDate.setFullYear(targetDate.getFullYear() + 1);
+    }
+    
+    const difference = targetDate.getTime() - mstNow.getTime();
+    const weeksUntil = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
+    
+    // Base price is $77, increases by $100 per week
+    // On Black Friday (Dec 1), price is $77
+    // Each week before, add $100
+    const basePrice = 77;
+    const priceIncrease = Math.max(0, weeksUntil) * 100;
+    const currentPrice = basePrice + priceIncrease;
+    
+    return {
+      currentPrice,
+      weeksUntil: Math.max(0, weeksUntil),
+      isBlackFriday: weeksUntil === 0 || difference < 0
+    };
+  };
+
+  const jumpstartPricing = calculateJumpstartPrice();
+
   return (
     <>
       <Script
@@ -394,11 +430,18 @@ export default function BlackFridayPage() {
               </p>
               <div className="flex items-center justify-center gap-4 mb-4">
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
-                <span className="text-3xl md:text-4xl font-bold">$77</span>
+                <span className="text-3xl md:text-4xl font-bold">${jumpstartPricing.currentPrice.toLocaleString()}</span>
               </div>
-              <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: $97 credit toward any WRM offer in 2026
-              </div>
+              {jumpstartPricing.weeksUntil > 0 && (
+                <div className="text-lg text-white/70 mb-4">
+                  Price increases by $100 each week. Join now to lock in this price.
+                </div>
+              )}
+              {jumpstartPricing.isBlackFriday && (
+                <div className="text-lg text-[#c1ff72] font-semibold mb-4">
+                  Black Friday Special Price
+                </div>
+              )}
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
