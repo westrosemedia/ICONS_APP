@@ -602,9 +602,6 @@ export default function BlackFridayPage() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="text-lg text-[#c1ff72] font-semibold mb-6">
-                Black Friday Bonus: 45 minute Brand Clarity Intensive and $250 WRM credit
-              </div>
               <Link
                 href="https://westrosemedia.com/ppb"
                 target="_blank"
