@@ -703,7 +703,7 @@ export default function BlackFridayPage() {
                   <span className="text-3xl md:text-4xl font-bold">$55,000</span>
                 </div>
                 <div className="text-xl md:text-2xl text-white/80">
-                  or $6,000/month
+                  or $4,800/month
                 </div>
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
