@@ -481,28 +481,35 @@ export default function BlackFridayPage() {
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
                 <span className="text-3xl md:text-4xl font-bold">${jumpstartPricing.currentPrice.toLocaleString()}</span>
               </div>
-              {jumpstartPricing.nextPrice && jumpstartPricing.nextDate ? (
-                <div className="bg-[#c1ff72]/10 border-2 border-[#c1ff72]/30 rounded-lg p-4 md:p-6 mb-6 max-w-2xl mx-auto">
-                  <div className="text-center">
-                    <div className="text-lg md:text-xl font-bold text-[#c1ff72] mb-2">
-                      ⚠️ Price Increases Soon!
+              <div className="bg-[#c1ff72]/10 border-2 border-[#c1ff72]/30 rounded-lg p-4 md:p-6 mb-6 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <div className="text-lg md:text-xl font-bold text-[#c1ff72] mb-4">
+                    ⚠️ Price Increases Schedule
+                  </div>
+                  <div className="space-y-3 text-left md:text-center">
+                    <div className={`flex items-center justify-between md:justify-center gap-3 ${jumpstartPricing.currentPrice === 97 ? 'text-white font-bold' : 'text-white/70'}`}>
+                      <span>Nov 15-22:</span>
+                      <span className="font-bold text-xl">$97</span>
+                      {jumpstartPricing.currentPrice === 97 && <span className="text-[#c1ff72] text-sm">← Current</span>}
                     </div>
-                    <div className="text-base md:text-lg text-white/90 mb-2">
-                      Current price: <span className="font-bold text-white text-xl">${jumpstartPricing.currentPrice}</span>
+                    <div className={`flex items-center justify-between md:justify-center gap-3 ${jumpstartPricing.currentPrice === 197 ? 'text-white font-bold' : 'text-white/70'}`}>
+                      <span>Nov 23-29:</span>
+                      <span className="font-bold text-xl">$197</span>
+                      {jumpstartPricing.currentPrice === 197 && <span className="text-[#c1ff72] text-sm">← Current</span>}
                     </div>
-                    <div className="text-base md:text-lg text-white/80">
-                      Price increases to <span className="font-bold text-[#c1ff72] text-xl">${jumpstartPricing.nextPrice}</span> on <span className="font-semibold text-white">{jumpstartPricing.nextDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</span>
-                    </div>
-                    <div className="text-sm md:text-base text-[#c1ff72] font-semibold mt-3">
-                      Join now to lock in this price before it goes up!
+                    <div className={`flex items-center justify-between md:justify-center gap-3 ${jumpstartPricing.currentPrice === 297 ? 'text-white font-bold' : 'text-white/70'}`}>
+                      <span>Nov 30-Dec 8:</span>
+                      <span className="font-bold text-xl">$297</span>
+                      {jumpstartPricing.currentPrice === 297 && <span className="text-[#c1ff72] text-sm">← Current</span>}
                     </div>
                   </div>
+                  {jumpstartPricing.nextPrice && jumpstartPricing.nextDate && (
+                    <div className="text-sm md:text-base text-[#c1ff72] font-semibold mt-4 pt-4 border-t border-[#c1ff72]/20">
+                      Price increases to <span className="font-bold">${jumpstartPricing.nextPrice}</span> on <span className="font-semibold">{jumpstartPricing.nextDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</span>. Join now to lock in this price!
+                    </div>
+                  )}
                 </div>
-              ) : (
-                <div className="text-lg text-white/70 mb-4">
-                  Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
-                </div>
-              )}
+              </div>
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
@@ -868,3 +875,4 @@ export default function BlackFridayPage() {
     </>
   );
 }
+
