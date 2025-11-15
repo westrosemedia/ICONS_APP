@@ -428,11 +428,11 @@ export default function BlackFridayPage() {
               <p className="text-xl md:text-2xl text-white/80 mb-2">
                 Sixteen weeks to make your brand look sound and sell like a leader
               </p>
-              <div className="text-3xl md:text-4xl font-bold mb-4">
-                $2,500
+              <div className="text-lg text-white/70 mb-6">
+                Program begins January 2026
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: 45 minute Brand Clarity Intensive and $250 WRM credit
+                Black Friday Sale: This is a limited-time offer. Prices go up soon and will never be this low again.
               </div>
             </div>
 
@@ -440,6 +440,47 @@ export default function BlackFridayPage() {
               <p>
                 The signature curriculum that gives you complete clarity and control over your brand. You refine your message your aesthetic and your strategy so your online presence finally matches your results.
               </p>
+            </div>
+
+            {/* Pricing Section */}
+            <div className="max-w-3xl mx-auto mb-8">
+              <div className="bg-black/50 border border-white/10 rounded-lg p-6 md:p-8 mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-white/60 mb-4 text-center">Regular Pricing</h3>
+                <div className="space-y-3 text-center">
+                  <div className="text-lg text-white/70">
+                    The 16 Week Intensive: <span className="text-white font-semibold">$3,500 USD</span>
+                  </div>
+                  <div className="text-lg text-white/70">
+                    The One Year Experience: <span className="text-white font-semibold">$5,000 USD</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-black/70 border-2 border-[#c1ff72]/30 rounded-lg p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold text-[#c1ff72] mb-4 text-center">Black Friday Pricing (Ending Soon)</h3>
+                <div className="space-y-4 text-center">
+                  <div>
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <span className="text-lg text-white/50 line-through">$3,500</span>
+                      <span className="text-2xl md:text-3xl font-bold text-white">$2,500 USD</span>
+                    </div>
+                    <div className="text-sm text-white/70">The 16 Week Intensive</div>
+                  </div>
+                  <div className="border-t border-white/10 pt-4">
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <span className="text-lg text-white/50 line-through">$5,000</span>
+                      <span className="text-2xl md:text-3xl font-bold text-white">$3,500 USD</span>
+                    </div>
+                    <div className="text-sm text-white/70">The One Year Experience</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mb-8">
+              <div className="text-lg text-[#c1ff72] font-semibold mb-4">
+                Black Friday Bonus: 45 minute Brand Clarity Intensive and $250 WRM credit
+              </div>
             </div>
 
             <div className="text-center">
