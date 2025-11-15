@@ -236,7 +236,7 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
 
               <div>
                 <label htmlFor="contentChange" className="block text-white/80 mb-2">
-                  What do you want to change about your content and brand presence
+                  What is your long-term goal for your business? (5-10 years)
                 </label>
                 <textarea
                   id="contentChange"
