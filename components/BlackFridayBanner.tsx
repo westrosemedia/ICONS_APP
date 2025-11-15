@@ -14,7 +14,7 @@ export default function BlackFridayBanner() {
   return (
     <Link href="/black-friday" className="block bg-[#c1ff72] text-black text-center py-3 sticky top-0 z-40 hover:bg-[#a8e65a] transition-colors">
       <p className="font-bold text-sm md:text-base">
-        Black Friday Offers Live Now. Ends Monday at Midnight.
+        Black Friday Offers Live Now. Ends December 1st at Midnight.
       </p>
     </Link>
   );

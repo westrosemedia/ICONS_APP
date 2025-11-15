@@ -21,20 +21,18 @@ function CountdownTimer() {
       const mstOffset = -7 * 60; // MST is UTC-7
       const mstNow = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
       
-      // Get next Monday at 11:59 PM MST
-      const nextMonday = new Date(mstNow);
-      const dayOfWeek = nextMonday.getDay();
-      const daysUntilMonday = dayOfWeek === 0 ? 1 : (8 - dayOfWeek) % 7;
+      // Get December 1st at 11:59 PM MST
+      const targetDate = new Date(mstNow);
+      targetDate.setMonth(11); // December is month 11 (0-indexed)
+      targetDate.setDate(1);
+      targetDate.setHours(23, 59, 59, 999);
       
-      if (daysUntilMonday === 0 && mstNow.getHours() >= 23 && mstNow.getMinutes() >= 59) {
-        nextMonday.setDate(nextMonday.getDate() + 7);
-      } else {
-        nextMonday.setDate(nextMonday.getDate() + daysUntilMonday);
+      // If we're already past December 1st this year, set it for next year
+      if (targetDate.getTime() < mstNow.getTime()) {
+        targetDate.setFullYear(targetDate.getFullYear() + 1);
       }
       
-      nextMonday.setHours(23, 59, 59, 999);
-      
-      const difference = nextMonday.getTime() - mstNow.getTime();
+      const difference = targetDate.getTime() - mstNow.getTime();
       
       if (difference > 0) {
         setTimeLeft({
@@ -328,7 +326,7 @@ export default function BlackFridayPage() {
         {/* Site Wide Banner */}
         <div className="bg-[#c1ff72] text-black text-center py-3 sticky top-0 z-40">
           <p className="font-bold text-sm md:text-base">
-            Black Friday Offers Live Now. Ends Monday at Midnight.
+            Black Friday Offers Live Now. Ends December 1st at Midnight.
           </p>
         </div>
 
@@ -350,7 +348,7 @@ export default function BlackFridayPage() {
               This Black Friday you step into your icon era
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto">
-              Exclusive limited time access to the most powerful offers of the year. When the clock hits midnight on Monday these opportunities disappear forever.
+              Exclusive limited time access to the most powerful offers of the year. When the clock hits midnight on December 1st these opportunities disappear forever.
             </p>
 
             <CountdownTimer />
@@ -389,7 +387,7 @@ export default function BlackFridayPage() {
                 Six thousand per month or sixty thousand paid in full
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: Enroll by Monday at midnight and receive December free
+                Black Friday Bonus: Enroll by December 1st at midnight and receive December free
               </div>
             </div>
 
@@ -523,7 +521,7 @@ export default function BlackFridayPage() {
               This is your turning point
             </h2>
             <p className="text-xl md:text-2xl text-white/80">
-              Every offer closes Monday at midnight. Spots are limited and the bonuses never return.
+              Every offer closes December 1st at midnight. Spots are limited and the bonuses never return.
             </p>
           </div>
         </section>
