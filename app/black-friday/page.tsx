@@ -325,8 +325,7 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
 
 export default function BlackFridayPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // TODO: Add Stripe checkout link for Jumpstart when provided
-  const jumpstartStripeLink = "#"; // Placeholder - user will provide
+  const jumpstartStripeLink = "https://buy.stripe.com/00wfZgfNm1eJ1jddRr87K0U";
 
   // Calculate dynamic Jumpstart price based on date ranges
   const calculateJumpstartPrice = () => {
