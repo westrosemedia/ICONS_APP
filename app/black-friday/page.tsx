@@ -266,7 +266,7 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
 
               <div>
                 <label htmlFor="investmentReady" className="block text-white/80 mb-2">
-                  Are you prepared to invest sixty thousand if accepted
+                  Are you prepared to invest $4700/month or $55,000 PIF if accepted?
                 </label>
                 <select
                   id="investmentReady"
