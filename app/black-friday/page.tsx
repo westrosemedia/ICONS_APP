@@ -393,7 +393,7 @@ export default function BlackFridayPage() {
                 Three day accelerator to kickstart your 2026 brand clarity
               </p>
               <div className="flex items-center justify-center gap-4 mb-4">
-                <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$97</span>
+                <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
                 <span className="text-3xl md:text-4xl font-bold">$77</span>
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
