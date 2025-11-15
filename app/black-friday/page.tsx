@@ -370,46 +370,78 @@ export default function BlackFridayPage() {
           </div>
         </section>
 
-        {/* Offer One: The ICON Legacy Experience */}
+        {/* Offer One: The ICON Jumpstart - LOWEST PRICE */}
         <section id="offers" className="py-20 px-4 border-t border-white/10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold mb-4">
-                Three spots only
-              </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                The ICON Legacy Experience
+                The ICON Jumpstart
               </h2>
               <p className="text-xl md:text-2xl text-white/80 mb-2">
-                The ultimate one year private brand transformation
+                Three day accelerator to kickstart your 2026 brand clarity
               </p>
-              <div className="text-3xl md:text-4xl font-bold mb-4">
-                Six thousand per month or sixty thousand paid in full
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$97</span>
+                <span className="text-3xl md:text-4xl font-bold">$77</span>
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: Enroll by December 1st at midnight and receive December free
+                Black Friday Bonus: $97 credit toward any WRM offer in 2026
               </div>
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
               <p>
-                This is your full scale brand evolution with four signature brand shoots a luxury VIP weekend a complete brand overhaul and private access to Stephanie for an entire year. You become the most visible confident and sought after version of yourself with a content and strategy system that keeps your vision alive without you chasing it.
+                A fast and focused mini accelerator that gets your brand ready for January with clarity direction and momentum. If you have been waiting to show up as the CEO of your business consider this your invitation to stop waiting.
               </p>
             </div>
 
             <div className="text-center">
-              <button
-                onClick={() => setIsModalOpen(true)}
+              <a
+                href={jumpstartStripeLink}
                 className="inline-block bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
               >
-                Apply Now for Legacy Experience
-              </button>
+                Join the Jumpstart
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Offer Two: The Movement Maker's Mastermind */}
+        {/* Offer Two: Powerful Personal Brand Early Enrollment */}
         <section className="py-20 px-4 border-t border-white/10 bg-white/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Powerful Personal Brand Early Enrollment
+              </h2>
+              <p className="text-xl md:text-2xl text-white/80 mb-2">
+                Sixteen weeks to make your brand look sound and sell like a leader
+              </p>
+              <div className="text-3xl md:text-4xl font-bold mb-4">
+                $2,500
+              </div>
+              <div className="text-lg text-[#c1ff72] font-semibold mb-8">
+                Black Friday Bonus: 45 minute Brand Clarity Intensive and $250 WRM credit
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
+              <p>
+                The signature curriculum that gives you complete clarity and control over your brand. You refine your message your aesthetic and your strategy so your online presence finally matches your results.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<stripe-pricing-table pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>`
+                }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Offer Three: The Movement Maker's Mastermind */}
+        <section className="py-20 px-4 border-t border-white/10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -418,8 +450,9 @@ export default function BlackFridayPage() {
               <p className="text-xl md:text-2xl text-white/80 mb-2">
                 High level hybrid mastermind for visibility influence and wealth
               </p>
-              <div className="text-3xl md:text-4xl font-bold mb-4">
-                Eight thousand
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$12,000</span>
+                <span className="text-3xl md:text-4xl font-bold">$10,000</span>
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
                 Black Friday Bonus: Private one to one tap and content session with Stephanie and Jackie or a Kelowna retreat upgrade
@@ -445,71 +478,40 @@ export default function BlackFridayPage() {
           </div>
         </section>
 
-        {/* Offer Three: Powerful Personal Brand Early Enrollment */}
-        <section className="py-20 px-4 border-t border-white/10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Powerful Personal Brand Early Enrollment
-              </h2>
-              <p className="text-xl md:text-2xl text-white/80 mb-2">
-                Sixteen weeks to make your brand look sound and sell like a leader
-              </p>
-              <div className="text-3xl md:text-4xl font-bold mb-4">
-                Two thousand five hundred
-              </div>
-              <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: Forty five minute Brand Clarity Intensive and two hundred fifty WRM credit
-              </div>
-            </div>
-
-            <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
-              <p>
-                The signature curriculum that gives you complete clarity and control over your brand. You refine your message your aesthetic and your strategy so your online presence finally matches your results.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<stripe-pricing-table pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>`
-                }}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Offer Four: The ICON Jumpstart */}
+        {/* Offer Four: The ICON Legacy Experience - HIGHEST PRICE */}
         <section className="py-20 px-4 border-t border-white/10 bg-white/5">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
+              <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold mb-4">
+                Three spots only
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                The ICON Jumpstart
+                The ICON Legacy Experience
               </h2>
               <p className="text-xl md:text-2xl text-white/80 mb-2">
-                Three day accelerator to kickstart your 2026 brand clarity
+                The ultimate one year private brand transformation
               </p>
               <div className="text-3xl md:text-4xl font-bold mb-4">
-                Ninety seven dollars or seventy seven for early bird
+                $6,000/month or $60,000 paid in full
               </div>
               <div className="text-lg text-[#c1ff72] font-semibold mb-8">
-                Black Friday Bonus: Ninety seven dollar credit toward any WRM offer in 2026
+                Black Friday Bonus: Enroll by December 1st at midnight and receive December free
               </div>
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
               <p>
-                A fast and focused mini accelerator that gets your brand ready for January with clarity direction and momentum. If you have been waiting to show up as the CEO of your business consider this your invitation to stop waiting.
+                This is your full scale brand evolution with four signature brand shoots a luxury VIP weekend a complete brand overhaul and private access to Stephanie for an entire year. You become the most visible confident and sought after version of yourself with a content and strategy system that keeps your vision alive without you chasing it.
               </p>
             </div>
 
             <div className="text-center">
-              <a
-                href={jumpstartStripeLink}
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
               >
-                Join the Jumpstart
-              </a>
+                Apply Now for Legacy Experience
+              </button>
             </div>
           </div>
         </section>
