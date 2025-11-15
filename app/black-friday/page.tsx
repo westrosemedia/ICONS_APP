@@ -478,9 +478,17 @@ export default function BlackFridayPage() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="text-lg text-[#c1ff72] font-semibold mb-4">
+              <div className="text-lg text-[#c1ff72] font-semibold mb-6">
                 Black Friday Bonus: 45 minute Brand Clarity Intensive and $250 WRM credit
               </div>
+              <Link
+                href="https://westrosemedia.com/ppb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border-2 border-white/30 text-white px-8 py-4 rounded-lg text-lg font-medium hover:border-white hover:bg-white/10 transition-colors mb-6"
+              >
+                Learn More
+              </Link>
             </div>
 
             <div className="text-center">
