@@ -426,8 +426,11 @@ export default function BlackFridayPage() {
                 The ICON Jumpstart
               </h2>
               <p className="text-xl md:text-2xl text-white/80 mb-2">
-                Three day accelerator to kickstart your 2026 brand clarity
+                Five day intensive running December 8-12
               </p>
+              <div className="text-lg text-white/70 mb-4">
+                Start January as an icon and sell out your January offer
+              </div>
               <div className="flex items-center justify-center gap-4 mb-4">
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
                 <span className="text-3xl md:text-4xl font-bold">${jumpstartPricing.currentPrice.toLocaleString()}</span>
@@ -446,7 +449,7 @@ export default function BlackFridayPage() {
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
               <p>
-                A fast and focused mini accelerator that gets your brand ready for January with clarity direction and momentum. If you have been waiting to show up as the CEO of your business consider this your invitation to stop waiting.
+                A fast and focused five day intensive that gets your brand ready for January with clarity direction and momentum. This is the thing that will help you start January as an icon and sell out your January offer. If you have been waiting to show up as the CEO of your business consider this your invitation to stop waiting.
               </p>
             </div>
 
