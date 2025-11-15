@@ -481,19 +481,28 @@ export default function BlackFridayPage() {
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
                 <span className="text-3xl md:text-4xl font-bold">${jumpstartPricing.currentPrice.toLocaleString()}</span>
               </div>
-              <div className="text-lg text-white/70 mb-4">
-                {jumpstartPricing.nextPrice && jumpstartPricing.nextDate ? (
-                  <>
-                    Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
-                    <br />
-                    Price increases to <span className="font-semibold text-[#c1ff72]">${jumpstartPricing.nextPrice}</span> on {jumpstartPricing.nextDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}. Join now to lock in this price.
-                  </>
-                ) : (
-                  <>
-                    Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
-                  </>
-                )}
-              </div>
+              {jumpstartPricing.nextPrice && jumpstartPricing.nextDate ? (
+                <div className="bg-[#c1ff72]/10 border-2 border-[#c1ff72]/30 rounded-lg p-4 md:p-6 mb-6 max-w-2xl mx-auto">
+                  <div className="text-center">
+                    <div className="text-lg md:text-xl font-bold text-[#c1ff72] mb-2">
+                      ⚠️ Price Increases Soon!
+                    </div>
+                    <div className="text-base md:text-lg text-white/90 mb-2">
+                      Current price: <span className="font-bold text-white text-xl">${jumpstartPricing.currentPrice}</span>
+                    </div>
+                    <div className="text-base md:text-lg text-white/80">
+                      Price increases to <span className="font-bold text-[#c1ff72] text-xl">${jumpstartPricing.nextPrice}</span> on <span className="font-semibold text-white">{jumpstartPricing.nextDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</span>
+                    </div>
+                    <div className="text-sm md:text-base text-[#c1ff72] font-semibold mt-3">
+                      Join now to lock in this price before it goes up!
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-lg text-white/70 mb-4">
+                  Current price: <span className="font-semibold text-white">${jumpstartPricing.currentPrice}</span> ({jumpstartPricing.priceRange})
+                </div>
+              )}
             </div>
 
             <div className="max-w-4xl mx-auto text-lg text-white/80 space-y-6 mb-8">
