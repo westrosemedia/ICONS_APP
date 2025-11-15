@@ -127,36 +127,38 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="max-w-2xl w-full bg-black border border-white/10 rounded-lg p-8 md:p-12 relative">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-white/60 hover:text-white text-2xl"
-        >
-          ×
-        </button>
+    <div className="fixed inset-0 bg-black/90 z-50 overflow-y-auto">
+      <div className="min-h-full flex items-start justify-center p-4 py-8 md:py-12">
+        <div className="max-w-2xl w-full bg-black border border-white/10 rounded-lg p-6 md:p-8 lg:p-12 relative my-auto">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white/60 hover:text-white text-3xl font-light leading-none w-8 h-8 flex items-center justify-center"
+            aria-label="Close"
+          >
+            ×
+          </button>
 
-        {isSuccess ? (
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Your application has been received
-            </h2>
-            <p className="text-lg text-white/80 mb-8">
-              We will reach out within twenty four hours to schedule your private call.
-            </p>
-            <button
-              onClick={onClose}
-              className="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
-            >
-              Close
-            </button>
-          </div>
-        ) : (
-          <>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
-              Apply for The ICON Legacy Experience
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          {isSuccess ? (
+            <div className="text-center pt-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Your application has been received
+              </h2>
+              <p className="text-lg text-white/80 mb-8">
+                We will reach out within twenty four hours to schedule your private call.
+              </p>
+              <button
+                onClick={onClose}
+                className="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          ) : (
+            <>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center pr-8">
+                Apply for The ICON Legacy Experience
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               <div>
                 <label htmlFor="fullName" className="block text-white/80 mb-2">
                   What is your full name
@@ -295,16 +297,26 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Submit Application"}
-              </button>
-            </form>
-          </>
-        )}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    className="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-lg text-lg font-medium hover:border-white/60 hover:bg-white/10 transition-colors"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full sm:flex-1 bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Application"}
+                  </button>
+                </div>
+              </form>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
