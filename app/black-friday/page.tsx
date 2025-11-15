@@ -654,8 +654,11 @@ export default function BlackFridayPage() {
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$12,000</span>
                 <span className="text-3xl md:text-4xl font-bold">$10,000</span>
               </div>
-              <div className="text-lg text-[#c1ff72] font-semibold mb-8">
+              <div className="text-lg text-[#c1ff72] font-semibold mb-4">
                 Black Friday Bonus: Private one to one tap and content session with Stephanie and Jackie or a Kelowna retreat upgrade
+              </div>
+              <div className="text-base text-white/70 mb-8">
+                Black Friday price goes live on November 29th
               </div>
             </div>
 
@@ -665,15 +668,23 @@ export default function BlackFridayPage() {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <Link
-                href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout?fbclid=PAQ0xDSwMN6OZleHRuA2FlbQIxMAABp3v1UbwJ-bwikGOANEc48MEpfLirOZWyfQkatqEM11B1ne-TZkRX_wa4ni6y_aem_41lUrn27GEzuKv7uYmNlcA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
+                href="/mastermind"
+                className="inline-block border-2 border-white/30 text-white px-8 py-4 rounded-lg text-lg font-medium hover:border-white hover:bg-white/10 transition-colors"
               >
-                Join the Mastermind
+                Learn More
               </Link>
+              <div>
+                <Link
+                  href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout?fbclid=PAQ0xDSwMN6OZleHRuA2FlbQIxMAABp3v1UbwJ-bwikGOANEc48MEpfLirOZWyfQkatqEM11B1ne-TZkRX_wa4ni6y_aem_41lUrn27GEzuKv7uYmNlcA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white text-black px-8 py-4 rounded-lg text-lg font-medium hover:bg-white/90 transition-colors"
+                >
+                  Join the Mastermind
+                </Link>
+              </div>
             </div>
           </div>
         </section>
