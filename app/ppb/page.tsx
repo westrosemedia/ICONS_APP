@@ -92,36 +92,36 @@ export default function PPBPage() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white mb-6">
-            Build Your Legacy. Amplify Your Voice. Become Iconic.
-          </h1>
-          <p className="text-xl md:text-2xl leading-relaxed text-white/90 max-w-3xl mx-auto mb-8">
-            This is your personal revolution. A step by step journey to build a legacy, a voice, and a
-            movement bigger than business. This is how you become unforgettable, whether you are
-            launching offers or pitching yourself to the world's biggest stages.
-          </p>
-          <div>
-            <a
-              href="#investment"
-              className="inline-block rounded-xl bg-white text-black px-8 py-4 text-lg font-medium transition hover:bg-white/90"
-            >
-              Claim Your {isBF ? "Black Friday Offer" : "Spot"} Now
-            </a>
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
+              Powerful Personal Brand
+            </h1>
+            <p className="text-xl md:text-2xl text-black/90 max-w-3xl mx-auto leading-relaxed mb-8 font-semibold">
+              Build a clear, iconic brand presence that positions you as the authority in your industry
+            </p>
+            <div className="space-y-6 text-lg text-black/90 max-w-3xl mx-auto mb-8 text-left">
+              <p>
+                Powerful Personal Brand is a sixteen week group coaching and brand overhaul program for ambitious women and nonbinary leaders who are ready to move beyond business owner and step fully into industry authority. You want bigger stages, bigger opportunities, and bigger visibility, but you know your brand and marketing system are not built for the level of success you are chasing.
+              </p>
+              <p>
+                This program gives you a clear, powerful brand identity and a marketing system you can actually stick to. You walk away with the clarity, structure, and confidence to grow your income and influence without burning out, get invited onto stages and podcasts, and become the name people think of first in your industry.
+              </p>
+              <p className="font-semibold">
+                If you are ready to be respected, recognized, and paid as the leader you already are, this is your next move.
+              </p>
+            </div>
+            <div>
+              <a
+                href="#investment"
+                className="inline-block rounded-xl bg-black text-white px-8 py-4 text-lg font-semibold transition hover:bg-gray-800"
+              >
+                Enroll Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Program Name & Tagline */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
-            Powerful Personal Brand
-          </h2>
-          <p className="text-xl md:text-2xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
-            Build your legacy, amplify your voice, and become iconic.
-          </p>
-        </div>
-      </section>
 
       {/* Black Friday Countdown */}
       {isBF && isClient && (
@@ -134,251 +134,783 @@ export default function PPBPage() {
 
       <main className="w-full">
 
-        {/* Who This Is For */}
+        {/* Section 2: Is Powerful Personal Brand Your Next Step */}
         <section className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Is This Your Next Step</h2>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  This program is designed for ambitious women and nonbinary leaders who are ready to build
-                  something bigger than themselves. You have a deep sense of purpose, you care about social
-                  justice, and you want to change the world by sharing your story. If 2026 is the year you
-                  plan to launch your podcast, publish your book, deliver your TED Talk, or take the keynote
-                  spot at the biggest event of your career, this is where you step into that future.
-                </p>
-              </div>
-              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
-                <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_089.jpg?alt=media&token=589133f6-da89-4bcf-8e4a-0d322795b6fb"
-                  alt="Ambitious leaders ready to build their legacy"
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: "center 35%" }}
-                />
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Is Powerful Personal Brand Your Next Step</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p>
+                Powerful Personal Brand is designed for ambitious women and nonbinary leaders who already have a strong business foundation and are ready to expand into thought leadership. You have built something meaningful and successful, and now you want to be known for it on a much bigger scale.
+              </p>
+              
+              <p className="font-semibold text-black">
+                You are the perfect fit if these describe you:
+              </p>
+              
+              <ul className="space-y-4 ml-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You are already selling offers successfully but want to scale your influence</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You have a real business foundation and want to transition from expert to thought leader</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You are known in your niche but not yet seen as the authority</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You want to launch a book, podcast, signature talk, or step onto bigger stages</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You feel called to build a message or movement that matters beyond your business</span>
+                </li>
+              </ul>
+              
+              <p className="font-semibold text-black mt-8">
+                And here is how you might be experiencing the gap right now:
+              </p>
+              
+              <ul className="space-y-4 ml-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You watch other people land opportunities you know you should be getting</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You have the expertise but struggle to express it clearly, powerfully, and confidently</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You know your story is powerful but have no idea how to shape it into your brand or marketing</span>
+                </li>
+              </ul>
+              
+              <p className="mt-8">
+                If this feels true, PPB is the program that gives you the clarity, identity, and strategy you need to become the leader your industry recognizes and respects.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Who This Is NOT For */}
+        {/* Section 3: What Powerful Personal Brand Actually Is */}
         <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Who This Is Not For</h2>
-            <p className="text-lg leading-relaxed text-gray-700">
-              This program is not for beginners. If you are just starting your business or have never
-              used social media, this is not the right fit. This is for leaders who have already built a
-              foundation and are ready to amplify their message and step into a larger arena. If you are
-              not yet clear on your business, start there first and come back when you are ready for
-              this level.
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What Powerful Personal Brand Actually Is</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p>
+                Powerful Personal Brand is a sixteen week group coaching program that helps you get ridiculously clear on who you are as a brand, how to talk about what you do, and how to market yourself in a way that actually works. This is where you stop guessing, stop blending in, and finally build the identity and presence people take seriously.
+              </p>
+              
+              <p>
+                You get a new module every week with simple, focused training that builds your brand step by step. Nothing overwhelming. Nothing fluffy. Just the exact lessons you need so your marketing stops feeling like a moving target.
+              </p>
+              
+              <p>
+                Then you join live coaching twice a month. These calls are where your ideas get sharper, your message gets clearer, and your strategy gets personalized so you are not trying to figure it out alone. The weekly modules teach you the system. The coaching helps you make it yours.
+              </p>
+              
+              <p>
+                This structure gives you time to actually implement instead of drowning in constant calls. If you want weekly coaching and more hands on support, that is what the Mastermind or one to one work is for. PPB is the perfect middle ground for leaders who want a clear, powerful brand identity and a marketing system they can finally stick to.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* What's Included – The 16 Week Journey */}
+        {/* Section 4: What Powerful Personal Brand Helps You Do */}
         <section className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative h-[60vh] min-h-[500px] rounded-2xl overflow-hidden mb-16">
-              <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_026.jpg?alt=media&token=35b646af-2e21-47e2-84ec-91543d8f9910"
-                alt="Powerful Personal Brand Program Experience"
-                fill
-                className="object-cover"
-                style={{ objectPosition: "center 35%" }}
-              />
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What Powerful Personal Brand Helps You Do</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p className="font-semibold text-black">
+                Let's be honest.
+              </p>
+              
+              <p>
+                You are missing opportunities you should already have. Not because you are not good enough. Not because you are not working hard enough. But because your brand and your message are not showing the world who you actually are.
+              </p>
+              
+              <p>
+                You have watched people who are less experienced, less qualified, and quite literally less talented than you get the invitations, podcast spots, keynote stages, and recognition you know should be yours. And it is frustrating because you know you could deliver at a level they cannot even touch.
+              </p>
+              
+              <p>
+                The problem is not your expertise.
+              </p>
+              
+              <p>
+                The problem is that your current brand presence is not communicating your authority, your clarity, or your vision in a way that positions you as the obvious choice.
+              </p>
+              
+              <p className="font-semibold text-black">
+                Powerful Personal Brand fixes that.
+              </p>
+              
+              <p>
+                Inside PPB you build a clear, powerful brand identity that finally matches the level of leader you are. You learn how to talk about your work in a way that makes people stop, listen, and instantly understand your value. You create a marketing system you can stick to so your visibility grows consistently instead of in unpredictable waves.
+              </p>
+              
+              <p className="font-semibold text-black">
+                The result is simple.
+              </p>
+              
+              <p>
+                Your message lands.
+              </p>
+              
+              <p>
+                Your presence commands attention.
+              </p>
+              
+              <p>
+                Your name rises in your industry.
+              </p>
+              
+              <p>
+                And the opportunities you deserve start coming directly to you, not the people who should never have been getting them in the first place.
+              </p>
             </div>
+          </div>
+        </section>
 
-            <div className="space-y-12">
-              <div className="text-center max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">The 16 Week Journey</h2>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  The Powerful Personal Brand program is built as a step-by-step journey designed to take you from invisible to unforgettable. Every week builds on the last, guiding you to master your story, your strategy, and your presence so you can lead with confidence, clarity, and influence that lasts.
-                </p>
+        {/* Section 5: The Powerful Personal Brand Framework */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">The Powerful Personal Brand Framework</h2>
+            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+              <p className="text-xl font-semibold text-black">
+                Discover your story. Shape your brand. Refine your voice. Build the visibility strategy that carries it.
+              </p>
+              
+              <p>
+                This sixteen week journey is designed to take you from "I know I am meant for more" to "I am getting invited everywhere." Each week builds a specific skill that strengthens your identity, message, and authority so your visibility becomes intentional and inevitable.
+              </p>
+
+              <div className="text-left space-y-8">
+                {/* Weeks 1-2: Purpose */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 1 to 2: Purpose</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 1: Clarifying your why</p>
+                      <p>You uncover the deeper reason behind your work so your brand has real direction and emotional weight. This becomes the anchor for every message, pitch, interview, and piece of content you create.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 2: Vision mapping</p>
+                      <p>You map out exactly where you want your brand, business, and visibility to go. This gives you a long term roadmap so your marketing stops being reactive and finally becomes intentional.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weeks 3-4: Empowerment */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 3 to 4: Empowerment</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 3: Embodied confidence</p>
+                      <p>You reconnect to your voice and your power so you show up like the leader people trust. This is where your presence shifts and people take you seriously.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 4: Owning visibility</p>
+                      <p>You learn how to be visible without burning out or leaking energy. This helps you show up consistently and confidently without sacrificing boundaries or authenticity.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Week 5: Leadership */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Week 5: Leadership</h3>
+                  <div className="ml-4">
+                    <p className="font-semibold mb-2">Owning your story as a leadership tool</p>
+                    <p>You learn how to use your personal story strategically so you are not just posting to fill space. You speak in a way that positions you as the authority and moves people toward buying, inviting, and trusting you.</p>
+                  </div>
+                </div>
+
+                {/* Weeks 6-8: Clarity */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 6 to 8: Clarity</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 6: Brand audit</p>
+                      <p>We identify exactly what is working and what is holding you back so you can fix the invisible cracks that are costing you sales and opportunities.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 7: Refining your brand</p>
+                      <p>Your message, visuals, and voice become aligned and intentional. This is where your brand finally looks, feels, and communicates at the level you are aiming for.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 8: Ideal client clarity</p>
+                      <p>You learn the exact language, desires, and decision patterns of the people you want to attract so your marketing becomes precise instead of vague.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weeks 9-10: Audience and Strategy */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 9 to 10: Audience and Strategy</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 9: Audience over influence</p>
+                      <p>You learn how to build a loyal, engaged audience that converts, instead of chasing vanity metrics that do nothing for your business.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 10: Strategic presence</p>
+                      <p>You build a sustainable system for showing up. This is where your visibility stops being chaotic and starts being consistent.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weeks 11-12: Presence and Content */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 11 to 12: Presence and Content</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 11: Magnetic content creation</p>
+                      <p>You learn how to create content that feels alive, intentional, and aligned with your industry authority. No more filler posts.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 12: Client transformation mapping</p>
+                      <p>You map the before, bridge, and after of your client journey so your content and offers convert with clarity.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weeks 13-14: Story and Strategy */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 13 to 14: Story and Strategy</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 13: Turning your story into strategy</p>
+                      <p>You turn your lived experiences into the story that fuels your brand, your pitches, your launches, and your speaking. This is where your message becomes unforgettable.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 14: Pitch preparation</p>
+                      <p>You build out the actual components you will use to pitch yourself for podcasts, stages, collaborations, and partnerships.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Weeks 15-16: Visibility Era */}
+                <div>
+                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 15 to 16: Visibility Era</h3>
+                  <div className="space-y-4 ml-4">
+                    <div>
+                      <p className="font-semibold mb-2">Week 15: Launch and pitch readiness</p>
+                      <p>You finalize the assets and messaging you need for your next launch or your next visibility push.</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">Week 16: Your visibility era begins</p>
+                      <p>You step into your new identity and begin executing your visibility strategy with clarity, confidence, and momentum. This is the moment you stop waiting and start rising.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="space-y-12">
-                <div className="bg-white border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 1–2: Purpose</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 1:</strong> Defining Your Why – Reflect on your story, values, and mission.</li>
-                    <li><strong>Week 2:</strong> Vision Mapping – Build a detailed vision for your brand and future.</li>
-                  </ul>
-                </div>
+        {/* Section 6: What You Get Inside Powerful Personal Brand */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What You Get Inside Powerful Personal Brand</h2>
+            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+              <p>
+                Powerful Personal Brand gives you everything you need to build a clear, powerful identity and a visibility strategy that gets you invited into bigger rooms. Every piece of this program is designed to help you grow your authority, sharpen your message, and show up with a presence people trust.
+              </p>
 
-                <div className="bg-gray-50 border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 3–4: Empowerment</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 3:</strong> Confidence Building – Cultivate self-trust and embodied leadership.</li>
-                    <li><strong>Week 4:</strong> Visibility and Boundaries – Step into visibility while protecting your energy and story.</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Week 5: Leadership</h3>
-                  <p className="text-lg text-gray-700">
-                    Owning Your Story and Leading Your Audience – Use your personal story as a tool of leadership and connection.
+              <div className="text-left space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Weekly video trainings</h3>
+                  <p>
+                    Each week you get fresh, focused training that teaches you the exact steps to build your brand, refine your message, and create a visibility strategy that feels doable. No overwhelm. No guessing. Just clear direction so you always know what to do next.
                   </p>
                 </div>
 
-                <div className="bg-gray-50 border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 6–8: Clarity</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 6:</strong> Brand Audit – Review your current brand, voice, and visuals to see what needs alignment.</li>
-                    <li><strong>Week 7:</strong> Refining Your Brand – Polish your voice, visuals, and messaging for magnetic clarity.</li>
-                    <li><strong>Week 8:</strong> Ideal Client Clarity – Define the real person you are speaking to and learn their language.</li>
-                  </ul>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Biweekly group coaching</h3>
+                  <p>
+                    These calls are where your ideas get sharper and your strategy gets personalized. You bring your questions, your messaging, your content, and your brand decisions, and you get real feedback so you are never stuck or confused. This is where you get clarity and momentum fast.
+                  </p>
                 </div>
 
-                <div className="bg-white border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 9–10: Audience and Strategy</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 9:</strong> Audience Over Influence – Build a loyal audience that cares, not vanity metrics.</li>
-                    <li><strong>Week 10:</strong> Strategic Presence – Plan your races and reps to stay consistent with launches and content.</li>
-                  </ul>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Biweekly pitch sessions</h3>
+                  <p className="font-semibold mb-3 text-black">
+                    This alone is worth the entire investment.
+                  </p>
+                  <p className="mb-3">
+                    Every two weeks you get to practice your message, your pitch, your story, your signature talk, or your interview answers in a safe room where you can refine everything before you take it public. Think Dragons Den or Shark Tank, but without the shame. Think TED style feedback but with heart. You learn how to speak with presence, authority, and conviction so you sound like the leader people want to book.
+                  </p>
+                  <p>
+                    These sessions help you improve your delivery, sharpen your storytelling, and get the kind of feedback that would take years to figure out on your own. They build real confidence so when the opportunities come, you are ready.
+                  </p>
                 </div>
 
-                <div className="bg-gray-50 border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 11–12: Presence and Content</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 11:</strong> Creating Magnetic Content – Make your content feel alive and sustainable.</li>
-                    <li><strong>Week 12:</strong> Client Transformation Path – Map your client's journey before, bridge, and after.</li>
-                  </ul>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Guest expert trainings</h3>
+                  <p>
+                    You get access to guest experts who specialize in visibility, storytelling, leadership, messaging, and media. This gives you a full ecosystem of support for the level you are rising into.
+                  </p>
                 </div>
 
-                <div className="bg-white border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 13–14: Story and Strategy</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 13:</strong> Story as Strategy – Turn your story into a marketing engine and craft your TED-style narrative.</li>
-                    <li><strong>Week 14:</strong> Preparing Your Launch or Pitch – Translate everything into a clear offer or pitch that lands.</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 border-l-4 border-black p-8 md:p-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-black">Weeks 15–16: Visibility Era</h3>
-                  <ul className="space-y-4 text-lg text-gray-700">
-                    <li><strong>Week 15:</strong> Preparing Your Launch or Pitch – Finalize your launch materials and ready your message.</li>
-                    <li><strong>Week 16:</strong> Your Visibility Era – Go live, share your story, and embody the leader your audience needs.</li>
-                  </ul>
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">A full brand and visibility system</h3>
+                  <p>
+                    By the end of the program you have a complete brand identity, a clear message, a visibility strategy you can follow, and the confidence to run it. You leave with the tools, the clarity, and the presence to be seen, respected, and paid at the level you deserve.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Bonuses and Support */}
+        {/* Section 8: Why Your Current Branding Is Not Working */}
         <section className="py-20 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black">Bonuses and Support</h2>
-            <p className="text-lg leading-relaxed text-gray-700 text-center mb-12">
-              When you join, this journey becomes one of collaboration and growth, with expert support
-              backing you at every step.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 border border-gray-200 rounded-2xl">
-                <h3 className="text-xl font-bold mb-4 text-black">Ongoing Support</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li>• Biweekly Q and A calls</li>
-                  <li>• Biweekly pitch sessions</li>
-                  <li>• Full year support available</li>
-                </ul>
-              </div>
-              <div className="bg-white p-8 border border-gray-200 rounded-2xl">
-                <h3 className="text-xl font-bold mb-4 text-black">Exclusive Benefits</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li>• Feedback from Stephanie and team</li>
-                  <li>• Exclusive discount on content packages</li>
-                  <li>• Continuous excellence and production support</li>
-                </ul>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Why Your Current Branding Is Not Working</h2>
+            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+              <p className="font-semibold text-black">
+                You are not getting the opportunities you deserve because your brand is not showing people the level of leader you really are.
+              </p>
+
+              <div className="text-left space-y-8">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">The first problem</h3>
+                  <p className="mb-4">
+                    Most branding programs only focus on aesthetics.
+                  </p>
+                  <p className="mb-4">
+                    Pretty photos and color palettes do not fix:
+                  </p>
+                  <ul className="space-y-3 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>unclear messaging</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>a story with no structure</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>a presence that does not match your expertise</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4">
+                    Without identity and strategy, no amount of visuals will position you as an authority.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">The second problem</h3>
+                  <p className="mb-4">
+                    Visibility advice online teaches you how to post, not how to lead.
+                  </p>
+                  <p className="mb-4">
+                    You are being told to show up, but no one is preparing you for real world opportunities like:
+                  </p>
+                  <ul className="space-y-3 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>pitching yourself with confidence</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>being interviewed without rambling</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>speaking on real stages</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>getting booked on real podcasts</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>being recognized outside your own bubble</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4">
+                    You are doing the work, but you are not being trained for the rooms you want to be in.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">The third problem</h3>
+                  <p className="mb-4">
+                    Most programs give information but no practice.
+                  </p>
+                  <p className="mb-4">
+                    You never get:
+                  </p>
+                  <ul className="space-y-3 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>feedback</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>refinement</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>repetition</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>pitch coaching</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4">
+                    You cannot rise into authority without practicing how to speak and present like a leader.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">This is what Powerful Personal Brand fixes</h3>
+                  <p className="mb-4">
+                    Inside PPB you get:
+                  </p>
+                  <ul className="space-y-3 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>identity work that makes your message unforgettable</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>brand strategy that positions you as the authority</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>visibility tools for real opportunities</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>live practice so you sound confident and prepared</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>coaching that strengthens your delivery and presence</span>
+                    </li>
+                  </ul>
+                  <p className="mt-6 font-semibold text-black">
+                    This is why your past attempts have not worked.
+                  </p>
+                  <p className="font-semibold text-black">
+                    This is where it finally does.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Client Love */}
+        {/* Proof That This Work Creates Real Leaders */}
         <section className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">Client Love</h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              <blockquote className="bg-white border-l-4 border-black p-10 italic text-lg text-gray-700">
-                "Working with Stephanie is a choice I would make a hundred times over. She brings a
-                level of care and vision that is unmatched."
-              </blockquote>
-              <blockquote className="bg-white border-l-4 border-black p-10 italic text-lg text-gray-700">
-                "Stephanie is grounded, raw, honest, and brings fire to everything she leads. The
-                transformation she creates is undeniable."
-              </blockquote>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Proof That This Work Creates Real Leaders</h2>
+            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+              <p>
+                These are not lucky breaks.
+              </p>
+              <p>
+                These are the results of leaders who got clear on their brand, refined their message, and showed up with a presence people trust.
+              </p>
+
+              <div className="text-left space-y-8">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-6">Real Leader Wins</h3>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-black mb-3">How J Went From Nervous To Sold Out</h4>
+                      <p>
+                        J wanted to host live events but had no idea how to talk about her vision. Her message felt shaky and her confidence was low. After she clarified her brand and transformation, she sold out her second event with ease. She went from hesitant to in demand because people finally understood what she stood for and why it mattered.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-black mb-3">How T Became A Leader People Quote</h4>
+                      <p>
+                        T was an experienced event planner with flat, forgettable content. She wanted to step into speaking and thought leadership but did not know how to position herself as a voice worth listening to. After using this framework, her content was shared by the biggest names in her industry. She was invited to speak at conferences and landed the largest client of her entire career.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-black mb-3">How One Message Shift Created A 5k Month</h4>
+                      <p>
+                        A client applied one piece of advice and shared,
+                      </p>
+                      <p className="italic ml-4">
+                        "There is one day left in this month and I am about to hit 5k after having no recurring income for months."
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-black mb-3">How Visibility Turned Into Real Invitations</h4>
+                      <p>
+                        Another client said,
+                      </p>
+                      <p className="italic ml-4">
+                        "Just got a conference for 2026 because of LinkedIn posts."
+                      </p>
+                      <p className="mt-3">
+                        This is what happens when your brand and message actually position you as the authority.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-6">Real Momentum</h3>
+                  <div className="space-y-4">
+                    <p className="italic">
+                      "My views went from 200 to 7k and seventy percent were people who do not follow me. I went from 37 to 118 followers who are not just people I already know."
+                    </p>
+                    <p className="italic">
+                      "Most views on a reel on this account ever from day one's challenge task."
+                    </p>
+                    <p className="italic">
+                      "Fifty five signed up for my webinar. Twenty nine attended. Six bought my course tonight."
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-6">Real Confidence and Clarity</h3>
+                  <div className="space-y-4">
+                    <p className="italic">
+                      "My burnout last year destroyed my business and my confidence. I am excited because I know this is going to kick my ass into gear."
+                    </p>
+                    <p className="italic">
+                      "Thank you for this teaching. It was the step by step breakdown I have been craving. I had answers for every question without overthinking."
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-6">Real Brand Transformation</h3>
+                  <p className="italic">
+                    "Stephanie helps us establish our branding goals, generates innovative ways to achieve them, and pushes me past my comfort zone so we actually get the results we want."
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-8 font-semibold text-black">
+                These results are not random.
+              </p>
+              <p className="font-semibold text-black">
+                They are the natural outcome of clear messaging, aligned identity, and strategic visibility.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* About Stephanie */}
+        {/* Section 10: Your Questions Answered */}
         <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden order-2 md:order-1">
-                <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_098.jpg?alt=media&token=75795b62-a1ee-4b78-bfcb-ea59de9e8738"
-                  alt="Stephanie Rose - Founder of West Rose Media and Creator of the Powerful Personal Brand Framework"
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: "center 35%" }}
-                />
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Your Questions Answered</h2>
+            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+              <div className="text-left space-y-8">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">Will this actually help me get real opportunities like stages, podcasts, and partnerships</h3>
+                  <p className="mb-4">
+                    Yes. This is one of the core outcomes of Powerful Personal Brand.
+                  </p>
+                  <p className="mb-4">
+                    You learn how to pitch yourself clearly, speak about your work confidently, and show up with a message that positions you as the authority. This is not content tips. This is visibility training for real rooms and real invitations.
+                  </p>
+                  <p>
+                    Clients have booked conferences, landed podcast interviews, been shared by industry leaders, and secured partnerships because their brand finally communicated their level.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">I have invested before and did not get results</h3>
+                  <p className="mb-4 font-semibold text-black">
+                    This is different.
+                  </p>
+                  <p className="mb-4">
+                    Most programs give you information.
+                  </p>
+                  <p className="mb-4">
+                    Powerful Personal Brand gives you:
+                  </p>
+                  <ul className="space-y-3 ml-4 mb-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>coaching</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>practice</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>repetition</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>feedback</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>message refinement</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>pitch training</span>
+                    </li>
+                  </ul>
+                  <p>
+                    This is the missing piece that makes everything finally work. You are not learning theory. You are building skills. And you get guidance every step of the way so you do not get stuck or fall off.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">Will this help me make more money</h3>
+                  <p className="mb-4">
+                    Yes, because clarity creates conversions.
+                  </p>
+                  <p className="mb-4">
+                    When your message is clear and your presence is confident, people trust you faster and buy from you more easily. Clients have increased sales, booked their largest clients ever, filled events, and hit their best months because their brand finally matched the level of their work.
+                  </p>
+                  <p>
+                    The goal of this program is to help you become known, respected, and chosen. That naturally increases income.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">Why would I sign up for the full year instead of just the sixteen weeks</h3>
+                  <p className="mb-4">
+                    The sixteen week program gives you the transformation and the system.
+                  </p>
+                  <p className="mb-4 font-semibold text-black">
+                    The year gives you the mastery.
+                  </p>
+                  <p className="mb-4">
+                    Visibility, leadership, and brand growth require consistency, support, and refinement over time. When you stay for the year you:
+                  </p>
+                  <ul className="space-y-3 ml-4 mb-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>continue implementing your visibility strategy</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>get ongoing feedback as you rise</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>sharpen your speaking and storytelling</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>refine your message as your brand grows</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>keep momentum instead of losing it</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>stay grounded and accountable as you step into bigger rooms</span>
+                    </li>
+                  </ul>
+                  <p>
+                    Sixteen weeks gives you the foundation.
+                  </p>
+                  <p className="font-semibold text-black">
+                    Twelve months turns you into a leader with staying power.
+                  </p>
+                </div>
               </div>
-              <div className="order-1 md:order-2">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Meet Your Guide</h2>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  I am Stephanie Rose, founder of West Rose Media and the creator of the Powerful Personal
-                  Brand framework. My book, The Powerful Personal Brand, is launching soon, and this program
-                  brings the full journey to life. I built this from nothing through hard seasons, and my
-                  brand became the anchor that supported me and my family. Today I help high achieving women
-                  and nonbinary leaders elevate their brands, amplify their voices, and step into iconic
-                  success. This program is your chance to join that legacy and build the impact you want.
-                </p>
-              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Your Next Level Starts When You Do</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p>
+                You already know you are meant for more.
+              </p>
+              <p>
+                You already feel the pull toward bigger rooms and bigger recognition.
+              </p>
+              <p>
+                Powerful Personal Brand gives you the clarity and structure to step into that level with confidence.
+              </p>
+              <p className="font-semibold text-black">
+                If you are ready to lead, this is your moment to say yes.
+              </p>
+              <p className="font-semibold text-black">
+                Join now while Black Friday pricing is live.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Investment */}
-        <section id="investment" className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative h-[60vh] min-h-[500px] rounded-2xl overflow-hidden mb-16">
-              <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_097.jpg?alt=media&token=06f9ae26-28b7-4fba-9fc2-872e4bd7ae74"
-                alt="Invest in Your Personal Brand"
-                fill
-                className="object-cover"
-                style={{ objectPosition: "center 35%" }}
-              />
-            </div>
-            
+        <section id="investment" className="py-20 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Your Investment</h2>
-              <p className="text-xl font-semibold mb-4 text-black">Program begins January 2026</p>
-              {isBF ? (
-                <div className="space-y-4">
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    <strong className="text-black">Black Friday Sale:</strong> This is a limited-time offer. Prices go up soon and will never be this low again.
-                  </p>
-                  <div className="bg-gray-50 border-l-4 border-black p-6 rounded-lg max-w-2xl mx-auto text-left">
-                    <p className="text-base font-semibold text-black mb-3">Regular Pricing:</p>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>The 16 Week Intensive: <span className="line-through">$3,500 USD</span></li>
-                      <li>The One Year Experience: <span className="line-through">$5,000 USD</span></li>
-                    </ul>
-                    <p className="text-base font-semibold text-black mt-4 mb-2">Black Friday Pricing (Ending Soon):</p>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>The 16 Week Intensive: $2,500 USD</li>
-                      <li>The One Year Experience: $3,500 USD</li>
-                    </ul>
-                  </div>
-                </div>
-              ) : (
-                <p className="text-lg leading-relaxed text-gray-700">
-                  Black Friday has ended. Current pricing is shown below.
-                </p>
-              )}
+              <p className="text-xl font-semibold mb-4 text-black">
+                Powerful Personal Brand begins January 2026.
+              </p>
+              <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                This is your moment to step into a new level of clarity, visibility, and authority. The level you are stepping into requires support, structure, and a brand identity that actually communicates your expertise.
+              </p>
+              <p className="font-semibold text-black mb-8">
+                Here are your options.
+              </p>
             </div>
+
+            <div className="space-y-8 mb-12">
+              <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                <h3 className="text-2xl font-bold text-black mb-4">The Sixteen Week Intensive</h3>
+                <p className="mb-6 text-gray-700">
+                  A complete brand and visibility overhaul with the weekly curriculum, biweekly coaching, pitch sessions, and guest trainings.
+                </p>
+                <div className="space-y-2">
+                  <p className="text-gray-700">
+                    Regular price: <strong className="text-black">3500 USD</strong>
+                  </p>
+                  <p className="text-gray-700">
+                    Black Friday price: <strong className="text-black">2500 USD</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                <h3 className="text-2xl font-bold text-black mb-4">The Full Year Experience</h3>
+                <p className="mb-6 text-gray-700">
+                  A full year of implementation, support, feedback, and refinement so you rise into consistent visibility and stay there.
+                </p>
+                <div className="space-y-2">
+                  <p className="text-gray-700">
+                    Regular price: <strong className="text-black">5000 USD</strong>
+                  </p>
+                  <p className="text-gray-700">
+                    Black Friday price: <strong className="text-black">3500 USD</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center text-gray-700 mb-4">
+              The sixteen week program gives you the full transformation.
+            </p>
+            <p className="text-center font-semibold text-black mb-12">
+              The year gives you the space to master it and rise into real authority.
+            </p>
 
             <Script
               src="https://js.stripe.com/v3/pricing-table.js"
@@ -388,30 +920,6 @@ export default function PPBPage() {
               pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2"
               publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"
             />
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section id="cta" className="py-20 px-4 bg-black text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">Your Time Is Now</h2>
-            <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-12">
-              The future you want is waiting. The impact you want to make is within reach. Join now and
-              let 2026 be the year you step fully into your power.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="#investment"
-                className="inline-block rounded-xl bg-white text-black px-8 py-4 text-lg font-medium transition hover:bg-white/90"
-              >
-                Join the Program
-              </a>
-              {isBF && isClient && (
-                <span className="text-base text-white/70">
-                  Black Friday pricing ends when the countdown hits zero
-                </span>
-              )}
-            </div>
           </div>
         </section>
       </main>
