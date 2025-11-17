@@ -112,6 +112,44 @@ export default function PPBPage() {
         </motion.div>
       </section>
 
+      {/* Hero Description Section */}
+      <section className="section-padding bg-white">
+        <div className="container-elegant">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="space-y-6 text-editorial max-w-3xl mx-auto">
+              <p>
+                Powerful Personal Brand is a sixteen week group coaching and brand overhaul program for ambitious women and nonbinary leaders who want bigger stages, bigger opportunities, and bigger visibility, but know their current brand and marketing system are not built for the level they are rising into.
+              </p>
+              
+              <p>
+                Inside PPB you build a clear, powerful brand identity, refine your message, and create a marketing system you can actually follow. You walk away with clarity, structure, and confidence to grow your income and influence, get invited onto stages and podcasts, and become the name people think of first in your industry.
+              </p>
+              
+              <p className="font-semibold">
+                If you are ready to be respected, recognized, and paid as the leader you already are, this is your next step.
+              </p>
+            </div>
+            
+            <div className="mt-8 space-y-4">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll now
+              </button>
+              <p className="text-editorial font-semibold">
+                Black Friday pricing is live.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Black Friday Countdown */}
       {isBF && isClient && (
