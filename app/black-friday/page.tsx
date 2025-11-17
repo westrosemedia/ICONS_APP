@@ -684,9 +684,6 @@ export default function BlackFridayPage() {
                 <span className="text-2xl md:text-3xl font-bold text-white/50 line-through">$12,000</span>
                 <span className="text-3xl md:text-4xl font-bold">$10,000</span>
               </div>
-              <div className="text-lg text-[#c1ff72] font-semibold mb-4">
-                Black Friday Bonus: Private one to one tap and content session with Stephanie and Jackie or a Kelowna retreat upgrade
-              </div>
               <div className="text-base text-white/70 mb-8">
                 Black Friday price goes live on November 29th
               </div>
