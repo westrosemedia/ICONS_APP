@@ -203,6 +203,14 @@ export default function PPBPage() {
                 If this feels true, PPB is the program that gives you the clarity, identity, and strategy you need to become the leader your industry recognizes and respects.
               </p>
             </div>
+            <div className="mt-8">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
         </motion.div>
 
             </div>
@@ -250,6 +258,14 @@ export default function PPBPage() {
               <p>
                 This structure gives you time to actually implement instead of drowning in constant calls. If you want weekly coaching and more hands on support, that is what the Mastermind or one to one work is for. PPB is the perfect middle ground for leaders who want a clear, powerful brand identity and a marketing system they can finally stick to.
               </p>
+            <div className="mt-8">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -330,6 +346,14 @@ export default function PPBPage() {
               <p>
                 And the opportunities you deserve start coming directly to you, not the people who should never have been getting them in the first place.
               </p>
+            <div className="mt-8">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -490,6 +514,14 @@ export default function PPBPage() {
                   </div>
                 </div>
               </div>
+            <div className="mt-8 text-center">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -569,6 +601,14 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
+            <div className="mt-8 text-center">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -735,6 +775,14 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
+            <div className="mt-8 text-center">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -860,6 +908,14 @@ export default function PPBPage() {
               <p className="font-semibold">
                 They are the natural outcome of clear messaging, aligned identity, and strategic visibility.
               </p>
+            <div className="mt-8">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -1007,6 +1063,14 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
+            <div className="mt-8 text-center">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll Now
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -1055,6 +1119,14 @@ export default function PPBPage() {
                   <p className="font-semibold">
                     Join now while Black Friday pricing is live.
                   </p>
+                </div>
+                <div className="mt-8">
+                  <button 
+                    onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+                  >
+                    Enroll Now
+                  </button>
                 </div>
               </motion.div>
             </div>
