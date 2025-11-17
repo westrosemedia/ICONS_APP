@@ -205,7 +205,27 @@ export default function PPBPage() {
             </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 3: What Powerful Personal Brand Actually Is */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -233,7 +253,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 4: What Powerful Personal Brand Helps You Do */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -293,7 +333,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4578.jpg?alt=media"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 5: The Powerful Personal Brand Framework */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -433,7 +493,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_18.jpg?alt=media&token=e193eea2-a066-46df-b0b6-781a781ead76"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 6: What You Get Inside Powerful Personal Brand */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +572,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 8: Why Your Current Branding Is Not Working */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -638,7 +738,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Proof That This Work Creates Real Leaders */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -743,7 +863,27 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
         {/* Section 10: Your Questions Answered */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -870,34 +1010,53 @@ export default function PPBPage() {
           </div>
         </motion.div>
 
-        {/* Closing CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-display text-black mb-8">Your Next Level Starts When You Do</h2>
-          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
-              <p>
-                You already know you are meant for more.
-              </p>
-              <p>
-                You already feel the pull toward bigger rooms and bigger recognition.
-              </p>
-              <p>
-                Powerful Personal Brand gives you the clarity and structure to step into that level with confidence.
-              </p>
-              <p className="font-semibold text-black">
-                If you are ready to lead, this is your moment to say yes.
-              </p>
-              <p className="font-semibold">
-                Join now while Black Friday pricing is live.
-              </p>
+            </div>
           </div>
-        </motion.div>
+        </section>
 
+        {/* Image Break */}
+        <section className="relative w-full h-[60vh] min-h-[400px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4830.jpg?alt=media&token=82f77039-1b7d-4cf8-886f-89591e213ad2"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </section>
+
+        {/* Closing CTA */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <h2 className="text-display text-black mb-8">Your Next Level Starts When You Do</h2>
+                <div className="space-y-6 text-editorial max-w-3xl mx-auto">
+                  <p>
+                    You already know you are meant for more.
+                  </p>
+                  <p>
+                    You already feel the pull toward bigger rooms and bigger recognition.
+                  </p>
+                  <p>
+                    Powerful Personal Brand gives you the clarity and structure to step into that level with confidence.
+                  </p>
+                  <p className="font-semibold text-black">
+                    If you are ready to lead, this is your moment to say yes.
+                  </p>
+                  <p className="font-semibold">
+                    Join now while Black Friday pricing is live.
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
