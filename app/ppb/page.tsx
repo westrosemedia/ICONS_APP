@@ -100,19 +100,8 @@ export default function PPBPage() {
               Powerful Personal Brand
             </h1>
             <p className="text-large text-black/90 max-w-3xl leading-relaxed mb-8 font-semibold">
-              Build a clear, iconic brand presence that positions you as the authority in your industry
+              Build a clear, iconic brand presence that positions you as the authority in your industry.
             </p>
-            <div className="space-y-6 text-editorial text-black/90 max-w-3xl mb-8">
-              <p>
-                Powerful Personal Brand is a sixteen week group coaching and brand overhaul program for ambitious women and nonbinary leaders who are ready to move beyond business owner and step fully into industry authority. You want bigger stages, bigger opportunities, and bigger visibility, but you know your brand and marketing system are not built for the level of success you are chasing.
-              </p>
-              <p>
-                This program gives you a clear, powerful brand identity and a marketing system you can actually stick to. You walk away with the clarity, structure, and confidence to grow your income and influence without burning out, get invited onto stages and podcasts, and become the name people think of first in your industry.
-              </p>
-              <p className="font-semibold">
-                If you are ready to be respected, recognized, and paid as the leader you already are, this is your next move.
-              </p>
-            </div>
             <button 
               onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
