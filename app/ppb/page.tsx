@@ -252,26 +252,73 @@ export default function PPBPage() {
           <h2 className="text-display text-black mb-8">What Powerful Personal Brand Actually Is</h2>
           <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
-                Powerful Personal Brand is a sixteen week group coaching program that helps you get ridiculously clear on who you are as a brand, how to talk about what you do, and how to market yourself in a way that actually works. This is where you stop guessing, stop blending in, and finally build the identity and presence people take seriously.
+                Powerful Personal Brand is where you stop guessing about your brand and finally show up in a way people take seriously.
+              </p>
+              
+              <p className="font-semibold text-black">
+                Here is what that actually means:
+              </p>
+              
+              <div className="text-left space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">You look like a leader</h3>
+                  <p>
+                    Your visuals match your prices, your presence matches your results, and your online brand finally reflects the level you work at.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">You sound like a leader</h3>
+                  <p>
+                    You can explain what you do clearly, your content has direction, and your message lands the same way everywhere you show up.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">You show up like a leader</h3>
+                  <p>
+                    You post without overthinking, you pitch without spiraling, and you talk about your work in a way that makes people pay attention.
+                  </p>
+                </div>
+              </div>
+              
+              <p className="font-semibold text-black mt-8">
+                Inside Powerful Personal Brand you get:
+              </p>
+              
+              <ul className="space-y-4 text-left max-w-2xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Weekly clarity lessons that show you what to fix and what to build</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Coaching twice a month where your ideas get sharper</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Pitch sessions where you practice your story, your delivery, and your interviews</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Guest trainings from leaders already doing what you want to be known for</span>
+                </li>
+              </ul>
+              
+              <p className="mt-8 font-semibold text-black">
+                This is not theory.
               </p>
               
               <p>
-                You get a new module every week with simple, focused training that builds your brand step by step. Nothing overwhelming. Nothing fluffy. Just the exact lessons you need so your marketing stops feeling like a moving target.
+                This is where your identity, your message, and your presence finally match the level you are meant for.
               </p>
-              
-              <p>
-                Then you join live coaching twice a month. These calls are where your ideas get sharper, your message gets clearer, and your strategy gets personalized so you are not trying to figure it out alone. The weekly modules teach you the system. The coaching helps you make it yours.
-              </p>
-              
-              <p>
-                This structure gives you time to actually implement instead of drowning in constant calls. If you want weekly coaching and more hands on support, that is what the Mastermind or one to one work is for. PPB is the perfect middle ground for leaders who want a clear, powerful brand identity and a marketing system they can finally stick to.
-              </p>
+            </div>
             <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
