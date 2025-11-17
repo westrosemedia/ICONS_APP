@@ -177,57 +177,38 @@ export default function PPBPage() {
           <h2 className="text-display text-black mb-8">Is Powerful Personal Brand Your Next Step</h2>
           <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
-                Powerful Personal Brand is designed for ambitious women and nonbinary leaders who already have a strong business foundation and are ready to expand into thought leadership. You have built something meaningful and successful, and now you want to be known for it on a much bigger scale.
+                Powerful Personal Brand is for leaders who already have a real business… but keep noticing moments that make them think, "Why is no one talking about me yet?"
               </p>
               
               <p className="font-semibold text-black">
-                You are the perfect fit if these describe you:
+                Ask yourself:
               </p>
               
-              <ul className="space-y-4 ml-4">
+              <ul className="space-y-4 text-left max-w-2xl mx-auto">
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>You are already selling offers successfully but want to scale your influence</span>
+                  <span>When people ask "Who do you recommend for…" are you ever the one being tagged?</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>You have a real business foundation and want to transition from expert to thought leader</span>
+                  <span>Do you watch speakers or podcast guests and think "I should be up there, not them"?</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>You are known in your niche but not yet seen as the authority</span>
+                  <span>Does your content stay inside your small bubble instead of reaching new audiences?</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>You want to launch a book, podcast, signature talk, or step onto bigger stages</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>You feel called to build a message or movement that matters beyond your business</span>
-                </li>
-              </ul>
-              
-              <p className="font-semibold text-black mt-8">
-                And here is how you might be experiencing the gap right now:
-              </p>
-              
-              <ul className="space-y-4 ml-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>You watch other people land opportunities you know you should be getting</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>You have the expertise but struggle to express it clearly, powerfully, and confidently</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>You know your story is powerful but have no idea how to shape it into your brand or marketing</span>
+                  <span>Do people still DM you asking what you actually do instead of how to work with you?</span>
                 </li>
               </ul>
               
               <p className="mt-8">
-                If this feels true, PPB is the program that gives you the clarity, identity, and strategy you need to become the leader your industry recognizes and respects.
+                If even one of these feels uncomfortably true, your brand is not showing the world the level you operate at.
+              </p>
+              
+              <p>
+                Powerful Personal Brand gives you the clarity, identity, and message you need to finally become the person people tag first, invite quickly, and recognize instantly.
               </p>
             </div>
             <div className="mt-8">
@@ -235,7 +216,7 @@ export default function PPBPage() {
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
         </motion.div>
