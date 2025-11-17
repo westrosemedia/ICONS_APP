@@ -455,6 +455,16 @@ export default function BlackFridayPage() {
 
         {/* Offer One: The ICON Jumpstart - LOWEST PRICE */}
         <section id="offers" className="relative py-20 px-4 border-t border-white/10 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media"
+              alt="ICON Jumpstart"
+              fill
+              className="object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-black/80" />
+          </div>
           {/* Background pattern */}
           <div 
             className="absolute inset-0 opacity-5"
@@ -531,6 +541,16 @@ export default function BlackFridayPage() {
 
         {/* Offer Two: Powerful Personal Brand Early Enrollment */}
         <section className="relative py-20 px-4 border-t border-white/10 bg-white/5 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+              alt="Powerful Personal Brand"
+              fill
+              className="object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-black/85" />
+          </div>
           {/* Diagonal pattern background */}
           <div 
             className="absolute inset-0 opacity-[0.03]"
@@ -631,6 +651,16 @@ export default function BlackFridayPage() {
 
         {/* Offer Three: The Movement Maker's Mastermind */}
         <section className="relative py-20 px-4 border-t border-white/10 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0"
+              alt="Movement Maker's Mastermind"
+              fill
+              className="object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-black/85" />
+          </div>
           {/* Dot pattern background */}
           <div 
             className="absolute inset-0 opacity-[0.04]"
@@ -691,6 +721,16 @@ export default function BlackFridayPage() {
 
         {/* Offer Four: The ICON Legacy Experience - HIGHEST PRICE */}
         <section className="relative py-20 px-4 border-t border-white/10 bg-white/5 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1984.jpg?alt=media&token=f12f7493-bda1-48ff-a343-31502519d648"
+              alt="ICON Legacy Experience"
+              fill
+              className="object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-black/85" />
+          </div>
           {/* Mesh gradient background */}
           <div 
             className="absolute inset-0 opacity-[0.05]"
