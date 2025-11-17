@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import Script from "next/script";
+import { motion } from "framer-motion";
 import Countdown from "./Countdown";
 
 const BF_END_ISO = "2025-12-03T07:00:00Z"; // set your end time for Black Friday window
@@ -78,28 +79,30 @@ export default function PPBPage() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Hero Section with Image */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
-            alt="Powerful Personal Brand Program - Build Your Legacy"
-            fill
-            className="object-cover"
-            style={{ objectPosition: "center 35%" }}
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4830.jpg?alt=media&token=82f77039-1b7d-4cf8-886f-89591e213ad2')"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-24 max-w-5xl mx-auto"
+        >
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl">
+            <h1 className="text-hero text-black mb-6">
               Powerful Personal Brand
             </h1>
-            <p className="text-xl md:text-2xl text-black/90 max-w-3xl mx-auto leading-relaxed mb-8 font-semibold">
+            <p className="text-large text-black/90 max-w-3xl leading-relaxed mb-8 font-semibold">
               Build a clear, iconic brand presence that positions you as the authority in your industry
             </p>
-            <div className="space-y-6 text-lg text-black/90 max-w-3xl mx-auto mb-8 text-left">
+            <div className="space-y-6 text-editorial text-black/90 max-w-3xl mb-8">
               <p>
                 Powerful Personal Brand is a sixteen week group coaching and brand overhaul program for ambitious women and nonbinary leaders who are ready to move beyond business owner and step fully into industry authority. You want bigger stages, bigger opportunities, and bigger visibility, but you know your brand and marketing system are not built for the level of success you are chasing.
               </p>
@@ -110,16 +113,14 @@ export default function PPBPage() {
                 If you are ready to be respected, recognized, and paid as the leader you already are, this is your next move.
               </p>
             </div>
-            <div>
-              <a
-                href="#investment"
-                className="inline-block rounded-xl bg-black text-white px-8 py-4 text-lg font-semibold transition hover:bg-gray-800"
-              >
-                Enroll Now
-              </a>
-            </div>
+            <button 
+              onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+            >
+              Enroll Now
+            </button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
 
@@ -132,13 +133,22 @@ export default function PPBPage() {
         </section>
       )}
 
-      <main className="w-full">
+      <main className="w-full bg-white">
+        {/* Main Content */}
+        <section className="section-padding bg-white">
+          <div className="container-elegant">
+            <div className="max-w-4xl mx-auto space-y-12">
 
         {/* Section 2: Is Powerful Personal Brand Your Next Step */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Is Powerful Personal Brand Your Next Step</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Is Powerful Personal Brand Your Next Step</h2>
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
                 Powerful Personal Brand is designed for ambitious women and nonbinary leaders who already have a strong business foundation and are ready to expand into thought leadership. You have built something meaningful and successful, and now you want to be known for it on a much bigger scale.
               </p>
@@ -193,14 +203,18 @@ export default function PPBPage() {
                 If this feels true, PPB is the program that gives you the clarity, identity, and strategy you need to become the leader your industry recognizes and respects.
               </p>
             </div>
-          </div>
-        </section>
+        </motion.div>
 
         {/* Section 3: What Powerful Personal Brand Actually Is */}
-        <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What Powerful Personal Brand Actually Is</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">What Powerful Personal Brand Actually Is</h2>
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
                 Powerful Personal Brand is a sixteen week group coaching program that helps you get ridiculously clear on who you are as a brand, how to talk about what you do, and how to market yourself in a way that actually works. This is where you stop guessing, stop blending in, and finally build the identity and presence people take seriously.
               </p>
@@ -216,16 +230,20 @@ export default function PPBPage() {
               <p>
                 This structure gives you time to actually implement instead of drowning in constant calls. If you want weekly coaching and more hands on support, that is what the Mastermind or one to one work is for. PPB is the perfect middle ground for leaders who want a clear, powerful brand identity and a marketing system they can finally stick to.
               </p>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Section 4: What Powerful Personal Brand Helps You Do */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What Powerful Personal Brand Helps You Do</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              <p className="font-semibold text-black">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">What Powerful Personal Brand Helps You Do</h2>
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
+              <p className="font-semibold">
                 Let's be honest.
               </p>
               
@@ -272,16 +290,20 @@ export default function PPBPage() {
               <p>
                 And the opportunities you deserve start coming directly to you, not the people who should never have been getting them in the first place.
               </p>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Section 5: The Powerful Personal Brand Framework */}
-        <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">The Powerful Personal Brand Framework</h2>
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
-              <p className="text-xl font-semibold text-black">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">The Powerful Personal Brand Framework</h2>
+          <div className="space-y-8 text-editorial max-w-4xl mx-auto">
+              <p className="text-lg font-semibold">
                 Discover your story. Shape your brand. Refine your voice. Build the visibility strategy that carries it.
               </p>
               
@@ -408,15 +430,19 @@ export default function PPBPage() {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Section 6: What You Get Inside Powerful Personal Brand */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">What You Get Inside Powerful Personal Brand</h2>
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">What You Get Inside Powerful Personal Brand</h2>
+          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
               <p>
                 Powerful Personal Brand gives you everything you need to build a clear, powerful identity and a visibility strategy that gets you invited into bigger rooms. Every piece of this program is designed to help you grow your authority, sharpen your message, and show up with a presence people trust.
               </p>
@@ -463,16 +489,20 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Section 8: Why Your Current Branding Is Not Working */}
-        <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Why Your Current Branding Is Not Working</h2>
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
-              <p className="font-semibold text-black">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Why Your Current Branding Is Not Working</h2>
+          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
+              <p className="font-semibold">
                 You are not getting the opportunities you deserve because your brand is not showing people the level of leader you really are.
               </p>
 
@@ -605,15 +635,19 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Proof That This Work Creates Real Leaders */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Proof That This Work Creates Real Leaders</h2>
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Proof That This Work Creates Real Leaders</h2>
+          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
               <p>
                 These are not lucky breaks.
               </p>
@@ -703,18 +737,22 @@ export default function PPBPage() {
               <p className="mt-8 font-semibold text-black">
                 These results are not random.
               </p>
-              <p className="font-semibold text-black">
+              <p className="font-semibold">
                 They are the natural outcome of clear messaging, aligned identity, and strategic visibility.
               </p>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Section 10: Your Questions Answered */}
-        <section className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">Your Questions Answered</h2>
-            <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Your Questions Answered</h2>
+          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
               <div className="text-left space-y-8">
                 <div>
                   <h3 className="text-xl font-bold text-black mb-4">Will this actually help me get real opportunities like stages, podcasts, and partnerships</h3>
@@ -829,15 +867,19 @@ export default function PPBPage() {
                   </p>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </motion.div>
 
         {/* Closing CTA */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Your Next Level Starts When You Do</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Your Next Level Starts When You Do</h2>
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
                 You already know you are meant for more.
               </p>
@@ -850,76 +892,87 @@ export default function PPBPage() {
               <p className="font-semibold text-black">
                 If you are ready to lead, this is your moment to say yes.
               </p>
-              <p className="font-semibold text-black">
+              <p className="font-semibold">
                 Join now while Black Friday pricing is live.
               </p>
+          </div>
+        </motion.div>
+
             </div>
           </div>
         </section>
 
         {/* Investment */}
-        <section id="investment" className="py-20 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Your Investment</h2>
-              <p className="text-xl font-semibold mb-4 text-black">
+        <section id="investment" className="section-padding bg-gray-50">
+          <div className="container-elegant">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-4xl mx-auto"
+            >
+              <h2 className="text-display text-black mb-8">Your Investment</h2>
+              <p className="text-large font-semibold mb-4 text-black">
                 Powerful Personal Brand begins January 2026.
               </p>
-              <p className="text-lg leading-relaxed text-gray-700 mb-6">
+              <p className="text-editorial mb-6">
                 This is your moment to step into a new level of clarity, visibility, and authority. The level you are stepping into requires support, structure, and a brand identity that actually communicates your expertise.
               </p>
               <p className="font-semibold text-black mb-8">
                 Here are your options.
               </p>
-            </div>
 
-            <div className="space-y-8 mb-12">
-              <div className="bg-white rounded-2xl p-8 border border-gray-200">
-                <h3 className="text-2xl font-bold text-black mb-4">The Sixteen Week Intensive</h3>
-                <p className="mb-6 text-gray-700">
-                  A complete brand and visibility overhaul with the weekly curriculum, biweekly coaching, pitch sessions, and guest trainings.
-                </p>
-                <div className="space-y-2">
-                  <p className="text-gray-700">
-                    Regular price: <strong className="text-black">3500 USD</strong>
+              <div className="text-left space-y-8 mb-12">
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">The Sixteen Week Intensive</h3>
+                  <p className="mb-6 text-editorial">
+                    A complete brand and visibility overhaul with the weekly curriculum, biweekly coaching, pitch sessions, and guest trainings.
                   </p>
-                  <p className="text-gray-700">
-                    Black Friday price: <strong className="text-black">2500 USD</strong>
+                  <div className="space-y-2">
+                    <p className="text-editorial">
+                      Regular price: <strong className="text-black">3500 USD</strong>
+                    </p>
+                    <p className="text-editorial">
+                      Black Friday price: <strong className="text-black">2500 USD</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-black mb-4">The Full Year Experience</h3>
+                  <p className="mb-6 text-editorial">
+                    A full year of implementation, support, feedback, and refinement so you rise into consistent visibility and stay there.
                   </p>
+                  <div className="space-y-2">
+                    <p className="text-editorial">
+                      Regular price: <strong className="text-black">5000 USD</strong>
+                    </p>
+                    <p className="text-editorial">
+                      Black Friday price: <strong className="text-black">3500 USD</strong>
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 border border-gray-200">
-                <h3 className="text-2xl font-bold text-black mb-4">The Full Year Experience</h3>
-                <p className="mb-6 text-gray-700">
-                  A full year of implementation, support, feedback, and refinement so you rise into consistent visibility and stay there.
-                </p>
-                <div className="space-y-2">
-                  <p className="text-gray-700">
-                    Regular price: <strong className="text-black">5000 USD</strong>
-                  </p>
-                  <p className="text-gray-700">
-                    Black Friday price: <strong className="text-black">3500 USD</strong>
-                  </p>
-                </div>
+              <p className="text-editorial mb-4">
+                The sixteen week program gives you the full transformation.
+              </p>
+              <p className="font-semibold text-black mb-8">
+                The year gives you the space to master it and rise into real authority.
+              </p>
+
+              <Script
+                src="https://js.stripe.com/v3/pricing-table.js"
+                strategy="afterInteractive"
+              />
+              <div className="max-w-2xl mx-auto">
+                <stripe-pricing-table
+                  pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2"
+                  publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"
+                />
               </div>
-            </div>
-
-            <p className="text-center text-gray-700 mb-4">
-              The sixteen week program gives you the full transformation.
-            </p>
-            <p className="text-center font-semibold text-black mb-12">
-              The year gives you the space to master it and rise into real authority.
-            </p>
-
-            <Script
-              src="https://js.stripe.com/v3/pricing-table.js"
-              strategy="lazyOnload"
-            />
-            <stripe-pricing-table
-              pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2"
-              publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"
-            />
+            </motion.div>
           </div>
         </section>
       </main>
