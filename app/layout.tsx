@@ -10,6 +10,9 @@ import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
 import BlackFridayBanner from "@/components/BlackFridayBanner";
+import ClarityAnalytics from "@/components/ClarityAnalytics";
+import ScrollDepthTracker from "@/components/ScrollDepthTracker";
+import ConversionTracker from "@/components/ConversionTracker";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -167,6 +170,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
+        <ClarityAnalytics />
+        <ScrollDepthTracker />
+        <ConversionTracker />
       </body>
     </html>
   );
