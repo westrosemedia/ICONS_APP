@@ -560,59 +560,62 @@ export default function PPBPage() {
           className="text-center"
         >
           <h2 className="text-display text-black mb-8">What You Get Inside Powerful Personal Brand</h2>
-          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
-                Powerful Personal Brand gives you everything you need to build a clear, powerful identity and a visibility strategy that gets you invited into bigger rooms. Every piece of this program is designed to help you grow your authority, sharpen your message, and show up with a presence people trust.
+                Everything inside Powerful Personal Brand is built to help you get clear, be seen, and communicate like the leader you already are.
+              </p>
+              
+              <p className="font-semibold text-black">
+                Here is what you receive:
               </p>
 
               <div className="text-left space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Weekly video trainings</h3>
+                  <h3 className="text-xl font-bold text-black mb-3">Weekly clarity trainings</h3>
                   <p>
-                    Each week you get fresh, focused training that teaches you the exact steps to build your brand, refine your message, and create a visibility strategy that feels doable. No overwhelm. No guessing. Just clear direction so you always know what to do next.
+                    Short, focused lessons that show you exactly what to fix and what to build so your brand finally makes sense to the people you want to reach.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Biweekly group coaching</h3>
+                  <h3 className="text-xl font-bold text-black mb-3">Biweekly coaching calls</h3>
                   <p>
-                    These calls are where your ideas get sharper and your strategy gets personalized. You bring your questions, your messaging, your content, and your brand decisions, and you get real feedback so you are never stuck or confused. This is where you get clarity and momentum fast.
+                    This is where your ideas get sharper. You bring your message, your content, your positioning, and you get direct feedback so you stop second guessing yourself.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold text-black mb-3">Biweekly pitch sessions</h3>
-                  <p className="font-semibold mb-3 text-black">
-                    This alone is worth the entire investment.
-                  </p>
-                  <p className="mb-3">
-                    Every two weeks you get to practice your message, your pitch, your story, your signature talk, or your interview answers in a safe room where you can refine everything before you take it public. Think Dragons Den or Shark Tank, but without the shame. Think TED style feedback but with heart. You learn how to speak with presence, authority, and conviction so you sound like the leader people want to book.
-                  </p>
                   <p>
-                    These sessions help you improve your delivery, sharpen your storytelling, and get the kind of feedback that would take years to figure out on your own. They build real confidence so when the opportunities come, you are ready.
+                    You practice your story, your delivery, your offers, and your interviews in a room designed to make you sound confident, clear, and prepared when real opportunities come.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Guest expert trainings</h3>
+                  <h3 className="text-xl font-bold text-black mb-3">Guest expert workshops</h3>
                   <p>
-                    You get access to guest experts who specialize in visibility, storytelling, leadership, messaging, and media. This gives you a full ecosystem of support for the level you are rising into.
+                    Sessions from leaders in visibility, storytelling, messaging, media, and brand voice so you learn from people already doing what you want to be known for.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-3">A full brand and visibility system</h3>
+                  <h3 className="text-xl font-bold text-black mb-3">A complete brand and visibility system</h3>
                   <p>
-                    By the end of the program you have a complete brand identity, a clear message, a visibility strategy you can follow, and the confidence to run it. You leave with the tools, the clarity, and the presence to be seen, respected, and paid at the level you deserve.
+                    You leave with a clear identity, a refined message, a sustainable visibility plan, and the confidence to show up in a way that stands out instead of blending in.
                   </p>
                 </div>
               </div>
-            <div className="mt-8 text-center">
+              
+              <p className="mt-8">
+                Powerful Personal Brand gives you the skills, the structure, and the support to finally rise into the level of recognition your work deserves.
+              </p>
+            </div>
+            <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
