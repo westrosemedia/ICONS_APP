@@ -650,146 +650,83 @@ export default function PPBPage() {
           className="text-center"
         >
           <h2 className="text-display text-black mb-8">Why Your Current Branding Is Not Working</h2>
-          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
-              <p className="font-semibold">
-                You are not getting the opportunities you deserve because your brand is not showing people the level of leader you really are.
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
+              <p className="font-semibold text-black">
+                Your brand does not feel like the level you operate at.
               </p>
-
-              <div className="text-left space-y-8">
+              
+              <p className="font-semibold text-black mb-8">
+                And people can feel that.
+              </p>
+              
+              <p className="font-semibold text-black">
+                You know your branding is off when:
+              </p>
+              
+              <ul className="space-y-4 text-left max-w-2xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Your content feels scattered and you never know what to say</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Your online presence still looks like an older version of you</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Nothing you post feels memorable and people scroll past you</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You feel invisible even though you know you are qualified</span>
+                </li>
+              </ul>
+              
+              <p className="font-semibold text-black mt-8">
+                Here is the real reason this keeps happening:
+              </p>
+              
+              <div className="text-left space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-4">The first problem</h3>
-                  <p className="mb-4">
-                    Most branding programs only focus on aesthetics.
-                  </p>
-                  <p className="mb-4">
-                    Pretty photos and color palettes do not fix:
-                  </p>
-                  <ul className="space-y-3 ml-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>unclear messaging</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>a story with no structure</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>a presence that does not match your expertise</span>
-                    </li>
-                  </ul>
-                  <p className="mt-4">
-                    Without identity and strategy, no amount of visuals will position you as an authority.
+                  <h3 className="text-xl font-bold text-black mb-3">Most branding only makes you look good, not understood.</h3>
+                  <p>
+                    Pretty visuals cannot fix unclear messaging or flat presence.
                   </p>
                 </div>
-
+                
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-4">The second problem</h3>
-                  <p className="mb-4">
-                    Visibility advice online teaches you how to post, not how to lead.
-                  </p>
-                  <p className="mb-4">
-                    You are being told to show up, but no one is preparing you for real world opportunities like:
-                  </p>
-                  <ul className="space-y-3 ml-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>pitching yourself with confidence</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>being interviewed without rambling</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>speaking on real stages</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>getting booked on real podcasts</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>being recognized outside your own bubble</span>
-                    </li>
-                  </ul>
-                  <p className="mt-4">
-                    You are doing the work, but you are not being trained for the rooms you want to be in.
+                  <h3 className="text-xl font-bold text-black mb-3">Most visibility advice teaches posting, not leadership.</h3>
+                  <p>
+                    You want stages and podcasts, not just more reels.
                   </p>
                 </div>
-
+                
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-4">The third problem</h3>
-                  <p className="mb-4">
-                    Most programs give information but no practice.
-                  </p>
-                  <p className="mb-4">
-                    You never get:
-                  </p>
-                  <ul className="space-y-3 ml-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>feedback</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>refinement</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>repetition</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>pitch coaching</span>
-                    </li>
-                  </ul>
-                  <p className="mt-4">
-                    You cannot rise into authority without practicing how to speak and present like a leader.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-4">This is what Powerful Personal Brand fixes</h3>
-                  <p className="mb-4">
-                    Inside PPB you get:
-                  </p>
-                  <ul className="space-y-3 ml-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>identity work that makes your message unforgettable</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>brand strategy that positions you as the authority</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>visibility tools for real opportunities</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>live practice so you sound confident and prepared</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>coaching that strengthens your delivery and presence</span>
-                    </li>
-                  </ul>
-                  <p className="mt-6 font-semibold text-black">
-                    This is why your past attempts have not worked.
-                  </p>
-                  <p className="font-semibold text-black">
-                    This is where it finally does.
+                  <h3 className="text-xl font-bold text-black mb-3">Most programs give information, not practice.</h3>
+                  <p>
+                    Without feedback and repetition, you do not sound like the person people want to book.
                   </p>
                 </div>
               </div>
-            <div className="mt-8 text-center">
+              
+              <p className="mt-8">
+                This is why you are getting overlooked.
+              </p>
+              
+              <p>
+                Not because you are not good enough, but because your brand is not showing the world who you actually are.
+              </p>
+              
+              <p className="font-semibold text-black mt-8">
+                Powerful Personal Brand fixes the disconnect so people finally see you.
+              </p>
+            </div>
+            <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
