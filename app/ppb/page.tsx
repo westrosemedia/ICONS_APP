@@ -321,7 +321,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
@@ -419,7 +418,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
@@ -528,7 +526,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
@@ -618,7 +615,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
@@ -729,7 +725,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
@@ -869,7 +864,6 @@ export default function PPBPage() {
                 Enroll now
               </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
