@@ -354,59 +354,69 @@ export default function PPBPage() {
         >
           <h2 className="text-display text-black mb-8">What Powerful Personal Brand Helps You Do</h2>
           <div className="space-y-6 text-editorial max-w-3xl mx-auto">
-              <p className="font-semibold">
-                Let's be honest.
+              <p>
+                You are missing opportunities you should already have.
               </p>
               
               <p>
-                You are missing opportunities you should already have. Not because you are not good enough. Not because you are not working hard enough. But because your brand and your message are not showing the world who you actually are.
+                Not because you are not good enough.
               </p>
               
               <p>
-                You have watched people who are less experienced, less qualified, and quite literally less talented than you get the invitations, podcast spots, keynote stages, and recognition you know should be yours. And it is frustrating because you know you could deliver at a level they cannot even touch.
+                Because your brand is not showing people the level you actually operate at.
               </p>
               
-              <p>
-                The problem is not your expertise.
+              <p className="font-semibold text-black mt-8">
+                Powerful Personal Brand helps you:
               </p>
               
-              <p>
-                The problem is that your current brand presence is not communicating your authority, your clarity, or your vision in a way that positions you as the obvious choice.
-              </p>
+              <div className="text-left space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Be understood instantly</h3>
+                  <p>
+                    People finally get what you do without needing long explanations or clarifying questions.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Stand out instead of blending in</h3>
+                  <p>
+                    Your message stops sounding like everyone else and becomes the one people remember, quote, and share.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Attract better opportunities</h3>
+                  <p>
+                    Podcast hosts, event organizers, and collaborators see you as someone worth inviting because your brand communicates authority the moment they land on your page.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Create content people actually care about</h3>
+                  <p>
+                    You know what to say, how to say it, and why it works. Your content stops dying inside your bubble and starts reaching the audiences you want.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Become the obvious choice</h3>
+                  <p>
+                    Your identity, message, visuals, and presence finally match the level of leader you are, so people stop overlooking you and start choosing you.
+                  </p>
+                </div>
+              </div>
               
-              <p className="font-semibold text-black">
-                Powerful Personal Brand fixes that.
+              <p className="mt-8">
+                If you feel like your talent is bigger than your current visibility, this is where that gap closes.
               </p>
-              
-              <p>
-                Inside PPB you build a clear, powerful brand identity that finally matches the level of leader you are. You learn how to talk about your work in a way that makes people stop, listen, and instantly understand your value. You create a marketing system you can stick to so your visibility grows consistently instead of in unpredictable waves.
-              </p>
-              
-              <p className="font-semibold text-black">
-                The result is simple.
-              </p>
-              
-              <p>
-                Your message lands.
-              </p>
-              
-              <p>
-                Your presence commands attention.
-              </p>
-              
-              <p>
-                Your name rises in your industry.
-              </p>
-              
-              <p>
-                And the opportunities you deserve start coming directly to you, not the people who should never have been getting them in the first place.
-              </p>
+            </div>
             <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
