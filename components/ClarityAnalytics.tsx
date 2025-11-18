@@ -3,12 +3,8 @@
 import Script from "next/script";
 
 export default function ClarityAnalytics() {
-  // Get Clarity project ID from environment variable
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
-
-  if (!clarityId) {
-    return null;
-  }
+  // Get Clarity project ID from environment variable, or use default
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID || "u7rqk5v9bp";
 
   return (
     <>
