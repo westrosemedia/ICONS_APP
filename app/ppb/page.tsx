@@ -761,105 +761,112 @@ export default function PPBPage() {
           className="text-center"
         >
           <h2 className="text-display text-black mb-8">Proof That This Work Creates Real Leaders</h2>
-          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p>
-                These are not lucky breaks.
+                These are not random wins.
               </p>
-              <p>
-                These are the results of leaders who got clear on their brand, refined their message, and showed up with a presence people trust.
+              
+              <p className="mb-8">
+                These are the kinds of results that happen when your brand finally matches your level.
               </p>
 
               <div className="text-left space-y-8">
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-6">Real Leader Wins</h3>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-black mb-3">How J Went From Nervous To Sold Out</h4>
-                      <p>
-                        J wanted to host live events but had no idea how to talk about her vision. Her message felt shaky and her confidence was low. After she clarified her brand and transformation, she sold out her second event with ease. She went from hesitant to in demand because people finally understood what she stood for and why it mattered.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-black mb-3">How T Became A Leader People Quote</h4>
-                      <p>
-                        T was an experienced event planner with flat, forgettable content. She wanted to step into speaking and thought leadership but did not know how to position herself as a voice worth listening to. After using this framework, her content was shared by the biggest names in her industry. She was invited to speak at conferences and landed the largest client of her entire career.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-black mb-3">How One Message Shift Created A 5k Month</h4>
-                      <p>
-                        A client applied one piece of advice and shared,
-                      </p>
-                      <p className="italic ml-4">
-                        "There is one day left in this month and I am about to hit 5k after having no recurring income for months."
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold text-black mb-3">How Visibility Turned Into Real Invitations</h4>
-                      <p>
-                        Another client said,
-                      </p>
-                      <p className="italic ml-4">
-                        "Just got a conference for 2026 because of LinkedIn posts."
-                      </p>
-                      <p className="mt-3">
-                        This is what happens when your brand and message actually position you as the authority.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-6">Real Momentum</h3>
-                  <div className="space-y-4">
-                    <p className="italic">
-                      "My views went from 200 to 7k and seventy percent were people who do not follow me. I went from 37 to 118 followers who are not just people I already know."
-                    </p>
-                    <p className="italic">
-                      "Most views on a reel on this account ever from day one's challenge task."
-                    </p>
-                    <p className="italic">
-                      "Fifty five signed up for my webinar. Twenty nine attended. Six bought my course tonight."
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-6">Real Confidence and Clarity</h3>
-                  <div className="space-y-4">
-                    <p className="italic">
-                      "My burnout last year destroyed my business and my confidence. I am excited because I know this is going to kick my ass into gear."
-                    </p>
-                    <p className="italic">
-                      "Thank you for this teaching. It was the step by step breakdown I have been craving. I had answers for every question without overthinking."
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-6">Real Brand Transformation</h3>
-                  <p className="italic">
-                    "Stephanie helps us establish our branding goals, generates innovative ways to achieve them, and pushes me past my comfort zone so we actually get the results we want."
+                  <h3 className="text-xl font-bold text-black mb-3">How J went from overlooked to sold out</h3>
+                  <p>
+                    J wanted to host live events but could not explain her transformation without rambling.
                   </p>
+                  <p>
+                    Inside Powerful Personal Brand she learned how to talk about her work with clarity and confidence.
+                  </p>
+                  <p>
+                    Her second event sold out because people finally understood what she offered and why it mattered.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">How T became the person people quote</h3>
+                  <p>
+                    T was an experienced event planner with content no one remembered.
+                  </p>
+                  <p>
+                    After refining her message and story inside the program, her posts were shared by major industry leaders.
+                  </p>
+                  <p>
+                    She booked speaking spots and landed the largest client of her career because her voice finally sounded like someone worth listening to.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">How one message shift created a five thousand dollar month</h3>
+                  <p>
+                    A client applied a single piece of feedback about her transformation story.
+                  </p>
+                  <p>
+                    She posted confidently for the first time in months.
+                  </p>
+                  <p>
+                    Within twenty four hours she crossed five thousand dollars in sales after a long stretch of nothing.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">How visibility turned into real invitations</h3>
+                  <p>
+                    Another client gained traction on LinkedIn after clarifying her voice and positioning.
+                  </p>
+                  <p>
+                    Her posts attracted organizers outside her circle.
+                  </p>
+                  <p>
+                    She was booked for a 2026 conference without even pitching.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-4">How the momentum compounds</h3>
+                  <p className="mb-4">
+                    Clients report
+                  </p>
+                  <ul className="space-y-3 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>views jumping from two hundred to seven thousand</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>new audiences discovering them daily</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>bigger rooms paying attention</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>confidence returning after burnout</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>finally sounding like the expert they are</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
-              <p className="mt-8 font-semibold text-black">
-                These results are not random.
+              <p className="mt-8">
+                These shifts are not magic.
               </p>
-              <p className="font-semibold">
-                They are the natural outcome of clear messaging, aligned identity, and strategic visibility.
+              
+              <p>
+                They happen when your identity, message, and presence align.
               </p>
+            </div>
             <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
