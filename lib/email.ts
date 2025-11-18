@@ -1,11 +1,19 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors
+let resend: Resend | null = null;
+
+function getResend() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 // Add contact to Resend audience
 export async function addContactToList(email: string, firstName?: string, lastName?: string, source?: string) {
   try {
-    const { data, error } = await resend.contacts.create({
+    const { data, error } = await getResend().contacts.create({
       email: email,
       firstName: firstName || '',
       lastName: lastName || '',
@@ -38,7 +46,7 @@ export async function sendIconApplicationEmail(applicationData: {
   notes?: string;
 }) {
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: 'ICONS App <noreply@westrosemedia.com>',
       to: ['stephanie@westrosemedia.com'],
       subject: `New ICON Brand Partnership Application - ${applicationData.fullName}`,
@@ -116,7 +124,7 @@ export async function sendEmail({
   html?: string;
 }) {
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: 'ICONS App <noreply@westrosemedia.com>',
       to: Array.isArray(to) ? to : [to],
       subject,
