@@ -8,7 +8,6 @@ import Countdown from "./Countdown";
 
 // Force dynamic rendering to prevent caching
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
 
 const BF_END_ISO = "2025-12-03T07:00:00Z"; // set your end time for Black Friday window
 const CURRENCY = "USD";
