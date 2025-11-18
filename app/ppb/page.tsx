@@ -84,14 +84,16 @@ export default function PPBPage() {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out hover:scale-100"
-          style={{
-            backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47')"
-          }}
+      <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+          alt="Stephanie Rose"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -99,16 +101,16 @@ export default function PPBPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-24 max-w-5xl mx-auto"
         >
-          <div className="bg-white/98 backdrop-blur-md rounded-3xl p-10 sm:p-12 shadow-2xl max-w-4xl border border-white/20">
-            <h1 className="text-hero text-black mb-6 drop-shadow-sm">
+          <div className="bg-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl max-w-4xl w-full mx-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-hero text-black mb-6 font-bold">
               Powerful Personal Brand
             </h1>
-            <p className="text-large text-black/90 max-w-3xl leading-relaxed mb-8 font-semibold">
+            <p className="text-lg sm:text-xl md:text-large text-black/90 max-w-3xl mx-auto leading-relaxed mb-8 font-semibold">
               Build a clear, iconic brand presence that positions you as the authority in your industry.
             </p>
             <button 
               onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-block rounded-xl px-6 sm:px-8 py-3 sm:py-4 bg-black text-white no-underline text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
             >
               Enroll Now
             </button>
@@ -334,7 +336,7 @@ export default function PPBPage() {
         {/* Image Break 2 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_001.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -539,7 +541,7 @@ export default function PPBPage() {
         {/* Image Break 4 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_005.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -628,7 +630,7 @@ export default function PPBPage() {
         {/* Image Break 5 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_010.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -738,7 +740,7 @@ export default function PPBPage() {
         {/* Image Break 6 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_015.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -877,7 +879,7 @@ export default function PPBPage() {
         {/* Image Break 7 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_020.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -945,7 +947,7 @@ export default function PPBPage() {
         {/* Image Break 8 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_025.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
