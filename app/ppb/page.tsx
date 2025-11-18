@@ -82,12 +82,12 @@ export default function PPBPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[20s] ease-out hover:scale-100"
           style={{
             backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47')"
           }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -95,8 +95,8 @@ export default function PPBPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-24 max-w-5xl mx-auto"
         >
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl">
-            <h1 className="text-hero text-black mb-6">
+          <div className="bg-white/98 backdrop-blur-md rounded-3xl p-10 sm:p-12 shadow-2xl max-w-4xl border border-white/20">
+            <h1 className="text-hero text-black mb-6 drop-shadow-sm">
               Powerful Personal Brand
             </h1>
             <p className="text-large text-black/90 max-w-3xl leading-relaxed mb-8 font-semibold">
@@ -104,7 +104,7 @@ export default function PPBPage() {
             </p>
             <button 
               onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
             >
               Enroll Now
             </button>
@@ -128,7 +128,7 @@ export default function PPBPage() {
               </p>
               
               <p>
-                Inside PPB you build a clear, powerful brand identity, refine your message, and create a marketing system you can actually follow. You walk away with clarity, structure, and confidence to grow your income and influence, get invited onto stages and podcasts, and become the name people think of first in your industry.
+                Inside Powerful Personal Brand you build a clear, powerful brand identity, refine your message, and create a marketing system you can actually follow. You walk away with clarity, structure, and confidence to grow your income and influence, get invited onto stages and podcasts, and become the name people think of first in your industry.
               </p>
               
               <p className="font-semibold">
@@ -225,17 +225,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 1 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 3: What Powerful Personal Brand Actually Is */}
@@ -328,17 +328,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 2 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_001.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 4: What Powerful Personal Brand Helps You Do */}
@@ -426,17 +426,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 3 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
             src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 5: The Powerful Personal Brand Framework */}
@@ -535,17 +535,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 4 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_005.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-l from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 6: What You Get Inside Powerful Personal Brand */}
@@ -625,17 +625,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 5 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_010.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 8: Why Your Current Branding Is Not Working */}
@@ -736,17 +736,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 6 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_015.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Proof That This Work Creates Real Leaders */}
@@ -876,17 +876,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 7 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
-            alt=""
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_020.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Section 10: Your Questions Answered */}
@@ -944,17 +944,17 @@ export default function PPBPage() {
           </div>
         </section>
 
-        {/* Image Break */}
-        <section className="relative w-full h-[60vh] min-h-[400px]">
+        {/* Image Break 8 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_025.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
             alt="Stephanie Rose"
             fill
-            className="object-cover"
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-transparent to-black/40" />
         </section>
 
         {/* Closing CTA */}
