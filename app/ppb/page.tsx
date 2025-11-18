@@ -451,140 +451,81 @@ export default function PPBPage() {
           className="text-center"
         >
           <h2 className="text-display text-black mb-8">The Powerful Personal Brand Framework</h2>
-          <div className="space-y-8 text-editorial max-w-4xl mx-auto">
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
               <p className="text-lg font-semibold">
-                Discover your story. Shape your brand. Refine your voice. Build the visibility strategy that carries it.
+                Sixteen weeks.
+              </p>
+              <p className="text-lg font-semibold">
+                One identity shift.
+              </p>
+              <p className="text-lg font-semibold">
+                A brand people take seriously.
+              </p>
+              <p className="text-lg font-semibold">
+                A message people remember.
+              </p>
+              <p className="text-lg font-semibold mb-8">
+                A presence people trust.
               </p>
               
-              <p>
-                This sixteen week journey is designed to take you from "I know I am meant for more" to "I am getting invited everywhere." Each week builds a specific skill that strengthens your identity, message, and authority so your visibility becomes intentional and inevitable.
+              <p className="font-semibold text-black">
+                Here is how the process actually works:
               </p>
-
-              <div className="text-left space-y-8">
-                {/* Weeks 1-2: Purpose */}
+              
+              <div className="text-left space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 1 to 2: Purpose</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 1: Clarifying your why</p>
-                      <p>You uncover the deeper reason behind your work so your brand has real direction and emotional weight. This becomes the anchor for every message, pitch, interview, and piece of content you create.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 2: Vision mapping</p>
-                      <p>You map out exactly where you want your brand, business, and visibility to go. This gives you a long term roadmap so your marketing stops being reactive and finally becomes intentional.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Purpose</h3>
+                  <p>
+                    You get clear on why you do this and where you want your brand and visibility to go so your content has direction instead of chaos.
+                  </p>
                 </div>
-
-                {/* Weeks 3-4: Empowerment */}
+                
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 3 to 4: Empowerment</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 3: Embodied confidence</p>
-                      <p>You reconnect to your voice and your power so you show up like the leader people trust. This is where your presence shifts and people take you seriously.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 4: Owning visibility</p>
-                      <p>You learn how to be visible without burning out or leaking energy. This helps you show up consistently and confidently without sacrificing boundaries or authenticity.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Leadership</h3>
+                  <p>
+                    You step into your voice, own your story, and speak with presence instead of shrinking or rambling.
+                  </p>
                 </div>
-
-                {/* Week 5: Leadership */}
+                
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Week 5: Leadership</h3>
-                  <div className="ml-4">
-                    <p className="font-semibold mb-2">Owning your story as a leadership tool</p>
-                    <p>You learn how to use your personal story strategically so you are not just posting to fill space. You speak in a way that positions you as the authority and moves people toward buying, inviting, and trusting you.</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Clarity</h3>
+                  <p>
+                    You refine your brand, fix the invisible cracks blocking your authority, and learn exactly how your audience thinks and decides.
+                  </p>
                 </div>
-
-                {/* Weeks 6-8: Clarity */}
+                
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 6 to 8: Clarity</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 6: Brand audit</p>
-                      <p>We identify exactly what is working and what is holding you back so you can fix the invisible cracks that are costing you sales and opportunities.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 7: Refining your brand</p>
-                      <p>Your message, visuals, and voice become aligned and intentional. This is where your brand finally looks, feels, and communicates at the level you are aiming for.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 8: Ideal client clarity</p>
-                      <p>You learn the exact language, desires, and decision patterns of the people you want to attract so your marketing becomes precise instead of vague.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Visibility</h3>
+                  <p>
+                    You build a strategy you can actually follow. No chasing trends. No guessing. Just a repeatable way to show up consistently.
+                  </p>
                 </div>
-
-                {/* Weeks 9-10: Audience and Strategy */}
+                
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 9 to 10: Audience and Strategy</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 9: Audience over influence</p>
-                      <p>You learn how to build a loyal, engaged audience that converts, instead of chasing vanity metrics that do nothing for your business.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 10: Strategic presence</p>
-                      <p>You build a sustainable system for showing up. This is where your visibility stops being chaotic and starts being consistent.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Story and pitch</h3>
+                  <p>
+                    You turn your personal story into a strategic asset and learn how to pitch yourself for podcasts, stages, collaborations, and partnerships.
+                  </p>
                 </div>
-
-                {/* Weeks 11-12: Presence and Content */}
+                
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 11 to 12: Presence and Content</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 11: Magnetic content creation</p>
-                      <p>You learn how to create content that feels alive, intentional, and aligned with your industry authority. No more filler posts.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 12: Client transformation mapping</p>
-                      <p>You map the before, bridge, and after of your client journey so your content and offers convert with clarity.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Weeks 13-14: Story and Strategy */}
-                <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 13 to 14: Story and Strategy</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 13: Turning your story into strategy</p>
-                      <p>You turn your lived experiences into the story that fuels your brand, your pitches, your launches, and your speaking. This is where your message becomes unforgettable.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 14: Pitch preparation</p>
-                      <p>You build out the actual components you will use to pitch yourself for podcasts, stages, collaborations, and partnerships.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Weeks 15-16: Visibility Era */}
-                <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Weeks 15 to 16: Visibility Era</h3>
-                  <div className="space-y-4 ml-4">
-                    <div>
-                      <p className="font-semibold mb-2">Week 15: Launch and pitch readiness</p>
-                      <p>You finalize the assets and messaging you need for your next launch or your next visibility push.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold mb-2">Week 16: Your visibility era begins</p>
-                      <p>You step into your new identity and begin executing your visibility strategy with clarity, confidence, and momentum. This is the moment you stop waiting and start rising.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">Execution</h3>
+                  <p>
+                    You build the assets, the delivery, and the confidence you need to start showing up like someone people want to book, hire, and feature.
+                  </p>
                 </div>
               </div>
-            <div className="mt-8 text-center">
+              
+              <p className="mt-8">
+                By the end of sixteen weeks you know who you are, how to talk about your work, and how to be seen as the leader you have always been.
+              </p>
+            </div>
+            <div className="mt-8">
               <button 
                 onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
-                Enroll Now
+                Enroll now
               </button>
             </div>
           </div>
