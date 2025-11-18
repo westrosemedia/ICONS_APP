@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail, addContactToList } from "@/lib/email";
 
+// Make this route dynamic to avoid build-time execution
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.json();

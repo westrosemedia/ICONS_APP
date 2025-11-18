@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { stripe } from "@/lib/stripe"; // ensure this exports a configured Stripe client
 
+// Make this route dynamic to avoid build-time execution
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { priceId, mode } = await req.json();
