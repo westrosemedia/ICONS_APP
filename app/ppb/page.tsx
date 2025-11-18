@@ -890,7 +890,7 @@ export default function PPBPage() {
         </section>
 
         {/* Section 10: Your Questions Answered */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-gray-50">
           <div className="container-elegant">
             <div className="max-w-4xl mx-auto space-y-12">
         <motion.div
@@ -900,131 +900,44 @@ export default function PPBPage() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-display text-black mb-8">Your Questions Answered</h2>
-          <div className="space-y-8 text-editorial max-w-3xl mx-auto">
-              <div className="text-left space-y-8">
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-4">Will this actually help me get real opportunities like stages, podcasts, and partnerships</h3>
-                  <p className="mb-4">
-                    Yes. This is one of the core outcomes of Powerful Personal Brand.
-                  </p>
-                  <p className="mb-4">
-                    You learn how to pitch yourself clearly, speak about your work confidently, and show up with a message that positions you as the authority. This is not content tips. This is visibility training for real rooms and real invitations.
-                  </p>
+          <h2 className="text-display text-black mb-12">Your Questions Answered</h2>
+          <div className="space-y-10 text-editorial max-w-3xl mx-auto">
+              <div className="text-left space-y-10">
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-black mb-4">Will this actually help me get real opportunities like stages, podcasts, and partnerships?</h3>
                   <p>
-                    Clients have booked conferences, landed podcast interviews, been shared by industry leaders, and secured partnerships because their brand finally communicated their level.
+                    Yes. Powerful Personal Brand teaches you how to pitch yourself, tell your story clearly, speak without rambling, and show up with the presence people want on their platforms. Clients book conferences, interviews, and collaborations because their brand finally communicates their level.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-4">I have invested before and did not get results</h3>
-                  <p className="mb-4 font-semibold text-black">
-                    This is different.
-                  </p>
-                  <p className="mb-4">
-                    Most programs give you information.
-                  </p>
-                  <p className="mb-4">
-                    Powerful Personal Brand gives you:
-                  </p>
-                  <ul className="space-y-3 ml-4 mb-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>coaching</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>practice</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>repetition</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>feedback</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>message refinement</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>pitch training</span>
-                    </li>
-                  </ul>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-black mb-4">I have invested before and did not get results. How is this different?</h3>
                   <p>
-                    This is the missing piece that makes everything finally work. You are not learning theory. You are building skills. And you get guidance every step of the way so you do not get stuck or fall off.
+                    Most programs just give information. Powerful Personal Brand gives you information plus coaching, feedback, practice, repetition, message refinement, and pitch development. You do not sit and learn. You build skills and get support as you rise.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-4">Will this help me make more money</h3>
-                  <p className="mb-4">
-                    Yes, because clarity creates conversions.
-                  </p>
-                  <p className="mb-4">
-                    When your message is clear and your presence is confident, people trust you faster and buy from you more easily. Clients have increased sales, booked their largest clients ever, filled events, and hit their best months because their brand finally matched the level of their work.
-                  </p>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-black mb-4">Will this help me make more money?</h3>
                   <p>
-                    The goal of this program is to help you become known, respected, and chosen. That naturally increases income.
+                    Yes. Clear messaging and confident presence increase conversions. When people understand you, they trust you faster. Clients inside this program have filled events, landed their biggest clients ever, and hit their strongest months because their brand finally matched their expertise.
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-4">Why would I sign up for the full year instead of just the sixteen weeks</h3>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-black mb-4">Why choose the full year instead of sixteen weeks?</h3>
                   <p className="mb-4">
-                    The sixteen week program gives you the transformation and the system.
+                    Sixteen weeks gives you the transformation.
                   </p>
                   <p className="mb-4 font-semibold text-black">
-                    The year gives you the mastery.
+                    The full year gives you mastery.
                   </p>
-                  <p className="mb-4">
-                    Visibility, leadership, and brand growth require consistency, support, and refinement over time. When you stay for the year you:
-                  </p>
-                  <ul className="space-y-3 ml-4 mb-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>continue implementing your visibility strategy</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>get ongoing feedback as you rise</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>sharpen your speaking and storytelling</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>refine your message as your brand grows</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>keep momentum instead of losing it</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-black font-bold mt-1">•</span>
-                      <span>stay grounded and accountable as you step into bigger rooms</span>
-                    </li>
-                  </ul>
                   <p>
-                    Sixteen weeks gives you the foundation.
-                  </p>
-                  <p className="font-semibold text-black">
-                    Twelve months turns you into a leader with staying power.
+                    If you want long term support, consistent refinement, stronger delivery, and a visibility strategy that keeps growing with you, the year is where you build staying power.
                   </p>
                 </div>
               </div>
-            <div className="mt-8 text-center">
-              <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
-              >
-                Enroll Now
-              </button>
             </div>
-          </div>
         </motion.div>
 
             </div>
