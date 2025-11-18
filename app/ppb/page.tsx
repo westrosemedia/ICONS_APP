@@ -1010,22 +1010,44 @@ export default function PPBPage() {
               className="text-center max-w-4xl mx-auto"
             >
               <h2 className="text-display text-black mb-8">Your Investment</h2>
-              <p className="text-large font-semibold mb-4 text-black">
-                Powerful Personal Brand begins January 2026.
-              </p>
-              <p className="text-editorial mb-6">
-                This is your moment to step into a new level of clarity, visibility, and authority. The level you are stepping into requires support, structure, and a brand identity that actually communicates your expertise.
-              </p>
-              <p className="font-semibold text-black mb-8">
-                Here are your options.
-              </p>
+              <div className="space-y-6 text-editorial max-w-3xl mx-auto mb-12">
+                <p>
+                  Powerful Personal Brand begins in January 2026.
+                </p>
+                
+                <p>
+                  This is your moment to step into the level of clarity, visibility, and recognition you have been working toward.
+                </p>
+                
+                <p className="font-semibold text-black">
+                  You have two options.
+                </p>
+              </div>
 
-              <div className="text-left space-y-8 mb-12">
-                <div className="bg-gray-50 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-black mb-4">The Sixteen Week Intensive</h3>
-                  <p className="mb-6 text-editorial">
-                    A complete brand and visibility overhaul with the weekly curriculum, biweekly coaching, pitch sessions, and guest trainings.
+              <div className="text-left space-y-8 mb-12 max-w-3xl mx-auto">
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                  <h3 className="text-2xl font-bold text-black mb-6">The 16 Week Intensive</h3>
+                  <p className="mb-4 text-editorial">
+                    A complete brand and visibility overhaul including
                   </p>
+                  <ul className="space-y-3 mb-6 ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>the full weekly curriculum</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>biweekly coaching</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>biweekly pitch sessions</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-black font-bold mt-1">•</span>
+                      <span>guest expert trainings</span>
+                    </li>
+                  </ul>
                   <div className="space-y-2">
                     <p className="text-editorial">
                       Regular price: <strong className="text-black">3500 USD</strong>
@@ -1036,10 +1058,10 @@ export default function PPBPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-black mb-4">The Full Year Experience</h3>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                  <h3 className="text-2xl font-bold text-black mb-6">The Full Year Experience</h3>
                   <p className="mb-6 text-editorial">
-                    A full year of implementation, support, feedback, and refinement so you rise into consistent visibility and stay there.
+                    A full year of implementation, practice, support, and refinement so you rise consistently instead of in short bursts.
                   </p>
                   <div className="space-y-2">
                     <p className="text-editorial">
@@ -1052,12 +1074,23 @@ export default function PPBPage() {
                 </div>
               </div>
 
-              <p className="text-editorial mb-4">
-                The sixteen week program gives you the full transformation.
-              </p>
-              <p className="font-semibold text-black mb-8">
-                The year gives you the space to master it and rise into real authority.
-              </p>
+              <div className="space-y-4 text-editorial max-w-3xl mx-auto mb-8">
+                <p>
+                  The sixteen week path gives you the transformation.
+                </p>
+                <p>
+                  The full year gives you the mastery and staying power.
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <button 
+                  onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+                >
+                  Enroll now
+                </button>
+              </div>
 
               <Script
                 src="https://js.stripe.com/v3/pricing-table.js"
