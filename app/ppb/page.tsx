@@ -88,11 +88,11 @@ export default function PPBPage() {
           src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
           alt="Stephanie Rose"
           fill
-          className="object-cover"
+          className="object-cover brightness-110"
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30" />
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ export default function PPBPage() {
               Powerful Personal Brand
             </h1>
             <p className="text-lg sm:text-xl md:text-large text-black/90 max-w-3xl mx-auto leading-relaxed mb-8 font-semibold">
-              Build a clear, iconic brand presence that positions you as the authority in your industry.
+              You're running a successful business, yet your brand still feels rushed and inconsistent. It is time to transform it into a clear, high level identity that attracts the right clients and makes sales easy.
             </p>
             <button 
               onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
@@ -171,6 +171,96 @@ export default function PPBPage() {
           <div className="container-elegant">
             <div className="max-w-4xl mx-auto space-y-12">
 
+        {/* Section: Why Your Current Branding Is Not Working */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-display text-black mb-8">Why Your Current Branding Is Not Working</h2>
+          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
+              <p className="font-semibold text-black">
+                Your brand does not feel like the level you operate at.
+              </p>
+              
+              <p className="font-semibold text-black mb-8">
+                And people can feel that.
+              </p>
+              
+              <p className="font-semibold text-black">
+                You know your branding is off when:
+              </p>
+              
+              <ul className="space-y-4 text-left max-w-2xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Your content feels scattered and you never know what to say</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Your online presence still looks like an older version of you</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>Nothing you post feels memorable and people scroll past you</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-black font-bold mt-1">•</span>
+                  <span>You feel invisible even though you know you are qualified</span>
+                </li>
+              </ul>
+              
+              <p className="font-semibold text-black mt-8">
+                Here is the real reason this keeps happening:
+              </p>
+              
+              <div className="text-left space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Most branding only makes you look good, not understood.</h3>
+                  <p>
+                    Pretty visuals cannot fix unclear messaging or flat presence.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Most visibility advice teaches posting, not leadership.</h3>
+                  <p>
+                    You want stages and podcasts, not just more reels.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-black mb-3">Most programs give information, not practice.</h3>
+                  <p>
+                    Without feedback and repetition, you do not sound like the person people want to book.
+                  </p>
+                </div>
+              </div>
+              
+              <p className="mt-8">
+                This is why you are getting overlooked.
+              </p>
+              
+              <p>
+                Not because you are not good enough, but because your brand is not showing the world who you actually are.
+              </p>
+              
+              <p className="font-semibold text-black mt-8">
+                Powerful Personal Brand fixes the disconnect so people finally see you.
+              </p>
+            </div>
+            <div className="mt-8">
+              <button 
+                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+              >
+                Enroll now
+              </button>
+            </div>
+        </motion.div>
+
         {/* Section 2: Is Powerful Personal Brand Your Next Step */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -214,6 +304,10 @@ export default function PPBPage() {
               
               <p>
                 Powerful Personal Brand gives you the clarity, identity, and message you need to finally become the person people tag first, invite quickly, and recognize instantly.
+              </p>
+              
+              <p>
+                It feels like watching inquiries come in because your brand finally communicates the level you operate at instead of making you look like you are still figuring it out.
               </p>
             </div>
             <div className="mt-8">
@@ -291,22 +385,34 @@ export default function PPBPage() {
                 Inside Powerful Personal Brand you get:
               </p>
               
-              <ul className="space-y-4 text-left max-w-2xl mx-auto">
+              <ul className="space-y-6 text-left max-w-3xl mx-auto">
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>Weekly clarity lessons that show you what to fix and what to build</span>
+                  <div>
+                    <p className="font-semibold text-black mb-2">Weekly training videos that teach you how to fix the gaps in your brand, refine your messaging, and build a visibility system that increases trust, authority, and sales.</p>
+                    <p>This helps you stop guessing and finally create content that converts because it is built on strategy, not vibes.</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>Coaching twice a month where your ideas get sharper</span>
+                  <div>
+                    <p className="font-semibold text-black mb-2">Group coaching calls twice a month where Stephanie answers your questions directly and gives feedback on your specific brand so your positioning gets stronger and your content becomes more strategic.</p>
+                    <p>This helps you remove blind spots fast, tighten your message, and create a brand people understand and want to buy from.</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>Pitch sessions where you practice your story, your delivery, and your interviews</span>
+                  <div>
+                    <p className="font-semibold text-black mb-2">Pitch sessions where you practice your story, your delivery, and your interviews so you can confidently land podcasts, stages, and opportunities that expand your reach and credibility.</p>
+                    <p>This helps you get noticed by bigger audiences, increase your authority, and attract clients who trust you before they ever speak to you.</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-black font-bold mt-1">•</span>
-                  <span>Guest trainings from leaders already doing what you want to be known for</span>
+                  <div>
+                    <p className="font-semibold text-black mb-2">Guest trainings from leaders already doing what you want to be known for so you learn real strategies that accelerate your growth, visibility, and brand recognition.</p>
+                    <p>This helps you shorten your learning curve and adopt proven methods that move your brand forward instead of spinning your wheels.</p>
+                  </div>
                 </li>
               </ul>
               
@@ -315,7 +421,7 @@ export default function PPBPage() {
               </p>
               
               <p>
-                This is where your identity, your message, and your presence finally match the level you are meant for.
+                This is where your identity, your message, and your presence finally match your true level, and people become obsessed with your kick ass brand and fight for a spot to work with you or have you on their stage.
               </p>
             </div>
             <div className="mt-8">
@@ -335,7 +441,7 @@ export default function PPBPage() {
         {/* Image Break 2 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4830.jpg?alt=media&token=82f77039-1b7d-4cf8-886f-89591e213ad2"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -540,7 +646,7 @@ export default function PPBPage() {
         {/* Image Break 4 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -550,196 +656,10 @@ export default function PPBPage() {
           <div className="absolute inset-0 bg-gradient-to-l from-black/30 via-transparent to-black/40" />
         </section>
 
-        {/* Section 6: What You Get Inside Powerful Personal Brand */}
-        <section className="section-padding bg-white">
-          <div className="container-elegant">
-            <div className="max-w-4xl mx-auto space-y-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-display text-black mb-8">What You Get Inside Powerful Personal Brand</h2>
-          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
-              <p>
-                Everything inside Powerful Personal Brand is built to help you get clear, be seen, and communicate like the leader you already are.
-              </p>
-              
-              <p className="font-semibold text-black">
-                Here is what you receive:
-              </p>
-
-              <div className="text-left space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Weekly clarity trainings</h3>
-                  <p>
-                    Short, focused lessons that show you exactly what to fix and what to build so your brand finally makes sense to the people you want to reach.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Biweekly coaching calls</h3>
-                  <p>
-                    This is where your ideas get sharper. You bring your message, your content, your positioning, and you get direct feedback so you stop second guessing yourself.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Biweekly pitch sessions</h3>
-                  <p>
-                    You practice your story, your delivery, your offers, and your interviews in a room designed to make you sound confident, clear, and prepared when real opportunities come.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Guest expert workshops</h3>
-                  <p>
-                    Sessions from leaders in visibility, storytelling, messaging, media, and brand voice so you learn from people already doing what you want to be known for.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">A complete brand and visibility system</h3>
-                  <p>
-                    You leave with a clear identity, a refined message, a sustainable visibility plan, and the confidence to show up in a way that stands out instead of blending in.
-                  </p>
-                </div>
-              </div>
-              
-              <p className="mt-8">
-                Powerful Personal Brand gives you the skills, the structure, and the support to finally rise into the level of recognition your work deserves.
-              </p>
-            </div>
-            <div className="mt-8">
-              <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
-              >
-                Enroll now
-              </button>
-            </div>
-        </motion.div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Image Break 5 */}
-        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
-            alt="Stephanie Rose"
-            fill
-            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
-            sizes="100vw"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/40" />
-        </section>
-
-        {/* Section 8: Why Your Current Branding Is Not Working */}
-        <section className="section-padding bg-white">
-          <div className="container-elegant">
-            <div className="max-w-4xl mx-auto space-y-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-display text-black mb-8">Why Your Current Branding Is Not Working</h2>
-          <div className="space-y-6 text-editorial max-w-3xl mx-auto">
-              <p className="font-semibold text-black">
-                Your brand does not feel like the level you operate at.
-              </p>
-              
-              <p className="font-semibold text-black mb-8">
-                And people can feel that.
-              </p>
-              
-              <p className="font-semibold text-black">
-                You know your branding is off when:
-              </p>
-              
-              <ul className="space-y-4 text-left max-w-2xl mx-auto">
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>Your content feels scattered and you never know what to say</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>Your online presence still looks like an older version of you</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>Nothing you post feels memorable and people scroll past you</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-black font-bold mt-1">•</span>
-                  <span>You feel invisible even though you know you are qualified</span>
-                </li>
-              </ul>
-              
-              <p className="font-semibold text-black mt-8">
-                Here is the real reason this keeps happening:
-              </p>
-              
-              <div className="text-left space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Most branding only makes you look good, not understood.</h3>
-                  <p>
-                    Pretty visuals cannot fix unclear messaging or flat presence.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Most visibility advice teaches posting, not leadership.</h3>
-                  <p>
-                    You want stages and podcasts, not just more reels.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-black mb-3">Most programs give information, not practice.</h3>
-                  <p>
-                    Without feedback and repetition, you do not sound like the person people want to book.
-                  </p>
-                </div>
-              </div>
-              
-              <p className="mt-8">
-                This is why you are getting overlooked.
-              </p>
-              
-              <p>
-                Not because you are not good enough, but because your brand is not showing the world who you actually are.
-              </p>
-              
-              <p className="font-semibold text-black mt-8">
-                Powerful Personal Brand fixes the disconnect so people finally see you.
-              </p>
-            </div>
-            <div className="mt-8">
-              <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
-              >
-                Enroll now
-              </button>
-            </div>
-        </motion.div>
-
-            </div>
-          </div>
-        </section>
-
         {/* Image Break 6 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -878,7 +798,7 @@ export default function PPBPage() {
         {/* Image Break 7 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_003.jpg?alt=media&token=e27ee7d9-9bc5-468f-b568-b6d0a8883a7c"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
@@ -935,6 +855,16 @@ export default function PPBPage() {
                     If you want long term support, consistent refinement, stronger delivery, and a visibility strategy that keeps growing with you, the year is where you build staying power.
                   </p>
                 </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                  <h3 className="text-xl font-bold text-black mb-4">How much access do I get to Stephanie inside Powerful Personal Brand?</h3>
+                  <p className="mb-4">
+                    You get two group coaching calls every month where Stephanie answers your questions directly and gives feedback on your specific brand, messaging, and visibility strategy. These calls are designed to help you refine your ideas, fix blind spots fast, and get clarity on what will actually move your business forward.
+                  </p>
+                  <p>
+                    If you want more hands on support, deeper strategy, or private coaching, you can inquire about the mastermind or one to one coaching. Those containers include more access, more personalized work, and higher level strategy tailored to your business.
+                  </p>
+                </div>
               </div>
             </div>
         </motion.div>
@@ -946,7 +876,7 @@ export default function PPBPage() {
         {/* Image Break 8 */}
         <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6644.jpg?alt=media&token=78c2fc79-1d50-427a-9acd-2acc82681c8c"
             alt="Stephanie Rose"
             fill
             className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
