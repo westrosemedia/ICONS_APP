@@ -136,6 +136,33 @@ export default function PodcastPage() {
         </div>
       </section>
 
+      {/* Podcast Stats */}
+      <section className="section-padding bg-gray-50 border-b border-gray-200">
+        <div className="container-elegant">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Podcast Stats</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">52</div>
+                <div className="text-sm md:text-base text-gray-600">Followers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">35+</div>
+                <div className="text-sm md:text-base text-gray-600">Total Plays</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">25+</div>
+                <div className="text-sm md:text-base text-gray-600">Streams</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">6</div>
+                <div className="text-sm md:text-base text-gray-600">Episodes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About the Podcast */}
       <section className="section-padding border-b border-gray-200">
         <div className="container-elegant">
