@@ -13,6 +13,7 @@ import BlackFridayBanner from "@/components/BlackFridayBanner";
 import ClarityAnalytics from "@/components/ClarityAnalytics";
 import ScrollDepthTracker from "@/components/ScrollDepthTracker";
 import ConversionTracker from "@/components/ConversionTracker";
+import PodcastBanner from "@/components/PodcastBanner";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -114,8 +115,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
-                <Link href="/podcast" className="text-gray-600 hover:text-black transition-colors duration-200">
+                <Link href="/podcast" className="text-gray-600 hover:text-black transition-colors duration-200 font-semibold relative group">
                   Podcast
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full opacity-75 group-hover:opacity-100"></span>
                 </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Mastermind
@@ -173,6 +175,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClarityAnalytics />
         <ScrollDepthTracker />
         <ConversionTracker />
+        <PodcastBanner />
       </body>
     </html>
   );
