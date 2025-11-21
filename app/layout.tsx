@@ -30,9 +30,9 @@ const cormorantGaramond = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: "Stephanie Rose | Luxury Brand Photographer & Social Media Strategist | Calgary AB",
-  description: "Stephanie Rose is Calgary's premier luxury brand photographer and social media strategist. Transform your business with professional brand photography, content strategy, and personal branding for entrepreneurs across Canada. Book your luxury brand photoshoot today.",
-  keywords: "Stephanie Rose, brand photographer Calgary, luxury brand photography, social media strategist, personal branding photographer, business photography Calgary, content creation, brand strategy, entrepreneur photography, Calgary photographer, social media help, brand photoshoot, professional headshots Calgary, business branding, content marketing, luxury lifestyle photography, Canadian entrepreneurs, West Rose Media, ICON Society, mastermind retreats",
+  title: "West Rose Media | Luxury Brand Photographer & Business Coach | Calgary, Toronto, Vancouver",
+  description: "West Rose Media provides luxury personal branding photography, content strategy, and business coaching for female entrepreneurs across Canada. Founded by Stephanie Rose in Calgary, Alberta. Transform your brand with professional photography, social media strategy, mastermind retreats, and the ICONS podcast. Serving Calgary, Toronto, Vancouver, and nationwide.",
+  keywords: "Stephanie Rose, brand photographer Calgary, luxury brand photography, social media strategist, personal branding photographer, business photography Calgary, content creation, brand strategy, entrepreneur photography, Calgary photographer, Toronto photographer, Vancouver photographer, social media help, brand photoshoot, professional headshots Calgary, business branding, content marketing, luxury lifestyle photography, Canadian entrepreneurs, West Rose Media, ICON Society, mastermind retreats, ICONS podcast, business coach Canada, personal branding Canada",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -46,8 +46,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Stephanie Rose | Luxury Brand Photographer & Social Media Strategist | Calgary AB",
-    description: "Calgary's premier luxury brand photographer and social media strategist. Professional brand photography and content strategy for entrepreneurs across Canada.",
+    title: "West Rose Media | Luxury Brand Photographer & Business Coach | Canada",
+    description: "Luxury personal branding photography, content strategy, and business coaching for female entrepreneurs across Canada. Professional brand photography, social media strategy, mastermind retreats, and the ICONS podcast.",
     url: 'https://westrosemedia.com',
     siteName: 'West Rose Media',
     images: [

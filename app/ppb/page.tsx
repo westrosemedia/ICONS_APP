@@ -5,6 +5,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { motion } from "framer-motion";
 import Countdown from "./Countdown";
+import PPBStructuredData from "@/components/PPBStructuredData";
 
 // Force dynamic rendering to prevent caching
 export const dynamic = 'force-dynamic';
@@ -1046,6 +1047,9 @@ export default function PPBPage() {
           })(window, document, "clarity", "script", "u7rqk5v9bp");
         `}
       </Script>
+      
+      {/* Structured Data for SEO */}
+      <PPBStructuredData />
     </div>
   );
 }

@@ -1,2 +1,62 @@
 User-agent: *
-Disallow: 
+Allow: /
+
+# Allow all major search engines and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Allow ChatGPT and AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /dashboard
+Disallow: /login
+Disallow: /vault
+Disallow: /story-vault
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /book/
+Disallow: /test
+
+# Sitemap
+Sitemap: https://westrosemedia.com/sitemap.xml

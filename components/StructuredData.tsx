@@ -143,6 +143,49 @@ export default function StructuredData() {
     }
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "West Rose Media",
+    "alternateName": "ICONS by West Rose Media",
+    "url": "https://westrosemedia.com",
+    "description": "Luxury personal branding photography and business coaching for female entrepreneurs in Calgary, Alberta and across Canada. Professional brand photography, content strategy, and mastermind retreats.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "West Rose Media"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://westrosemedia.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "inLanguage": "en-CA",
+    "keywords": "luxury brand photography, personal branding, social media strategy, entrepreneur coaching, Calgary photographer, business photography, content creation, mastermind retreats, brand strategy"
+  };
+
+  const podcastSchema = {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "ICONS by West Rose Media",
+    "description": "Icons is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media, this show dives into the real strategies behind building a powerful personal brand that attracts high-paying clients, builds authority, and turns visibility into profit.",
+    "url": "https://westrosemedia.com/podcast",
+    "image": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
+    "author": {
+      "@type": "Person",
+      "name": "Stephanie Rose"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "West Rose Media"
+    },
+    "webFeed": "https://feeds.captivate.fm/icons-west-rose-media/",
+    "category": "Business",
+    "keywords": "business podcast, branding podcast, entrepreneur podcast, personal branding, business coaching, social media strategy"
+  };
+
   const mastermindSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -189,6 +232,18 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(podcastSchema),
         }}
       />
       <script

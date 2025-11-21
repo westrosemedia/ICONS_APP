@@ -1,21 +1,52 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import PodcastStructuredData from "@/components/PodcastStructuredData";
 
 export const metadata: Metadata = {
-  title: "ICONS by West Rose Media | Podcast",
-  description: "Icons is the podcast where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.",
-  keywords: "ICONS podcast, business podcast, branding podcast, entrepreneur podcast, West Rose Media podcast, personal branding, business coaching",
+  title: "ICONS by West Rose Media | Podcast for Entrepreneurs | Business & Branding",
+  description: "ICONS is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media. Learn real strategies for building a powerful personal brand that attracts high-paying clients, builds authority, and turns visibility into profit.",
+  keywords: "ICONS podcast, business podcast, branding podcast, entrepreneur podcast, West Rose Media podcast, personal branding, business coaching, social media strategy, brand strategy, entrepreneur advice, business growth podcast, female entrepreneur podcast, Calgary business podcast, Canadian entrepreneur podcast",
+  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
+  creator: "Stephanie Rose",
+  publisher: "West Rose Media",
+  metadataBase: new URL('https://westrosemedia.com'),
+  alternates: {
+    canonical: '/podcast',
+  },
   openGraph: {
-    title: "ICONS by West Rose Media | Podcast",
-    description: "Icons is the podcast where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.",
+    title: "ICONS by West Rose Media | Podcast for Entrepreneurs",
+    description: "Icons is the podcast where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays. Hosted by Stephanie Rose.",
+    url: 'https://westrosemedia.com/podcast',
+    siteName: 'West Rose Media',
     type: "website",
     locale: "en_CA",
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35',
+        width: 1200,
+        height: 630,
+        alt: 'ICONS by West Rose Media Podcast',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ICONS by West Rose Media | Podcast",
+    title: "ICONS by West Rose Media | Podcast for Entrepreneurs",
     description: "Icons is the podcast where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.",
+    creator: '@westrosemedia',
+    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -272,6 +303,9 @@ export default function PodcastPage() {
           </div>
         </div>
       </section>
+      
+      {/* Structured Data for SEO */}
+      <PodcastStructuredData />
     </div>
   );
 }
