@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import LocationStructuredData from "@/components/LocationStructuredData";
 
 export const metadata: Metadata = {
   title: "Luxury Personal Branding & Photography for Online Coaches & Service Providers in Vancouver BC | West Rose Media",
@@ -201,6 +202,9 @@ export default function VancouverPage() {
           </div>
         </div>
       </section>
+      
+      {/* Structured Data for SEO */}
+      <LocationStructuredData city="Vancouver" province="British Columbia" url="https://westrosemedia.com/vancouver" />
     </div>
   );
 }

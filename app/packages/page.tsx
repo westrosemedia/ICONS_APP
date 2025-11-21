@@ -7,6 +7,7 @@ import { PACKAGE_SUMMARIES } from "@/data/packages";
 import PackageCard from "@/components/PackageCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import PackagesStructuredData from "@/components/PackagesStructuredData";
 
 export default function PackagesPage() {
   return (
@@ -160,6 +161,9 @@ export default function PackagesPage() {
           </motion.div>
         </div>
       </section>
+      
+      {/* Structured Data for SEO */}
+      <PackagesStructuredData />
     </div>
   );
 }

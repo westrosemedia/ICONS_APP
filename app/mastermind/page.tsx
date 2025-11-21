@@ -1,21 +1,52 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import MastermindStructuredData from "@/components/MastermindStructuredData";
 
 export const metadata: Metadata = {
   title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada",
-  description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business.",
-  keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, content creation mastermind, tapping therapy business, Kelowna retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching",
+  description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business with Stephanie Rose and Jackie McDonald.",
+  keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, content creation mastermind, tapping therapy business, Kelowna retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching, Movement Makers Mastermind, Stephanie Rose mastermind, business coaching Canada, entrepreneur retreat, brand strategy mastermind",
+  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
+  creator: "Stephanie Rose",
+  publisher: "West Rose Media",
+  metadataBase: new URL('https://westrosemedia.com'),
+  alternates: {
+    canonical: '/mastermind',
+  },
   openGraph: {
     title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
     description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    url: 'https://westrosemedia.com/mastermind',
+    siteName: 'West Rose Media',
     type: "website",
     locale: "en_CA",
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285',
+        width: 1200,
+        height: 630,
+        alt: 'Movement Makers Mastermind + Retreat',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
     description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    creator: '@westrosemedia',
+    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -234,6 +265,9 @@ export default function MastermindPage() {
           </p>
         </div>
       </section>
+      
+      {/* Structured Data for SEO */}
+      <MastermindStructuredData />
     </div>
   );
 }

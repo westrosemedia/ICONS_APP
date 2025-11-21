@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import AboutStructuredData from "@/components/AboutStructuredData";
 
 export const metadata: Metadata = {
   title: "About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist | West Rose Media",
@@ -264,6 +265,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
+      {/* Structured Data for SEO */}
+      <AboutStructuredData />
     </div>
   );
 }

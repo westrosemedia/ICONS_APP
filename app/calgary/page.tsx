@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import LocationStructuredData from "@/components/LocationStructuredData";
 
 export const metadata: Metadata = {
   title: "Stephanie Rose | Best Brand Photographer in Calgary AB | Luxury Brand Photography for Entrepreneurs",
@@ -290,6 +291,9 @@ export default function CalgaryPage() {
           }),
         }}
       />
+      
+      {/* Structured Data for SEO */}
+      <LocationStructuredData city="Calgary" province="Alberta" url="https://westrosemedia.com/calgary" />
     </div>
   );
 }
