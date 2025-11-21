@@ -120,7 +120,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <a
-                href="https://open.spotify.com/show/04e67684-d3b9-4e5b-a75a-c0919acaf7d4"
+                href="https://open.spotify.com/show/4jQBGWzfyyYizEThs3BAeR?si=cc9eaa447dd7486a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition-colors rounded-lg font-medium"
