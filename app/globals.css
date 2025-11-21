@@ -17,6 +17,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: inherit;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cormorant-garamond);
     font-weight: 600;
