@@ -21,7 +21,7 @@ export default function HomePage() {
           muted
           playsInline
           preload="metadata"
-          poster="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+          poster="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_026.jpg?alt=media&token=35b646af-2e21-47e2-84ec-91543d8f9910"
           style={{ 
             width: '100vw',
             height: '100vh',
@@ -100,7 +100,7 @@ export default function HomePage() {
       <section className="relative w-full bg-black overflow-hidden">
         <div className="relative w-full h-[70vh] min-h-[500px]">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/K%2BS_ENGAGEMENT_18.jpg?alt=media&token=e193eea2-a066-46df-b0b6-781a781ead76"
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4"
             alt="Luxury brand photography and content creation for entrepreneurs in Canada - West Rose Media"
             fill
             className="object-cover"
@@ -170,7 +170,7 @@ export default function HomePage() {
             {/* Featured Image */}
             <div className="mt-16 max-w-2xl mx-auto relative aspect-[4/5]">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_089.jpg?alt=media&token=589133f6-da89-4bcf-8e4a-0d322795b6fb"
                 alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
                 fill
                 className="object-cover rounded-lg shadow-2xl"
