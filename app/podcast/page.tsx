@@ -108,7 +108,7 @@ export default function PodcastPage() {
                   <span className="font-medium">Spotify</span>
                 </a>
                 <a
-                  href="https://podcasts.apple.com/podcast/id04e67684-d3b9-4e5b-a75a-c0919acaf7d4"
+                  href="https://podcasts.apple.com/us/podcast/icons-by-west-rose-media/id1852912777"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
