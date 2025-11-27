@@ -516,6 +516,76 @@ export default function BlackFridayPage() {
           </div>
         </section>
 
+        {/* Offer Two: The ICON Jumpstart */}
+        <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-t border-white/10 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media"
+              alt="ICON Jumpstart"
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-black/80" />
+          </div>
+          {/* Background pattern */}
+          <div 
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `linear-gradient(45deg, transparent 30%, rgba(193, 255, 114, 0.1) 50%, transparent 70%),
+                                linear-gradient(-45deg, transparent 30%, rgba(193, 255, 114, 0.1) 50%, transparent 70%)`,
+              backgroundSize: '60px 60px'
+            }}
+          />
+          {/* Gradient accent */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c1ff72]/50 to-transparent" />
+          <div className="relative z-10 max-w-6xl mx-auto">
+            {/* Hero Image */}
+            <div className="mb-8 sm:mb-12">
+              <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
+                <Image
+                  src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media"
+                  alt="ICON Jumpstart"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              </div>
+            </div>
+
+            <div className="text-center mb-8 sm:mb-12 px-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+                The ICON Jumpstart
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-2">
+                Five day intensive running December 8-12
+              </p>
+              <div className="text-sm sm:text-base md:text-lg text-white/70 mb-4">
+                Start January as an icon and sell out your January offer
+              </div>
+              <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white/50 line-through">$350</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold">$97</span>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-base sm:text-lg text-white/80 space-y-4 sm:space-y-6 mb-6 sm:mb-8 px-2">
+              <p>
+                A fast and focused five day intensive that gets your brand ready for January with clarity direction and momentum. This is the thing that will help you start January as an icon and sell out your January offer. If you have been waiting to show up as the CEO of your business consider this your invitation to stop waiting.
+              </p>
+            </div>
+
+            <div className="text-center px-2">
+              <a
+                href={jumpstartStripeLink}
+                className="inline-block bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white/90 transition-colors w-full sm:w-auto"
+              >
+                Join the Jumpstart
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Offer Three: The Movement Maker's Mastermind */}
         <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-t border-white/10 overflow-hidden">
           {/* Background image */}
