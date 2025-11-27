@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import Script from "next/script";
 
 // Countdown timer component
 function CountdownTimer() {
@@ -329,11 +328,6 @@ export default function BlackFridayPage() {
 
   return (
     <>
-      <Script
-        src="https://js.stripe.com/v3/pricing-table.js"
-        strategy="lazyOnload"
-      />
-      
       <div className="min-h-screen bg-black text-white">
         {/* Site Wide Banner */}
         <div className="bg-[#c1ff72] text-black text-center py-2 sm:py-3 sticky top-0 z-40">
@@ -495,23 +489,25 @@ export default function BlackFridayPage() {
               </div>
             </div>
 
-            <div className="text-center mb-6 sm:mb-8 px-2">
+            <div className="text-center space-y-3 sm:space-4 px-2">
               <Link
                 href="https://westrosemedia.com/ppb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:border-white hover:bg-white/10 transition-colors mb-4 sm:mb-6 w-full sm:w-auto"
+                className="inline-block border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:border-white hover:bg-white/10 transition-colors w-full sm:w-auto"
               >
                 Learn More
               </Link>
-            </div>
-
-            <div className="text-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<stripe-pricing-table pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>`
-                }}
-              />
+              <div>
+                <Link
+                  href="https://westrosemedia.com/ppb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white/90 transition-colors w-full sm:w-auto"
+                >
+                  Purchase Now
+                </Link>
+              </div>
             </div>
           </div>
         </section>
