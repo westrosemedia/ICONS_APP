@@ -15,7 +15,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "City calendars: Calgary, Vancouver, Toronto" }
     ],
     imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5932.jpg?alt=media&token=980dbfd2-d3d7-4517-9830-686f3a9b53d0",
-    ctaHref: "/book/spotlight"
+    ctaHref: "https://westrosemedia.sproutstudio.com/bookings"
   },
   {
     key: "lite",

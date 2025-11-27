@@ -40,7 +40,7 @@ export default function ResultRenderer({
             <div className="text-center mt-8">
               <a 
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors" 
-                href={`/book/${result}`}
+                href={result === "spotlight" ? "https://westrosemedia.sproutstudio.com/bookings" : `/book/${result}`}
               >
                 Learn more
               </a>

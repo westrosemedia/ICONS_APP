@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { spotlightCopy } from "@/content/spotlight";
 
 type FormState = {
@@ -18,10 +18,17 @@ export default function SpotlightPage() {
     fullName: "",
     email: "",
     instagram: "",
-    city: "calgary",
+    city: "other",
     brandVibe: "",
     usageGoals: ""
   });
+
+  // Redirect to booking link for supported cities
+  useEffect(() => {
+    if (form.city !== "other" && (form.city === "calgary" || form.city === "vancouver" || form.city === "toronto")) {
+      window.location.href = "https://westrosemedia.sproutstudio.com/bookings";
+    }
+  }, [form.city]);
 
   const submit = async () => {
     // Validate required fields
@@ -114,26 +121,7 @@ export default function SpotlightPage() {
         <aside className="bg-white rounded-2xl shadow p-6">
           <h3 className="text-xl font-semibold">Start your intake</h3>
           <div className="mt-4 space-y-3">
-            <input
-              className="w-full border rounded px-3 py-2"
-              placeholder="Full name"
-              value={form.fullName}
-              onChange={e => setForm({ ...form, fullName: e.target.value })}
-            />
-            <input
-              className="w-full border rounded px-3 py-2"
-              placeholder="Email"
-              value={form.email}
-              onChange={e => setForm({ ...form, email: e.target.value })}
-            />
-            <input
-              className="w-full border rounded px-3 py-2"
-              placeholder="Instagram"
-              value={form.instagram}
-              onChange={e => setForm({ ...form, instagram: e.target.value })}
-            />
-
-            <label className="block text-sm font-medium mt-2">City</label>
+            <label className="block text-sm font-medium">City</label>
             <select
               className="w-full border rounded px-3 py-2"
               value={form.city}
@@ -145,31 +133,56 @@ export default function SpotlightPage() {
               <option value="other">Other</option>
             </select>
 
-            <textarea
-              className="w-full border rounded px-3 py-2"
-              placeholder="Brand vibe in one sentence"
-              rows={2}
-              value={form.brandVibe}
-              onChange={e => setForm({ ...form, brandVibe: e.target.value })}
-            />
-            <textarea
-              className="w-full border rounded px-3 py-2"
-              placeholder="How you plan to use this content"
-              rows={3}
-              value={form.usageGoals}
-              onChange={e => setForm({ ...form, usageGoals: e.target.value })}
-            />
+            {form.city === "other" && (
+              <>
+                <input
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="Full name"
+                  value={form.fullName}
+                  onChange={e => setForm({ ...form, fullName: e.target.value })}
+                />
+                <input
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={e => setForm({ ...form, email: e.target.value })}
+                />
+                <input
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="Instagram"
+                  value={form.instagram}
+                  onChange={e => setForm({ ...form, instagram: e.target.value })}
+                />
+                <textarea
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="Brand vibe in one sentence"
+                  rows={2}
+                  value={form.brandVibe}
+                  onChange={e => setForm({ ...form, brandVibe: e.target.value })}
+                />
+                <textarea
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="How you plan to use this content"
+                  rows={3}
+                  value={form.usageGoals}
+                  onChange={e => setForm({ ...form, usageGoals: e.target.value })}
+                />
+              </>
+            )}
           </div>
 
-          <button
-            onClick={submit}
-            disabled={submitting}
-            className="mt-4 w-full rounded-xl bg-black text-white py-3 font-semibold"
-          >
-            {submitting ? "Redirecting" : spotlightCopy.ctaLabel}
-          </button>
-
-          <p className="mt-3 text-xs text-neutral-500">{spotlightCopy.priceLine}</p>
+          {form.city === "other" && (
+            <>
+              <button
+                onClick={submit}
+                disabled={submitting}
+                className="mt-4 w-full rounded-xl bg-black text-white py-3 font-semibold"
+              >
+                {submitting ? "Submitting" : spotlightCopy.ctaLabel}
+              </button>
+              <p className="mt-3 text-xs text-neutral-500">{spotlightCopy.priceLine}</p>
+            </>
+          )}
         </aside>
       </section>
       </div>
