@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { Metadata } from "next";
 
-// Countdown timer component
+// Countdown timer component - counts down to January 1st (program start and price increase)
 function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -20,13 +21,13 @@ function CountdownTimer() {
       const mstOffset = -7 * 60; // MST is UTC-7
       const mstNow = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
       
-      // Get December 1st at 11:59 PM MST
+      // Get January 1st at 12:00 AM MST
       const targetDate = new Date(mstNow);
-      targetDate.setMonth(11); // December is month 11 (0-indexed)
+      targetDate.setMonth(0); // January is month 0 (0-indexed)
       targetDate.setDate(1);
-      targetDate.setHours(23, 59, 59, 999);
+      targetDate.setHours(0, 0, 0, 0);
       
-      // If we're already past December 1st this year, set it for next year
+      // If we're already past January 1st this year, set it for next year
       if (targetDate.getTime() < mstNow.getTime()) {
         targetDate.setFullYear(targetDate.getFullYear() + 1);
       }
@@ -324,15 +325,21 @@ function LegacyApplicationModal({ isOpen, onClose }: { isOpen: boolean; onClose:
 
 export default function BlackFridayPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const jumpstartStripeLink = "https://buy.stripe.com/00wfZgfNm1eJ1jddRr87K0U";
+  const jumpstartStripeLink = "https://buy.stripe.com/9B63cuat26z36Dx7t387K0V";
 
   return (
     <>
+      <Script
+        src="https://js.stripe.com/v3/pricing-table.js"
+        strategy="lazyOnload"
+      />
+      />
+      
       <div className="min-h-screen bg-black text-white">
         {/* Site Wide Banner */}
         <div className="bg-[#c1ff72] text-black text-center py-2 sm:py-3 sticky top-0 z-40">
           <p className="font-bold text-xs sm:text-sm md:text-base px-2">
-            Black Friday Offers Live Now. Ends December 1st at Midnight.
+            Prices increase January 1st - Lock in current pricing now.
           </p>
         </div>
 
@@ -362,13 +369,18 @@ export default function BlackFridayPage() {
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-              This Black Friday you step into your icon era
+              Step into your icon era
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 text-white/90 max-w-3xl mx-auto px-2">
-              Exclusive limited time access to the most powerful offers of the year. When the clock hits midnight on December 1st these opportunities disappear forever.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto px-2">
+              Exclusive access to powerful programs. Prices increase January 1st - lock in current pricing now.
             </p>
 
-            <CountdownTimer />
+            <div className="mb-6 sm:mb-8 px-2">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 mb-4 sm:mb-6 text-center">
+                Time until price increase:
+              </p>
+              <CountdownTimer />
+            </div>
 
             <div className="flex flex-col gap-3 sm:gap-4 justify-center px-2">
               <a
@@ -443,8 +455,16 @@ export default function BlackFridayPage() {
               <div className="text-sm sm:text-base md:text-lg text-white/70 mb-4 sm:mb-6 px-2">
                 Program begins January 2026
               </div>
-              <div className="text-sm sm:text-base md:text-lg text-[#c1ff72] font-semibold mb-6 sm:mb-8 px-2">
-                Black Friday Sale: This is a limited-time offer. Prices go up soon and will never be this low again.
+              <div className="bg-[#c1ff72]/10 border-2 border-[#c1ff72]/30 rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                <div className="text-sm sm:text-base md:text-lg text-[#c1ff72] font-semibold text-center">
+                  ⚠️ Price increases January 1st
+                </div>
+                <div className="text-xs sm:text-sm text-white/80 text-center mt-2">
+                  After January 1st: 16 Week Intensive $6,500 • One Year Experience $9,997
+                </div>
+                <div className="text-xs sm:text-sm text-white/90 text-center mt-3 font-medium">
+                  Lock in current pricing by enrolling before January 1st
+                </div>
               </div>
             </div>
 
@@ -456,58 +476,55 @@ export default function BlackFridayPage() {
 
             {/* Pricing Section */}
             <div className="max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
-              <div className="bg-black/50 border border-white/10 rounded-lg p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white/60 mb-3 sm:mb-4 text-center">Regular Pricing</h3>
-                <div className="space-y-2 sm:space-y-3 text-center">
-                  <div className="text-sm sm:text-base md:text-lg text-white/70">
-                    The 16 Week Intensive: <span className="text-white font-semibold">$3,500 USD</span>
-                  </div>
-                  <div className="text-sm sm:text-base md:text-lg text-white/70">
-                    The One Year Experience: <span className="text-white font-semibold">$5,000 USD</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-black/70 border-2 border-[#c1ff72]/30 rounded-lg p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#c1ff72] mb-3 sm:mb-4 text-center">Black Friday Pricing (Ending Soon)</h3>
+              <div className="bg-black/70 border border-white/10 rounded-lg p-4 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 text-center">Pricing</h3>
                 <div className="space-y-3 sm:space-y-4 text-center">
                   <div>
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-1">
-                      <span className="text-base sm:text-lg text-white/50 line-through">$3,500</span>
-                      <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">$2,500 USD</span>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                      $3,500 USD
                     </div>
                     <div className="text-xs sm:text-sm text-white/70">The 16 Week Intensive</div>
                   </div>
                   <div className="border-t border-white/10 pt-3 sm:pt-4">
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-1">
-                      <span className="text-base sm:text-lg text-white/50 line-through">$5,000</span>
-                      <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">$3,500 USD</span>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
+                      $5,000 USD
                     </div>
                     <div className="text-xs sm:text-sm text-white/70">The One Year Experience</div>
                   </div>
                 </div>
               </div>
+              
+              <div className="bg-[#c1ff72]/10 border-2 border-[#c1ff72]/30 rounded-lg p-4 sm:p-6 mt-4 sm:mt-6">
+                <div className="text-sm sm:text-base md:text-lg text-[#c1ff72] font-semibold text-center mb-2">
+                  ⚠️ Price increases January 1st
+                </div>
+                <div className="text-xs sm:text-sm text-white/80 text-center space-y-1">
+                  <div>After January 1st: 16 Week Intensive $6,500 USD</div>
+                  <div>One Year Experience $9,997 USD</div>
+                </div>
+                <div className="text-xs sm:text-sm text-white/90 text-center mt-3 font-medium">
+                  Lock in current pricing by enrolling before January 1st
+                </div>
+              </div>
             </div>
 
-            <div className="text-center space-y-3 sm:space-4 px-2">
+            <div className="text-center mb-6 sm:mb-8 px-2">
               <Link
                 href="https://westrosemedia.com/ppb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:border-white hover:bg-white/10 transition-colors w-full sm:w-auto"
+                className="inline-block border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:border-white hover:bg-white/10 transition-colors mb-4 sm:mb-6 w-full sm:w-auto"
               >
                 Learn More
               </Link>
-              <div>
-                <Link
-                  href="https://westrosemedia.com/ppb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white/90 transition-colors w-full sm:w-auto"
-                >
-                  Purchase Now
-                </Link>
-              </div>
+            </div>
+
+            <div className="text-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<stripe-pricing-table pricing-table-id="prctbl_1SZx9YCcsY3WjV3Q2lYcHWje" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>`
+                }}
+              />
             </div>
           </div>
         </section>
@@ -626,12 +643,8 @@ export default function BlackFridayPage() {
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-2">
                 High level hybrid mastermind for visibility influence and wealth
               </p>
-              <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white/50 line-through">$12,000</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold">$10,000</span>
-              </div>
-              <div className="text-sm sm:text-base text-white/70 mb-6 sm:mb-8">
-                Black Friday price goes live on November 29th
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">
+                $12,000
               </div>
             </div>
 
