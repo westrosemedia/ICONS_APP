@@ -242,11 +242,6 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
           >
-            <div className="mb-6">
-              <div className="inline-block bg-[#c1ff72] text-black px-4 py-2 rounded-full text-sm font-bold">
-                Black Friday Special: $2,000 OFF - Sign Up Now!
-              </div>
-            </div>
             <h2 className="text-hero text-white mb-12 drop-shadow-lg">
               Movement Makers Mastermind
             </h2>
@@ -259,9 +254,6 @@ export default function HomePage() {
               </p>
               <p className="text-editorial text-white/90">
                 Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
-              </p>
-              <p className="text-editorial text-[#c1ff72] font-semibold">
-                Special pricing valid until Black Friday - sign up now to secure your spot
               </p>
             </div>
             <div className="space-y-4">

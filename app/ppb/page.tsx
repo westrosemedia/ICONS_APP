@@ -4,13 +4,11 @@ import { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import { motion } from "framer-motion";
-import Countdown from "./Countdown";
 import PPBStructuredData from "@/components/PPBStructuredData";
 
 // Force dynamic rendering to prevent caching
 export const dynamic = 'force-dynamic';
 
-const BF_END_ISO = "2025-12-03T07:00:00Z"; // set your end time for Black Friday window
 const CURRENCY = "USD";
 
 type PriceBlock = {
@@ -28,42 +26,7 @@ export default function PPBPage() {
     setIsClient(true);
   }, []);
 
-  const isBF = useMemo(() => {
-    if (!isClient) return false;
-    try {
-      const now = new Date();
-      const cut = new Date(BF_END_ISO);
-      return now < cut;
-    } catch {
-      return false;
-    }
-  }, [isClient]);
-
   const pricing: PriceBlock[] = useMemo(() => {
-    if (isBF) {
-      return [
-        {
-          title: "The One Year Experience",
-          blurb:
-            "Get an entire year of support, biweekly Q and A and pitch sessions, and a full year to refine your brand and pitches.",
-          priceMain: `$3,500 ${CURRENCY}`,
-          priceAlt: "12 month payment plan available",
-          notes: [
-            "Biweekly Q and A calls for a full year",
-            "Biweekly pitch sessions with feedback",
-            "Ongoing support through changes and pivots",
-          ],
-        },
-        {
-          title: "The 16 Week Intensive",
-          blurb:
-            "Dive into the full program and elevate your brand in four months. Structured, focused, and outcome driven.",
-          priceMain: `$2,500 ${CURRENCY}`,
-          priceAlt: "Six month payment plan available",
-          notes: ["Clear weekly outcomes", "Six month plan spreads the total over six payments"],
-        },
-      ];
-    }
     return [
       {
         title: "The One Year Experience",
@@ -76,10 +39,10 @@ export default function PPBPage() {
         title: "The 16 Week Intensive",
         blurb:
           "Four months to implement the full framework and bring your brand to life with clarity and confidence.",
-        priceMain: `$3,000 ${CURRENCY}`,
+        priceMain: `$3,500 ${CURRENCY}`,
       },
     ];
-  }, [isBF]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -149,22 +112,11 @@ export default function PPBPage() {
               >
                 Enroll now
               </button>
-              <p className="text-editorial font-semibold">
-                Black Friday pricing is live.
-              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Black Friday Countdown */}
-      {isBF && isClient && (
-        <section className="bg-gray-50 py-8">
-          <div className="max-w-5xl mx-auto px-6">
-            <Countdown endDate={BF_END_ISO} />
-          </div>
-        </section>
-      )}
 
       <main className="w-full bg-white">
         {/* Main Content */}
@@ -912,9 +864,6 @@ export default function PPBPage() {
                   <p className="font-semibold text-black">
                     If you are ready to lead, this is your moment to say yes.
                   </p>
-                  <p className="font-semibold">
-                    Join now while Black Friday pricing is live.
-                  </p>
                 </div>
                 <div className="mt-8">
                   <button 
@@ -980,10 +929,7 @@ export default function PPBPage() {
                   </ul>
                   <div className="space-y-2">
                     <p className="text-editorial">
-                      Regular price: <strong className="text-black">3500 USD</strong>
-                    </p>
-                    <p className="text-editorial">
-                      Black Friday price: <strong className="text-black">2500 USD</strong>
+                      Price: <strong className="text-black">$3,500 USD</strong>
                     </p>
                   </div>
                 </div>
@@ -995,10 +941,7 @@ export default function PPBPage() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-editorial">
-                      Regular price: <strong className="text-black">5000 USD</strong>
-                    </p>
-                    <p className="text-editorial">
-                      Black Friday price: <strong className="text-black">3500 USD</strong>
+                      Price: <strong className="text-black">$5,000 USD</strong>
                     </p>
                   </div>
                 </div>
