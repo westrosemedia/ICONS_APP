@@ -9,7 +9,6 @@ import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
-import BlackFridayBanner from "@/components/BlackFridayBanner";
 import ClarityAnalytics from "@/components/ClarityAnalytics";
 import ScrollDepthTracker from "@/components/ScrollDepthTracker";
 import ConversionTracker from "@/components/ConversionTracker";
@@ -99,7 +98,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen w-full bg-white text-black font-sans antialiased"
         suppressHydrationWarning={true}
       >
-        <BlackFridayBanner />
         {SHOW_NAV ? (
           <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
             <div className="container-elegant py-4 flex items-center justify-between">

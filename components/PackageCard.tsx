@@ -58,7 +58,6 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
           <Button asChild className="w-full group/btn">
             <Link href={pkg.ctaHref}>
               {pkg.key === "spotlight" && "Book Spotlight"}
-              {pkg.key === "lite" && "Start WRM Lite"}
               {pkg.key === "immersion" && "Plan Immersion"}
               {pkg.key === "icon" && "Become an ICON"}
               {pkg.key === "ppb" && "Learn More"}

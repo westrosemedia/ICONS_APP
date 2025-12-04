@@ -7,7 +7,7 @@ import { INTAKE_COPY } from "@/types/forms";
 import DynamicForm from "@/components/forms/DynamicForm";
 import BGSection from "@/components/BGSection";
 
-type PkgId = "spotlight" | "lite" | "immersion" | "icon";
+type PkgId = "spotlight" | "immersion" | "icon";
 
 export default function BookPage() {
   const params = useParams();

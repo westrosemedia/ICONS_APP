@@ -18,20 +18,6 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     ctaHref: "https://westrosemedia.sproutstudio.com/bookings"
   },
   {
-    key: "lite",
-    title: "WRM Lite",
-    blurb:
-      "Your monthly partner in visibility. We take the weight of content off your shoulders and replace it with a system that keeps you top of mind and in demand.",
-    priceLabel: "$2,400 CAD per month",
-    highlights: [
-      { label: "Two posts each week created, written, and scheduled for you" },
-      { label: "A monthly strategy call that aligns content to your revenue goals" },
-      { label: "Fresh footage captured every other month so your visuals never go stale" }
-    ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5003.jpg?alt=media&token=8f0d5362-b07d-496e-b418-95b55af18dc8",
-    ctaHref: "/book/wrm_lite"
-  },
-  {
     key: "immersion",
     title: immersionCopy.heroTitle,
     blurb: immersionCopy.intro,

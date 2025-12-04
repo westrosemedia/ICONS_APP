@@ -1,4 +1,4 @@
-export type PackageId = "spotlight" | "lite" | "immersion" | "icon";
+export type PackageId = "spotlight" | "immersion" | "icon";
 
 export interface PackageSummary {
   key: PackageId;

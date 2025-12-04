@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 
 const jumpstartStripeLink = "https://buy.stripe.com/9B63cuat26z36Dx7t387K0V";
 

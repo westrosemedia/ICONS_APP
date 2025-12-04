@@ -12,7 +12,7 @@ export type Field =
 
 export type Section = { title: string; fields: Field[] };
 
-export type IntakeSpec = { pkg: "spotlight" | "lite" | "immersion" | "icon"; sections: Section[] };
+export type IntakeSpec = { pkg: "spotlight" | "immersion" | "icon"; sections: Section[] };
 
 export const INTAKE_COPY: IntakeSpec[] = [
   {
@@ -86,38 +86,6 @@ export const INTAKE_COPY: IntakeSpec[] = [
             label: "What will you use these images for?",
             options: ["Website", "Social Media", "Marketing Materials", "Press", "LinkedIn", "Speaking", "Other"],
             required: true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    pkg: "lite",
-    sections: [
-      {
-        title: "Contact",
-        fields: [
-          { type: "text", name: "contact.fullName", label: "Full name", required: true },
-          { type: "email", name: "contact.email", label: "Email", required: true },
-          { type: "tel", name: "contact.phone", label: "Phone" },
-          { type: "text", name: "brand.name", label: "Brand or company name", required: true }
-        ]
-      },
-      {
-        title: "Shoot details",
-        fields: [
-          {
-            type: "select",
-            name: "city",
-            label: "City",
-            options: ["Calgary", "Vancouver", "Toronto", "Other"],
-            required: true
-          },
-          {
-            type: "text",
-            name: "preferredDate",
-            label: "Preferred date",
-            placeholder: "MM/DD/YYYY"
           }
         ]
       }

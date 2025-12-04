@@ -15,7 +15,6 @@ export default function ResultRenderer({
   // Different images for each result
   const resultImages = {
     spotlight: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR3352.jpg?alt=media",
-    wrm_lite: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media",
     immersion: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
     icon: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8747.jpg?alt=media"
   };
@@ -49,7 +48,7 @@ export default function ResultRenderer({
         </div>
       </div>
 
-      {(ppbSuggested && (result === "spotlight" || result === "wrm_lite")) ? <PpbUpsell /> : null}
+      {ppbSuggested && result === "spotlight" ? <PpbUpsell /> : null}
     </div>
   );
 }

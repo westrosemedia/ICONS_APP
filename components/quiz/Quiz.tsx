@@ -25,7 +25,7 @@ export default function Quiz() {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       // Quiz complete, calculate results
-      const tally: Record<QuizResult, number> = { spotlight: 0, wrm_lite: 0, immersion: 0, icon: 0 };
+      const tally: Record<QuizResult, number> = { spotlight: 0, immersion: 0, icon: 0 };
       answers.forEach(r => { if (r) tally[r] += 1; });
 
       let best: QuizResult = "spotlight";

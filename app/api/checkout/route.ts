@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   try {
     const { pkg, values, intake } = await req.json();
 
-    if (!pkg || !["spotlight", "lite", "immersion", "icon"].includes(pkg)) {
+    if (!pkg || !["spotlight", "immersion", "icon"].includes(pkg)) {
       return NextResponse.json({ error: "Invalid package" }, { status: 400 });
     }
 
