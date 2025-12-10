@@ -93,48 +93,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Podcast CTA Banner */}
-      <section className="section-padding bg-black text-white">
-        <div className="container-elegant">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="flex items-center justify-center mb-6">
-              <Play className="w-12 h-12 mr-4" />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                Listen to ICONS Podcast
-              </h2>
-            </div>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
-                <Link href="/podcast">
-                  Listen Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <a
-                href="https://open.spotify.com/show/4jQBGWzfyyYizEThs3BAeR?si=cc9eaa447dd7486a"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition-colors rounded-lg font-medium"
-              >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.419.34-.66.719-.48 4.56 1.021 8.52 1.561 11.64 3.48.42.18.479.659.24 1.021zm1.44-3.3c-.3.42-.84.6-1.26.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.359.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                </svg>
-                Subscribe on Spotify
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Editorial Grid */}
       <EditorialGrid />
 
@@ -309,6 +267,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Podcast CTA Banner */}
+      <section className="section-padding bg-black text-white">
+        <div className="container-elegant">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="flex items-center justify-center mb-6">
+              <Play className="w-12 h-12 mr-4" />
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                Listen to ICONS Podcast
+              </h2>
+            </div>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
+                <Link href="/podcast">
+                  Listen Now
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <a
+                href="https://open.spotify.com/show/4jQBGWzfyyYizEThs3BAeR?si=cc9eaa447dd7486a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition-colors rounded-lg font-medium"
+              >
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.419.34-.66.719-.48 4.56 1.021 8.52 1.561 11.64 3.48.42.18.479.659.24 1.021zm1.44-3.3c-.3.42-.84.6-1.26.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.359.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Subscribe on Spotify
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Client Login Section */}
       <section className="section-padding">
         <div className="container-elegant text-center">
@@ -409,8 +409,6 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg leading-tight">See the Work</h2>
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 max-w-2xl drop-shadow-lg">Behind the scenes of what we create</p>
         </motion.div>
       </section>
 

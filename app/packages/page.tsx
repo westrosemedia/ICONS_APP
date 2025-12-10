@@ -132,8 +132,6 @@ export default function PackagesPage() {
           viewport={{ once: true }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-8 z-10"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-4 drop-shadow-lg leading-tight">See the Work</h2>
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 max-w-2xl drop-shadow-lg">Behind the scenes of what we create</p>
         </motion.div>
       </section>
 
