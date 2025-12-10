@@ -501,6 +501,19 @@ export default function PPBPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/40" />
         </section>
 
+        {/* Image Break 4 */}
+        <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4812.jpg?alt=media&token=b9d2cfec-6281-41f9-ab28-fca598dc2804"
+            alt="Powerful Personal Brand - West Rose Media"
+            fill
+            className="object-cover scale-105 transition-transform duration-700 hover:scale-100"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+        </section>
+
         {/* Section 5: The Powerful Personal Brand Framework */}
         <section className="section-padding bg-white">
           <div className="container-elegant">

@@ -165,6 +165,32 @@ export default function MastermindPage() {
               />
             </div>
           </div>
+
+          {/* Additional Image */}
+          <div className="mt-20">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_5030.jpg?alt=media&token=b368dc0e-7747-4683-a5f7-be87484155ae"
+                alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
+                fill
+                className="object-cover"
+                title="Movement Makers Mastermind | Female Entrepreneurs"
+              />
+            </div>
+          </div>
+
+          {/* Additional Image */}
+          <div className="mt-20">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4681.jpg?alt=media&token=8cc8ddf0-418e-4209-b50f-ead983ab1981"
+                alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
+                fill
+                className="object-cover"
+                title="Movement Makers Mastermind | Female Entrepreneurs"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

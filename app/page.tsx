@@ -131,6 +131,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Additional Image Section */}
+      <section className="relative w-full bg-black overflow-hidden">
+        <div className="relative w-full h-[70vh] min-h-[500px]">
+          <Image
+            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_5015.jpg?alt=media&token=5e9003c2-c69a-4fd9-8585-0255aad4497c"
+            alt="Luxury brand photography and content creation for entrepreneurs - West Rose Media"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        </div>
+      </section>
+
       {/* About West Rose Media */}
       <section className="relative section-padding overflow-hidden">
         <div 
