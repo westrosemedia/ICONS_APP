@@ -948,11 +948,6 @@ export default function PPBPage() {
                       <span>guest expert trainings</span>
                     </li>
                   </ul>
-                  <div className="space-y-2">
-                    <p className="text-editorial">
-                      Price: <strong className="text-black">$3,500 USD</strong>
-                    </p>
-                  </div>
                 </button>
 
                 <button
@@ -968,11 +963,6 @@ export default function PPBPage() {
                   <p className="mb-6 text-editorial">
                     A full year of implementation, practice, support, and refinement so you rise consistently instead of in short bursts.
                   </p>
-                  <div className="space-y-2">
-                    <p className="text-editorial">
-                      Price: <strong className="text-black">$5,000 USD</strong>
-                    </p>
-                  </div>
                 </button>
               </div>
 
