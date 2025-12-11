@@ -10,7 +10,7 @@ import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
-import PodcastBanner from "@/components/PodcastBanner";
+import PPBCountdownBanner from "@/components/PPBCountdownBanner";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
 
 const dmSans = DM_Sans({
@@ -167,7 +167,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
-        <PodcastBanner />
+        <PPBCountdownBanner />
         {/* Defer non-critical analytics to load after user interaction */}
         <DeferredAnalytics />
       </body>
