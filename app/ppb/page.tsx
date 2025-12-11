@@ -72,7 +72,7 @@ export default function PPBPage() {
               You're running a successful business, yet your brand still feels rushed and inconsistent. It is time to transform it into a clear, high level identity that attracts the right clients and makes sales easy.
             </p>
             <button 
-              onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               className="inline-block rounded-xl px-6 sm:px-8 py-3 sm:py-4 bg-black text-white no-underline text-base sm:text-lg font-semibold hover:bg-gray-800 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
             >
               Enroll Now
@@ -107,7 +107,7 @@ export default function PPBPage() {
             
             <div className="mt-8 space-y-4">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -206,7 +206,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -265,7 +265,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -379,7 +379,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -476,7 +476,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -597,7 +597,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -749,7 +749,7 @@ export default function PPBPage() {
             </div>
             <div className="mt-8">
               <button 
-                onClick={() => document.getElementById('investment')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('stripe-pricing')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 className="inline-block rounded-xl px-8 py-4 bg-black text-white no-underline text-lg font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Enroll now
@@ -919,7 +919,7 @@ export default function PPBPage() {
               <div className="text-left space-y-8 mb-12 max-w-3xl mx-auto">
                 <button
                   onClick={() => {
-                    const element = document.getElementById('investment');
+                    const element = document.getElementById('stripe-pricing');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
@@ -957,7 +957,7 @@ export default function PPBPage() {
 
                 <button
                   onClick={() => {
-                    const element = document.getElementById('investment');
+                    const element = document.getElementById('stripe-pricing');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
@@ -998,7 +998,7 @@ export default function PPBPage() {
                 src="https://js.stripe.com/v3/pricing-table.js"
                 strategy="afterInteractive"
               />
-              <div className="max-w-2xl mx-auto">
+              <div id="stripe-pricing" className="max-w-2xl mx-auto">
                 <stripe-pricing-table
                   pricing-table-id="prctbl_1SQB3eCcsY3WjV3QGmc6dPm2"
                   publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"
