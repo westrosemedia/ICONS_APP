@@ -1,0 +1,28 @@
+{
+  "course": {
+    "id": "powerful-personal-brand",
+    "title": "Powerful Personal Brand",
+    "description": "A 16-week intensive program to transform your brand and visibility",
+    "totalWeeks": 16,
+    "stripeProductId": "prod_YOUR_PRODUCT_ID",
+    "stripePriceId": "price_YOUR_PRICE_ID",
+    "published": true
+  },
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "title": "Week 1: Introduction to Personal Branding",
+      "description": "Learn the fundamentals of personal branding and why it matters",
+      "videoUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+      "content": "<h2>Welcome to Week 1</h2><p>This week we'll cover the fundamentals of personal branding...</p><h3>Key Topics:</h3><ul><li>What is personal branding?</li><li>Why it matters for your business</li><li>Getting started with your brand identity</li></ul>"
+    },
+    {
+      "weekNumber": 2,
+      "title": "Week 2: [Your Week 2 Title]",
+      "description": "[Your week 2 description]",
+      "videoUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+      "content": "<h2>Week 2 Content</h2><p>Add your content here...</p>"
+    }
+  ]
+}
+

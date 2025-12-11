@@ -20,14 +20,38 @@ export async function POST(req: Request) {
 
   if (event.type === "checkout.session.completed") {
     try {
-      // Import Firebase functions dynamically to avoid build-time issues
-      const { getBooking, updateBookingStatus, updateBookingStripeData, getPackage } = await import("@/lib/booking");
-      const { sendBookingNotification } = await import("@/lib/email");
-
       const session = event.data.object as any;
       const sessionId = session.id;
       
       console.log("Processing checkout session:", sessionId);
+      
+      // Check if this is a course enrollment
+      if (session.metadata?.type === 'course_enrollment') {
+        const { CourseService } = await import("@/lib/courseService");
+        const courseId = session.metadata?.courseId;
+        const userId = session.metadata?.userId;
+        
+        if (!courseId || !userId) {
+          console.error("Missing courseId or userId in course enrollment");
+          return NextResponse.json({ error: "Missing course enrollment data" }, { status: 400 });
+        }
+        
+        // Create enrollment
+        await CourseService.createEnrollment(
+          userId,
+          courseId,
+          session.payment_intent,
+          session.subscription
+        );
+        
+        console.log("Course enrollment created:", { userId, courseId });
+        return NextResponse.json({ received: true });
+      }
+      
+      // Original booking logic
+      // Import Firebase functions dynamically to avoid build-time issues
+      const { getBooking, updateBookingStatus, updateBookingStripeData, getPackage } = await import("@/lib/booking");
+      const { sendBookingNotification } = await import("@/lib/email");
       
       // Find the booking by session ID
       // We'll need to store the session ID when creating the checkout session

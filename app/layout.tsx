@@ -114,11 +114,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
+                <Link href="/courses" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Courses
+                </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Mastermind
                 </Link>
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
+                </Link>
+                <Link href="/admin/courses" className="text-gray-600 hover:text-black transition-colors duration-200 text-sm">
+                  Admin
                 </Link>
                 <Link href="/login" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Login
