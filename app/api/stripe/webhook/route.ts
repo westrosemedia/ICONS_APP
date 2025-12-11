@@ -25,27 +25,76 @@ export async function POST(req: Request) {
       
       console.log("Processing checkout session:", sessionId);
       
-      // Check if this is a course enrollment
-      if (session.metadata?.type === 'course_enrollment') {
+      // Check if this is a course enrollment (from pricing table or direct checkout)
+      // Check metadata first, then check if customer email matches a user
+      const isCourseEnrollment = session.metadata?.type === 'course_enrollment' || 
+                                  session.metadata?.courseId ||
+                                  (session.customer_email && await checkIfCoursePayment(session));
+      
+      if (isCourseEnrollment) {
         const { CourseService } = await import("@/lib/courseService");
-        const courseId = session.metadata?.courseId;
-        const userId = session.metadata?.userId;
+        let courseId = session.metadata?.courseId;
+        let userId = session.metadata?.userId;
         
-        if (!courseId || !userId) {
-          console.error("Missing courseId or userId in course enrollment");
-          return NextResponse.json({ error: "Missing course enrollment data" }, { status: 400 });
+        // If no courseId in metadata, try to find it from the price/product
+        if (!courseId) {
+          // Get the course that uses this Stripe price
+          const allCourses = await CourseService.getAllCourses();
+          const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+          
+          if (lineItems.data.length > 0) {
+            const priceId = lineItems.data[0].price?.id;
+            const matchingCourse = allCourses.find(c => c.stripePriceId === priceId);
+            if (matchingCourse) {
+              courseId = matchingCourse.id;
+            }
+          }
         }
         
-        // Create enrollment
-        await CourseService.createEnrollment(
-          userId,
-          courseId,
-          session.payment_intent,
-          session.subscription
-        );
+        // If no userId, try to find user by email
+        if (!userId && session.customer_email) {
+          // You'll need to implement a function to get userId by email
+          // For now, we'll need to handle this differently
+          console.log("Need userId for course enrollment. Email:", session.customer_email);
+        }
         
-        console.log("Course enrollment created:", { userId, courseId });
+        if (courseId && userId) {
+          // Create enrollment
+          await CourseService.createEnrollment(
+            userId,
+            courseId,
+            session.payment_intent,
+            session.subscription
+          );
+          
+          console.log("Course enrollment created:", { userId, courseId });
+        } else {
+          console.log("Course enrollment pending - missing courseId or userId", {
+            courseId,
+            userId,
+            email: session.customer_email
+          });
+        }
+        
         return NextResponse.json({ received: true });
+      }
+      
+      // Helper function to check if payment is for a course
+      async function checkIfCoursePayment(session: any): Promise<boolean> {
+        try {
+          const { CourseService } = await import("@/lib/courseService");
+          const allCourses = await CourseService.getAllCourses();
+          const stripeClient = getStripe();
+          const lineItems = await stripeClient.checkout.sessions.listLineItems(session.id);
+          
+          if (lineItems.data.length > 0) {
+            const priceId = lineItems.data[0].price?.id;
+            return allCourses.some(c => c.stripePriceId === priceId);
+          }
+          return false;
+        } catch {
+          return false;
+        }
       }
       
       // Original booking logic

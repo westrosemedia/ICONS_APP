@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Script from "next/script";
 import { Course, CourseWeek, UserCourseEnrollment } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -156,12 +157,22 @@ export default function CourseDetailPage() {
               </div>
             )}
             {!isEnrolled && (
-              <button
-                onClick={handleEnroll}
-                className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Enroll Now
-              </button>
+              <div>
+                <p className="text-white/80 mb-4 text-sm">
+                  Scroll down to see pricing options and enroll
+                </p>
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('course-pricing');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors"
+                >
+                  View Pricing & Enroll
+                </button>
+              </div>
             )}
           </motion.div>
         </div>
