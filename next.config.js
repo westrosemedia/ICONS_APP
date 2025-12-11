@@ -103,6 +103,11 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/podcast',
+        destination: '/',
+        permanent: false, // Temporary redirect until podcast page is fixed
+      },
     ];
   },
   

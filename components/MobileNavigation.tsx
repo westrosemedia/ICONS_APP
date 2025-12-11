@@ -36,14 +36,6 @@ export default function MobileNavigation() {
               Packages
             </Link>
             <Link 
-              href="/podcast" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2 font-semibold relative"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Podcast
-              <span className="absolute top-3 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
-            </Link>
-            <Link 
               href="/mastermind" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}

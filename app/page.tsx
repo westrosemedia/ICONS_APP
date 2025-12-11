@@ -304,12 +304,6 @@ export default function HomePage() {
               Where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
-                <Link href="/podcast">
-                  Listen Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
               <a
                 href="https://open.spotify.com/show/4jQBGWzfyyYizEThs3BAeR?si=cc9eaa447dd7486a"
                 target="_blank"
