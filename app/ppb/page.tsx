@@ -917,7 +917,15 @@ export default function PPBPage() {
               </div>
 
               <div className="text-left space-y-8 mb-12 max-w-3xl mx-auto">
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('investment');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="w-full bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-left hover:shadow-md hover:border-gray-300 transition-all cursor-pointer"
+                >
                   <h3 className="text-2xl font-bold text-black mb-6">The 16 Week Intensive</h3>
                   <p className="mb-4 text-editorial">
                     A complete brand and visibility overhaul including
@@ -945,9 +953,17 @@ export default function PPBPage() {
                       Price: <strong className="text-black">$3,500 USD</strong>
                     </p>
                   </div>
-                </div>
+                </button>
 
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('investment');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="w-full bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-left hover:shadow-md hover:border-gray-300 transition-all cursor-pointer"
+                >
                   <h3 className="text-2xl font-bold text-black mb-6">The Full Year Experience</h3>
                   <p className="mb-6 text-editorial">
                     A full year of implementation, practice, support, and refinement so you rise consistently instead of in short bursts.
@@ -957,7 +973,7 @@ export default function PPBPage() {
                       Price: <strong className="text-black">$5,000 USD</strong>
                     </p>
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="space-y-4 text-editorial max-w-3xl mx-auto mb-8">
