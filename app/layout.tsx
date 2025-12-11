@@ -1,6 +1,7 @@
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,22 +10,22 @@ import MobileNavigation from "@/components/MobileNavigation";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
-import ClarityAnalytics from "@/components/ClarityAnalytics";
-import ScrollDepthTracker from "@/components/ScrollDepthTracker";
-import ConversionTracker from "@/components/ConversionTracker";
 import PodcastBanner from "@/components/PodcastBanner";
+import DeferredAnalytics from "@/components/DeferredAnalytics";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
   display: "swap",
+  preload: true,
 });
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600"],
   variable: "--font-cormorant-garamond",
   display: "swap",
+  preload: true,
 });
 
 
@@ -170,10 +171,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
-        <ClarityAnalytics />
-        <ScrollDepthTracker />
-        <ConversionTracker />
         <PodcastBanner />
+        {/* Defer non-critical analytics to load after user interaction */}
+        <DeferredAnalytics />
       </body>
     </html>
   );

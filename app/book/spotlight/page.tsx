@@ -135,52 +135,52 @@ export default function SpotlightPage() {
 
             {form.city === "other" && (
               <>
-                <input
-                  className="w-full border rounded px-3 py-2"
-                  placeholder="Full name"
-                  value={form.fullName}
-                  onChange={e => setForm({ ...form, fullName: e.target.value })}
-                />
-                <input
-                  className="w-full border rounded px-3 py-2"
-                  placeholder="Email"
-                  value={form.email}
-                  onChange={e => setForm({ ...form, email: e.target.value })}
-                />
-                <input
-                  className="w-full border rounded px-3 py-2"
-                  placeholder="Instagram"
-                  value={form.instagram}
-                  onChange={e => setForm({ ...form, instagram: e.target.value })}
-                />
-                <textarea
-                  className="w-full border rounded px-3 py-2"
-                  placeholder="Brand vibe in one sentence"
-                  rows={2}
-                  value={form.brandVibe}
-                  onChange={e => setForm({ ...form, brandVibe: e.target.value })}
-                />
-                <textarea
-                  className="w-full border rounded px-3 py-2"
-                  placeholder="How you plan to use this content"
-                  rows={3}
-                  value={form.usageGoals}
-                  onChange={e => setForm({ ...form, usageGoals: e.target.value })}
-                />
+            <input
+              className="w-full border rounded px-3 py-2"
+              placeholder="Full name"
+              value={form.fullName}
+              onChange={e => setForm({ ...form, fullName: e.target.value })}
+            />
+            <input
+              className="w-full border rounded px-3 py-2"
+              placeholder="Email"
+              value={form.email}
+              onChange={e => setForm({ ...form, email: e.target.value })}
+            />
+            <input
+              className="w-full border rounded px-3 py-2"
+              placeholder="Instagram"
+              value={form.instagram}
+              onChange={e => setForm({ ...form, instagram: e.target.value })}
+            />
+            <textarea
+              className="w-full border rounded px-3 py-2"
+              placeholder="Brand vibe in one sentence"
+              rows={2}
+              value={form.brandVibe}
+              onChange={e => setForm({ ...form, brandVibe: e.target.value })}
+            />
+            <textarea
+              className="w-full border rounded px-3 py-2"
+              placeholder="How you plan to use this content"
+              rows={3}
+              value={form.usageGoals}
+              onChange={e => setForm({ ...form, usageGoals: e.target.value })}
+            />
               </>
             )}
           </div>
 
           {form.city === "other" && (
             <>
-              <button
-                onClick={submit}
-                disabled={submitting}
-                className="mt-4 w-full rounded-xl bg-black text-white py-3 font-semibold"
-              >
+          <button
+            onClick={submit}
+            disabled={submitting}
+            className="mt-4 w-full rounded-xl bg-black text-white py-3 font-semibold"
+          >
                 {submitting ? "Submitting" : spotlightCopy.ctaLabel}
-              </button>
-              <p className="mt-3 text-xs text-neutral-500">{spotlightCopy.priceLine}</p>
+          </button>
+          <p className="mt-3 text-xs text-neutral-500">{spotlightCopy.priceLine}</p>
             </>
           )}
         </aside>

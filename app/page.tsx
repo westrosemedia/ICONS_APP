@@ -20,7 +20,8 @@ export default function HomePage() {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
+          loading="lazy"
           poster="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_026.jpg?alt=media&token=35b646af-2e21-47e2-84ec-91543d8f9910"
           style={{ 
             width: '100vw',
@@ -107,6 +108,7 @@ export default function HomePage() {
             style={{ objectPosition: "center 30%" }}
             sizes="100vw"
             loading="lazy"
+            quality={85}
           />
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
           
@@ -406,6 +408,8 @@ export default function HomePage() {
           loop
           muted
           playsInline
+          preload="none"
+          loading="lazy"
           style={{ 
             width: '100%',
             height: 'auto',

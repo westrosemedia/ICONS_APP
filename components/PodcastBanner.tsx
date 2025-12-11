@@ -35,28 +35,28 @@ export default function PodcastBanner() {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
         <div className="flex items-center justify-between gap-2 sm:gap-3">
           <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-            <div className="flex-shrink-0">
+          <div className="flex-shrink-0">
               <Play className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="font-bold text-sm sm:text-base truncate">Listen to ICONS Podcast</h3>
               <p className="text-xs sm:text-sm text-white/70 hidden sm:block">New episodes every week</p>
-            </div>
+          </div>
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Link
-              href="/podcast"
+          <Link
+            href="/podcast"
               className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors font-medium text-xs sm:text-sm whitespace-nowrap"
-            >
+          >
               Listen
-            </Link>
-            <button
-              onClick={handleDismiss}
+          </Link>
+          <button
+            onClick={handleDismiss}
               className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors flex-shrink-0"
-              aria-label="Close banner"
-            >
+            aria-label="Close banner"
+          >
               <X className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
+          </button>
           </div>
         </div>
       </div>
