@@ -95,7 +95,13 @@ export default function AdminCoursesPage() {
     try {
       console.log("Creating course with data:", newCourse);
       const courseRef = doc(db, "courses", newCourse.id);
-      await setDoc(courseRef, {
+      
+      // Add timeout to prevent infinite hanging
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error("Operation timed out after 10 seconds")), 10000)
+      );
+      
+      const setDocPromise = setDoc(courseRef, {
         title: newCourse.title,
         description: newCourse.description,
         totalWeeks: newCourse.totalWeeks,
@@ -105,6 +111,8 @@ export default function AdminCoursesPage() {
         createdAt: Timestamp.now(),
         updatedAt: Timestamp.now(),
       }, { merge: false }); // merge: false ensures we create new document
+
+      await Promise.race([setDocPromise, timeoutPromise]);
 
       console.log("Course created successfully!");
       alert("Course created successfully!");
@@ -121,8 +129,19 @@ export default function AdminCoursesPage() {
       await loadCourses();
     } catch (error: any) {
       console.error("Error creating course:", error);
-      const errorMessage = error?.message || "Unknown error";
-      alert(`Error creating course: ${errorMessage}. Make sure the course ID is unique and you have permission.`);
+      console.error("Error code:", error?.code);
+      console.error("Error details:", error);
+      
+      let errorMessage = "Unknown error";
+      if (error?.code === "permission-denied") {
+        errorMessage = "Permission denied. Firestore security rules are blocking this operation. You may need to update your Firestore rules to allow writes to the courses collection.";
+      } else if (error?.message) {
+        errorMessage = error.message;
+      } else if (error?.code) {
+        errorMessage = `Firebase error: ${error.code}`;
+      }
+      
+      alert(`Error creating course: ${errorMessage}\n\nCheck the browser console (F12) for more details.`);
     } finally {
       setIsCreatingCourse(false);
     }
