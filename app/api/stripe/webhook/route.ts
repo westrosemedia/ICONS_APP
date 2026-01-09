@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { stripe, getStripe } from "@/lib/stripe";
 
 // Make this route dynamic to avoid build-time execution
 export const dynamic = 'force-dynamic';
@@ -24,6 +24,63 @@ export async function POST(req: Request) {
       const sessionId = session.id;
       
       console.log("Processing checkout session:", sessionId);
+
+      // Helper function to check if payment is for a course
+      async function checkIfCoursePayment(session: any): Promise<boolean> {
+        try {
+          const { CourseService } = await import("@/lib/courseService");
+          const allCourses = await CourseService.getAllCourses();
+          const stripeClient = getStripe();
+          const lineItems = await stripeClient.checkout.sessions.listLineItems(session.id);
+          
+          if (lineItems.data.length > 0) {
+            const priceId = lineItems.data[0].price?.id;
+            return allCourses.some(c => c.stripePriceId === priceId);
+          }
+          return false;
+        } catch {
+          return false;
+        }
+      }
+
+      // Helper function to get userId by email using Firebase Admin
+      async function getUserIdByEmail(email: string): Promise<string | null> {
+        try {
+          // Initialize Firebase Admin if not already initialized
+          const { initializeApp, cert, getApps } = await import("firebase-admin/app");
+          const { getAuth } = await import("firebase-admin/auth");
+          
+          if (!getApps().length) {
+            initializeApp({
+              credential: cert({
+                projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+                clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+                privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+              }),
+            });
+          }
+          
+          const auth = getAuth();
+          const user = await auth.getUserByEmail(email);
+          return user.uid;
+        } catch (error) {
+          console.error("Error getting user by email:", error);
+          // If user doesn't exist, try querying Firestore for a user document with this email
+          try {
+            const { getFirestore } = await import("firebase-admin/firestore");
+            const db = getFirestore();
+            const usersRef = db.collection("users");
+            const snapshot = await usersRef.where("email", "==", email).limit(1).get();
+            
+            if (!snapshot.empty) {
+              return snapshot.docs[0].id;
+            }
+          } catch (firestoreError) {
+            console.error("Error querying Firestore for user:", firestoreError);
+          }
+          return null;
+        }
+      }
       
       // Check if this is a course enrollment (from pricing table or direct checkout)
       // Check metadata first, then check if customer email matches a user
@@ -53,21 +110,42 @@ export async function POST(req: Request) {
         
         // If no userId, try to find user by email
         if (!userId && session.customer_email) {
-          // You'll need to implement a function to get userId by email
-          // For now, we'll need to handle this differently
-          console.log("Need userId for course enrollment. Email:", session.customer_email);
+          userId = await getUserIdByEmail(session.customer_email);
+          if (userId) {
+            console.log("Found userId by email:", userId);
+          } else {
+            console.log("Could not find user by email:", session.customer_email);
+          }
         }
         
         if (courseId && userId) {
-          // Create enrollment
-          await CourseService.createEnrollment(
-            userId,
-            courseId,
-            session.payment_intent,
-            session.subscription
-          );
+          // Check if enrollment already exists to prevent duplicates
+          const existingEnrollment = await CourseService.getUserEnrollment(userId, courseId);
           
-          console.log("Course enrollment created:", { userId, courseId });
+          if (existingEnrollment) {
+            console.log("Enrollment already exists:", { userId, courseId });
+            // Update payment info if needed (using Firebase Admin)
+            if (session.payment_intent && !existingEnrollment.stripePaymentIntentId) {
+              const { getFirestore } = await import("firebase-admin/firestore");
+              const db = getFirestore();
+              const enrollmentRef = db.collection("courseEnrollments").doc(existingEnrollment.id);
+              await enrollmentRef.update({
+                stripePaymentIntentId: session.payment_intent,
+                stripeSubscriptionId: session.subscription || null,
+                paymentStatus: 'completed',
+              });
+            }
+          } else {
+            // Create enrollment
+            await CourseService.createEnrollment(
+              userId,
+              courseId,
+              session.payment_intent,
+              session.subscription
+            );
+            
+            console.log("Course enrollment created:", { userId, courseId });
+          }
         } else {
           console.log("Course enrollment pending - missing courseId or userId", {
             courseId,
@@ -77,24 +155,6 @@ export async function POST(req: Request) {
         }
         
         return NextResponse.json({ received: true });
-      }
-      
-      // Helper function to check if payment is for a course
-      async function checkIfCoursePayment(session: any): Promise<boolean> {
-        try {
-          const { CourseService } = await import("@/lib/courseService");
-          const allCourses = await CourseService.getAllCourses();
-          const stripeClient = getStripe();
-          const lineItems = await stripeClient.checkout.sessions.listLineItems(session.id);
-          
-          if (lineItems.data.length > 0) {
-            const priceId = lineItems.data[0].price?.id;
-            return allCourses.some(c => c.stripePriceId === priceId);
-          }
-          return false;
-        } catch {
-          return false;
-        }
       }
       
       // Original booking logic

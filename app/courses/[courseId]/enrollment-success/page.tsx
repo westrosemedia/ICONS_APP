@@ -19,18 +19,34 @@ export default function EnrollmentSuccessPage() {
   const [user] = useAuthState(auth);
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);
+  const [enrollmentVerified, setEnrollmentVerified] = useState(false);
 
   useEffect(() => {
-    if (!courseId) return;
+    if (!courseId || !user) return;
     
-    const fetchCourse = async () => {
+    const verifyEnrollment = async () => {
       const courseData = await CourseService.getCourse(courseId);
       setCourse(courseData);
+      
+      // Verify enrollment exists
+      if (user) {
+        const enrollment = await CourseService.getUserEnrollment(user.uid, courseId);
+        setEnrollmentVerified(!!enrollment);
+        
+        // If enrollment not found yet, wait a bit and retry (webhook might be processing)
+        if (!enrollment) {
+          setTimeout(async () => {
+            const retryEnrollment = await CourseService.getUserEnrollment(user.uid, courseId);
+            setEnrollmentVerified(!!retryEnrollment);
+          }, 2000);
+        }
+      }
+      
       setLoading(false);
     };
     
-    fetchCourse();
-  }, [courseId]);
+    verifyEnrollment();
+  }, [courseId, user]);
 
   if (loading) {
     return (
@@ -57,9 +73,15 @@ export default function EnrollmentSuccessPage() {
               <CheckCircle className="w-12 h-12 text-green-600" />
             </div>
             <h1 className="text-hero text-black mb-4">Enrollment Successful!</h1>
-            <p className="text-editorial text-gray-600 mb-8">
-              You're all set! You now have access to {course?.title || 'the course'}.
-            </p>
+            {enrollmentVerified ? (
+              <p className="text-editorial text-gray-600 mb-8">
+                You're all set! You now have access to {course?.title || 'the course'}.
+              </p>
+            ) : (
+              <p className="text-editorial text-gray-600 mb-8">
+                Your payment was successful! We're processing your enrollment. If you don't see access within a few minutes, please contact support.
+              </p>
+            )}
           </motion.div>
 
           <div className="space-y-4">

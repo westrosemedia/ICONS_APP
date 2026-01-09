@@ -76,14 +76,38 @@ export default function CourseWeekPage() {
       const updatedEnrollment = await CourseService.getUserEnrollment(user.uid, courseId);
       setEnrollment(updatedEnrollment);
       
-      // Show success message
-      alert("Week completed! You can now access the next week.");
+      // Refresh next week unlock status
+      const nextWeekNum = getNextWeek();
+      if (nextWeekNum) {
+        const unlockedWeeks = await CourseService.getUnlockedWeeks(user.uid, courseId);
+        setNextWeekUnlocked(unlockedWeeks.includes(nextWeekNum));
+      }
+      
+      // Show success message - using a more user-friendly approach
+      // The UI will update automatically via state changes
     } catch (error: any) {
-      alert(error.message || "Error completing week. Please try again.");
+      console.error("Error completing week:", error);
+      // Error is already shown via the button state
     } finally {
       setIsCompleting(false);
     }
   };
+
+  const [nextWeekUnlocked, setNextWeekUnlocked] = useState(false);
+
+  useEffect(() => {
+    if (!user || !enrollment || !course) return;
+    
+    const checkNextWeek = async () => {
+      const nextWeekNum = weekNumber < course.totalWeeks ? weekNumber + 1 : null;
+      if (nextWeekNum) {
+        const unlockedWeeks = await CourseService.getUnlockedWeeks(user.uid, courseId);
+        setNextWeekUnlocked(unlockedWeeks.includes(nextWeekNum));
+      }
+    };
+    
+    checkNextWeek();
+  }, [user, enrollment, course, weekNumber, courseId]);
 
   const getNextWeek = () => {
     if (!course || !week) return null;
@@ -105,13 +129,33 @@ export default function CourseWeekPage() {
     );
   }
 
-  if (!week || !course || !enrollment) {
+  if (!week || !course) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Week not found</h1>
           <Link href={`/courses/${courseId}`} className="text-accent hover:underline">
             Back to course
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (!enrollment) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center max-w-md">
+          <Lock className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-4">Enrollment Required</h1>
+          <p className="text-gray-600 mb-6">
+            You need to enroll in this course to access the content.
+          </p>
+          <Link
+            href={`/courses/${courseId}`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            View Course & Enroll
           </Link>
         </div>
       </div>
@@ -237,13 +281,24 @@ export default function CourseWeekPage() {
                 )}
                 
                 {nextWeek && (
-                  <Link
-                    href={`/courses/${courseId}/week/${nextWeek}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                  >
-                    Next Week
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  nextWeekUnlocked ? (
+                    <Link
+                      href={`/courses/${courseId}/week/${nextWeek}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      Next Week
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <button
+                      disabled
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed"
+                      title="Complete this week to unlock the next week"
+                    >
+                      Next Week
+                      <Lock className="w-4 h-4" />
+                    </button>
+                  )
                 )}
               </div>
             </div>

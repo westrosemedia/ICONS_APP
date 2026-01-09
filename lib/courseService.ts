@@ -293,10 +293,18 @@ export class CourseService {
       const enrollment = await this.getUserEnrollment(userId, courseId);
       if (!enrollment) return [];
       
-      // Week 1 is always unlocked, then sequential unlocking
+      // Week 1 is always unlocked, then sequential unlocking based on completed weeks
+      // If currentWeek is 0, only week 1 is unlocked
+      // If currentWeek is N, weeks 1 through N+1 are unlocked
       const unlockedWeeks: number[] = [1];
-      for (let i = 1; i <= enrollment.currentWeek; i++) {
-        unlockedWeeks.push(i + 1);
+      
+      // Add next week for each completed week
+      // If they've completed week 1 (currentWeek = 1), unlock week 2
+      // If they've completed week 2 (currentWeek = 2), unlock week 3, etc.
+      if (enrollment.currentWeek > 0) {
+        for (let i = 1; i <= enrollment.currentWeek; i++) {
+          unlockedWeeks.push(i + 1);
+        }
       }
       
       return unlockedWeeks;
