@@ -12,6 +12,7 @@ export default function AdminCoursesPage() {
   const [weeks, setWeeks] = useState<CourseWeek[]>([]);
   const [editingWeek, setEditingWeek] = useState<CourseWeek | null>(null);
   const [showCreateCourse, setShowCreateCourse] = useState(false);
+  const [isCreatingCourse, setIsCreatingCourse] = useState(false);
   const [newCourse, setNewCourse] = useState({
     id: "",
     title: "",
@@ -76,6 +77,8 @@ export default function AdminCoursesPage() {
   };
 
   const createCourse = async () => {
+    console.log("createCourse called", { newCourse, db });
+    
     if (!newCourse.id || !newCourse.title || !newCourse.description) {
       alert("Please fill in all required fields (ID, Title, Description)");
       return;
@@ -83,10 +86,14 @@ export default function AdminCoursesPage() {
 
     if (!db) {
       alert("Database not initialized. Please refresh the page.");
+      console.error("db is null");
       return;
     }
 
+    setIsCreatingCourse(true);
+    
     try {
+      console.log("Creating course with data:", newCourse);
       const courseRef = doc(db, "courses", newCourse.id);
       await setDoc(courseRef, {
         title: newCourse.title,
@@ -99,6 +106,7 @@ export default function AdminCoursesPage() {
         updatedAt: Timestamp.now(),
       }, { merge: false }); // merge: false ensures we create new document
 
+      console.log("Course created successfully!");
       alert("Course created successfully!");
       setShowCreateCourse(false);
       setNewCourse({
@@ -110,10 +118,13 @@ export default function AdminCoursesPage() {
         stripePriceId: "",
         published: true,
       });
-      loadCourses();
-    } catch (error) {
+      await loadCourses();
+    } catch (error: any) {
       console.error("Error creating course:", error);
-      alert("Error creating course. Make sure the course ID is unique and you have permission.");
+      const errorMessage = error?.message || "Unknown error";
+      alert(`Error creating course: ${errorMessage}. Make sure the course ID is unique and you have permission.`);
+    } finally {
+      setIsCreatingCourse(false);
     }
   };
 
@@ -251,14 +262,18 @@ export default function AdminCoursesPage() {
                 
                 <div className="flex gap-4 pt-4">
                   <button
+                    type="button"
                     onClick={createCourse}
-                    className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800"
+                    disabled={isCreatingCourse}
+                    className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Create Course
+                    {isCreatingCourse ? "Creating..." : "Create Course"}
                   </button>
                   <button
+                    type="button"
                     onClick={() => setShowCreateCourse(false)}
-                    className="px-6 py-2 border rounded hover:bg-gray-50"
+                    disabled={isCreatingCourse}
+                    className="px-6 py-2 border rounded hover:bg-gray-50 disabled:opacity-50"
                   >
                     Cancel
                   </button>
