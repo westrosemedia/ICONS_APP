@@ -123,9 +123,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
                   Vault
                 </Link>
-                <Link href="/admin/courses" className="text-gray-600 hover:text-black transition-colors duration-200 text-sm">
-                  Admin
-                </Link>
                 <Link href="/login" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Login
                 </Link>
