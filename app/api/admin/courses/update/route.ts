@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { id, title, description, totalWeeks, stripeProductId, stripePriceId, published } = body;
+    const { id, title, description, totalWeeks, thumbnailUrl, stripeProductId, stripePriceId, published } = body;
 
     // Validate required fields
     if (!id || !title || !description) {
@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
       title,
       description,
       totalWeeks: totalWeeks || 16,
+      thumbnailUrl: thumbnailUrl || null,
       stripeProductId: stripeProductId || null,
       stripePriceId: stripePriceId || null,
       published: published !== undefined ? published : true,
