@@ -26,11 +26,23 @@ export default function AdminCoursesPage() {
   useEffect(() => {
     // Load courses regardless of auth status for now
     loadCourses();
+    
+    // Debug Firebase connection
+    console.log("Firebase db check:", db);
+    console.log("Firebase config check:", {
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? "Set" : "Missing",
+    });
   }, []);
 
   const loadCourses = async () => {
-    const allCourses = await CourseService.getAllCourses();
-    setCourses(allCourses);
+    try {
+      const allCourses = await CourseService.getAllCourses();
+      setCourses(allCourses);
+      console.log("Courses loaded:", allCourses.length);
+    } catch (error) {
+      console.error("Error loading courses:", error);
+    }
   };
 
   const loadWeeks = async (courseId: string) => {
@@ -78,6 +90,7 @@ export default function AdminCoursesPage() {
 
   const createCourse = async () => {
     console.log("createCourse called", { newCourse, db });
+    console.log("Firebase project ID:", process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
     
     if (!newCourse.id || !newCourse.title || !newCourse.description) {
       alert("Please fill in all required fields (ID, Title, Description)");
@@ -85,8 +98,24 @@ export default function AdminCoursesPage() {
     }
 
     if (!db) {
-      alert("Database not initialized. Please refresh the page.");
+      alert("Database not initialized. Please refresh the page.\n\nCheck browser console (F12) for Firebase config details.");
       console.error("db is null");
+      console.error("Firebase config:", {
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? "Set" : "Missing",
+      });
+      return;
+    }
+
+    // Test Firebase connection first
+    try {
+      console.log("Testing Firebase connection...");
+      const testRef = doc(db, "_test", "connection");
+      await setDoc(testRef, { test: true }, { merge: true });
+      console.log("Firebase connection test successful");
+    } catch (testError: any) {
+      console.error("Firebase connection test failed:", testError);
+      alert(`Firebase connection failed: ${testError?.code || testError?.message}\n\nThis usually means:\n1. Firestore rules are blocking writes\n2. Firebase config is incorrect\n3. Network/CORS issue\n\nCheck console (F12) for details.`);
       return;
     }
 
@@ -98,7 +127,7 @@ export default function AdminCoursesPage() {
       
       // Add timeout to prevent infinite hanging
       const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error("Operation timed out after 10 seconds")), 10000)
+        setTimeout(() => reject(new Error("Operation timed out after 10 seconds. Check Firestore rules and network connection.")), 10000)
       );
       
       const setDocPromise = setDoc(courseRef, {
@@ -134,7 +163,9 @@ export default function AdminCoursesPage() {
       
       let errorMessage = "Unknown error";
       if (error?.code === "permission-denied") {
-        errorMessage = "Permission denied. Firestore security rules are blocking this operation. You may need to update your Firestore rules to allow writes to the courses collection.";
+        errorMessage = "Permission denied. Firestore security rules are blocking this operation.\n\nUpdate your Firestore rules:\nmatch /courses/{courseId} {\n  allow write: if true;\n}";
+      } else if (error?.code === "unavailable") {
+        errorMessage = "Firestore is unavailable. Check your internet connection and Firebase project status.";
       } else if (error?.message) {
         errorMessage = error.message;
       } else if (error?.code) {
