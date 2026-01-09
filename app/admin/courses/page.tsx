@@ -12,7 +12,9 @@ export default function AdminCoursesPage() {
   const [weeks, setWeeks] = useState<CourseWeek[]>([]);
   const [editingWeek, setEditingWeek] = useState<CourseWeek | null>(null);
   const [showCreateCourse, setShowCreateCourse] = useState(false);
+  const [editingCourse, setEditingCourse] = useState<Course | null>(null);
   const [isCreatingCourse, setIsCreatingCourse] = useState(false);
+  const [isUpdatingCourse, setIsUpdatingCourse] = useState(false);
   const [newCourse, setNewCourse] = useState({
     id: "",
     title: "",
@@ -86,6 +88,68 @@ export default function AdminCoursesPage() {
     }
     alert("All week templates created!");
     loadWeeks(courseId);
+  };
+
+  const updateCourse = async () => {
+    if (!editingCourse) return;
+    
+    if (!newCourse.title || !newCourse.description) {
+      alert("Please fill in all required fields (Title, Description)");
+      return;
+    }
+
+    setIsUpdatingCourse(true);
+    
+    try {
+      console.log("Updating course via API:", newCourse);
+      
+      const response = await fetch("/api/admin/courses/update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: editingCourse.id,
+          title: newCourse.title,
+          description: newCourse.description,
+          totalWeeks: newCourse.totalWeeks,
+          stripeProductId: newCourse.stripeProductId || null,
+          stripePriceId: newCourse.stripePriceId || null,
+          published: newCourse.published,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || data.error || `HTTP ${response.status}`);
+      }
+
+      console.log("Course updated successfully!", data);
+      alert("Course updated successfully!");
+      setEditingCourse(null);
+      setNewCourse({
+        id: "",
+        title: "",
+        description: "",
+        totalWeeks: 16,
+        stripeProductId: "",
+        stripePriceId: "",
+        published: true,
+      });
+      await loadCourses();
+    } catch (error: any) {
+      console.error("Error updating course:", error);
+      
+      let errorMessage = "Unknown error";
+      if (error?.message) {
+        errorMessage = error.message;
+      }
+      
+      alert(`Error updating course: ${errorMessage}\n\nCheck the browser console (F12) for more details.`);
+    } finally {
+      setIsUpdatingCourse(false);
+    }
   };
 
   const createCourse = async () => {
@@ -183,21 +247,170 @@ export default function AdminCoursesPage() {
               {courses.map((course) => (
                 <div
                   key={course.id}
-                  className="flex items-center justify-between p-3 border rounded hover:bg-gray-50 cursor-pointer"
-                  onClick={() => loadWeeks(course.id)}
+                  className="flex items-center justify-between p-3 border rounded hover:bg-gray-50"
                 >
-                  <div>
+                  <div
+                    className="flex-1 cursor-pointer"
+                    onClick={() => loadWeeks(course.id)}
+                  >
                     <h3 className="font-semibold">{course.title}</h3>
                     <p className="text-sm text-gray-600">{course.totalWeeks} weeks</p>
                   </div>
-                  {selectedCourse === course.id && (
-                    <span className="text-blue-600">✓ Selected</span>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {selectedCourse === course.id && (
+                      <span className="text-blue-600 text-sm">✓ Selected</span>
+                    )}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setEditingCourse(course);
+                        setNewCourse({
+                          id: course.id,
+                          title: course.title,
+                          description: course.description,
+                          totalWeeks: course.totalWeeks,
+                          stripeProductId: course.stripeProductId || "",
+                          stripePriceId: course.stripePriceId || "",
+                          published: course.published,
+                        });
+                      }}
+                      className="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded"
+                    >
+                      Edit
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
           )}
         </div>
+
+        {/* Edit Course Modal */}
+        {editingCourse && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-bold">Edit Course</h2>
+                <button
+                  onClick={() => {
+                    setEditingCourse(null);
+                    setNewCourse({
+                      id: "",
+                      title: "",
+                      description: "",
+                      totalWeeks: 16,
+                      stripeProductId: "",
+                      stripePriceId: "",
+                      published: true,
+                    });
+                  }}
+                  className="text-gray-400 hover:text-black"
+                >
+                  ✕
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <label className="block font-semibold mb-2">Course ID</label>
+                  <input
+                    type="text"
+                    value={newCourse.id}
+                    disabled
+                    className="w-full border rounded p-2 bg-gray-100"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Course ID cannot be changed</p>
+                </div>
+                
+                <div>
+                  <label className="block font-semibold mb-2">Course Title *</label>
+                  <input
+                    type="text"
+                    value={newCourse.title}
+                    onChange={(e) => setNewCourse({ ...newCourse, title: e.target.value })}
+                    className="w-full border rounded p-2"
+                    placeholder="Powerful Personal Brand"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-semibold mb-2">Description *</label>
+                  <textarea
+                    value={newCourse.description}
+                    onChange={(e) => setNewCourse({ ...newCourse, description: e.target.value })}
+                    className="w-full border rounded p-2"
+                    rows={4}
+                    placeholder="A 16-week intensive program to transform your brand..."
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-semibold mb-2">Stripe Product ID (optional)</label>
+                  <input
+                    type="text"
+                    value={newCourse.stripeProductId}
+                    onChange={(e) => setNewCourse({ ...newCourse, stripeProductId: e.target.value })}
+                    className="w-full border rounded p-2"
+                    placeholder="prod_xxxxx"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block font-semibold mb-2">Stripe Price ID (optional)</label>
+                  <input
+                    type="text"
+                    value={newCourse.stripePriceId}
+                    onChange={(e) => setNewCourse({ ...newCourse, stripePriceId: e.target.value })}
+                    className="w-full border rounded p-2"
+                    placeholder="price_xxxxx"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Leave empty to use pricing table</p>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="edit-published"
+                    checked={newCourse.published}
+                    onChange={(e) => setNewCourse({ ...newCourse, published: e.target.checked })}
+                    className="w-4 h-4"
+                  />
+                  <label htmlFor="edit-published" className="font-semibold">Published (visible to users)</label>
+                </div>
+                
+                <div className="flex gap-4 pt-4">
+                  <button
+                    type="button"
+                    onClick={updateCourse}
+                    disabled={isUpdatingCourse}
+                    className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isUpdatingCourse ? "Updating..." : "Update Course"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditingCourse(null);
+                      setNewCourse({
+                        id: "",
+                        title: "",
+                        description: "",
+                        totalWeeks: 16,
+                        stripeProductId: "",
+                        stripePriceId: "",
+                        published: true,
+                      });
+                    }}
+                    disabled={isUpdatingCourse}
+                    className="px-6 py-2 border rounded hover:bg-gray-50 disabled:opacity-50"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Create Course Modal */}
         {showCreateCourse && (
