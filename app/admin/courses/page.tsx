@@ -216,17 +216,6 @@ export default function AdminCoursesPage() {
                 </div>
                 
                 <div>
-                  <label className="block font-semibold mb-2">Total Weeks</label>
-                  <input
-                    type="number"
-                    value={newCourse.totalWeeks}
-                    onChange={(e) => setNewCourse({ ...newCourse, totalWeeks: parseInt(e.target.value) || 16 })}
-                    className="w-full border rounded p-2"
-                    min="1"
-                  />
-                </div>
-                
-                <div>
                   <label className="block font-semibold mb-2">Stripe Product ID (optional)</label>
                   <input
                     type="text"
