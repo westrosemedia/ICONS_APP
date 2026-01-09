@@ -351,6 +351,30 @@ export default function AdminCoursesPage() {
                 </div>
                 
                 <div>
+                  <label className="block font-semibold mb-2">Thumbnail Image URL (optional)</label>
+                  <input
+                    type="url"
+                    value={newCourse.thumbnailUrl}
+                    onChange={(e) => setNewCourse({ ...newCourse, thumbnailUrl: e.target.value })}
+                    className="w-full border rounded p-2"
+                    placeholder="https://example.com/image.jpg"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">URL to course thumbnail image</p>
+                  {newCourse.thumbnailUrl && (
+                    <div className="mt-2">
+                      <img 
+                        src={newCourse.thumbnailUrl} 
+                        alt="Preview" 
+                        className="max-w-xs h-32 object-cover rounded border"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+                
+                <div>
                   <label className="block font-semibold mb-2">Stripe Product ID (optional)</label>
                   <input
                     type="text"
@@ -402,6 +426,7 @@ export default function AdminCoursesPage() {
                         title: "",
                         description: "",
                         totalWeeks: 16,
+                        thumbnailUrl: "",
                         stripeProductId: "",
                         stripePriceId: "",
                         published: true,
