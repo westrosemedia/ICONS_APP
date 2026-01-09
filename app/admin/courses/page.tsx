@@ -43,6 +43,10 @@ export default function AdminCoursesPage() {
   };
 
   const createWeekTemplate = async (courseId: string, weekNumber: number) => {
+    if (!db) {
+      alert("Database not initialized. Please refresh the page.");
+      return;
+    }
     try {
       const weekRef = await addDoc(collection(db, "courseWeeks"), {
         courseId,
@@ -77,6 +81,11 @@ export default function AdminCoursesPage() {
   const createCourse = async () => {
     if (!newCourse.id || !newCourse.title || !newCourse.description) {
       alert("Please fill in all required fields (ID, Title, Description)");
+      return;
+    }
+
+    if (!db) {
+      alert("Database not initialized. Please refresh the page.");
       return;
     }
 
@@ -424,6 +433,10 @@ export default function AdminCoursesPage() {
                 <div className="flex gap-4">
                   <button
                     onClick={async () => {
+                      if (!db) {
+                        alert("Database not initialized. Please refresh the page.");
+                        return;
+                      }
                       try {
                         const weekRef = doc(db, "courseWeeks", editingWeek.id);
                         await updateDoc(weekRef, {
