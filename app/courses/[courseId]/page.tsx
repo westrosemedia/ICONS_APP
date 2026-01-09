@@ -10,7 +10,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { motion } from "framer-motion";
 import { Lock, CheckCircle, Play, ArrowRight } from "lucide-react";
-import AuthGuard from "@/components/AuthGuard";
 
 export default function CourseDetailPage() {
   const params = useParams();
@@ -183,24 +182,6 @@ export default function CourseDetailPage() {
                 </div>
               </div>
             )}
-            {!isEnrolled && (
-              <div>
-                <p className="text-white/80 mb-4 text-sm">
-                  Scroll down to see pricing options and enroll
-                </p>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('course-pricing');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
-                  className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors"
-                >
-                  View Pricing & Enroll
-                </button>
-              </div>
-            )}
           </motion.div>
         </div>
       </section>
@@ -315,9 +296,6 @@ export default function CourseDetailPage() {
                           </h3>
                           {isCompleted && (
                             <span className="text-sm text-green-600 font-semibold">Completed</span>
-                          )}
-                          {isCurrentWeek && !isCompleted && (
-                            <span className="text-sm text-blue-600 font-semibold">Current</span>
                           )}
                         </div>
                         <p className="text-editorial text-gray-600">{week.description}</p>
