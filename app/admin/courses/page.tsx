@@ -26,10 +26,9 @@ export default function AdminCoursesPage() {
   });
 
   useEffect(() => {
-    if (user) {
-      loadCourses();
-    }
-  }, [user]);
+    // Load courses regardless of auth status for now
+    loadCourses();
+  }, []);
 
   const loadCourses = async () => {
     const allCourses = await CourseService.getAllCourses();
@@ -47,6 +46,7 @@ export default function AdminCoursesPage() {
       alert("Database not initialized. Please refresh the page.");
       return;
     }
+    // Note: Auth check removed - add back if needed: if (!user) { alert("Please log in"); return; }
     try {
       const weekRef = await addDoc(collection(db, "courseWeeks"), {
         courseId,
@@ -120,20 +120,23 @@ export default function AdminCoursesPage() {
     }
   };
 
+  // Note: Auth check removed for now - you can add it back when login is implemented
+  // For now, allow access to set up courses
   if (loading) {
     return <div className="p-8">Loading...</div>;
   }
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Admin Access Required</h1>
-          <p className="text-gray-600">Please log in to access this page.</p>
-        </div>
-      </div>
-    );
-  }
+  // Optional: Uncomment to require authentication
+  // if (!user) {
+  //   return (
+  //     <div className="min-h-screen bg-white flex items-center justify-center">
+  //       <div className="text-center">
+  //         <h1 className="text-2xl font-bold mb-4">Admin Access Required</h1>
+  //         <p className="text-gray-600">Please log in to access this page.</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
