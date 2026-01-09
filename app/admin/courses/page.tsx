@@ -1,15 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
 import { Course, CourseWeek } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
 import { collection, addDoc, updateDoc, doc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 export default function AdminCoursesPage() {
-  const [user, loading] = useAuthState(auth);
   const [courses, setCourses] = useState<Course[]>([]);
   const [selectedCourse, setSelectedCourse] = useState<string>("");
   const [weeks, setWeeks] = useState<CourseWeek[]>([]);
@@ -120,23 +117,7 @@ export default function AdminCoursesPage() {
     }
   };
 
-  // Note: Auth check removed for now - you can add it back when login is implemented
-  // For now, allow access to set up courses
-  if (loading) {
-    return <div className="p-8">Loading...</div>;
-  }
-
-  // Optional: Uncomment to require authentication
-  // if (!user) {
-  //   return (
-  //     <div className="min-h-screen bg-white flex items-center justify-center">
-  //       <div className="text-center">
-  //         <h1 className="text-2xl font-bold mb-4">Admin Access Required</h1>
-  //         <p className="text-gray-600">Please log in to access this page.</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  // Auth check removed - page is accessible without login for course setup
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
