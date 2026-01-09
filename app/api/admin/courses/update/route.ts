@@ -21,11 +21,20 @@ export async function POST(req: NextRequest) {
     const { getFirestore, Timestamp } = await import("firebase-admin/firestore");
 
     if (!getApps().length) {
+      const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n') || process.env.FIREBASE_PRIVATE_KEY;
+      
+      if (!privateKey || !process.env.FIREBASE_CLIENT_EMAIL || !process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID) {
+        return NextResponse.json(
+          { error: "Firebase Admin credentials not configured. Please set FIREBASE_PRIVATE_KEY, FIREBASE_CLIENT_EMAIL, and NEXT_PUBLIC_FIREBASE_PROJECT_ID environment variables." },
+          { status: 500 }
+        );
+      }
+
       initializeApp({
         credential: cert({
           projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
           clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-          privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+          privateKey: privateKey,
         }),
       });
     }
