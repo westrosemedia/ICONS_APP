@@ -89,61 +89,41 @@ export default function AdminCoursesPage() {
   };
 
   const createCourse = async () => {
-    console.log("createCourse called", { newCourse, db });
-    console.log("Firebase project ID:", process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
+    console.log("createCourse called", { newCourse });
     
     if (!newCourse.id || !newCourse.title || !newCourse.description) {
       alert("Please fill in all required fields (ID, Title, Description)");
       return;
     }
 
-    if (!db) {
-      alert("Database not initialized. Please refresh the page.\n\nCheck browser console (F12) for Firebase config details.");
-      console.error("db is null");
-      console.error("Firebase config:", {
-        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-        apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? "Set" : "Missing",
-      });
-      return;
-    }
-
-    // Test Firebase connection first
-    try {
-      console.log("Testing Firebase connection...");
-      const testRef = doc(db, "_test", "connection");
-      await setDoc(testRef, { test: true }, { merge: true });
-      console.log("Firebase connection test successful");
-    } catch (testError: any) {
-      console.error("Firebase connection test failed:", testError);
-      alert(`Firebase connection failed: ${testError?.code || testError?.message}\n\nThis usually means:\n1. Firestore rules are blocking writes\n2. Firebase config is incorrect\n3. Network/CORS issue\n\nCheck console (F12) for details.`);
-      return;
-    }
-
     setIsCreatingCourse(true);
     
     try {
-      console.log("Creating course with data:", newCourse);
-      const courseRef = doc(db, "courses", newCourse.id);
+      console.log("Creating course via API:", newCourse);
       
-      // Add timeout to prevent infinite hanging
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error("Operation timed out after 10 seconds. Check Firestore rules and network connection.")), 10000)
-      );
-      
-      const setDocPromise = setDoc(courseRef, {
-        title: newCourse.title,
-        description: newCourse.description,
-        totalWeeks: newCourse.totalWeeks,
-        stripeProductId: newCourse.stripeProductId || null,
-        stripePriceId: newCourse.stripePriceId || null,
-        published: newCourse.published,
-        createdAt: Timestamp.now(),
-        updatedAt: Timestamp.now(),
-      }, { merge: false }); // merge: false ensures we create new document
+      const response = await fetch("/api/admin/courses/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: newCourse.id,
+          title: newCourse.title,
+          description: newCourse.description,
+          totalWeeks: newCourse.totalWeeks,
+          stripeProductId: newCourse.stripeProductId || null,
+          stripePriceId: newCourse.stripePriceId || null,
+          published: newCourse.published,
+        }),
+      });
 
-      await Promise.race([setDocPromise, timeoutPromise]);
+      const data = await response.json();
 
-      console.log("Course created successfully!");
+      if (!response.ok) {
+        throw new Error(data.message || data.error || `HTTP ${response.status}`);
+      }
+
+      console.log("Course created successfully!", data);
       alert("Course created successfully!");
       setShowCreateCourse(false);
       setNewCourse({
@@ -158,18 +138,10 @@ export default function AdminCoursesPage() {
       await loadCourses();
     } catch (error: any) {
       console.error("Error creating course:", error);
-      console.error("Error code:", error?.code);
-      console.error("Error details:", error);
       
       let errorMessage = "Unknown error";
-      if (error?.code === "permission-denied") {
-        errorMessage = "Permission denied. Firestore security rules are blocking this operation.\n\nUpdate your Firestore rules:\nmatch /courses/{courseId} {\n  allow write: if true;\n}";
-      } else if (error?.code === "unavailable") {
-        errorMessage = "Firestore is unavailable. Check your internet connection and Firebase project status.";
-      } else if (error?.message) {
+      if (error?.message) {
         errorMessage = error.message;
-      } else if (error?.code) {
-        errorMessage = `Firebase error: ${error.code}`;
       }
       
       alert(`Error creating course: ${errorMessage}\n\nCheck the browser console (F12) for more details.`);
