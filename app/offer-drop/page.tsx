@@ -5,24 +5,40 @@ import CountdownBar from "./CountdownBar";
 import OfferCard from "./OfferCard";
 import ExpiredState from "./ExpiredState";
 
-function getEdmontonTime(): Date {
-  const now = new Date();
-  const edmontonTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Edmonton" }));
-  const utcTime = new Date(now.toLocaleString("en-US", { timeZone: "UTC" }));
-  const offset = edmontonTime.getTime() - utcTime.getTime();
-  return new Date(now.getTime() + offset);
-}
-
 function getTargetTime(): Date {
-  const edmontonNow = getEdmontonTime();
-  const target = new Date(edmontonNow);
-  target.setDate(target.getDate() + 1);
-  target.setHours(9, 0, 0, 0);
-  return target;
+  const now = new Date();
+  const edmontonNowStr = now.toLocaleString("en-US", { timeZone: "America/Edmonton" });
+  const edmontonNow = new Date(edmontonNowStr);
+  
+  const targetStr = new Date(edmontonNow);
+  targetStr.setDate(targetStr.getDate() + 1);
+  targetStr.setHours(9, 0, 0, 0);
+  
+  const targetDateStr = targetStr.toLocaleString("en-US", { 
+    timeZone: "America/Edmonton",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+  
+  const [datePart, timePart] = targetDateStr.split(", ");
+  const [month, day, year] = datePart.split("/");
+  const [hour, minute, second] = timePart.split(":");
+  
+  const targetInEdmonton = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`);
+  const utcNow = new Date();
+  const edmontonNowParsed = new Date(edmontonNowStr);
+  const offset = edmontonNowParsed.getTime() - utcNow.getTime();
+  
+  return new Date(targetInEdmonton.getTime() - offset);
 }
 
 function isExpired(): boolean {
-  const now = getEdmontonTime();
+  const now = new Date();
   const target = getTargetTime();
   return target.getTime() - now.getTime() <= 0;
 }

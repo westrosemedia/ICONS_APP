@@ -7,32 +7,50 @@ type CountdownState = {
   isExpired: boolean;
 };
 
-function getEdmontonTime(): Date {
-  // Get current time in Edmonton (America/Edmonton timezone)
-  const now = new Date();
-  const edmontonTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Edmonton" }));
-  
-  // Calculate offset between UTC and Edmonton time
-  const utcTime = new Date(now.toLocaleString("en-US", { timeZone: "UTC" }));
-  const offset = edmontonTime.getTime() - utcTime.getTime();
-  
-  // Apply offset to current UTC time
-  return new Date(now.getTime() + offset);
-}
-
 function getTargetTime(): Date {
-  const edmontonNow = getEdmontonTime();
-  const target = new Date(edmontonNow);
+  // Create target time: 9:00 AM tomorrow in America/Edmonton
+  const now = new Date();
   
-  // Set to 9:00 AM tomorrow
-  target.setDate(target.getDate() + 1);
-  target.setHours(9, 0, 0, 0);
+  // Get current time in Edmonton
+  const edmontonNowStr = now.toLocaleString("en-US", { timeZone: "America/Edmonton" });
+  const edmontonNow = new Date(edmontonNowStr);
   
-  return target;
+  // Create target date: tomorrow at 9:00 AM in Edmonton
+  const targetStr = new Date(edmontonNow);
+  targetStr.setDate(targetStr.getDate() + 1);
+  targetStr.setHours(9, 0, 0, 0);
+  
+  // Convert back to UTC by parsing the Edmonton time string
+  const targetDateStr = targetStr.toLocaleString("en-US", { 
+    timeZone: "America/Edmonton",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+  
+  // Parse the date string and create UTC equivalent
+  const [datePart, timePart] = targetDateStr.split(", ");
+  const [month, day, year] = datePart.split("/");
+  const [hour, minute, second] = timePart.split(":");
+  
+  // Create date in Edmonton timezone, then convert to UTC
+  const targetInEdmonton = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`);
+  
+  // Calculate offset: Edmonton time - UTC time
+  const utcNow = new Date();
+  const edmontonNowParsed = new Date(edmontonNowStr);
+  const offset = edmontonNowParsed.getTime() - utcNow.getTime();
+  
+  // Apply offset to get UTC time
+  return new Date(targetInEdmonton.getTime() - offset);
 }
 
 function calculateCountdown(): CountdownState {
-  const now = getEdmontonTime();
+  const now = new Date();
   const target = getTargetTime();
   const remainingMs = target.getTime() - now.getTime();
   
