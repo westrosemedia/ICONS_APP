@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,12 +15,10 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate login attempt
-    setTimeout(() => {
-      alert("Access is currently by invitation only. Contact us if you believe you should have access.");
-      setIsSubmitting(false);
-    }, 1000);
+
+    // Temporary access: send admins directly to course setup.
+    router.push("/admin/courses");
+    setIsSubmitting(false);
   };
 
   return (

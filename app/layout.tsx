@@ -7,6 +7,7 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
+import OfferCountdownBanner from "@/components/OfferCountdownBanner";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
@@ -99,8 +100,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen w-full bg-white text-black font-sans antialiased"
         suppressHydrationWarning={true}
       >
+        <OfferCountdownBanner />
         {SHOW_NAV ? (
-          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-12 z-40">
             <div className="container-elegant py-4 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-3 group">
                 <span className="text-elegant text-xl tracking-wide">West Rose Media</span>

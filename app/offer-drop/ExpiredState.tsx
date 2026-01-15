@@ -2,11 +2,11 @@
 
 export default function ExpiredState() {
   return (
-    <div className="text-center py-12 md:py-16">
-      <div className="text-6xl md:text-8xl font-bold mb-4">⏰</div>
-      <h2 className="text-3xl md:text-5xl font-bold mb-4">This Offer Has Expired</h2>
-      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-        Missed out? Check back for future offers or reach out to discuss your needs.
+    <div className="text-center py-12 md:py-16 bg-gray-50 border border-gray-200 rounded-3xl">
+      <div className="text-6xl md:text-7xl font-bold mb-4">⏰</div>
+      <h2 className="text-3xl md:text-5xl font-bold mb-4">This offer has expired</h2>
+      <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+        Want first access to the next drop? Email us and we will keep you close.
       </p>
     </div>
   );
