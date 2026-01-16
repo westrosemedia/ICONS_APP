@@ -1,4 +1,4 @@
-const CACHE_NAME = 'icons-app-v3';
+const CACHE_NAME = 'icons-app-v4';
 const urlsToCache = [
   '/',
   '/quiz',
@@ -9,9 +9,7 @@ const urlsToCache = [
   '/terms',
   '/manifest.json',
   '/logo.png',
-  '/logo-inverse.png',
-  'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35',
-  'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_003.jpg?alt=media&token=62172af0-d2ad-4af1-a500-eb8a48d795a3'
+  '/logo-inverse.png'
 ];
 
 // Install event - cache resources
