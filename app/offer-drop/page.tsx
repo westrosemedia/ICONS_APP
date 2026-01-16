@@ -54,7 +54,7 @@ const offers = [
     title: "VIP Day + Coaching",
     description: "Intensive one-day session plus ongoing support",
     price: "$5,000 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35&v=2",
     imageAlt: "VIP day session",
     features: [
       "Full day VIP session",
@@ -68,7 +68,7 @@ const offers = [
     title: "Spotlight + Strategy",
     description: "Brand spotlight package with strategic guidance",
     price: "$2,000 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_003.jpg?alt=media&token=62172af0-d2ad-4af1-a500-eb8a48d795a3",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_003.jpg?alt=media&token=62172af0-d2ad-4af1-a500-eb8a48d795a3&v=2",
     imageAlt: "Spotlight session",
     features: [
       "Complete brand spotlight",
@@ -82,7 +82,7 @@ const offers = [
     title: "3 Months Coaching",
     description: "Extended 1:1 support and collaboration",
     price: "$2,200 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35&v=2",
     imageAlt: "Coaching session",
     features: [
       "3 months 1:1 Slack coaching",
