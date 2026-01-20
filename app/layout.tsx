@@ -7,11 +7,9 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
-import OfferCountdownBanner from "@/components/OfferCountdownBanner";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
-import PPBCountdownBanner from "@/components/PPBCountdownBanner";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
 
 const dmSans = DM_Sans({
@@ -100,9 +98,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen w-full bg-white text-black font-sans antialiased"
         suppressHydrationWarning={true}
       >
-        <OfferCountdownBanner />
         {SHOW_NAV ? (
-          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-12 z-40">
+          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-40">
             <div className="container-elegant py-4 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-3 group">
                 <span className="text-elegant text-xl tracking-wide">West Rose Media</span>
@@ -110,26 +107,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center gap-8">
+                <Link href="/how-it-works" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  How it works
+                </Link>
                 <Link href="/about" className="text-gray-600 hover:text-black transition-colors duration-200">
                   About
                 </Link>
-                <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Packages
-                </Link>
-                <Link href="/courses" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Courses
-                </Link>
-                <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Mastermind
-                </Link>
-                <Link href="/vault" className="text-gray-600 hover:text-black transition-colors duration-200 font-bold">
-                  Vault
-                </Link>
-                <Link href="/login" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Login
-                </Link>
-                <Link href="/packages" className="btn btn-sm">
-                  Book now
+                <Link href="/apply" className="btn btn-sm">
+                  Apply for the ICON Brand Partnership
                 </Link>
               </nav>
 
@@ -154,7 +139,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <p className="text-gray-600 text-sm">
                   © {new Date().getFullYear()} West Rose Media
                 </p>
-                <div className="flex gap-6 mt-2">
+                <div className="flex flex-wrap gap-6 mt-2">
+                  <Link href="/case-studies" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Case studies
+                  </Link>
+                  <Link href="/packages" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Packages
+                  </Link>
+                  <Link href="/podcast" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Podcast
+                  </Link>
+                  <Link href="/mastermind" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Mastermind
+                  </Link>
                   <Link href="/privacy" className="text-gray-500 hover:text-black text-sm transition-colors">
                     Privacy
                   </Link>
@@ -172,7 +169,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
-        <PPBCountdownBanner />
         {/* Defer non-critical analytics to load after user interaction */}
         <DeferredAnalytics />
       </body>

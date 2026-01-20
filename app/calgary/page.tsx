@@ -69,28 +69,46 @@ export default function CalgaryPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
-            Calgary's
-            <br />
-            <span className="text-[#fbf5a6]">Luxury Personal Branding</span>
-            <br />
-            for Coaches, Entrepreneurs & Founders
+            High-End Personal Brand Photography and Done-For-You Content for Calgary Entrepreneurs
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            From Calgary photoshoot to consistent brand presence. Strategic brand photography and content that drives sales for entrepreneurs, coaches, and consultants in Calgary AB and Southern Alberta.
+            Built for established business owners who need a powerful online presence and want it handled properly.
+            <br />
+            <br />
+            We handle strategy, photography, video, and publishing so your brand attracts better clients, bigger opportunities, and real revenue without you babysitting content.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/packages"
+              href="/apply"
               className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-100 transition-colors"
             >
-              View Photography Packages
+              Apply for the ICON Brand Partnership
             </Link>
             <Link
-              href="/mastermind"
+              href="/packages"
               className="inline-block bg-[#fbf5a6] text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#f0e68c] transition-colors"
             >
-              Join the Mastermind
+              View One-Time Editorial Shoots
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-video overflow-hidden rounded-2xl">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              muted
+            >
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Jen%20Hangar%20Reel%203.mp4?alt=media&token=06dd7da2-7b42-4bfc-b618-9e7685c85b6d"
+                type="video/mp4"
+              />
+            </video>
           </div>
         </div>
       </section>

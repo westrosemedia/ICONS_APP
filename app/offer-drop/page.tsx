@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CountdownBar from "./CountdownBar";
 import OfferCard from "./OfferCard";
 import ExpiredState from "./ExpiredState";
 
@@ -25,18 +24,18 @@ function getTargetTime(): Date {
   const month = parseInt(getPart("month")) - 1;
   const day = parseInt(getPart("day"));
   
-  let target = new Date(Date.UTC(year, month, day + 1, 16, 0, 0, 0));
+  let target = new Date(Date.UTC(year, month, day + 1, 4, 0, 0, 0));
   
   const testParts = formatter.formatToParts(target);
   let testHour = parseInt(testParts.find(p => p.type === "hour")?.value || "0");
   
-  if (testHour !== 9) {
-    target = new Date(Date.UTC(year, month, day + 1, 15, 0, 0, 0));
+  if (testHour !== 21) {
+    target = new Date(Date.UTC(year, month, day + 1, 3, 0, 0, 0));
     const verifyParts = formatter.formatToParts(target);
     testHour = parseInt(verifyParts.find(p => p.type === "hour")?.value || "0");
     
-    if (testHour !== 9) {
-      target = new Date(Date.UTC(year, month, day + 1, 17, 0, 0, 0));
+    if (testHour !== 21) {
+      target = new Date(Date.UTC(year, month, day + 1, 5, 0, 0, 0));
     }
   }
   
@@ -54,8 +53,6 @@ const offers = [
     title: "VIP Day + Coaching",
     description: "Intensive one-day session plus ongoing support",
     price: "$5,000 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35&v=2",
-    imageAlt: "VIP day session",
     features: [
       "Full day VIP session",
       "3 months 1:1 coaching",
@@ -68,8 +65,6 @@ const offers = [
     title: "Spotlight + Strategy",
     description: "Brand spotlight package with strategic guidance",
     price: "$2,000 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_003.jpg?alt=media&token=62172af0-d2ad-4af1-a500-eb8a48d795a3&v=2",
-    imageAlt: "Spotlight session",
     features: [
       "Complete brand spotlight",
       "Strategic roadmap",
@@ -82,8 +77,6 @@ const offers = [
     title: "3 Months Coaching",
     description: "Extended 1:1 support and collaboration",
     price: "$2,200 CAD",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35&v=2",
-    imageAlt: "Coaching session",
     features: [
       "3 months 1:1 Slack coaching",
       "Weekly strategy calls",
@@ -107,8 +100,6 @@ export default function OfferDropPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <CountdownBar />
-      
       <main className="pt-20 md:pt-0">
         <section className="section-padding bg-black text-white">
           <div className="container-elegant">
@@ -164,8 +155,6 @@ export default function OfferDropPage() {
                     features={offer.features}
                     stripeLink={offer.stripeLink}
                     isExpired={expired}
-                    imageUrl={offer.imageUrl}
-                    imageAlt={offer.imageAlt}
                   />
                 ))}
               </div>

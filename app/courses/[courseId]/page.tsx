@@ -197,7 +197,7 @@ export default function CourseDetailPage() {
             >
               <h2 className="text-display text-black mb-4 text-center">Enroll Now</h2>
               <p className="text-editorial text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-                Choose the payment option that works best for you. Start your journey to building a powerful personal brand today.
+                Choose the payment option that works best for you. Start your journey to building a standout brand today.
               </p>
               
               <div className="max-w-2xl mx-auto">
@@ -218,7 +218,7 @@ export default function CourseDetailPage() {
                     </button>
                   </div>
                 ) : (
-                  // Stripe pricing table (uses same pricing as PPB)
+                  // Stripe pricing table
                   <>
                     <Script
                       src="https://js.stripe.com/v3/pricing-table.js"

@@ -144,7 +144,7 @@ export default function MastermindPage() {
           <div className="mt-20">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
                 alt="Exclusive Mastermind Experience for Female Entrepreneurs in Calgary Alberta Canada - West Rose Media Business Coaching"
                 fill
                 className="object-cover"
@@ -157,7 +157,7 @@ export default function MastermindPage() {
           <div className="mt-20">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6644.jpg?alt=media&token=78c2fc79-1d50-427a-9acd-2acc82681c8c"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0"
                 alt="Luxury Business Retreat Setting for Female Entrepreneurs in Calgary Alberta Canada - Stephanie Rose West Rose Media"
                 fill
                 className="object-cover"
@@ -170,7 +170,7 @@ export default function MastermindPage() {
           <div className="mt-20">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_5030.jpg?alt=media&token=b368dc0e-7747-4683-a5f7-be87484155ae"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
                 alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
                 fill
                 className="object-cover"
@@ -183,7 +183,7 @@ export default function MastermindPage() {
           <div className="mt-20">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4681.jpg?alt=media&token=8cc8ddf0-418e-4209-b50f-ead983ab1981"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285"
                 alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
                 fill
                 className="object-cover"

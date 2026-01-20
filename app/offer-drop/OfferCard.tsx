@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 type OfferCardProps = {
   title: string;
@@ -10,8 +9,6 @@ type OfferCardProps = {
   features: string[];
   stripeLink: string;
   isExpired: boolean;
-  imageUrl: string;
-  imageAlt: string;
 };
 
 export default function OfferCard({
@@ -21,8 +18,6 @@ export default function OfferCard({
   features,
   stripeLink,
   isExpired,
-  imageUrl,
-  imageAlt,
 }: OfferCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,17 +31,6 @@ export default function OfferCard({
       onMouseEnter={() => !isExpired && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-100">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
-          priority={false}
-        />
-      </div>
-
       <h3 className="text-3xl md:text-4xl font-bold mb-3">{title}</h3>
       <p className="text-base md:text-lg text-gray-600 mb-6">{description}</p>
       

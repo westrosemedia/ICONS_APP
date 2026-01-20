@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import AboutStructuredData from "@/components/AboutStructuredData";
 
 export const metadata: Metadata = {
-  title: "About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist | West Rose Media",
-  description: "Meet Stephanie Rose, Calgary's premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media from the ground up, helping entrepreneurs across Canada create iconic brands through strategic photography and content creation.",
-  keywords: "Stephanie Rose, about Stephanie Rose, Calgary brand photographer, Calgary photographer, personal branding photographer, business coach Calgary, social media strategist, luxury photography Calgary, West Rose Media founder, brand photographer Calgary, entrepreneur coach, content creator Calgary, social media help, photographer Calgary, business photography Calgary, personal brand strategist",
+  title: "About Stephanie Rose | Calgary Brand Photographer | West Rose Media",
+  description: "Meet Stephanie Rose, Calgary's luxury brand photographer and founder of West Rose Media. Learn about her journey building a high-end content studio that serves entrepreneurs across Canada.",
+  keywords: "Stephanie Rose, about Stephanie Rose, Calgary brand photographer, Calgary photographer, personal branding photographer, luxury photography Calgary, West Rose Media founder, brand photographer Calgary, content studio Calgary, photographer Calgary, business photography Calgary, personal brand strategist",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     canonical: '/about',
   },
   openGraph: {
-    title: "About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist",
-    description: "Meet Stephanie Rose, Calgary's premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media and helping entrepreneurs create iconic brands.",
+    title: "About Stephanie Rose | Calgary Brand Photographer",
+    description: "Meet Stephanie Rose, Calgary's luxury brand photographer and founder of West Rose Media. Learn about her journey building a high-end content studio for entrepreneurs.",
     url: 'https://westrosemedia.com/about',
     siteName: 'West Rose Media',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7',
         width: 1200,
         height: 630,
-        alt: 'Stephanie Rose - Calgary Brand Photographer and Social Media Strategist',
+        alt: 'Stephanie Rose - Calgary Brand Photographer',
       },
     ],
     type: "website",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Stephanie Rose | Calgary Brand Photographer & Social Media Strategist',
-    description: 'Meet Stephanie Rose, Calgary\'s premier luxury brand photographer and social media strategist. Learn about her journey building West Rose Media.',
+    title: 'About Stephanie Rose | Calgary Brand Photographer',
+    description: 'Meet Stephanie Rose, Calgary\'s luxury brand photographer and founder of West Rose Media.',
     images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
     creator: '@westrosemedia',
   },
@@ -59,32 +59,35 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight">
-                Hi, I'm
+                Hi, I’m
                 <br />
                 <span className="text-orange-500" style={{color: '#ff914d'}}>Stephanie Rose</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Calgary's premier luxury personal branding photographer and business coach for female entrepreneurs who are ready to build iconic brands that command attention and convert.
+                Founder of West Rose Media, a high-end content studio for entrepreneurs who need a serious online presence and want it handled properly.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Based in Calgary and working regularly in Vancouver and Toronto, I create photography, video, and done-for-you content systems that build trust and drive inbound demand.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/packages"
+                  href="/apply"
                   className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
                 >
                   Work With Me
                 </Link>
                 <Link
-                  href="/mastermind"
+                  href="/packages"
                   className="inline-block border-2 border-black text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-black hover:text-white transition-colors"
                 >
-                  Join the Mastermind
+                  View Packages
                 </Link>
               </div>
             </div>
             <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
-                alt="Stephanie Rose - Calgary Personal Branding Photographer and Business Coach for Entrepreneurs"
+                alt="Stephanie Rose - Calgary Personal Branding Photographer"
                 fill
                 className="object-cover"
                 title="Stephanie Rose | Calgary Personal Branding Photographer"
@@ -109,7 +112,7 @@ export default function AboutPage() {
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_012.jpg?alt=media&token=d22f0bf0-f15c-458c-bcc7-421c4006bc28"
-                alt="Stephanie Rose - Personal Branding Photographer and Business Coach Story"
+                alt="Stephanie Rose - Personal Branding Photographer Story"
                 fill
                 className="object-cover"
                 title="Stephanie Rose | My Story - Building West Rose Media"
@@ -122,15 +125,10 @@ export default function AboutPage() {
           
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <p>
-              I did not inherit this business. I built it from the ground up after burning my old life to the ground.
+              I built West Rose Media from the ground up during a season where everything changed. I became a single mom, rebuilt my life, and built a company with a camera, a vision, and relentless standards.
             </p>
-            
             <p>
-              I walked away from a marriage that kept me small. I came out in my thirties and finally claimed who I am. I raised three kids on my own while building a company with nothing but my camera, my vision, and an unshakable belief that life could be bigger.
-            </p>
-            
-            <p>
-              That is why West Rose Media exists. It is not just about photos. It is about proof that you can rewrite everything and rise higher than you ever imagined. My work is born from that fire. I help leaders step into their own power, show the world who they really are, and become unforgettable.
+              That experience shaped how I work. Clients do not come to West Rose Media for “pretty content.” They come for presence, authority, and execution that matches the level they are playing at.
             </p>
           </div>
         </div>
@@ -145,40 +143,41 @@ export default function AboutPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Luxury Photography</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Photography and Video for Entrepreneurs</h3>
               <p className="text-gray-600 mb-6">
-                High end photography that makes your audience stop scrolling and take you seriously.
+                High-end visuals that make a business look as credible as it actually is.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Branding sessions</li>
-                <li>• High impact headshots</li>
-                <li>• Content days and reels</li>
-                <li>• Social media visuals</li>
+                <li>• Personal brand shoots</li>
+                <li>• Campaign and launch visuals</li>
+                <li>• Event coverage and behind-the-scenes content</li>
+                <li>• Reels and short-form video assets</li>
               </ul>
             </div>
             
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Brand Partnership</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">The ICON Brand Partnership</h3>
               <p className="text-gray-600 mb-6">
-                Ongoing collaboration that keeps your vision alive without you chasing it.
+                A done-for-you content operation for founders who want strategy, production, and publishing handled end to end.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Strategy and execution</li>
-                <li>• Content management</li>
-                <li>• Storytelling that feels like you</li>
-                <li>• Consistency that scales your revenue</li>
+                <li>• Strategy and content direction</li>
+                <li>• Monthly production (photo + video)</li>
+                <li>• Copy support and publishing workflows</li>
+                <li>• Consistent content that builds trust and drives inbound demand</li>
               </ul>
             </div>
             
             <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Intensives and Retreats</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">Event and Immersion Coverage</h3>
               <p className="text-gray-600 mb-6">
-                Spaces designed for bold leaders who want more visibility, more influence, and more money.
+                Multi-day content capture for founders and teams who want the room, the energy, and the results documented and leveraged.
               </p>
               <ul className="text-left text-gray-600 space-y-2">
-                <li>• Strategic intensives</li>
-                <li>• Luxury retreats</li>
-                <li>• Masterclasses and workshops</li>
+                <li>• Event photo + video coverage</li>
+                <li>• Same-day asset delivery options</li>
+                <li>• Content built for immediate demand</li>
+                <li>• Post-event content pipeline</li>
               </ul>
             </div>
           </div>
@@ -194,11 +193,14 @@ export default function AboutPage() {
           
           <div className="space-y-8 text-lg text-white/90 leading-relaxed">
             <p className="text-2xl font-medium text-orange-500" style={{color: '#ff914d'}}>
-              "You do not need another course. You do not need a million to do lists. You need a partner who understands your vision and makes it real."
+              High-end content is not an aesthetic choice. It is a trust decision.
             </p>
             
             <p>
-              My work is not about creating an illusion. It is about building a brand that mirrors the power you already hold. When you look, sound, and move like the leader you are, the market responds.
+              When a founder’s online presence matches their real capability, the market responds faster. Better leads. Better opportunities. Cleaner sales conversations.
+            </p>
+            <p>
+              West Rose Media is built for people who want to move. Clear direction, decisive execution, and content that looks like leadership.
             </p>
           </div>
         </div>
@@ -212,10 +214,10 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
-              From my home base in Calgary, I partner with leaders across Canada who are scaling past six and seven figures. They do not hire me for photos. They hire me because I think like a strategist, create like a visionary, and deliver like a machine.
+              West Rose Media is based in Calgary and works with clients across Canada, including Vancouver and Toronto. The work is designed for established entrepreneurs, consultants, and event-led brands who want their presence to match their level.
             </p>
             <p>
-              My clients walk away with more than content. They walk away with a brand that commands attention, fuels growth, and builds legacy.
+              Clients leave with assets that create demand now, and a content system that keeps working long after the shoot.
             </p>
           </div>
         </div>
@@ -242,7 +244,7 @@ export default function AboutPage() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
-            Ready to Build Your Iconic Brand?
+            Ready to Build Demand With Content That Matches Your Level?
           </h2>
           <p className="text-xl text-gray-600 mb-12">
             Let's create the visual presence and strategic positioning that transforms your business and your life.
@@ -250,17 +252,17 @@ export default function AboutPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/packages"
+              href="/apply"
               className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
             >
-              View Photography Packages
+              Apply for the ICON Brand Partnership
             </Link>
             <Link
-              href="/mastermind"
+              href="/packages"
               className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
               style={{backgroundColor: '#ff914d'}}
             >
-              Join the Mastermind
+              View Packages
             </Link>
           </div>
         </div>

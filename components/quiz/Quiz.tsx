@@ -7,17 +7,13 @@ import ResultRenderer from "./ResultRenderer";
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<(QuizResult | null)[]>(Array(quizQuestions.length).fill(null));
-  const [ppbSignals, setPpbSignals] = useState<boolean[]>(Array(quizQuestions.length).fill(false));
-  const [final, setFinal] = useState<{ result: QuizResult; ppbSuggested: boolean } | null>(null);
+  const [final, setFinal] = useState<{ result: QuizResult } | null>(null);
 
   const select = (optionIndex: number) => {
     const opt = quizQuestions[currentQuestion].options[optionIndex];
     const nextAnswers = [...answers];
-    const nextSignals = [...ppbSignals];
     nextAnswers[currentQuestion] = opt.result;
-    nextSignals[currentQuestion] = Boolean(opt.ppbSignal);
     setAnswers(nextAnswers);
-    setPpbSignals(nextSignals);
   };
 
   const nextQuestion = () => {
@@ -39,14 +35,7 @@ export default function Quiz() {
         }
       });
 
-      // PPB suggestion rule: true if 3 or more ppbSignals are selected, or if Q7 selected the learn framework option
-      const ppbCount = ppbSignals.filter(Boolean).length;
-      const q7 = quizQuestions.findIndex(q => q.id === "q7_path");
-      const q7PpbChosen = q7 >= 0 && ppbSignals[q7] === true;
-
-      const ppbSuggested = ppbCount >= 3 || q7PpbChosen;
-
-      setFinal({ result: best, ppbSuggested });
+      setFinal({ result: best });
     }
   };
 
@@ -59,7 +48,7 @@ export default function Quiz() {
   if (final) {
     return (
       <section className="mx-auto max-w-3xl px-6 py-10">
-        <ResultRenderer result={final.result} ppbSuggested={final.ppbSuggested} />
+        <ResultRenderer result={final.result} />
       </section>
     );
   }

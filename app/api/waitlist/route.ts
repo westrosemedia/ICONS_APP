@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Add contact to Resend list with Black Friday tag
+    // Add contact to Resend list with waitlist tag
     const [firstName, ...lastNameParts] = (name || '').split(' ');
     const lastName = lastNameParts.join(' ');
     
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       email, 
       firstName, 
       lastName, 
-      'Black Friday'
+      'Private Client Waitlist'
     );
 
     if (!listResult.success) {
@@ -39,19 +39,19 @@ export async function POST(req: NextRequest) {
 
     // Send notification email
     const emailContent = `
-New Black Friday Waitlist Signup:
+New Private Client Waitlist Signup:
 
 - Name: ${name}
 - Email: ${email}
 - Timestamp: ${new Date().toLocaleString()}
 
 ---
-This signup was submitted from the Black Friday waitlist page.
+This signup was submitted from the private client waitlist page.
     `;
 
     await sendEmail({
       to: "admin@westrosemedia.com",
-      subject: "New Black Friday Waitlist Signup",
+      subject: "New Private Client Waitlist Signup",
       text: emailContent,
     });
 

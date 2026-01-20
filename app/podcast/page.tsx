@@ -5,7 +5,7 @@ import PodcastStructuredData from "@/components/PodcastStructuredData";
 
 export const metadata: Metadata = {
   title: "ICONS by West Rose Media | Podcast for Entrepreneurs | Business & Branding",
-  description: "ICONS is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media. Learn real strategies for building a powerful personal brand that attracts high-paying clients, builds authority, and turns visibility into profit.",
+  description: "ICONS is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media. Learn real strategies for building a memorable personal brand that attracts high-paying clients, builds authority, and turns visibility into profit.",
   keywords: "ICONS podcast, business podcast, branding podcast, entrepreneur podcast, West Rose Media podcast, personal branding, business coaching, social media strategy, brand strategy, entrepreneur advice, business growth podcast, female entrepreneur podcast, Calgary business podcast, Canadian entrepreneur podcast",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
@@ -227,7 +227,7 @@ export default function PodcastPage() {
                 Icons is the podcast where bold entrepreneurs learn to look like money, lead with power, and turn their brand into influence that pays.
               </p>
               <p>
-                Icons is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media, this show dives into the real strategies behind building a powerful personal brand that attracts high-paying clients, builds authority, and turns visibility into profit. Each episode gives you practical advice, confidence-building insights, and behind-the-scenes branding tips that help you look like money and get paid what you're worth.
+                Icons is a podcast for women in business who are ready to elevate their brand, grow their income, and become unforgettable online. Hosted by Stephanie Rose, founder of West Rose Media, this show dives into the real strategies behind building a memorable personal brand that attracts high-paying clients, builds authority, and turns visibility into profit. Each episode gives you practical advice, confidence-building insights, and behind-the-scenes branding tips that help you look like money and get paid what you're worth.
               </p>
             </div>
           </div>
