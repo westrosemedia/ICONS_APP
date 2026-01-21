@@ -125,10 +125,16 @@ export default function AboutPage() {
           
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <p>
-              I built West Rose Media from the ground up during a season where everything changed. I became a single mom, rebuilt my life, and built a company with a camera, a vision, and relentless standards.
+              West Rose Media was built during a season of real, irreversible change. I built this business while leaving religion, getting divorced, coming out, and raising three kids on my own. Later, I met my partner and built a life that finally felt aligned. Through all of it, the business kept working.
             </p>
             <p>
-              That experience shaped how I work. Clients do not come to West Rose Media for “pretty content.” They come for presence, authority, and execution that matches the level they are playing at.
+              That experience fundamentally shaped how I see brand and business. A strong brand is not fragile. It does not depend on trends, platforms, or a single version of your life. It is built to hold you through change, growth, grief, reinvention, and expansion. West Rose Media survived Covid, personal upheaval, and massive transition because it was built on clarity, integrity, and execution, not noise.
+            </p>
+            <p>
+              West Rose Media is deeply committed to the queer community, not as a positioning strategy, but as lived experience. I know what it means to rebuild your identity while still needing your business to be stable, visible, and profitable. The work we do is designed to support real people with real lives, not a polished persona that collapses under pressure.
+            </p>
+            <p>
+              Clients come to West Rose Media because they want a brand that can grow with them. One that supports their family, their future, their visibility, and their income without requiring them to burn everything down every few years. This is content and positioning built to last. Built to create trust. Built to carry you forward, no matter what changes next.
             </p>
           </div>
         </div>

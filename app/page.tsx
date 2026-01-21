@@ -74,10 +74,12 @@ export default function HomePage() {
             className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
           >
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
-              If your brand were doing its job, more people would already know your name.
+              Stop marketing like a startup.
+              <br />
+              Your business is an empire. Your brand should reflect it.
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 px-4">
-              West Rose Media partners with established founders to handle strategy, photo, video, editing, posting, and consistency so your brand drives more opportunities, more authority, and more revenue while you focus on building the empire.
+              West Rose Media brings high-level visions to life through photography, video, and end-to-end execution for founders who refuse to look underdeveloped.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
@@ -99,19 +101,24 @@ export default function HomePage() {
           <div className="container-elegant">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-display text-black mb-6 text-center">
-                This is content leadership, handled end to end.
+                Content leadership, handled end to end.
               </h2>
               <div className="space-y-6 text-editorial text-gray-700">
                 <p>
-                  Most founders do not struggle with ideas. They struggle with consistency, execution, and follow through.
+                  You already have a massive vision for your brand. The problem is your marketing does not look like it yet.
                 </p>
                 <p>
-                  Content breaks when it is treated as a one off project or handed to too many people. Strategy lives in one place. Production in another. Publishing becomes an afterthought.
+                  West Rose Media takes the vision in your head and brings it to life visually, then handles everything required to execute it at a high level. Strategy, creative direction, photography, video, editing, and publishing.
                 </p>
                 <p>
-                  West Rose Media solves that by owning the entire content operation. Strategy, production, and publishing work together so your message stays clear, your presence stays consistent, and your brand compounds over time.
+                  This is built for perfectionist founders who care deeply how their brand shows up.
                 </p>
-                <p>You stay involved at the level you want. We handle the rest.</p>
+                <p>
+                  You keep control of the vision. We take full responsibility for the execution.
+                </p>
+                <p>
+                  The result is a brand that signals authority the moment someone lands on your page, without you having to manage, micromanage, or lower your standards.
+                </p>
               </div>
             </div>
           </div>
@@ -155,30 +162,30 @@ export default function HomePage() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">01</p>
-              <h3 className="text-xl font-semibold mb-3">We align on strategy and priorities</h3>
+              <h3 className="text-xl font-semibold mb-3">Strategy and vision alignment</h3>
               <p className="text-gray-600">
-                We start by aligning on your offers, messaging, and what content actually needs to drive for your business right now. You are not guessing what to post. Everything is intentional.
+                We align on goals, long-term vision, and how your brand should feel at the next level. Creative direction and visual alignment are set up front so the brand evolves with intention.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">02</p>
-              <h3 className="text-xl font-semibold mb-3">We capture content efficiently</h3>
+              <h3 className="text-xl font-semibold mb-3">Concept and shoot preparation</h3>
               <p className="text-gray-600">
-                You show up for a focused shoot. We direct, capture, and manage photo and video in a way that supports consistency without eating up your time.
+                We build the shoot concept and handle logistics like locations, creative direction, and prep so you are not managing details or making it up as you go.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">03</p>
-              <h3 className="text-xl font-semibold mb-3">We handle production and publishing</h3>
+              <h3 className="text-xl font-semibold mb-3">Capture</h3>
               <p className="text-gray-600">
-                We edit, package, and publish content across platforms so your brand stays visible and active while you focus on running the business.
+                We direct high-end photography and video that makes you look credible, powerful, and established while respecting your time and attention.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">04</p>
-              <h3 className="text-xl font-semibold mb-3">We review and refine over time</h3>
+              <h3 className="text-xl font-semibold mb-3">Edit, package, and publish</h3>
               <p className="text-gray-600">
-                We track what is working, adjust strategy, and refine your content so it continues to support growth, authority, and opportunity.
+                We edit the content, package it into post-ready assets, and prepare it for consistent publishing so execution does not fall back on you.
               </p>
             </div>
           </div>
@@ -192,16 +199,16 @@ export default function HomePage() {
             <h2 className="text-display text-black mb-6">The ICON Brand Partnership</h2>
             <div className="space-y-6 text-editorial text-gray-700">
               <p>
-                This is a monthly partnership for founders who want their content handled at an executive level.
+                This is a monthly partnership where West Rose Media handles the full content process from start to finish.
               </p>
               <p>
-                Instead of managing multiple freelancers, chasing timelines, or carrying content decisions in your head, you have one system and one team responsible for your visibility.
+                It includes strategy, creative direction, photography, video, editing, and publishing so your visibility is managed by one system and one team.
               </p>
               <p>
-                Strategy, production, and publishing live together. Nothing falls through the cracks. Your content compounds instead of resetting every month.
+                It is designed for founders who want one accountable team responsible for their authority and demand, without juggling photographers, editors, and content support separately.
               </p>
               <p>
-                This partnership is intentionally limited to maintain focus, quality, and momentum.
+                This partnership replaces the fragmented content stack and gives you a single, consistent execution engine.
               </p>
             </div>
             <div className="mt-6">
@@ -405,7 +412,10 @@ export default function HomePage() {
                 Founders partner with West Rose Media because they want their content handled with the same level of care and precision as the rest of their business.
               </p>
               <p>
-                What changes is not just how their brand looks. It is how consistently they show up, how confidently they speak, and how often new opportunities come to them.
+                What changes is not just how their brand looks. It is the increase in inbound inquiries, the confidence to show up consistently, and the authority that books them solid through future quarters.
+              </p>
+              <p>
+                Event content is turning into revenue in real time, and the brand presence keeps building trust long after the shoot ends.
               </p>
             </div>
           </motion.div>
