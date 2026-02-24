@@ -231,6 +231,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* VIP Experiences */}
+      <section className="section-padding">
+        <div className="container-elegant text-center">
+          <h2 className="text-display text-black mb-6">VIP Experiences</h2>
+          <p className="text-editorial text-gray-700 max-w-3xl mx-auto mb-10">
+            For founders who want clarity, momentum, and a brand that reflects where
+            they are going.
+          </p>
+          <Button asChild size="lg" className="group">
+            <Link href="/vip">
+              Explore VIP experiences
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
       {/* What This Replaces */}
       <section className="relative section-padding overflow-hidden">
         <div className="absolute inset-0">

@@ -8,6 +8,8 @@
    website: string;
    instagram: string;
    tiktok: string;
+  referralSource: string;
+  referralOther: string;
    city: string;
    monthlyRevenue: string;
    primaryGoal: string;
@@ -22,6 +24,8 @@
    website: "",
    instagram: "",
    tiktok: "",
+  referralSource: "",
+  referralOther: "",
    city: "",
    monthlyRevenue: "",
    primaryGoal: "",
@@ -183,6 +187,44 @@
                  required
                />
              </div>
+            <div>
+              <label htmlFor="referral-source" className="block text-sm font-semibold mb-2">
+                How did you hear about us?
+              </label>
+              <select
+                id="referral-source"
+                value={form.referralSource}
+                onChange={(event) => setForm((prev) => ({ ...prev, referralSource: event.target.value }))}
+                className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-black bg-white"
+                required
+              >
+                <option value="" disabled>
+                  Select one
+                </option>
+                <option value="Instagram">Instagram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Google search">Google search</option>
+                <option value="Referral">Referral</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Event">Event</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            {form.referralSource === "Other" ? (
+              <div>
+                <label htmlFor="referral-other" className="block text-sm font-semibold mb-2">
+                  Please specify
+                </label>
+                <input
+                  id="referral-other"
+                  type="text"
+                  value={form.referralOther}
+                  onChange={handleChange("referralOther")}
+                  className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-black"
+                  required
+                />
+              </div>
+            ) : null}
              <div>
               <label htmlFor="city" className="block text-sm font-semibold mb-2">
                 City

@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
       "website",
       "instagram",
       "tiktok",
+      "referralSource",
       "city",
       "monthlyRevenue",
       "primaryGoal",
@@ -26,6 +27,13 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
+    }
+
+    if (formData.referralSource === "Other" && !formData.referralOther) {
+      return NextResponse.json(
+        { error: "referralOther is required" },
+        { status: 400 }
+      );
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,6 +54,7 @@ Business name: ${formData.businessName}
 Website: ${formData.website}
 Instagram handle: ${formData.instagram}
 TikTok handle: ${formData.tiktok}
+How they heard about us: ${formData.referralSource}${formData.referralSource === "Other" ? ` (${formData.referralOther})` : ""}
 City: ${formData.city}
 Monthly revenue range: ${formData.monthlyRevenue}
 12 month business goal: ${formData.primaryGoal}
@@ -67,6 +76,7 @@ Submitted: ${submittedAt}
           <tr><td style="padding: 6px 0;"><strong>Website:</strong></td><td style="padding: 6px 0;">${formData.website}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>Instagram handle:</strong></td><td style="padding: 6px 0;">${formData.instagram}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>TikTok handle:</strong></td><td style="padding: 6px 0;">${formData.tiktok}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>How they heard about us:</strong></td><td style="padding: 6px 0;">${formData.referralSource}${formData.referralSource === "Other" ? ` (${formData.referralOther})` : ""}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>City:</strong></td><td style="padding: 6px 0;">${formData.city}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>Monthly revenue range:</strong></td><td style="padding: 6px 0;">${formData.monthlyRevenue}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>12 month business goal:</strong></td><td style="padding: 6px 0;">${formData.primaryGoal}</td></tr>
