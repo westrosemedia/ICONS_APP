@@ -28,6 +28,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
             src={pkg.imageUrl}
             alt={pkg.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            style={pkg.key === "ppb" ? { objectPosition: "center 25%" } : undefined}
           />
         </div>
         
@@ -59,6 +60,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
               {pkg.key === "spotlight" && "Book Spotlight"}
               {pkg.key === "immersion" && "Plan Immersion"}
               {pkg.key === "icon" && "Become an ICON"}
+              {pkg.key === "ppb" && "Learn More"}
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>

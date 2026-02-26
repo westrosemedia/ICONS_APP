@@ -1,4 +1,6 @@
 import React from "react";
+import PpbUpsell from "./PpbUpsell";
+
 type Result = "spotlight" | "wrm_lite" | "immersion" | "icon";
 
 export default function ResultRenderer({ result }: { result: Result }) {
@@ -9,6 +11,7 @@ export default function ResultRenderer({ result }: { result: Result }) {
         {/* keep your exact Spotlight, WRM Lite, Immersion, ICON blocks here without changes */}
       </div>
 
+      {(result === "spotlight" || result === "wrm_lite") ? <PpbUpsell /> : null}
     </div>
   );
 }

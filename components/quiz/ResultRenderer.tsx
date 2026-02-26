@@ -1,10 +1,14 @@
 /* Do not change copy without explicit written approval from Stephanie. No em dashes anywhere. */
 import React from "react";
 import { resultCopy, QuizResult } from "./quizData";
+import PpbUpsell from "./PpbUpsell";
+
 export default function ResultRenderer({
-  result
+  result,
+  ppbSuggested
 }: {
   result: QuizResult;
+  ppbSuggested?: boolean;
 }) {
   const r = resultCopy[result];
 
@@ -44,6 +48,7 @@ export default function ResultRenderer({
         </div>
       </div>
 
+      {ppbSuggested && result === "spotlight" ? <PpbUpsell /> : null}
     </div>
   );
 }
