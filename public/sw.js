@@ -1,4 +1,4 @@
-const CACHE_NAME = 'icons-app-v3';
+const CACHE_NAME = 'icons-app-v4';
 const urlsToCache = [
   '/',
   '/quiz',
@@ -25,14 +25,16 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Fetch event - serve from cache when offline
+// Fetch event - network first for page loads so deployments show immediately; cache fallback when offline
 self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match(event.request))
+    );
+    return;
+  }
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
-      })
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
 
