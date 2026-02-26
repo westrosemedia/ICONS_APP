@@ -22,6 +22,13 @@ export default function MobileNavigation() {
         <div className="md:hidden border-t border-gray-200 bg-white">
           <nav className="container-elegant py-4 flex flex-col gap-4">
             <Link 
+              href="/how-it-works" 
+              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              How it works
+            </Link>
+            <Link 
               href="/about" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
@@ -50,6 +57,13 @@ export default function MobileNavigation() {
               Mastermind
             </Link>
             <Link 
+              href="/case-studies" 
+              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case studies
+            </Link>
+            <Link 
               href="/login" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
@@ -57,11 +71,11 @@ export default function MobileNavigation() {
               Login
             </Link>
             <Link 
-              href="/packages" 
+              href="/apply" 
               className="btn btn-sm w-fit"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book now
+              Apply for the ICON Brand Partnership
             </Link>
           </nav>
         </div>

@@ -124,6 +124,16 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/ppb',
+        destination: '/apply',
+        permanent: true,
+      },
+      {
+        source: '/powerfulpersonalbrand',
+        destination: '/apply',
+        permanent: true,
+      },
     ];
   },
   

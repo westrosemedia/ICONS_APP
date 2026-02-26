@@ -8,7 +8,6 @@ export const quizIntro =
 export type QuizOption = {
   label: string;
   result: QuizResult;       // which package this option votes for
-  ppbSignal?: boolean;      // marks interest or fit for Powerful Personal Brand
 };
 
 export type QuizQuestion = {
@@ -22,8 +21,8 @@ const q1: QuizQuestion = {
   id: "q1_gap",
   prompt: "What's holding you back from the next level right now?",
   options: [
-    { label: "I don't have consistent content that actually sells.", result: "spotlight", ppbSignal: true },
-    { label: "I've grown, but my brand doesn't reflect my success.", result: "spotlight", ppbSignal: true },
+    { label: "I don't have consistent content that actually sells.", result: "spotlight" },
+    { label: "I've grown, but my brand doesn't reflect my success.", result: "spotlight" },
     { label: "My events and masterminds are incredible, but no one really knows about them.", result: "immersion" },
     { label: "I want to scale, but there aren't enough hours in the day to handle content on top of everything else.", result: "icon" }
   ]
@@ -34,8 +33,8 @@ const q2: QuizQuestion = {
   id: "q2_vision",
   prompt: "When you picture your business a year from now, what excites you the most?",
   options: [
-    { label: "Finally being consistent and visible so my ideal clients actually find me.", result: "spotlight", ppbSignal: true },
-    { label: "Looking like the authority I already am, with a brand that reflects my success.", result: "spotlight", ppbSignal: true },
+    { label: "Finally being consistent and visible so my ideal clients actually find me.", result: "spotlight" },
+    { label: "Looking like the authority I already am, with a brand that reflects my success.", result: "spotlight" },
     { label: "Filling my events and masterminds because people see the value before they even walk in the room.", result: "immersion" },
     { label: "Scaling to new income levels while staying focused on my genius instead of drowning in content.", result: "icon" }
   ]
@@ -46,8 +45,8 @@ const q3: QuizQuestion = {
   id: "q3_struggle",
   prompt: "How does content feel in your business right now?",
   options: [
-    { label: "I'm scrambling to post and it never feels strategic.", result: "spotlight", ppbSignal: true },
-    { label: "I have some content, but it doesn't match the level I'm operating at.", result: "spotlight", ppbSignal: true },
+    { label: "I'm scrambling to post and it never feels strategic.", result: "spotlight" },
+    { label: "I have some content, but it doesn't match the level I'm operating at.", result: "spotlight" },
     { label: "I'm so focused on running my events that content barely happens at all.", result: "immersion" },
     { label: "I know content is critical to scaling, but I don't have the hours in the day to keep up with it.", result: "icon" }
   ]
@@ -58,8 +57,8 @@ const q4: QuizQuestion = {
   id: "q4_goal",
   prompt: "What's the big audacious goal you're chasing right now?",
   options: [
-    { label: "Hitting consistent five-figure months.", result: "spotlight", ppbSignal: true },
-    { label: "Becoming the go-to authority in my industry.", result: "spotlight", ppbSignal: true },
+    { label: "Hitting consistent five-figure months.", result: "spotlight" },
+    { label: "Becoming the go-to authority in my industry.", result: "spotlight" },
     { label: "Selling out my events and masterminds with ease.", result: "immersion" },
     { label: "Scaling to multi-six or seven figures while keeping my freedom.", result: "icon" }
   ]
@@ -70,8 +69,8 @@ const q5: QuizQuestion = {
   id: "q5_handoff",
   prompt: "How much of your content do you want taken off your plate?",
   options: [
-    { label: "Just enough to give me consistency and momentum.", result: "spotlight", ppbSignal: true },
-    { label: "A solid mix of photo and video content that matches my level.", result: "spotlight", ppbSignal: true },
+    { label: "Just enough to give me consistency and momentum.", result: "spotlight" },
+    { label: "A solid mix of photo and video content that matches my level.", result: "spotlight" },
     { label: "Full coverage of my events and masterminds so I can turn them into business assets.", result: "immersion" },
     { label: "Everything. I want a full partner managing my brand content so I can stay focused on scaling.", result: "icon" }
   ]
@@ -82,19 +81,19 @@ const q6: QuizQuestion = {
   id: "q6_support",
   prompt: "When it comes to content and visibility, how much are you doing alone right now?",
   options: [
-    { label: "Pretty much everything. I'm the photographer, videographer, editor, and poster.", result: "spotlight", ppbSignal: true },
-    { label: "I have a little help, but I'm still the one driving it all.", result: "spotlight", ppbSignal: true },
-    { label: "I delegate some things, but I still don't feel fully supported.", result: "immersion", ppbSignal: true },
+    { label: "Pretty much everything. I'm the photographer, videographer, editor, and poster.", result: "spotlight" },
+    { label: "I have a little help, but I'm still the one driving it all.", result: "spotlight" },
+    { label: "I delegate some things, but I still don't feel fully supported.", result: "immersion" },
     { label: "I know I need a true partner to make my vision happen.", result: "icon" }
   ]
 };
 
-// Q7 Path Preference for PPB guidance
+// Q7 Path Preference
 const q7: QuizQuestion = {
   id: "q7_path",
   prompt: "What path fits you best right now?",
   options: [
-    { label: "I want to learn the full framework and build my brand with live coaching over 8 weeks.", result: "spotlight", ppbSignal: true },
+    { label: "I want to learn the full framework and build my brand with live coaching over 8 weeks.", result: "spotlight" },
     { label: "I want consistent content and quick momentum with a lighter lift.", result: "spotlight" },
     { label: "I want my live event or mastermind captured and turned into business assets.", result: "immersion" },
     { label: "I want a full partner who takes content off my plate so I can scale.", result: "icon" }
