@@ -114,6 +114,16 @@ const nextConfig = {
         destination: '/',
         permanent: false, // Temporary redirect until podcast page is fixed
       },
+      {
+        source: '/offer-drop',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/vault',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   

@@ -1,9 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+import InfluenceCountdown from "./InfluenceCountdown";
 
 const STRIPE_LINK =
   "https://buy.stripe.com/28E9ASgRq8Hb4vp14F87K15";
+
+const FIREBASE_IMAGES = {
+  hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
+  section1: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
+  section2: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4",
+  section3: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6695.jpg?alt=media&token=bdc5c5e0-b699-41af-acaf-18962769071b",
+};
 
 export const metadata: Metadata = {
   title: "Influence Program | Visibility and Authority with Stephanie Rose",
@@ -28,25 +37,23 @@ export default function InfluencePage() {
           <h1 className="text-hero text-black mb-6">
             Influence
           </h1>
-          <p className="text-editorial text-gray-700 max-w-2xl mx-auto mb-6">
-            A three month program for people who are ready to be seen, heard, and respected without turning into someone they are not.
-          </p>
+          <div className="relative w-full max-w-4xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.hero}
+              alt="Influence program"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 1024px"
+            />
+          </div>
           <div className="text-lg text-gray-700 max-w-2xl mx-auto mb-10 space-y-3 text-left">
-            <p>You know you are meant for more visibility.</p>
-            <p>More stages.</p>
-            <p>More leadership.</p>
-            <p>More impact.</p>
-            <p>And you are tired of pretending you do not want it.</p>
-            <p>But something still tightens in your chest when you think about going all in.</p>
-            <p>This room is for the person in the middle of a shift.</p>
-            <p>Divorce.</p>
-            <p>Career pivot.</p>
-            <p>Empty nest.</p>
-            <p>Rebrand.</p>
-            <p>Sobriety.</p>
-            <p>Reinvention.</p>
-            <p>Your life changed.</p>
-            <p>Now your visibility has to catch up.</p>
+            <p>You are allergic to the old way you were doing life.</p>
+            <p>The past few years stretched you, broke you open, forced you to grow. You are not interested in going back.</p>
+            <p>But showing up again after a big shift can feel delicate. You want to tell the story right. You want the new version of you to land strong, not desperate. Strategic, not chaotic.</p>
+            <p>Right now there is a gap between who you have become and how publicly you are showing up.</p>
+            <p>Influence exists to close that gap.</p>
+            <p>This is a three month room for people navigating reinvention who want to re-enter the online space with clarity, authority, and control over their narrative.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
@@ -90,6 +97,15 @@ export default function InfluencePage() {
               </cite>
             </blockquote>
           </div>
+          <div className="relative w-full max-w-4xl mx-auto aspect-[3/2] rounded-2xl overflow-hidden mt-10">
+            <Image
+              src={FIREBASE_IMAGES.section1}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+            />
+          </div>
         </div>
       </section>
 
@@ -105,11 +121,11 @@ export default function InfluencePage() {
           </h2>
           <div className="max-w-2xl mx-auto">
             <ul className="space-y-3 text-lg text-gray-700 list-disc pl-6">
-              <li>You want to speak, lead, or show up online in a bigger way but you hesitate before you hit publish.</li>
-              <li>You feel the pull toward visibility but you are scared of judgment, family opinions, or people from your past.</li>
-              <li>You know you have depth, story, and power but you struggle to articulate it clearly.</li>
-              <li>You are not trying to become an influencer. You are trying to become undeniable.</li>
-              <li>You are in a season of change and you refuse to shrink while you navigate it.</li>
+              <li>You have changed in a real way and your brand has not caught up.</li>
+              <li>You are ready to share more of your story but you want to do it strategically, not emotionally dumping online.</li>
+              <li>You want your return to feel intentional and powerful.</li>
+              <li>You are not chasing influence. You are stepping into leadership.</li>
+              <li>You want guidance on shaping the narrative so when you re-enter, it lands.</li>
             </ul>
           </div>
         </div>
@@ -125,6 +141,15 @@ export default function InfluencePage() {
           <h2 id="shift-heading" className="text-display text-black mb-12 text-center">
             What changes in three months
           </h2>
+          <div className="relative w-full max-w-3xl mx-auto aspect-[2/1] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.section3}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
           <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white p-8">
               <h3 className="text-xl font-semibold text-black mb-4">Right now</h3>
@@ -150,35 +175,46 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      {/* What you get */}
+      {/* What you get / Inside Influence */}
       <section
         id="what-you-get"
         className="section-padding"
         aria-labelledby="deliverables-heading"
       >
         <div className="container-elegant">
-          <h2 id="deliverables-heading" className="text-display text-black mb-12 text-center">
-            What you get
+          <h2 id="deliverables-heading" className="text-display text-black mb-8 text-center">
+            Inside Influence
           </h2>
-          <div className="max-w-2xl mx-auto">
-            <ul className="space-y-4 text-lg text-gray-700">
-              <li className="flex gap-3">
-                <span className="text-black font-medium shrink-0">1.</span>
-                [DELIVERABLE ONE PLACEHOLDER]
-              </li>
-              <li className="flex gap-3">
-                <span className="text-black font-medium shrink-0">2.</span>
-                [DELIVERABLE TWO PLACEHOLDER]
-              </li>
-              <li className="flex gap-3">
-                <span className="text-black font-medium shrink-0">3.</span>
-                [DELIVERABLE THREE PLACEHOLDER]
-              </li>
-              <li className="flex gap-3">
-                <span className="text-black font-medium shrink-0">4.</span>
-                [DELIVERABLE FOUR PLACEHOLDER]
-              </li>
+          <div className="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.section2}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+          <div className="max-w-2xl mx-auto space-y-6">
+            <p className="text-lg text-gray-700">
+              This is a controlled, strategic space for people who are done experimenting publicly and ready to execute their next era properly.
+            </p>
+            <p className="text-lg text-gray-700">
+              We map your story. We refine your voice. We practice visibility. And we build the version of your presence that reflects who you are now.
+            </p>
+            <p className="text-lg text-gray-700 font-medium text-black">
+              Here is exactly what that looks like:
+            </p>
+            <ul className="space-y-4 text-lg text-gray-700 list-disc pl-6">
+              <li>One live call per week for three months. These are focused, strategic working sessions where we refine messaging, positioning, and visibility execution in real time.</li>
+              <li>Slack support twice per week for the full three months. You can bring questions, drafts, voice notes, and moments of doubt. You will not spiral alone.</li>
+              <li>A structured story mapping process so you know what to share, what to hold, and how to frame your evolution with strength.</li>
+              <li>Live hot seat refinement so your language becomes clear, confident, and aligned with the level you are stepping into.</li>
+              <li>Visibility reps. You will practice speaking, posting, and positioning inside a supported environment before taking it bigger.</li>
+              <li>A group capped at five people so you are not hiding in the background.</li>
             </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Calls are recorded. Slack access remains open for the full duration of the program.
+            </p>
           </div>
         </div>
       </section>
@@ -251,6 +287,7 @@ export default function InfluencePage() {
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
             Influence is currently open at presale pricing while the first group forms.
           </p>
+          <InfluenceCountdown />
           <div className="inline-flex flex-col sm:flex-row gap-6 sm:gap-10 items-center justify-center p-8 rounded-2xl border-2 border-black bg-white">
             <div>
               <p className="text-sm text-gray-600 uppercase tracking-wide mb-1">

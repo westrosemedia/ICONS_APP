@@ -50,13 +50,6 @@ export default function MobileNavigation() {
               Mastermind
             </Link>
             <Link 
-              href="/vault" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 font-bold py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Vault
-            </Link>
-            <Link 
               href="/login" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
