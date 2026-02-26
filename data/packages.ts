@@ -34,18 +34,5 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
     highlights: iconCopy.bullets.map(bullet => ({ label: bullet })),
     imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1984.jpg?alt=media&token=f12f7493-bda1-48ff-a343-31502519d648",
     ctaHref: "/book/icon"
-  },
-  {
-    key: "ppb",
-    title: "Powerful Personal Brand",
-    blurb: "Build your legacy, amplify your voice, and become iconic. A step-by-step journey for ambitious leaders ready to launch podcasts, publish books, deliver TED Talks, and step onto the biggest stages.",
-    priceLabel: undefined,
-    highlights: [
-      { label: "The One Year Experience or 16 Week Intensive" },
-      { label: "Biweekly Q&A and pitch sessions" },
-      { label: "Transform your personal brand into a legacy" }
-    ],
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_077.jpg?alt=media&token=9a8f6303-cd9a-4e76-9302-4bbba5cacc47",
-    ctaHref: "/ppb"
   }
 ];

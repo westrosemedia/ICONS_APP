@@ -335,7 +335,7 @@ export default function AdminCoursesPage() {
                     value={newCourse.title}
                     onChange={(e) => setNewCourse({ ...newCourse, title: e.target.value })}
                     className="w-full border rounded p-2"
-                    placeholder="Powerful Personal Brand"
+                    placeholder="Course title"
                   />
                 </div>
                 
@@ -465,7 +465,7 @@ export default function AdminCoursesPage() {
                     value={newCourse.id}
                     onChange={(e) => setNewCourse({ ...newCourse, id: e.target.value })}
                     className="w-full border rounded p-2"
-                    placeholder="powerful-personal-brand"
+                    placeholder="your-course-id"
                   />
                   <p className="text-xs text-gray-500 mt-1">URL-friendly ID (no spaces, use hyphens)</p>
                 </div>
@@ -477,7 +477,7 @@ export default function AdminCoursesPage() {
                     value={newCourse.title}
                     onChange={(e) => setNewCourse({ ...newCourse, title: e.target.value })}
                     className="w-full border rounded p-2"
-                    placeholder="Powerful Personal Brand"
+                    placeholder="Course title"
                   />
                 </div>
                 
