@@ -201,12 +201,6 @@ export default function MastermindPage() {
             Investment
           </h2>
           <div className="bg-black/50 rounded-2xl p-8 border border-white/10">
-            <div className="mb-2">
-              <span className="text-6xl md:text-7xl font-bold">$12,000</span>
-            </div>
-            <p className="text-xl text-white/80 mb-4">
-              $2,000 deposit + 6 monthly payments of $1,667
-            </p>
             <p className="text-lg text-white/70 mb-2">
               6-month Movement Makers Mastermind experience with luxury retreat included
             </p>

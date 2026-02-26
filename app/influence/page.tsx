@@ -12,6 +12,9 @@ const FIREBASE_IMAGES = {
   section1: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR5983.jpg?alt=media",
   section2: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4",
   section3: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6695.jpg?alt=media&token=bdc5c5e0-b699-41af-acaf-18962769071b",
+  section4: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_089.jpg?alt=media&token=589133f6-da89-4bcf-8e4a-0d322795b6fb",
+  section5: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797",
+  section6: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662",
 };
 
 export const metadata: Metadata = {
@@ -119,6 +122,15 @@ export default function InfluencePage() {
           <h2 id="who-heading" className="text-display text-black mb-8 text-center">
             This is for you if
           </h2>
+          <div className="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.section4}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
           <div className="max-w-2xl mx-auto">
             <ul className="space-y-3 text-lg text-gray-700 list-disc pl-6">
               <li>You have changed in a real way and your brand has not caught up.</li>
@@ -229,6 +241,15 @@ export default function InfluencePage() {
           <h2 id="how-heading" className="text-display text-black mb-12 text-center">
             How it works
           </h2>
+          <div className="relative w-full max-w-3xl mx-auto aspect-[2/1] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.section5}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
           <div className="max-w-2xl mx-auto space-y-8">
             <p className="text-lg text-gray-700 text-center">
               [3 MONTHS TIMELINE INTRO PLACEHOLDER]
@@ -260,6 +281,15 @@ export default function InfluencePage() {
           <h2 id="bonuses-heading" className="text-display text-black mb-12 text-center">
             Bonuses
           </h2>
+          <div className="relative w-full max-w-4xl mx-auto aspect-[21/9] rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={FIREBASE_IMAGES.section6}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+            />
+          </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="rounded-2xl border border-gray-200 p-6 text-center">
               <p className="text-gray-700">[BONUS ONE PLACEHOLDER]</p>
