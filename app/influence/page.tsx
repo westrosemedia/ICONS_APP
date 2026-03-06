@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import InfluenceCountdown from "./InfluenceCountdown";
 
@@ -39,23 +38,20 @@ export default function InfluencePage() {
           <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight text-[#1C1917] mb-6">
             Influence
           </h1>
-          <div className="relative w-full max-w-4xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src={FIREBASE_IMAGES.hero}
-              alt="Influence program"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 1024px"
-            />
-          </div>
+          <div
+            className="w-full max-w-4xl mx-auto h-[700px] md:h-[900px] rounded-2xl bg-cover bg-center bg-no-repeat mb-10"
+            style={{ backgroundImage: `url('${FIREBASE_IMAGES.hero}')` }}
+            role="img"
+            aria-label="Influence program"
+          />
           <div className="text-lg text-[#3D3632] max-w-2xl mx-auto mb-10 space-y-3 text-left">
             <p>You are allergic to the old way you were doing life.</p>
-            <p>The past few years stretched you, broke you open, forced you to grow. You are not interested in going back.</p>
-            <p>But showing up again after a big shift can feel delicate. You want to tell the story right. You want the new version of you to land strong, not desperate. Strategic, not chaotic.</p>
-            <p>Right now there is a gap between who you have become and how publicly you are showing up.</p>
-            <p>Influence exists to close that gap.</p>
-            <p>This is a three month room for people navigating reinvention who want to re-enter the online space with clarity, authority, and control over their narrative.</p>
+            <p>The past few years stretched you, broke you open, forced you to grow. Maybe you came out. Maybe you burned your marriage, your career, your identity to the ground and built something new from the ash. Maybe you just quietly became someone your old brand no longer reflects.</p>
+            <p>You are not interested in going back. But you are also not sure how to talk about it yet.</p>
+            <p>There is a version of your story that gets you on stages. That lands you on podcasts. That makes high-level clients choose you before you finish your sentence. That becomes the foundation of a book, a movement, a body of work that outlasts any single offer.</p>
+            <p>That version exists. You just have not found the words for it yet.</p>
+            <p>Influence exists to find them.</p>
+            <p>This is a three month room for founders, leaders, and entrepreneurs navigating a major identity shift who are ready to turn their story into the most powerful asset their brand has ever had.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -122,15 +118,12 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      <div className="relative w-full max-w-4xl mx-auto aspect-[3/2] rounded-2xl overflow-hidden mx-6 md:mx-12 mb-16">
-        <Image
-          src={FIREBASE_IMAGES.section1}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 1024px"
-        />
-      </div>
+      <div
+        className="w-full max-w-4xl mx-auto h-[500px] md:h-[600px] rounded-2xl bg-cover bg-center bg-no-repeat mx-6 md:mx-12 mb-16"
+        style={{ backgroundImage: `url('${FIREBASE_IMAGES.section1}')` }}
+        role="img"
+        aria-label=""
+      />
 
       <div className="w-16 h-px bg-[#C9B99A] mx-auto my-16" />
 
@@ -144,22 +137,34 @@ export default function InfluencePage() {
           <h2 id="who-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-8 text-center">
             This is for you if
           </h2>
-          <div className="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src={FIREBASE_IMAGES.section4}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-          </div>
+          <div
+            className="w-full max-w-3xl mx-auto h-[500px] md:h-[600px] rounded-2xl bg-cover bg-center bg-no-repeat mb-10"
+            style={{ backgroundImage: `url('${FIREBASE_IMAGES.section4}')` }}
+            role="img"
+            aria-label=""
+          />
           <div className="max-w-2xl mx-auto">
-            <ul className="space-y-3 text-lg text-[#3D3632] list-disc pl-6">
-              <li>You have changed in a real way and your brand has not caught up.</li>
-              <li>You are ready to share more of your story but you want to do it strategically, not emotionally dumping online.</li>
-              <li>You want your return to feel intentional and powerful.</li>
-              <li>You are not chasing influence. You are stepping into leadership.</li>
-              <li>You want guidance on shaping the narrative so when you re-enter, it lands.</li>
+            <ul className="space-y-5 mt-8">
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#3D3632]">You have been through something real — a coming out, a divorce, a reinvention, a loss — and you know it is part of your story but you do not know how to tell it without it feeling like oversharing or trauma dumping.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#3D3632]">You want to get on stages and podcasts but when someone asks about your story, you freeze or flatten it.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#3D3632]">You are building toward a book, a keynote, a thought leadership platform — and you need a story that can hold the weight of that.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#3D3632]">You have changed in a real way and the old version of your brand no longer fits. You need to step into the new one publicly and you want to do it with precision, not chaos.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#3D3632]">You are not chasing influence. You are stepping into the kind of authority that makes premium clients, collaborators, and opportunities come to you.</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -177,34 +182,31 @@ export default function InfluencePage() {
           <h2 id="shift-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center">
             What changes in three months
           </h2>
-          <div className="relative w-full max-w-3xl mx-auto aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src={FIREBASE_IMAGES.section3}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-          </div>
+          <div
+            className="w-full max-w-3xl mx-auto h-[500px] md:h-[600px] rounded-2xl bg-cover bg-center bg-no-repeat mb-10"
+            style={{ backgroundImage: `url('${FIREBASE_IMAGES.section3}')` }}
+            role="img"
+            aria-label=""
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-4xl mx-auto">
             <div>
               <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-4">Right now</h3>
-              <ul className="space-y-2 text-[#3D3632] list-none">
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> Overthinking every post.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> Second guessing your voice.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> Waiting to feel ready.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> Holding back your real story.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> Playing small while privately wanting more.</li>
+              <ul className="space-y-4 text-[#3D3632]">
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You know your story is powerful but you cannot find the version of it that lands.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You shrink when someone asks about your background or your journey.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You are holding back the most interesting parts of yourself because you are not sure the world is ready — or that you are.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You are playing a smaller public role than the one you are privately ready for.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You want to write a book, pitch a stage, land a podcast — but your story does not feel cohesive enough yet to build from.</span></li>
               </ul>
             </div>
             <div>
               <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-4">After Influence</h3>
-              <ul className="space-y-2 text-[#3D3632] list-none">
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> You understand your story and how to share it with strength.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> You speak without apology.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> You post without spiraling.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> You own your evolution publicly.</li>
-                <li className="flex gap-2"><span className="text-[#C9B99A] shrink-0">→</span> You walk into rooms knowing you belong there.</li>
+              <ul className="space-y-4 text-[#3D3632]">
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You have a founder story that is sharp, specific, and built to open doors — stages, podcasts, book deals, premium clients.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You know exactly what to share, what to hold, and how to frame the hard parts so they build trust instead of bleeding in public.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You speak about your evolution with authority, not apology.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You walk into rooms — on stages, on mics, in pitches — knowing your story is your strongest credential.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>The version of you that has been waiting quietly in the background is now the one running the brand.</span></li>
               </ul>
             </div>
           </div>
@@ -223,32 +225,50 @@ export default function InfluencePage() {
           <h2 id="deliverables-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-8 text-center">
             Inside Influence
           </h2>
-          <div className="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src={FIREBASE_IMAGES.section2}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-          </div>
+          <div
+            className="w-full max-w-3xl mx-auto h-[500px] md:h-[600px] rounded-2xl bg-cover bg-center bg-no-repeat mb-10"
+            style={{ backgroundImage: `url('${FIREBASE_IMAGES.section2}')` }}
+            role="img"
+            aria-label=""
+          />
           <div className="max-w-2xl mx-auto space-y-6">
             <p className="text-lg text-[#3D3632]">
-              This is a controlled, strategic space for people who are done experimenting publicly and ready to execute their next era properly.
+              This is not a content course. There are no templates for Instagram captions here.
             </p>
             <p className="text-lg text-[#3D3632]">
-              We map your story. We refine your voice. We practice visibility. And we build the version of your presence that reflects who you are now.
+              This is a room for people who are ready to do the deeper work — excavating the story underneath the brand, finding the version of it that is true and powerful and built to last, and learning to speak it with the kind of authority that changes rooms.
+            </p>
+            <p className="text-lg text-[#3D3632]">
+              Stephanie Rose used her own coming out — and the story of burning her entire life down and rebuilding it — to get on some of the biggest stages she has ever stood on, to build a brand that attracts clients who would follow her anywhere, and to begin writing her book. That is what a founder story can do when it is built with intention.
             </p>
             <p className="text-lg text-[#3D3632] font-medium text-[#1C1917]">
-              Here is exactly what that looks like:
+              That is what we do here.
             </p>
-            <ul className="space-y-4 text-lg text-[#3D3632] list-disc pl-6">
-              <li>One live call per week for three months. These are focused, strategic working sessions where we refine messaging, positioning, and visibility execution in real time.</li>
-              <li>Slack support twice per week for the full three months. You can bring questions, drafts, voice notes, and moments of doubt. You will not spiral alone.</li>
-              <li>A structured story mapping process so you know what to share, what to hold, and how to frame your evolution with strength.</li>
-              <li>Live hot seat refinement so your language becomes clear, confident, and aligned with the level you are stepping into.</li>
-              <li>Visibility reps. You will practice speaking, posting, and positioning inside a supported environment before taking it bigger.</li>
-              <li>A group capped at twenty people so you are not hiding in the background.</li>
+            <ul className="space-y-6 mt-10 text-lg text-[#3D3632]">
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">One live call per week for three months.</strong> Strategic working sessions where we excavate, refine, and pressure-test your story and your positioning in real time.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">Slack support twice per week.</strong> Bring your drafts, your pitches, your speaker bios, your about pages, your moments of doubt. You will not figure this out alone.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">A structured story mapping process.</strong> We locate the moments that matter, decide what earns its place in your public narrative, and build a founder story that is both true and strategic.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">Live hot seat refinement.</strong> Your language gets sharper every week. We work on how you introduce yourself, how you pitch a stage, how you open a keynote, how you answer the question "so what do you do" in a way that makes people lean in.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">Visibility reps.</strong> You will practice speaking your story, pitching your narrative, and stepping into the public role you are building — inside a supported room before you take it into the world.</span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span><strong className="font-medium text-[#1C1917]">A group capped at twenty people.</strong> This is intentional and intimate. Everyone in the room is navigating real transformation. You are not hiding in the background here.</span>
+              </li>
             </ul>
             <p className="text-lg text-[#3D3632] mt-6">
               Calls are recorded. Slack access remains open for the full duration of the program.
@@ -269,15 +289,12 @@ export default function InfluencePage() {
           <h2 id="how-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center">
             How it works
           </h2>
-          <div className="relative w-full max-w-3xl mx-auto aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-            <Image
-              src={FIREBASE_IMAGES.section5}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-          </div>
+          <div
+            className="w-full max-w-3xl mx-auto h-[500px] md:h-[600px] rounded-2xl bg-cover bg-center bg-no-repeat mb-10"
+            style={{ backgroundImage: `url('${FIREBASE_IMAGES.section5}')` }}
+            role="img"
+            aria-label=""
+          />
           <div className="max-w-2xl mx-auto space-y-8">
             <p className="text-lg text-[#3D3632] text-center">
               Three months. One small group. One clear through-line.
@@ -288,17 +305,35 @@ export default function InfluencePage() {
             <ul className="space-y-6 mt-8">
               <li className="flex gap-4">
                 <span className="text-[#C9B99A] font-heading text-xl shrink-0">Month 1</span>
-                <span className="text-[#3D3632]">Story mapping and identity excavation. We locate what has shifted, name it with precision, and build the foundation of your new narrative.</span>
+                <span className="text-[#3D3632]">Story excavation and identity mapping. We locate what has shifted, name it precisely, and find the through-line of your evolution that is true, powerful, and built to open doors.</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-[#C9B99A] font-heading text-xl shrink-0">Month 2</span>
-                <span className="text-[#3D3632]">Voice refinement and visibility practice. You begin showing up — in the room, in the work, in the world — with language that actually sounds like who you are now.</span>
+                <span className="text-[#3D3632]">Narrative architecture and language refinement. We build the actual story — the one you tell on a stage, in a podcast intro, in a book proposal, in a pitch. We pressure-test it until it is airtight.</span>
               </li>
               <li className="flex gap-4">
                 <span className="text-[#C9B99A] font-heading text-xl shrink-0">Month 3</span>
-                <span className="text-[#3D3632]">Public positioning and presence building. You step into the spaces you have been circling. Your return is deliberate, powerful, and entirely yours.</span>
+                <span className="text-[#3D3632]">Public positioning and presence. You begin stepping into the rooms you have been circling. You pitch the stage. You record the intro. You own the story publicly. Your return is deliberate, powerful, and entirely yours.</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-16 h-px bg-[#C9B99A] mx-auto my-16" />
+
+      {/* Proof of concept */}
+      <section className="py-24 bg-[#1C1917] text-[#FAF7F2]">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-xs tracking-widest uppercase text-[#9C8E82] mb-8">This works. Here is the proof.</p>
+          <h2 className="font-heading text-3xl md:text-5xl font-light leading-snug mb-10">
+            Stephanie came out publicly.<br />She burned her life down.<br />Then she built something better.
+          </h2>
+          <div className="space-y-6 text-[#E8E0D5] leading-relaxed text-lg">
+            <p>Not in a vague, inspirational way. In a specific, strategic, terrifying way — and she used every part of it to build one of the most trusted brands in her space.</p>
+            <p>That story got her on stages she had no business being on. It made clients choose her over people with bigger platforms and longer track records. It became the foundation of a book she is writing now.</p>
+            <p>The story was not the liability. It was the asset. The only question was how to tell it.</p>
+            <p className="text-[#FAF7F2] font-heading text-2xl font-light italic pt-4">That is what Influence teaches you to do with yours.</p>
           </div>
         </div>
       </section>
@@ -385,7 +420,7 @@ export default function InfluencePage() {
                   </span>
                 </summary>
                 <div className="px-5 pb-4 pt-0 text-[#3D3632] border-t border-[#C9B99A]/20">
-                  You are not supposed to feel fully ready. This program exists for the space between knowing you want more and believing you can handle it.
+                  Readiness is a myth this program dismantles. If you have a story and you know it is bigger than what you have been saying publicly, that is enough. We build the readiness from inside the room.
                 </div>
               </details>
             </li>
@@ -437,7 +472,7 @@ export default function InfluencePage() {
                   </span>
                 </summary>
                 <div className="px-5 pb-4 pt-0 text-[#3D3632] border-t border-[#C9B99A]/20">
-                  Yes. We focus on clarity, authority, and confident communication so you can walk into bigger rooms prepared.
+                  Yes — specifically. We build the story that gets you booked, the language that lands in a pitch, and the presence that makes a room remember you. Stages, podcasts, book platforms, thought leadership — this is the foundation all of it sits on.
                 </div>
               </details>
             </li>
