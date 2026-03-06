@@ -146,23 +146,23 @@ export default function InfluencePage() {
           <div className="max-w-2xl mx-auto">
             <ul className="space-y-5 mt-8">
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#C9B99A] mt-1">•</span>
                 <span className="text-[#3D3632]">You have been through something real — a coming out, a divorce, a reinvention, a loss — and you know it is part of your story but you do not know how to tell it without it feeling like oversharing or trauma dumping.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#C9B99A] mt-1">•</span>
                 <span className="text-[#3D3632]">You want to get on stages and podcasts but when someone asks about your story, you freeze or flatten it.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#C9B99A] mt-1">•</span>
                 <span className="text-[#3D3632]">You are building toward a book, a keynote, a thought leadership platform — and you need a story that can hold the weight of that.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#C9B99A] mt-1">•</span>
                 <span className="text-[#3D3632]">You have changed in a real way and the old version of your brand no longer fits. You need to step into the new one publicly and you want to do it with precision, not chaos.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1">—</span>
+                <span className="text-[#C9B99A] mt-1">•</span>
                 <span className="text-[#3D3632]">You are not chasing influence. You are stepping into the kind of authority that makes premium clients, collaborators, and opportunities come to you.</span>
               </li>
             </ul>
@@ -192,21 +192,21 @@ export default function InfluencePage() {
             <div>
               <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-4">Right now</h3>
               <ul className="space-y-4 text-[#3D3632]">
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You know your story is powerful but you cannot find the version of it that lands.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You shrink when someone asks about your background or your journey.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You are holding back the most interesting parts of yourself because you are not sure the world is ready — or that you are.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You are playing a smaller public role than the one you are privately ready for.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You want to write a book, pitch a stage, land a podcast — but your story does not feel cohesive enough yet to build from.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You know your story is powerful but you cannot find the version of it that lands.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You shrink when someone asks about your background or your journey.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You are holding back the most interesting parts of yourself because you are not sure the world is ready — or that you are.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You are playing a smaller public role than the one you are privately ready for.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You want to write a book, pitch a stage, land a podcast — but your story does not feel cohesive enough yet to build from.</span></li>
               </ul>
             </div>
             <div>
               <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-4">After Influence</h3>
               <ul className="space-y-4 text-[#3D3632]">
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You have a founder story that is sharp, specific, and built to open doors — stages, podcasts, book deals, premium clients.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You know exactly what to share, what to hold, and how to frame the hard parts so they build trust instead of bleeding in public.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You speak about your evolution with authority, not apology.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>You walk into rooms — on stages, on mics, in pitches — knowing your story is your strongest credential.</span></li>
-                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">—</span><span>The version of you that has been waiting quietly in the background is now the one running the brand.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You have a founder story that is sharp, specific, and built to open doors — stages, podcasts, book deals, premium clients.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You know exactly what to share, what to hold, and how to frame the hard parts so they build trust instead of bleeding in public.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You speak about your evolution with authority, not apology.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>You walk into rooms — on stages, on mics, in pitches — knowing your story is your strongest credential.</span></li>
+                <li className="flex gap-4 items-start"><span className="text-[#C9B99A] shrink-0">•</span><span>The version of you that has been waiting quietly in the background is now the one running the brand.</span></li>
               </ul>
             </div>
           </div>
@@ -246,27 +246,27 @@ export default function InfluencePage() {
             </p>
             <ul className="space-y-6 mt-10 text-lg text-[#3D3632]">
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">One live call per week for three months.</strong> Strategic working sessions where we excavate, refine, and pressure-test your story and your positioning in real time.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">Slack support twice per week.</strong> Bring your drafts, your pitches, your speaker bios, your about pages, your moments of doubt. You will not figure this out alone.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">A structured story mapping process.</strong> We locate the moments that matter, decide what earns its place in your public narrative, and build a founder story that is both true and strategic.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">Live hot seat refinement.</strong> Your language gets sharper every week. We work on how you introduce yourself, how you pitch a stage, how you open a keynote, how you answer the question "so what do you do" in a way that makes people lean in.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">Visibility reps.</strong> You will practice speaking your story, pitching your narrative, and stepping into the public role you are building — inside a supported room before you take it into the world.</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">—</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
                 <span><strong className="font-medium text-[#1C1917]">A group capped at twenty people.</strong> This is intentional and intimate. Everyone in the room is navigating real transformation. You are not hiding in the background here.</span>
               </li>
             </ul>
