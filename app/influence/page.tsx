@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { Metadata } from "next";
 
 const STRIPE_LINK = "https://buy.stripe.com/28E9ASgRq8Hb4vp14F87K15";
@@ -169,7 +170,8 @@ export default function InfluencePage() {
           <h2 id="pricing-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4">Join Influence</h2>
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins April 1, 2026</p>
           <p className="text-lg text-[#3D3632] mb-12">Influence is currently open at founding pricing while the first group forms. When seats fill, enrollment closes.</p>
-          <div dangerouslySetInnerHTML={{ __html: '<script async src="https://js.stripe.com/v3/pricing-table.js"></script><stripe-pricing-table pricing-table-id="prctbl_1T84PcCcsY3WjV3QWIBe5vOW" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>' }} />
+          <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
+          <stripe-pricing-table pricing-table-id="prctbl_1T84PcCcsY3WjV3QWIBe5vOW" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>
           <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none">Join Influence Now</a>
           <p className="text-[#3D3632] mt-8">Group size is capped at twenty people. When seats fill, enrollment closes.</p>
           <p className="text-sm text-[#9C8E82] mt-3">Immediate access to onboarding details after payment.</p>
