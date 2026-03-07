@@ -42,7 +42,7 @@ export default function InfluencePage() {
             <p className="text-[#C9B99A] font-heading text-xl font-light">Begins April 1, 2026.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">Claim Your Spot</a>
+            <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">Claim Your Spot</Link>
             <Link href="#who-this-is-for" className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none">See If This Is You</Link>
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function InfluencePage() {
       </section>
 
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#FAF7F2] border-t border-[#C9B99A]/30 md:hidden" aria-label="Mobile call to action">
-        <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300">Claim Your Spot</a>
+        <Link href="#pricing" className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300">Claim Your Spot</Link>
       </div>
       <div className="h-20 md:hidden" aria-hidden />
 
