@@ -171,6 +171,7 @@ export default function InfluencePage() {
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins April 1, 2026</p>
           <p className="text-lg text-[#3D3632] mb-12">Influence is currently open at founding pricing while the first group forms. When seats fill, enrollment closes.</p>
           <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
+          {/* @ts-expect-error stripe-pricing-table is a custom web component */}
           <stripe-pricing-table pricing-table-id="prctbl_1T84PcCcsY3WjV3QWIBe5vOW" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>
           <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none">Join Influence Now</a>
           <p className="text-[#3D3632] mt-8">Group size is capped at twenty people. When seats fill, enrollment closes.</p>
