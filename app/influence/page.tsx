@@ -165,7 +165,7 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto" aria-labelledby="pricing-heading">
+      <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24" aria-labelledby="pricing-heading">
         <div className="text-center max-w-2xl mx-auto">
           <h2 id="pricing-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4">Join Influence</h2>
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins April 1, 2026</p>
@@ -173,7 +173,7 @@ export default function InfluencePage() {
           <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
           {/* @ts-expect-error stripe-pricing-table is a custom web component */}
           <stripe-pricing-table pricing-table-id="prctbl_1T84PcCcsY3WjV3QWIBe5vOW" publishable-key="pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"></stripe-pricing-table>
-          <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none">Join Influence Now</a>
+          <Link href="#pricing" className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none">Join Influence Now</Link>
           <p className="text-[#3D3632] mt-8">Group size is capped at twenty people. When seats fill, enrollment closes.</p>
           <p className="text-sm text-[#9C8E82] mt-3">Immediate access to onboarding details after payment.</p>
         </div>
@@ -211,7 +211,7 @@ export default function InfluencePage() {
           <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-4">Now your voice needs to catch up.</p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-2">If you feel the pull, that is your signal.</p>
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">Begins April 1, 2026.</p>
-          <a href={STRIPE_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">I&apos;m Ready. Secure My Spot.</a>
+          <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">I&apos;m Ready. Secure My Spot.</Link>
           <p className="text-sm text-[#FAF7F2]/60 mt-4">Founding pricing ends when this round fills.</p>
         </div>
       </section>
