@@ -43,13 +43,6 @@ export default function MobileNavigation() {
               Packages
             </Link>
             <Link 
-              href="/courses" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Courses
-            </Link>
-            <Link 
               href="/mastermind" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
@@ -62,13 +55,6 @@ export default function MobileNavigation() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Case studies
-            </Link>
-            <Link 
-              href="/login" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Login
             </Link>
             <Link 
               href="/apply" 

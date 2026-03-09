@@ -116,17 +116,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Packages
                 </Link>
-                <Link href="/courses" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Courses
-                </Link>
                 <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Mastermind
                 </Link>
                 <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Case studies
-                </Link>
-                <Link href="/login" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Login
                 </Link>
                 <Link href="/apply" className="btn btn-sm">
                   Apply for the ICON Brand Partnership
