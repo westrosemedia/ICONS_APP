@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import MastermindStructuredData from "@/components/MastermindStructuredData";
 
 export const metadata: Metadata = {
-  title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada",
-  description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery (Tapping) + magnetic marketing (Content). Luxury retreat in Kelowna BC included. Transform your brand and scale your business with Stephanie Rose and Jackie McDonald.",
-  keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, content creation mastermind, tapping therapy business, Kelowna retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching, Movement Makers Mastermind, Stephanie Rose mastermind, business coaching Canada, entrepreneur retreat, brand strategy mastermind",
+  title: "Manifesting & Marketing Mastermind | Luxury Business Coaching for Female Entrepreneurs in Canada",
+  description: "Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind combining marketing strategy that converts + manifestation that moves money. Luxury retreat in the Canadian Rockies October 2026. Stephanie Rose and Jackie McDonald.",
+  keywords: "mastermind retreat Canada, luxury business coaching, female entrepreneurs mastermind, manifesting marketing mastermind, tapping therapy business, Canadian Rockies retreat, luxury business retreat, Canadian female entrepreneurs, business mastermind, luxury coaching, Manifesting & Marketing Mastermind, Stephanie Rose mastermind, business coaching Canada, entrepreneur retreat, brand strategy mastermind",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     canonical: '/mastermind',
   },
   openGraph: {
-    title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
-    description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    title: "Manifesting & Marketing Mastermind | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind. Marketing strategy that converts. Manifestation that moves money. Luxury retreat in the Canadian Rockies October 2026.",
     url: 'https://westrosemedia.com/mastermind',
     siteName: 'West Rose Media',
     type: "website",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
         url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285',
         width: 1200,
         height: 630,
-        alt: 'Movement Makers Mastermind + Retreat',
+        alt: 'Manifesting & Marketing Mastermind',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Movement Makers Mastermind + Retreat | Luxury Business Coaching",
-    description: "Join Canada's most exclusive 6-month Movement Makers Mastermind combining emotional mastery + magnetic marketing. Luxury retreat in Kelowna BC included.",
+    title: "Manifesting & Marketing Mastermind | Luxury Business Coaching",
+    description: "Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind. Marketing strategy that converts. Manifestation that moves money. Luxury retreat in the Canadian Rockies October 2026.",
     creator: '@westrosemedia',
     images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285'],
   },
@@ -62,19 +62,19 @@ export default function MastermindPage() {
             fill
             className="object-cover object-center"
             priority
-            title="Movement Makers Mastermind + Retreat | Luxury Business Coaching for Female Entrepreneurs in Canada"
+            title="Manifesting & Marketing Mastermind | Luxury Business Coaching for Female Entrepreneurs in Canada"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Movement Makers
+            This is your year.
             <br />
-            <span className="text-[#c1ff72]">Mastermind + Retreat</span>
+            <span className="text-[#c1ff72]">And you already know it.</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Become the woman whose brand is seen, felt, and followed without burning out or playing small
+            Stephanie and Jackie are two of the best in their industries and they are building something that has never existed before. Marketing strategy that converts. Manifestation that actually moves money. One room. Six months.
           </p>
           <Link
             href="#apply"
@@ -82,6 +82,21 @@ export default function MastermindPage() {
           >
             Join Now
           </Link>
+        </div>
+      </section>
+
+      {/* This is for you if */}
+      <section className="py-20 px-4 bg-white/5">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">
+            This is for you if
+          </h2>
+          <ul className="text-left space-y-4 text-lg text-white/90">
+            <li>• You have a real offer and a real mission and you are tired of watching women with less talent out-earn you.</li>
+            <li>• You know your mindset is the ceiling and you are ready to blow the roof off.</li>
+            <li>• You have tried the courses, the coaches, the strategies and something is still missing.</li>
+            <li>• You are ready to be in a room that matches where you are going, not where you have been.</li>
+          </ul>
         </div>
       </section>
 
@@ -95,49 +110,51 @@ export default function MastermindPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <h3 className="text-3xl font-bold mb-6">Luxury Weekend Retreat</h3>
-              <p className="text-lg text-white/80 mb-6">
-                Immerse yourself in a transformative weekend experience designed to elevate your content creation and personal growth.
+              <p className="text-lg text-white/80">
+                October 2026 in the Canadian Rockies. Fly into YYC. This is not a conference room and a lanyard. This is an immersive experience designed to shift who you are and how you show up. The women who attend our retreats do not leave the same.
               </p>
-              <ul className="space-y-3 text-white/70">
-                <li>• Exclusive access to premium content strategies</li>
-                <li>• Hands-on workshops with industry experts</li>
-                <li>• Luxury accommodations and dining</li>
-                <li>• Networking with like-minded entrepreneurs</li>
-              </ul>
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0"
-                alt="Luxury Content Creation Photography and Social Media Retreat Experience for Female Entrepreneurs in Calgary Alberta Canada - West Rose Media Photographer"
+                alt="Luxury Manifesting & Marketing Mastermind Retreat in the Canadian Rockies - West Rose Media"
                 fill
                 className="object-cover"
-                title="Luxury Content Retreat for Female Entrepreneurs | Calgary Alberta Business Coaching"
+                title="Luxury Retreat for Female Entrepreneurs | Canadian Rockies"
               />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-96 rounded-2xl overflow-hidden order-2 md:order-1">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6981.jpg?alt=media&token=9d18b961-5a37-4d16-9056-598f854480eb"
-                alt="Weekly Social Media Marketing and Photography Business Coaching for Female Entrepreneurs in Calgary Alberta - Stephanie Rose West Rose Media Photographer"
+                alt="Weekly Coaching Calls - Manifesting & Marketing Mastermind - Stephanie Rose West Rose Media"
                 fill
                 className="object-cover"
-                title="Weekly Business Coaching for Female Entrepreneurs | Calgary Alberta Mentorship"
+                title="Weekly Business Coaching for Female Entrepreneurs"
               />
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="text-3xl font-bold mb-6">Weekly Support & Mentorship</h3>
-              <p className="text-lg text-white/80 mb-6">
-                Ongoing guidance and support to ensure your continued growth and success long after the retreat.
+              <h3 className="text-3xl font-bold mb-6">Weekly Coaching Calls</h3>
+              <p className="text-lg text-white/80">
+                Every Wednesday at 1pm PST / 2pm MST. Stephanie brings the marketing. Jackie brings the energetics. You bring your business and we work on it together. Live, every week, for six months.
               </p>
-              <ul className="space-y-3 text-white/70">
-                <li>• Weekly group coaching calls</li>
-                <li>• 1:1 mentorship sessions</li>
-                <li>• Exclusive community access</li>
-                <li>• Content strategy implementation support</li>
-              </ul>
             </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto mb-20">
+            <h3 className="text-3xl font-bold mb-6">Personal Tapping Sessions</h3>
+            <p className="text-lg text-white/80">
+              This is what most masterminds are not doing and it is why most masterminds do not work. Your nervous system is running your business whether you know it or not. We fix the strategy and the inner world that has to hold it.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto mb-20">
+            <h3 className="text-3xl font-bold mb-6">A Room That Raises Your Standard</h3>
+            <p className="text-lg text-white/80">
+              The women in this mastermind are building real things. Being around them will change what you think is possible for you.
+            </p>
           </div>
 
           {/* Additional Image Section */}
@@ -171,10 +188,10 @@ export default function MastermindPage() {
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_5030.jpg?alt=media&token=b368dc0e-7747-4683-a5f7-be87484155ae"
-                alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
+                alt="Manifesting & Marketing Mastermind Experience for Female Entrepreneurs - West Rose Media"
                 fill
                 className="object-cover"
-                title="Movement Makers Mastermind | Female Entrepreneurs"
+                title="Manifesting & Marketing Mastermind | Female Entrepreneurs"
               />
             </div>
           </div>
@@ -184,10 +201,23 @@ export default function MastermindPage() {
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4681.jpg?alt=media&token=8cc8ddf0-418e-4209-b50f-ead983ab1981"
-                alt="Movement Makers Mastermind Experience for Female Entrepreneurs - West Rose Media"
+                alt="Manifesting & Marketing Mastermind Experience for Female Entrepreneurs - West Rose Media"
                 fill
                 className="object-cover"
-                title="Movement Makers Mastermind | Female Entrepreneurs"
+                title="Manifesting & Marketing Mastermind | Female Entrepreneurs"
+              />
+            </div>
+          </div>
+
+          {/* DJI_0012 */}
+          <div className="mt-20">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FDJI_0012.jpg?alt=media"
+                alt="Manifesting & Marketing Mastermind Experience for Female Entrepreneurs - West Rose Media"
+                fill
+                className="object-cover"
+                title="Manifesting & Marketing Mastermind | Female Entrepreneurs"
               />
             </div>
           </div>
@@ -197,62 +227,52 @@ export default function MastermindPage() {
       {/* Investment Section */}
       <section className="py-20 px-4 bg-white/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">
             Investment
           </h2>
-          <div className="bg-black/50 rounded-2xl p-8 border border-white/10">
-            <p className="text-lg text-white/70 mb-2">
-              6-month Movement Makers Mastermind experience with luxury retreat included
-            </p>
-            <div className="text-sm text-white/60 mb-8">
-              <p>• Luxury Content Retreat: March 6-9th in Kelowna BC, Canada</p>
-              <p>• Weekly calls every Wednesday at 1pm PST/2pm MST</p>
-              <p>• Personal tapping sessions with Jackie & Stephanie</p>
+          <div className="space-y-8">
+            <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
+              <h3 className="text-2xl font-bold mb-2">Mastermind only — $12,000</h3>
+              <p className="text-white/80">
+                Six months of weekly coaching, personal tapping sessions, and a room full of women who are actually doing it.
+              </p>
             </div>
-            <Link
-              href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout?fbclid=PAQ0xDSwMN6OZleHRuA2FlbQIxMAABp3v1UbwJ-bwikGOANEc48MEpfLirOZWyfQkatqEM11B1ne-TZkRX_wa4ni6y_aem_41lUrn27GEzuKv7uYmNlcA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
-            >
-              Join the Movement Makers Mastermind
-            </Link>
+            <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
+              <h3 className="text-2xl font-bold mb-2">Mastermind + Luxury Retreat — $20,000</h3>
+              <p className="text-white/80">
+                Everything above plus your spot in the Canadian Rockies this October. First women to join get priority rooms.
+              </p>
+            </div>
+            <p className="text-lg text-white/80 italic">
+              The women who join this mastermind in Q1 will be unrecognizable by Q4. The ones who wait will still be thinking about it.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Application Section */}
+      {/* Ready to Join Section */}
       <section id="apply" className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Join?
           </h2>
-          <p className="text-xl text-white/80 mb-12">
-            This is for the woman with a powerful message who's done the inner work, but still feels stuck spinning her wheels, second-guessing herself, and hiding online.
+          <p className="text-xl text-white/80 mb-8">
+            This is for the woman who is done playing small and done pretending she does not know exactly what she is capable of.
           </p>
-          
-          <div className="bg-black/50 rounded-2xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold mb-6">This is for you if you:</h3>
-            <ul className="text-left space-y-3 text-white/80 mb-8">
-              <li>• Have a powerful mission but feel stuck in cycles of burnout and second-guessing</li>
-              <li>• Know you need content but feel overwhelmed showing up online consistently</li>
-              <li>• Have big goals but struggle to hold the energy or attention span to reach them</li>
-              <li>• Want to be seen, paid, and respected as the leader you already are</li>
-            </ul>
-            
-            <Link
-              href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout?fbclid=PAQ0xDSwMN6OZleHRuA2FlbQIxMAABp3v1UbwJ-bwikGOANEc48MEpfLirOZWyfQkatqEM11B1ne-TZkRX_wa4ni6y_aem_41lUrn27GEzuKv7uYmNlcA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
-            >
-              Join the Movement Makers Mastermind Now
-            </Link>
-            
-            <p className="text-sm text-white/60 mt-4">
-              The first people to join will have priority bedrooms at the luxury content retreat!
-            </p>
-          </div>
+          <p className="text-lg text-white/80 mb-12">
+            You have been building toward this. The mission is real. The drive is real. Now you need the room, the strategy, and the two people who can help you make it all the way there.
+          </p>
+          <p className="text-white/70 mb-8">
+            Spots are limited. The retreat fills first.
+          </p>
+          <Link
+            href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"
+          >
+            Apply for the Manifesting & Marketing Mastermind
+          </Link>
         </div>
       </section>
 

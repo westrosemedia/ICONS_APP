@@ -95,8 +95,8 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Movement Makers Mastermind + Retreat",
-            "description": "6-month mastermind combining emotional mastery and magnetic marketing for entrepreneurs",
+            "name": "Manifesting & Marketing Mastermind",
+            "description": "6-month mastermind combining marketing strategy that converts and manifestation that moves money",
             "provider": {
               "@type": "Organization",
               "name": "West Rose Media"
@@ -189,17 +189,17 @@ export default function StructuredData() {
   const mastermindSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Movement Makers Mastermind + Retreat",
-    "description": "6-month luxury mastermind combining emotional mastery (Tapping) + magnetic marketing (Content) for female entrepreneurs in Canada",
-    "startDate": "2024-03-06",
-    "endDate": "2024-03-09",
+    "name": "Manifesting & Marketing Mastermind",
+    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Luxury retreat in the Canadian Rockies October 2026.",
+    "startDate": "2026-04-01",
+    "endDate": "2026-10-31",
     "location": {
       "@type": "Place",
-      "name": "Kelowna, British Columbia, Canada",
+      "name": "Canadian Rockies, Alberta, Canada",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Kelowna",
-        "addressRegion": "British Columbia",
+        "addressLocality": "Calgary",
+        "addressRegion": "Alberta",
         "addressCountry": "CA"
       }
     },

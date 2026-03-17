@@ -2,20 +2,20 @@ export default function MastermindStructuredData() {
   const eventSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Movement Makers Mastermind + Retreat",
-    "description": "6-month luxury mastermind combining emotional mastery (Tapping with Jackie McDonald) + magnetic marketing (Content with Stephanie Rose) for female entrepreneurs in Canada. Includes luxury retreat in Kelowna, British Columbia.",
-    "startDate": "2025-03-06",
-    "endDate": "2025-09-06",
+    "name": "Manifesting & Marketing Mastermind",
+    "description": "6-month luxury mastermind combining marketing strategy that converts + manifestation that moves money. Stephanie Rose and Jackie McDonald. Includes luxury retreat in the Canadian Rockies, October 2026.",
+    "startDate": "2026-04-01",
+    "endDate": "2026-10-31",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": [
       {
         "@type": "Place",
-        "name": "Kelowna, British Columbia, Canada",
+        "name": "Canadian Rockies, Alberta, Canada",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Kelowna",
-          "addressRegion": "British Columbia",
+          "addressLocality": "Calgary",
+          "addressRegion": "Alberta",
           "addressCountry": "CA"
         }
       },
@@ -42,14 +42,24 @@ export default function MastermindStructuredData() {
         "jobTitle": "Tapping & Emotional Mastery Coach"
       }
     ],
-    "offers": {
-      "@type": "Offer",
-      "price": "12000",
-      "priceCurrency": "CAD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://westrosemedia.com/mastermind",
-      "validFrom": "2025-01-01"
-    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Mastermind only",
+        "price": "12000",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://westrosemedia.com/mastermind"
+      },
+      {
+        "@type": "Offer",
+        "name": "Mastermind + Luxury Retreat",
+        "price": "20000",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://westrosemedia.com/mastermind"
+      }
+    ],
     "audience": {
       "@type": "Audience",
       "audienceType": "Female Entrepreneurs",
@@ -64,8 +74,8 @@ export default function MastermindStructuredData() {
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Movement Makers Mastermind",
-    "description": "6-month intensive mastermind program combining emotional mastery through tapping and magnetic marketing through strategic content creation for female entrepreneurs.",
+    "name": "Manifesting & Marketing Mastermind",
+    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald.",
     "provider": {
       "@type": "Organization",
       "name": "West Rose Media",
@@ -99,7 +109,7 @@ export default function MastermindStructuredData() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Movement Makers Mastermind",
+        "name": "Manifesting & Marketing Mastermind",
         "item": "https://westrosemedia.com/mastermind"
       }
     ]

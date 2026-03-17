@@ -514,7 +514,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Movement Makers Mastermind */}
+      {/* Manifesting & Marketing Mastermind */}
       <section className="relative section-padding overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
@@ -533,14 +533,14 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-hero text-white mb-12 drop-shadow-lg">
-              Movement Makers Mastermind
+              Manifesting & Marketing Mastermind
             </h2>
             <div className="max-w-4xl mx-auto space-y-8 mb-12">
               <p className="text-editorial text-white/90">
                 Become the woman whose brand is seen, felt, and followed without burning out or playing small.
               </p>
               <p className="text-editorial text-white/90">
-                A 6-month Movement Makers Mastermind experience combining emotional mastery (Tapping with Jackie) + magnetic marketing (Content with Stephanie) to help you scale your visibility, elevate your brand, and be seen as the leader you already are.
+                A 6-month Manifesting & Marketing Mastermind experience. Marketing strategy that converts. Manifestation that moves money. Stephanie and Jackie. One room. Six months.
               </p>
               <p className="text-editorial text-white/90">
                 Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
