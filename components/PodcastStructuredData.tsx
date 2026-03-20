@@ -16,7 +16,7 @@ export default function PodcastStructuredData() {
       "name": "West Rose Media",
       "url": "https://westrosemedia.com"
     },
-    "webFeed": "https://feeds.captivate.fm/icons-west-rose-media/",
+    "webFeed": "https://api.riverside.fm/hosting/yYZmLPja.rss",
     "category": {
       "@type": "Thing",
       "name": "Business"

@@ -1,7 +1,44 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import Parser from "rss-parser";
 import PodcastStructuredData from "@/components/PodcastStructuredData";
+
+const RSS_FEED_URL = "https://api.riverside.fm/hosting/yYZmLPja.rss";
+
+export const revalidate = 3600; // Revalidate every hour so new episodes appear
+
+const FALLBACK_LINK = "https://podcasters.spotify.com/pod/show/westrosemedia";
+
+const fallbackEpisodes = [
+  { number: 10, title: "Hot and Rich in 2026", date: "March 20, 2026", url: FALLBACK_LINK },
+  { number: 9, title: "Human Design and Marketing with Eden Carpenter.", date: "March 5, 2026", url: FALLBACK_LINK },
+  { number: 8, title: "Why Most People Never Reach the Next Level", date: "January 8, 2026", url: FALLBACK_LINK },
+  { number: 7, title: "The TEDx Mindset: How Small Habits Create Massive Success", date: "December 15, 2025", url: FALLBACK_LINK },
+  { number: 6, title: "Build the Presence That Pays You: Authentic Branding and the Mastermind Advantage", date: "December 15, 2025", url: FALLBACK_LINK },
+];
+
+async function getEpisodesFromRss(): Promise<{ number: number; title: string; date: string; url: string }[]> {
+  try {
+    const parser = new Parser();
+    const feed = await parser.parseURL(RSS_FEED_URL);
+    if (!feed?.items?.length) return fallbackEpisodes;
+
+    return feed.items.slice(0, 20).map((item, index) => {
+      const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "Unknown date";
+      const link = item.link || item.enclosure?.url || FALLBACK_LINK;
+      const episodeNum = item.itunes?.episode ? Number(item.itunes.episode) : feed.items!.length - index;
+      return {
+        number: episodeNum,
+        title: item.title || "Untitled Episode",
+        date: pubDate,
+        url: link,
+      };
+    });
+  } catch {
+    return fallbackEpisodes;
+  }
+}
 
 export const metadata: Metadata = {
   title: "ICONS by West Rose Media | Podcast for Entrepreneurs | Business & Branding",
@@ -50,40 +87,8 @@ export const metadata: Metadata = {
   },
 };
 
-const episodes = [
-  {
-    number: 6,
-    title: "Navigating the Future: Embracing AI in Marketing Strategies",
-    date: "November 13, 2025",
-    url: "https://icons-west-rose-media.captivate.fm/",
-  },
-  {
-    number: 5,
-    title: "Tap In. Show Up. Sell Out.",
-    date: "November 5, 2025",
-    url: "https://icons-west-rose-media.captivate.fm/",
-  },
-  {
-    number: 0,
-    title: "Manifest your DREAM Life - Live with Jackie McDonald",
-    date: "November 3, 2025",
-    url: "https://icons-west-rose-media.captivate.fm/",
-  },
-  {
-    number: 5,
-    title: "From Chaos to Creativity: Christine Blosdale's Journey of Reinvention",
-    date: "October 28, 2025",
-    url: "https://icons-west-rose-media.captivate.fm/",
-  },
-  {
-    number: 4,
-    title: "From Loss to Reproductive Justice- Aditi's story.",
-    date: "October 2, 2025",
-    url: "https://icons-west-rose-media.captivate.fm/",
-  },
-];
-
-export default function PodcastPage() {
+export default async function PodcastPage() {
+  const episodes = await getEpisodesFromRss();
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Image */}
@@ -150,7 +155,7 @@ export default function PodcastPage() {
                   <span className="font-medium">Apple Podcasts</span>
                 </a>
                 <a
-                  href="https://feeds.captivate.fm/icons-west-rose-media/"
+                  href="https://api.riverside.fm/hosting/yYZmLPja.rss"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"

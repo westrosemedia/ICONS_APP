@@ -87,16 +87,28 @@ export default function MastermindPage() {
 
       {/* This is for you if */}
       <section className="py-20 px-4 bg-white/5">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            This is for you if
-          </h2>
-          <ul className="text-left space-y-4 text-lg text-white/90">
-            <li>• You have a real offer and a real mission and you are tired of watching women with less talent out-earn you.</li>
-            <li>• You know your mindset is the ceiling and you are ready to blow the roof off.</li>
-            <li>• You have tried the courses, the coaches, the strategies and something is still missing.</li>
-            <li>• You are ready to be in a room that matches where you are going, not where you have been.</li>
-          </ul>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR4185.jpg?alt=media&token=28bf6bd2-861b-459b-bc13-59381159cc0c"
+                alt="Manifesting & Marketing Mastermind - This is for you if"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="max-w-3xl mx-auto text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-12">
+                This is for you if
+              </h2>
+              <ul className="space-y-4 text-lg text-white/90">
+                <li>• You have a real offer and a real mission and you are tired of watching women with less talent out-earn you.</li>
+                <li>• You know your mindset is the ceiling and you are ready to blow the roof off.</li>
+                <li>• You have tried the courses, the coaches, the strategies and something is still missing.</li>
+                <li>• You are ready to be in a room that matches where you are going, not where you have been.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -143,18 +155,38 @@ export default function MastermindPage() {
             </div>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-20">
-            <h3 className="text-3xl font-bold mb-6">Personal Tapping Sessions</h3>
-            <p className="text-lg text-white/80">
-              This is what most masterminds are not doing and it is why most masterminds do not work. Your nervous system is running your business whether you know it or not. We fix the strategy and the inner world that has to hold it.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <h3 className="text-3xl font-bold mb-6">Personal Tapping Sessions</h3>
+              <p className="text-lg text-white/80">
+                This is what most masterminds are not doing and it is why most masterminds do not work. Your nervous system is running your business whether you know it or not. We fix the strategy and the inner world that has to hold it.
+              </p>
+            </div>
+            <div className="relative h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media&token=ec7967fe-a5bb-4911-b537-5ae53ac3d342"
+                alt="Personal Tapping Sessions - Manifesting & Marketing Mastermind"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-20">
-            <h3 className="text-3xl font-bold mb-6">A Room That Raises Your Standard</h3>
-            <p className="text-lg text-white/80">
-              The women in this mastermind are building real things. Being around them will change what you think is possible for you.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div className="relative h-96 rounded-2xl overflow-hidden order-2 md:order-1">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8802.jpg?alt=media&token=4d2ceab7-b80b-4d87-bcb7-e074f4893700"
+                alt="A Room That Raises Your Standard - Manifesting & Marketing Mastermind"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-3xl font-bold mb-6">A Room That Raises Your Standard</h3>
+              <p className="text-lg text-white/80">
+                The women in this mastermind are building real things. Being around them will change what you think is possible for you.
+              </p>
+            </div>
           </div>
 
           {/* Additional Image Section */}
@@ -226,36 +258,58 @@ export default function MastermindPage() {
 
       {/* Investment Section */}
       <section className="py-20 px-4 bg-white/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Investment
-          </h2>
-          <div className="space-y-8">
-            <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
-              <h3 className="text-2xl font-bold mb-2">Mastermind only — $12,000</h3>
-              <p className="text-white/80">
-                Six months of weekly coaching, personal tapping sessions, and a room full of women who are actually doing it.
-              </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4"
+                alt="Investment - Manifesting & Marketing Mastermind"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
-              <h3 className="text-2xl font-bold mb-2">Mastermind + Luxury Retreat — $20,000</h3>
-              <p className="text-white/80">
-                Everything above plus your spot in the Canadian Rockies this October. First women to join get priority rooms.
-              </p>
+            <div className="max-w-4xl mx-auto text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-12">
+                Investment
+              </h2>
+              <div className="space-y-8">
+                <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
+                  <h3 className="text-2xl font-bold mb-2">Mastermind only — $12,000</h3>
+                  <p className="text-white/80">
+                    Six months of weekly coaching, personal tapping sessions, and a room full of women who are actually doing it.
+                  </p>
+                </div>
+                <div className="bg-black/50 rounded-2xl p-8 border border-white/10 text-left">
+                  <h3 className="text-2xl font-bold mb-2">Mastermind + Luxury Retreat — $20,000</h3>
+                  <p className="text-white/80">
+                    Everything above plus your spot in the Canadian Rockies this October. First women to join get priority rooms.
+                  </p>
+                </div>
+                <p className="text-lg text-white/80 italic">
+                  The women who join this mastermind in Q1 will be unrecognizable by Q4. The ones who wait will still be thinking about it.
+                </p>
+              </div>
             </div>
-            <p className="text-lg text-white/80 italic">
-              The women who join this mastermind in Q1 will be unrecognizable by Q4. The ones who wait will still be thinking about it.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Ready to Join Section */}
       <section id="apply" className="py-20 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to Join?
-          </h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden order-2 md:order-1">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
+                alt="Ready to Join - Manifesting & Marketing Mastermind"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="max-w-2xl mx-auto text-center md:text-left order-1 md:order-2">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                Ready to Join?
+              </h2>
           <p className="text-xl text-white/80 mb-8">
             This is for the woman who is done playing small and done pretending she does not know exactly what she is capable of.
           </p>
@@ -273,6 +327,8 @@ export default function MastermindPage() {
           >
             Apply for the Manifesting & Marketing Mastermind
           </Link>
+            </div>
+          </div>
         </div>
       </section>
 
