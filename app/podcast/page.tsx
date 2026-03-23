@@ -116,14 +116,12 @@ export default async function PodcastPage() {
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Latest Episode</h2>
-            <div className="w-full mb-8 rounded-lg overflow-hidden shadow-sm" style={{ height: "200px" }}>
+            <div className="w-full mb-8 rounded-xl overflow-hidden shadow-sm" style={{ height: "232px" }}>
               <iframe
-                style={{ width: "100%", height: "200px", border: "none" }}
-                frameBorder="0"
-                scrolling="no"
-                allow="clipboard-write"
-                seamless
-                src="https://player.captivate.fm/show/04e67684-d3b9-4e5b-a75a-c0919acaf7d4/latest/"
+                style={{ width: "100%", height: "232px", border: "none" }}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                src="https://open.spotify.com/embed/show/4jQBGWzfyyYizEThs3BAeR?utm_source=generator"
                 title="ICONS by West Rose Media Podcast Player"
               />
             </div>
