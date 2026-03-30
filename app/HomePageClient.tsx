@@ -12,12 +12,16 @@ import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 /** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
 const PROBLEM_BG_POSITION = "72% 36%";
 const TWO_OFFERS_BG_POSITION = "68% 20%";
+/** How it works — centered layout; anchor blazer / subject (tweak if crop feels off). */
+const HOW_IT_WORKS_BG_POSITION = "50% 28%";
 
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
   const twoOffersSectionRef = useRef<HTMLElement | null>(null);
+  const howItWorksSectionRef = useRef<HTMLElement | null>(null);
   const [problemParallaxY, setProblemParallaxY] = useState(0);
   const [twoOffersParallaxY, setTwoOffersParallaxY] = useState(0);
+  const [howItWorksParallaxY, setHowItWorksParallaxY] = useState(0);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -39,6 +43,7 @@ export default function HomePageClient() {
     const onScroll = () => {
       updateOffset(problemSectionRef.current, setProblemParallaxY);
       updateOffset(twoOffersSectionRef.current, setTwoOffersParallaxY);
+      updateOffset(howItWorksSectionRef.current, setHowItWorksParallaxY);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -292,51 +297,69 @@ export default function HomePageClient() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="relative section-padding overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={homePageAssets.behindHowItWorks}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-white/85" />
-        </div>
+      <section
+        id="how-it-works"
+        ref={howItWorksSectionRef}
+        className="relative section-padding overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
+          style={{
+            backgroundImage: `url('${homePageAssets.behindHowItWorks}')`,
+            backgroundPosition: HOW_IT_WORKS_BG_POSITION,
+            transform: `translateY(${howItWorksParallaxY}px) scale(1.1)`,
+          }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 pointer-events-none md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 38%, rgba(0,0,0,0.42) 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 pointer-events-none hidden md:block"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.48) 40%, rgba(0,0,0,0.18) 72%, rgba(0,0,0,0.06) 100%)",
+          }}
+          aria-hidden
+        />
         <div className="container-elegant relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-display text-black mb-4">How it works</h2>
-            <p className="text-editorial text-gray-600">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
+            <h2 className="text-display mb-4 text-white drop-shadow">How it works</h2>
+            <p className="text-lg leading-[1.75] text-white/90">
               Whether you are booking a shoot, bringing us to your event, or applying for the full partnership, the process is the same. Clear creative direction from the start. No managing logistics on your end. Content that performs when it lands.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-md">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">01</p>
-              <h3 className="text-xl font-semibold mb-3">Strategy and vision alignment</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-black mb-3">Strategy and vision alignment</h3>
+              <p className="text-gray-700">
                 We align on goals, long-term vision, and how your brand should feel at the next level. Creative direction and visual alignment are set up front so the brand evolves with intention.
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-md">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">02</p>
-              <h3 className="text-xl font-semibold mb-3">Concept and shoot preparation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-black mb-3">Concept and shoot preparation</h3>
+              <p className="text-gray-700">
                 We build the shoot concept and handle logistics like locations, creative direction, and prep so you are not managing details or making it up as you go.
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-md">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">03</p>
-              <h3 className="text-xl font-semibold mb-3">Capture</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-black mb-3">Capture</h3>
+              <p className="text-gray-700">
                 We direct high-end photography and video that makes you look credible, powerful, and established while respecting your time and attention.
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-md">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">04</p>
-              <h3 className="text-xl font-semibold mb-3">Edit, package, and publish</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-black mb-3">Edit, package, and publish</h3>
+              <p className="text-gray-700">
                 We edit the content, package it into post-ready assets, and prepare it for consistent publishing so execution does not fall back on you.
               </p>
             </div>

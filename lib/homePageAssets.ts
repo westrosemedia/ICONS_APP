@@ -20,7 +20,7 @@ export const homePageAssets = {
 
   // 5) The big photo behind the “How it works” boxes
   behindHowItWorks:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FKAY_1477.jpg?alt=media&token=d2d64084-5115-465a-8759-0ad738cebabe",
 
   // 6) The photo behind “Ready to get started?”
   behindReadyToStart:
