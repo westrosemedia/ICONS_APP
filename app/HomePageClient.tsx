@@ -150,11 +150,11 @@ export default function HomePageClient() {
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" aria-hidden />
+        <div className="absolute inset-0 bg-white/92 backdrop-blur-sm md:bg-white/80 md:backdrop-blur-[2px]" aria-hidden />
         <div className="container-elegant relative z-10">
-          <div className="max-w-4xl mx-auto rounded-2xl border border-gray-200 bg-white px-6 py-10 shadow-md md:px-12 md:py-12">
-            <h2 className="text-display text-black mb-8 text-center">Your content is not neutral.</h2>
-            <div className="space-y-6 text-editorial text-gray-800">
+          <div className="max-w-4xl mx-auto rounded-2xl border border-gray-200 bg-white px-5 py-8 shadow-md sm:px-6 sm:py-10 md:px-12 md:py-12">
+            <h2 className="text-display text-black mb-6 text-center text-balance sm:mb-8">Your content is not neutral.</h2>
+            <div className="space-y-6 text-lg leading-[1.7] text-gray-900">
               <p>
                 Every time you post with a brand that does not match your level, you are actively signaling to potential clients and opportunities that you are not ready for the room they are operating in. That signal is silent but it lands every single time.
               </p>
@@ -197,18 +197,18 @@ export default function HomePageClient() {
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" aria-hidden />
+        <div className="absolute inset-0 bg-white/92 backdrop-blur-sm md:bg-white/80 md:backdrop-blur-[2px]" aria-hidden />
         <div className="container-elegant relative z-10">
-          <div className="mx-auto mb-10 max-w-4xl rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-md md:mb-14 md:px-10 md:py-9">
-            <h2 className="text-display text-black text-center">Two ways to work together right now.</h2>
+          <div className="mx-auto mb-10 max-w-4xl rounded-2xl border border-gray-200 bg-white px-5 py-7 shadow-md sm:px-6 sm:py-8 md:mb-14 md:px-10 md:py-9">
+            <h2 className="text-display text-black text-center text-balance">Two ways to work together right now.</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
               <h3 className="text-2xl font-semibold text-black mb-4">Content that finally matches your level.</h3>
-              <p className="text-editorial text-gray-800 mb-6">
+              <p className="mb-6 text-lg leading-[1.7] text-gray-900">
                 Spotlight is for founders who are ready to stop showing up online with a brand that undersells everything they have built. You show up and we handle the rest. Creative direction, visual strategy, and execution built around your brand specifically. What you walk away with is a library of content that makes your authority visible the moment someone lands on your page.
               </p>
-              <p className="text-editorial text-gray-800 mb-8">
+              <p className="mb-8 text-lg leading-[1.7] text-gray-900">
                 This is not a generic shoot. Every image and every frame is built to work for your brand and your ideal client. You leave with content that converts.
               </p>
               <Button asChild size="lg" className="w-full sm:w-auto group">
@@ -220,10 +220,10 @@ export default function HomePageClient() {
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
               <h3 className="text-2xl font-semibold text-black mb-4">Your event deserves content that keeps working.</h3>
-              <p className="text-editorial text-gray-800 mb-6">
+              <p className="mb-6 text-lg leading-[1.7] text-gray-900">
                 You planned the room. You sold the tickets. The transformation your clients experience inside that event is real. Immersion captures all of it in a way that lasts long after the event ends.
               </p>
-              <p className="text-editorial text-gray-800 mb-8">
+              <p className="mb-8 text-lg leading-[1.7] text-gray-900">
                 The content becomes the proof of your authority. It becomes social proof for your next launch. It becomes the thing that makes the next room sell faster because people can see exactly what it looks like to be in a room you lead. Average coverage takes photos. Immersion builds an asset.
               </p>
               <Button asChild size="lg" className="w-full sm:w-auto group">
