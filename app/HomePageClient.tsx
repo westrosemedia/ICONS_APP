@@ -6,8 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const SPOTLIGHT_BOOK = "https://westrosemedia.sproutstudio.com/bookings";
+import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
 export default function HomePageClient() {
   return (
@@ -49,7 +48,7 @@ export default function HomePageClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <a href={SPOTLIGHT_BOOK} target="_blank" rel="noopener noreferrer">
+                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
                   Book a Spotlight Shoot
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -146,7 +145,7 @@ export default function HomePageClient() {
                 This is not a generic shoot. Every image and every frame is built to work for your brand and your ideal client. You leave with content that converts.
               </p>
               <Button asChild size="lg" className="w-full sm:w-auto group">
-                <a href={SPOTLIGHT_BOOK} target="_blank" rel="noopener noreferrer">
+                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
                   Book a Spotlight Shoot
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -323,7 +322,7 @@ export default function HomePageClient() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
-                <a href={SPOTLIGHT_BOOK} target="_blank" rel="noopener noreferrer">
+                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
                   Book a Spotlight Shoot
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>

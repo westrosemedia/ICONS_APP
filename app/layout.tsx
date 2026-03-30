@@ -7,6 +7,7 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MobileNavigation from "@/components/MobileNavigation";
+import WorkWithUsNav from "@/components/WorkWithUsNav";
 import StructuredData from "@/components/StructuredData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
@@ -122,9 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Case studies
                 </Link>
-                <Link href="/packages" className="btn btn-sm">
-                  Work with Us
-                </Link>
+                <WorkWithUsNav />
               </nav>
 
               {/* Mobile Navigation */}

@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { workWithUsItems } from "@/lib/workWithUsLinks";
 
 export default function MobileNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [workWithUsOpen, setWorkWithUsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) setWorkWithUsOpen(false);
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -56,13 +62,53 @@ export default function MobileNavigation() {
             >
               Case studies
             </Link>
-            <Link 
-              href="/packages" 
-              className="btn btn-sm w-fit"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Work with Us
-            </Link>
+            <div className="flex flex-col gap-1">
+              <button
+                type="button"
+                className="btn btn-sm w-fit inline-flex items-center gap-1"
+                aria-expanded={workWithUsOpen}
+                onClick={() => setWorkWithUsOpen((v) => !v)}
+              >
+                Work with Us
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 transition-transform ${workWithUsOpen ? "rotate-180" : ""}`}
+                  aria-hidden
+                />
+              </button>
+              {workWithUsOpen ? (
+                <div className="flex flex-col gap-2 border-l-2 border-gray-200 pl-3 ml-1">
+                  {workWithUsItems.map((item) =>
+                    item.external ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-600 hover:text-black py-1"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setWorkWithUsOpen(false);
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="text-sm text-gray-600 hover:text-black py-1"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setWorkWithUsOpen(false);
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    ),
+                  )}
+                </div>
+              ) : null}
+            </div>
           </nav>
         </div>
       )}
