@@ -64,23 +64,23 @@ export default function AboutPage() {
                 <span className="text-orange-500" style={{color: '#ff914d'}}>Stephanie Rose</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Founder of West Rose Media, a high-end content studio for entrepreneurs who need a serious online presence and want it handled properly.
+                Stephanie Rose is the founder and creative director of West Rose Media, a premium brand content studio based in Calgary, Alberta.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Based in Calgary and working regularly in Vancouver and Toronto, I create photography, video, and done-for-you content systems that build trust and drive inbound demand.
+                West Rose Media produces brand photography and video for established founders. Spotlight is a one-time shoot with calendars in Calgary, Vancouver, and Toronto. Immersion covers masterminds, conferences, and retreats. ICON Brand Partnership is the monthly retainer where strategy, production, and publishing are handled end to end. Stephanie leads strategy and creative direction on every client account.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/apply"
+                  href="/packages"
                   className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
                 >
-                  Work With Me
+                  Work with Us
                 </Link>
                 <Link
-                  href="/packages"
+                  href="/apply"
                   className="inline-block border-2 border-black text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-black hover:text-white transition-colors"
                 >
-                  View Packages
+                  Apply for September (ICON)
                 </Link>
               </div>
             </div>
@@ -258,17 +258,17 @@ export default function AboutPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/apply"
+              href="/packages"
               className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
             >
-              Apply for the ICON Brand Partnership
+              Work with Us
             </Link>
             <Link
-              href="/packages"
+              href="/apply"
               className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
               style={{backgroundColor: '#ff914d'}}
             >
-              View Packages
+              Apply for September (ICON)
             </Link>
           </div>
         </div>

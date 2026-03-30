@@ -1,91 +1,87 @@
 export default function PackagesStructuredData() {
+  const provider = {
+    "@type": "Organization",
+    name: "West Rose Media",
+    url: "https://westrosemedia.com",
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Luxury Personal Branding Photography",
-    "name": "West Rose Media Photography Packages",
-    "description": "Professional brand photography and content creation packages for entrepreneurs and business owners. Services include personal branding sessions, headshots, content days, social media visuals, and ongoing brand partnership.",
-    "provider": {
-      "@type": "Organization",
-      "name": "West Rose Media",
-      "url": "https://westrosemedia.com"
-    },
-    "areaServed": [
+    "@type": "ItemList",
+    itemListElement: [
       {
-        "@type": "Country",
-        "name": "Canada"
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "Service",
+          name: "Spotlight brand photography",
+          description:
+            "One-time brand photography and vertical video for founders in Calgary, Vancouver, and Toronto.",
+          provider,
+          areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada"],
+          offers: {
+            "@type": "Offer",
+            price: "1921",
+            priceCurrency: "CAD",
+            url: "https://westrosemedia.sproutstudio.com/bookings",
+          },
+        },
       },
       {
-        "@type": "State",
-        "name": "Alberta"
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "Service",
+          name: "Immersion event coverage",
+          description: "Event and mastermind photography and video coverage for organizers and coaches.",
+          provider,
+          areaServed: [{ "@type": "Country", name: "Canada" }],
+          offers: {
+            "@type": "Offer",
+            price: "6000",
+            priceCurrency: "CAD",
+            url: "https://westrosemedia.com/book/immersion",
+          },
+        },
       },
       {
-        "@type": "State",
-        "name": "British Columbia"
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "Service",
+          name: "ICON Brand Partnership",
+          description:
+            "Monthly retainer: strategy, creative direction, photography, video, editing, and publishing.",
+          provider,
+          areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+          offers: {
+            "@type": "Offer",
+            price: "5000",
+            priceCurrency: "CAD",
+            url: "https://westrosemedia.com/apply",
+          },
+        },
       },
-      {
-        "@type": "State",
-        "name": "Ontario"
-      }
     ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Photography Packages",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Spotlight Package",
-            "description": "One-time brand photography session"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "WRM Lite Package",
-            "description": "Monthly subscription for ongoing content creation"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Immersion Package",
-            "description": "Event coverage with participant add-ons"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "ICON Package",
-            "description": "Premium package with ICON Society membership"
-          }
-        }
-      ]
-    },
-    "keywords": "brand photography, personal branding, business photography, headshots, content creation, social media photography, Calgary photographer, Toronto photographer, Vancouver photographer"
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://westrosemedia.com"
+        position: 1,
+        name: "Home",
+        item: "https://westrosemedia.com",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Packages",
-        "item": "https://westrosemedia.com/packages"
-      }
-    ]
+        position: 2,
+        name: "Packages",
+        item: "https://westrosemedia.com/packages",
+      },
+    ],
   };
 
   return (
@@ -105,4 +101,3 @@ export default function PackagesStructuredData() {
     </>
   );
 }
-

@@ -8,6 +8,10 @@ export interface PackageSummary {
   highlights: Array<{ label: string }>;
   imageUrl: string;
   ctaHref: string;
+  /** Shown directly under the package title (availability, waitlist status) */
+  noteBelowTitle?: string;
+  /** "Who this is for" line for AI clarity and positioning */
+  whoFor?: string;
 }
 
 export interface Package {

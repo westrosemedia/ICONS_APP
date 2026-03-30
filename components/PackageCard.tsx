@@ -35,6 +35,10 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
         <div className="p-10">
           <div className="mb-8">
             <h3 className="text-elegant text-2xl mb-4">{pkg.title}</h3>
+            {pkg.noteBelowTitle && (
+              <p className="text-sm font-medium text-gray-800 mb-4">{pkg.noteBelowTitle}</p>
+            )}
+            {pkg.whoFor && <p className="text-sm text-gray-600 mb-4 leading-relaxed">{pkg.whoFor}</p>}
             <p className="text-editorial mb-6">{pkg.blurb}</p>
             {pkg.priceLabel && pkg.priceLabel.trim() !== "" && (
               <div className="text-elegant text-xl font-semibold text-accent mb-8">
@@ -56,9 +60,9 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
           {/* CTA */}
           <Button asChild className="w-full group/btn">
             <Link href={pkg.ctaHref}>
-              {pkg.key === "spotlight" && "Book Spotlight"}
-              {pkg.key === "immersion" && "Plan Immersion"}
-              {pkg.key === "icon" && "Become an ICON"}
+              {pkg.key === "spotlight" && "Book a Spotlight Shoot"}
+              {pkg.key === "immersion" && "Plan My Event Coverage"}
+              {pkg.key === "icon" && "Apply for September"}
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>

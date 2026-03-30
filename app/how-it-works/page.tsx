@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="group">
-                <Link href="/apply">Apply to work with us</Link>
+                <Link href="/packages">Work with Us</Link>
               </Button>
             </div>
           </div>
@@ -134,14 +134,19 @@ export default function HowItWorksPage() {
           </div>
 
           <section className="mt-16 rounded-3xl border border-black/10 bg-white p-8 sm:p-10 text-center shadow-sm">
-            <h2 className="text-2xl font-semibold mb-4 text-black">Apply to work with us</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-black">Next steps</h2>
             <p className="text-editorial text-gray-700 mb-8">
-              Applications for the ICON Brand Partnership are reviewed carefully. If the partnership is aligned, you will hear from us with next steps.
+              Applications for the ICON Brand Partnership are reviewed carefully. If the partnership is aligned, you will hear from us with next steps. For Spotlight or Immersion, start on the packages page.
             </p>
-            <Button asChild size="lg" className="group">
-              <Link href="/apply">Apply to work with us</Link>
-            </Button>
-            <Button asChild size="lg" className="group mt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="group">
+                <Link href="/packages">Work with Us</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="group">
+                <Link href="/apply">Apply for September (ICON)</Link>
+              </Button>
+            </div>
+            <Button asChild size="lg" variant="ghost" className="group mt-4">
               <Link href="/case-studies">View case studies</Link>
             </Button>
           </section>

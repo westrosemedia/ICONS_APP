@@ -57,11 +57,11 @@ export default function MobileNavigation() {
               Case studies
             </Link>
             <Link 
-              href="/apply" 
+              href="/packages" 
               className="btn btn-sm w-fit"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Apply for the ICON Brand Partnership
+              Work with Us
             </Link>
           </nav>
         </div>

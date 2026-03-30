@@ -196,7 +196,7 @@ export default function JenEventPlannerCaseStudyPage() {
             If you are a founder ready to turn visibility into opportunity without managing content yourself, you can apply to work with us.
           </p>
           <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
-            <Link href="/apply">Apply to work with us</Link>
+            <Link href="/packages">Work with Us</Link>
           </Button>
         </div>
       </section>

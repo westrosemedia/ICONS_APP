@@ -4,8 +4,8 @@ export default function StructuredData() {
     "@type": "Person",
     "name": "Stephanie Rose",
     "alternateName": "Stephanie Rose West Rose Media",
-    "jobTitle": "Luxury Brand Photographer & Social Media Strategist",
-    "description": "Calgary's premier luxury brand photographer and social media strategist specializing in personal branding for entrepreneurs across Canada",
+    "jobTitle": "Founder, Creative Director",
+    "description": "Founder of West Rose Media. Leads strategy and creative direction for brand photography, event coverage, and the ICON Brand Partnership for founders across Canada.",
     "url": "https://westrosemedia.com",
     "image": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
     "address": {

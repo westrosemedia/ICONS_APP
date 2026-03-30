@@ -29,9 +29,9 @@ const cormorantGaramond = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: "West Rose Media | Luxury Brand Photographer & Business Coach | Calgary, Toronto, Vancouver",
-  description: "West Rose Media provides luxury personal branding photography, content strategy, and business coaching for female entrepreneurs across Canada. Founded by Stephanie Rose in Calgary, Alberta. Transform your brand with professional photography, social media strategy, mastermind retreats, and the ICONS podcast. Serving Calgary, Toronto, Vancouver, and nationwide.",
-  keywords: "Stephanie Rose, brand photographer Calgary, luxury brand photography, social media strategist, personal branding photographer, business photography Calgary, content creation, brand strategy, entrepreneur photography, Calgary photographer, Toronto photographer, Vancouver photographer, social media help, brand photoshoot, professional headshots Calgary, business branding, content marketing, luxury lifestyle photography, Canadian entrepreneurs, West Rose Media, ICON Society, mastermind retreats, ICONS podcast, business coach Canada, personal branding Canada",
+  title: "West Rose Media | Brand Photography + Event Coverage | Calgary, Vancouver, Toronto",
+  description: "West Rose Media produces brand photography and video for established founders across Canada. Book a one-time Spotlight shoot or bring us to your next mastermind or conference event. Based in Calgary, serving Vancouver, Toronto, and beyond.",
+  keywords: "Stephanie Rose, brand photographer Calgary, event photographer Vancouver, Toronto brand photography, personal branding photographer, mastermind content coverage, West Rose Media, ICON Brand Partnership, Canadian founders",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -45,8 +45,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "West Rose Media | Luxury Brand Photographer & Business Coach | Canada",
-    description: "Luxury personal branding photography, content strategy, and business coaching for female entrepreneurs across Canada. Professional brand photography, social media strategy, mastermind retreats, and the ICONS podcast.",
+    title: "West Rose Media | Brand Photography + Event Coverage | Canada",
+    description: "Brand photography and video for established founders. Spotlight shoots, Immersion event coverage, and ICON Brand Partnership. Calgary, Vancouver, Toronto.",
     url: 'https://westrosemedia.com',
     siteName: 'West Rose Media',
     images: [
@@ -62,8 +62,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stephanie Rose | Luxury Brand Photographer & Social Media Strategist',
-    description: 'Calgary\'s premier luxury brand photographer and social media strategist. Professional brand photography and content strategy for entrepreneurs.',
+    title: 'West Rose Media | Brand Photography + Event Coverage',
+    description: 'Brand photography and video for established founders across Canada. Calgary, Vancouver, Toronto.',
     images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
     creator: '@westrosemedia',
   },
@@ -122,8 +122,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Case studies
                 </Link>
-                <Link href="/apply" className="btn btn-sm">
-                  Apply for the ICON Brand Partnership
+                <Link href="/packages" className="btn btn-sm">
+                  Work with Us
                 </Link>
               </nav>
 

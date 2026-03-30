@@ -6,9 +6,11 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "spotlight",
     title: "Spotlight",
+    noteBelowTitle: "Available now. Calgary, Vancouver, and Toronto calendars are live.",
+    whoFor: "Spotlight is for founders who need high-quality brand content without a monthly commitment.",
     blurb:
-      "A focused 90 minute shoot that delivers scroll stopping content fast. Calgary, Vancouver, and Toronto calendars are live. Other cities by quote.",
-    priceLabel: "$1,821 CAD",
+      "A focused 90 minute shoot that delivers scroll stopping content fast. Other cities by quote.",
+    priceLabel: "$1,921 CAD",
     highlights: [
       { label: "20 photos and 3 vertical videos" },
       { label: "Photos in 1 week, video in 10 days" },
@@ -29,10 +31,13 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "icon",
     title: iconCopy.heroTitle,
+    noteBelowTitle: "ICON Brand Partnership spots are full for 2026. September applications are open.",
+    whoFor:
+      "ICON Brand Partnership is for established founders who want one team managing their entire content operation on an ongoing monthly basis.",
     blurb: iconCopy.intro,
     priceLabel: "From $5,000 CAD per month",
     highlights: iconCopy.bullets.map(bullet => ({ label: bullet })),
     imageUrl: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR1984.jpg?alt=media&token=f12f7493-bda1-48ff-a343-31502519d648",
-    ctaHref: "/book/icon"
+    ctaHref: "/apply"
   }
 ];
