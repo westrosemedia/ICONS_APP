@@ -72,7 +72,7 @@ export default function PackagesPage() {
               Ready for the Next Level?
             </h2>
             <p className="text-editorial text-white/90 max-w-3xl mx-auto mb-12">
-              Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind. Marketing strategy that converts. Manifestation that moves money. Luxury retreat in the Canadian Rockies October 2026.
+              Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind. Marketing strategy that converts. Manifestation that moves money. Includes luxury content retreat October 16-18 in Banff AB, Canada.
             </p>
           </motion.div>
 
@@ -89,7 +89,7 @@ export default function PackagesPage() {
                   <h3 className="text-2xl font-bold mb-4 text-[#c1ff72]">What's Included:</h3>
                   <ul className="space-y-3 text-white/90">
                     <li>• 6 months of weekly group coaching</li>
-                    <li>• Luxury retreat in Kelowna BC</li>
+                    <li>• Luxury content retreat October 16-18 in Banff AB, Canada</li>
                     <li>• Tapping therapy for emotional mastery</li>
                     <li>• Content strategy and creation</li>
                     <li>• 1:1 sessions with both coaches</li>
