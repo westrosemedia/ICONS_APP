@@ -9,11 +9,9 @@ import { ArrowRight } from "lucide-react";
 import { homePageAssets } from "@/lib/homePageAssets";
 import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
-/** Vertical position for “Your content is not neutral.” background (face in frame). Percent from top. */
-const PROBLEM_BG_FOCUS_Y = "30%";
-
-/** “Two ways…” section — focal area in top third of image */
-const TWO_OFFERS_BG_FOCUS_Y = "18%";
+/** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
+const PROBLEM_BG_POSITION = "72% 36%";
+const TWO_OFFERS_BG_POSITION = "68% 20%";
 
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
@@ -145,16 +143,34 @@ export default function HomePageClient() {
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
           style={{
             backgroundImage: `url('${homePageAssets.behindProblem}')`,
-            backgroundPosition: `center ${PROBLEM_BG_FOCUS_Y}`,
+            backgroundPosition: PROBLEM_BG_POSITION,
             transform: `translateY(${problemParallaxY}px) scale(1.1)`,
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-white/92 backdrop-blur-sm md:bg-white/80 md:backdrop-blur-[2px]" aria-hidden />
+        {/* Dark “safe zone” for text (like split editorial layouts): strong on mobile, angled on desktop */}
+        <div
+          className="absolute inset-0 pointer-events-none md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.78) 42%, rgba(0,0,0,0.48) 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 pointer-events-none hidden md:block"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.82) 24%, rgba(0,0,0,0.42) 46%, rgba(0,0,0,0.08) 62%, transparent 76%)",
+          }}
+          aria-hidden
+        />
         <div className="container-elegant relative z-10">
-          <div className="max-w-4xl mx-auto rounded-2xl border border-gray-200 bg-white px-5 py-8 shadow-md sm:px-6 sm:py-10 md:px-12 md:py-12">
-            <h2 className="text-display text-black mb-6 text-center text-balance sm:mb-8">Your content is not neutral.</h2>
-            <div className="space-y-6 text-lg leading-[1.7] text-gray-900">
+          <div className="max-w-2xl text-left">
+            <h2 className="text-display mb-6 text-balance text-white drop-shadow sm:mb-8">
+              Your content is not neutral.
+            </h2>
+            <div className="space-y-6 text-lg leading-[1.75] text-white/90">
               <p>
                 Every time you post with a brand that does not match your level, you are actively signaling to potential clients and opportunities that you are not ready for the room they are operating in. That signal is silent but it lands every single time.
               </p>
@@ -192,16 +208,31 @@ export default function HomePageClient() {
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
           style={{
             backgroundImage: `url('${homePageAssets.behindTwoOffers}')`,
-            backgroundPosition: `center ${TWO_OFFERS_BG_FOCUS_Y}`,
+            backgroundPosition: TWO_OFFERS_BG_POSITION,
             transform: `translateY(${twoOffersParallaxY}px) scale(1.1)`,
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-white/92 backdrop-blur-sm md:bg-white/80 md:backdrop-blur-[2px]" aria-hidden />
+        <div
+          className="absolute inset-0 pointer-events-none md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.35) 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 pointer-events-none hidden md:block"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 32%, rgba(0,0,0,0.2) 55%, transparent 72%)",
+          }}
+          aria-hidden
+        />
         <div className="container-elegant relative z-10">
-          <div className="mx-auto mb-10 max-w-4xl rounded-2xl border border-gray-200 bg-white px-5 py-7 shadow-md sm:px-6 sm:py-8 md:mb-14 md:px-10 md:py-9">
-            <h2 className="text-display text-black text-center text-balance">Two ways to work together right now.</h2>
-          </div>
+          <h2 className="text-display mb-10 max-w-3xl text-balance text-left text-white drop-shadow md:mb-14">
+            Two ways to work together right now.
+          </h2>
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
               <h3 className="text-2xl font-semibold text-black mb-4">Content that finally matches your level.</h3>
