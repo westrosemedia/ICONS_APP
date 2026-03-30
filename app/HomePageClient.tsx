@@ -12,23 +12,35 @@ import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 /** Vertical position for “Your content is not neutral.” background (face in frame). Percent from top. */
 const PROBLEM_BG_FOCUS_Y = "30%";
 
+/** “Two ways…” section — focal area in top third of image */
+const TWO_OFFERS_BG_FOCUS_Y = "18%";
+
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
+  const twoOffersSectionRef = useRef<HTMLElement | null>(null);
   const [problemParallaxY, setProblemParallaxY] = useState(0);
+  const [twoOffersParallaxY, setTwoOffersParallaxY] = useState(0);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
 
-    const onScroll = () => {
-      const el = problemSectionRef.current;
+    const updateOffset = (
+      el: HTMLElement | null,
+      setter: React.Dispatch<React.SetStateAction<number>>,
+    ) => {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
       if (rect.bottom < 0 || rect.top > vh) return;
       const sectionMid = rect.top + rect.height / 2;
       const viewportMid = vh / 2;
-      setProblemParallaxY((sectionMid - viewportMid) * 0.15);
+      setter((sectionMid - viewportMid) * 0.15);
+    };
+
+    const onScroll = () => {
+      updateOffset(problemSectionRef.current, setProblemParallaxY);
+      updateOffset(twoOffersSectionRef.current, setTwoOffersParallaxY);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -172,8 +184,21 @@ export default function HomePageClient() {
       </section>
 
       {/* Two offers */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-elegant">
+      <section
+        ref={twoOffersSectionRef}
+        className="relative section-padding overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
+          style={{
+            backgroundImage: `url('${homePageAssets.behindTwoOffers}')`,
+            backgroundPosition: `center ${TWO_OFFERS_BG_FOCUS_Y}`,
+            transform: `translateY(${twoOffersParallaxY}px) scale(1.1)`,
+          }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-white/86" aria-hidden />
+        <div className="container-elegant relative z-10">
           <h2 className="text-display text-black mb-12 md:mb-16 text-center">Two ways to work together right now.</h2>
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-sm">
