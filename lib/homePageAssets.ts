@@ -28,5 +28,5 @@ export const homePageAssets = {
 
   // 7) The photo behind the Mastermind section at the bottom
   behindMastermind:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4770.jpg?alt=media&token=cf621cab-8ae4-4f0d-8639-d60d5cf2cbb6",
 } as const;
