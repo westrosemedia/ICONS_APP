@@ -24,7 +24,7 @@ export const homePageAssets = {
 
   // 6) The photo behind “Ready to get started?”
   behindReadyToStart:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FKAY_2401.jpg?alt=media&token=f59d2da6-c4c7-4130-86f6-36191fd1ddd9",
 
   // 7) The photo behind the Mastermind section at the bottom
   behindMastermind:
