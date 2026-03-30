@@ -1,14 +1,41 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { homePageAssets } from "@/lib/homePageAssets";
 import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
+/** Vertical position for “Your content is not neutral.” background (face in frame). Percent from top. */
+const PROBLEM_BG_FOCUS_Y = "30%";
+
 export default function HomePageClient() {
+  const problemSectionRef = useRef<HTMLElement | null>(null);
+  const [problemParallaxY, setProblemParallaxY] = useState(0);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+
+    const onScroll = () => {
+      const el = problemSectionRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      if (rect.bottom < 0 || rect.top > vh) return;
+      const sectionMid = rect.top + rect.height / 2;
+      const viewportMid = vh / 2;
+      setProblemParallaxY((sectionMid - viewportMid) * 0.15);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main className="w-full bg-white text-black">
       {/* Hero */}
@@ -16,13 +43,13 @@ export default function HomePageClient() {
         <div className="relative min-h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden">
           <video
             className="absolute inset-0 w-full h-full object-cover z-0"
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Banner.mp4?alt=media"
+            src={homePageAssets.topVideo}
             autoPlay
             loop
             muted
             playsInline
             preload="none"
-            poster="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_026.jpg?alt=media&token=35b646af-2e21-47e2-84ec-91543d8f9910"
+            poster={homePageAssets.topVideoStill}
             style={{
               width: "100%",
               height: "100%",
@@ -98,8 +125,21 @@ export default function HomePageClient() {
       </section>
 
       {/* Problem */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-elegant">
+      <section
+        ref={problemSectionRef}
+        className="relative section-padding overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
+          style={{
+            backgroundImage: `url('${homePageAssets.behindProblem}')`,
+            backgroundPosition: `center ${PROBLEM_BG_FOCUS_Y}`,
+            transform: `translateY(${problemParallaxY}px) scale(1.1)`,
+          }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-white/86" aria-hidden />
+        <div className="container-elegant relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display text-black mb-8 text-center">Your content is not neutral.</h2>
             <div className="space-y-6 text-editorial text-gray-700">
@@ -197,7 +237,7 @@ export default function HomePageClient() {
       <section id="how-it-works" className="relative section-padding overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4"
+            src={homePageAssets.behindHowItWorks}
             alt=""
             fill
             className="object-cover"
@@ -300,7 +340,7 @@ export default function HomePageClient() {
       <section className="relative section-padding overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797"
+            src={homePageAssets.behindReadyToStart}
             alt=""
             fill
             className="object-cover"
@@ -400,8 +440,7 @@ export default function HomePageClient() {
         <div
           className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
           style={{
-            backgroundImage:
-              "url('https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285')",
+            backgroundImage: `url('${homePageAssets.behindMastermind}')`,
             backgroundPosition: "center center",
             transform: "scale(1.05)",
           }}
