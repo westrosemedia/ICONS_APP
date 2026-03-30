@@ -543,7 +543,7 @@ export default function HomePageClient() {
                 A 6-month Manifesting & Marketing Mastermind experience. Marketing strategy that converts. Manifestation that moves money. Stephanie and Jackie. One room. Six months.
               </p>
               <p className="text-editorial text-white/90">
-                Includes luxury content retreat March 6-9th in Kelowna BC, Canada.
+                Includes luxury content retreat October 16-18 in Banff AB, Canada.
               </p>
             </div>
             <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
