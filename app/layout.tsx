@@ -145,6 +145,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <SocialMediaLinks />
                 </div>
                 <p className="text-gray-600 text-sm">
+                  <a
+                    href="tel:+15876095021"
+                    className="hover:text-black transition-colors"
+                  >
+                    +1 (587) 609-5021
+                  </a>
+                </p>
+                <p className="text-gray-600 text-sm mt-1">
                   © {new Date().getFullYear()} West Rose Media
                 </p>
                 <div className="flex flex-wrap gap-6 mt-2">
