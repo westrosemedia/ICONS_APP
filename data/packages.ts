@@ -31,7 +31,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "icon",
     title: iconCopy.heroTitle,
-    noteBelowTitle: "ICON Brand Partnership spots are full for 2026. September applications are open.",
+    noteBelowTitle: "One ICON Brand Partnership spot remains for 2026. Onboarding in November.",
     whoFor:
       "ICON Brand Partnership is for established founders who want one team managing their entire content operation on an ongoing monthly basis.",
     blurb: iconCopy.intro,

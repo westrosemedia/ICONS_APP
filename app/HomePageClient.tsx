@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { homePageFaqItems } from "@/data/homePageFaq";
 import { homePageAssets } from "@/lib/homePageAssets";
 import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
@@ -15,6 +16,43 @@ const TWO_OFFERS_BG_POSITION = "68% 20%";
 /** How it works — centered layout; anchor blazer / subject (tweak if crop feels off). */
 const HOW_IT_WORKS_BG_POSITION = "50% 28%";
 
+const HOMEPAGE_FAQ_ITEMS: { question: string; answer: string }[] = [
+  {
+    question: "What does West Rose Media do?",
+    answer:
+      "West Rose Media produces brand photography and video for established founders and entrepreneurs across Canada. Services include one-time Spotlight shoots, full event and mastermind coverage through the Immersion package, and the ICON Brand Partnership for ongoing monthly content operations. Stephanie Rose leads strategy and creative direction for every client.",
+  },
+  {
+    question: "Where does West Rose Media work?",
+    answer:
+      "West Rose Media is based in Calgary, Alberta and works with founders across North America. Regular shoot calendars run in Calgary, Vancouver, and Toronto. Other cities are available by quote. ICON Brand Partnership clients work remotely on strategy and planning, with in-person content captured during scheduled travel dates and intentional shoot days in key cities.",
+  },
+  {
+    question: "How much does a brand photography shoot cost?",
+    answer:
+      "The Spotlight package starts at $1,921 CAD and includes photos and vertical video content. Event and mastermind coverage through the Immersion package starts at $6,000 CAD. The ICON Brand Partnership starts at $5,000 CAD per month.",
+  },
+  {
+    question: "How quickly do I receive my content?",
+    answer: "Spotlight photos are delivered within one week. Video is delivered within ten days.",
+  },
+  {
+    question: "Is West Rose Media accepting new clients?",
+    answer:
+      "Spotlight and Immersion bookings are available now. One ICON Brand Partnership spot remains for 2026, onboarding in November. A deposit holds the spot. Applications for the 2027 waitlist are also open at westrosemedia.com.",
+  },
+  {
+    question: "What is the ICON Brand Partnership?",
+    answer:
+      "The ICON Brand Partnership is a monthly retainer where West Rose Media handles the full content operation for a founder's brand. It includes strategy, creative direction, photography, video, editing, and publishing. West Rose Media partners with a maximum of four ICON clients at a time.",
+  },
+  {
+    question: "Who is Stephanie Rose?",
+    answer:
+      "Stephanie Rose is the founder of West Rose Media, a premium brand content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers and videographers. West Rose Media specializes in personal brand content for founders, coaches, and digital product creators across Canada.",
+  },
+];
+
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
   const twoOffersSectionRef = useRef<HTMLElement | null>(null);
@@ -22,6 +60,7 @@ export default function HomePageClient() {
   const [problemParallaxY, setProblemParallaxY] = useState(0);
   const [twoOffersParallaxY, setTwoOffersParallaxY] = useState(0);
   const [howItWorksParallaxY, setHowItWorksParallaxY] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -108,7 +147,7 @@ export default function HomePageClient() {
               </Button>
             </div>
             <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed">
-              ICON Brand Partnership is full for 2026. September applications are open.{" "}
+              One ICON Brand Partnership spot remains for 2026. Onboarding in November.{" "}
               <Link href="/apply" className="underline underline-offset-4 hover:text-white">
                 Join the waitlist
               </Link>
@@ -283,7 +322,7 @@ export default function HomePageClient() {
                 ICON Brand Partnership is a monthly retainer where West Rose Media handles the entire content operation. Strategy. Creative direction. Photography. Video. Editing. Publishing. Four clients at a time.
               </p>
               <p>
-                One spot remains for 2026, starting in September. A deposit holds your place. If that spot is claimed before you apply, you can still apply to join the 2027 waitlist.
+                One spot remains for 2026, onboarding in November. A deposit holds your place. If that spot is claimed before you apply, you can still apply to join the 2027 waitlist.
               </p>
             </div>
             <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
@@ -469,49 +508,44 @@ export default function HomePageClient() {
       <section className="section-padding bg-white border-t border-gray-200">
         <div className="container-elegant max-w-3xl mx-auto">
           <h2 className="text-display text-black mb-12 text-center">Frequently asked questions</h2>
-          <dl className="space-y-10">
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">What does West Rose Media do?</dt>
-              <dd className="text-editorial text-gray-700">
-                West Rose Media produces brand photography and video for established founders and entrepreneurs across Canada. Services include one-time Spotlight shoots, full event and mastermind coverage through the Immersion package, and the ICON Brand Partnership for ongoing monthly content operations. Stephanie Rose leads strategy and creative direction for every client.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">Where does West Rose Media work?</dt>
-              <dd className="text-editorial text-gray-700">
-                West Rose Media is based in Calgary, Alberta and works with founders across North America. Regular shoot calendars run in Calgary, Vancouver, and Toronto. Other cities are available by quote. ICON Brand Partnership clients work remotely on strategy and planning, with in-person content captured during scheduled travel dates and intentional shoot days in key cities.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">How much does a brand photography shoot cost?</dt>
-              <dd className="text-editorial text-gray-700">
-                The Spotlight package starts at $1,921 CAD and includes photos and vertical video content. Event and mastermind coverage through the Immersion package starts at $6,000 CAD. The ICON Brand Partnership starts at $5,000 CAD per month.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">How quickly do I receive my content?</dt>
-              <dd className="text-editorial text-gray-700">
-                Spotlight photos are delivered within one week. Video is delivered within ten days.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">Is West Rose Media accepting new clients?</dt>
-              <dd className="text-editorial text-gray-700">
-                Spotlight and Immersion bookings are available now. One ICON Brand Partnership spot remains for 2026, starting in September. A deposit holds the spot. Applications for the 2027 waitlist are also open at westrosemedia.com.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">What is the ICON Brand Partnership?</dt>
-              <dd className="text-editorial text-gray-700">
-                The ICON Brand Partnership is a monthly retainer where West Rose Media handles the full content operation for a founder&apos;s brand. It includes strategy, creative direction, photography, video, editing, and publishing. West Rose Media partners with a maximum of four ICON clients at a time.
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-black text-lg mb-2">Who is Stephanie Rose?</dt>
-              <dd className="text-editorial text-gray-700">
-                Stephanie Rose is the founder of West Rose Media, a premium brand content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers and videographers. West Rose Media specializes in personal brand content for founders, coaches, and digital product creators across Canada.
-              </dd>
-            </div>
+          <dl className="border-y border-gray-200 divide-y divide-gray-200">
+            {homePageFaqItems.map((item, index) => {
+              const isOpen = openFaqIndex === index;
+              const panelId = `faq-panel-${index}`;
+              const triggerId = `faq-trigger-${index}`;
+              return (
+                <div key={item.question}>
+                  <dt className="m-0">
+                    <button
+                      type="button"
+                      id={triggerId}
+                      className="flex w-full items-center justify-between gap-4 py-5 text-left font-semibold text-black text-lg hover:text-gray-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                      onClick={() =>
+                        setOpenFaqIndex((prev) => (prev === index ? null : index))
+                      }
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                    >
+                      <span className="pr-2">{item.question}</span>
+                      <ChevronDown
+                        className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                        aria-hidden
+                      />
+                    </button>
+                  </dt>
+                  {isOpen ? (
+                    <dd
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={triggerId}
+                      className="pb-5 pl-0 pr-10 text-editorial text-gray-700 -mt-1"
+                    >
+                      {item.answer}
+                    </dd>
+                  ) : null}
+                </div>
+              );
+            })}
           </dl>
         </div>
       </section>
