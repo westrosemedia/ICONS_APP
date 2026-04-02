@@ -63,11 +63,11 @@ export default function AboutPage() {
                 <br />
                 <span className="text-orange-500" style={{color: '#ff914d'}}>Stephanie Rose</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Stephanie Rose is the founder and creative director of West Rose Media, a premium brand content studio based in Calgary, Alberta.
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                West Rose Media produces brand photography and video for established founders. Spotlight is a one-time shoot with calendars in Calgary, Vancouver, and Toronto. Immersion covers masterminds, conferences, and retreats. ICON Brand Partnership is the monthly retainer where strategy, production, and publishing are handled end to end. Stephanie leads strategy and creative direction on every client account.
+                West Rose Media&apos;s services include the Spotlight shoot, Immersion event coverage, and the ICON Brand Partnership, a done-for-you monthly content operation. West Rose Media serves clients in Calgary, Vancouver, Toronto, and across North America.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
