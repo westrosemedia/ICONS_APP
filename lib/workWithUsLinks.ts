@@ -16,7 +16,7 @@ export const workWithUsItems: WorkWithUsItem[] = [
   },
   { label: "Event Coverage", href: "/book/immersion", external: false },
   {
-    label: "ICON Partnership (September)",
+    label: "ICON Partnership (2026)",
     href: "/apply",
     external: false,
   },

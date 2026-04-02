@@ -495,7 +495,7 @@ export default function HomePageClient() {
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black group">
                 <Link href="/apply">
-                  Apply for September (ICON)
+                  Apply for ICON Partnership
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>

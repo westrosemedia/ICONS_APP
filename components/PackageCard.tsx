@@ -62,7 +62,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
             <Link href={pkg.ctaHref}>
               {pkg.key === "spotlight" && "Book a Spotlight Shoot"}
               {pkg.key === "immersion" && "Plan My Event Coverage"}
-              {pkg.key === "icon" && "Apply for September"}
+              {pkg.key === "icon" && "Apply for ICON Partnership"}
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
