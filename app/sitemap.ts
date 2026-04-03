@@ -1,8 +1,16 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from '@/data/blogPosts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://westrosemedia.com'
-  
+
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: 'monthly',
+    priority: 0.65,
+  }))
+
   return [
     {
       url: baseUrl,
@@ -94,6 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
+    ...blogEntries,
     {
       url: `${baseUrl}/login`,
       lastModified: new Date(),

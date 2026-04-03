@@ -62,6 +62,13 @@ export default function MobileNavigation() {
             >
               Case studies
             </Link>
+            <Link 
+              href="/blog" 
+              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
             <div className="flex flex-col gap-1">
               <button
                 type="button"

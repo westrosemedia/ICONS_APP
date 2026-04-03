@@ -123,6 +123,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
                   Case studies
                 </Link>
+                <Link href="/blog" className="text-gray-600 hover:text-black transition-colors duration-200">
+                  Blog
+                </Link>
                 <WorkWithUsNav />
               </nav>
 
@@ -158,6 +161,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="flex flex-wrap gap-6 mt-2">
                   <Link href="/case-studies" className="text-gray-500 hover:text-black text-sm transition-colors">
                     Case studies
+                  </Link>
+                  <Link href="/blog" className="text-gray-500 hover:text-black text-sm transition-colors">
+                    Blog
                   </Link>
                   <Link href="/packages" className="text-gray-500 hover:text-black text-sm transition-colors">
                     Packages
