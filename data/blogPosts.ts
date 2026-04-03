@@ -1,14 +1,14 @@
 import type { BlogPost } from "@/types/blog";
 import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
-/** Placeholder images (Unsplash). Replace with Firebase URLs in this file when ready. */
+/** Blog post images. Remaining slots still use Unsplash until you add Firebase URLs. */
 const P = {
   hero:
-    "https://images.unsplash.com/photo-1554048612-b6c48267d351?w=1920&q=80&auto=format&fit=crop",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media&token=030a8826-fc61-4385-86a1-733769131292",
   break1:
-    "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?w=1920&q=80&auto=format&fit=crop",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media&token=ec7967fe-a5bb-4911-b537-5ae53ac3d342",
   break2:
-    "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80&auto=format&fit=crop",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR9788.jpg?alt=media&token=d593c2ca-bbe8-4b25-8325-5b75555b6d52",
   break3:
     "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80&auto=format&fit=crop",
 };
