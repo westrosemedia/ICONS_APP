@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -547,6 +548,17 @@ export default function HomePageClient() {
               );
             })}
           </dl>
+        </div>
+      </section>
+
+      {/* Email capture */}
+      <section className="section-padding bg-neutral-950 text-white border-t border-white/10">
+        <div className="container-elegant max-w-2xl mx-auto text-center">
+          <h2 className="text-display text-white mb-6">Stay in the loop.</h2>
+          <p className="text-lg text-white/85 mb-10 leading-relaxed">
+            Monthly insights on brand strategy, content that converts, and what it actually takes to build a brand at your level. For established founders who are done doing this halfway.
+          </p>
+          <SproutStudioLeadForm />
         </div>
       </section>
 
