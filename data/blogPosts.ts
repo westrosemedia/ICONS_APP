@@ -1,7 +1,7 @@
 import type { BlogPost } from "@/types/blog";
 import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
-/** Blog post images. Remaining slots still use Unsplash until you add Firebase URLs. */
+/** Blog post images (Firebase Storage). */
 const P = {
   hero:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6544.jpg?alt=media&token=030a8826-fc61-4385-86a1-733769131292",
@@ -10,7 +10,7 @@ const P = {
   break2:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR9788.jpg?alt=media&token=d593c2ca-bbe8-4b25-8325-5b75555b6d52",
   break3:
-    "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80&auto=format&fit=crop",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FKAY_2038.jpg?alt=media&token=028a8f85-1b69-4c31-ad30-d053c1020eb8",
 };
 
 export const blogPosts: BlogPost[] = [
