@@ -222,9 +222,7 @@ export default function CadencePageClient() {
               </a>
             </Button>
             <Button asChild size="default">
-              <a href={CADENCE_APP.register} target="_blank" rel="noopener noreferrer">
-                Get Started
-              </a>
+              <a href="#pricing">Choose a plan</a>
             </Button>
           </div>
         </div>
@@ -241,13 +239,11 @@ export default function CadencePageClient() {
                 Log In
               </a>
               <a
-                href={CADENCE_APP.register}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#pricing"
                 className="rounded-lg bg-black py-3 text-center font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Get Started
+                Choose a plan
               </a>
               <Link href="/" className="py-2 text-center text-sm text-gray-600" onClick={() => setMobileOpen(false)}>
                 West Rose Media home
