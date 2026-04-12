@@ -263,9 +263,9 @@ export default function CadencePageClient() {
 
       <div id="top" />
 
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden">
-        <div className="relative h-[min(85vh,700px)] min-h-[520px] w-full md:h-[650px]">
+      {/* Hero: mobile uses extra bottom padding + min-height so CTA is not clipped; md+ fixed band */}
+      <section className="relative w-full overflow-x-hidden">
+        <div className="relative min-h-[min(92vh,820px)] w-full md:h-[650px] md:min-h-[650px]">
           <Image
             src={CADENCE_IMAGES.hero}
             alt=""
@@ -275,25 +275,25 @@ export default function CadencePageClient() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-[#171717]/55" aria-hidden />
-          <div className="absolute inset-0 flex flex-col justify-center px-4 py-16 sm:px-8">
+          <div className="relative z-10 flex min-h-[min(92vh,820px)] flex-col justify-center px-4 pb-28 pt-14 sm:px-8 sm:pb-24 md:absolute md:inset-0 md:min-h-0 md:px-8 md:py-16 md:pb-16">
             <div className="container-elegant mx-auto max-w-4xl text-left">
-              <div className="mb-8">
+              <div className="mb-6 md:mb-8">
                 <CadenceLogo variant="light" href="#top" className="max-w-xs" priority />
               </div>
               <h1 className="font-heading text-3xl font-semibold leading-[1.1] text-[#f5f0e8] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
                 Your content should be as consistent as your work ethic.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#f5f0e8]/95 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#f5f0e8]/95 sm:mt-6 sm:text-lg">
                 Cadence is a professional social media scheduling platform built for business owners who are done letting inconsistency quietly undermine everything they have built. Schedule across 13 platforms. Stay visible. Show up with the same level of intention every single week.
               </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="bg-[#f5f0e8] text-[#171717] hover:bg-white">
                   <Link href="/cadence#pricing" scroll>
                     Get Started
                   </Link>
                 </Button>
               </div>
-              <p className="mt-6 text-sm text-[#f5f0e8]/85">
+              <p className="mt-5 text-sm text-[#f5f0e8]/85 sm:mt-6">
                 Already have an account?{" "}
                 <a
                   href={CADENCE_APP.login}
