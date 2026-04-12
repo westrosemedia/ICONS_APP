@@ -6,8 +6,8 @@ import { CADENCE_IMAGES } from "@/lib/cadence";
 type Variant = "light" | "dark";
 
 /**
- * `light` = cream logo (1.png) on dark backgrounds.
- * `dark` = charcoal logo (2.png) on light backgrounds.
+ * `light` = cream/light logo asset for dark backgrounds (hero).
+ * `dark` = charcoal logo asset for light backgrounds (nav).
  */
 export function CadenceLogo({
   variant,
