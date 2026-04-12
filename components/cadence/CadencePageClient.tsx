@@ -205,15 +205,16 @@ export default function CadencePageClient() {
     <div className="bg-white text-[#171717]">
       {/* Sticky Cadence nav */}
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
-        <div className="container-elegant flex items-center justify-between gap-4 py-4">
-          <CadenceLogo variant="dark" href="#top" />
+        <div className="container-elegant flex items-center justify-between gap-3 py-2.5 md:gap-4 md:py-4">
+          <CadenceLogo variant="dark" href="#top" compact />
           <button
             type="button"
-            className="rounded-lg p-2 text-gray-700 md:hidden"
-            aria-label="Open menu"
+            className="rounded-md p-1.5 text-[#171717] md:hidden"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" strokeWidth={2} />
           </button>
           <div className="hidden items-center gap-3 md:flex">
             <Button asChild variant="outline" size="default" className="border-gray-300">
@@ -227,25 +228,29 @@ export default function CadencePageClient() {
           </div>
         </div>
         {mobileOpen ? (
-          <div className="border-t border-gray-100 bg-white px-4 py-4 md:hidden">
-            <nav className="flex flex-col gap-3">
+          <div className="border-t border-gray-100 bg-white px-3 pb-2 pt-1 md:hidden">
+            <nav className="flex flex-col gap-1.5">
               <a
                 href={CADENCE_APP.login}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-gray-200 py-3 text-center font-medium"
+                className="rounded-md border border-gray-200 py-2 text-center text-sm font-medium text-[#171717]"
                 onClick={() => setMobileOpen(false)}
               >
                 Log In
               </a>
               <a
                 href="#pricing"
-                className="rounded-lg bg-black py-3 text-center font-medium text-white"
+                className="rounded-md bg-black py-2 text-center text-sm font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Choose a plan
               </a>
-              <Link href="/" className="py-2 text-center text-sm text-gray-600" onClick={() => setMobileOpen(false)}>
+              <Link
+                href="/"
+                className="py-1.5 text-center text-xs text-gray-600"
+                onClick={() => setMobileOpen(false)}
+              >
                 West Rose Media home
               </Link>
             </nav>
