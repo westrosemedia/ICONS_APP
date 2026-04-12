@@ -223,7 +223,9 @@ export default function CadencePageClient() {
               </a>
             </Button>
             <Button asChild size="default">
-              <a href="#pricing">Choose a plan</a>
+              <Link href="/cadence#pricing" scroll>
+                Choose a plan
+              </Link>
             </Button>
           </div>
         </div>
@@ -239,13 +241,14 @@ export default function CadencePageClient() {
               >
                 Log In
               </a>
-              <a
-                href="#pricing"
+              <Link
+                href="/cadence#pricing"
+                scroll
                 className="rounded-md bg-black py-2 text-center text-sm font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Choose a plan
-              </a>
+              </Link>
               <Link
                 href="/"
                 className="py-1.5 text-center text-xs text-gray-600"
@@ -285,7 +288,9 @@ export default function CadencePageClient() {
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="bg-[#f5f0e8] text-[#171717] hover:bg-white">
-                  <a href="#pricing">Get Started</a>
+                  <Link href="/cadence#pricing" scroll>
+                    Get Started
+                  </Link>
                 </Button>
               </div>
               <p className="mt-6 text-sm text-[#f5f0e8]/85">
@@ -424,7 +429,11 @@ export default function CadencePageClient() {
       </section>
 
       {/* Pricing */}
-      <section className="section-padding bg-white" data-aos="fade-up" id="pricing">
+      <section
+        className="scroll-mt-24 section-padding bg-white md:scroll-mt-28"
+        data-aos="fade-up"
+        id="pricing"
+      >
         <div className="container-elegant">
           <h2 className="font-heading text-center text-3xl font-semibold sm:text-4xl">Choose your plan.</h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-lg leading-relaxed text-gray-700">
