@@ -274,7 +274,7 @@ export default function CadencePageClient() {
           <div className="absolute inset-0 flex flex-col justify-center px-4 py-16 sm:px-8">
             <div className="container-elegant mx-auto max-w-4xl text-left">
               <div className="mb-8">
-                <CadenceLogo variant="light" href="#top" className="max-w-xs" />
+                <CadenceLogo variant="light" href="#top" className="max-w-xs" priority />
               </div>
               <h1 className="font-heading text-3xl font-semibold leading-[1.1] text-[#f5f0e8] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
                 Your content should be as consistent as your work ethic.

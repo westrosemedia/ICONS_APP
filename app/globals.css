@@ -1,3 +1,5 @@
+@import url("https://unpkg.com/aos@2.3.4/dist/aos.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +14,7 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    line-height: 1.6;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -29,7 +31,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cormorant-garamond);
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.05;
     text-rendering: optimizeLegibility;
   }
@@ -40,36 +42,36 @@
   .text-elegant {
     font-family: var(--font-cormorant-garamond);
     font-weight: 600;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
   }
 
   .text-large {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     color: #525252;
     font-weight: 400;
   }
 
   .text-hero {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3.6rem, 9.6vw, 7.2rem);
     line-height: 1.02;
     font-weight: 600;
     font-family: var(--font-cormorant-garamond);
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
   }
 
   .text-display {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
     line-height: 1.08;
     font-weight: 600;
     font-family: var(--font-cormorant-garamond);
-    letter-spacing: -0.035em;
+    letter-spacing: -0.02em;
   }
 
   /* Editorial Layout */
   .section-padding {
-    padding: clamp(5rem, 14vw, 10rem) 0;
+    padding: clamp(6.25rem, 14vw, 10rem) 0;
   }
 
   .container-elegant {
@@ -80,7 +82,7 @@
 
   /* Premium Buttons */
   .btn {
-    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium transition-all duration-300 ease-out;
+    @apply inline-flex items-center justify-center px-10 py-5 text-base font-medium transition-colors duration-300 ease-out;
     @apply bg-black text-white border-0 rounded-lg;
     @apply hover:bg-gray-800 hover:transform hover:-translate-y-1 hover:shadow-lg;
     @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2;
@@ -122,22 +124,22 @@
 
   /* Editorial Sections */
   .section {
-    @apply py-16 md:py-24;
+    @apply py-[100px] md:py-[120px];
   }
 
   .section-tight {
-    @apply py-8 md:py-12;
+    @apply py-12 md:py-16;
   }
 
   .section-loose {
-    @apply py-24 md:py-40;
+    @apply py-[100px] md:py-40;
   }
 
   /* Text Styles */
   .text-editorial {
-    @apply text-gray-600 leading-relaxed;
+    @apply text-gray-600;
     font-size: 1.125rem;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   .text-caption {
@@ -164,11 +166,11 @@
   /* Responsive Typography */
   @media (max-width: 768px) {
     .btn {
-      @apply px-6 py-3 text-sm;
+      @apply px-8 py-4 text-sm;
     }
     
     .section {
-      @apply py-12;
+      @apply py-[100px];
     }
     
     .container-elegant {

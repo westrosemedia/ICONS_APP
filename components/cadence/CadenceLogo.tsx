@@ -1,33 +1,42 @@
+import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CADENCE_IMAGES } from "@/lib/cadence";
 
 type Variant = "light" | "dark";
 
+/**
+ * `light` = cream logo (1.png) on dark backgrounds.
+ * `dark` = charcoal logo (2.png) on light backgrounds.
+ */
 export function CadenceLogo({
   variant,
   href = "/cadence",
   className = "",
+  priority = false,
 }: {
   variant: Variant;
   href?: string;
   className?: string;
+  /** Set true in hero so LCP logo loads eagerly */
+  priority?: boolean;
 }) {
-  const dark = variant === "dark";
+  const src = variant === "dark" ? CADENCE_IMAGES.logoDark : CADENCE_IMAGES.logoLight;
+
   return (
-    <Link href={href} className={`block select-none ${className}`}>
-      <span
-        className={`font-[family-name:var(--font-cadence-display),serif] text-2xl sm:text-3xl lowercase tracking-tight leading-none ${
-          dark ? "text-[#171717]" : "text-[#f5f0e8]"
-        }`}
-      >
-        cadence
-      </span>
-      <span
-        className={`mt-1 block font-sans text-[9px] sm:text-[10px] font-semibold tracking-[0.28em] ${
-          dark ? "text-[#171717]" : "text-[#f5f0e8]/90"
-        }`}
-      >
-        BY WEST ROSE MEDIA
-      </span>
+    <Link href={href} className={cn("block select-none", className)}>
+      <Image
+        src={src}
+        alt="Cadence by West Rose Media"
+        width={360}
+        height={120}
+        priority={priority}
+        className={cn(
+          "h-auto w-full object-contain object-left",
+          variant === "dark" ? "max-w-[min(100%,220px)]" : "max-w-[min(100%,280px)]",
+        )}
+        sizes="(max-width: 768px) 200px, 260px"
+      />
     </Link>
   );
 }

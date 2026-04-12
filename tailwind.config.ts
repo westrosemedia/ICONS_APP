@@ -61,6 +61,21 @@ const config: Config = {
         "88": "22rem",
         "128": "32rem",
       },
+      fontSize: {
+        /* ~20% larger than default for display / heading sizes */
+        xl: ["1.5rem", { lineHeight: "2.1rem" }],
+        "2xl": ["1.8rem", { lineHeight: "2.4rem" }],
+        "3xl": ["2.25rem", { lineHeight: "2.7rem" }],
+        "4xl": ["2.7rem", { lineHeight: "3rem" }],
+        "5xl": ["3.6rem", { lineHeight: "1" }],
+        "6xl": ["4.5rem", { lineHeight: "1" }],
+        "7xl": ["5.4rem", { lineHeight: "1" }],
+        "8xl": ["7.2rem", { lineHeight: "1" }],
+        "9xl": ["9.6rem", { lineHeight: "1" }],
+      },
+      lineHeight: {
+        relaxed: "1.8",
+      },
     },
   },
   plugins: [],

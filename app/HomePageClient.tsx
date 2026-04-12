@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import EditorialGrid from "@/components/EditorialGrid";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { homePageAssets } from "@/lib/homePageAssets";
@@ -114,11 +114,9 @@ export default function HomePageClient() {
           />
           <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          <div
             className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
+            data-aos="fade-up"
           >
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
               Stop marketing like a startup.
@@ -153,12 +151,12 @@ export default function HomePageClient() {
                 Join the waitlist
               </Link>
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Identity */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display text-black mb-8 text-center">
@@ -178,6 +176,8 @@ export default function HomePageClient() {
           </div>
         </div>
       </section>
+
+      <EditorialGrid />
 
       {/* Problem */}
       <section
@@ -210,7 +210,7 @@ export default function HomePageClient() {
           }}
           aria-hidden
         />
-        <div className="container-elegant relative z-10">
+        <div className="container-elegant relative z-10" data-aos="fade-up">
           <div className="max-w-2xl text-left">
             <h2 className="text-display mb-6 text-balance text-white drop-shadow sm:mb-8">
               Your content is not neutral.
@@ -228,7 +228,7 @@ export default function HomePageClient() {
       </section>
 
       {/* What they have tried */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-display text-black mb-8 text-center">You have already tried to solve this.</h2>
@@ -274,7 +274,7 @@ export default function HomePageClient() {
           }}
           aria-hidden
         />
-        <div className="container-elegant relative z-10">
+        <div className="container-elegant relative z-10" data-aos="fade-up">
           <h2 className="text-display mb-10 max-w-3xl text-balance text-left text-white drop-shadow md:mb-14">
             Two ways to work together right now.
           </h2>
@@ -314,7 +314,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ICON waitlist */}
-      <section className="section-padding bg-black text-white">
+      <section className="section-padding bg-black text-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
@@ -367,7 +367,7 @@ export default function HomePageClient() {
           }}
           aria-hidden
         />
-        <div className="container-elegant relative z-10">
+        <div className="container-elegant relative z-10" data-aos="fade-up">
           <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-display mb-4 text-white drop-shadow">How it works</h2>
             <p className="text-lg leading-[1.75] text-white/90">
@@ -408,7 +408,7 @@ export default function HomePageClient() {
       </section>
 
       {/* Social proof */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50" data-aos="fade-up">
         <div className="container-elegant">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-hero text-black mb-6">What changes when the brand finally matches the business.</h2>
@@ -441,17 +441,15 @@ export default function HomePageClient() {
                 author: "Charlene Christiansen",
               },
             ].map((testimonial, index) => (
-              <motion.div
+              <div
                 key={testimonial.author}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                viewport={{ once: true }}
+                data-aos="fade-up"
+                data-aos-delay={index * 60}
                 className="bg-white border-l-4 border-black p-10 card-elevated"
               >
                 <p className="text-editorial mb-6">&ldquo;{testimonial.quote}&rdquo;</p>
                 <span className="text-elegant text-lg">{testimonial.author}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -470,13 +468,8 @@ export default function HomePageClient() {
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-        <div className="relative z-10 container-elegant text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-          >
+        <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
+          <div>
             <h2 className="text-hero text-white mb-6">Ready to get started?</h2>
             <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
               Whether you have a shoot to book, an event to cover, or you are serious about the full partnership, here is where to go next.
@@ -501,12 +494,12 @@ export default function HomePageClient() {
                 </Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-white border-t border-gray-200">
+      <section className="section-padding bg-white border-t border-gray-200" data-aos="fade-up">
         <div className="container-elegant max-w-3xl mx-auto">
           <h2 className="text-display text-black mb-12 text-center">Frequently asked questions</h2>
           <dl className="border-y border-gray-200 divide-y divide-gray-200">
@@ -552,7 +545,7 @@ export default function HomePageClient() {
       </section>
 
       {/* Email capture */}
-      <section className="section-padding bg-neutral-950 text-white border-t border-white/10">
+      <section className="section-padding bg-neutral-950 text-white border-t border-white/10" data-aos="fade-up">
         <div className="container-elegant max-w-2xl mx-auto text-center">
           <h2 className="text-display text-white mb-6">Stay in the loop.</h2>
           <p className="text-lg text-white/85 mb-10 leading-relaxed">
@@ -573,13 +566,8 @@ export default function HomePageClient() {
           }}
         />
         <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 container-elegant text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-          >
+        <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
+          <div>
             <h2 className="text-hero text-white mb-12 drop-shadow-lg">Manifesting & Marketing Mastermind</h2>
             <div className="max-w-4xl mx-auto space-y-8 mb-12">
               <p className="text-editorial text-white/90">
@@ -595,7 +583,7 @@ export default function HomePageClient() {
             <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
               <Link href="/mastermind">Learn about the Mastermind</Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
