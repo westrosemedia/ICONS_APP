@@ -285,9 +285,7 @@ export default function CadencePageClient() {
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button asChild size="lg" className="bg-[#f5f0e8] text-[#171717] hover:bg-white">
-                  <a href={CADENCE_APP.register} target="_blank" rel="noopener noreferrer">
-                    Get Started
-                  </a>
+                  <a href="#pricing">Get Started</a>
                 </Button>
               </div>
               <p className="mt-6 text-sm text-[#f5f0e8]/85">

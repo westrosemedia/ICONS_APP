@@ -1,5 +1,3 @@
-import { CADENCE_APP } from "@/lib/cadence";
-
 const faqItems = [
   {
     q: "What platforms does Cadence support?",
@@ -86,8 +84,9 @@ export default function CadenceStructuredData() {
       url: "https://westrosemedia.com",
     },
     potentialAction: {
-      "@type": "RegisterAction",
-      target: CADENCE_APP.register,
+      "@type": "ViewAction",
+      name: "Choose a plan",
+      target: "https://westrosemedia.com/cadence#pricing",
     },
   };
 
