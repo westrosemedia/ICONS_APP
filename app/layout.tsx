@@ -1,17 +1,13 @@
 import "./globals.css";
-import Link from "next/link";
-import Image from "next/image";
-import Script from "next/script";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import MobileNavigation from "@/components/MobileNavigation";
-import WorkWithUsNav from "@/components/WorkWithUsNav";
 import StructuredData from "@/components/StructuredData";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
 import PinterestVerification from "@/components/PinterestVerification";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
+import AosInit from "@/components/AosInit";
+import SiteChrome from "@/components/SiteChrome";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -90,8 +86,6 @@ export const metadata = {
 };
 // Force deployment update - latest changes
 
-const SHOW_NAV = true; // set to false to hide the top bar
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full w-full ${dmSans.variable} ${cormorantGaramond.variable}`}>
@@ -99,96 +93,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-screen w-full bg-white text-black font-sans antialiased"
         suppressHydrationWarning={true}
       >
-        {SHOW_NAV ? (
-          <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-40">
-            <div className="container-elegant py-4 flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-3 group">
-                <span className="text-elegant text-xl tracking-wide">West Rose Media</span>
-              </Link>
-              
-              {/* Desktop Navigation */}
-              <nav className="hidden md:flex items-center gap-8">
-                <Link href="/how-it-works" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  How it works
-                </Link>
-                <Link href="/about" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  About
-                </Link>
-                <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Packages
-                </Link>
-                <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Mastermind
-                </Link>
-                <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Case studies
-                </Link>
-                <Link href="/blog" className="text-gray-600 hover:text-black transition-colors duration-200">
-                  Blog
-                </Link>
-                <WorkWithUsNav />
-              </nav>
+        <AosInit />
+        <SiteChrome>{children}</SiteChrome>
 
-              {/* Mobile Navigation */}
-              <MobileNavigation />
-            </div>
-          </header>
-        ) : null}
-
-        <main className="w-full">{children}</main>
-
-        <footer className="w-full border-t border-gray-200 mt-20">
-          <div className="container-elegant py-12">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                      <div className="flex items-center gap-3">
-                        <span className="text-elegant text-lg">West Rose Media</span>
-                      </div>
-              <div className="text-center md:text-right">
-                <div className="mb-4">
-                  <SocialMediaLinks />
-                </div>
-                <p className="text-gray-600 text-sm">
-                  <a
-                    href="tel:+15876095021"
-                    className="hover:text-black transition-colors"
-                  >
-                    +1 (587) 609-5021
-                  </a>
-                </p>
-                <p className="text-gray-600 text-sm mt-1">
-                  © {new Date().getFullYear()} West Rose Media
-                </p>
-                <div className="flex flex-wrap gap-6 mt-2">
-                  <Link href="/case-studies" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Case studies
-                  </Link>
-                  <Link href="/blog" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Blog
-                  </Link>
-                  <Link href="/packages" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Packages
-                  </Link>
-                  <Link href="/podcast" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Podcast
-                  </Link>
-                  <Link href="/mastermind" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Mastermind
-                  </Link>
-                  <Link href="/faq" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    FAQ
-                  </Link>
-                  <Link href="/privacy" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Privacy
-                  </Link>
-                  <Link href="/terms" className="text-gray-500 hover:text-black text-sm transition-colors">
-                    Terms
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        
         <StructuredData />
         <PinterestVerification />
         <PerformanceMonitor />
