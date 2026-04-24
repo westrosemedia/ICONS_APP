@@ -1,0 +1,567 @@
+{
+  "collections": [
+    {
+      "slug": "getting-started",
+      "title": "Getting Started",
+      "description": "Set up your Cadence workspace, billing, and your first scheduled posts with confidence.",
+      "icon": "rocket",
+      "articles": [],
+      "subCollections": [
+        {
+          "slug": "account-setup",
+          "title": "Account Setup",
+          "description": "Articles about account setup.",
+          "articles": [
+            {
+              "slug": "account-create-workspace",
+              "title": "Create your Cadence workspace",
+              "summary": "Learn create your cadence workspace in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "account-invite-users",
+              "title": "Invite teammates to Cadence",
+              "summary": "Learn invite teammates to cadence in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "account-roles-permissions",
+              "title": "Roles and permissions overview",
+              "summary": "Learn roles and permissions overview in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "account-sso-saml",
+              "title": "SSO and SAML (team plans)",
+              "summary": "Learn sso and saml (team plans) in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "account-security-checklist",
+              "title": "Security checklist for admins",
+              "summary": "Learn security checklist for admins in Cadence.",
+              "order": 5
+            }
+          ]
+        },
+        {
+          "slug": "billing-plans",
+          "title": "Billing Plans",
+          "description": "Articles about billing plans.",
+          "articles": [
+            {
+              "slug": "billing-plans-compared",
+              "title": "Plans compared",
+              "summary": "Learn plans compared in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "billing-upgrade-downgrade",
+              "title": "Upgrade or downgrade your plan",
+              "summary": "Learn upgrade or downgrade your plan in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "billing-invoices-tax",
+              "title": "Invoices and tax IDs",
+              "summary": "Learn invoices and tax ids in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "billing-credits-refunds",
+              "title": "Credits and refunds policy",
+              "summary": "Learn credits and refunds policy in Cadence.",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "slug": "first-schedule",
+          "title": "First Schedule",
+          "description": "Articles about first schedule.",
+          "articles": [
+            {
+              "slug": "first-publish-first-post",
+              "title": "Publish your first scheduled post",
+              "summary": "Learn publish your first scheduled post in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "first-timezone-best-practices",
+              "title": "Timezone best practices",
+              "summary": "Learn timezone best practices in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "first-mobile-quick-actions",
+              "title": "Mobile quick actions",
+              "summary": "Learn mobile quick actions in Cadence.",
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "schedule-and-publishing",
+      "title": "Schedule & Publishing",
+      "description": "Connect profiles, compose posts, manage your calendar, recycling, analytics, and team workflows.",
+      "icon": "calendar",
+      "articles": [
+        {
+          "slug": "sched-top-instagram-recurring-post",
+          "title": "Instagram recurring posts",
+          "summary": "Learn instagram recurring posts in Cadence.",
+          "order": 1
+        },
+        {
+          "slug": "sched-top-cross-post-safety",
+          "title": "Cross-posting safety checklist",
+          "summary": "Learn cross-posting safety checklist in Cadence.",
+          "order": 2
+        },
+        {
+          "slug": "sched-top-holiday-pauses",
+          "title": "Holiday pauses across profiles",
+          "summary": "Learn holiday pauses across profiles in Cadence.",
+          "order": 3
+        },
+        {
+          "slug": "sched-top-content-approvals-101",
+          "title": "Content approvals 101",
+          "summary": "Learn content approvals 101 in Cadence.",
+          "order": 4
+        }
+      ],
+      "subCollections": [
+        {
+          "slug": "social-profile-manager",
+          "title": "Social Profile Manager",
+          "description": "Deep dives for social profile manager.",
+          "articles": [
+            {
+              "slug": "how-to-connect-instagram",
+              "title": "How to connect your Instagram profiles",
+              "summary": "Learn how to connect your instagram profiles in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "spm-facebook-pages",
+              "title": "Connect Facebook Pages",
+              "summary": "Learn connect facebook pages in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "spm-linkedin-company",
+              "title": "Connect LinkedIn Company Pages",
+              "summary": "Learn connect linkedin company pages in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "spm-tiktok-account",
+              "title": "Connect TikTok",
+              "summary": "Learn connect tiktok in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "spm-pinterest-boards",
+              "title": "Connect Pinterest",
+              "summary": "Learn connect pinterest in Cadence.",
+              "order": 5
+            },
+            {
+              "slug": "spm-youtube-channel",
+              "title": "Connect YouTube",
+              "summary": "Learn connect youtube in Cadence.",
+              "order": 6
+            },
+            {
+              "slug": "spm-threads-profiles",
+              "title": "Connect Threads",
+              "summary": "Learn connect threads in Cadence.",
+              "order": 7
+            },
+            {
+              "slug": "spm-reddit-subreddits",
+              "title": "Connect Reddit (beta)",
+              "summary": "Learn connect reddit (beta) in Cadence.",
+              "order": 8
+            },
+            {
+              "slug": "spm-disconnect-reconnect",
+              "title": "Disconnect and reconnect safely",
+              "summary": "Learn disconnect and reconnect safely in Cadence.",
+              "order": 9
+            },
+            {
+              "slug": "spm-profile-health",
+              "title": "Profile health and token refresh",
+              "summary": "Learn profile health and token refresh in Cadence.",
+              "order": 10
+            }
+          ]
+        },
+        {
+          "slug": "composer-editor",
+          "title": "Composer Editor",
+          "description": "Deep dives for composer editor.",
+          "articles": [
+            {
+              "slug": "composer-drafts-autosave",
+              "title": "Drafts and autosave",
+              "summary": "Learn drafts and autosave in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "composer-hashtags-mentions",
+              "title": "Hashtags and mentions",
+              "summary": "Learn hashtags and mentions in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "composer-first-comments-instagram",
+              "title": "First comments on Instagram",
+              "summary": "Learn first comments on instagram in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "composer-link-previews",
+              "title": "Link previews",
+              "summary": "Learn link previews in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "composer-utm-parameters",
+              "title": "UTM parameters",
+              "summary": "Learn utm parameters in Cadence.",
+              "order": 5
+            },
+            {
+              "slug": "composer-canva-import",
+              "title": "Import designs from Canva",
+              "summary": "Learn import designs from canva in Cadence.",
+              "order": 6
+            },
+            {
+              "slug": "composer-dropbox-assets",
+              "title": "Attach assets from Dropbox",
+              "summary": "Learn attach assets from dropbox in Cadence.",
+              "order": 7
+            },
+            {
+              "slug": "composer-emoji-shortcuts",
+              "title": "Emoji shortcuts",
+              "summary": "Learn emoji shortcuts in Cadence.",
+              "order": 8
+            }
+          ]
+        },
+        {
+          "slug": "content-calendar",
+          "title": "Content Calendar",
+          "description": "Deep dives for content calendar.",
+          "articles": [
+            {
+              "slug": "cal-month-week-day-views",
+              "title": "Month, week, and day views",
+              "summary": "Learn month, week, and day views in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "cal-drag-to-reschedule",
+              "title": "Drag to reschedule",
+              "summary": "Learn drag to reschedule in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "cal-color-labels",
+              "title": "Color labels and filters",
+              "summary": "Learn color labels and filters in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "cal-team-visibility",
+              "title": "Team visibility on the calendar",
+              "summary": "Learn team visibility on the calendar in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "cal-export-calendar",
+              "title": "Export to ICS",
+              "summary": "Learn export to ics in Cadence.",
+              "order": 5
+            },
+            {
+              "slug": "cal-conflict-warnings",
+              "title": "Conflict warnings",
+              "summary": "Learn conflict warnings in Cadence.",
+              "order": 6
+            },
+            {
+              "slug": "cal-queue-vs-scheduled",
+              "title": "Queue vs fixed time",
+              "summary": "Learn queue vs fixed time in Cadence.",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "slug": "recycling-queue",
+          "title": "Recycling Queue",
+          "description": "Deep dives for recycling queue.",
+          "articles": [
+            {
+              "slug": "recycle-evergreen-recycling",
+              "title": "Evergreen recycling",
+              "summary": "Learn evergreen recycling in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "recycle-pause-recycling",
+              "title": "Pause recycling for a profile",
+              "summary": "Learn pause recycling for a profile in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "recycle-rotation-limits",
+              "title": "Rotation limits",
+              "summary": "Learn rotation limits in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "recycle-exclude-holidays",
+              "title": "Exclude holidays",
+              "summary": "Learn exclude holidays in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "recycle-smart-gaps",
+              "title": "Smart gaps between repeats",
+              "summary": "Learn smart gaps between repeats in Cadence.",
+              "order": 5
+            },
+            {
+              "slug": "recycle-recurring-post-patterns",
+              "title": "Recurring post patterns",
+              "summary": "Learn recurring post patterns in Cadence.",
+              "order": 6
+            }
+          ]
+        },
+        {
+          "slug": "analytics-reports",
+          "title": "Analytics Reports",
+          "description": "Deep dives for analytics reports.",
+          "articles": [
+            {
+              "slug": "analytics-post-performance",
+              "title": "Post performance overview",
+              "summary": "Learn post performance overview in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "analytics-engagement-by-network",
+              "title": "Engagement by network",
+              "summary": "Learn engagement by network in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "analytics-export-csv",
+              "title": "Export CSV reports",
+              "summary": "Learn export csv reports in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "analytics-team-activity-log",
+              "title": "Team activity log",
+              "summary": "Learn team activity log in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "analytics-audience-growth",
+              "title": "Audience growth charts",
+              "summary": "Learn audience growth charts in Cadence.",
+              "order": 5
+            },
+            {
+              "slug": "analytics-custom-date-ranges",
+              "title": "Custom date ranges",
+              "summary": "Learn custom date ranges in Cadence.",
+              "order": 6
+            }
+          ]
+        },
+        {
+          "slug": "teams-permissions",
+          "title": "Teams Permissions",
+          "description": "Deep dives for teams permissions.",
+          "articles": [
+            {
+              "slug": "team-invite-reviewers",
+              "title": "Invite reviewers",
+              "summary": "Learn invite reviewers in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "team-approval-workflows",
+              "title": "Approval workflows",
+              "summary": "Learn approval workflows in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "team-brand-guidelines",
+              "title": "Brand guidelines library",
+              "summary": "Learn brand guidelines library in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "team-content-locks",
+              "title": "Content locks while editing",
+              "summary": "Learn content locks while editing in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "team-remove-member",
+              "title": "Remove a member",
+              "summary": "Learn remove a member in Cadence.",
+              "order": 5
+            }
+          ]
+        },
+        {
+          "slug": "integrations",
+          "title": "Integrations",
+          "description": "Deep dives for integrations.",
+          "articles": [
+            {
+              "slug": "integ-slack-notifications",
+              "title": "Slack notifications",
+              "summary": "Learn slack notifications in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "integ-google-drive",
+              "title": "Google Drive attachments",
+              "summary": "Learn google drive attachments in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "integ-api-overview",
+              "title": "Cadence API overview",
+              "summary": "Learn cadence api overview in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "integ-rate-limits",
+              "title": "Rate limits",
+              "summary": "Learn rate limits in Cadence.",
+              "order": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "link-in-bio",
+      "title": "Link in Bio",
+      "description": "Build high-converting bio pages, connect domains, and measure performance.",
+      "icon": "link",
+      "articles": [],
+      "subCollections": [
+        {
+          "slug": "pages-blocks",
+          "title": "Pages Blocks",
+          "description": "Guides for pages blocks.",
+          "articles": [
+            {
+              "slug": "lib-page-start-from-template",
+              "title": "Start from a template",
+              "summary": "Learn start from a template in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "lib-page-buttons-and-links",
+              "title": "Buttons and links",
+              "summary": "Learn buttons and links in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "lib-page-featured-media",
+              "title": "Featured media blocks",
+              "summary": "Learn featured media blocks in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "lib-page-embed-forms",
+              "title": "Embed newsletter forms",
+              "summary": "Learn embed newsletter forms in Cadence.",
+              "order": 4
+            },
+            {
+              "slug": "lib-page-styling-themes",
+              "title": "Styling and themes",
+              "summary": "Learn styling and themes in Cadence.",
+              "order": 5
+            }
+          ]
+        },
+        {
+          "slug": "domains-seo",
+          "title": "Domains Seo",
+          "description": "Guides for domains seo.",
+          "articles": [
+            {
+              "slug": "lib-domain-custom-domain",
+              "title": "Connect a custom domain",
+              "summary": "Learn connect a custom domain in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "lib-domain-ssl-provisioning",
+              "title": "SSL provisioning",
+              "summary": "Learn ssl provisioning in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "lib-domain-seo-titles",
+              "title": "SEO titles and descriptions",
+              "summary": "Learn seo titles and descriptions in Cadence.",
+              "order": 3
+            },
+            {
+              "slug": "lib-domain-redirects",
+              "title": "Redirects",
+              "summary": "Learn redirects in Cadence.",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "slug": "tracking-pixels",
+          "title": "Tracking Pixels",
+          "description": "Guides for tracking pixels.",
+          "articles": [
+            {
+              "slug": "lib-track-meta-pixel",
+              "title": "Meta Pixel",
+              "summary": "Learn meta pixel in Cadence.",
+              "order": 1
+            },
+            {
+              "slug": "lib-track-google-analytics",
+              "title": "Google Analytics 4",
+              "summary": "Learn google analytics 4 in Cadence.",
+              "order": 2
+            },
+            {
+              "slug": "lib-track-utm-builder",
+              "title": "UTM builder for bio links",
+              "summary": "Learn utm builder for bio links in Cadence.",
+              "order": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
