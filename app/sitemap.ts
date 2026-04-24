@@ -1,8 +1,53 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blogPosts'
+import { articleHref, getAllCollections } from '@/lib/help/load-content'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://westrosemedia.com'
+
+  const helpEntries: MetadataRoute.Sitemap = (() => {
+    const entries: MetadataRoute.Sitemap = [
+      {
+        url: `${baseUrl}/help`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.75,
+      },
+    ]
+    for (const col of getAllCollections()) {
+      entries.push({
+        url: `${baseUrl}/help/${col.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.65,
+      })
+      for (const a of col.articles) {
+        entries.push({
+          url: `${baseUrl}${articleHref(a)}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.55,
+        })
+      }
+      for (const sub of col.subCollections) {
+        entries.push({
+          url: `${baseUrl}/help/${col.slug}/${sub.slug}`,
+          lastModified: new Date(),
+          changeFrequency: 'weekly',
+          priority: 0.6,
+        })
+        for (const a of sub.articles) {
+          entries.push({
+            url: `${baseUrl}${articleHref(a)}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.55,
+          })
+        }
+      }
+    }
+    return entries
+  })()
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -36,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    ...helpEntries,
     {
       url: `${baseUrl}/apply`,
       lastModified: new Date(),

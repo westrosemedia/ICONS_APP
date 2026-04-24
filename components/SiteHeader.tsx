@@ -27,6 +27,9 @@ export default function SiteHeader() {
           <Link href="/cadence" className="text-gray-600 hover:text-black transition-colors duration-200">
             Cadence
           </Link>
+          <Link href="/help" className="text-gray-600 hover:text-black transition-colors duration-200">
+            Help
+          </Link>
           <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
             Mastermind
           </Link>
