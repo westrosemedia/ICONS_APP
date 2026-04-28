@@ -320,7 +320,7 @@ export default function MastermindPage() {
             Spots are limited. The retreat fills first.
           </p>
           <Link
-            href="https://jackie-mcdonald.mykajabi.com/offers/gbLLJg4v/checkout"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScB4fKptatWBrh-aH1SADOLSFTMk3zbbMnpJniWWEBlDT006Q/viewform"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-white/90 transition-colors"

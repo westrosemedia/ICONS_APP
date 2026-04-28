@@ -39,7 +39,7 @@ export default function InfluencePage() {
             <p>That version exists. You just have not found the words for it yet.</p>
             <p>Influence exists to find them.</p>
             <p>This is a three month room for founders, leaders, and entrepreneurs navigating a major identity shift who are ready to turn their story into the most powerful asset their brand has ever had.</p>
-            <p className="text-[#C9B99A] font-heading text-xl font-light">Begins April 1, 2026.</p>
+            <p className="text-[#C9B99A] font-heading text-xl font-light">Begins June 1, 2026.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">Claim Your Spot</Link>
@@ -168,7 +168,7 @@ export default function InfluencePage() {
       <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24" aria-labelledby="pricing-heading">
         <div className="text-center max-w-2xl mx-auto">
           <h2 id="pricing-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4">Join Influence</h2>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins April 1, 2026</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins June 1, 2026</p>
           <p className="text-lg text-[#3D3632] mb-12">Influence is currently open at founding pricing while the first group forms. When seats fill, enrollment closes.</p>
           <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
           {/* @ts-expect-error stripe-pricing-table is a custom web component */}
@@ -210,7 +210,7 @@ export default function InfluencePage() {
           <h2 id="final-cta-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-4">Your life is already shifting.</h2>
           <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-4">Now your voice needs to catch up.</p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-2">If you feel the pull, that is your signal.</p>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">Begins April 1, 2026.</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">Begins June 1, 2026.</p>
           <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">I&apos;m Ready. Secure My Spot.</Link>
           <p className="text-sm text-[#FAF7F2]/60 mt-4">Founding pricing ends when this round fills.</p>
         </div>

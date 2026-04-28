@@ -83,6 +83,9 @@
           <p className="text-editorial text-gray-700 mb-10">
             This is not a one off service or a short term project. It is designed for founders who are ready to invest in consistent visibility, authority, and opportunity without managing content themselves.
           </p>
+          <p className="text-editorial text-black mb-10 rounded-2xl border border-gray-200 bg-gray-50 p-5">
+            We have one ICON Brand Partnership available for onboarding in May and are now accepting applications.
+          </p>
 
           <div className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">Who should apply</h2>
