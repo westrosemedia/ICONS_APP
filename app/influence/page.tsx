@@ -27,7 +27,7 @@ export default function InfluencePage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
 
-      <section className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${FIREBASE_IMAGES.hero}')` }}>
+      <section className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed" style={{ backgroundImage: `url('${FIREBASE_IMAGES.hero}')` }}>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-6 md:px-16 max-w-4xl mx-auto py-32">
           <h1 className="font-heading text-6xl md:text-8xl font-light leading-tight tracking-tight text-[#FAF7F2] mb-12">Influence</h1>
@@ -74,7 +74,7 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      <section id="who-this-is-for" className="relative bg-cover bg-center bg-no-repeat scroll-mt-24" style={{ backgroundImage: `url('${FIREBASE_IMAGES.whoThisIsFor}')` }} aria-labelledby="who-heading">
+      <section id="who-this-is-for" className="relative bg-cover bg-no-repeat md:bg-fixed scroll-mt-24" style={{ backgroundImage: `url('${FIREBASE_IMAGES.whoThisIsFor}')`, backgroundPosition: "center 33%" }} aria-labelledby="who-heading">
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <h2 id="who-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-12 text-center">This is for you if</h2>
@@ -116,7 +116,7 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      <section id="what-you-get" className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${FIREBASE_IMAGES.insideInfluence}')` }} aria-labelledby="deliverables-heading">
+      <section id="what-you-get" className="relative bg-cover bg-center bg-no-repeat md:bg-fixed" style={{ backgroundImage: `url('${FIREBASE_IMAGES.insideInfluence}')` }} aria-labelledby="deliverables-heading">
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <h2 id="deliverables-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-12 text-center">Inside Influence</h2>
@@ -151,7 +151,7 @@ export default function InfluencePage() {
         </div>
       </section>
 
-      <section className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${FIREBASE_IMAGES.proof}')` }}>
+      <section className="relative bg-cover bg-center bg-no-repeat md:bg-fixed" style={{ backgroundImage: `url('${FIREBASE_IMAGES.proof}')` }}>
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-3xl mx-auto">
           <p className="text-xs tracking-widest uppercase text-[#C9B99A] mb-8">This works. Here is the proof.</p>
