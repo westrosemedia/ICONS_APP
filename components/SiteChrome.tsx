@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import InfluenceStartBanner from "@/components/InfluenceStartBanner";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -10,6 +11,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
 
   return (
     <>
+      {!hideGlobalHeader && <InfluenceStartBanner />}
       {!hideGlobalHeader && <SiteHeader />}
       <main className="w-full">{children}</main>
       <SiteFooter />
