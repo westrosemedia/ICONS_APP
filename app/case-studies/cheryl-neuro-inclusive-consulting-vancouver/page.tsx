@@ -10,15 +10,6 @@ export const metadata: Metadata = {
     "Vancouver-based neuro-inclusive consultant building trust and authority with large organizations and non-profits."
 };
 
-const proofImages = [
-  {
-    src: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Screenshot%202026-01-19%20at%202.39.29%E2%80%AFPM.png?alt=media&token=21f726a8-04ab-49ea-8841-d88c742ed7db",
-    alt: "Cheryl client feedback highlighting trust, clarity, and professionalism",
-    width: 1198,
-    height: 478
-  }
-];
-
 const afterImages = [
   {
     src: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR2487.jpg?alt=media&token=122df80c-a83f-42d1-900d-506f7f95bf34",
@@ -68,27 +59,6 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
             <p className="text-editorial text-white/90 max-w-2xl">
               Vancouver-based neuro-inclusive consultant building trust and authority with large organizations and non-profits.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Proof Strip */}
-      <section className="section-padding bg-black">
-        <div className="container-elegant">
-          <div className="grid gap-4 md:grid-cols-3">
-            {proofImages.map((image) => (
-              <div key={image.src} className="relative w-full rounded-2xl">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  loading="lazy"
-                />
-              </div>
-            ))}
           </div>
         </div>
       </section>

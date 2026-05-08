@@ -4,7 +4,7 @@ import HomepageStructuredData from "@/components/HomepageStructuredData";
 
 const title = "West Rose Media | Brand Photography + Event Coverage | Calgary, Vancouver, Toronto";
 const description =
-  "West Rose Media produces brand photography and video for established founders across Canada. Book a one-time Spotlight shoot or bring us to your next mastermind or conference event. Based in Calgary, serving Vancouver, Toronto, and beyond.";
+  "West Rose Media produces brand photography and content for established founders across Canada. Book a one-time Spotlight shoot, bring us to your next mastermind or conference, or apply for ICON Brand Partnership, our four-seat leadership collective for high-achieving women. Based in Calgary, serving Vancouver, Toronto, Canada, and USA.";
 
 export const metadata: Metadata = {
   title,

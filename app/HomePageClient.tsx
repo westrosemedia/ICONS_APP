@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
 import { Button } from "@/components/ui/button";
 import EditorialGrid from "@/components/EditorialGrid";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -16,6 +15,8 @@ const PROBLEM_BG_POSITION = "72% 36%";
 const TWO_OFFERS_BG_POSITION = "68% 20%";
 /** How it works — centered layout; anchor blazer / subject (tweak if crop feels off). */
 const HOW_IT_WORKS_BG_POSITION = "50% 28%";
+const HOMEPAGE_ICON_IMAGE =
+  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2F_VWR6863.jpg?alt=media&token=749b0527-f85a-4f9c-8133-0d31d25306ef";
 
 const HOMEPAGE_FAQ_ITEMS: { question: string; answer: string }[] = [
   {
@@ -146,9 +147,9 @@ export default function HomePageClient() {
               </Button>
             </div>
             <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed">
-              One ICON Brand Partnership spot remains for 2026. Onboarding in November.{" "}
+              ICON Brand Partnership is open by application.{" "}
               <Link href="/apply" className="underline underline-offset-4 hover:text-white">
-                Join the waitlist
+                Learn about ICON
               </Link>
             </p>
           </div>
@@ -313,17 +314,39 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ICON waitlist */}
+      {/* ICON Brand Partnership */}
       <section className="section-padding bg-black text-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
+            <div className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl shadow-2xl">
+              <Image
+                src={HOMEPAGE_ICON_IMAGE}
+                alt="ICON Brand Partnership content experience"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                loading="lazy"
+              />
+            </div>
             <div className="space-y-6 text-editorial text-white/90 mb-10 text-left md:text-center">
               <p>
-                ICON Brand Partnership is a monthly retainer where West Rose Media handles the entire content operation. Strategy. Creative direction. Photography. Video. Editing. Publishing. Four clients at a time.
+                You did not build this business to stay a well-kept secret. ICON is for the founder ready to scale past running a business and into being the icon her industry references. Known by name. Sought out by opportunity. Studied by competitors.
               </p>
               <p>
-                One spot remains for 2026, onboarding in November. A deposit holds your place. If that spot is claimed before you apply, you can still apply to join the 2027 waitlist.
+                The way that happens is the content. ICON content is not generic premium polish. It is built to activate the right viewer and repel the wrong one. Her audience does not just consume her content. They get shifted by it. By the time the right buyer reaches her DMs, the conversion has already happened in her chest. The wrong-fit buyers self-eliminate before they ever waste a sales conversation.
+              </p>
+              <p>
+                ICON Brand Partnership is the inner system of West Rose Media. Stephanie Rose leads strategic creative direction, brand and offer building, and business coaching. The West Rose Media team handles ongoing photography, video, social content, and launch assets, with aligned execution that turns decisions into work in real time.
+              </p>
+              <p>
+                This is an entire content team inside her business. A creative director. A brand strategist. A photographer. A videographer. A social content producer. A launch asset team. A business coach. All running as one unit, with Stephanie at the helm. One contract instead of seven separate hires, and none of the management overhead.
+              </p>
+              <p>
+                Money loves speed. Business loves momentum. The market rewards the founder who can take an idea and have it shot, branded, and live before the next founder finishes the brief. Every idea ships while it is still hot. Every campaign looks new and fresh because the brand is being produced in real time.
+              </p>
+              <p>
+                She stays in the seat that grows the business. We hold the seat that builds the icon and activates the audience. The combination compounds.
               </p>
             </div>
             <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
@@ -476,20 +499,8 @@ export default function HomePageClient() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
-                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
-                  Book a Spotlight Shoot
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
-                <Link href="/book/immersion">
-                  Plan My Event Coverage
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black group">
                 <Link href="/apply">
-                  Apply for ICON Partnership
+                  Apply for ICON
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -541,17 +552,6 @@ export default function HomePageClient() {
               );
             })}
           </dl>
-        </div>
-      </section>
-
-      {/* Email capture */}
-      <section className="section-padding bg-neutral-950 text-white border-t border-white/10" data-aos="fade-up">
-        <div className="container-elegant max-w-2xl mx-auto text-center">
-          <h2 className="text-display text-white mb-6">Stay in the loop.</h2>
-          <p className="text-lg text-white/85 mb-10 leading-relaxed">
-            Monthly insights on brand strategy, content that converts, and what it actually takes to build a brand at your level. For established founders who are done doing this halfway.
-          </p>
-          <SproutStudioLeadForm />
         </div>
       </section>
 

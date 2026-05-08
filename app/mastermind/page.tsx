@@ -262,7 +262,7 @@ export default function MastermindPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden">
               <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4"
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FKAY_2038.jpg?alt=media&token=028a8f85-1b69-4c31-ad30-d053c1020eb8"
                 alt="Investment - Manifesting & Marketing Mastermind"
                 fill
                 className="object-cover"

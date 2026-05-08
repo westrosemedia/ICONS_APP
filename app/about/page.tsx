@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 import AboutStructuredData from "@/components/AboutStructuredData";
 
+const storyImage =
+  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_012.jpg?alt=media&token=d22f0bf0-f15c-458c-bcc7-421c4006bc28";
+const featuredImage =
+  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4";
+
 export const metadata: Metadata = {
   title: "About Stephanie Rose | Calgary Brand Photographer | West Rose Media",
   description: "Meet Stephanie Rose, Calgary's luxury brand photographer and founder of West Rose Media. Learn about her journey building a high-end content studio that serves entrepreneurs across Canada.",
@@ -108,20 +113,16 @@ export default function AboutPage() {
           </h2>
           
           {/* Story Image */}
-          <div className="mb-12">
-            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
-              <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_012.jpg?alt=media&token=d22f0bf0-f15c-458c-bcc7-421c4006bc28"
-                alt="Stephanie Rose - Personal Branding Photographer Story"
-                fill
-                className="object-cover"
-                title="Stephanie Rose | My Story - Building West Rose Media"
-                sizes="(max-width: 768px) 100vw, 800px"
-                loading="lazy"
-                quality={85}
-              />
-            </div>
-          </div>
+          <div
+            className="relative left-1/2 mb-12 h-[55vh] min-h-[340px] w-screen -translate-x-1/2 bg-cover bg-no-repeat md:bg-fixed"
+            style={{
+              backgroundImage: `url('${storyImage}')`,
+              backgroundPosition: "center 33%",
+            }}
+            role="img"
+            aria-label="Stephanie Rose - Personal Branding Photographer Story"
+            title="Stephanie Rose | My Story - Building West Rose Media"
+          />
           
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <p>
@@ -230,21 +231,15 @@ export default function AboutPage() {
       </section>
 
       {/* Featured Image */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative w-full aspect-[4/3] rounded-lg shadow-2xl overflow-hidden">
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4"
-              alt="Stephanie Rose - Calgary Brand Photographer and Social Media Strategist for Entrepreneurs"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
-              loading="lazy"
-              quality={85}
-            />
-          </div>
-        </div>
-      </section>
+      <section
+        className="relative h-[65vh] min-h-[380px] bg-cover bg-no-repeat md:bg-fixed"
+        style={{
+          backgroundImage: `url('${featuredImage}')`,
+          backgroundPosition: "center 33%",
+        }}
+        role="img"
+        aria-label="Stephanie Rose - Calgary Brand Photographer and Social Media Strategist for Entrepreneurs"
+      />
 
       {/* CTA Section */}
       <section className="py-20 px-4">
