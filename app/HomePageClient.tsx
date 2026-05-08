@@ -319,16 +319,15 @@ export default function HomePageClient() {
         <div className="container-elegant">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
-            <div className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl shadow-2xl">
-              <Image
-                src={HOMEPAGE_ICON_IMAGE}
-                alt="ICON Brand Partnership content experience"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-                loading="lazy"
-              />
-            </div>
+            <div
+              className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl bg-cover bg-no-repeat shadow-2xl md:bg-fixed"
+              style={{
+                backgroundImage: `url('${HOMEPAGE_ICON_IMAGE}')`,
+                backgroundPosition: "center 33%",
+              }}
+              role="img"
+              aria-label="ICON Brand Partnership content experience"
+            />
             <div className="space-y-6 text-editorial text-white/90 mb-10 text-left md:text-center">
               <p>
                 You did not build this business to stay a well-kept secret. ICON is for the founder ready to scale past running a business and into being the icon her industry references. Known by name. Sought out by opportunity. Studied by competitors.
