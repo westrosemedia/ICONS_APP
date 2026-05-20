@@ -94,7 +94,7 @@ export default function SecretPage() {
             />
           </div>
           <div>
-            <h2 className="text-display text-black mb-8">I am West Rose Media.</h2>
+            <h2 className="text-display text-black mb-8">Hey, I&apos;m Stephanie.</h2>
             <div className="space-y-6 text-editorial text-gray-700">
               <p>
                 I build brands for founders who are done performing a smaller version of themselves.
