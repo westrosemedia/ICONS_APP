@@ -347,6 +347,38 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      {/* VIP Packages */}
+      <section className="section-padding bg-white" data-aos="fade-up">
+        <div className="container-elegant max-w-5xl">
+          <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 shadow-sm md:p-12">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">
+              VIP Packages
+            </p>
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+              <div>
+                <h2 className="text-display text-black mb-6">
+                  Need the fastest way to upgrade how your business is perceived?
+                </h2>
+                <p className="text-editorial text-gray-700">
+                  VIP Day and Weekend Immersion packages bring brand strategy, messaging, and content creation into one focused container. You leave with clarity, direction, and content that reflects where you are actually going.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 lg:items-start">
+                <p className="text-lg leading-[1.7] text-gray-700">
+                  Built for founders who want the strategy and the assets created together, without waiting months for the brand to catch up.
+                </p>
+                <Button asChild size="lg" className="w-full sm:w-auto group">
+                  <Link href="/vip">
+                    Explore VIP Packages
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section
         id="how-it-works"
