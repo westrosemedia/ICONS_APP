@@ -132,7 +132,6 @@ export default function SecretPage() {
 
       <section className="section-padding">
         <div className="container-elegant max-w-4xl">
-          <h2 className="text-display text-black mb-8">The problem.</h2>
           <div className="space-y-6 text-editorial text-gray-700">
             <p>
               You keep waiting to feel ready. To find the words. To get the brand colors right.
@@ -145,9 +144,8 @@ export default function SecretPage() {
         </div>
       </section>
 
-      <section id="the-invitation" className="section-padding bg-gray-50 scroll-mt-24">
+      <section className="section-padding bg-gray-50">
         <div className="container-elegant max-w-4xl">
-          <h2 className="text-display text-black mb-8">The shift.</h2>
           <div className="space-y-6 text-editorial text-gray-700">
             <p>
               Three days from now you will know how to walk in front of a camera and direct yourself.
@@ -210,7 +208,7 @@ export default function SecretPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
+      <section id="the-invitation" className="section-padding bg-gray-50 scroll-mt-24">
         <div className="container-elegant max-w-4xl text-center">
           <h2 className="text-display text-black mb-8">The invitation.</h2>
           <div className="grid gap-6 md:grid-cols-4 text-left">
