@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HERO_IMAGE_URL =
-  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_6978.jpg?alt=media&token=6d0700c6-d2d3-45a7-b050-1b9d00782e64";
+  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662";
 const STEPHANIE_IMAGE_URL =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7053.jpg?alt=media&token=dfb289d5-19ea-4068-8029-ca1829e3053c";
 const MYSTERY_GUEST_PROOF_IMAGES = [
@@ -43,36 +43,42 @@ export const metadata: Metadata = {
 export default function SecretPage() {
   return (
     <main className="min-h-screen bg-white text-black">
-      <section className="section-padding bg-gray-50">
-        <div className="container-elegant grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">
-              Walk in First
-            </p>
-            <h1 className="text-hero text-black mb-6">
-              You don&apos;t need to find your voice. You need to stop editing it out.
-            </h1>
-            <p className="text-editorial text-gray-700 max-w-3xl mb-10">
+      <section
+        className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
+        style={{ backgroundImage: `url('${HERO_IMAGE_URL}')` }}
+      >
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center md:px-16">
+          <p className="mb-8 text-xs font-semibold uppercase tracking-[0.35em] text-[#C9B99A] md:text-sm">
+            Walk in First
+          </p>
+          <h1 className="mb-12 font-heading text-5xl font-light leading-tight tracking-tight text-[#FAF7F2] md:text-7xl">
+            You don&apos;t need to find your voice. You need to stop editing it out.
+          </h1>
+          <div className="mx-auto mb-12 max-w-2xl space-y-5 text-left text-lg text-[#FAF7F2]/90">
+            <p>
               A 3-day live intensive. You leave knowing how to build a brand presence that walks in before
-              you do. 28 seats. Once.
+              you do.
             </p>
+            <p>28 seats. Once.</p>
+          </div>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/apply"
-              className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
+              className="inline-block rounded-none bg-[#FAF7F2] px-10 py-4 text-sm font-medium uppercase tracking-widest text-[#1C1917] transition-colors duration-300 hover:bg-[#E8E4DD]"
             >
               Request an Invitation
             </Link>
+            <Link
+              href="#the-invitation"
+              className="inline-block rounded-none border border-[#FAF7F2] px-10 py-4 text-sm font-medium uppercase tracking-widest text-[#FAF7F2] transition-colors duration-300 hover:bg-[#FAF7F2] hover:text-[#1C1917]"
+            >
+              See the Details
+            </Link>
           </div>
-          <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-gray-200 shadow-sm lg:min-h-[560px]">
-            <Image
-              src={HERO_IMAGE_URL}
-              alt="West Rose Media founder posing in a polished brand portrait"
-              fill
-              priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <p className="mt-8 font-heading text-xl font-light text-[#C9B99A]">
+            June 10-12. Replays only for those who sign up before June 10.
+          </p>
         </div>
       </section>
 
@@ -139,7 +145,7 @@ export default function SecretPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
+      <section id="the-invitation" className="section-padding bg-gray-50 scroll-mt-24">
         <div className="container-elegant max-w-4xl">
           <h2 className="text-display text-black mb-8">The shift.</h2>
           <div className="space-y-6 text-editorial text-gray-700">
