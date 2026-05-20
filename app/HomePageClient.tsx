@@ -234,6 +234,50 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      {/* ICON Brand Partnership */}
+      <section className="section-padding bg-black text-white" data-aos="fade-up">
+        <div className="container-elegant">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
+            <div
+              className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl bg-cover bg-no-repeat shadow-2xl md:bg-fixed"
+              style={{
+                backgroundImage: `url('${HOMEPAGE_ICON_IMAGE}')`,
+                backgroundPosition: "center 33%",
+              }}
+              role="img"
+              aria-label="ICON Brand Partnership content experience"
+            />
+            <div className="space-y-6 text-editorial text-white/90 mb-10 text-left md:text-center">
+              <p>
+                You did not build this business to stay a well-kept secret. ICON is for the founder ready to scale past running a business and into being the icon her industry references. Known by name. Sought out by opportunity. Studied by competitors.
+              </p>
+              <p>
+                The way that happens is the content. ICON content is not generic premium polish. It is built to activate the right viewer and repel the wrong one. Her audience does not just consume her content. They get shifted by it. By the time the right buyer reaches her DMs, the conversion has already happened in her chest. The wrong-fit buyers self-eliminate before they ever waste a sales conversation.
+              </p>
+              <p>
+                ICON Brand Partnership is the inner system of West Rose Media. Stephanie Rose leads strategic creative direction, brand and offer building, and business coaching. The West Rose Media team handles ongoing photography, video, social content, and launch assets, with aligned execution that turns decisions into work in real time.
+              </p>
+              <p>
+                This is an entire content team inside her business. A creative director. A brand strategist. A photographer. A videographer. A social content producer. A launch asset team. A business coach. All running as one unit, with Stephanie at the helm. One contract instead of seven separate hires, and none of the management overhead.
+              </p>
+              <p>
+                Money loves speed. Business loves momentum. The market rewards the founder who can take an idea and have it shot, branded, and live before the next founder finishes the brief. Every idea ships while it is still hot. Every campaign looks new and fresh because the brand is being produced in real time.
+              </p>
+              <p>
+                She stays in the seat that grows the business. We hold the seat that builds the icon and activates the audience. The combination compounds.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
+              <Link href="/apply">
+                Apply Now
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Two offers */}
       <section
         ref={twoOffersSectionRef}
@@ -299,50 +343,6 @@ export default function HomePageClient() {
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ICON Brand Partnership */}
-      <section className="section-padding bg-black text-white" data-aos="fade-up">
-        <div className="container-elegant">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
-            <div
-              className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl bg-cover bg-no-repeat shadow-2xl md:bg-fixed"
-              style={{
-                backgroundImage: `url('${HOMEPAGE_ICON_IMAGE}')`,
-                backgroundPosition: "center 33%",
-              }}
-              role="img"
-              aria-label="ICON Brand Partnership content experience"
-            />
-            <div className="space-y-6 text-editorial text-white/90 mb-10 text-left md:text-center">
-              <p>
-                You did not build this business to stay a well-kept secret. ICON is for the founder ready to scale past running a business and into being the icon her industry references. Known by name. Sought out by opportunity. Studied by competitors.
-              </p>
-              <p>
-                The way that happens is the content. ICON content is not generic premium polish. It is built to activate the right viewer and repel the wrong one. Her audience does not just consume her content. They get shifted by it. By the time the right buyer reaches her DMs, the conversion has already happened in her chest. The wrong-fit buyers self-eliminate before they ever waste a sales conversation.
-              </p>
-              <p>
-                ICON Brand Partnership is the inner system of West Rose Media. Stephanie Rose leads strategic creative direction, brand and offer building, and business coaching. The West Rose Media team handles ongoing photography, video, social content, and launch assets, with aligned execution that turns decisions into work in real time.
-              </p>
-              <p>
-                This is an entire content team inside her business. A creative director. A brand strategist. A photographer. A videographer. A social content producer. A launch asset team. A business coach. All running as one unit, with Stephanie at the helm. One contract instead of seven separate hires, and none of the management overhead.
-              </p>
-              <p>
-                Money loves speed. Business loves momentum. The market rewards the founder who can take an idea and have it shot, branded, and live before the next founder finishes the brief. Every idea ships while it is still hot. Every campaign looks new and fresh because the brand is being produced in real time.
-              </p>
-              <p>
-                She stays in the seat that grows the business. We hold the seat that builds the icon and activates the audience. The combination compounds.
-              </p>
-            </div>
-            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
-              <Link href="/apply">
-                Apply Now
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
