@@ -6,6 +6,7 @@ const HERO_IMAGE_URL =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_0428.jpg?alt=media&token=ea7f180f-5440-4344-85b8-97ea13bf6662";
 const STEPHANIE_IMAGE_URL =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7053.jpg?alt=media&token=dfb289d5-19ea-4068-8029-ca1829e3053c";
+const PAYMENT_LINK = "https://buy.stripe.com/5kQcN4cBa2iN0f97t387K1c";
 const MYSTERY_GUEST_PROOF_IMAGES = [
   {
     src: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Liz%20social%20proof%2FWhatsApp%20Image%202026-05-20%20at%2015.45.16%20(1).jpeg?alt=media&token=d76f1762-ed1c-4d3f-8ed1-e2921701966a",
@@ -63,12 +64,14 @@ export default function SecretPage() {
             <p>28 seats. Once.</p>
           </div>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/apply"
+            <a
+              href={PAYMENT_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-none bg-[#FAF7F2] px-10 py-4 text-sm font-medium uppercase tracking-widest text-[#1C1917] transition-colors duration-300 hover:bg-[#E8E4DD]"
             >
-              Request an Invitation
-            </Link>
+              Claim Your Seat
+            </a>
             <Link
               href="#the-invitation"
               className="inline-block rounded-none border border-[#FAF7F2] px-10 py-4 text-sm font-medium uppercase tracking-widest text-[#FAF7F2] transition-colors duration-300 hover:bg-[#FAF7F2] hover:text-[#1C1917]"
@@ -247,6 +250,14 @@ export default function SecretPage() {
               again.
             </p>
           </div>
+          <a
+            href={PAYMENT_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-none bg-black px-10 py-4 text-sm font-medium uppercase tracking-widest text-white transition-colors duration-300 hover:bg-gray-800"
+          >
+            Claim Your Seat
+          </a>
         </div>
       </section>
     </main>
