@@ -8,7 +8,6 @@ import EditorialGrid from "@/components/EditorialGrid";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { homePageAssets } from "@/lib/homePageAssets";
-import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
 const PROBLEM_BG_POSITION = "72% 36%";
@@ -127,21 +126,10 @@ export default function HomePageClient() {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 px-4">
               West Rose Media produces photography and video for established founders whose brand presence needs to catch up to their results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
-                  Book a Spotlight Shoot
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 border-white text-white hover:bg-white hover:text-black"
-              >
-                <Link href="/book/immersion">
-                  Cover My Event
+                <Link href="/apply">
+                  Hotter, richer, faster
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
