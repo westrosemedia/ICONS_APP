@@ -84,13 +84,13 @@ export default function SecretPage() {
 
       <section className="section-padding">
         <div className="container-elegant grid items-center gap-10 lg:grid-cols-[0.75fr_1fr]">
-          <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-gray-200 shadow-sm">
+          <div className="relative min-h-[420px] overflow-hidden bg-gray-200 shadow-sm">
             <Image
               src={STEPHANIE_IMAGE_URL}
               alt="Stephanie Rose of West Rose Media"
               fill
               sizes="(min-width: 1024px) 36vw, 100vw"
-              className="object-cover"
+              className="object-cover object-[center_33%]"
             />
           </div>
           <div>
