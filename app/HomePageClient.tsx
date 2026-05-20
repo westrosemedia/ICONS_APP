@@ -129,7 +129,7 @@ export default function HomePageClient() {
             </p>
             <div className="flex justify-center">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <Link href="/apply">
+                <Link href="/how-it-works">
                   Hotter, richer, faster
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
