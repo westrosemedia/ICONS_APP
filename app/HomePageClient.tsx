@@ -310,7 +310,7 @@ export default function HomePageClient() {
         />
         <div className="container-elegant relative z-10" data-aos="fade-up">
           <h2 className="text-display mb-10 max-w-3xl text-balance text-left text-white drop-shadow md:mb-14">
-            Two ways to work together right now.
+            Other ways to work with West Rose Media.
           </h2>
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
