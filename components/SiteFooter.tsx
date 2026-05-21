@@ -1,6 +1,8 @@
 import Link from "next/link";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
+const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
+
 export default function SiteFooter() {
   return (
     <footer className="w-full border-t border-gray-200 mt-20" data-aos="fade-up">
@@ -22,6 +24,14 @@ export default function SiteFooter() {
             <span className="text-elegant text-lg">West Rose Media</span>
           </div>
           <div className="text-center md:text-right">
+            <a
+              href={PHOTO_GALLERIES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-4 inline-flex items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
+            >
+              View Photo Galleries
+            </a>
             <div className="mb-4">
               <SocialMediaLinks />
             </div>

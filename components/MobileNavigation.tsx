@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { workWithUsItems } from "@/lib/workWithUsLinks";
 
+const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
+
 export default function MobileNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [workWithUsOpen, setWorkWithUsOpen] = useState(false);
@@ -62,6 +64,15 @@ export default function MobileNavigation() {
             >
               Case studies
             </Link>
+            <a
+              href={PHOTO_GALLERIES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              View Photo Galleries
+            </a>
             <div className="flex flex-col gap-1">
               <button
                 type="button"
