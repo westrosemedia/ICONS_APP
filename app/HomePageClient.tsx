@@ -12,55 +12,15 @@ import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
 const PROBLEM_BG_POSITION = "72% 36%";
-const TWO_OFFERS_BG_POSITION = "68% 20%";
 /** How it works — centered layout; anchor blazer / subject (tweak if crop feels off). */
 const HOW_IT_WORKS_BG_POSITION = "50% 28%";
 const HOMEPAGE_ICON_IMAGE =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2F_VWR6863.jpg?alt=media&token=749b0527-f85a-4f9c-8133-0d31d25306ef";
 
-const HOMEPAGE_FAQ_ITEMS: { question: string; answer: string }[] = [
-  {
-    question: "What does West Rose Media do?",
-    answer:
-      "West Rose Media produces brand photography and video for established founders and entrepreneurs across Canada. Services include one-time Spotlight shoots, full event and mastermind coverage through the Immersion package, and the ICON Brand Partnership for ongoing monthly content operations. Stephanie Rose leads strategy and creative direction for every client.",
-  },
-  {
-    question: "Where does West Rose Media work?",
-    answer:
-      "West Rose Media is based in Calgary, Alberta and works with founders across North America. Regular shoot calendars run in Calgary, Vancouver, and Toronto. Other cities are available by quote. ICON Brand Partnership clients work remotely on strategy and planning, with in-person content captured during scheduled travel dates and intentional shoot days in key cities.",
-  },
-  {
-    question: "How much does a brand photography shoot cost?",
-    answer:
-      "The Spotlight package starts at $1,921 CAD and includes photos and vertical video content. Event and mastermind coverage through the Immersion package starts at $6,000 CAD. The ICON Brand Partnership starts at $5,000 CAD per month.",
-  },
-  {
-    question: "How quickly do I receive my content?",
-    answer: "Spotlight photos are delivered within one week. Video is delivered within ten days.",
-  },
-  {
-    question: "Is West Rose Media accepting new clients?",
-    answer:
-      "Spotlight and Immersion bookings are available now. One ICON Brand Partnership spot remains for 2026, onboarding in November. A deposit holds the spot. Applications for the 2027 waitlist are also open at westrosemedia.com.",
-  },
-  {
-    question: "What is the ICON Brand Partnership?",
-    answer:
-      "The ICON Brand Partnership is a monthly retainer where West Rose Media handles the full content operation for a founder's brand. It includes strategy, creative direction, photography, video, editing, and publishing. West Rose Media partners with a maximum of four ICON clients at a time.",
-  },
-  {
-    question: "Who is Stephanie Rose?",
-    answer:
-      "Stephanie Rose is the founder of West Rose Media, a premium brand content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers and videographers. West Rose Media specializes in personal brand content for founders, coaches, and digital product creators across Canada.",
-  },
-];
-
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
-  const twoOffersSectionRef = useRef<HTMLElement | null>(null);
   const howItWorksSectionRef = useRef<HTMLElement | null>(null);
   const [problemParallaxY, setProblemParallaxY] = useState(0);
-  const [twoOffersParallaxY, setTwoOffersParallaxY] = useState(0);
   const [howItWorksParallaxY, setHowItWorksParallaxY] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -83,7 +43,6 @@ export default function HomePageClient() {
 
     const onScroll = () => {
       updateOffset(problemSectionRef.current, setProblemParallaxY);
-      updateOffset(twoOffersSectionRef.current, setTwoOffersParallaxY);
       updateOffset(howItWorksSectionRef.current, setHowItWorksParallaxY);
     };
 
@@ -119,28 +78,34 @@ export default function HomePageClient() {
             className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
             data-aos="fade-up"
           >
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/75 sm:text-sm">
+              Stop editing yourself out.
+            </p>
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
-              Stop marketing like a startup.
-              <br />
-              Your business is an empire. Your brand should reflect it.
+              Stop being the best-kept secret in your industry.
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 px-4">
-              West Rose Media produces photography and video for established founders whose brand presence needs to catch up to their results.
+              West Rose Media builds the brand photography, content, and loyal community that turn accomplished women founders into the authority their market seeks out. We make you visible and impossible to scroll past, so the right clients and opportunities finally find you. ICON Brand Partnership is the full system: strategy, creative direction, photography, and video, run as one team.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
+                <Link href="/apply">
+                  Apply for ICON Brand Partnership
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 border-white text-white hover:bg-white hover:text-black"
+              >
                 <Link href="/how-it-works">
-                  Hotter, richer, faster
+                  How ICON Brand Partnership Works
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
-            <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed">
-              ICON Brand Partnership is open by application.{" "}
-              <Link href="/apply" className="underline underline-offset-4 hover:text-white">
-                Learn about ICON
-              </Link>
-            </p>
           </div>
         </div>
       </section>
@@ -149,18 +114,19 @@ export default function HomePageClient() {
       <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-display text-black mb-8 text-center">
-              The brand that reflects your level changes everything.
-            </h2>
+            <h2 className="text-display text-black mb-8 text-center">You did not come this far to stay a secret.</h2>
             <div className="space-y-6 text-editorial text-gray-700">
               <p>
-                There is a version of your brand that walks into a room before you do. Where potential clients land on your page and immediately feel the weight of what you have built. Where opportunities reach out because your presence alone communicates that you are operating at a level worth paying attention to.
+                Your clients refer you without being asked. Women you worked with a year ago still message you about what changed for them. You have the waitlist, the testimonials, and the income to prove this stopped being a side project a long time ago. Then someone clicks your profile, and the woman they find online is two sizes smaller than the one who earned all of it.
               </p>
               <p>
-                When the outside finally matches what you have built on the inside, everything starts to shift. Better clients arrive more easily because your brand has already done the convincing. Bigger opportunities take you more seriously because your visual presence signals that you belong in those rooms. The quality of who reaches out to you, who wants to collaborate with you, who refers you without hesitation, all of it shifts when your brand finally reflects how serious you actually are.
+                So you edit. You rewrite the caption until it stops sounding like you. You tell yourself you will post the bold thing once the offer is finished and the brand colors are finally decided. You catch yourself wondering what your old boss or the girl from your grade four class would think, and the version of you worth following stays in your drafts.
               </p>
               <p>
-                Most established founders are doing the work at a high level and showing up online with a brand that quietly undersells all of it. The business is real. The results are real. The brand just has not caught up yet.
+                Here is what is actually happening. You already know how big you are supposed to be, and carrying that quietly feels safer than saying it out loud.
+              </p>
+              <p>
+                The women you are meant to reach cannot find you while you keep editing yourself out. Being visible is how they get to you.
               </p>
             </div>
           </div>
@@ -203,14 +169,17 @@ export default function HomePageClient() {
         <div className="container-elegant relative z-10" data-aos="fade-up">
           <div className="max-w-2xl text-left">
             <h2 className="text-display mb-6 text-balance text-white drop-shadow sm:mb-8">
-              Your content is not neutral.
+              Every careful post teaches people to underestimate you.
             </h2>
             <div className="space-y-6 text-lg leading-[1.75] text-white/90">
               <p>
-                Every time you post with a brand that does not match your level, you are actively signaling to potential clients and opportunities that you are not ready for the room they are operating in. That signal is silent but it lands every single time.
+                Your content is never neutral. Every safe post quietly trains the right people to scroll past you and the right rooms to leave you off the list. You rarely catch it happening. You just notice the inquiries are smaller than they should be and assume the answer is to post more often.
               </p>
               <p>
-                The wrong photo sends someone scrolling past before they ever read a word. The wrong brand presence on a speaker pitch, a collaboration inquiry, or a DM follow-up makes a decision maker hesitate. Content that looks almost right but does not fully land is not harmless. Every post you put out with a brand that is behind where you actually are is pushing clients and opportunities farther from hiring you, and you would never even know which ones walked away.
+                A photo that is almost right. A caption you talked yourself down from. A profile that still looks like where you were two years ago. Each one tells a buyer you are operating below the level she needs, so she hires the woman whose brand looks the part, even when your work is stronger.
+              </p>
+              <p>
+                The version of you worth following never makes it onto the screen, so the market keeps pricing you on the careful one instead.
               </p>
             </div>
           </div>
@@ -221,13 +190,33 @@ export default function HomePageClient() {
       <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-display text-black mb-8 text-center">You have already tried to solve this.</h2>
+            <h2 className="text-display text-black mb-8 text-center">You have tried to fix this already.</h2>
             <div className="space-y-6 text-editorial text-gray-700">
               <p>
-                You have worked with photographers who were talented but had no framework for your brand. You have posted more consistently without results that matched the effort. You have hired people who showed up, captured the moment, and left, and the content sat in a folder because no one connected the shoot to the brand to the strategy.
+                You have hired photographers who were talented and had no idea who you are becoming, so you walked away with beautiful images and no brand. You have posted more, pushed harder, and watched the effort outrun the results. You have done the brand workbook, had the breakthrough, and gone home and posted the same safe content by Monday.
               </p>
               <p>
-                And you have probably shown up to events or hosted them. You walked into the room, connected with incredible people, and felt the energy of something real happening. You came home fired up. And then two weeks later nothing had changed. The excitement faded, the connections went quiet, and the brand that was supposed to reflect that version of you was still exactly the same as when you left. Because showing up in the room is one thing. Having a brand that locks in what happened there and keeps working after you get home is something else entirely.
+                You have probably been told to find your voice. You do not need to find your voice. You have always had it. What you have never had is someone who refuses to let you keep it quiet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PR model */}
+      <section className="section-padding bg-gray-50" data-aos="fade-up">
+        <div className="container-elegant">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-display text-black mb-8 text-center">The PR era is over.</h2>
+            <div className="space-y-6 text-editorial text-gray-700">
+              <p>
+                For decades the only way to be known was to pay a firm to convince a magazine you mattered. You hired a publicist, waited months for an editor to decide you were worth a feature, and rented authority you never owned. The day the coverage stopped, the momentum stopped with it.
+              </p>
+              <p>
+                You do not need any of that anymore, and you do not have to be famous first. A PR firm sells you reach you cannot control and a name-drop that fades by next quarter. We build you a community that actually trusts you, and we can start building it right now, at the size you are today. You speak to your people in your own voice, the relationship gets deeper every week, and the authority belongs to you instead of to a press cycle.
+              </p>
+              <p>
+                A few thousand people who believe you will out-earn a magazine cover every time. They buy the day you launch, they bring their friends, and they stay with you through every offer you make after that. That is what West Rose Media builds, in public and on your terms. It is what you hire instead of a PR firm.
               </p>
             </div>
           </div>
@@ -238,7 +227,10 @@ export default function HomePageClient() {
       <section className="section-padding bg-black text-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-display text-white mb-8">Looking for the full partnership?</h2>
+            <h2 className="text-display text-white mb-4">ICON Brand Partnership</h2>
+            <p className="text-2xl font-semibold text-white/85 mb-8">
+              The team, the direction, and the permission to finally show up as her.
+            </p>
             <div
               className="relative mb-10 h-[50vh] min-h-[320px] overflow-hidden rounded-3xl bg-cover bg-no-repeat shadow-2xl md:bg-fixed"
               style={{
@@ -250,95 +242,31 @@ export default function HomePageClient() {
             />
             <div className="space-y-6 text-editorial text-white/90 mb-10 text-left md:text-center">
               <p>
-                You did not build this business to stay a well-kept secret. ICON is for the founder ready to scale past running a business and into being the icon her industry references. Known by name. Sought out by opportunity. Studied by competitors.
+                ICON Brand Partnership is the full system inside West Rose Media. Stephanie Rose leads your strategic creative direction, your brand and offer building, and the calls that keep you moving. The West Rose Media team runs your photography, video, social content, and launch assets, with execution fast enough to ship an idea while it is still hot.
               </p>
               <p>
-                The way that happens is the content. ICON content is not generic premium polish. It is built to activate the right viewer and repel the wrong one. Her audience does not just consume her content. They get shifted by it. By the time the right buyer reaches her DMs, the conversion has already happened in her chest. The wrong-fit buyers self-eliminate before they ever waste a sales conversation.
+                This is an entire content team inside your business. A creative director, a brand strategist, a photographer, a videographer, a social producer, and a coach, all running as one unit with Stephanie at the helm. One partnership instead of seven separate hires, and none of the management overhead.
               </p>
               <p>
-                ICON Brand Partnership is the inner system of West Rose Media. Stephanie Rose leads strategic creative direction, brand and offer building, and business coaching. The West Rose Media team handles ongoing photography, video, social content, and launch assets, with aligned execution that turns decisions into work in real time.
+                And this is the part most people will not say out loud. We stand between you and the internet so you can stop bracing for it. We tell you where to stand, what to say, and which version of you we are putting on the screen. We will not let you shrink the caption or wait for a safer week. The brand we build is the one your competitors study and the one the women you are meant to help can finally find.
               </p>
               <p>
-                This is an entire content team inside her business. A creative director. A brand strategist. A photographer. A videographer. A social content producer. A launch asset team. A business coach. All running as one unit, with Stephanie at the helm. One contract instead of seven separate hires, and none of the management overhead.
+                You stay in the seat that grows the business. We hold the seat that builds the icon and the audience. The combination compounds.
               </p>
-              <p>
-                Money loves speed. Business loves momentum. The market rewards the founder who can take an idea and have it shot, branded, and live before the next founder finishes the brief. Every idea ships while it is still hot. Every campaign looks new and fresh because the brand is being produced in real time.
-              </p>
-              <p>
-                She stays in the seat that grows the business. We hold the seat that builds the icon and activates the audience. The combination compounds.
+              <p className="font-semibold text-white">
+                ICON Brand Partnership starts at $5,000 CAD per month and is built custom around your business. Six month minimum, by application.
               </p>
             </div>
-            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
-              <Link href="/apply">
-                Apply Now
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Two offers */}
-      <section
-        ref={twoOffersSectionRef}
-        className="relative section-padding overflow-hidden"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg pointer-events-none -top-[8%] -bottom-[8%]"
-          style={{
-            backgroundImage: `url('${homePageAssets.behindTwoOffers}')`,
-            backgroundPosition: TWO_OFFERS_BG_POSITION,
-            transform: `translateY(${twoOffersParallaxY}px) scale(1.1)`,
-          }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 pointer-events-none md:hidden"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.35) 100%)",
-          }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 pointer-events-none hidden md:block"
-          style={{
-            background:
-              "linear-gradient(100deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 32%, rgba(0,0,0,0.2) 55%, transparent 72%)",
-          }}
-          aria-hidden
-        />
-        <div className="container-elegant relative z-10" data-aos="fade-up">
-          <h2 className="text-display mb-10 max-w-3xl text-balance text-left text-white drop-shadow md:mb-14">
-            Other ways to work with West Rose Media.
-          </h2>
-          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
-              <h3 className="text-2xl font-semibold text-black mb-4">Content that finally matches your level.</h3>
-              <p className="mb-6 text-lg leading-[1.7] text-gray-900">
-                Spotlight is for founders who are ready to stop showing up online with a brand that undersells everything they have built. You show up and we handle the rest. Creative direction, visual strategy, and execution built around your brand specifically. What you walk away with is a library of content that makes your authority visible the moment someone lands on your page.
-              </p>
-              <p className="mb-8 text-lg leading-[1.7] text-gray-900">
-                This is not a generic shoot. Every image and every frame is built to work for your brand and your ideal client. You leave with content that converts.
-              </p>
-              <Button asChild size="lg" className="w-full sm:w-auto group">
-                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
-                  Book a Spotlight Shoot
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
+                <Link href="/apply">
+                  Apply for ICON Brand Partnership
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
-            </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-md">
-              <h3 className="text-2xl font-semibold text-black mb-4">Your event deserves content that keeps working.</h3>
-              <p className="mb-6 text-lg leading-[1.7] text-gray-900">
-                You planned the room. You sold the tickets. The transformation your clients experience inside that event is real. Immersion captures all of it in a way that lasts long after the event ends.
-              </p>
-              <p className="mb-8 text-lg leading-[1.7] text-gray-900">
-                The content becomes the proof of your authority. It becomes social proof for your next launch. It becomes the thing that makes the next room sell faster because people can see exactly what it looks like to be in a room you lead. Average coverage takes photos. Immersion builds an asset.
-              </p>
-              <Button asChild size="lg" className="w-full sm:w-auto group">
-                <Link href="/book/immersion">
-                  Plan My Event Coverage
+              <Button asChild size="lg" variant="outline" className="group border-white text-white hover:bg-white hover:text-black">
+                <Link href="/how-it-works">
+                  How ICON Brand Partnership Works
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -347,33 +275,18 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* VIP Packages */}
+      {/* Transformation */}
       <section className="section-padding bg-white" data-aos="fade-up">
-        <div className="container-elegant max-w-5xl">
-          <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 shadow-sm md:p-12">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">
-              VIP Packages
-            </p>
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-              <div>
-                <h2 className="text-display text-black mb-6">
-                  Need the fastest way to upgrade how your business is perceived?
-                </h2>
-                <p className="text-editorial text-gray-700">
-                  VIP Day and Weekend Immersion packages bring brand strategy, messaging, and content creation into one focused container. You leave with clarity, direction, and content that reflects where you are actually going.
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 lg:items-start">
-                <p className="text-lg leading-[1.7] text-gray-700">
-                  Built for founders who want the strategy and the assets created together, without waiting months for the brand to catch up.
-                </p>
-                <Button asChild size="lg" className="w-full sm:w-auto group">
-                  <Link href="/vip">
-                    Explore VIP Packages
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </div>
+        <div className="container-elegant">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-display text-black mb-8 text-center">What changes when you stop editing yourself out.</h2>
+            <div className="space-y-6 text-editorial text-gray-700">
+              <p>
+                You stop rehearsing what people might say and start being the name they pass around. The right clients show up to the call already sold, because your brand closed them before you said a word. The rooms you used to pitch your way into start sending the invitation first. The collaboration that was quietly going to someone else lands in your inbox instead.
+              </p>
+              <p>
+                The women who came before you proved you could build a business quietly. You get to build one out loud, and faster than they could, because the tools they never had are sitting in front of you. A brand that finally matches you is what buys that. It moves faster than you can introduce yourself, and it gets to the room before you do.
+              </p>
             </div>
           </div>
         </div>
@@ -414,7 +327,7 @@ export default function HomePageClient() {
           <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-display mb-4 text-white drop-shadow">How it works</h2>
             <p className="text-lg leading-[1.75] text-white/90">
-              Whether you are booking a shoot, bringing us to your event, or applying for the full partnership, the process is the same. Clear creative direction from the start. No managing logistics on your end. Content that performs when it lands.
+              ICON Brand Partnership runs on a clear system. Strategy, production, and execution live inside one team so your brand stays visible and your business stays moving. No managing logistics on your end. Content that performs when it lands.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -454,7 +367,7 @@ export default function HomePageClient() {
       <section className="section-padding bg-gray-50" data-aos="fade-up">
         <div className="container-elegant">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-hero text-black mb-6">What changes when the brand finally matches the business.</h2>
+            <h2 className="text-hero text-black mb-6">The women who stopped editing themselves out.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
@@ -513,18 +426,76 @@ export default function HomePageClient() {
         </div>
         <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
           <div>
-            <h2 className="text-hero text-white mb-6">Ready to get started?</h2>
+            <h2 className="text-hero text-white mb-6">ICON Brand Partnership is by application, and the room is small.</h2>
             <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
-              Whether you have a shoot to book, an event to cover, or you are serious about the full partnership, here is where to go next.
+              You cannot add ICON Brand Partnership to a cart. You apply, and Stephanie reviews every application herself. A small number of seats are open right now. Tell us about your business, what you are building toward, and the version of you that you are done editing out. If it is a fit, you will hear from Stephanie within five business days.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">
                 <Link href="/apply">
-                  Apply for ICON
+                  Apply for ICON Brand Partnership
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Another way in */}
+      <section className="section-padding bg-white border-t border-gray-200" data-aos="fade-up">
+        <div className="container-elegant max-w-5xl">
+          <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 md:p-12">
+            <h2 className="text-display text-black mb-6">Not ready for the full partnership?</h2>
+            <p className="text-editorial text-gray-700 mb-10">
+              If ICON Brand Partnership comes later, you can still work with us. Spotlight is a one time brand shoot built around the woman you are becoming, beyond the one you have been performing. Immersion captures your event so the energy in the room keeps selling long after the doors close.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="group">
+                <a href={SPOTLIGHT_BOOK_URL} target="_blank" rel="noopener noreferrer">
+                  Book a Spotlight Shoot
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="group">
+                <Link href="/book/immersion">
+                  Cover My Event
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mastermind */}
+      <section className="relative section-padding overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
+          style={{
+            backgroundImage: `url('${homePageAssets.behindMastermind}')`,
+            backgroundPosition: "center center",
+            transform: "scale(1.05)",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
+          <div>
+            <h2 className="text-hero text-white mb-12 drop-shadow-lg">Manifesting & Marketing Mastermind</h2>
+            <div className="max-w-4xl mx-auto space-y-8 mb-12">
+              <p className="text-editorial text-white/90">
+                Become the woman whose brand is seen, felt, and followed without burning out or playing small.
+              </p>
+              <p className="text-editorial text-white/90">
+                A 6-month Manifesting & Marketing Mastermind experience. Marketing strategy that converts. Manifestation that moves money. Stephanie and Jackie. One room. Six months.
+              </p>
+              <p className="text-editorial text-white/90">
+                Includes luxury content retreat October 16-18 in Banff AB, Canada.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
+              <Link href="/mastermind">Learn about the Mastermind</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -572,38 +543,6 @@ export default function HomePageClient() {
               );
             })}
           </dl>
-        </div>
-      </section>
-
-      {/* Mastermind */}
-      <section className="relative section-padding overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat parallax-bg"
-          style={{
-            backgroundImage: `url('${homePageAssets.behindMastermind}')`,
-            backgroundPosition: "center center",
-            transform: "scale(1.05)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
-          <div>
-            <h2 className="text-hero text-white mb-12 drop-shadow-lg">Manifesting & Marketing Mastermind</h2>
-            <div className="max-w-4xl mx-auto space-y-8 mb-12">
-              <p className="text-editorial text-white/90">
-                Become the woman whose brand is seen, felt, and followed without burning out or playing small.
-              </p>
-              <p className="text-editorial text-white/90">
-                A 6-month Manifesting & Marketing Mastermind experience. Marketing strategy that converts. Manifestation that moves money. Stephanie and Jackie. One room. Six months.
-              </p>
-              <p className="text-editorial text-white/90">
-                Includes luxury content retreat October 16-18 in Banff AB, Canada.
-              </p>
-            </div>
-            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100">
-              <Link href="/mastermind">Learn about the Mastermind</Link>
-            </Button>
-          </div>
         </div>
       </section>
     </main>

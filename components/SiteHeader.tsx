@@ -1,6 +1,5 @@
 import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
-import WorkWithUsNav from "@/components/WorkWithUsNav";
 
 const SHOW_NAV = true;
 const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
@@ -31,7 +30,12 @@ export default function SiteHeader() {
           <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
             Case studies
           </Link>
-          <WorkWithUsNav />
+          <Link
+            href="/apply"
+            className="inline-flex items-center justify-center rounded-lg border border-black px-5 py-2.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white"
+          >
+            Apply for ICON Brand Partnership
+          </Link>
           <a
             href={PHOTO_GALLERIES_URL}
             target="_blank"

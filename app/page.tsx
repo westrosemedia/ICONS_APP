@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import HomePageClient from "./HomePageClient";
 import HomepageStructuredData from "@/components/HomepageStructuredData";
 
-const title = "West Rose Media | Brand Photography + Event Coverage | Calgary, Vancouver, Toronto";
+const title = "West Rose Media | Brand Partnership, Content + Community for Women Founders | Calgary, Vancouver, Toronto";
 const description =
-  "West Rose Media produces brand photography and content for established founders across Canada. Book a one-time Spotlight shoot, bring us to your next mastermind or conference, or apply for ICON Brand Partnership, our four-seat leadership collective for high-achieving women. Based in Calgary, serving Vancouver, Toronto, Canada, and USA.";
+  "West Rose Media builds the brand, content, and engaged community for accomplished women founders. The ICON Brand Partnership runs your entire content operation in house. The modern replacement for a PR firm. Based in Calgary, serving Vancouver, Toronto, and beyond.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords:
-    "brand photographer Calgary, event photographer Vancouver, Toronto brand photography, West Rose Media, personal brand photography Canada, mastermind content coverage, Stephanie Rose",
+    "brand partnership for women founders, content strategy Calgary, personal brand photography Canada, West Rose Media, ICON Brand Partnership, brand photographer Calgary, event photographer Vancouver, Toronto brand photography, Stephanie Rose",
   openGraph: {
     title,
     description,

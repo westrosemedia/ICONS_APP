@@ -190,7 +190,7 @@ export default function HowItWorksPage() {
                 <Link href="/packages">Work with Us</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="group">
-                <Link href="/apply">Apply for ICON Partnership</Link>
+                <Link href="/apply">Apply for ICON Brand Partnership</Link>
               </Button>
             </div>
             <Button asChild size="lg" variant="ghost" className="group mt-4">

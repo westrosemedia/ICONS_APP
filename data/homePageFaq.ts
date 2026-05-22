@@ -2,36 +2,36 @@ export const homePageFaqItems = [
   {
     question: "What does West Rose Media do?",
     answer:
-      "West Rose Media produces brand photography and video for established founders and entrepreneurs across Canada. Services include one-time Spotlight shoots, full event and mastermind coverage through the Immersion package, and the ICON Brand Partnership for ongoing monthly content operations. Stephanie Rose leads strategy and creative direction for every client.",
+      "West Rose Media builds brands, content, and engaged communities for accomplished women founders across Canada. The flagship offer is the ICON Brand Partnership, a monthly partnership where Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. One time Spotlight shoots and event coverage through Immersion are also available.",
   },
   {
-    question: "Where does West Rose Media work?",
+    question: "How is this different from hiring a PR firm?",
     answer:
-      "West Rose Media is based in Calgary, Alberta and works with founders across North America. Regular shoot calendars run in Calgary, Vancouver, and Toronto. Other cities are available by quote. ICON Brand Partnership clients work remotely on strategy and planning, with in-person content captured during scheduled travel dates and intentional shoot days in key cities.",
-  },
-  {
-    question: "How much does a brand photography shoot cost?",
-    answer:
-      "The Spotlight package starts at $1,921 CAD and includes photos and vertical video content. Event and mastermind coverage through the Immersion package starts at $6,000 CAD. The ICON Brand Partnership starts at $5,000 CAD per month.",
-  },
-  {
-    question: "How quickly do I receive my content?",
-    answer:
-      "Spotlight photos are delivered within one week. Video is delivered within ten days.",
-  },
-  {
-    question: "Is West Rose Media accepting new clients?",
-    answer:
-      "Spotlight and Immersion bookings are available now. One ICON Brand Partnership spot remains for 2026, onboarding in November. A deposit holds the spot. Applications for the 2027 waitlist are also open at westrosemedia.com.",
+      "A PR firm asks media gatekeepers to validate you and rents you borrowed authority. West Rose Media builds your authority directly with your own audience. You own the narrative and the community, the trust compounds in public, and it keeps working long after any single feature would have faded.",
   },
   {
     question: "What is the ICON Brand Partnership?",
     answer:
-      "The ICON Brand Partnership is a monthly retainer where West Rose Media handles the full content operation for a founder's brand. It includes strategy, creative direction, photography, video, editing, and publishing. West Rose Media partners with a maximum of four ICON clients at a time.",
+      "ICON Brand Partnership is a monthly partnership where West Rose Media runs a founder's entire content operation: strategic creative direction, brand and offer building, photography, video, social content, and launch assets. It starts at $5,000 CAD per month, is built custom around the business, and has a six month minimum. ICON Brand Partnership is by application.",
+  },
+  {
+    question: "How much does it cost to work with West Rose Media?",
+    answer:
+      "ICON Brand Partnership starts at $5,000 CAD per month. One time Spotlight brand shoots start at $1,921 CAD. Event and mastermind coverage through Immersion starts at $6,000 CAD.",
+  },
+  {
+    question: "Where does West Rose Media work?",
+    answer:
+      "West Rose Media is based in Calgary, Alberta and works with founders across North America. Regular shoot calendars run in Calgary, Vancouver, and Toronto. ICON Brand Partnership members work remotely on strategy and planning, with in person content captured on scheduled shoot days and travel dates.",
+  },
+  {
+    question: "Is West Rose Media accepting new clients?",
+    answer:
+      "ICON Brand Partnership is by application and a small number of seats are open now. Spotlight shoots and Immersion event coverage are also available to book.",
   },
   {
     question: "Who is Stephanie Rose?",
     answer:
-      "Stephanie Rose is the founder of West Rose Media, a premium brand content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers and videographers. West Rose Media specializes in personal brand content for founders, coaches, and digital product creators across Canada.",
+      "Stephanie Rose is the founder of West Rose Media, a brand and content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers, videographers, and content producers. West Rose Media specializes in personal brand content and community building for women founders, coaches, and creators across Canada.",
   },
 ] as const;

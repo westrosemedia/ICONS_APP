@@ -85,7 +85,7 @@ export default function AboutPage() {
                   href="/apply"
                   className="inline-block border-2 border-black text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-black hover:text-white transition-colors"
                 >
-                  Apply for ICON Partnership
+                  Apply for ICON Brand Partnership
                 </Link>
               </div>
             </div>
@@ -263,7 +263,7 @@ export default function AboutPage() {
               className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
               style={{backgroundColor: '#ff914d'}}
             >
-              Apply for ICON Partnership
+              Apply for ICON Brand Partnership
             </Link>
           </div>
         </div>

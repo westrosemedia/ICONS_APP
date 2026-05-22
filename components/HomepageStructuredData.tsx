@@ -18,7 +18,7 @@ export default function HomepageStructuredData() {
       {
         "@type": "Person",
         name: "Stephanie Rose",
-        jobTitle: "Founder, Creative Director",
+        jobTitle: "Founder and Creative Director",
         worksFor: {
           "@type": "Organization",
           name: "West Rose Media",
@@ -36,9 +36,9 @@ export default function HomepageStructuredData() {
         "@type": "Service",
         name: "Spotlight brand photography",
         description:
-          "One-time brand photography and vertical video for founders. Creative direction and execution built around your brand.",
+          "One time brand photography and vertical video for accomplished women founders. Creative direction and execution built around the woman she is becoming.",
         provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
-        areaServed: ["Calgary, Canada", "Vancouver, Canada", "Toronto, Canada"],
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
         offers: {
           "@type": "Offer",
           price: "1921",
@@ -50,9 +50,9 @@ export default function HomepageStructuredData() {
         "@type": "Service",
         name: "Immersion event coverage",
         description:
-          "Event and mastermind photography and video coverage for coaches, consultants, and organizers.",
+          "Event and mastermind photography and video coverage that turns the energy in the room into content that keeps selling after the event ends.",
         provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
-        areaServed: ["Canada"],
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
         offers: {
           "@type": "Offer",
           price: "6000",
@@ -64,9 +64,9 @@ export default function HomepageStructuredData() {
         "@type": "Service",
         name: "ICON Brand Partnership",
         description:
-          "Monthly retainer for full content operations including strategy, photography, video, editing, and publishing.",
+          "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team.",
         provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
-        areaServed: ["Canada", "United States"],
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
         offers: {
           "@type": "Offer",
           price: "5000",
