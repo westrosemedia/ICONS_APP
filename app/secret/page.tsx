@@ -54,7 +54,9 @@ export default function SecretPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center md:px-16">
           <h1 className="mb-8 font-heading text-5xl font-light leading-tight tracking-tight text-[#FAF7F2] md:text-7xl">
-            Elevate your brand. Claim your voice. Go viral.
+            Elevate your brand. Claim your voice.
+            <br />
+            Go viral.
           </h1>
           <p className="mx-auto mb-8 max-w-3xl font-heading text-3xl font-light leading-snug text-[#FAF7F2] md:text-5xl">
             You don&apos;t need to find your voice. You need to stop editing it out.
