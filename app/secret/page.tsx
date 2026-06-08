@@ -86,7 +86,7 @@ export default function SecretPage() {
 
       <section className="section-padding">
         <div className="container-elegant max-w-4xl">
-          <h2 className="text-display text-black mb-8">Here&apos;s what actually broke.</h2>
+          <h2 className="text-display text-black mb-8">What&apos;s actually Broken</h2>
           <div className="space-y-6 text-editorial text-gray-700">
             <p>
               At some point your feed turned into a job. You open the app and you&apos;re immediately
