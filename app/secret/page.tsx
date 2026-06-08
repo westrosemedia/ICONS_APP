@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 const HERO_IMAGE_URL =
-  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7053.jpg?alt=media&token=dfb289d5-19ea-4068-8029-ca1829e3053c";
+  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Liz%20social%20proof%2FKAY_7513.jpg?alt=media&token=ad86ba86-ce77-4b6a-a02e-e21efea6c11f";
 const PAYMENT_LINK = "https://buy.stripe.com/eVqfZgbx66z38LFcNn87K1d";
 
 const MYSTERY_GUEST_PROOF_IMAGES = [
@@ -273,6 +273,37 @@ export default function SecretPage() {
             </li>
           </ul>
         </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-elegant max-w-4xl">
+          <h2 className="text-display text-black mb-8">I&apos;ve been exactly where you are.</h2>
+          <div className="space-y-6 text-editorial text-gray-700">
+            <p>
+              I&apos;ve hired the coaches who promised transformation and delivered hype. I sat through the
+              calls, paid the invoices, and walked away with a highlight reel of affirmations and absolutely
+              nothing I could actually use. I&apos;ve worked more hours than I should have on content that went
+              nowhere. I&apos;ve opened the app and felt like everyone else was inside a room I wasn&apos;t invited
+              to, some cool-girls club with an algorithm I couldn&apos;t crack and a confidence I couldn&apos;t fake.
+            </p>
+            <p>I built West Rose Media because I got tired of noise that didn&apos;t move anything.</p>
+            <p>
+              What I teach is real. It&apos;s specific. You can open your phone and do it today and watch
+              something change. I don&apos;t do cheerleading. I don&apos;t do vague strategy frameworks you&apos;ll never
+              implement. I show up, I tell you exactly what to do, and I stay in the room until you&apos;ve done
+              it and seen the result.
+            </p>
+            <p>That&apos;s what this week is.</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative min-h-[55vh] bg-cover bg-center bg-no-repeat md:bg-fixed"
+        style={{ backgroundImage: `url('${HERO_IMAGE_URL}')` }}
+        aria-label="Un-Fuck Your Algorithm visual break"
+      >
+        <div className="absolute inset-0 bg-black/35" />
       </section>
 
       <section id="the-invitation" className="section-padding bg-white scroll-mt-24">
