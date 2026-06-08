@@ -48,8 +48,11 @@ export default function SecretPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <section
-        className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
-        style={{ backgroundImage: `url('${HERO_IMAGE_URL}')` }}
+        className="relative flex min-h-screen items-center justify-center bg-cover bg-no-repeat md:bg-fixed"
+        style={{
+          backgroundImage: `url('${HERO_IMAGE_URL}')`,
+          backgroundPosition: "center 33%",
+        }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center md:px-16">
