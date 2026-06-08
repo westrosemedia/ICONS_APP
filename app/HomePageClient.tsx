@@ -87,22 +87,22 @@ export default function HomePageClient() {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 px-4">
               West Rose Media builds the brand photography, content, and loyal community that turn accomplished women founders into the authority their market seeks out. We make you visible and impossible to scroll past, so the right clients and opportunities finally find you. ICON Brand Partnership is the full system: strategy, creative direction, photography, and video, run as one team.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col items-center justify-center gap-3">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <Link href="/apply">
-                  Apply for ICON Brand Partnership
+                <Link href="/how-it-works">
+                  Hotter, Richer, Faster
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button
                 asChild
-                size="lg"
+                size="sm"
                 variant="outline"
-                className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 border-white text-white hover:bg-white hover:text-black"
+                className="group mt-3 border-white/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"
               >
-                <Link href="/how-it-works">
-                  How ICON Brand Partnership Works
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                <Link href="/apply">
+                  Apply for ICON Brand Partnership
+                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
