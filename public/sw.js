@@ -1,4 +1,4 @@
-const CACHE_NAME = 'icons-app-v4';
+const CACHE_NAME = 'icons-app-v5';
 const urlsToCache = [
   '/',
   '/quiz',
@@ -16,6 +16,7 @@ const urlsToCache = [
 
 // Install event - cache resources
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -50,7 +51,7 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 

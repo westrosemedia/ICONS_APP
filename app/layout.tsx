@@ -8,6 +8,7 @@ import PinterestVerification from "@/components/PinterestVerification";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
 import AosInit from "@/components/AosInit";
 import SiteChrome from "@/components/SiteChrome";
+import StaleCacheCleanup from "@/components/StaleCacheCleanup";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning={true}
       >
         <AosInit />
+        <StaleCacheCleanup />
         <SiteChrome>{children}</SiteChrome>
 
         <StructuredData />

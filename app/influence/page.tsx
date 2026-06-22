@@ -13,6 +13,8 @@ const FIREBASE_IMAGES = {
   proof: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7090.jpg?alt=media&token=88d1e7aa-3ece-44b8-b5a7-8d8b392aecb3",
 };
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Influence Program | Visibility and Authority with Stephanie Rose",
   description: "Influence is a three month identity and story program for founders and leaders ready to turn their evolution into their most powerful brand asset.",
