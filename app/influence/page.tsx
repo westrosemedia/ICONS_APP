@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Metadata } from "next";
 
 const STRIPE_LINK = "https://buy.stripe.com/28E9ASgRq8Hb4vp14F87K15";
+const COHORT_DATES = "May 2026, August 2026, and January 2027";
+const COHORT_CHOOSE_COPY = `Three cohorts: ${COHORT_DATES}. Choose your start date when you sign up.`;
 
 const FIREBASE_IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_6978.jpg?alt=media&token=6d0700c6-d2d3-45a7-b050-1b9d00782e64",
@@ -44,7 +46,7 @@ export default function InfluencePage() {
             <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">Claim Your Spot</Link>
             <Link href="#who-this-is-for" className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none">See If This Is You</Link>
           </div>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">Begins June 1, 2026. Founding pricing while the first group forms.</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">{COHORT_CHOOSE_COPY}</p>
         </div>
       </section>
 
@@ -149,8 +151,8 @@ export default function InfluencePage() {
       <section id="pricing" className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24" aria-labelledby="pricing-heading">
         <div className="text-center max-w-2xl mx-auto">
           <h2 id="pricing-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4">Join INFLUENCE</h2>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">Begins June 1, 2026.</p>
-          <p className="text-lg text-[#3D3632] mb-10">Founding pricing while the first group forms. When the round fills, enrollment closes. The June 1 start is fixed.</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">{COHORT_CHOOSE_COPY}</p>
+          <p className="text-lg text-[#3D3632] mb-10">Founding pricing while cohorts fill. When you sign up, you choose your cohort start date.</p>
           <div className="border border-[#C9B99A]/40 bg-white/60 p-6 md:p-8 text-left mb-10">
             <h3 className="text-xs tracking-widest uppercase text-[#9C8E82] mb-5 text-center">Pricing</h3>
             <ul className="space-y-3 text-[#3D3632] text-lg">
@@ -161,7 +163,7 @@ export default function InfluencePage() {
           </div>
           <div className="space-y-4 text-[#3D3632] text-lg mb-10">
             <h3 className="text-xs tracking-widest uppercase text-[#9C8E82]">What you get when you join</h3>
-            <p>The program begins June 1, 2026. That is when access opens. Before then, onboarding materials and preliminary story work will arrive so you do not walk into the first call cold. By the time the program begins, you will already have started.</p>
+            <p>When you join, you choose your cohort: {COHORT_DATES}. Onboarding materials and preliminary story work arrive before your start date so you do not walk into the first call cold. By the time your cohort begins, you will already have started.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link href={STRIPE_LINK} className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none">Claim My Seat</Link>
@@ -181,6 +183,7 @@ export default function InfluencePage() {
           <h2 id="faq-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center">Frequently asked questions</h2>
           <ul className="space-y-4 list-none p-0 m-0">
             {[
+              { q: "When does INFLUENCE start?", a: `There are three cohorts: ${COHORT_DATES}. When you sign up, you choose the start date that fits your timeline.` },
               { q: "What if I am not sure I am ready?", a: "Readiness is the thing this program builds. If you have a story and you know it is bigger than the polite version you have been telling, that is enough. We build the readiness inside the room, on the calls, in the reps." },
               { q: "Is this about becoming an influencer?", a: "No. This is about becoming visible in a way that aligns with your integrity and your leadership. Authority, not algorithm." },
               { q: "What if I am going through something personal right now?", a: "That is often exactly why this program works. Big life shifts create the most powerful stories. We make sure you share yours in a way that strengthens you, not in a way that bleeds in public." },
@@ -208,7 +211,7 @@ export default function InfluencePage() {
         <div className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
           <h2 id="final-cta-heading" className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-6">Your life is already shifting. Now your voice needs to catch up.</h2>
           <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-4">You are not waiting for permission. You are waiting for the language. INFLUENCE is the room where you build it.</p>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">Begins June 1, 2026. Founding pricing while the first group forms.</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">{COHORT_CHOOSE_COPY}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#pricing" className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none">I&apos;m Ready. Secure My Spot.</Link>
             <Link href="#pricing" className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none">Claim Your Spot</Link>
