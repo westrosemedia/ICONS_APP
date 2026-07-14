@@ -89,7 +89,7 @@ export default function HomePageClient() {
             </p>
             <div className="flex flex-col items-center justify-center gap-3">
               <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <Link href="/how-it-works">
+                <Link href="/hot&rich">
                   Hotter, Richer, Faster
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

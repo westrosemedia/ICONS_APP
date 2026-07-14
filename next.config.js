@@ -110,6 +110,15 @@ const nextConfig = {
         ],
       },
       {
+        source: '/hot-and-rich',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+        ],
+      },
+      {
         source: '/manifest.json',
         headers: [
           {
@@ -125,6 +134,20 @@ const nextConfig = {
     ];
   },
   
+  // Rewrites
+  async rewrites() {
+    return [
+      {
+        source: '/hot&rich',
+        destination: '/hot-and-rich',
+      },
+      {
+        source: '/hot%26rich',
+        destination: '/hot-and-rich',
+      },
+    ];
+  },
+
   // Redirects
   async redirects() {
     return [
