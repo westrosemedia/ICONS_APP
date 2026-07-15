@@ -119,6 +119,24 @@ const nextConfig = {
         ],
       },
       {
+        source: '/hot&rich',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/hot%26rich',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+        ],
+      },
+      {
         source: '/manifest.json',
         headers: [
           {

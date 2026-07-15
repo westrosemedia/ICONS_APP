@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CACHE_VERSION = "influence-cohorts-2026-06-08";
+const CACHE_VERSION = "hot-rich-launch-2026-07-15";
 
 async function clearStaleClientStorage() {
   if ("caches" in window) {

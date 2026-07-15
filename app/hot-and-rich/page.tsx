@@ -8,8 +8,8 @@ const YOUTUBE_EMBED = "https://www.youtube.com/embed/HTRDxi8J5KA?si=URp8MB-mUJpC
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
   story: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_29.jpg?alt=media&token=f8526ad2-3e66-4dd4-a263-b5df4189e922",
-  inside: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_29.jpg?alt=media&token=f8526ad2-3e66-4dd4-a263-b5df4189e922",
-  proof: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_30.jpg?alt=media&token=aa72939d-a43c-4743-affc-05f4fd9e669d",
+  inside: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_30.jpg?alt=media&token=aa72939d-a43c-4743-affc-05f4fd9e669d",
+  proof: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_29.jpg?alt=media&token=f8526ad2-3e66-4dd4-a263-b5df4189e922",
 };
 
 const META = {
