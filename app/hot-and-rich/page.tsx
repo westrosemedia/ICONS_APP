@@ -1,113 +1,33 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-// ─── Edit copy here when ready ───────────────────────────────────────────────
-
-const PAYMENT_LINK = ""; // Stripe or checkout URL
+const PRESALE_LINK = "https://buy.stripe.com/bIY15Yg9K4zofW8fZ7";
+const REGULAR_LINK = "https://buy.stripe.com/8x2eVc0Ss2iN8LFbJj87K1e";
+const YOUTUBE_EMBED = "https://www.youtube.com/embed/HTRDxi8J5KA?si=URp8MB-mUJpCAZ5y";
 
 const IMAGES = {
-  hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_6978.jpg?alt=media&token=6d0700c6-d2d3-45a7-b050-1b9d00782e64",
-  whoThisIsFor: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7161.jpg?alt=media&token=c52a1b11-e17e-4a08-9218-74a9a13f73b5",
-  inside: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7053.jpg?alt=media&token=dfb289d5-19ea-4068-8029-ca1829e3053c",
-  proof: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_7090.jpg?alt=media&token=88d1e7aa-3ece-44b8-b5a7-8d8b392aecb3",
+  hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
+  story: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_29.jpg?alt=media&token=f8526ad2-3e66-4dd4-a263-b5df4189e922",
+  inside: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_29.jpg?alt=media&token=f8526ad2-3e66-4dd4-a263-b5df4189e922",
+  proof: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_30.jpg?alt=media&token=aa72939d-a43c-4743-affc-05f4fd9e669d",
 };
 
-const COPY = {
-  meta: {
-    title: "Hot & Rich | West Rose Media",
-    description: "Sales page description — update before launch.",
-  },
-  hero: {
-    eyebrow: "West Rose Media presents",
-    headline: "Hot & Rich",
-    subheadline: "Subheadline goes here.",
-    paragraphs: ["Opening paragraph goes here.", "Second paragraph goes here."],
-    primaryCta: { label: "Primary CTA", href: "#pricing" },
-    secondaryCta: { label: "Secondary CTA", href: "#who-this-is-for" },
-    subtext: "Supporting line under CTAs (dates, price, etc.).",
-  },
-  problem: {
-    heading: "Problem section heading",
-    paragraphs: ["Paragraph one.", "Paragraph two.", "Paragraph three."],
-  },
-  whoThisIsFor: {
-    heading: "This is for you if",
-    bullets: ["Bullet one.", "Bullet two.", "Bullet three."],
-  },
-  shift: {
-    heading: "What changes",
-    before: {
-      label: "Right now",
-      bullets: ["Before bullet one.", "Before bullet two."],
-    },
-    after: {
-      label: "After",
-      bullets: ["After bullet one.", "After bullet two."],
-    },
-  },
-  inside: {
-    heading: "What's inside",
-    paragraphs: ["Intro paragraph.", "Supporting paragraph."],
-    pullQuote: "Optional pull quote.",
-    includesLabel: "What is included",
-    includes: [
-      { title: "Item one", body: "Description." },
-      { title: "Item two", body: "Description." },
-    ],
-    footnote: "Optional footnote.",
-  },
-  howItWorks: {
-    heading: "How it works",
-    intro: "Short intro line.",
-    steps: [
-      { label: "Step 1", body: "Step description." },
-      { label: "Step 2", body: "Step description." },
-      { label: "Step 3", body: "Step description." },
-    ],
-  },
-  authority: {
-    heading: "Who is leading this",
-    paragraphs: ["Bio paragraph one.", "Bio paragraph two."],
-    pullQuote: "Optional closing line.",
-  },
-  pricing: {
-    heading: "Join",
-    subtext: "Pricing subtext (cohorts, dates, etc.).",
-    intro: "Pricing intro paragraph.",
-    options: ["Pricing option one.", "Pricing option two."],
-    joinHeading: "What you get when you join",
-    joinBody: "Onboarding / enrollment details.",
-    primaryCta: "Primary CTA",
-    secondaryCta: "Secondary CTA",
-    footnote: "Urgency or enrollment note.",
-  },
-  faq: [
-    { q: "Question one?", a: "Answer one." },
-    { q: "Question two?", a: "Answer two." },
-  ],
-  finalCta: {
-    heading: "Final CTA heading",
-    body: "Closing paragraph.",
-    subtext: "Supporting line.",
-    primaryCta: "Primary CTA",
-    secondaryCta: "Secondary CTA",
-    footnote: "Optional footnote.",
-  },
-  mobileCta: "Mobile CTA label",
+const META = {
+  title: "Hot and Rich Mastermind | West Rose Media",
+  description:
+    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. Presale $1,250 CAD through July 15.",
 };
-
-// ─── Page ────────────────────────────────────────────────────────────────────
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: COPY.meta.title,
-  description: COPY.meta.description,
+  title: META.title,
+  description: META.description,
   metadataBase: new URL("https://westrosemedia.com"),
   alternates: { canonical: "/hot&rich" },
   openGraph: {
-    title: COPY.meta.title,
-    description: COPY.meta.description,
+    title: META.title,
+    description: META.description,
     url: "https://westrosemedia.com/hot&rich",
   },
 };
@@ -132,11 +52,41 @@ function BulletList({
   );
 }
 
-export default function HotAndRichPage() {
-  const pricingHref = PAYMENT_LINK || "#pricing";
+function CheckoutButton({
+  href,
+  children,
+  variant = "primary",
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "light" | "outline-light";
+}) {
+  const classes = {
+    primary:
+      "inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none",
+    secondary:
+      "inline-block border border-[#1C1917] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#1C1917] hover:text-[#FAF7F2] transition-colors duration-300 rounded-none",
+    light:
+      "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none",
+    "outline-light":
+      "inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none",
+  };
 
   return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={classes[variant]}>
+      {children}
+    </a>
+  );
+}
+
+export default function HotAndRichPage() {
+  return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
+      {/* Presale banner */}
+      <div className="bg-[#1C1917] text-[#FAF7F2] text-center py-3 px-4 text-xs sm:text-sm tracking-wide">
+        Presale: $1,250 CAD ends midnight MST July 15 — then $3,050 CAD.
+      </div>
+
       {/* Hero */}
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
@@ -145,40 +95,41 @@ export default function HotAndRichPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-6 md:px-16 max-w-4xl mx-auto py-32">
           <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-[#C9B99A] mb-8">
-            {COPY.hero.eyebrow}
+            West Rose Media presents
           </p>
           <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight text-[#FAF7F2] mb-12">
-            {COPY.hero.headline}
+            Hot and Rich Mastermind
           </h1>
-          {COPY.hero.subheadline ? (
-            <p className="font-heading text-2xl md:text-4xl font-light leading-snug text-[#FAF7F2]/95 mb-10">
-              {COPY.hero.subheadline}
-            </p>
-          ) : null}
+          <p className="font-heading text-2xl md:text-4xl font-light leading-snug text-[#FAF7F2]/95 mb-10">
+            The skill that rebuilt it in 30 days is the asset. Not the followers. Not the
+            algorithm&apos;s mood that week. The skill.
+          </p>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
-            {COPY.hero.paragraphs.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
+            <p>
+              They deleted seven years of my life in four seconds. No warning. No appeal. Just
+              gone. Thirty days later I had a brand new account sitting at 7,249 followers and
+              482,828 views, built from nothing, without a single one of those seven years behind
+              it.
+            </p>
+            <p>
+              I&apos;m going to show you exactly how, because you&apos;re about to need this more
+              than you think.
+            </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CheckoutButton href={PRESALE_LINK} variant="light">
+              Join Hot and Rich — $1,250 CAD
+            </CheckoutButton>
             <Link
-              href={COPY.hero.primaryCta.href}
-              className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none"
-            >
-              {COPY.hero.primaryCta.label}
-            </Link>
-            <Link
-              href={COPY.hero.secondaryCta.href}
+              href="#what-happened"
               className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none"
             >
-              {COPY.hero.secondaryCta.label}
+              Read the Story
             </Link>
           </div>
-          {COPY.hero.subtext ? (
-            <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
-              {COPY.hero.subtext}
-            </p>
-          ) : null}
+          <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
+            Presale closes midnight MST, July 15.
+          </p>
         </div>
       </section>
 
@@ -189,163 +140,224 @@ export default function HotAndRichPage() {
             id="problem-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            {COPY.problem.heading}
+            You&apos;re good at what you do. That was never the problem.
           </h2>
-          {COPY.problem.paragraphs.map((p) => (
-            <p key={p} className="text-lg text-[#3D3632]">
-              {p}
-            </p>
-          ))}
+          <p className="text-lg text-[#3D3632]">
+            You know your craft. You&apos;re showing up, posting, doing the work. What&apos;s
+            missing is being found for it: the followers, the inquiries, the DMs that turn into
+            paying clients. You&apos;ve watched people with less experience than you pull ahead of
+            you, and it&apos;s started to feel less like bad luck and more like a secret you
+            weren&apos;t let in on.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            There isn&apos;t a secret. There&apos;s a mechanism, and right now you don&apos;t have
+            it yet.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            Here&apos;s what I don&apos;t think you&apos;ve let yourself think about: everything
+            you&apos;re building right now lives on a platform you don&apos;t own, that runs on
+            rules you don&apos;t get to see, enforced by a system that doesn&apos;t have a human on
+            the other end of it. Which means it can all disappear before you finish reading this
+            sentence.
+          </p>
+          <p className="text-lg text-[#3D3632] font-medium">
+            I know because it happened to me on a Monday night.
+          </p>
         </div>
       </section>
 
-      {/* Who this is for */}
+      {/* What actually happened */}
       <section
-        id="who-this-is-for"
+        id="what-happened"
         className="relative bg-cover bg-no-repeat md:bg-fixed scroll-mt-24"
         style={{
-          backgroundImage: `url('${IMAGES.whoThisIsFor}')`,
+          backgroundImage: `url('${IMAGES.story}')`,
           backgroundPosition: "center 33%",
         }}
-        aria-labelledby="who-heading"
+        aria-labelledby="story-heading"
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <h2
-            id="who-heading"
+            id="story-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-12 text-center"
           >
-            {COPY.whoThisIsFor.heading}
+            What actually happened
           </h2>
-          <div className="max-w-2xl mx-auto">
-            <BulletList items={COPY.whoThisIsFor.bullets} light />
+          <div className="max-w-2xl mx-auto space-y-6 text-lg text-[#FAF7F2]/90">
+            <p>
+              I built West Rose Media&apos;s Instagram for seven years. Birth photography, then
+              family photography, then the version of me that came out at 31 and lost 11,000
+              followers in a single day because I stopped playing a role I&apos;d been cast in since
+              childhood. I kept building anyway. Divorced, broke, full custody of three kids, no
+              income history in my own name because every account was in his. I rebuilt from that
+              too.
+            </p>
+            <p>
+              Thirty days ago, I was telling that story on Instagram, the short version, the kind you
+              tell in a reel. It started moving. Thirty thousand views, then climbing. Then the
+              comments turned. A coordinated wave of people who&apos;d found my account specifically
+              because I said I was gay and I&apos;d left religion, mass-reporting everything
+              I&apos;d ever posted.
+            </p>
+            <p>
+              No human reviewed it. Meta&apos;s system doesn&apos;t work that way anymore. Enough
+              reports trip the AI and it acts on its own: account deactivated, no chance for
+              appeal, seven years gone in the time it takes to read that sentence. Every post. Every
+              piece of proof I used to point new clients to when they said &quot;I could never get
+              where you are.&quot; I used to tell them: scroll to the beginning, watch the whole
+              climb. That receipt is gone now.
+            </p>
+            <p>I cried the whole drive home. Then I opened my laptop and started a brand new account that night.</p>
+            <p className="text-[#C9B99A] font-heading text-xl font-light pt-2">
+              Watch me tell the whole thing, in real time, the week it happened:
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Before / after */}
+      {/* Video */}
+      <section className="py-16 md:py-24 px-6 md:px-12 max-w-4xl mx-auto" aria-label="Story video">
+        <div className="aspect-video w-full overflow-hidden bg-black shadow-xl">
+          <iframe
+            className="h-full w-full"
+            src={YOUTUBE_EMBED}
+            title="Stephanie Rose tells the story of rebuilding after account deletion"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </section>
+
+      {/* Thirty days later */}
       <section
-        id="the-shift"
-        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto"
-        aria-labelledby="shift-heading"
+        id="results"
+        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24"
+        aria-labelledby="results-heading"
       >
         <h2
-          id="shift-heading"
+          id="results-heading"
           className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-16 text-center"
         >
-          {COPY.shift.heading}
+          Thirty days later
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div>
             <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-6">
-              {COPY.shift.before.label}
+              New Instagram account
             </h3>
-            <BulletList items={COPY.shift.before.bullets} />
+            <BulletList
+              items={[
+                "7,249 followers",
+                "482,828 views",
+                "162,553 accounts reached",
+                "All from an account that didn't exist a month ago",
+              ]}
+            />
           </div>
           <div>
             <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-6">
-              {COPY.shift.after.label}
+              At the same time, on TikTok
             </h3>
-            <BulletList items={COPY.shift.after.bullets} />
+            <BulletList
+              items={[
+                "3,460 followers",
+                "310,900 views in the last 28 days alone",
+                "Profile views up over 7,000%",
+                "Revenue tracing straight back to the new account — close to $20K this month",
+              ]}
+            />
+          </div>
+        </div>
+        <div className="max-w-2xl mx-auto mt-12 space-y-6 text-lg text-[#3D3632] text-center">
+          <p>
+            I&apos;m making more in a month right now than I used to make in a year.
+          </p>
+          <p className="font-heading text-2xl font-light text-[#1C1917]">
+            I&apos;m not telling you this so you feel sorry for me.
+          </p>
+        </div>
+      </section>
+
+      {/* The account was never the asset */}
+      <section
+        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed"
+        style={{ backgroundImage: `url('${IMAGES.proof}')` }}
+        aria-labelledby="asset-heading"
+      >
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-3xl mx-auto">
+          <h2
+            id="asset-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-10"
+          >
+            The account was never the asset
+          </h2>
+          <div className="space-y-6 text-[#FAF7F2]/85 leading-relaxed text-lg">
+            <p>
+              The skill that rebuilt it in 30 days is the asset. That&apos;s what generated 7,249
+              followers and 482,828 views from nothing. That&apos;s what&apos;s about to close me
+              another five-figure month. And that&apos;s the one thing that cannot be
+              mass-reported, deactivated, or erased without appeal.
+            </p>
+            <p>
+              Everyone else who&apos;s lost an account this way is starting from zero with no idea
+              what to do next. I started from zero and had a plan before I got home. That gap,
+              between having a plan and not having one, is the entire mastermind.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* What's inside */}
+      {/* The exact mechanism */}
       <section
         id="what-you-get"
-        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed"
+        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed scroll-mt-24"
         style={{ backgroundImage: `url('${IMAGES.inside}')` }}
-        aria-labelledby="inside-heading"
+        aria-labelledby="mechanism-heading"
       >
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <h2
-            id="inside-heading"
+            id="mechanism-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-12 text-center"
           >
-            {COPY.inside.heading}
+            The exact mechanism, not the vibes
           </h2>
           <div className="max-w-2xl mx-auto space-y-6">
-            {COPY.inside.paragraphs.map((p) => (
-              <p key={p} className="text-lg text-[#FAF7F2]/90">
-                {p}
-              </p>
-            ))}
-            {COPY.inside.pullQuote ? (
-              <p className="text-[#FAF7F2] font-heading text-2xl font-light italic pt-2">
-                {COPY.inside.pullQuote}
-              </p>
-            ) : null}
+            <p className="text-lg text-[#FAF7F2]/90">
+              Four months. How to build an audience and a revenue system fast enough and sturdy
+              enough that losing a platform becomes a setback instead of a funeral. The same moves
+              that took me from zero to 7,249 followers and a five-figure month in 30 days, taught
+              live, with me in the room, in real time, as I run it on my own account.
+            </p>
             <h3 className="text-xs tracking-widest uppercase text-[#C9B99A] pt-6">
-              {COPY.inside.includesLabel}
+              What you get for four months
             </h3>
             <ul className="space-y-6 pt-4 text-lg">
-              {COPY.inside.includes.map(({ title, body }) => (
-                <li key={title} className="flex gap-4 items-start">
-                  <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
-                  <span className="text-[#FAF7F2]/90">
-                    <strong className="font-medium text-[#FAF7F2]">{title}</strong> {body}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {COPY.inside.footnote ? (
-              <p className="text-[#FAF7F2]/70 text-base pt-2">{COPY.inside.footnote}</p>
-            ) : null}
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section
-        id="how-it-works"
-        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24"
-        aria-labelledby="how-heading"
-      >
-        <h2
-          id="how-heading"
-          className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
-        >
-          {COPY.howItWorks.heading}
-        </h2>
-        <div className="max-w-2xl mx-auto space-y-8">
-          <p className="text-lg text-[#3D3632] text-center">{COPY.howItWorks.intro}</p>
-          <ul className="space-y-8 pt-4">
-            {COPY.howItWorks.steps.map(({ label, body }) => (
-              <li
-                key={label}
-                className="flex flex-col gap-3 md:flex-row md:gap-6 md:items-start"
-              >
-                <span className="text-[#C9B99A] font-heading text-2xl font-light shrink-0 md:w-36">
-                  {label}
-                </span>
-                <span className="text-[#3D3632] text-lg">{body}</span>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#FAF7F2]/90">Biweekly live calls with me</span>
               </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Authority / proof */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed"
-        style={{ backgroundImage: `url('${IMAGES.proof}')` }}
-      >
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-10">
-            {COPY.authority.heading}
-          </h2>
-          <div className="space-y-6 text-[#FAF7F2]/85 leading-relaxed text-lg">
-            {COPY.authority.paragraphs.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-            {COPY.authority.pullQuote ? (
-              <p className="text-[#FAF7F2] font-heading text-2xl font-light italic pt-4">
-                {COPY.authority.pullQuote}
-              </p>
-            ) : null}
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#FAF7F2]/90">
+                  Text support inside the group, three days a week
+                </span>
+              </li>
+              <li className="flex gap-4 items-start">
+                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#FAF7F2]/90">
+                  Direct access to the exact strategy I&apos;m running right now
+                </span>
+              </li>
+            </ul>
+            <p className="text-lg text-[#FAF7F2]/90 pt-4">
+              I&apos;m not going to promise you a number. I&apos;m going to hand you the system that
+              just took me from zero to 7,249 followers, 482,828 views, and a near-$20K month, in
+              30 days, and put you in the room with me for four.
+            </p>
           </div>
         </div>
       </section>
@@ -361,100 +373,48 @@ export default function HotAndRichPage() {
             id="pricing-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4"
           >
-            {COPY.pricing.heading}
+            The price
           </h2>
-          {COPY.pricing.subtext ? (
-            <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">
-              {COPY.pricing.subtext}
-            </p>
-          ) : null}
-          <p className="text-lg text-[#3D3632] mb-10">{COPY.pricing.intro}</p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">
+            Presale closes midnight MST, July 15.
+          </p>
+          <p className="text-lg text-[#3D3632] mb-10">
+            Presale is $1,250 CAD. That ends at midnight MST on July 15. After that it&apos;s $3,050
+            CAD, permanently. A payment plan is available if you want to split it.
+          </p>
           <div className="border border-[#C9B99A]/40 bg-white/60 p-6 md:p-8 text-left mb-10">
             <h3 className="text-xs tracking-widest uppercase text-[#9C8E82] mb-5 text-center">
               Pricing
             </h3>
             <ul className="space-y-3 text-[#3D3632] text-lg">
-              {COPY.pricing.options.map((option) => (
-                <li key={option} className="flex gap-3">
-                  <span className="text-[#C9B99A]">•</span>
-                  <span>{option}</span>
-                </li>
-              ))}
+              <li className="flex gap-3">
+                <span className="text-[#C9B99A]">•</span>
+                <span>
+                  <strong>Presale:</strong> $1,250 CAD — live until midnight MST July 15
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[#C9B99A]">•</span>
+                <span>
+                  <strong>Regular price:</strong> $3,050 CAD — after the deadline
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[#C9B99A]">•</span>
+                <span>Payment plan available at checkout</span>
+              </li>
             </ul>
           </div>
-          <div className="space-y-4 text-[#3D3632] text-lg mb-10">
-            <h3 className="text-xs tracking-widest uppercase text-[#9C8E82]">
-              {COPY.pricing.joinHeading}
-            </h3>
-            <p>{COPY.pricing.joinBody}</p>
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            {PAYMENT_LINK ? (
-              <a
-                href={PAYMENT_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none"
-              >
-                {COPY.pricing.primaryCta}
-              </a>
-            ) : (
-              <Link
-                href="#pricing"
-                className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none"
-              >
-                {COPY.pricing.primaryCta}
-              </Link>
-            )}
-            <Link
-              href="#payment-options"
-              className="inline-block border border-[#1C1917] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#1C1917] hover:text-[#FAF7F2] transition-colors duration-300 rounded-none"
-            >
-              {COPY.pricing.secondaryCta}
-            </Link>
+            <CheckoutButton href={PRESALE_LINK}>Join Presale — $1,250 CAD</CheckoutButton>
+            <CheckoutButton href={REGULAR_LINK} variant="secondary">
+              Regular Price — $3,050 CAD
+            </CheckoutButton>
           </div>
-          <div id="payment-options" className="scroll-mt-24">
-            {/* Add Stripe pricing table or checkout embed here when ready */}
-          </div>
-          {COPY.pricing.footnote ? (
-            <p className="text-sm text-[#9C8E82] mt-8">{COPY.pricing.footnote}</p>
-          ) : null}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section
-        id="faq"
-        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto"
-        aria-labelledby="faq-heading"
-      >
-        <div className="max-w-2xl mx-auto">
-          <h2
-            id="faq-heading"
-            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
-          >
-            Frequently asked questions
-          </h2>
-          <ul className="space-y-4 list-none p-0 m-0">
-            {COPY.faq.map(({ q, a }) => (
-              <li key={q}>
-                <details className="group border border-[#C9B99A]/30 bg-[#FAF7F2] overflow-hidden">
-                  <summary className="flex items-center justify-between gap-4 py-4 px-5 cursor-pointer list-none font-medium text-[#1C1917] hover:bg-[#F5F2ED] transition-colors [&::-webkit-details-marker]:hidden [&::marker]:hidden">
-                    {q}
-                    <span
-                      className="shrink-0 text-[#9C8E82] group-open:rotate-180 transition-transform"
-                      aria-hidden
-                    >
-                      ▼
-                    </span>
-                  </summary>
-                  <div className="px-5 pb-4 pt-3 text-[#3D3632] border-t border-[#C9B99A]/20">
-                    {a}
-                  </div>
-                </details>
-              </li>
-            ))}
-          </ul>
+          <p className="text-sm text-[#9C8E82]">
+            Presale checkout is live until midnight MST July 15. Regular price checkout goes live
+            after the deadline.
+          </p>
         </div>
       </section>
 
@@ -465,31 +425,24 @@ export default function HotAndRichPage() {
             id="final-cta-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-6"
           >
-            {COPY.finalCta.heading}
+            If you&apos;ve been waiting for a sign
           </h2>
-          <p className="text-lg text-[#FAF7F2]/90 max-w-xl mx-auto mb-4">{COPY.finalCta.body}</p>
-          {COPY.finalCta.subtext ? (
-            <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">
-              {COPY.finalCta.subtext}
-            </p>
-          ) : null}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={pricingHref}
-              className="inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none"
-            >
-              {COPY.finalCta.primaryCta}
-            </Link>
-            <Link
-              href={pricingHref}
-              className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none"
-            >
-              {COPY.finalCta.secondaryCta}
-            </Link>
-          </div>
-          {COPY.finalCta.footnote ? (
-            <p className="text-sm text-[#FAF7F2]/60 mt-4">{COPY.finalCta.footnote}</p>
-          ) : null}
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
+            You&apos;ve done the identity work already. You&apos;re not confused about who you are or
+            what you&apos;re capable of. What you don&apos;t have yet is a brand that gets you found
+            as fast and as consistently as you deserve to be, on your terms, not at the mercy of an
+            algorithm that can erase you overnight.
+          </p>
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
+            I rebuilt mine in 30 days with nothing but the skill. Imagine what she builds with four
+            months and me in the room the entire time.
+          </p>
+          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">
+            Presale closes midnight MST, July 15. $1,250 CAD. Then it&apos;s $3,050 CAD.
+          </p>
+          <CheckoutButton href={PRESALE_LINK} variant="light">
+            Join Hot and Rich — $1,250 CAD Presale
+          </CheckoutButton>
         </div>
       </section>
 
@@ -498,12 +451,14 @@ export default function HotAndRichPage() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#FAF7F2] border-t border-[#C9B99A]/30 md:hidden"
         aria-label="Mobile call to action"
       >
-        <Link
-          href={pricingHref}
+        <a
+          href={PRESALE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300"
         >
-          {COPY.mobileCta}
-        </Link>
+          Join — $1,250 CAD Presale
+        </a>
       </div>
       <div className="h-20 md:hidden" aria-hidden />
     </div>
