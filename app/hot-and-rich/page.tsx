@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Script from "next/script";
 import type { Metadata } from "next";
 
-const PRESALE_LINK = "https://buy.stripe.com/bIY15Yg9K4zofW8fZ7";
-const REGULAR_LINK = "https://buy.stripe.com/8x2eVc0Ss2iN8LFbJj87K1e";
+const STRIPE_PUBLISHABLE_KEY =
+  "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
+const STRIPE_PRICING_TABLE_ID = "prctbl_1TuDr5CcsY3WjV3QLpGKG8Ww";
 const YOUTUBE_EMBED = "https://www.youtube.com/embed/HTRDxi8J5KA?si=URp8MB-mUJpCAZ5y";
 
 const IMAGES = {
@@ -15,7 +17,7 @@ const IMAGES = {
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
   description:
-    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. Presale $1,250 CAD through July 15.",
+    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. Mastermind starts July 21.",
 };
 
 export const revalidate = 0;
@@ -52,41 +54,12 @@ function BulletList({
   );
 }
 
-function CheckoutButton({
-  href,
-  children,
-  variant = "primary",
-}: {
-  href: string;
-  children: React.ReactNode;
-  variant?: "primary" | "secondary" | "light" | "outline-light";
-}) {
-  const classes = {
-    primary:
-      "inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none",
-    secondary:
-      "inline-block border border-[#1C1917] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#1C1917] hover:text-[#FAF7F2] transition-colors duration-300 rounded-none",
-    light:
-      "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none",
-    "outline-light":
-      "inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none",
-  };
-
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={classes[variant]}>
-      {children}
-    </a>
-  );
-}
+const ctaLinkClass =
+  "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
 
 export default function HotAndRichPage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
-      {/* Presale banner */}
-      <div className="bg-[#1C1917] text-[#FAF7F2] text-center py-3 px-4 text-xs sm:text-sm tracking-wide">
-        Presale: $1,250 CAD ends midnight MST July 15 — then $3,050 CAD.
-      </div>
-
       {/* Hero */}
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
@@ -117,9 +90,9 @@ export default function HotAndRichPage() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CheckoutButton href={PRESALE_LINK} variant="light">
-              Join Hot and Rich — $1,250 CAD
-            </CheckoutButton>
+            <Link href="#pricing" className={ctaLinkClass}>
+              Join Hot and Rich
+            </Link>
             <Link
               href="#what-happened"
               className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none"
@@ -128,7 +101,7 @@ export default function HotAndRichPage() {
             </Link>
           </div>
           <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
-            Presale closes midnight MST, July 15.
+            Mastermind starts July 21.
           </p>
         </div>
       </section>
@@ -368,7 +341,7 @@ export default function HotAndRichPage() {
         className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24"
         aria-labelledby="pricing-heading"
       >
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
           <h2
             id="pricing-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4"
@@ -376,45 +349,36 @@ export default function HotAndRichPage() {
             The price
           </h2>
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">
-            Presale closes midnight MST, July 15.
+            Mastermind starts July 21.
           </p>
           <p className="text-lg text-[#3D3632] mb-10">
-            Presale is $1,250 CAD. That ends at midnight MST on July 15. After that it&apos;s $3,050
-            CAD, permanently. A payment plan is available if you want to split it.
+            Choose the payment option that works for you. All prices in CAD.
           </p>
           <div className="border border-[#C9B99A]/40 bg-white/60 p-6 md:p-8 text-left mb-10">
             <h3 className="text-xs tracking-widest uppercase text-[#9C8E82] mb-5 text-center">
-              Pricing
+              Pricing options
             </h3>
             <ul className="space-y-3 text-[#3D3632] text-lg">
               <li className="flex gap-3">
                 <span className="text-[#C9B99A]">•</span>
-                <span>
-                  <strong>Presale:</strong> $1,250 CAD — live until midnight MST July 15
-                </span>
+                <span>One payment of $3,050 CAD</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-[#C9B99A]">•</span>
-                <span>
-                  <strong>Regular price:</strong> $3,050 CAD — after the deadline
-                </span>
+                <span>Four payments of $770 CAD</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-[#C9B99A]">•</span>
-                <span>Payment plan available at checkout</span>
+                <span>Six payments of $510 CAD</span>
               </li>
             </ul>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <CheckoutButton href={PRESALE_LINK}>Join Presale — $1,250 CAD</CheckoutButton>
-            <CheckoutButton href={REGULAR_LINK} variant="secondary">
-              Regular Price — $3,050 CAD
-            </CheckoutButton>
-          </div>
-          <p className="text-sm text-[#9C8E82]">
-            Presale checkout is live until midnight MST July 15. Regular price checkout goes live
-            after the deadline.
-          </p>
+          <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
+          {/* @ts-expect-error stripe-pricing-table is a custom web component */}
+          <stripe-pricing-table
+            pricing-table-id={STRIPE_PRICING_TABLE_ID}
+            publishable-key={STRIPE_PUBLISHABLE_KEY}
+          />
         </div>
       </section>
 
@@ -438,11 +402,11 @@ export default function HotAndRichPage() {
             months and me in the room the entire time.
           </p>
           <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">
-            Presale closes midnight MST, July 15. $1,250 CAD. Then it&apos;s $3,050 CAD.
+            Mastermind starts July 21.
           </p>
-          <CheckoutButton href={PRESALE_LINK} variant="light">
-            Join Hot and Rich — $1,250 CAD Presale
-          </CheckoutButton>
+          <Link href="#pricing" className={ctaLinkClass}>
+            Join Hot and Rich
+          </Link>
         </div>
       </section>
 
@@ -451,14 +415,12 @@ export default function HotAndRichPage() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#FAF7F2] border-t border-[#C9B99A]/30 md:hidden"
         aria-label="Mobile call to action"
       >
-        <a
-          href={PRESALE_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="#pricing"
           className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300"
         >
-          Join — $1,250 CAD Presale
-        </a>
+          Join Hot and Rich
+        </Link>
       </div>
       <div className="h-20 md:hidden" aria-hidden />
     </div>

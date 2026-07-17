@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CACHE_VERSION = "hot-rich-launch-2026-07-15";
+const CACHE_VERSION = "hot-rich-stripe-pricing-2026-07-17";
 
 async function clearStaleClientStorage() {
   if ("caches" in window) {
