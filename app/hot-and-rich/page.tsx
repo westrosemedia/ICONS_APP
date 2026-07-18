@@ -74,8 +74,7 @@ export default function HotAndRichPage() {
             Hot and Rich Mastermind
           </h1>
           <p className="font-heading text-2xl md:text-4xl font-light leading-snug text-[#FAF7F2]/95 mb-10">
-            You don&apos;t need more followers. You need a system that turns the ones you have into
-            money.
+            Stop being ignored online. Build an audience that pays you.
           </p>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
