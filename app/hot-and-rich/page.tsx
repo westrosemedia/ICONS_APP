@@ -74,20 +74,22 @@ export default function HotAndRichPage() {
             Hot and Rich Mastermind
           </h1>
           <p className="font-heading text-2xl md:text-4xl font-light leading-snug text-[#FAF7F2]/95 mb-10">
-            The skill that rebuilt it in 30 days is the asset. Not the followers. Not the
-            algorithm&apos;s mood that week. The skill.
+            You don&apos;t need more followers. You need a system that turns the ones you have into
+            money.
           </p>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
-              They deleted seven years of my life in four seconds. No warning. No appeal. Just
-              gone. Thirty days later I had a brand new account sitting at 7,249 followers and
-              482,828 views, built from nothing, without a single one of those seven years behind
-              it.
+              &quot;Every single time I work with Stephanie, I make more money.&quot; — Cheryl, online
+              coach
             </p>
             <p>
-              I&apos;m going to show you exactly how, because you&apos;re about to need this more
-              than you think.
+              One client went from a brand-new account with zero followers to consistent $10K months.
             </p>
+            <p>
+              Another, a public speaker, is selling out a live event worth $40K–$80K in ticket sales,
+              with the content we&apos;re building together, before the program&apos;s even finished.
+            </p>
+            <p>Four months. The same system, taught live, with me in the room.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#pricing" className={ctaLinkClass}>
@@ -222,8 +224,8 @@ export default function HotAndRichPage() {
             </h3>
             <BulletList
               items={[
-                "7,249 followers",
-                "482,828 views",
+                "8,835 followers",
+                "575,000 views",
                 "162,553 accounts reached",
                 "All from an account that didn't exist a month ago",
               ]}
@@ -235,9 +237,9 @@ export default function HotAndRichPage() {
             </h3>
             <BulletList
               items={[
-                "3,460 followers",
-                "310,900 views in the last 28 days alone",
-                "Profile views up over 7,000%",
+                "3,781 followers",
+                "411,000 views in the last 30 days",
+                "17,300 profile views in the last 30 days",
                 "Revenue tracing straight back to the new account — close to $20K this month",
               ]}
             />
