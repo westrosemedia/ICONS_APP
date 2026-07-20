@@ -4,7 +4,6 @@ import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import StructuredData from "@/components/StructuredData";
-import PinterestVerification from "@/components/PinterestVerification";
 import DeferredAnalytics from "@/components/DeferredAnalytics";
 import AosInit from "@/components/AosInit";
 import SiteChrome from "@/components/SiteChrome";
@@ -81,15 +80,15 @@ export const metadata = {
   verification: {
     google: 'your-google-verification-code', // You'll need to add your actual verification code
   },
-  other: {
-    'p:domain_verify': '12b6f42affb7537b4f78a6f420394653',
-  },
 };
 // Force deployment update - latest changes
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full w-full ${dmSans.variable} ${cormorantGaramond.variable}`}>
+      <head>
+        <meta name="p:domain_verify" content="12b6f42affb7537b4f78a6f420394653" />
+      </head>
       <body 
         className="min-h-screen w-full bg-white text-black font-sans antialiased"
         suppressHydrationWarning={true}
@@ -99,7 +98,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteChrome>{children}</SiteChrome>
 
         <StructuredData />
-        <PinterestVerification />
         <PerformanceMonitor />
         <Analytics />
         <SpeedInsights />
