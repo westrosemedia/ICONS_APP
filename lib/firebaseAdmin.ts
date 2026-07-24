@@ -1,24 +1,24 @@
 import { App, cert, getApps, initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import { normalizeFirebasePrivateKey } from "@/lib/firebasePrivateKey";
+import { getFirebaseAdminCredentials } from "@/lib/firebaseAdminCredentials";
 
 export function getAdminApp(): App {
   if (getApps().length) {
     return getApps()[0]!;
   }
 
-  const privateKey = normalizeFirebasePrivateKey(process.env.FIREBASE_PRIVATE_KEY);
+  const credentials = getFirebaseAdminCredentials();
 
-  if (!privateKey || !process.env.FIREBASE_CLIENT_EMAIL || !process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID) {
+  if (!credentials) {
     throw new Error("Firebase Admin credentials are not configured.");
   }
 
   return initializeApp({
     credential: cert({
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey,
+      projectId: credentials.projectId,
+      clientEmail: credentials.clientEmail,
+      privateKey: credentials.privateKey,
     }),
   });
 }
