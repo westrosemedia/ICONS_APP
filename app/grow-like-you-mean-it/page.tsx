@@ -185,63 +185,35 @@ export default function GrowLikeYouMeanItPage() {
 
       {/* Section 5: Proof */}
       <section className="section-padding border-t border-[#1a1a1a]/10">
-        <div className="container-elegant max-w-4xl">
-          <h2 className="text-display text-[#1a1a1a] mb-12 text-center">
+        <div className="container-elegant max-w-3xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12">
             This is the system, not a fluke.
           </h2>
-          <div className="border border-[#1a1a1a]/15 bg-white p-8 md:p-12">
-            <div className="grid gap-10 md:grid-cols-2 md:gap-12 mb-12 pb-12 border-b border-[#1a1a1a]/10">
-              <div className="text-center md:text-left">
-                <p className="text-5xl md:text-6xl font-semibold text-[#1a1a1a] mb-2">
-                  20
-                </p>
-                <p className="text-sm uppercase tracking-[0.2em] text-[#1a1a1a]/55 mb-4">
-                  New followers
-                </p>
-                <p className="text-base leading-relaxed text-[#1a1a1a]/75">
-                  One reel. Week one of the system.
-                </p>
-              </div>
-              <div className="text-center md:text-left">
-                <p className="text-base leading-relaxed text-[#1a1a1a]/85">
-                  A client of mine started this system less than a week ago.
-                  She'd had under 200 followers for two years, posting daily,
-                  getting nowhere. One reel we posted last night already brought
-                  her 20 new followers. Not from luck. From a plan.
-                </p>
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+                A client of mine started this system less than a week ago.
+                She'd had under 200 followers for two years, posting daily,
+                getting nowhere. One reel we posted last night already brought
+                her 20 new followers. Not from luck. From a plan.
+              </p>
+              <p className="text-sm uppercase tracking-[0.2em] text-[#1a1a1a]/55">
+                20 new followers · one reel · week one
+              </p>
+            </div>
+
+            <div className="border-t border-[#1a1a1a]/10 pt-12 space-y-8">
+              <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+                I built the same system on my own account. In the last 40 days I
+                grew to 11,000 followers and past 1 million views, using the
+                exact process that's inside this course.
+              </p>
+              <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                <span>11K followers</span>
+                <span>1M+ views</span>
+                <span>40 days</span>
               </div>
             </div>
-            <div className="grid gap-8 sm:grid-cols-3 text-center mb-10">
-              <div>
-                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
-                  11K
-                </p>
-                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
-                  Followers
-                </p>
-              </div>
-              <div>
-                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
-                  1M+
-                </p>
-                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
-                  Views
-                </p>
-              </div>
-              <div>
-                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
-                  40
-                </p>
-                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
-                  Days
-                </p>
-              </div>
-            </div>
-            <p className="text-lg leading-relaxed text-[#1a1a1a]/85 text-center max-w-2xl mx-auto">
-              I built the same system on my own account. In the last 40 days I
-              grew to 11,000 followers and past 1 million views, using the
-              exact process that's inside this course.
-            </p>
           </div>
         </div>
       </section>
