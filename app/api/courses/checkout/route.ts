@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
+import { getPublicStripeErrorMessage } from "@/lib/stripeErrors";
 
 export const dynamic = "force-dynamic";
 
@@ -41,12 +42,7 @@ export async function POST(req: NextRequest) {
   } catch (error: unknown) {
     console.error("Course checkout error:", error);
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Failed to create checkout session",
-      },
+      { error: getPublicStripeErrorMessage(error) },
       { status: 500 }
     );
   }
