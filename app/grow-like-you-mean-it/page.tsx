@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   GROW_LIKE_YOU_MEAN_IT,
-  formatCoursePrice,
 } from "@/lib/courses/grow-like-you-mean-it";
 import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/siteLinks";
 import GrowLikeYouMeanItClient from "./GrowLikeYouMeanItClient";
+import GrowLikeYouMeanItHero from "./GrowLikeYouMeanItHero";
 
 const metaDescription =
   "You're already posting. You just don't know what to say. A self-paced video series on brand foundation and growing your social media consistently. $47 CAD.";
@@ -63,14 +63,6 @@ const testimonials = [
 const ctaClassName =
   "px-10 py-4 bg-[#1a1a1a] text-[#f5f1ea] rounded-lg font-medium hover:bg-[#2d2d2d] transition-colors text-base tracking-wide disabled:opacity-50 disabled:cursor-not-allowed";
 
-const heroDescription =
-  "Eight self-paced video lessons to help you show up consistently, grow with intention, and build momentum that actually sticks.";
-
-const priceLabel = formatCoursePrice(
-  GROW_LIKE_YOU_MEAN_IT.priceAmount,
-  GROW_LIKE_YOU_MEAN_IT.priceCurrency
-);
-
 function ImInButton({ className }: { className?: string }) {
   return (
     <GrowLikeYouMeanItClient label="I'm In" className={className || ctaClassName} />
@@ -80,47 +72,7 @@ function ImInButton({ className }: { className?: string }) {
 export default function GrowLikeYouMeanItPage() {
   return (
     <div className="min-h-screen bg-[#f5f1ea] text-[#1a1a1a]">
-      {/* Section 1: Hero */}
-      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={GROW_LIKE_YOU_MEAN_IT.heroImage}
-            alt="Grow Like You Mean It by West Rose Media"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/65" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl px-6 text-center">
-          <p className="text-sm uppercase tracking-[0.35em] text-white/60">
-            West Rose Media Course
-          </p>
-          <h1 className="mt-6 text-hero text-white">
-            {GROW_LIKE_YOU_MEAN_IT.title}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed">
-            {heroDescription}
-          </p>
-          <p className="mt-4 text-base text-white/70">
-            8 self-paced video lessons · {priceLabel} one-time
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-4">
-            <GrowLikeYouMeanItClient
-              label={`Get Instant Access · ${priceLabel}`}
-              className="px-10 py-4 bg-white text-[#1a1a1a] rounded-lg font-medium hover:bg-[#f5f1ea] transition-colors text-base tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-            />
-            <Link
-              href={GROW_LIKE_YOU_MEAN_IT.coursePath}
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Already enrolled? Go to your course
-            </Link>
-          </div>
-        </div>
-      </section>
+      <GrowLikeYouMeanItHero />
 
       {/* Section 2: The Real Problem */}
       <section className="section-padding bg-white">
