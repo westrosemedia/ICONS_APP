@@ -226,18 +226,28 @@ export class CourseService {
     try {
       const enrollment = await this.getUserEnrollment(userId, courseId);
       if (!enrollment) throw new Error('User not enrolled');
-      
-      // Don't allow skipping weeks - must complete sequentially
-      if (weekNumber !== enrollment.currentWeek + 1) {
-        throw new Error('Must complete weeks sequentially');
-      }
-      
-      const completedWeeks = [...enrollment.completedWeeks, weekNumber];
+
       const course = await this.getCourse(courseId);
       if (!course) throw new Error('Course not found');
+
+      if (
+        !course.selfPaced &&
+        weekNumber !== enrollment.currentWeek + 1
+      ) {
+        throw new Error('Must complete weeks sequentially');
+      }
+
+      if (enrollment.completedWeeks.includes(weekNumber)) {
+        return;
+      }
       
+      const completedWeeks = [...enrollment.completedWeeks, weekNumber].sort(
+        (a, b) => a - b
+      );
       const progress = Math.round((completedWeeks.length / course.totalWeeks) * 100);
-      const currentWeek = weekNumber;
+      const currentWeek = course.selfPaced
+        ? Math.max(enrollment.currentWeek, weekNumber)
+        : weekNumber;
       
       // Update enrollment
       const enrollmentRef = doc(db, ENROLLMENTS_COLLECTION, enrollment.id);
@@ -291,16 +301,18 @@ export class CourseService {
   static async getUnlockedWeeks(userId: string, courseId: string): Promise<number[]> {
     try {
       const enrollment = await this.getUserEnrollment(userId, courseId);
-      if (!enrollment) return [];
+      if (!enrollment || enrollment.paymentStatus !== 'completed') return [];
+
+      const course = await this.getCourse(courseId);
+      if (!course) return [];
+
+      if (course.selfPaced) {
+        return Array.from({ length: course.totalWeeks }, (_, index) => index + 1);
+      }
       
       // Week 1 is always unlocked, then sequential unlocking based on completed weeks
-      // If currentWeek is 0, only week 1 is unlocked
-      // If currentWeek is N, weeks 1 through N+1 are unlocked
       const unlockedWeeks: number[] = [1];
       
-      // Add next week for each completed week
-      // If they've completed week 1 (currentWeek = 1), unlock week 2
-      // If they've completed week 2 (currentWeek = 2), unlock week 3, etc.
       if (enrollment.currentWeek > 0) {
         for (let i = 1; i <= enrollment.currentWeek; i++) {
           unlockedWeeks.push(i + 1);

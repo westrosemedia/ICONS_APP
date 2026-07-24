@@ -32,7 +32,12 @@ export default function CourseWeekPage() {
   const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
-    if (!courseId || !weekNumber || !user) return;
+    if (!courseId || !weekNumber) return;
+
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     
     const fetchData = async () => {
       const [courseData, weekData, enrollmentData] = await Promise.all([
@@ -142,7 +147,15 @@ export default function CourseWeekPage() {
     );
   }
 
-  if (!enrollment) {
+  if (!user) {
+    return (
+      <AuthGuard courseId={courseId} loginRedirect={`/courses/${courseId}/week/${weekNumber}`}>
+        {null}
+      </AuthGuard>
+    );
+  }
+
+  if (!enrollment || enrollment.paymentStatus !== "completed") {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center max-w-md">
@@ -166,8 +179,10 @@ export default function CourseWeekPage() {
   const nextWeek = getNextWeek();
   const prevWeek = getPrevWeek();
 
+  const unitLabel = course.selfPaced ? "Lesson" : "Week";
+
   return (
-    <AuthGuard>
+    <AuthGuard courseId={courseId} loginRedirect={`/courses/${courseId}/week/${weekNumber}`}>
       <div className="min-h-screen bg-white">
         {/* Header */}
         <section className="section-padding bg-black text-white">
@@ -185,7 +200,7 @@ export default function CourseWeekPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-hero text-white mb-4">
-                Week {weekNumber}: {week.title}
+                {unitLabel} {weekNumber}: {week.title}
               </h1>
               <p className="text-editorial text-white/90 max-w-3xl">
                 {week.description}
@@ -259,7 +274,7 @@ export default function CourseWeekPage() {
                     className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4" />
-                    Previous Week
+                    Previous {unitLabel}
                   </Link>
                 )}
               </div>
@@ -276,7 +291,7 @@ export default function CourseWeekPage() {
                     disabled={isCompleting}
                     className="px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isCompleting ? "Completing..." : "Mark as Complete"}
+                    {isCompleting ? "Saving..." : `Mark ${unitLabel} Complete`}
                   </button>
                 )}
                 
@@ -286,7 +301,7 @@ export default function CourseWeekPage() {
                       href={`/courses/${courseId}/week/${nextWeek}`}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                     >
-                      Next Week
+                      Next {unitLabel}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   ) : (
@@ -295,7 +310,7 @@ export default function CourseWeekPage() {
                       className="inline-flex items-center gap-2 px-6 py-3 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed"
                       title="Complete this week to unlock the next week"
                     >
-                      Next Week
+                      Next {unitLabel}
                       <Lock className="w-4 h-4" />
                     </button>
                   )

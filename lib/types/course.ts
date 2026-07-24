@@ -8,6 +8,9 @@ export interface Course {
   totalWeeks: number;
   stripeProductId?: string; // Stripe product ID for enrollment
   stripePriceId?: string; // Stripe price ID (one-time or payment plan)
+  selfPaced?: boolean; // When true, all lessons unlock after purchase
+  priceAmount?: number;
+  priceCurrency?: string;
   createdAt: Date;
   updatedAt: Date;
   published: boolean;

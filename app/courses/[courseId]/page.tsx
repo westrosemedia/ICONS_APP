@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import { Course, CourseWeek, UserCourseEnrollment } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import { motion } from "framer-motion";
 import { Lock, CheckCircle, Play, ArrowRight } from "lucide-react";
+import CourseEnrollButton from "@/components/CourseEnrollButton";
+import { formatCoursePrice } from "@/lib/courses/grow-like-you-mean-it";
 
 export default function CourseDetailPage() {
   const params = useParams();
@@ -19,6 +20,7 @@ export default function CourseDetailPage() {
   const [course, setCourse] = useState<Course | null>(null);
   const [weeks, setWeeks] = useState<CourseWeek[]>([]);
   const [enrollment, setEnrollment] = useState<UserCourseEnrollment | null>(null);
+  const [unlockedWeeks, setUnlockedWeeks] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedWeek, setSelectedWeek] = useState<number | null>(null);
 
@@ -37,13 +39,21 @@ export default function CourseDetailPage() {
       if (user) {
         const enrollmentData = await CourseService.getUserEnrollment(user.uid, courseId);
         setEnrollment(enrollmentData);
+
+        if (enrollmentData?.paymentStatus === "completed") {
+          const unlocked = await CourseService.getUnlockedWeeks(user.uid, courseId);
+          setUnlockedWeeks(unlocked);
+        } else {
+          setUnlockedWeeks([]);
+        }
         
-        // Set selected week to current week or first week
         if (enrollmentData) {
           setSelectedWeek(enrollmentData.currentWeek === 0 ? 1 : enrollmentData.currentWeek + 1);
         } else {
           setSelectedWeek(1);
         }
+      } else {
+        setUnlockedWeeks([]);
       }
       
       setLoading(false);
@@ -51,50 +61,6 @@ export default function CourseDetailPage() {
     
     fetchData();
   }, [courseId, user]);
-
-  const [isEnrolling, setIsEnrolling] = useState(false);
-  const [enrollError, setEnrollError] = useState<string | null>(null);
-
-  const handleEnroll = async () => {
-    if (!course?.stripePriceId || !user) {
-      router.push('/login');
-      return;
-    }
-    
-    setIsEnrolling(true);
-    setEnrollError(null);
-    
-    try {
-      const response = await fetch('/api/courses/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          priceId: course.stripePriceId,
-          courseId: courseId,
-          userId: user.uid,
-        }),
-      });
-      
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Failed to create checkout session' }));
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error('No checkout URL received');
-      }
-    } catch (error) {
-      console.error('Enrollment error:', error);
-      setEnrollError(error instanceof Error ? error.message : 'Error starting enrollment. Please try again.');
-    } finally {
-      setIsEnrolling(false);
-    }
-  };
 
   const [weekError, setWeekError] = useState<string | null>(null);
 
@@ -150,6 +116,11 @@ export default function CourseDetailPage() {
 
   const isEnrolled = enrollment?.paymentStatus === 'completed';
   const progress = enrollment?.progress || 0;
+  const unitLabel = course.selfPaced ? "Lesson" : "Week";
+  const priceLabel =
+    course.priceAmount && course.priceCurrency
+      ? formatCoursePrice(course.priceAmount, course.priceCurrency)
+      : null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -197,38 +168,32 @@ export default function CourseDetailPage() {
             >
               <h2 className="text-display text-black mb-4 text-center">Enroll Now</h2>
               <p className="text-editorial text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-                Choose the payment option that works best for you. Start your journey to building a powerful personal brand today.
+                {course.selfPaced
+                  ? "One-time payment. Instant access to all lessons. Work through them at your own pace."
+                  : "Choose the payment option that works best for you. Start your journey to building a powerful personal brand today."}
               </p>
               
               <div className="max-w-2xl mx-auto">
                 {course.stripePriceId ? (
-                  // Direct checkout button if stripePriceId is set
                   <div className="text-center">
-                    {enrollError && (
-                      <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                        <p className="text-red-600 text-sm">{enrollError}</p>
-                      </div>
+                    {priceLabel && (
+                      <p className="text-3xl font-bold text-black mb-6">{priceLabel}</p>
                     )}
-                    <button
-                      onClick={handleEnroll}
-                      disabled={isEnrolling}
-                      className="px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isEnrolling ? 'Processing...' : 'Enroll Now'}
-                    </button>
+                    <CourseEnrollButton
+                      courseId={courseId}
+                      priceId={course.stripePriceId}
+                      label={
+                        priceLabel
+                          ? `Get Access for ${priceLabel}`
+                          : "Enroll Now"
+                      }
+                      loginRedirect={`/courses/${courseId}`}
+                    />
                   </div>
                 ) : (
-                  // Stripe pricing table (uses same pricing as PPB)
-                  <>
-                    <Script
-                      src="https://js.stripe.com/v3/pricing-table.js"
-                      strategy="lazyOnload"
-                    />
-                    <stripe-pricing-table 
-                      pricing-table-id="prctbl_1SAyLHCcsY3WjV3QddOoZFES"
-                      publishable-key={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav"}
-                    />
-                  </>
+                  <p className="text-center text-gray-600">
+                    Enrollment is not available yet. Please check back soon.
+                  </p>
                 )}
               </div>
             </motion.div>
@@ -239,7 +204,9 @@ export default function CourseDetailPage() {
       {/* Course Content */}
       <section className="section-padding">
         <div className="container-elegant">
-          <h2 className="text-display text-black mb-8">Course Content</h2>
+          <h2 className="text-display text-black mb-8">
+            {course.selfPaced ? "Course Lessons" : "Course Content"}
+          </h2>
           {weekError && (
             <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
               <p className="text-yellow-800 text-sm">{weekError}</p>
@@ -253,11 +220,7 @@ export default function CourseDetailPage() {
             ) : (
               weeks.map((week, index) => {
                 const isCompleted = enrollment?.completedWeeks.includes(week.weekNumber) || false;
-                // Week 1 is always unlocked if enrolled, then sequential unlocking
-                const isUnlocked = !enrollment 
-                  ? false 
-                  : week.weekNumber === 1 || enrollment.completedWeeks.includes(week.weekNumber - 1);
-                const isCurrentWeek = enrollment?.currentWeek === week.weekNumber - 1;
+                const isUnlocked = unlockedWeeks.includes(week.weekNumber);
 
               return (
                 <motion.div
@@ -292,7 +255,7 @@ export default function CourseDetailPage() {
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <h3 className="text-xl font-bold text-black">
-                            Week {week.weekNumber}: {week.title}
+                            {unitLabel} {week.weekNumber}: {week.title}
                           </h3>
                           {isCompleted && (
                             <span className="text-sm text-green-600 font-semibold">Completed</span>

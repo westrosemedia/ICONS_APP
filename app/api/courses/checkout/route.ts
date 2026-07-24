@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
-    const { priceId, courseId, userId } = await req.json();
+    const { priceId, courseId, userId, customerEmail } = await req.json();
 
     if (!priceId || !courseId || !userId) {
       return NextResponse.json(
@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
       ],
       success_url: `${origin}/courses/${courseId}/enrollment-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/courses/${courseId}`,
+      customer_email: customerEmail || undefined,
       metadata: {
         courseId: courseId,
         userId: userId,

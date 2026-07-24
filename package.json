@@ -12,6 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "seed:grow-like-you-mean-it": "node scripts/seedGrowLikeYouMeanIt.mjs",
     "seed": "tsx scripts/seedPackages.ts"
   },
   "keywords": [],
