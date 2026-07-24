@@ -1,10 +1,7 @@
 "use client";
 
 import CourseEnrollButton from "@/components/CourseEnrollButton";
-import {
-  GROW_LIKE_YOU_MEAN_IT,
-  formatCoursePrice,
-} from "@/lib/courses/grow-like-you-mean-it";
+import { GROW_LIKE_YOU_MEAN_IT } from "@/lib/courses/grow-like-you-mean-it";
 
 interface GrowLikeYouMeanItClientProps {
   label?: string;
@@ -12,10 +9,7 @@ interface GrowLikeYouMeanItClientProps {
 }
 
 export default function GrowLikeYouMeanItClient({
-  label = `Get Instant Access · ${formatCoursePrice(
-    GROW_LIKE_YOU_MEAN_IT.priceAmount,
-    GROW_LIKE_YOU_MEAN_IT.priceCurrency
-  )}`,
+  label = "I'm In",
   className,
 }: GrowLikeYouMeanItClientProps) {
   return (
@@ -25,9 +19,9 @@ export default function GrowLikeYouMeanItClient({
       label={label}
       className={
         className ||
-        "px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        "px-10 py-4 bg-[#1a1a1a] text-[#f5f1ea] rounded-lg font-medium hover:bg-[#2d2d2d] transition-colors text-base tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
       }
-      loginRedirect={GROW_LIKE_YOU_MEAN_IT.coursePath}
+      cancelPath={GROW_LIKE_YOU_MEAN_IT.salesPath}
     />
   );
 }

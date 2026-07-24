@@ -187,7 +187,6 @@ export default function CourseDetailPage() {
                           ? `Get Access for ${priceLabel}`
                           : "Enroll Now"
                       }
-                      loginRedirect={`/courses/${courseId}`}
                     />
                   </div>
                 ) : (

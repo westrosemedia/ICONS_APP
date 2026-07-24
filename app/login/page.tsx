@@ -46,11 +46,16 @@ function LoginForm() {
       router.push(redirect);
     } catch (err) {
       console.error("Auth error:", err);
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Unable to sign in. Please try again."
-      );
+      const message =
+        err instanceof Error ? err.message : "Unable to sign in. Please try again.";
+
+      if (message.includes("auth/configuration-not-found")) {
+        setError(
+          "Account sign-in is being configured. If you just purchased the course, use the link from your checkout confirmation to set your password."
+        );
+      } else {
+        setError(message);
+      }
     } finally {
       setIsSubmitting(false);
     }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 
@@ -10,7 +9,7 @@ interface CourseEnrollButtonProps {
   priceId: string;
   label?: string;
   className?: string;
-  loginRedirect?: string;
+  cancelPath?: string;
 }
 
 export default function CourseEnrollButton({
@@ -18,24 +17,14 @@ export default function CourseEnrollButton({
   priceId,
   label = "Get Instant Access",
   className = "px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed",
-  loginRedirect,
+  cancelPath,
 }: CourseEnrollButtonProps) {
-  const router = useRouter();
   const [user, loadingAuth] = useAuthState(auth);
   const [isEnrolling, setIsEnrolling] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const redirectPath = loginRedirect || `/courses/${courseId}`;
-
   const handleEnroll = async () => {
     if (loadingAuth) return;
-
-    if (!user) {
-      router.push(
-        `/login?redirect=${encodeURIComponent(redirectPath)}&mode=signup`
-      );
-      return;
-    }
 
     setIsEnrolling(true);
     setError(null);
@@ -49,8 +38,9 @@ export default function CourseEnrollButton({
         body: JSON.stringify({
           priceId,
           courseId,
-          userId: user.uid,
-          customerEmail: user.email,
+          userId: user?.uid,
+          customerEmail: user?.email,
+          cancelPath,
         }),
       });
 

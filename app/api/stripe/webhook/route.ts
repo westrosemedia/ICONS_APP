@@ -43,41 +43,13 @@ export async function POST(req: Request) {
         }
       }
 
-      // Helper function to get userId by email using Firebase Admin
-      async function getUserIdByEmail(email: string): Promise<string | null> {
+      // Helper function to get or create user by email using Firebase Admin
+      async function resolveUserIdByEmail(email: string): Promise<string | null> {
         try {
-          // Initialize Firebase Admin if not already initialized
-          const { initializeApp, cert, getApps } = await import("firebase-admin/app");
-          const { getAuth } = await import("firebase-admin/auth");
-          
-          if (!getApps().length) {
-            initializeApp({
-              credential: cert({
-                projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-                clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-              }),
-            });
-          }
-          
-          const auth = getAuth();
-          const user = await auth.getUserByEmail(email);
-          return user.uid;
+          const { getOrCreateUserIdByEmail } = await import("@/lib/firebaseAdmin");
+          return await getOrCreateUserIdByEmail(email);
         } catch (error) {
-          console.error("Error getting user by email:", error);
-          // If user doesn't exist, try querying Firestore for a user document with this email
-          try {
-            const { getFirestore } = await import("firebase-admin/firestore");
-            const db = getFirestore();
-            const usersRef = db.collection("users");
-            const snapshot = await usersRef.where("email", "==", email).limit(1).get();
-            
-            if (!snapshot.empty) {
-              return snapshot.docs[0].id;
-            }
-          } catch (firestoreError) {
-            console.error("Error querying Firestore for user:", firestoreError);
-          }
+          console.error("Error resolving user by email:", error);
           return null;
         }
       }
@@ -110,42 +82,23 @@ export async function POST(req: Request) {
         
         // If no userId, try to find user by email
         if (!userId && session.customer_email) {
-          userId = await getUserIdByEmail(session.customer_email);
+          userId = await resolveUserIdByEmail(session.customer_email);
           if (userId) {
-            console.log("Found userId by email:", userId);
+            console.log("Resolved userId by email:", userId);
           } else {
-            console.log("Could not find user by email:", session.customer_email);
+            console.log("Could not resolve user by email:", session.customer_email);
           }
         }
         
         if (courseId && userId) {
-          // Check if enrollment already exists to prevent duplicates
-          const existingEnrollment = await CourseService.getUserEnrollment(userId, courseId);
-          
-          if (existingEnrollment) {
-            console.log("Enrollment already exists:", { userId, courseId });
-            // Update payment info if needed (using Firebase Admin)
-            if (session.payment_intent && !existingEnrollment.stripePaymentIntentId) {
-              const { getFirestore } = await import("firebase-admin/firestore");
-              const db = getFirestore();
-              const enrollmentRef = db.collection("courseEnrollments").doc(existingEnrollment.id);
-              await enrollmentRef.update({
-                stripePaymentIntentId: session.payment_intent,
-                stripeSubscriptionId: session.subscription || null,
-                paymentStatus: 'completed',
-              });
-            }
-          } else {
-            // Create enrollment
-            await CourseService.createEnrollment(
-              userId,
-              courseId,
-              session.payment_intent,
-              session.subscription
-            );
-            
-            console.log("Course enrollment created:", { userId, courseId });
-          }
+          const { createCourseEnrollmentAdmin } = await import("@/lib/firebaseAdmin");
+          await createCourseEnrollmentAdmin(
+            userId,
+            courseId,
+            session.payment_intent,
+            session.subscription || null
+          );
+          console.log("Course enrollment created:", { userId, courseId });
         } else {
           console.log("Course enrollment pending - missing courseId or userId", {
             courseId,

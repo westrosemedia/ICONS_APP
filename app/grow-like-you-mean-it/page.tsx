@@ -3,147 +3,304 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   GROW_LIKE_YOU_MEAN_IT,
-  formatCoursePrice,
 } from "@/lib/courses/grow-like-you-mean-it";
 import GrowLikeYouMeanItClient from "./GrowLikeYouMeanItClient";
 
-const priceLabel = formatCoursePrice(
-  GROW_LIKE_YOU_MEAN_IT.priceAmount,
-  GROW_LIKE_YOU_MEAN_IT.priceCurrency
-);
+const metaDescription =
+  "You're already posting. You just don't know what to say. A self-paced video series on brand foundation and growing your social media consistently. $47 CAD.";
 
 export const metadata: Metadata = {
   title: `${GROW_LIKE_YOU_MEAN_IT.title} | West Rose Media`,
-  description: GROW_LIKE_YOU_MEAN_IT.description,
+  description: metaDescription,
   openGraph: {
     title: `${GROW_LIKE_YOU_MEAN_IT.title} | West Rose Media`,
-    description: GROW_LIKE_YOU_MEAN_IT.description,
+    description: metaDescription,
     url: `https://westrosemedia.com${GROW_LIKE_YOU_MEAN_IT.salesPath}`,
     type: "website",
+    images: [
+      {
+        url: GROW_LIKE_YOU_MEAN_IT.heroImage,
+        width: 1200,
+        height: 630,
+        alt: "Grow Like You Mean It by West Rose Media",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${GROW_LIKE_YOU_MEAN_IT.title} | West Rose Media`,
-    description: GROW_LIKE_YOU_MEAN_IT.description,
+    description: metaDescription,
+    images: [GROW_LIKE_YOU_MEAN_IT.heroImage],
   },
 };
 
-const highlights = [
-  "Eight focused video lessons you can watch on your own schedule",
-  "Practical frameworks for showing up consistently and growing with intention",
-  "Lifetime access after purchase",
-  "Start immediately after checkout",
+const walkAwayItems = [
+  "A clear brand foundation you're not rebuilding every few months.",
+  "An actual system for growing your social media, not another list of ideas you'll never use.",
+  "Consistency, because you'll finally know how long everything takes and when to do it.",
 ];
+
+const ctaClassName =
+  "px-10 py-4 bg-[#1a1a1a] text-[#f5f1ea] rounded-lg font-medium hover:bg-[#2d2d2d] transition-colors text-base tracking-wide disabled:opacity-50 disabled:cursor-not-allowed";
+
+function ImInButton({ className }: { className?: string }) {
+  return (
+    <GrowLikeYouMeanItClient label="I'm In" className={className || ctaClassName} />
+  );
+}
 
 export default function GrowLikeYouMeanItPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
-            alt="Grow Like You Mean It by West Rose Media"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/65" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl px-6 text-center">
-          <p className="text-sm uppercase tracking-[0.35em] text-white/60">
-            West Rose Media Course
-          </p>
-          <h1 className="mt-6 text-5xl md:text-6xl font-bold leading-tight">
-            {GROW_LIKE_YOU_MEAN_IT.title}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl mx-auto">
-            {GROW_LIKE_YOU_MEAN_IT.description}
-          </p>
-          <p className="mt-4 text-base text-white/70">
-            8 self-paced video lessons · {priceLabel} one-time
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-4">
-            <GrowLikeYouMeanItClient />
-            <Link
-              href={GROW_LIKE_YOU_MEAN_IT.coursePath}
-              className="text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Already enrolled? Go to your course
-            </Link>
+    <div className="min-h-screen bg-[#f5f1ea] text-[#1a1a1a]">
+      {/* Section 1: Hero */}
+      <section className="border-b border-[#1a1a1a]/10">
+        <div className="grid lg:grid-cols-2 lg:min-h-[85vh]">
+          <div className="section-padding flex items-center order-2 lg:order-1">
+            <div className="container-elegant max-w-xl lg:max-w-none lg:px-12 xl:px-16 text-center lg:text-left">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#1a1a1a]/55 mb-8">
+                West Rose Media presents
+              </p>
+              <h1 className="text-hero text-[#1a1a1a] mb-10">
+                Grow Like You Mean It
+              </h1>
+              <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/80 mb-10">
+                You're already posting. You just don't know what to say. Content is
+                never neutral, every post brings people closer to buying from you or
+                further away.
+              </p>
+              <ImInButton />
+              <p className="mt-8 text-sm tracking-wide text-[#1a1a1a]/60">
+                $47 CAD. Self-paced. Watch it whenever you want.
+              </p>
+              <Link
+                href={GROW_LIKE_YOU_MEAN_IT.coursePath}
+                className="mt-6 inline-block text-sm text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
+              >
+                Already enrolled? Go to your course
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-[50vh] lg:min-h-full order-1 lg:order-2">
+            <Image
+              src={GROW_LIKE_YOU_MEAN_IT.heroImage}
+              alt="Grow Like You Mean It by West Rose Media"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white text-black">
-        <div className="container-elegant">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] items-start">
-            <div>
-              <h2 className="text-display text-black mb-6">
-                Grow with clarity, not chaos.
-              </h2>
-              <div className="space-y-6 text-lg leading-relaxed text-gray-800">
-                <p>
-                  You do not need another content plan that collects dust. You
-                  need a simple system for showing up, staying visible, and
-                  building momentum you can actually sustain.
-                </p>
-                <p>
-                  {GROW_LIKE_YOU_MEAN_IT.title} gives you eight practical
-                  lessons designed to help you grow like you mean it: with
-                  consistency, confidence, and a brand that keeps moving
-                  forward.
-                </p>
-                <p>
-                  Work through the lessons at your own pace. Revisit them
-                  whenever you need a reset, a push, or a clearer next step.
-                </p>
-              </div>
-
-              <ul className="mt-10 space-y-4 text-lg text-gray-800">
-                {highlights.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-3xl border border-black/10 bg-gray-50 p-8">
-              <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
-                What you get
-              </p>
-              <h3 className="mt-4 text-3xl font-semibold text-black">
-                Instant access to all 8 lessons
-              </h3>
-              <p className="mt-4 text-lg text-gray-700">
-                One payment. Self-paced. Yours to keep.
-              </p>
-              <div className="mt-8 border-t border-black/10 pt-8">
-                <p className="text-4xl font-bold text-black">{priceLabel}</p>
-                <p className="mt-2 text-gray-600">One-time payment in CAD</p>
-              </div>
-              <div className="mt-8">
-                <GrowLikeYouMeanItClient
-                  label={`Get Access for ${priceLabel}`}
-                  className="w-full px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-black text-white">
-        <div className="container-elegant max-w-3xl text-center">
-          <h2 className="text-display text-white mb-6">
-            Ready to grow like you mean it?
+      {/* Section 2: The Real Problem */}
+      <section className="section-padding bg-white">
+        <div className="container-elegant max-w-3xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12">
+            Here's what's actually stalling you.
           </h2>
-          <p className="text-editorial text-white/80 mb-8">
-            Create your account, complete checkout, and start the course
-            immediately.
+          <div className="space-y-8 text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+            <p>
+              You're already posting. That was never the problem. The problem is
+              what you're saying when you do it.
+            </p>
+            <p>
+              Content is never neutral. Every post brings someone closer to
+              buying from you, or pushes them further away. Nothing you put out
+              is filler, whether you meant it to count or not.
+            </p>
+            <p>
+              Most of what's going out right now is landing in that gap by
+              accident. That's why the ideas keep coming and the sales still
+              aren't. And underneath that, you've never actually sat down and
+              learned how long content really takes to plan, film, edit, and
+              get out the door, so even when you do land the right message, you
+              can't repeat it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Who This Is For */}
+      <section className="section-padding border-t border-[#1a1a1a]/10">
+        <div className="container-elegant max-w-3xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12">
+            This is for you if.
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+            You're already building something real. A book, a practice, a brand,
+            a channel you just started. You don't need another pep talk about
+            mindset. You need an actual system, one built around a real timeline
+            and a clear brand foundation, so you stop reinventing your process
+            every single week.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 4: What's Inside */}
+      <section className="section-padding bg-white border-t border-[#1a1a1a]/10">
+        <div className="container-elegant">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:max-w-none">
+              <Image
+                src={GROW_LIKE_YOU_MEAN_IT.insideImage}
+                alt="Grow Like You Mean It course preview"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 90vw, 40vw"
+              />
+            </div>
+            <div className="max-w-xl">
+              <h2 className="text-display text-[#1a1a1a] mb-12">
+                What happens inside.
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+                A short, self-paced video series covering two things: your brand
+                foundation (your niche, your voice, your look, all in one place)
+                and a real system for growing your social media consistently. Watch
+                it in one sitting or spread it across a week. Nothing to unlock,
+                nothing to wait for.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Proof */}
+      <section className="section-padding border-t border-[#1a1a1a]/10">
+        <div className="container-elegant max-w-4xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12 text-center">
+            This is the system, not a fluke.
+          </h2>
+          <div className="border border-[#1a1a1a]/15 bg-white p-8 md:p-12">
+            <div className="grid gap-10 md:grid-cols-2 md:gap-12 mb-12 pb-12 border-b border-[#1a1a1a]/10">
+              <div className="text-center md:text-left">
+                <p className="text-5xl md:text-6xl font-semibold text-[#1a1a1a] mb-2">
+                  20
+                </p>
+                <p className="text-sm uppercase tracking-[0.2em] text-[#1a1a1a]/55 mb-4">
+                  New followers
+                </p>
+                <p className="text-base leading-relaxed text-[#1a1a1a]/75">
+                  One reel. Week one of the system.
+                </p>
+              </div>
+              <div className="text-center md:text-left">
+                <p className="text-base leading-relaxed text-[#1a1a1a]/85 mb-6">
+                  A client of mine started this system less than a week ago.
+                  She'd had under 200 followers for two years, posting daily,
+                  getting nowhere. One reel we posted last night already brought
+                  her 20 new followers, from a plan we built together.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-3 text-center mb-10">
+              <div>
+                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
+                  11K
+                </p>
+                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                  Followers
+                </p>
+              </div>
+              <div>
+                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
+                  1M+
+                </p>
+                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                  Views
+                </p>
+              </div>
+              <div>
+                <p className="text-4xl md:text-5xl font-semibold text-[#1a1a1a]">
+                  40
+                </p>
+                <p className="mt-2 text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                  Days
+                </p>
+              </div>
+            </div>
+            <p className="text-lg leading-relaxed text-[#1a1a1a]/85 text-center max-w-2xl mx-auto">
+              I built the same system on my own account. In the last 40 days I
+              grew to 11,000 followers and past 1 million views, using the
+              exact process that's inside this course.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: What You Walk Away With */}
+      <section className="section-padding bg-white border-t border-[#1a1a1a]/10">
+        <div className="container-elegant max-w-3xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12">
+            By the time you finish.
+          </h2>
+          <ul className="space-y-6 text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
+            {walkAwayItems.map((item) => (
+              <li key={item} className="pl-6 border-l-2 border-[#1a1a1a]/20">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Section 7: The Investment */}
+      <section className="section-padding border-t border-[#1a1a1a]/10">
+        <div className="container-elegant max-w-3xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12">
+            Here's the part that matters more than the price.
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85 mb-12">
+            Most people say money isn't actually what's holding them back from
+            investing in their brand. They're waiting on a clear vision or plan
+            first. This gives you that for $47 CAD, without waiting on a
+            bigger, more expensive program to hand it to you.
+          </p>
+          <div className="border border-[#1a1a1a]/15 bg-white p-8 md:p-10 space-y-6 mb-12">
+            <div className="grid gap-6 sm:grid-cols-[7rem,1fr] sm:gap-8 border-b border-[#1a1a1a]/10 pb-6">
+              <p className="text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                Investment
+              </p>
+              <p className="text-lg text-[#1a1a1a]/85">
+                $47 CAD, one time.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-[7rem,1fr] sm:gap-8 border-b border-[#1a1a1a]/10 pb-6">
+              <p className="text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                Access
+              </p>
+              <p className="text-lg text-[#1a1a1a]/85">
+                Instant, self-paced, watch whenever.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-[7rem,1fr] sm:gap-8">
+              <p className="text-sm uppercase tracking-[0.15em] text-[#1a1a1a]/55">
+                Refunds
+              </p>
+              <p className="text-lg text-[#1a1a1a]/85">
+                None. If you're not sure yet, that's fine, come back when you
+                are.
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <ImInButton />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: Final CTA */}
+      <section className="section-padding bg-[#1a1a1a] text-[#f5f1ea]">
+        <div className="container-elegant max-w-3xl text-center">
+          <h2 className="text-display text-[#f5f1ea] mb-10">Stop winging it.</h2>
+          <p className="text-lg md:text-xl leading-relaxed text-[#f5f1ea]/80 mb-12 max-w-2xl mx-auto">
+            You already know what to say. Now go build the thing that gets you
+            found saying it.
           </p>
           <GrowLikeYouMeanItClient
-            label={`Start for ${priceLabel}`}
-            className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            label="I'm In"
+            className="px-10 py-4 bg-[#f5f1ea] text-[#1a1a1a] rounded-lg font-medium hover:bg-white transition-colors text-base tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
       </section>
