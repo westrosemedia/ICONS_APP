@@ -62,12 +62,17 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: unknown) {
     console.error("Activate account error:", error);
+    const message = error instanceof Error ? error.message : "";
+    const isConfigError =
+      message.includes("Firebase Admin credentials") ||
+      message.includes("Failed to parse private key") ||
+      message.includes("Invalid PEM");
+
     return NextResponse.json(
       {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to activate your account.",
+        error: isConfigError
+          ? "We could not finish setting up your account. Please try again in a few minutes or email support."
+          : message || "Unable to activate your account.",
       },
       { status: 500 }
     );
