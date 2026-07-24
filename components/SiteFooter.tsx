@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import { GOOGLE_REVIEWS_URL } from "@/lib/siteLinks";
 
 const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
 
@@ -63,6 +64,14 @@ export default function SiteFooter() {
               <Link href="/faq" className="text-gray-500 hover:text-black text-sm transition-colors">
                 FAQ
               </Link>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-black text-sm transition-colors"
+              >
+                Google Reviews
+              </a>
               <Link href="/privacy" className="text-gray-500 hover:text-black text-sm transition-colors">
                 Privacy
               </Link>

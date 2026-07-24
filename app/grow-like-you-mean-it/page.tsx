@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   GROW_LIKE_YOU_MEAN_IT,
 } from "@/lib/courses/grow-like-you-mean-it";
+import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/siteLinks";
 import GrowLikeYouMeanItClient from "./GrowLikeYouMeanItClient";
 
 const metaDescription =
@@ -38,6 +39,24 @@ const walkAwayItems = [
   "A clear brand foundation you're not rebuilding every few months.",
   "An actual system for growing your social media, not another list of ideas you'll never use.",
   "Consistency, because you'll finally know how long everything takes and when to do it.",
+];
+
+const testimonials = [
+  {
+    quote:
+      "Stephanie is the real deal. She's grounded, raw, honest, and brings an undeniable fire to every space she leads. I've had the honor of working with her inside her Icon Society and the value she delivers is consistently next-level.",
+    name: "Gigi Hunt",
+  },
+  {
+    quote:
+      "In today's world, every dollar we spend is a vote for the kind of future we want to build, and choosing who you work with matters. Working with Stephanie Rose is a choice I'd make again a hundred times over.",
+    name: "Abby Belin",
+  },
+  {
+    quote:
+      "Stephanie is an absolute pro and has such a gift for capturing your best self.",
+    name: "Brooke Redelle Robichaud",
+  },
 ];
 
 const ctaClassName =
@@ -129,10 +148,8 @@ export default function GrowLikeYouMeanItPage() {
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85">
             You're already building something real. A book, a practice, a brand,
-            a channel you just started. You don't need another pep talk about
-            mindset. You need an actual system, one built around a real timeline
-            and a clear brand foundation, so you stop reinventing your process
-            every single week.
+            a channel you just started. This gives you a simple system for showing
+            up, staying visible, and building momentum you can actually sustain.
           </p>
         </div>
       </section>
@@ -186,11 +203,11 @@ export default function GrowLikeYouMeanItPage() {
                 </p>
               </div>
               <div className="text-center md:text-left">
-                <p className="text-base leading-relaxed text-[#1a1a1a]/85 mb-6">
+                <p className="text-base leading-relaxed text-[#1a1a1a]/85">
                   A client of mine started this system less than a week ago.
                   She'd had under 200 followers for two years, posting daily,
                   getting nowhere. One reel we posted last night already brought
-                  her 20 new followers, from a plan we built together.
+                  her 20 new followers. Not from luck. From a plan.
                 </p>
               </div>
             </div>
@@ -229,7 +246,41 @@ export default function GrowLikeYouMeanItPage() {
         </div>
       </section>
 
-      {/* Section 6: What You Walk Away With */}
+      {/* Section 6: Testimonials */}
+      <section className="section-padding bg-white border-t border-[#1a1a1a]/10">
+        <div className="container-elegant max-w-5xl">
+          <h2 className="text-display text-[#1a1a1a] mb-12 text-center">
+            Don't take it from me.
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <blockquote
+                key={testimonial.name}
+                className="border border-[#1a1a1a]/10 bg-[#f5f1ea] p-8 flex flex-col justify-between"
+              >
+                <p className="text-base md:text-lg leading-relaxed text-[#1a1a1a]/85">
+                  "{testimonial.quote}"
+                </p>
+                <footer className="mt-8 text-sm font-medium text-[#1a1a1a]">
+                  {testimonial.name}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+          <p className="mt-10 text-center">
+            <a
+              href={GOOGLE_MAPS_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#1a1a1a]/70 hover:text-[#1a1a1a] underline underline-offset-4 transition-colors"
+            >
+              Read more reviews on Google
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Section 7: What You Walk Away With */}
       <section className="section-padding bg-white border-t border-[#1a1a1a]/10">
         <div className="container-elegant max-w-3xl">
           <h2 className="text-display text-[#1a1a1a] mb-12">
@@ -245,7 +296,7 @@ export default function GrowLikeYouMeanItPage() {
         </div>
       </section>
 
-      {/* Section 7: The Investment */}
+      {/* Section 8: The Investment */}
       <section className="section-padding border-t border-[#1a1a1a]/10">
         <div className="container-elegant max-w-3xl">
           <h2 className="text-display text-[#1a1a1a] mb-12">
@@ -253,9 +304,9 @@ export default function GrowLikeYouMeanItPage() {
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-[#1a1a1a]/85 mb-12">
             Most people say money isn't actually what's holding them back from
-            investing in their brand. They're waiting on a clear vision or plan
-            first. This gives you that for $47 CAD, without waiting on a
-            bigger, more expensive program to hand it to you.
+            investing in their brand. They still need a clear vision or plan
+            first. This gives you that first, for $47 CAD, instead of waiting on
+            a bigger, more expensive program to hand it to you.
           </p>
           <div className="border border-[#1a1a1a]/15 bg-white p-8 md:p-10 space-y-6 mb-12">
             <div className="grid gap-6 sm:grid-cols-[7rem,1fr] sm:gap-8 border-b border-[#1a1a1a]/10 pb-6">
@@ -290,7 +341,7 @@ export default function GrowLikeYouMeanItPage() {
         </div>
       </section>
 
-      {/* Section 8: Final CTA */}
+      {/* Section 9: Final CTA */}
       <section className="section-padding bg-[#1a1a1a] text-[#f5f1ea]">
         <div className="container-elegant max-w-3xl text-center">
           <h2 className="text-display text-[#f5f1ea] mb-10">Stop winging it.</h2>

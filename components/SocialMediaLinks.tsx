@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GOOGLE_REVIEWS_URL } from "@/lib/siteLinks";
 
 export default function SocialMediaLinks() {
   const socialLinks = [
@@ -39,6 +40,15 @@ export default function SocialMediaLinks() {
       )
     },
     {
+      name: "Google Reviews",
+      href: GOOGLE_REVIEWS_URL,
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ),
+    },
+    {
       name: "Podcast",
       href: "/podcast",
       icon: (
@@ -60,7 +70,11 @@ export default function SocialMediaLinks() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-black transition-colors duration-200"
-            aria-label={`Follow Stephanie Rose on ${social.name}`}
+            aria-label={
+              social.name === "Google Reviews"
+                ? "Read West Rose Media Google reviews"
+                : `Follow Stephanie Rose on ${social.name}`
+            }
           >
             <div className="w-5 h-5 flex items-center justify-center">
               {social.icon}
