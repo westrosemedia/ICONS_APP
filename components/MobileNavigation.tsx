@@ -74,6 +74,13 @@ export default function MobileNavigation() {
             >
               Apply for ICON Brand Partnership
             </Link>
+            <Link
+              href="/login"
+              className="inline-flex w-fit items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sign in
+            </Link>
           </nav>
         </div>
       )}

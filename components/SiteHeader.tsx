@@ -36,6 +36,12 @@ export default function SiteHeader() {
           >
             Apply for ICON Brand Partnership
           </Link>
+          <Link
+            href="/login"
+            className="text-gray-600 hover:text-black transition-colors duration-200 font-medium"
+          >
+            Sign in
+          </Link>
           <a
             href={PHOTO_GALLERIES_URL}
             target="_blank"

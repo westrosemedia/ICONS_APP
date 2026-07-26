@@ -27,45 +27,71 @@ export default function CourseDetailPage() {
 
   useEffect(() => {
     if (!courseId) return;
-    
-    const fetchData = async () => {
+
+    let cancelled = false;
+
+    const fetchCourse = async () => {
       const courseData = await CourseService.getCourse(courseId);
+      if (cancelled) return;
       setCourse(courseData);
+      setLoading(false);
+    };
 
-      if (user) {
-        const enrollmentData = await CourseService.getUserEnrollment(
-          user.uid,
-          courseId
+    fetchCourse();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId]);
+
+  useEffect(() => {
+    if (!courseId || loadingAuth) return;
+
+    let cancelled = false;
+
+    const fetchEnrollment = async () => {
+      if (!user) {
+        setEnrollment(null);
+        setWeeks([]);
+        setUnlockedWeeks([]);
+        setSelectedWeek(1);
+        return;
+      }
+
+      const enrollmentData = await CourseService.getUserEnrollment(
+        user.uid,
+        courseId
+      );
+      if (cancelled) return;
+
+      setEnrollment(enrollmentData);
+
+      if (enrollmentData?.paymentStatus === "completed") {
+        const [weeksData, unlocked] = await Promise.all([
+          CourseService.getCourseWeeks(courseId),
+          CourseService.getUnlockedWeeks(user.uid, courseId),
+        ]);
+        if (cancelled) return;
+        setWeeks(weeksData);
+        setUnlockedWeeks(unlocked);
+        setSelectedWeek(
+          enrollmentData.currentWeek === 0
+            ? 1
+            : enrollmentData.currentWeek + 1
         );
-        setEnrollment(enrollmentData);
-
-        if (enrollmentData?.paymentStatus === "completed") {
-          const [weeksData, unlocked] = await Promise.all([
-            CourseService.getCourseWeeks(courseId),
-            CourseService.getUnlockedWeeks(user.uid, courseId),
-          ]);
-          setWeeks(weeksData);
-          setUnlockedWeeks(unlocked);
-          setSelectedWeek(
-            enrollmentData.currentWeek === 0
-              ? 1
-              : enrollmentData.currentWeek + 1
-          );
-        } else {
-          setWeeks([]);
-          setUnlockedWeeks([]);
-          setSelectedWeek(1);
-        }
       } else {
         setWeeks([]);
         setUnlockedWeeks([]);
+        setSelectedWeek(1);
       }
-
-      setLoading(false);
     };
-    
-    fetchData();
-  }, [courseId, user]);
+
+    fetchEnrollment();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId, user, loadingAuth]);
 
   const [weekError, setWeekError] = useState<string | null>(null);
 
@@ -95,7 +121,7 @@ export default function CourseDetailPage() {
     }
   };
 
-  if (loading || loadingAuth) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
@@ -174,22 +200,33 @@ export default function CourseDetailPage() {
       {/* Pricing Section */}
       {!isEnrolled && (
         <section id="course-pricing" className="section-padding bg-gray-50">
-          <div className="container-elegant">
+          <div className="container-elegant max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
-              <h2 className="text-display text-black mb-4 text-center">
-                {user ? "Get access to this course" : "Enroll Now"}
-              </h2>
-              <p className="text-editorial text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-                {user
-                  ? "If you already paid, use Restore access below. You do not need to purchase again."
-                  : course.selfPaced
-                    ? "One-time payment. Instant access to all lessons. Work through them at your own pace."
-                    : "Choose the payment option that works best for you. Start your journey to building a powerful personal brand today."}
-              </p>
+              <div className="rounded-2xl border-2 border-black bg-white p-8 text-center shadow-sm">
+                <h2 className="text-display text-black mb-3">
+                  Already purchased?
+                </h2>
+                <p className="text-editorial text-gray-600 mb-6">
+                  Sign in to restore your access. You do not need to buy again.
+                </p>
+                {!user ? (
+                  <Link
+                    href={loginUrl}
+                    className="inline-flex items-center justify-center px-10 py-4 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors text-base"
+                  >
+                    Sign in
+                  </Link>
+                ) : (
+                  <p className="text-sm text-gray-600 mb-4">
+                    Signed in as {user.email}
+                  </p>
+                )}
+              </div>
 
               <RestoreCourseAccess
                 courseId={courseId}
@@ -199,28 +236,34 @@ export default function CourseDetailPage() {
               />
 
               {!user && (
-              <div className="max-w-2xl mx-auto mt-8">
-                {course.stripePriceId ? (
-                  <div className="text-center space-y-6">
-                    {priceLabel && (
-                      <p className="text-3xl font-bold text-black mb-6">{priceLabel}</p>
-                    )}
-                    <CourseEnrollButton
-                      courseId={courseId}
-                      priceId={course.stripePriceId}
-                      label={
-                        priceLabel
-                          ? `Get Access for ${priceLabel}`
-                          : "Enroll Now"
-                      }
-                    />
-                  </div>
-                ) : (
-                  <p className="text-center text-gray-600">
-                    Enrollment is not available yet. Please check back soon.
+                <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center">
+                  <h3 className="text-2xl font-semibold text-black mb-3">
+                    New here?
+                  </h3>
+                  <p className="text-editorial text-gray-600 mb-6">
+                    One-time payment. Instant access to all 8 lessons.
                   </p>
-                )}
-              </div>
+                  {course.stripePriceId ? (
+                    <div className="space-y-4">
+                      {priceLabel && (
+                        <p className="text-3xl font-bold text-black">{priceLabel}</p>
+                      )}
+                      <CourseEnrollButton
+                        courseId={courseId}
+                        priceId={course.stripePriceId}
+                        label={
+                          priceLabel
+                            ? `Get Access for ${priceLabel}`
+                            : "Enroll Now"
+                        }
+                      />
+                    </div>
+                  ) : (
+                    <p className="text-gray-600">
+                      Enrollment is not available yet. Please check back soon.
+                    </p>
+                  )}
+                </div>
               )}
             </motion.div>
           </div>
