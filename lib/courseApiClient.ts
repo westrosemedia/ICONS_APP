@@ -1,8 +1,14 @@
 import { auth } from "@/lib/firebase";
 import { Course, CourseWeek, UserCourseEnrollment } from "@/lib/types/course";
 
+async function waitForAuthUser() {
+  if (!auth) return null;
+  await auth.authStateReady();
+  return auth.currentUser;
+}
+
 async function getAuthHeaders(): Promise<HeadersInit> {
-  const user = auth?.currentUser;
+  const user = await waitForAuthUser();
   if (!user) return {};
 
   const token = await user.getIdToken();
@@ -61,6 +67,30 @@ export async function fetchCourseWeekFromApi(
   if (!response.ok) return null;
   const data = await response.json();
   return data.week || null;
+}
+
+export async function syncUserEnrollmentFromApi(
+  courseId: string
+): Promise<UserCourseEnrollment | null> {
+  const headers = await getAuthHeaders();
+  if (!("Authorization" in headers)) return null;
+
+  const response = await fetch("/api/courses/sync-enrollment", {
+    method: "POST",
+    cache: "no-store",
+    headers: {
+      ...headers,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ courseId }),
+  });
+
+  if (!response.ok) return null;
+
+  const data = await response.json();
+  return data.enrollment
+    ? (parseDates(data.enrollment) as UserCourseEnrollment)
+    : null;
 }
 
 export async function fetchUserEnrollmentFromApi(

@@ -28,34 +28,38 @@ export default function CourseDetailPage() {
     if (!courseId) return;
     
     const fetchData = async () => {
-      const [courseData, weeksData] = await Promise.all([
-        CourseService.getCourse(courseId),
-        CourseService.getCourseWeeks(courseId),
-      ]);
-      
+      const courseData = await CourseService.getCourse(courseId);
       setCourse(courseData);
-      setWeeks(weeksData);
-      
+
       if (user) {
-        const enrollmentData = await CourseService.getUserEnrollment(user.uid, courseId);
+        const enrollmentData = await CourseService.getUserEnrollment(
+          user.uid,
+          courseId
+        );
         setEnrollment(enrollmentData);
 
         if (enrollmentData?.paymentStatus === "completed") {
-          const unlocked = await CourseService.getUnlockedWeeks(user.uid, courseId);
+          const [weeksData, unlocked] = await Promise.all([
+            CourseService.getCourseWeeks(courseId),
+            CourseService.getUnlockedWeeks(user.uid, courseId),
+          ]);
+          setWeeks(weeksData);
           setUnlockedWeeks(unlocked);
+          setSelectedWeek(
+            enrollmentData.currentWeek === 0
+              ? 1
+              : enrollmentData.currentWeek + 1
+          );
         } else {
+          setWeeks([]);
           setUnlockedWeeks([]);
-        }
-        
-        if (enrollmentData) {
-          setSelectedWeek(enrollmentData.currentWeek === 0 ? 1 : enrollmentData.currentWeek + 1);
-        } else {
           setSelectedWeek(1);
         }
       } else {
+        setWeeks([]);
         setUnlockedWeeks([]);
       }
-      
+
       setLoading(false);
     };
     

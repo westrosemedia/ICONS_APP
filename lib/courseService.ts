@@ -23,6 +23,7 @@ import {
   fetchCourseWeekFromApi,
   fetchCourseWeeksFromApi,
   fetchUserEnrollmentFromApi,
+  syncUserEnrollmentFromApi,
 } from './courseApiClient';
 
 const COURSES_COLLECTION = 'courses';
@@ -97,10 +98,18 @@ export class CourseService {
    */
   static async getUserEnrollment(userId: string, courseId: string): Promise<UserCourseEnrollment | null> {
     try {
+      await auth?.authStateReady();
       if (auth?.currentUser?.uid !== userId) {
         return null;
       }
-      return await fetchUserEnrollmentFromApi(courseId);
+
+      let enrollment = await fetchUserEnrollmentFromApi(courseId);
+      if (enrollment?.paymentStatus === "completed") {
+        return enrollment;
+      }
+
+      enrollment = await syncUserEnrollmentFromApi(courseId);
+      return enrollment;
     } catch (error) {
       console.error('Error fetching enrollment:', error);
       return null;
