@@ -1,9 +1,14 @@
-import { getAuth } from "firebase-admin/auth";
+import { getAuth, DecodedIdToken } from "firebase-admin/auth";
 import { getAdminApp } from "@/lib/firebaseAdmin";
 
-export async function getUserIdFromRequest(
+export type AuthContext = {
+  uid: string;
+  email: string | null;
+};
+
+export async function getAuthContextFromRequest(
   req: Request
-): Promise<string | null> {
+): Promise<AuthContext | null> {
   const header = req.headers.get("authorization");
   if (!header?.startsWith("Bearer ")) return null;
 
@@ -11,6 +16,17 @@ export async function getUserIdFromRequest(
   if (!token) return null;
 
   getAdminApp();
-  const decoded = await getAuth().verifyIdToken(token);
-  return decoded.uid;
+  const decoded: DecodedIdToken = await getAuth().verifyIdToken(token);
+
+  return {
+    uid: decoded.uid,
+    email: decoded.email?.trim().toLowerCase() || null,
+  };
+}
+
+export async function getUserIdFromRequest(
+  req: Request
+): Promise<string | null> {
+  const context = await getAuthContextFromRequest(req);
+  return context?.uid ?? null;
 }

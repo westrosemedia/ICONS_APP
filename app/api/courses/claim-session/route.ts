@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getUserEnrollmentAdmin } from "@/lib/courseAdminStore";
-import {
-  getAuthContextFromRequest,
-  getUserIdFromRequest,
-} from "@/lib/courseAuth";
-import { syncCourseEnrollmentForUser } from "@/lib/syncCourseEnrollment";
+import { getAuthContextFromRequest } from "@/lib/courseAuth";
+import { claimCheckoutSessionForUser } from "@/lib/syncCourseEnrollment";
 
 export const dynamic = "force-dynamic";
 
@@ -15,14 +12,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { courseId } = await req.json();
-    if (!courseId) {
-      return NextResponse.json({ error: "Missing courseId" }, { status: 400 });
+    const { courseId, sessionId } = await req.json();
+    if (!courseId || !sessionId) {
+      return NextResponse.json(
+        { error: "Missing courseId or sessionId" },
+        { status: 400 }
+      );
     }
 
-    const result = await syncCourseEnrollmentForUser(
+    const result = await claimCheckoutSessionForUser(
       context.uid,
       courseId,
+      sessionId,
       context.email
     );
     const enrollment = await getUserEnrollmentAdmin(context.uid, courseId);
@@ -33,9 +34,9 @@ export async function POST(req: NextRequest) {
       enrollment,
     });
   } catch (error) {
-    console.error("Sync enrollment error:", error);
+    console.error("Claim session error:", error);
     return NextResponse.json(
-      { error: "Unable to sync enrollment." },
+      { error: "Unable to claim purchase." },
       { status: 500 }
     );
   }

@@ -10,6 +10,7 @@ import { auth } from "@/lib/firebase";
 import { motion } from "framer-motion";
 import { Lock, CheckCircle, Play, ArrowRight } from "lucide-react";
 import CourseEnrollButton from "@/components/CourseEnrollButton";
+import RestoreCourseAccess from "@/components/RestoreCourseAccess";
 import { formatCoursePrice } from "@/lib/courses/grow-like-you-mean-it";
 
 export default function CourseDetailPage() {
@@ -179,14 +180,26 @@ export default function CourseDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-display text-black mb-4 text-center">Enroll Now</h2>
+              <h2 className="text-display text-black mb-4 text-center">
+                {user ? "Get access to this course" : "Enroll Now"}
+              </h2>
               <p className="text-editorial text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-                {course.selfPaced
-                  ? "One-time payment. Instant access to all lessons. Work through them at your own pace."
-                  : "Choose the payment option that works best for you. Start your journey to building a powerful personal brand today."}
+                {user
+                  ? "If you already paid, use Restore access below. You do not need to purchase again."
+                  : course.selfPaced
+                    ? "One-time payment. Instant access to all lessons. Work through them at your own pace."
+                    : "Choose the payment option that works best for you. Start your journey to building a powerful personal brand today."}
               </p>
-              
-              <div className="max-w-2xl mx-auto">
+
+              <RestoreCourseAccess
+                courseId={courseId}
+                loginUrl={loginUrl}
+                isLoggedIn={!!user}
+                userEmail={user?.email}
+              />
+
+              {!user && (
+              <div className="max-w-2xl mx-auto mt-8">
                 {course.stripePriceId ? (
                   <div className="text-center space-y-6">
                     {priceLabel && (
@@ -201,25 +214,6 @@ export default function CourseDetailPage() {
                           : "Enroll Now"
                       }
                     />
-                    {!user ? (
-                      <div className="pt-2 border-t border-gray-200">
-                        <p className="text-sm text-gray-600 mb-3">
-                          Already purchased this course?
-                        </p>
-                        <Link
-                          href={loginUrl}
-                          className="inline-flex items-center justify-center px-8 py-3 border border-black text-black rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
-                        >
-                          Sign in to access your course
-                        </Link>
-                      </div>
-                    ) : (
-                      <p className="text-sm text-gray-600 max-w-md mx-auto">
-                        Signed in as {user.email}. If you already paid, make sure
-                        this is the same email you used at checkout, then refresh
-                        this page.
-                      </p>
-                    )}
                   </div>
                 ) : (
                   <p className="text-center text-gray-600">
@@ -227,6 +221,7 @@ export default function CourseDetailPage() {
                   </p>
                 )}
               </div>
+              )}
             </motion.div>
           </div>
         </section>
