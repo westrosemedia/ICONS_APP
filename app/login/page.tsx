@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { GROW_LIKE_YOU_MEAN_IT } from "@/lib/courses/grow-like-you-mean-it";
 
 function LoginForm() {
   const router = useRouter();
@@ -50,9 +51,7 @@ function LoginForm() {
         err instanceof Error ? err.message : "Unable to sign in. Please try again.";
 
       if (message.includes("auth/configuration-not-found")) {
-        setError(
-          "Account sign-in is being configured. If you just purchased the course, use the link from your checkout confirmation to set your password."
-        );
+        setError("config-not-found");
       } else {
         setError(message);
       }
@@ -80,10 +79,44 @@ function LoginForm() {
           </p>
 
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-left">
-              <p className="text-red-600 text-sm">{error}</p>
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-left space-y-3">
+              {error === "config-not-found" ? (
+                <>
+                  <p className="text-red-700 text-sm font-medium">
+                    Email sign-in is not turned on in Firebase yet.
+                  </p>
+                  <p className="text-red-600 text-sm">
+                    If you already paid, you do not need to buy again. Finish
+                    setup from your checkout link instead:
+                  </p>
+                  <Link
+                    href={`${GROW_LIKE_YOU_MEAN_IT.coursePath}/enrollment-success?session_id=cs_live_b1L0kKAXrntaltCaE1oq3cqub752fSX4rItO8VvVQaDeuHTZAdC4SSHcHY`}
+                    className="inline-flex items-center justify-center px-5 py-2.5 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    Finish my course setup
+                  </Link>
+                  <p className="text-red-600 text-xs">
+                    To enable login here: Firebase Console → Authentication →
+                    Sign-in method → Email/Password → Enable.
+                  </p>
+                </>
+              ) : (
+                <p className="text-red-600 text-sm">{error}</p>
+              )}
             </div>
           )}
+
+          <div className="mb-6 rounded-lg border border-gray-200 bg-gray-50 p-4 text-left">
+            <p className="text-sm text-gray-700 font-medium mb-2">
+              Already paid for Grow Like You Mean It?
+            </p>
+            <Link
+              href={`${GROW_LIKE_YOU_MEAN_IT.coursePath}/enrollment-success?session_id=cs_live_b1L0kKAXrntaltCaE1oq3cqub752fSX4rItO8VvVQaDeuHTZAdC4SSHcHY`}
+              className="text-sm text-black underline underline-offset-4 hover:text-gray-700"
+            >
+              Finish setup without signing in again
+            </Link>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-6 text-left">
             <div className="space-y-4">
