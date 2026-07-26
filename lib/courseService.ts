@@ -10,12 +10,20 @@ import {
   Timestamp 
 } from 'firebase/firestore';
 import { db } from './firebase';
+import { auth } from './firebase';
 
 // Ensure db is available
 if (!db) {
   console.error('Firestore db not initialized');
 }
 import { Course, CourseWeek, UserCourseEnrollment, CourseProgress } from './types/course';
+import {
+  fetchCourseFromApi,
+  fetchCoursesFromApi,
+  fetchCourseWeekFromApi,
+  fetchCourseWeeksFromApi,
+  fetchUserEnrollmentFromApi,
+} from './courseApiClient';
 
 const COURSES_COLLECTION = 'courses';
 const WEEKS_COLLECTION = 'courseWeeks';
@@ -28,17 +36,7 @@ export class CourseService {
    */
   static async getAllCourses(): Promise<Course[]> {
     try {
-      const q = query(
-        collection(db, COURSES_COLLECTION),
-        where('published', '==', true)
-      );
-      const snapshot = await getDocs(q);
-      return snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-        createdAt: doc.data().createdAt?.toDate(),
-        updatedAt: doc.data().updatedAt?.toDate(),
-      })) as Course[];
+      return await fetchCoursesFromApi();
     } catch (error) {
       console.error('Error fetching courses:', error);
       return [];
@@ -50,16 +48,7 @@ export class CourseService {
    */
   static async getCourse(courseId: string): Promise<Course | null> {
     try {
-      const docRef = doc(db, COURSES_COLLECTION, courseId);
-      const docSnap = await getDoc(docRef);
-      if (!docSnap.exists()) return null;
-      
-      return {
-        id: docSnap.id,
-        ...docSnap.data(),
-        createdAt: docSnap.data().createdAt?.toDate(),
-        updatedAt: docSnap.data().updatedAt?.toDate(),
-      } as Course;
+      return await fetchCourseFromApi(courseId);
     } catch (error) {
       console.error('Error fetching course:', error);
       return null;
@@ -71,18 +60,7 @@ export class CourseService {
    */
   static async getCourseWeeks(courseId: string): Promise<CourseWeek[]> {
     try {
-      const q = query(
-        collection(db, WEEKS_COLLECTION),
-        where('courseId', '==', courseId)
-      );
-      const snapshot = await getDocs(q);
-      const weeks = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as CourseWeek[];
-      
-      // Sort by week number
-      return weeks.sort((a, b) => a.weekNumber - b.weekNumber);
+      return await fetchCourseWeeksFromApi(courseId);
     } catch (error) {
       console.error('Error fetching course weeks:', error);
       return [];
@@ -94,18 +72,7 @@ export class CourseService {
    */
   static async getWeek(courseId: string, weekNumber: number): Promise<CourseWeek | null> {
     try {
-      const q = query(
-        collection(db, WEEKS_COLLECTION),
-        where('courseId', '==', courseId),
-        where('weekNumber', '==', weekNumber)
-      );
-      const snapshot = await getDocs(q);
-      if (snapshot.empty) return null;
-      
-      return {
-        id: snapshot.docs[0].id,
-        ...snapshot.docs[0].data(),
-      } as CourseWeek;
+      return await fetchCourseWeekFromApi(courseId, weekNumber);
     } catch (error) {
       console.error('Error fetching week:', error);
       return null;
@@ -117,14 +84,8 @@ export class CourseService {
    */
   static async isUserEnrolled(userId: string, courseId: string): Promise<boolean> {
     try {
-      const q = query(
-        collection(db, ENROLLMENTS_COLLECTION),
-        where('userId', '==', userId),
-        where('courseId', '==', courseId),
-        where('paymentStatus', '==', 'completed')
-      );
-      const snapshot = await getDocs(q);
-      return !snapshot.empty;
+      const enrollment = await this.getUserEnrollment(userId, courseId);
+      return enrollment?.paymentStatus === 'completed';
     } catch (error) {
       console.error('Error checking enrollment:', error);
       return false;
@@ -136,21 +97,10 @@ export class CourseService {
    */
   static async getUserEnrollment(userId: string, courseId: string): Promise<UserCourseEnrollment | null> {
     try {
-      const q = query(
-        collection(db, ENROLLMENTS_COLLECTION),
-        where('userId', '==', userId),
-        where('courseId', '==', courseId)
-      );
-      const snapshot = await getDocs(q);
-      if (snapshot.empty) return null;
-      
-      const enrollment = snapshot.docs[0].data();
-      return {
-        id: snapshot.docs[0].id,
-        ...enrollment,
-        enrolledAt: enrollment.enrolledAt?.toDate(),
-        completedAt: enrollment.completedAt?.toDate(),
-      } as UserCourseEnrollment;
+      if (auth?.currentUser?.uid !== userId) {
+        return null;
+      }
+      return await fetchUserEnrollmentFromApi(courseId);
     } catch (error) {
       console.error('Error fetching enrollment:', error);
       return null;
