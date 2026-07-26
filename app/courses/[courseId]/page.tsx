@@ -70,7 +70,7 @@ export default function CourseDetailPage() {
 
   const handleWeekClick = async (weekNumber: number) => {
     if (!user || !enrollment) {
-      router.push('/login');
+      router.push(`/login?redirect=${encodeURIComponent(`/courses/${courseId}`)}`);
       return;
     }
     
@@ -121,6 +121,7 @@ export default function CourseDetailPage() {
   const isEnrolled = enrollment?.paymentStatus === 'completed';
   const progress = enrollment?.progress || 0;
   const unitLabel = course.selfPaced ? "Lesson" : "Week";
+  const loginUrl = `/login?redirect=${encodeURIComponent(`/courses/${courseId}`)}`;
   const priceLabel =
     course.priceAmount && course.priceCurrency
       ? formatCoursePrice(course.priceAmount, course.priceCurrency)
@@ -157,6 +158,14 @@ export default function CourseDetailPage() {
                 </div>
               </div>
             )}
+            {!isEnrolled && !user && (
+              <Link
+                href={loginUrl}
+                className="inline-block text-sm text-white/80 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                Already purchased? Sign in to access your course
+              </Link>
+            )}
           </motion.div>
         </div>
       </section>
@@ -179,7 +188,7 @@ export default function CourseDetailPage() {
               
               <div className="max-w-2xl mx-auto">
                 {course.stripePriceId ? (
-                  <div className="text-center">
+                  <div className="text-center space-y-6">
                     {priceLabel && (
                       <p className="text-3xl font-bold text-black mb-6">{priceLabel}</p>
                     )}
@@ -192,6 +201,25 @@ export default function CourseDetailPage() {
                           : "Enroll Now"
                       }
                     />
+                    {!user ? (
+                      <div className="pt-2 border-t border-gray-200">
+                        <p className="text-sm text-gray-600 mb-3">
+                          Already purchased this course?
+                        </p>
+                        <Link
+                          href={loginUrl}
+                          className="inline-flex items-center justify-center px-8 py-3 border border-black text-black rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
+                        >
+                          Sign in to access your course
+                        </Link>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-gray-600 max-w-md mx-auto">
+                        Signed in as {user.email}. If you already paid, make sure
+                        this is the same email you used at checkout, then refresh
+                        this page.
+                      </p>
+                    )}
                   </div>
                 ) : (
                   <p className="text-center text-gray-600">
