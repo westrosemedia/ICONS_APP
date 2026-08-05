@@ -17,7 +17,7 @@ const IMAGES = {
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
   description:
-    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. Mastermind starts July 21.",
+    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral.",
 };
 
 export const revalidate = 0;
@@ -101,9 +101,6 @@ export default function HotAndRichPage() {
               Read the Story
             </Link>
           </div>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
-            Mastermind starts July 21.
-          </p>
         </div>
       </section>
 
@@ -345,13 +342,10 @@ export default function HotAndRichPage() {
         <div className="text-center max-w-3xl mx-auto">
           <h2
             id="pricing-heading"
-            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-4"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10"
           >
             The price
           </h2>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-8">
-            Mastermind starts July 21.
-          </p>
           <p className="text-lg text-[#3D3632] mb-10">
             Choose the payment option that works for you. All prices in CAD.
           </p>
@@ -398,12 +392,9 @@ export default function HotAndRichPage() {
             as fast and as consistently as you deserve to be, on your terms, not at the mercy of an
             algorithm that can erase you overnight.
           </p>
-          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
             I rebuilt mine in 30 days with nothing but the skill. Imagine what she builds with four
             months and me in the room the entire time.
-          </p>
-          <p className="text-[#C9B99A] font-heading text-xl font-light mb-10">
-            Mastermind starts July 21.
           </p>
           <Link href="#pricing" className={ctaLinkClass}>
             Join Hot and Rich

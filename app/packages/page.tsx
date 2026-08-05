@@ -58,8 +58,8 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Mastermind Section */}
-      <section className="section-padding bg-black text-white">
+      {/* Hot and Rich Mastermind */}
+      <section className="section-padding bg-[#1C1917] text-[#FAF7F2]">
         <div className="container-elegant">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,11 +68,15 @@ export default function PackagesPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-display text-white mb-8">
-              Ready for the Next Level?
+            <p className="text-xs tracking-[0.35em] uppercase text-[#C9B99A] mb-6">
+              West Rose Media presents
+            </p>
+            <h2 className="text-display text-[#FAF7F2] mb-8">
+              Hot and Rich Mastermind
             </h2>
-            <p className="text-editorial text-white/90 max-w-3xl mx-auto mb-12">
-              Join Canada's most exclusive 6-month Manifesting & Marketing Mastermind. Marketing strategy that converts. Manifestation that moves money. Includes luxury content retreat October 16-18 in Banff AB, Canada.
+            <p className="text-editorial text-[#FAF7F2]/90 max-w-3xl mx-auto">
+              Four months to build an audience and revenue system sturdy enough that losing a
+              platform becomes a setback instead of a funeral.
             </p>
           </motion.div>
 
@@ -83,36 +87,35 @@ export default function PackagesPage() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-[#C9B99A]/30">
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#c1ff72]">What's Included:</h3>
-                  <ul className="space-y-3 text-white/90">
-                    <li>• 6 months of weekly group coaching</li>
-                    <li>• Luxury content retreat October 16-18 in Banff AB, Canada</li>
-                    <li>• Tapping therapy for emotional mastery</li>
-                    <li>• Content strategy and creation</li>
-                    <li>• 1:1 sessions with both coaches</li>
-                    <li>• Exclusive community access</li>
+                  <h3 className="text-2xl font-bold mb-4 text-[#C9B99A]">What&apos;s included:</h3>
+                  <ul className="space-y-3 text-[#FAF7F2]/90">
+                    <li>• Biweekly live calls with Stephanie</li>
+                    <li>• Text support inside the group, three days a week</li>
+                    <li>• Direct access to the exact strategy running right now</li>
+                    <li>• Four months of live coaching and implementation</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#c1ff72]">Perfect For:</h3>
-                  <ul className="space-y-3 text-white/90">
-                    <li>• Entrepreneurs ready to scale</li>
-                    <li>• Coaches and consultants</li>
-                    <li>• Service-based professionals</li>
-                    <li>• Anyone seeking emotional mastery</li>
-                    <li>• Leaders wanting magnetic marketing</li>
-                    <li>• Those ready for transformation</li>
+                  <h3 className="text-2xl font-bold mb-4 text-[#C9B99A]">Investment:</h3>
+                  <ul className="space-y-3 text-[#FAF7F2]/90">
+                    <li>• One payment of $3,050 CAD</li>
+                    <li>• Four payments of $770 CAD</li>
+                    <li>• Six payments of $510 CAD</li>
                   </ul>
                 </div>
               </div>
-              
+
               <div className="text-center">
-                <Button asChild size="lg" className="bg-[#c1ff72] text-black hover:bg-[#a8e65a] transition-colors">
-                  <Link href="/mastermind">
-                    Join the Manifesting & Marketing Mastermind
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[#FAF7F2] text-[#1C1917] hover:bg-[#E8E4DD] transition-colors"
+                >
+                  <Link href="/hot-and-rich">
+                    Join Hot and Rich Mastermind
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>

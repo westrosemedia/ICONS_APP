@@ -1,12 +1,75 @@
 /**
  * Seed Grow Like You Mean It course in Firestore.
  * Run with: npm run seed:grow-like-you-mean-it
+ *
+ * CORE_LESSONS = regular course videos (add new ones here).
+ * BONUS_LESSON is always appended last, no matter how many core lessons exist.
  */
 
 import { config } from "dotenv";
 import { initializeApp, cert, getApps } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { GROW_LIKE_YOU_MEAN_IT } from "../lib/courses/grow-like-you-mean-it";
+
+/** Add new course videos here. The bonus is always kept last. */
+const CORE_LESSONS = [
+  {
+    title: "Welcome",
+    description: "Start here.",
+    videoUrl: "https://www.youtube.com/watch?v=BOoXl-KJlic",
+    videoId: "BOoXl-KJlic",
+    content: "<h2>Welcome</h2><p>Welcome to Grow Like You Mean It.</p>",
+  },
+  {
+    title: "Instagram and TikTok Basics",
+    description: "The foundations of Instagram and TikTok.",
+    videoUrl: "https://www.youtube.com/watch?v=JKvKy5TRvu4",
+    videoId: "JKvKy5TRvu4",
+    content:
+      "<h2>Instagram and TikTok Basics</h2><p>Watch the video above to continue.</p>",
+  },
+  {
+    title: "Posting Basics",
+    description: "The essentials of posting with intention.",
+    videoUrl: "https://www.youtube.com/watch?v=pfLfWS4oIt0",
+    videoId: "pfLfWS4oIt0",
+    content: "<h2>Posting Basics</h2><p>Watch the video above to continue.</p>",
+  },
+  {
+    title: "Filming B-Roll",
+    description: "How to film B-roll that supports your content.",
+    videoUrl: "https://www.youtube.com/watch?v=M8Yu7U9D3s4",
+    videoId: "M8Yu7U9D3s4",
+    content: "<h2>Filming B-Roll</h2><p>Watch the video above to continue.</p>",
+  },
+];
+
+/** Always last — do not put this in CORE_LESSONS. */
+const BONUS_LESSON = {
+  title: "Bonus: Live Coaching & Social Media Strategy",
+  description:
+    "A live coaching call and social media strategy session to help you grow with clarity and intention.",
+  videoUrl: "https://www.youtube.com/watch?v=oMaAmcwdLJg",
+  videoId: "oMaAmcwdLJg",
+  content:
+    "<h2>Bonus: Live Coaching & Social Media Strategy</h2><p>Watch the live coaching call and social media strategy session above.</p>",
+  isBonus: true,
+};
+
+function buildLessons() {
+  const lessons = CORE_LESSONS.map((lesson, index) => ({
+    ...lesson,
+    weekNumber: index + 1,
+    isBonus: false,
+  }));
+
+  lessons.push({
+    ...BONUS_LESSON,
+    weekNumber: lessons.length + 1,
+  });
+
+  return lessons;
+}
 
 config({ path: ".env.local" });
 
@@ -23,8 +86,9 @@ if (!getApps().length) {
 const db = getFirestore();
 
 async function seedGrowLikeYouMeanIt() {
-  const { id, title, description, stripePriceId, totalLessons, selfPaced, priceAmount, priceCurrency } =
+  const { id, title, description, stripePriceId, selfPaced, priceAmount, priceCurrency, thumbnailUrl } =
     GROW_LIKE_YOU_MEAN_IT;
+  const LESSONS = buildLessons();
 
   console.log(`\nSeeding course: ${title}\n`);
 
@@ -33,53 +97,66 @@ async function seedGrowLikeYouMeanIt() {
     {
       title,
       description,
-      totalWeeks: totalLessons,
+      totalWeeks: LESSONS.length,
       stripePriceId,
       selfPaced,
       priceAmount,
       priceCurrency,
+      thumbnailUrl,
       published: true,
-      createdAt: new Date(),
       updatedAt: new Date(),
     },
     { merge: true }
   );
 
-  console.log(`✅ Course document upserted: ${id}`);
+  console.log(`✅ Course document upserted (${LESSONS.length} lessons, bonus last)`);
 
   const existingWeeks = await db
     .collection("courseWeeks")
     .where("courseId", "==", id)
     .get();
 
-  if (!existingWeeks.empty) {
-    console.log(`ℹ️  Found ${existingWeeks.size} existing lessons. Updating templates only where missing.`);
+  const keepVideoIds = new Set(LESSONS.map((lesson) => lesson.videoId));
+
+  for (const doc of existingWeeks.docs) {
+    const videoId = doc.data().videoId;
+    if (!keepVideoIds.has(videoId)) {
+      await doc.ref.delete();
+      console.log(`🗑️  Removed unused lesson (${doc.id})`);
+    }
   }
 
-  for (let lessonNumber = 1; lessonNumber <= totalLessons; lessonNumber++) {
+  for (const lesson of LESSONS) {
     const existing = existingWeeks.docs.find(
-      (doc) => doc.data().weekNumber === lessonNumber
+      (doc) => doc.data().videoId === lesson.videoId
     );
 
+    const payload = {
+      courseId: id,
+      weekNumber: lesson.weekNumber,
+      title: lesson.title,
+      description: lesson.description,
+      videoUrl: lesson.videoUrl,
+      videoId: lesson.videoId,
+      content: lesson.content,
+      resources: [],
+      unlocked: true,
+      isBonus: !!lesson.isBonus,
+    };
+
     if (existing) {
-      console.log(`↪︎ Lesson ${lessonNumber} already exists (${existing.id})`);
+      await existing.ref.set(payload, { merge: true });
+      console.log(
+        `✅ Lesson ${lesson.weekNumber} updated: ${lesson.title}${lesson.isBonus ? " (bonus)" : ""}`
+      );
       continue;
     }
 
     const lessonRef = db.collection("courseWeeks").doc();
-    await lessonRef.set({
-      courseId: id,
-      weekNumber: lessonNumber,
-      title: `Lesson ${lessonNumber}`,
-      description: "Add your lesson description in the admin or Firebase console.",
-      videoUrl: "",
-      videoId: "",
-      content: `<h2>Lesson ${lessonNumber}</h2><p>Add your lesson notes and resources here.</p>`,
-      resources: [],
-      unlocked: true,
-    });
-
-    console.log(`✅ Lesson ${lessonNumber} created (${lessonRef.id})`);
+    await lessonRef.set(payload);
+    console.log(
+      `✅ Lesson ${lesson.weekNumber} created: ${lesson.title}${lesson.isBonus ? " (bonus)" : ""}`
+    );
   }
 
   console.log("\n🎉 Grow Like You Mean It course seed complete.");

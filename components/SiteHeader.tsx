@@ -24,17 +24,8 @@ export default function SiteHeader() {
           <Link href="/cadence" className="text-gray-600 hover:text-black transition-colors duration-200">
             Cadence
           </Link>
-          <Link href="/mastermind" className="text-gray-600 hover:text-black transition-colors duration-200">
-            Mastermind
-          </Link>
           <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
             Case studies
-          </Link>
-          <Link
-            href="/apply"
-            className="inline-flex items-center justify-center rounded-lg border border-black px-5 py-2.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white"
-          >
-            Apply for ICON Brand Partnership
           </Link>
           <Link
             href="/login"

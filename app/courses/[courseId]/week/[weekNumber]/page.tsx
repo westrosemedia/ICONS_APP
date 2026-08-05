@@ -5,8 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Course, CourseWeek, UserCourseEnrollment } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
+import { useCourseSession } from "@/hooks/useCourseSession";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowLeft, ArrowRight, Lock } from "lucide-react";
 import AuthGuard from "@/components/AuthGuard";
@@ -23,7 +22,7 @@ export default function CourseWeekPage() {
   const router = useRouter();
   const courseId = params?.courseId as string;
   const weekNumber = parseInt(params?.weekNumber as string);
-  const [user, loadingAuth] = useAuthState(auth);
+  const { user, loading: loadingSession } = useCourseSession();
   const [course, setCourse] = useState<Course | null>(null);
   const [week, setWeek] = useState<CourseWeek | null>(null);
   const [enrollment, setEnrollment] = useState<UserCourseEnrollment | null>(null);
@@ -123,7 +122,7 @@ export default function CourseWeekPage() {
     return weekNumber > 1 ? weekNumber - 1 : null;
   };
 
-  if (loading || loadingAuth) {
+  if (loading || loadingSession) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">

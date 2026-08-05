@@ -1,23 +1,14 @@
-import { auth } from "@/lib/firebase";
 import { Course, CourseWeek, UserCourseEnrollment } from "@/lib/types/course";
-
-async function waitForAuthUser() {
-  if (!auth) return null;
-  await auth.authStateReady();
-  return auth.currentUser;
-}
-
-async function getAuthHeaders(): Promise<HeadersInit> {
-  const user = await waitForAuthUser();
-  if (!user) return {};
-
-  const token = await user.getIdToken();
-  return { Authorization: `Bearer ${token}` };
-}
 
 function parseDates<T extends Record<string, unknown>>(data: T): T {
   const parsed = { ...data };
-  for (const key of ["createdAt", "updatedAt", "enrolledAt", "completedAt", "lastAccessedAt"]) {
+  for (const key of [
+    "createdAt",
+    "updatedAt",
+    "enrolledAt",
+    "completedAt",
+    "lastAccessedAt",
+  ]) {
     const value = parsed[key];
     if (typeof value === "string") {
       parsed[key] = new Date(value) as T[Extract<keyof T, string>];
@@ -25,6 +16,13 @@ function parseDates<T extends Record<string, unknown>>(data: T): T {
   }
   return parsed;
 }
+
+const authFetch = (url: string, init?: RequestInit) =>
+  fetch(url, {
+    ...init,
+    credentials: "include",
+    cache: "no-store",
+  });
 
 export async function fetchCourseFromApi(
   courseId: string
@@ -45,11 +43,7 @@ export async function fetchCoursesFromApi(): Promise<Course[]> {
 export async function fetchCourseWeeksFromApi(
   courseId: string
 ): Promise<CourseWeek[]> {
-  const headers = await getAuthHeaders();
-  const response = await fetch(`/api/courses/${courseId}/weeks`, {
-    cache: "no-store",
-    headers,
-  });
+  const response = await authFetch(`/api/courses/${courseId}/weeks`);
   if (!response.ok) return [];
   const data = await response.json();
   return data.weeks || [];
@@ -59,10 +53,8 @@ export async function fetchCourseWeekFromApi(
   courseId: string,
   weekNumber: number
 ): Promise<CourseWeek | null> {
-  const headers = await getAuthHeaders();
-  const response = await fetch(
-    `/api/courses/${courseId}/weeks/${weekNumber}`,
-    { cache: "no-store", headers }
+  const response = await authFetch(
+    `/api/courses/${courseId}/weeks/${weekNumber}`
   );
   if (!response.ok) return null;
   const data = await response.json();
@@ -72,14 +64,9 @@ export async function fetchCourseWeekFromApi(
 export async function syncUserEnrollmentFromApi(
   courseId: string
 ): Promise<UserCourseEnrollment | null> {
-  const headers = await getAuthHeaders();
-  if (!("Authorization" in headers)) return null;
-
-  const response = await fetch("/api/courses/sync-enrollment", {
+  const response = await authFetch("/api/courses/sync-enrollment", {
     method: "POST",
-    cache: "no-store",
     headers: {
-      ...headers,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ courseId }),
@@ -96,13 +83,8 @@ export async function syncUserEnrollmentFromApi(
 export async function fetchUserEnrollmentFromApi(
   courseId: string
 ): Promise<UserCourseEnrollment | null> {
-  const headers = await getAuthHeaders();
-  if (!("Authorization" in headers)) return null;
-
-  const response = await fetch(`/api/courses/${courseId}/enrollment`, {
-    cache: "no-store",
-    headers,
-  });
+  const response = await authFetch(`/api/courses/${courseId}/enrollment`);
+  if (response.status === 401) return null;
   if (!response.ok) return null;
   const data = await response.json();
   return data.enrollment

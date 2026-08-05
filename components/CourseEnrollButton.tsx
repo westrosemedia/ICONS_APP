@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
+import { useCourseSession } from "@/hooks/useCourseSession";
 
 interface CourseEnrollButtonProps {
   courseId: string;
@@ -19,13 +18,11 @@ export default function CourseEnrollButton({
   className = "px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed",
   cancelPath,
 }: CourseEnrollButtonProps) {
-  const [user, loadingAuth] = useAuthState(auth);
+  const { user } = useCourseSession();
   const [isEnrolling, setIsEnrolling] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleEnroll = async () => {
-    if (loadingAuth) return;
-
     setIsEnrolling(true);
     setError(null);
 
@@ -35,6 +32,7 @@ export default function CourseEnrollButton({
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
           priceId,
           courseId,
@@ -78,7 +76,7 @@ export default function CourseEnrollButton({
       )}
       <button
         onClick={handleEnroll}
-        disabled={isEnrolling || loadingAuth}
+        disabled={isEnrolling}
         className={className}
       >
         {isEnrolling ? "Redirecting to checkout..." : label}

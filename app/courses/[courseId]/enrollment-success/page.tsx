@@ -5,9 +5,7 @@ import { useParams, useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Course } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
-import { signInWithCustomToken } from "firebase/auth";
+import { useCourseSession } from "@/hooks/useCourseSession";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +16,7 @@ function EnrollmentSuccessContent() {
   const router = useRouter();
   const courseId = params?.courseId as string;
   const sessionId = searchParams?.get("session_id");
-  const [user, loadingAuth] = useAuthState(auth);
+  const { user, loading: loadingSession } = useCourseSession();
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);
   const [enrollmentVerified, setEnrollmentVerified] = useState(false);
@@ -56,25 +54,15 @@ function EnrollmentSuccessContent() {
   }, [courseId, sessionId]);
 
   useEffect(() => {
-    if (!courseId || !user || loadingAuth) return;
+    if (!courseId || !user || loadingSession) return;
 
     const verifyEnrollment = async () => {
       const enrollment = await CourseService.getUserEnrollment(user.uid, courseId);
       setEnrollmentVerified(enrollment?.paymentStatus === "completed");
-
-      if (!enrollment) {
-        setTimeout(async () => {
-          const retryEnrollment = await CourseService.getUserEnrollment(
-            user.uid,
-            courseId
-          );
-          setEnrollmentVerified(retryEnrollment?.paymentStatus === "completed");
-        }, 2000);
-      }
     };
 
     verifyEnrollment();
-  }, [courseId, user, loadingAuth]);
+  }, [courseId, user, loadingSession]);
 
   const handleActivateAccount = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,6 +91,7 @@ function EnrollmentSuccessContent() {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
           sessionId,
           password,
@@ -115,11 +104,6 @@ function EnrollmentSuccessContent() {
         throw new Error(data.error || "Unable to activate your account.");
       }
 
-      if (!auth) {
-        throw new Error("Authentication is not configured.");
-      }
-
-      await signInWithCustomToken(auth, data.customToken);
       setEnrollmentVerified(true);
       router.push(`/courses/${courseId}`);
     } catch (error) {
@@ -134,7 +118,7 @@ function EnrollmentSuccessContent() {
     }
   };
 
-  if (loading || loadingAuth) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
@@ -146,6 +130,7 @@ function EnrollmentSuccessContent() {
   }
 
   const needsAccountSetup = !user && sessionId && checkoutEmail;
+  const isReady = enrollmentVerified || (user && !needsAccountSetup);
 
   return (
     <div className="min-h-screen bg-white">
@@ -166,14 +151,14 @@ function EnrollmentSuccessContent() {
                 Choose a password for {checkoutEmail} to access{" "}
                 {course?.title || "your course"}.
               </p>
-            ) : enrollmentVerified ? (
+            ) : isReady ? (
               <p className="text-editorial text-gray-600 mb-8">
-                You're all set. You now have access to{" "}
+                You&apos;re all set. You now have access to{" "}
                 {course?.title || "the course"}.
               </p>
             ) : (
               <p className="text-editorial text-gray-600 mb-8">
-                Your payment went through. We're finishing your enrollment now.
+                Your payment went through. Sign in to access your course.
               </p>
             )}
           </motion.div>

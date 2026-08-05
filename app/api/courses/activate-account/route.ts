@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
+import { setCourseAccountPassword } from "@/lib/courseAccountStore";
+import { createCourseEnrollmentAdmin } from "@/lib/firebaseAdmin";
 import {
-  createCourseEnrollmentAdmin,
-  createCustomAuthToken,
-  setUserPassword,
-} from "@/lib/firebaseAdmin";
+  buildCourseSessionCookie,
+  createCourseSessionToken,
+} from "@/lib/courseSession";
 
 export const dynamic = "force-dynamic";
 
@@ -44,36 +45,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const userId = await setUserPassword(email, password);
+    const normalizedEmail = email.trim().toLowerCase();
+    const accountId = await setCourseAccountPassword(normalizedEmail, password);
 
     await createCourseEnrollmentAdmin(
-      userId,
+      accountId,
       courseId,
       typeof session.payment_intent === "string" ? session.payment_intent : null,
       typeof session.subscription === "string" ? session.subscription : null
     );
 
-    const customToken = await createCustomAuthToken(userId);
-
-    return NextResponse.json({
-      email,
+    const { token, maxAge } = createCourseSessionToken(accountId, normalizedEmail);
+    const response = NextResponse.json({
+      email: normalizedEmail,
       courseId,
-      customToken,
+      uid: accountId,
+      success: true,
     });
+    response.headers.set("Set-Cookie", buildCourseSessionCookie(token, maxAge));
+
+    return response;
   } catch (error: unknown) {
     console.error("Activate account error:", error);
     const message = error instanceof Error ? error.message : "";
-    const isConfigError =
-      message.includes("Firebase Admin credentials") ||
-      message.includes("Failed to parse private key") ||
-      message.includes("Invalid PEM");
 
     return NextResponse.json(
-      {
-        error: isConfigError
-          ? "We could not finish setting up your account. Please try again in a few minutes or email support."
-          : message || "Unable to activate your account.",
-      },
+      { error: message || "Unable to activate your account." },
       { status: 500 }
     );
   }

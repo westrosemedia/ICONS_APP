@@ -45,18 +45,18 @@ export default function MobileNavigation() {
               Cadence
             </Link>
             <Link 
-              href="/mastermind" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Mastermind
-            </Link>
-            <Link 
               href="/case-studies" 
               className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Case studies
+            </Link>
+            <Link
+              href="/login"
+              className="inline-flex w-fit items-center justify-center rounded-lg border border-black px-5 py-2.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sign in
             </Link>
             <a
               href={PHOTO_GALLERIES_URL}
@@ -67,20 +67,6 @@ export default function MobileNavigation() {
             >
               View Photo Galleries
             </a>
-            <Link
-              href="/apply"
-              className="inline-flex w-fit items-center justify-center rounded-lg border border-black px-5 py-2.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Apply for ICON Brand Partnership
-            </Link>
-            <Link
-              href="/login"
-              className="inline-flex w-fit items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Sign in
-            </Link>
           </nav>
         </div>
       )}

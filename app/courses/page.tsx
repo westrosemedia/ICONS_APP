@@ -5,12 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Course } from "@/lib/types/course";
 import { CourseService } from "@/lib/courseService";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
+import { useCourseSession } from "@/hooks/useCourseSession";
 import { motion } from "framer-motion";
 
 export default function CoursesPage() {
-  const [user] = useAuthState(auth);
+  const { user } = useCourseSession();
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
 

@@ -46,8 +46,8 @@ export async function POST(req: Request) {
       // Helper function to get or create user by email using Firebase Admin
       async function resolveUserIdByEmail(email: string): Promise<string | null> {
         try {
-          const { getOrCreateUserIdByEmail } = await import("@/lib/firebaseAdmin");
-          return await getOrCreateUserIdByEmail(email);
+          const { getCourseAccountId } = await import("@/lib/courseAccountStore");
+          return getCourseAccountId(email);
         } catch (error) {
           console.error("Error resolving user by email:", error);
           return null;

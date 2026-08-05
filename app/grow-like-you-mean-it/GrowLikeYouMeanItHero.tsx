@@ -10,7 +10,7 @@ const HERO_IMAGE =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7";
 
 const heroDescription =
-  "Eight self-paced video lessons to help you show up consistently, grow with intention, and build momentum that actually sticks.";
+  "Self-paced video lessons to help you show up consistently, grow with intention, and build momentum that actually sticks.";
 
 const priceLabel = formatCoursePrice(
   GROW_LIKE_YOU_MEAN_IT.priceAmount,

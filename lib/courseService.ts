@@ -98,11 +98,6 @@ export class CourseService {
    */
   static async getUserEnrollment(userId: string, courseId: string): Promise<UserCourseEnrollment | null> {
     try {
-      await auth?.authStateReady();
-      if (auth?.currentUser?.uid !== userId) {
-        return null;
-      }
-
       let enrollment = await fetchUserEnrollmentFromApi(courseId);
       if (enrollment?.paymentStatus === "completed") {
         return enrollment;

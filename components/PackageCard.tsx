@@ -63,6 +63,7 @@ export default function PackageCard({ package: pkg, index }: PackageCardProps) {
               {pkg.key === "spotlight" && "Book a Spotlight Shoot"}
               {pkg.key === "immersion" && "Plan My Event Coverage"}
               {pkg.key === "icon" && "Apply for ICON Brand Partnership"}
+              {pkg.key === "hot-and-rich" && "Join Hot and Rich"}
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>

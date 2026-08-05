@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lock } from "lucide-react";
 import Link from "next/link";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
+import { useCourseSession } from "@/hooks/useCourseSession";
 import { CourseService } from "@/lib/courseService";
 
 interface AuthGuardProps {
@@ -22,11 +21,11 @@ export default function AuthGuard({
   fallbackUrl = "/courses",
   loginRedirect,
 }: AuthGuardProps) {
-  const [user, loadingAuth] = useAuthState(auth);
+  const { user, loading: loadingSession } = useCourseSession();
   const [hasAccess, setHasAccess] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (loadingAuth) return;
+    if (loadingSession) return;
 
     if (!user) {
       setHasAccess(false);
@@ -52,9 +51,9 @@ export default function AuthGuard({
     return () => {
       cancelled = true;
     };
-  }, [user, loadingAuth, courseId]);
+  }, [user, loadingSession, courseId]);
 
-  if (loadingAuth || (user && courseId && hasAccess === null)) {
+  if (loadingSession || (user && courseId && hasAccess === null)) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
@@ -83,7 +82,7 @@ export default function AuthGuard({
           <h1 className="text-hero text-black mb-6">Sign in required</h1>
 
           <p className="text-editorial mb-8">
-            Sign in or create an account to access this content.
+            Sign in with the email and password you set after purchasing.
           </p>
 
           <div className="space-y-4">
