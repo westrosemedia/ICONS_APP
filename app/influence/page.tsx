@@ -140,8 +140,9 @@ export default function InfluencePage() {
             that gets them booked.
           </p>
           <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight text-[#FAF7F2] mb-12">
-            Your story is the fastest path to the stages, the clients, and the life
-            you actually want.
+            One day you will either sit in the life where you never did it, or you
+            will tell the story of how one brave decision changed everything. This
+            is how you tell that story.
           </h1>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
@@ -152,16 +153,22 @@ export default function InfluencePage() {
               clients who pay premium rates without blinking.
             </p>
             <p>
-              I built West Rose Media on my story. It is the reason I stand on the
-              stages I do. It is the reason clients choose me before I finish a
-              sentence. I know exactly what it looks like to take a real story and
-              turn it into a brand people book.
+              I built West Rose Media on my story, and I have spent years as a
+              content and brand photographer and videographer turning founders&apos;
+              stories into the visuals that actually get them booked. I know exactly
+              what it takes, on the page and on camera, to turn a real story into a
+              brand people hire. When Instagram deleted seven years of my content
+              overnight, I rebuilt from zero on the strength of my story alone. That
+              account is closing in on 1.2M views.
             </p>
             <p>
-              INFLUENCE is where you do the same with yours. We build the brand,
-              write and perfect the keynote, put you on a real stage and in front of
-              a real mic to prove it, and then teach you how to get booked with it,
-              again and again.
+              INFLUENCE is where you get both. We build the brand and write and
+              perfect the keynote, then bring in a full professional photography and
+              videography crew for an in-person shoot day: you deliver that keynote
+              live on a real stage, record a podcast, and walk away with
+              studio-quality footage and a speaker reel built by a content expert,
+              not a phone camera from the back of a room. Then we teach you how to
+              get booked with it, again and again.
             </p>
             <p>
               This is not about processing what happened to you. It is about using
