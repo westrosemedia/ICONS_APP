@@ -547,45 +547,6 @@ export default function MastermindPage() {
         </div>
       </section>
 
-      {/* FROM THE ROOM — testimonials */}
-      <section
-        className="py-24 md:py-36 px-6 md:px-10 border-t border-white/10"
-        aria-labelledby="from-the-room-heading"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14 md:mb-20">
-            <p className={`${eyebrow} mb-5`}>From the room</p>
-            <h2
-              id="from-the-room-heading"
-              className={`${display} text-4xl md:text-6xl lg:text-7xl max-w-3xl`}
-            >
-              Hear it{" "}
-              <span className="italic text-[#c1ff72]">from them</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 md:gap-8">
-            {roomVideos.map((item) => (
-              <div key={item.label}>
-                <p className={`${eyebrow} mb-4`}>{item.label}</p>
-                <div className="relative overflow-hidden border border-white/20 bg-black">
-                  <video
-                    className="w-full h-auto aspect-video object-cover"
-                    src={IMAGES[item.srcKey]}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label={item.ariaLabel}
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* STEPHANIE + JACKIE */}
       <section
         className="relative py-24 md:py-36 px-6 md:px-10 bg-[#0a0a0a]"
@@ -702,6 +663,45 @@ export default function MastermindPage() {
                 Apply Now
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FROM THE ROOM — testimonials near end, before close */}
+      <section
+        className="py-24 md:py-36 px-6 md:px-10 border-t border-white/10"
+        aria-labelledby="from-the-room-heading"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-14 md:mb-20">
+            <p className={`${eyebrow} mb-5`}>From the room</p>
+            <h2
+              id="from-the-room-heading"
+              className={`${display} text-4xl md:text-6xl lg:text-7xl max-w-3xl`}
+            >
+              Hear it{" "}
+              <span className="italic text-[#c1ff72]">from them</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-8">
+            {roomVideos.map((item) => (
+              <div key={item.label}>
+                <p className={`${eyebrow} mb-4`}>{item.label}</p>
+                <div className="relative overflow-hidden border border-white/20 bg-black">
+                  <video
+                    className="w-full h-auto aspect-video object-cover"
+                    src={IMAGES[item.srcKey]}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={item.ariaLabel}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
