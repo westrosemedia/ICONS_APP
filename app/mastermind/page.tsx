@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import MastermindStructuredData from "@/components/MastermindStructuredData";
+import MastermindPhotoSlider from "@/components/MastermindPhotoSlider";
 
 const APPLY_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScB4fKptatWBrh-aH1SADOLSFTMk3zbbMnpJniWWEBlDT006Q/viewform";
@@ -427,6 +428,8 @@ export default function MastermindPage() {
           </div>
         </div>
       </section>
+
+      <MastermindPhotoSlider />
 
       {/* THE RETREAT — full bleed editorial */}
       <section
