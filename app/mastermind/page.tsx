@@ -27,7 +27,7 @@ const IMAGES = {
   close:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6644.jpg?alt=media&token=78c2fc79-1d50-427a-9acd-2acc82681c8c",
   accent:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_5030.jpg?alt=media&token=b368dc0e-7747-4683-a5f7-be87484155ae",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_1477.jpg?alt=media&token=21dde3a0-12b1-454a-b4b4-1ab41f6d279c",
   video:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%20Reel%202_1.mp4?alt=media&token=e093c1dc-3441-4573-9f81-ce7dfa29efce",
 };
