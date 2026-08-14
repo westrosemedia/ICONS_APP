@@ -32,6 +32,10 @@ const IMAGES = {
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%20Reel%202_1.mp4?alt=media&token=e093c1dc-3441-4573-9f81-ce7dfa29efce",
   nicoleVideo:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FAug_Mastermind_Nicole.mp4?alt=media&token=55dc8779-a17f-4492-bb47-f6cb2732c042",
+  podcast37:
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FPodcast_37.mp4?alt=media&token=8e35660a-d5f3-4d40-bb8c-1dd891e43dc4",
+  podcast36:
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FPodcast_36.mp4?alt=media&token=5a4bcf61-b081-49ea-b91a-88e9a2e6fcec",
 };
 
 const META = {
@@ -153,6 +157,24 @@ const results = [
   {
     name: "Cammy",
     body: "Cammy spent two years on Instagram stuck under 200 followers and 200 views a post. She's since hit her first million-view video and had 50 people show up to her very first masterclass.",
+  },
+];
+
+const roomVideos = [
+  {
+    label: "Nicole · In her words",
+    srcKey: "nicoleVideo" as const,
+    ariaLabel: "Nicole mastermind testimonial",
+  },
+  {
+    label: "Podcast · Episode 37",
+    srcKey: "podcast37" as const,
+    ariaLabel: "Mastermind podcast episode 37",
+  },
+  {
+    label: "Podcast · Episode 36",
+    srcKey: "podcast36" as const,
+    ariaLabel: "Mastermind podcast episode 36",
   },
 ];
 
@@ -499,35 +521,16 @@ export default function MastermindPage() {
             {results.map((result) => (
               <div
                 key={result.name}
-                className="py-10 md:py-14 border-b border-white/10"
+                className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 border-b border-white/10"
               >
-                <div className="grid md:grid-cols-12 gap-6 md:gap-10">
-                  <h3
-                    className={`${display} md:col-span-3 text-3xl md:text-4xl text-[#c1ff72] italic`}
-                  >
-                    {result.name}
-                  </h3>
-                  <p className="md:col-span-9 text-lg text-white/80 leading-relaxed max-w-3xl">
-                    {result.body}
-                  </p>
-                </div>
-                {result.name === "Nicole" && (
-                  <div className="mt-10 md:mt-12 md:ml-[25%] max-w-3xl">
-                    <p className={`${eyebrow} mb-4`}>Nicole · In her words</p>
-                    <div className="relative overflow-hidden border border-white/20 bg-black">
-                      <video
-                        className="w-full h-auto aspect-video object-cover"
-                        src={IMAGES.nicoleVideo}
-                        controls
-                        playsInline
-                        preload="metadata"
-                        aria-label="Nicole mastermind testimonial"
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                )}
+                <h3
+                  className={`${display} md:col-span-3 text-3xl md:text-4xl text-[#c1ff72] italic`}
+                >
+                  {result.name}
+                </h3>
+                <p className="md:col-span-9 text-lg text-white/80 leading-relaxed max-w-3xl">
+                  {result.body}
+                </p>
               </div>
             ))}
           </div>
@@ -541,6 +544,45 @@ export default function MastermindPage() {
             </span>{" "}
             last year.
           </p>
+        </div>
+      </section>
+
+      {/* FROM THE ROOM — testimonials */}
+      <section
+        className="py-24 md:py-36 px-6 md:px-10 border-t border-white/10"
+        aria-labelledby="from-the-room-heading"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-14 md:mb-20">
+            <p className={`${eyebrow} mb-5`}>From the room</p>
+            <h2
+              id="from-the-room-heading"
+              className={`${display} text-4xl md:text-6xl lg:text-7xl max-w-3xl`}
+            >
+              Hear it{" "}
+              <span className="italic text-[#c1ff72]">from them</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-8">
+            {roomVideos.map((item) => (
+              <div key={item.label}>
+                <p className={`${eyebrow} mb-4`}>{item.label}</p>
+                <div className="relative overflow-hidden border border-white/20 bg-black">
+                  <video
+                    className="w-full h-auto aspect-video object-cover"
+                    src={IMAGES[item.srcKey]}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={item.ariaLabel}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
