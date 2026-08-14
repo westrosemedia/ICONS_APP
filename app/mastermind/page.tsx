@@ -250,8 +250,11 @@ export default function MastermindPage() {
             money. Six months. One room. Stephanie and Jackie in your corner the
             entire time.
           </p>
-          <p className={`${eyebrow} mb-10 text-white/70`}>
+          <p className={`${eyebrow} mb-4 text-white/70`}>
             September 2026 through February 2027. Retreat in Kananaskis.
+          </p>
+          <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
+            Sign up August 14–17 and get a bonus photoshoot.
           </p>
           <Link
             href={APPLY_URL}
