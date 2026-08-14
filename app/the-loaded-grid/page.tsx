@@ -119,6 +119,15 @@ const testimonials = [
   },
 ];
 
+const tickerItems = [
+  "Test. Break. Repeat.",
+  "Live Weekly Class",
+  "Weekly Content Plays",
+  "Private Community",
+  "Visibility Tracking",
+  "Get Seen This Week",
+];
+
 function DashList({
   items,
   light = false,
@@ -145,13 +154,15 @@ export default function TheLoadedGridPage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
       {/* SECTION 1 — HERO */}
-      <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-no-repeat md:bg-fixed"
-        style={{
-          backgroundImage: `url('${IMAGES.hero}')`,
-          backgroundPosition: "center 28%",
-        }}
-      >
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <Image
+          src={IMAGES.hero}
+          alt="Stephanie Rose for The Loaded Grid"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_65%]"
+        />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-6 md:px-16 max-w-4xl mx-auto py-32">
           <p className={frameworkKicker}>West Rose Media presents</p>
@@ -160,8 +171,8 @@ export default function TheLoadedGridPage() {
           </h1>
           <p className={`${frameworkKicker} mb-10`}>Test. Break. Repeat.</p>
           <p className="text-lg md:text-xl text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Round one is where your posts go to die. This is the weekly room that
-            gets them past it, on purpose, every single week.
+            One post is all it takes to go from scrolled past to actually seen. This is
+            the program that gets you there, every week.
           </p>
           <a
             href={STRIPE_LINK}
@@ -177,15 +188,42 @@ export default function TheLoadedGridPage() {
         </div>
       </section>
 
+      {/* WLF-style ticker break between hero + gap */}
+      <div
+        className="relative z-20 overflow-hidden bg-[#1C1917] py-5 md:py-6"
+        aria-hidden
+      >
+        <div className="flex w-max animate-marquee whitespace-nowrap">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex items-center">
+              {tickerItems.map((item) => (
+                <span
+                  key={`${copy}-${item}`}
+                  className="mx-6 md:mx-10 text-[11px] md:text-xs tracking-[0.28em] uppercase text-[#FAF7F2]/90"
+                >
+                  {item}
+                  <span className="ml-6 md:ml-10 text-[#C9B99A]" aria-hidden>
+                    –
+                  </span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* SECTION 2 — THE GAP */}
       <section
-        className="relative bg-cover bg-no-repeat md:bg-fixed"
-        style={{
-          backgroundImage: `url('${IMAGES.gap}')`,
-          backgroundPosition: "center 30%",
-        }}
+        className="relative overflow-hidden"
         aria-labelledby="gap-heading"
       >
+        <Image
+          src={IMAGES.gap}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_45%]"
+        />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <div className="max-w-2xl mx-auto space-y-8">

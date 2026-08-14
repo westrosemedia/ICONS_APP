@@ -3,18 +3,18 @@ export default function MastermindStructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts + manifestation that moves money. Stephanie Rose and Jackie McDonald. Includes luxury retreat in the Canadian Rockies, October 2026.",
-    "startDate": "2026-04-01",
-    "endDate": "2026-10-31",
+    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Includes luxury retreat in Kananaskis, February 2027.",
+    "startDate": "2026-09-01",
+    "endDate": "2027-02-28",
     "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "location": [
       {
         "@type": "Place",
-        "name": "Canadian Rockies, Alberta, Canada",
+        "name": "Kananaskis, Alberta, Canada",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Calgary",
+          "addressLocality": "Kananaskis",
           "addressRegion": "Alberta",
           "addressCountry": "CA"
         }
@@ -68,14 +68,14 @@ export default function MastermindStructuredData() {
         "name": "Canada"
       }
     },
-    "keywords": "mastermind retreat, business coaching, entrepreneur mastermind, luxury retreat, tapping therapy, content creation, brand strategy"
+    "keywords": "mastermind retreat, business coaching, entrepreneur mastermind, luxury retreat, tapping therapy, content creation, brand strategy, Kananaskis"
   };
 
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald.",
+    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. September 2026 through February 2027.",
     "provider": {
       "@type": "Organization",
       "name": "West Rose Media",
@@ -92,7 +92,6 @@ export default function MastermindStructuredData() {
       }
     ],
     "timeRequired": "P6M",
-    "educationalCredentialAwarded": "Certificate of Completion",
     "keywords": "mastermind, business coaching, entrepreneur program, brand strategy, content creation, tapping therapy"
   };
 
@@ -138,4 +137,3 @@ export default function MastermindStructuredData() {
     </>
   );
 }
-

@@ -157,6 +157,19 @@
     animation: slideUp 0.8s ease-out forwards;
   }
 
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   /* Parallax Effect */
   .parallax-bg {
     transform: translateZ(0);

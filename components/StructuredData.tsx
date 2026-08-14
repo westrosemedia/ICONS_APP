@@ -190,15 +190,15 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Luxury retreat in the Canadian Rockies October 2026.",
-    "startDate": "2026-04-01",
-    "endDate": "2026-10-31",
+    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Luxury retreat in Kananaskis, February 2027.",
+    "startDate": "2026-09-01",
+    "endDate": "2027-02-28",
     "location": {
       "@type": "Place",
-      "name": "Canadian Rockies, Alberta, Canada",
+      "name": "Kananaskis, Alberta, Canada",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Calgary",
+        "addressLocality": "Kananaskis",
         "addressRegion": "Alberta",
         "addressCountry": "CA"
       }
