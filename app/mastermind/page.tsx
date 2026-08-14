@@ -21,7 +21,7 @@ const IMAGES = {
   proof:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797",
   leaders:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_4881.jpg?alt=media&token=a6ae922b-060a-43f9-9fd5-5b10c9820b24",
   investment:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FKAY_2038.jpg?alt=media&token=028a8f85-1b69-4c31-ad30-d053c1020eb8",
   close:
@@ -468,10 +468,6 @@ export default function MastermindPage() {
                 This is not a bonus tacked onto the mastermind. It is where the
                 women you have been building with for six months become the
                 women you build with for the rest of your life.
-              </p>
-              <p className="text-[#c1ff72] font-heading italic text-xl md:text-2xl font-light pt-2">
-                The cabin sleeps ten. Five women, plus Stephanie and Jackie.
-                First women to join get priority rooms.
               </p>
             </div>
           </div>

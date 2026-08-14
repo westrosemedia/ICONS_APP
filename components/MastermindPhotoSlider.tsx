@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export const MASTERMIND_GALLERY = [
@@ -201,27 +200,28 @@ export default function MastermindPhotoSlider() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10">
         <div
-          className="relative aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden border border-white/20"
+          className="relative aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden border border-white/20 bg-black"
           onTouchStart={(e) => {
             touchStartX.current = e.touches[0]?.clientX ?? null;
           }}
           onTouchEnd={(e) => {
             if (touchStartX.current == null) return;
-            const delta = (e.changedTouches[0]?.clientX ?? 0) - touchStartX.current;
+            const delta =
+              (e.changedTouches[0]?.clientX ?? 0) - touchStartX.current;
             if (Math.abs(delta) > 40) {
               goTo(index + (delta < 0 ? 1 : -1));
             }
             touchStartX.current = null;
           }}
         >
-          <Image
+          {/* Plain img avoids Next optimizer failures on Firebase token URLs */}
+          <img
             key={current.src}
             src={current.src}
             alt={current.alt}
-            fill
-            className="object-cover animate-fade-in"
-            sizes="(max-width: 768px) 100vw, 1200px"
-            priority={index < 2}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
         </div>
@@ -261,12 +261,12 @@ export default function MastermindPhotoSlider() {
                   : "border-white/15 opacity-50 hover:opacity-80"
               }`}
             >
-              <Image
+              <img
                 src={photo.src}
                 alt=""
-                fill
-                className="object-cover"
-                sizes="56px"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </button>
           ))}
