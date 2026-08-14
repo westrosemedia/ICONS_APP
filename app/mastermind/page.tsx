@@ -30,6 +30,8 @@ const IMAGES = {
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KAY_1477.jpg?alt=media&token=21dde3a0-12b1-454a-b4b4-1ab41f6d279c",
   video:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%20Reel%202_1.mp4?alt=media&token=e093c1dc-3441-4573-9f81-ce7dfa29efce",
+  nicoleVideo:
+    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2FAug_Mastermind_Nicole.mp4?alt=media&token=55dc8779-a17f-4492-bb47-f6cb2732c042",
 };
 
 const META = {
@@ -497,16 +499,35 @@ export default function MastermindPage() {
             {results.map((result) => (
               <div
                 key={result.name}
-                className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 border-b border-white/10"
+                className="py-10 md:py-14 border-b border-white/10"
               >
-                <h3
-                  className={`${display} md:col-span-3 text-3xl md:text-4xl text-[#c1ff72] italic`}
-                >
-                  {result.name}
-                </h3>
-                <p className="md:col-span-9 text-lg text-white/80 leading-relaxed max-w-3xl">
-                  {result.body}
-                </p>
+                <div className="grid md:grid-cols-12 gap-6 md:gap-10">
+                  <h3
+                    className={`${display} md:col-span-3 text-3xl md:text-4xl text-[#c1ff72] italic`}
+                  >
+                    {result.name}
+                  </h3>
+                  <p className="md:col-span-9 text-lg text-white/80 leading-relaxed max-w-3xl">
+                    {result.body}
+                  </p>
+                </div>
+                {result.name === "Nicole" && (
+                  <div className="mt-10 md:mt-12 md:ml-[25%] max-w-3xl">
+                    <p className={`${eyebrow} mb-4`}>Nicole · In her words</p>
+                    <div className="relative overflow-hidden border border-white/20 bg-black">
+                      <video
+                        className="w-full h-auto aspect-video object-cover"
+                        src={IMAGES.nicoleVideo}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        aria-label="Nicole mastermind testimonial"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
