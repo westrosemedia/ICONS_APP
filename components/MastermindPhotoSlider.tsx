@@ -180,7 +180,7 @@ export default function MastermindPhotoSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-center md:text-left">
         <div>
           <p className="text-[11px] md:text-xs tracking-[0.35em] uppercase text-[#c1ff72] mb-4">
             Gallery

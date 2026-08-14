@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         url: IMAGES.hero,
         width: 1200,
         height: 630,
-        alt: "Manifesting & Marketing Mastermind",
+        alt: "Manifesting & Marketing Mastermind — Stephanie Rose and Jackie McDonald",
       },
     ],
   },
@@ -77,7 +77,14 @@ export const metadata: Metadata = {
     title: META.title,
     description: META.description,
     creator: "@westrosemedia",
-    images: [IMAGES.hero],
+    images: [
+      {
+        url: IMAGES.hero,
+        width: 1200,
+        height: 630,
+        alt: "Manifesting & Marketing Mastermind — Stephanie Rose and Jackie McDonald",
+      },
+    ],
   },
   robots: { index: true, follow: true },
 };
@@ -229,13 +236,13 @@ function FramedImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden border border-white/20 ${className}`}
+      className={`relative overflow-hidden border border-white/20 mx-auto ${className}`}
     >
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className="object-cover object-center"
         sizes={sizes}
         priority={priority}
       />
@@ -301,18 +308,18 @@ export default function MastermindPage() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-end mb-16 md:mb-24">
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-start">
               <FramedImage
                 src={IMAGES.inside}
                 alt="Inside the Manifesting & Marketing Mastermind"
-                className="h-[420px] md:h-[560px] w-full lg:w-[92%]"
+                className="h-[420px] md:h-[560px] w-full max-w-md md:max-w-none lg:w-[92%] lg:mx-0"
               />
-              <div className="hidden md:block absolute -bottom-10 -right-4 lg:right-[-10%] w-40 h-52 lg:w-48 lg:h-64 border border-[#c1ff72]/50 z-10 overflow-hidden">
+              <div className="hidden lg:block absolute -bottom-10 right-[-10%] w-48 h-64 border border-[#c1ff72]/50 z-10 overflow-hidden">
                 <Image
                   src={IMAGES.accent}
                   alt=""
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="200px"
                 />
               </div>
@@ -415,15 +422,17 @@ export default function MastermindPage() {
                   className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 >
                   <div
-                    className={`lg:col-span-6 ${
-                      flip ? "lg:order-2 lg:col-start-7" : ""
+                    className={`lg:col-span-6 flex justify-center ${
+                      flip
+                        ? "lg:order-2 lg:col-start-7 lg:justify-end"
+                        : "lg:justify-start"
                     }`}
                   >
                     <FramedImage
                       src={item.image}
                       alt={item.alt}
-                      className={`h-[340px] md:h-[480px] w-full ${
-                        flip ? "lg:ml-auto lg:w-[90%]" : "lg:w-[90%]"
+                      className={`h-[340px] md:h-[480px] w-full max-w-md md:max-w-none ${
+                        flip ? "lg:ml-auto lg:mr-0 lg:w-[90%]" : "lg:mx-0 lg:w-[90%]"
                       }`}
                     />
                   </div>
@@ -553,13 +562,13 @@ export default function MastermindPage() {
         aria-labelledby="leaders-heading"
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-start">
             <FramedImage
               src={IMAGES.leaders}
               alt="Stephanie Rose and Jackie McDonald"
-              className="h-[420px] md:h-[600px] w-full"
+              className="h-[420px] md:h-[600px] w-full max-w-md md:max-w-none lg:mx-0"
             />
-            <div className="absolute -bottom-5 left-6 md:left-10 bg-[#c1ff72] text-black px-5 py-3 text-[11px] tracking-[0.25em] uppercase font-medium">
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 bg-[#c1ff72] text-black px-5 py-3 text-[11px] tracking-[0.25em] uppercase font-medium whitespace-nowrap">
               Stephanie + Jackie
             </div>
           </div>
@@ -673,11 +682,11 @@ export default function MastermindPage() {
         aria-labelledby="from-the-room-heading"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="mb-14 md:mb-20">
+          <div className="mb-14 md:mb-20 text-center md:text-left">
             <p className={`${eyebrow} mb-5`}>From the room</p>
             <h2
               id="from-the-room-heading"
-              className={`${display} text-4xl md:text-6xl lg:text-7xl max-w-3xl`}
+              className={`${display} text-4xl md:text-6xl lg:text-7xl max-w-3xl mx-auto md:mx-0`}
             >
               Hear it{" "}
               <span className="italic text-[#c1ff72]">from them</span>
@@ -686,9 +695,9 @@ export default function MastermindPage() {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-8">
             {roomVideos.map((item) => (
-              <div key={item.label}>
+              <div key={item.label} className="text-center md:text-left">
                 <p className={`${eyebrow} mb-4`}>{item.label}</p>
-                <div className="relative overflow-hidden border border-white/20 bg-black">
+                <div className="relative overflow-hidden border border-white/20 bg-black mx-auto max-w-md md:max-w-none">
                   <video
                     className="w-full h-auto aspect-video object-cover"
                     src={IMAGES[item.srcKey]}
