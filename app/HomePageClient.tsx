@@ -110,6 +110,32 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      {/* Site ticker (not the top announcement banner) */}
+      <Link
+        href="/the-loaded-grid"
+        className="relative z-20 block overflow-hidden bg-[#1C1917] py-5 md:py-6"
+        aria-label="The Loaded Grid. Last chance to join, September 15."
+      >
+        <div className="flex w-max animate-marquee whitespace-nowrap">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex items-center">
+              {[0, 1, 2].map((repeat) => (
+                <span
+                  key={`${copy}-${repeat}`}
+                  className="mx-6 md:mx-10 text-[11px] md:text-xs tracking-[0.28em] uppercase text-[#FAF7F2]/90"
+                >
+                  More views. Less drama. More money. Zero wondering what to post.
+                  Last chance to join, September 15.
+                  <span className="ml-6 md:ml-10 text-[#C9B99A]" aria-hidden>
+                    –
+                  </span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </Link>
+
       {/* Identity */}
       <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">

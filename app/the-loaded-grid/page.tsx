@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/siteLinks";
@@ -59,7 +58,7 @@ const SOCIAL_PROOF = [
 const META = {
   title: "The Loaded Grid | Weekly Visibility Membership | West Rose Media",
   description:
-    "Test. Break. Repeat. A weekly membership that gets your posts past the algorithm's early tests. $225 CAD/month. Cancel anytime.",
+    "Test. Break. Repeat. A weekly membership that gets your posts past the algorithm's early tests. $225 CAD/month. Cohort 1 closes September 15.",
 };
 
 export const revalidate = 0;
@@ -91,18 +90,25 @@ const frameworkKicker =
 const ctaPrimary =
   "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
 
+const hereToItems = [
+  "Find exactly what's killing your reach",
+  "Hand you the play that clears the next tier",
+  "Run it live with you, every single week",
+  "Turn more views into more buyers",
+];
+
 const systemItems = [
-  "A live weekly class. What's suppressing reach right now, why posts stall, how to fix it. Open Q&A on whatever's happening in your account that week.",
-  "A new content play every week. The exact hooks and formats built to clear the next tier, not a library from six months ago.",
-  "A private community for wins, examples, and accountability. Not a DM line to Stephanie, the class is where the coaching happens.",
-  "Visibility tracking built in. You'll know which posts cleared a tier and which stayed stuck, not a vague view count.",
+  "A live weekly class. What's killing your reach, why posts stall, how to fix it. Open Q&A on your account, live.",
+  "A new content play every week. Hooks and formats built to clear the next tier, not a library from six months ago.",
+  "A private community for wins and accountability. Not a DM line to Stephanie, the class is the coaching.",
+  "Visibility tracking built in. You'll know which posts cleared a tier and which stayed stuck. No vague view count.",
 ];
 
 const stayItems = [
-  "A post that used to stall under a few hundred views clears its stuck tier. Not luck. Pattern.",
-  "People who've never met you start recognizing your work. Remembering your name. DMing you first.",
-  "You catch the weak spot in a post before you hit publish, not after it flops.",
-  "You know exactly which post broke through and why. You repeat it instead of hoping for it again.",
+  "A post that used to stall at a few hundred views clears its tier. Not luck. Pattern.",
+  "Strangers start recognizing your work. Remembering your name. DMing you first.",
+  "You catch the weak spot before you publish, not after it flops.",
+  "You know exactly which post broke through, and why. You repeat it instead of hoping.",
 ];
 
 const testimonials = [
@@ -171,8 +177,13 @@ export default function TheLoadedGridPage() {
           </h1>
           <p className={`${frameworkKicker} mb-10`}>Test. Break. Repeat.</p>
           <p className="text-lg md:text-xl text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 leading-relaxed">
-            One post is all it takes to go from scrolled past to actually seen. This is
-            the program that gets you there, every week.
+            To successfully turn 500 shitty views into numbers that make you rich,
+            you must have copy, hooks, and strategy behind every post, not vibes.
+            This is why I focus on the sales psychology and the algorithm behind
+            what makes people stop scrolling. But it&apos;s not another course
+            telling you to copy a viral reel or dance on TikTok, it&apos;s a
+            system built on both. And it works for this one simple reason: your
+            views are a strategy problem, and that&apos;s exactly what I fix.
           </p>
           <a
             href={STRIPE_LINK}
@@ -183,7 +194,7 @@ export default function TheLoadedGridPage() {
             Get Seen This Week
           </a>
           <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
-            {PRICE}/month. Cancel anytime.
+            {PRICE}/month. Cohort 1 closes September 15.
           </p>
         </div>
       </section>
@@ -231,27 +242,27 @@ export default function TheLoadedGridPage() {
               id="gap-heading"
               className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] text-center"
             >
-              You post. The algorithm still doesn&apos;t know your name.
+              Literally all you need is more views
             </h2>
             <p className="text-lg text-[#FAF7F2]/90">
-              Most business owners get stuck here for one of two reasons.
+              If nobody sees the post, it doesn&apos;t matter how good it is. No
+              likes, no follows, no buyers. You could take the week off and get the
+              exact same result.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              They don&apos;t know how the algorithm actually tests a post, so every
-              result feels random. A win one week, nothing the next, no explanation
-              either way.
+              Until you crack more views, posting is optional. End of story.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              Or they know the mechanics but have no system to repeat it. One good
-              post happens, then three flops, then silence, because there was never
-              a weekly plan behind it. Just a lucky guess that worked once.
+              More views is the whole game. Not one metric among many, the actual
+              key to everything downstream. The same thing that makes someone stop,
+              like, and follow also tells you what they&apos;ll actually pay for.
+              Views aren&apos;t just visibility. They&apos;re market research, live,
+              every time you post.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              Either way, the pattern is the same. You post, you refresh, you wait,
-              and half the time you can&apos;t tell why one thing worked and the next
-              one didn&apos;t. That&apos;s the Someday Trap. The version that would
-              actually perform stays in your drafts, while the safe one sits at 200
-              views.
+              The Loaded Grid is that system. Test a post, break the tier it&apos;s
+              stuck in, repeat what worked. Every week, until the views move and the
+              buyers show up.
             </p>
           </div>
         </div>
@@ -270,10 +281,9 @@ export default function TheLoadedGridPage() {
             This is for you if.
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-[#3D3632]">
-            You&apos;re building an online business. Doesn&apos;t matter what kind.
-            Right now you&apos;re invisible, whether you&apos;re starting at zero
-            followers or you&apos;ve been stuck at the same number for a year. You
-            need a weekly room that gets your content past round one, on purpose.
+            You&apos;re building a business. Doesn&apos;t matter what kind.
+            Nobody&apos;s watching yet, zero followers or stuck at the same number
+            for a year, same problem. Get past round one and stop asking why.
           </p>
         </div>
       </section>
@@ -299,10 +309,14 @@ export default function TheLoadedGridPage() {
               Test. Break. Repeat.
             </h2>
             <p className="text-lg text-[#FAF7F2]/90">
-              Every week runs the same loop. Test a post against what the algorithm
-              is rewarding right now. Break past the tier it&apos;s stuck in. Repeat
-              the pattern that worked, on purpose, the following week. That&apos;s
-              the whole system, run live, every week, with you in the room.
+              Break your algorithm ceiling, not your will to live.
+            </p>
+            <p className="text-lg text-[#FAF7F2]/90">I&apos;m here to:</p>
+            <DashList light items={hereToItems} />
+            <p className="text-lg text-[#FAF7F2]/90">
+              Same loop, every week. Test a post against what the algorithm rewards
+              right now. Break past the tier it&apos;s stuck in. Repeat what worked.
+              That&apos;s it. Run live, every week.
             </p>
             <DashList light items={systemItems} />
           </div>
@@ -320,7 +334,7 @@ export default function TheLoadedGridPage() {
             id="proof-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
           >
-            Day 46: 13,600 followers, 1.5 million views, zero luck involved.
+            One post. 1 million views. 2.3 million since June 15. Zero luck involved.
           </h2>
 
           <div
@@ -338,10 +352,10 @@ export default function TheLoadedGridPage() {
             <div className="absolute inset-0 bg-black/40" />
             <div className="relative z-10 flex min-h-[50vh] items-end p-8 md:p-12">
               <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm uppercase tracking-[0.15em] text-[#FAF7F2]">
-                <span>13.6K+ followers</span>
-                <span>1.5M+ views</span>
-                <span>Day 46</span>
-                <span>Rebuilt twice</span>
+                <span>15K+ followers</span>
+                <span>2.3M+ views</span>
+                <span>1M+ on one post</span>
+                <span>Since June 15</span>
               </div>
             </div>
           </div>
@@ -349,25 +363,26 @@ export default function TheLoadedGridPage() {
           <div className="space-y-10">
             <div className="space-y-6">
               <p className="text-lg md:text-xl leading-relaxed text-[#3D3632]">
-                I&apos;ve built this system out of my own account twice. First from
-                scratch to 12,500 followers and past a million views. Then again from
-                zero, after Meta deactivated that account with no appeal, this time
-                landing past 13,600 followers and 1.5 million views by day 46, running{" "}
+                I&apos;ve built this system on my own account twice. First from
+                scratch to 12,500 followers and past a million views. Then from
+                zero, after Meta deactivated the account with no appeal. Since
+                relaunching June 15: 2.3 million views, 15,000 followers, one post
+                past a million. Same system on TikTok, same window: 1.5 million
+                views, 6,100 followers, from nothing.{" "}
                 <span className="tracking-[0.12em] uppercase text-sm text-[#9C8E82]">
                   Test. Break. Repeat.
                 </span>{" "}
-                on myself first.
+                doesn&apos;t care whose algorithm you&apos;re up against.
               </p>
             </div>
 
             <div className="border-t border-[#C9B99A]/30 pt-10 space-y-6">
               <p className="text-lg md:text-xl leading-relaxed text-[#3D3632]">
-                One member joined four weeks ago at 200 followers, with views nobody
-                would post about. She wanted proof this worked before she trusted it
-                with her own business. Four weeks into Test. Break. Repeat., one reel
-                from her crossed 1.4 million views. She ran her first masterclass off
-                the back of it. Fifty people showed up, for a program that didn&apos;t
-                exist a month earlier.
+                One member joined four weeks ago at 200 followers, views nobody
+                would post about. She wanted proof before she trusted this with her
+                own business. Four weeks in, one reel crossed 1.4 million views. She
+                ran her first masterclass off the back of it. Fifty people showed up
+                for a program that didn&apos;t exist a month earlier.
               </p>
               <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm uppercase tracking-[0.15em] text-[#9C8E82]">
                 <span>200 followers → 1.4M+ views</span>
@@ -461,8 +476,7 @@ export default function TheLoadedGridPage() {
           <div className="border border-[#C9B99A]/40 bg-white/70 p-6 md:p-8 mb-10">
             <p className={`${frameworkKicker} mb-4`}>One-month result</p>
             <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917]">
-              A post that used to stall under a few hundred views clears its stuck
-              tier.
+              A post that used to stall at a few hundred views clears its tier.
             </p>
           </div>
 
@@ -487,18 +501,17 @@ export default function TheLoadedGridPage() {
               id="investment-heading"
               className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-8"
             >
-              Here&apos;s what it costs to stop being invisible.
+              $225 CAD a month. Cheaper than staying stuck.
             </h2>
             <p className="text-lg text-[#FAF7F2]/90 mb-6">
-              {PRICE} a month gets you the weekly class, the weekly content plan, and
-              the community. No contract, cancel anytime.
+              Weekly class, weekly content plan, private community. Cohort 1 closes
+              September 15.
             </p>
             <p className="text-lg text-[#FAF7F2]/90 mb-12">
-              This isn&apos;t a one-off program. It&apos;s the weekly room inside the
-              wider West Rose Media system, the same one behind Hot and Rich
-              Mastermind and Grow Like You Mean It. When you outgrow the group room
-              and want hands-on strategy in a smaller space, the Mastermind is the
-              next step. Not required. Some members stay here for good.
+              Not a one-off. It&apos;s the weekly room inside the wider West Rose
+              Media system, same one behind Hot and Rich Mastermind and Grow Like You
+              Mean It. Outgrow the group room, the Mastermind&apos;s next. Not
+              required. Some people just stay.
             </p>
 
             <div className="border border-[#C9B99A]/40 bg-black/30 backdrop-blur-sm p-6 md:p-8 text-left mb-10 space-y-6">
@@ -518,10 +531,10 @@ export default function TheLoadedGridPage() {
               </div>
               <div className="grid gap-3 sm:grid-cols-[7rem,1fr] sm:gap-8">
                 <p className="text-xs tracking-widest uppercase text-[#C9B99A]">
-                  Cancellation
+                  Enrollment
                 </p>
                 <p className="text-lg text-[#FAF7F2]/90">
-                  Anytime, no contract, no penalty
+                  Closes September 15 for Cohort 1
                 </p>
               </div>
             </div>
@@ -550,11 +563,12 @@ export default function TheLoadedGridPage() {
             id="final-cta-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-8"
           >
-            Test. Break. Repeat. Starting this week.
+            Test. Break. Repeat. Cohort 1 closes September 15.
           </h2>
           <p className="text-lg text-[#FAF7F2]/90 mb-10 max-w-xl mx-auto">
-            Show up to the class this week. Bring whatever you&apos;re already
-            posting. That&apos;s exactly what this fixes.
+            Show up this week. Bring whatever you&apos;re already posting,
+            it&apos;s already exactly what needs fixing. Stop waiting for a better
+            time. There isn&apos;t one.
           </p>
           <a
             href={STRIPE_LINK}
@@ -565,7 +579,7 @@ export default function TheLoadedGridPage() {
             Get Seen This Week
           </a>
           <p className="text-sm text-[#FAF7F2]/60 mt-8">
-            {PRICE}/month. Cancel anytime.
+            {PRICE}/month. Cohort 1 closes September 15.
           </p>
         </div>
       </section>
