@@ -126,6 +126,7 @@ const testimonials = [
 ];
 
 const tickerItems = [
+  "More views. Less drama. More money. Zero wondering what to post. Last chance to join, September 15.",
   "Test. Break. Repeat.",
   "Live Weekly Class",
   "Weekly Content Plays",
