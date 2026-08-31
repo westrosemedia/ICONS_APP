@@ -2,6 +2,9 @@
 export const SPOTLIGHT_BOOK_URL =
   "https://westrosemedia.sproutstudio.com/bookings";
 
+export const STRATEGY_BOOK_URL =
+  "https://westrosemedia.sproutstudio.com/lead/sprout5e21ffc3d9e0e9.21962433";
+
 export type WorkWithUsItem = {
   label: string;
   href: string;

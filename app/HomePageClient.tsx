@@ -8,7 +8,7 @@ import EditorialGrid from "@/components/EditorialGrid";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { homePageAssets } from "@/lib/homePageAssets";
-import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
+import { SPOTLIGHT_BOOK_URL, STRATEGY_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
 const PROBLEM_BG_POSITION = "72% 36%";
@@ -16,6 +16,84 @@ const PROBLEM_BG_POSITION = "72% 36%";
 const HOW_IT_WORKS_BG_POSITION = "50% 28%";
 const HOMEPAGE_ICON_IMAGE =
   "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Mastermind%2F_VWR6863.jpg?alt=media&token=749b0527-f85a-4f9c-8133-0d31d25306ef";
+
+const paidSteps = [
+  {
+    num: "01",
+    title: "Photography and branding",
+    body: "We get your visuals and your brand looking like the business you're actually running, not the one you started with.",
+    cta: "Book a Shoot",
+    href: SPOTLIGHT_BOOK_URL,
+    external: true,
+  },
+  {
+    num: "02",
+    title: "Digital marketing strategy",
+    body: "Once the brand's right, we build the content plan around what's working right now, not a calendar written six months ago.",
+    cta: "Join The Loaded Grid",
+    href: "/the-loaded-grid",
+    external: false,
+  },
+  {
+    num: "03",
+    title: "Sales and launch strategies",
+    body: "With the views coming in, we turn them into launches and offers built on strategy that's already been tested, not a guess.",
+    cta: "Book 1:1 Strategy",
+    href: STRATEGY_BOOK_URL,
+    external: Boolean(STRATEGY_BOOK_URL),
+  },
+  {
+    num: "04",
+    title: "Fractional CMO / partnership management",
+    body: "We start with the sale you want and build backwards from it. Once you've outgrown doing this piece by piece, we run the whole thing, a marketing team without the hires, the meetings, or the management headache.",
+    cta: "Apply for ICON Brand Partnership",
+    href: "/apply",
+    external: false,
+  },
+] as const;
+
+function OfferCta({
+  href,
+  children,
+  variant = "default",
+  className,
+  external = false,
+  size = "lg",
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "default" | "outline";
+  className?: string;
+  external?: boolean;
+  size?: "lg" | "sm";
+}) {
+  const content = (
+    <>
+      {children}
+      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+    </>
+  );
+
+  if (!href) {
+    return (
+      <Button size={size} variant={variant} className={`group ${className ?? ""}`} disabled>
+        {content}
+      </Button>
+    );
+  }
+
+  return (
+    <Button asChild size={size} variant={variant} className={`group ${className ?? ""}`}>
+      {external ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      ) : (
+        <Link href={href}>{content}</Link>
+      )}
+    </Button>
+  );
+}
 
 export default function HomePageClient() {
   const problemSectionRef = useRef<HTMLElement | null>(null);
@@ -78,34 +156,64 @@ export default function HomePageClient() {
             className="relative z-20 flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 lg:py-24 max-w-5xl mx-auto"
             data-aos="fade-up"
           >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/75 sm:text-sm">
-              Stop editing yourself out.
-            </p>
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-lg px-2 leading-tight">
               Stop being the best-kept secret in your industry.
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 px-4">
-              West Rose Media builds the brand photography, content, and loyal community that turn accomplished women founders into the authority their market seeks out. We make you visible and impossible to scroll past, so the right clients and opportunities finally find you. ICON Brand Partnership is the full system: strategy, creative direction, photography, and video, run as one team.
+              To successfully scale your business and buy back your time, you must have the social proof and the views that put you in front of a bigger audience. This is why I focus on connecting your story to what the algorithm actually rewards. But it&apos;s not more inner work or a mindset shift you have to make before the money shows up, it&apos;s accountability and a message so clear the right people stop scrolling. And it works for this one simple reason: we run the algorithm, sales psychology, and real branding principles together, working with human nature instead of against it, until you get exactly what you came for.
             </p>
-            <div className="flex flex-col items-center justify-center gap-3">
-              <Button asChild size="lg" className="group text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-                <Link href="/hot&rich">
-                  Hotter, Richer, Faster
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                variant="outline"
-                className="group mt-3 border-white/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 w-full max-w-4xl">
+              <OfferCta
+                href="/the-loaded-grid"
+                className="bg-white text-black hover:bg-gray-100 whitespace-normal text-center"
               >
-                <Link href="/apply">
-                  Apply for ICON Brand Partnership
-                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+                Get Seen in The Loaded Grid
+              </OfferCta>
+              <OfferCta
+                href={STRATEGY_BOOK_URL}
+                external={Boolean(STRATEGY_BOOK_URL)}
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-black whitespace-normal text-center"
+              >
+                Book 1:1 Strategy
+              </OfferCta>
+              <OfferCta
+                href={SPOTLIGHT_BOOK_URL}
+                external
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-black whitespace-normal text-center"
+              >
+                Book a Shoot
+              </OfferCta>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How we get you paid */}
+      <section className="section-padding bg-black text-white" data-aos="fade-up">
+        <div className="container-elegant">
+          <h2 className="text-display text-white mb-12 text-center">
+            How we get you paid, step by step.
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
+            {paidSteps.map((step) => (
+              <div
+                key={step.num}
+                className="rounded-2xl border border-white/15 bg-white p-8 text-left shadow-md"
+              >
+                <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">{step.num}</p>
+                <h3 className="text-xl font-semibold text-black mb-3">{step.title}</h3>
+                <p className="text-gray-700 mb-6">{step.body}</p>
+                <OfferCta
+                  href={step.href}
+                  external={step.external}
+                  size="sm"
+                >
+                  {step.cta}
+                </OfferCta>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -126,7 +234,7 @@ export default function HomePageClient() {
                 Here is what is actually happening. You already know how big you are supposed to be, and carrying that quietly feels safer than saying it out loud.
               </p>
               <p>
-                The women you are meant to reach cannot find you while you keep editing yourself out. Being visible is how they get to you.
+                The women you&apos;re meant to reach can&apos;t find you while you keep playing it safe. Being visible is how they get to you.
               </p>
             </div>
           </div>
@@ -227,6 +335,9 @@ export default function HomePageClient() {
       <section className="section-padding bg-black text-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-3xl mx-auto text-center">
+            <p className="mb-4 text-sm uppercase tracking-[0.28em] text-white/70">
+              For the women ready to hand the whole thing off:
+            </p>
             <h2 className="text-display text-white mb-4">ICON Brand Partnership</h2>
             <p className="text-2xl font-semibold text-white/85 mb-8">
               The team, the direction, and the permission to finally show up as her.
@@ -279,7 +390,7 @@ export default function HomePageClient() {
       <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-display text-black mb-8 text-center">What changes when you stop editing yourself out.</h2>
+            <h2 className="text-display text-black mb-8 text-center">What changes when you stop playing it safe.</h2>
             <div className="space-y-6 text-editorial text-gray-700">
               <p>
                 You stop rehearsing what people might say and start being the name they pass around. The right clients show up to the call already sold, because your brand closed them before you said a word. The rooms you used to pitch your way into start sending the invitation first. The collaboration that was quietly going to someone else lands in your inbox instead.
@@ -325,7 +436,7 @@ export default function HomePageClient() {
         />
         <div className="container-elegant relative z-10" data-aos="fade-up">
           <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="text-display mb-4 text-white drop-shadow">How it works</h2>
+            <h2 className="text-display mb-4 text-white drop-shadow">How ICON Brand Partnership works</h2>
             <p className="text-lg leading-[1.75] text-white/90">
               ICON Brand Partnership runs on a clear system. Strategy, production, and execution live inside one team so your brand stays visible and your business stays moving. No managing logistics on your end. Content that performs when it lands.
             </p>
@@ -367,7 +478,7 @@ export default function HomePageClient() {
       <section className="section-padding bg-gray-50" data-aos="fade-up">
         <div className="container-elegant">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-hero text-black mb-6">The women who stopped editing themselves out.</h2>
+            <h2 className="text-hero text-black mb-6">The women who stopped playing it safe.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
@@ -428,7 +539,7 @@ export default function HomePageClient() {
           <div>
             <h2 className="text-hero text-white mb-6">ICON Brand Partnership is by application, and the room is small.</h2>
             <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
-              You cannot add ICON Brand Partnership to a cart. You apply, and Stephanie reviews every application herself. A small number of seats are open right now. Tell us about your business, what you are building toward, and the version of you that you are done editing out. If it is a fit, you will hear from Stephanie within five business days.
+              ICON Brand Partnership is not something you add to a cart. You apply, and Stephanie reviews every application herself. A small number of seats are open right now. Tell us about your business, what you are building toward, and the version of you you&apos;re ready to put on the screen. If it is a fit, you will hear from Stephanie within five business days.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">

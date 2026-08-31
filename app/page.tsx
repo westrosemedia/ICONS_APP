@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HomePageClient from "./HomePageClient";
 import HomepageStructuredData from "@/components/HomepageStructuredData";
 
-const title = "West Rose Media | Brand Partnership, Content + Community for Women Founders | Calgary, Vancouver, Toronto";
+const title = "West Rose Media | Brand Photography, Visibility + Strategy for Women Founders | Calgary, Vancouver, Toronto";
 const description =
-  "West Rose Media builds the brand, content, and engaged community for accomplished women founders. The ICON Brand Partnership runs your entire content operation in house. The modern replacement for a PR firm. Based in Calgary, serving Vancouver, Toronto, and beyond.";
+  "West Rose Media gets you paid with brand photography, The Loaded Grid visibility membership, 1:1 strategy, and ICON Brand Partnership. Based in Calgary, serving Vancouver, Toronto, and beyond.";
 
 export const metadata: Metadata = {
   title,
