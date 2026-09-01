@@ -17,7 +17,7 @@ const IMAGES = {
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
   description:
-    "Four months to build an audience and revenue system sturdy enough that losing a platform becomes a setback instead of a funeral.",
+    "Four months to build an audience and a revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. $3,050 CAD. Doors close September 15.",
 };
 
 export const revalidate = 0;
@@ -34,28 +34,29 @@ export const metadata: Metadata = {
   },
 };
 
-function BulletList({
-  items,
-  light = false,
-}: {
-  items: string[];
-  light?: boolean;
-}) {
-  const textClass = light ? "text-[#FAF7F2]/90" : "text-[#3D3632]";
+const ctaLinkClass =
+  "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
+
+function JoinNowButton({ className }: { className?: string }) {
   return (
-    <ul className="space-y-6">
-      {items.map((item) => (
-        <li key={item} className="flex gap-4 items-start">
-          <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
-          <span className={textClass}>{item}</span>
-        </li>
-      ))}
-    </ul>
+    <Link href="#pricing" className={className ?? ctaLinkClass}>
+      Join Now
+    </Link>
   );
 }
 
-const ctaLinkClass =
-  "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
+function StripePricingTable() {
+  return (
+    <>
+      <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
+      {/* @ts-expect-error stripe-pricing-table is a custom web component */}
+      <stripe-pricing-table
+        pricing-table-id={STRIPE_PRICING_TABLE_ID}
+        publishable-key={STRIPE_PUBLISHABLE_KEY}
+      />
+    </>
+  );
+}
 
 export default function HotAndRichPage() {
   return (
@@ -73,27 +74,25 @@ export default function HotAndRichPage() {
           <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight text-[#FAF7F2] mb-12">
             Hot and Rich Mastermind
           </h1>
-          <p className="font-heading text-2xl md:text-4xl font-light leading-snug text-[#FAF7F2]/95 mb-10">
-            Stop being ignored online. Build an audience that pays you.
-          </p>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
-              &quot;Every single time I work with Stephanie, I make more money.&quot; — Cheryl, online
-              coach
+              Every problem in your business comes down to two things: clarity and views. The
+              skill that rebuilt my account in 30 days, and keeps growing it since, is built on
+              exactly those two things. Not the followers. Not the algorithm&apos;s mood that week.
+              The skill.
             </p>
             <p>
-              One client went from a brand-new account with zero followers to consistent $10K months.
+              They deleted seven years of my life in four seconds. No warning. No appeal. Just
+              gone. Since June 15, that account has grown to over 16,000 followers and nearly 3
+              million views, built from nothing.
             </p>
             <p>
-              Another, a public speaker, is selling out a live event worth $40K–$80K in ticket sales,
-              with the content we&apos;re building together, before the program&apos;s even finished.
+              I&apos;m going to show you exactly how, because you&apos;re about to need this more
+              than you think.
             </p>
-            <p>Four months. The same system, taught live, with me in the room.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#pricing" className={ctaLinkClass}>
-              Join Hot and Rich
-            </Link>
+            <JoinNowButton />
             <Link
               href="#what-happened"
               className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none"
@@ -101,6 +100,27 @@ export default function HotAndRichPage() {
               Read the Story
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* This is for you if */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="for-you-heading"
+      >
+        <div className="max-w-2xl mx-auto">
+          <h2
+            id="for-you-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            This is for you if.
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            You haven&apos;t hit a six-figure month yet. You&apos;re still building your following,
+            still figuring out what actually gets you found. This isn&apos;t for someone who already
+            has the audience and just needs a tune-up. It&apos;s for the version of you before that,
+            the one doing the work and still waiting to be discovered for it.
+          </p>
         </div>
       </section>
 
@@ -157,15 +177,15 @@ export default function HotAndRichPage() {
           </h2>
           <div className="max-w-2xl mx-auto space-y-6 text-lg text-[#FAF7F2]/90">
             <p>
-              I built West Rose Media&apos;s Instagram for seven years. Birth photography, then
-              family photography, then the version of me that came out at 31 and lost 11,000
-              followers in a single day because I stopped playing a role I&apos;d been cast in since
-              childhood. I kept building anyway. Divorced, broke, full custody of three kids, no
-              income history in my own name because every account was in his. I rebuilt from that
-              too.
+              I went from trad wife to rich lesbian. I built West Rose Media&apos;s Instagram for
+              seven years. Birth photography, then family photography, then the version of me that
+              came out at 31 and lost 11,000 followers in a single day because I stopped playing a
+              role I&apos;d been cast in since childhood. I kept building anyway. Divorced, broke,
+              full custody of three kids, no income history in my own name because every account
+              was in his. I rebuilt from that too.
             </p>
             <p>
-              Thirty days ago, I was telling that story on Instagram, the short version, the kind you
+              On June 15, I was telling that story on Instagram, the short version, the kind you
               tell in a reel. It started moving. Thirty thousand views, then climbing. Then the
               comments turned. A coordinated wave of people who&apos;d found my account specifically
               because I said I was gay and I&apos;d left religion, mass-reporting everything
@@ -211,43 +231,54 @@ export default function HotAndRichPage() {
           id="results-heading"
           className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-16 text-center"
         >
-          Thirty days later
+          Thirty days later, and where it stands now
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <div>
-            <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-6">
-              New Instagram account
-            </h3>
-            <BulletList
-              items={[
-                "8,835 followers",
-                "575,000 views",
-                "162,553 accounts reached",
-                "All from an account that didn't exist a month ago",
-              ]}
-            />
-          </div>
-          <div>
-            <h3 className="font-heading text-2xl md:text-3xl font-light text-[#1C1917] mb-6">
-              At the same time, on TikTok
-            </h3>
-            <BulletList
-              items={[
-                "3,781 followers",
-                "411,000 views in the last 30 days",
-                "17,300 profile views in the last 30 days",
-                "Revenue tracing straight back to the new account — close to $20K this month",
-              ]}
-            />
-          </div>
-        </div>
-        <div className="max-w-2xl mx-auto mt-12 space-y-6 text-lg text-[#3D3632] text-center">
+        <div className="max-w-2xl mx-auto space-y-6 text-lg text-[#3D3632]">
           <p>
-            I&apos;m making more in a month right now than I used to make in a year.
+            Thirty days after June 15: 7,321 followers. 493,000 views. 162,553 accounts reached,
+            all from an account that didn&apos;t exist a month before.
           </p>
-          <p className="font-heading text-2xl font-light text-[#1C1917]">
+          <p>Today: past 16,000 followers, closing in on 3 million views.</p>
+          <p>
+            At the same time, on TikTok: 6,500 followers and 2 million views, up from 3,604
+            followers and 365,700 views in the first 28 days alone.
+          </p>
+          <p className="font-heading text-2xl font-light text-[#1C1917] text-center pt-4">
             I&apos;m not telling you this so you feel sorry for me.
           </p>
+        </div>
+      </section>
+
+      {/* Don't take my word for it */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="proof-heading"
+      >
+        <div className="max-w-2xl mx-auto">
+          <h2
+            id="proof-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
+          >
+            Don&apos;t take my word for it
+          </h2>
+          <blockquote className="mb-12 text-center">
+            <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-6">
+              &quot;Every single time I work with Stephanie, I make more money.&quot;
+            </p>
+            <footer className="text-sm tracking-widest uppercase text-[#9C8E82]">
+              Cheryl, online coach
+            </footer>
+          </blockquote>
+          <div className="space-y-6 text-lg text-[#3D3632]">
+            <p>
+              One client started with a brand-new account at zero followers. She&apos;s now sitting
+              on consistent $10K months.
+            </p>
+            <p>
+              Another client, a public speaker, sold out a live event worth $40,000 to $80,000 in
+              ticket sales, using content built through this program.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -267,10 +298,11 @@ export default function HotAndRichPage() {
           </h2>
           <div className="space-y-6 text-[#FAF7F2]/85 leading-relaxed text-lg">
             <p>
-              The skill that rebuilt it in 30 days is the asset. That&apos;s what generated 7,249
-              followers and 482,828 views from nothing. That&apos;s what&apos;s about to close me
-              another five-figure month. And that&apos;s the one thing that cannot be
-              mass-reported, deactivated, or erased without appeal.
+              The skill that rebuilt it in 30 days, and kept it growing every day since, is the
+              asset. Clarity on what I offer, and enough views that people actually see it.
+              That&apos;s what generated the first 7,321 followers, and it&apos;s the same thing
+              that&apos;s carried the account past 16,000 since. That&apos;s the one thing that
+              cannot be mass-reported, deactivated, or erased without appeal.
             </p>
             <p>
               Everyone else who&apos;s lost an account this way is starting from zero with no idea
@@ -300,7 +332,7 @@ export default function HotAndRichPage() {
             <p className="text-lg text-[#FAF7F2]/90">
               Four months. How to build an audience and a revenue system fast enough and sturdy
               enough that losing a platform becomes a setback instead of a funeral. The same moves
-              that took me from zero to 7,249 followers and a five-figure month in 30 days, taught
+              that took me from zero to 7,321 followers and a five-figure month in 30 days, taught
               live, with me in the room, in real time, as I run it on my own account.
             </p>
             <h3 className="text-xs tracking-widest uppercase text-[#C9B99A] pt-6">
@@ -308,17 +340,17 @@ export default function HotAndRichPage() {
             </h3>
             <ul className="space-y-6 pt-4 text-lg">
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">-</span>
                 <span className="text-[#FAF7F2]/90">Biweekly live calls with me</span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">-</span>
                 <span className="text-[#FAF7F2]/90">
                   Text support inside the group, three days a week
                 </span>
               </li>
               <li className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">•</span>
+                <span className="text-[#C9B99A] mt-1 shrink-0">-</span>
                 <span className="text-[#FAF7F2]/90">
                   Direct access to the exact strategy I&apos;m running right now
                 </span>
@@ -326,8 +358,8 @@ export default function HotAndRichPage() {
             </ul>
             <p className="text-lg text-[#FAF7F2]/90 pt-4">
               I&apos;m not going to promise you a number. I&apos;m going to hand you the system that
-              just took me from zero to 7,249 followers, 482,828 views, and a near-$20K month, in
-              30 days, and put you in the room with me for four.
+              took me from zero to 7,321 followers in 30 days, and past 16,000 since, and put you
+              in the room with me for four.
             </p>
           </div>
         </div>
@@ -346,34 +378,12 @@ export default function HotAndRichPage() {
           >
             The price
           </h2>
-          <p className="text-lg text-[#3D3632] mb-10">
-            Choose the payment option that works for you. All prices in CAD.
+          <p className="text-lg text-[#3D3632] mb-6">
+            $3,050 CAD, one payment. Or split it: four payments of $770 CAD, or six payments of
+            $510 CAD.
           </p>
-          <div className="border border-[#C9B99A]/40 bg-white/60 p-6 md:p-8 text-left mb-10">
-            <h3 className="text-xs tracking-widest uppercase text-[#9C8E82] mb-5 text-center">
-              Pricing options
-            </h3>
-            <ul className="space-y-3 text-[#3D3632] text-lg">
-              <li className="flex gap-3">
-                <span className="text-[#C9B99A]">•</span>
-                <span>One payment of $3,050 CAD</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-[#C9B99A]">•</span>
-                <span>Four payments of $770 CAD</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-[#C9B99A]">•</span>
-                <span>Six payments of $510 CAD</span>
-              </li>
-            </ul>
-          </div>
-          <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
-          {/* @ts-expect-error stripe-pricing-table is a custom web component */}
-          <stripe-pricing-table
-            pricing-table-id={STRIPE_PRICING_TABLE_ID}
-            publishable-key={STRIPE_PUBLISHABLE_KEY}
-          />
+          <p className="text-lg text-[#3D3632] mb-10">Doors close September 15.</p>
+          <StripePricingTable />
         </div>
       </section>
 
@@ -388,17 +398,18 @@ export default function HotAndRichPage() {
           </h2>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
             You&apos;ve done the identity work already. You&apos;re not confused about who you are or
-            what you&apos;re capable of. What you don&apos;t have yet is a brand that gets you found
-            as fast and as consistently as you deserve to be, on your terms, not at the mercy of an
+            what you&apos;re capable of. What you don&apos;t have yet is clarity on what you offer
+            and enough views for people to actually see it, on your terms, not at the mercy of an
             algorithm that can erase you overnight.
           </p>
-          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
-            I rebuilt mine in 30 days with nothing but the skill. Imagine what she builds with four
-            months and me in the room the entire time.
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-6">
+            I rebuilt mine in 30 days with nothing but the skill, and it hasn&apos;t stopped since.
+            Imagine what she builds with four months and me in the room the entire time.
           </p>
-          <Link href="#pricing" className={ctaLinkClass}>
-            Join Hot and Rich
-          </Link>
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
+            Doors close September 15.
+          </p>
+          <StripePricingTable />
         </div>
       </section>
 
@@ -407,12 +418,7 @@ export default function HotAndRichPage() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#FAF7F2] border-t border-[#C9B99A]/30 md:hidden"
         aria-label="Mobile call to action"
       >
-        <Link
-          href="#pricing"
-          className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300"
-        >
-          Join Hot and Rich
-        </Link>
+        <JoinNowButton className="block w-full py-4 text-center rounded-none bg-[#1C1917] text-[#FAF7F2] text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300" />
       </div>
       <div className="h-20 md:hidden" aria-hidden />
     </div>
