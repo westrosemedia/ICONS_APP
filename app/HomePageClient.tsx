@@ -38,9 +38,9 @@ const paidSteps = [
     num: "03",
     title: "Sales and launch strategies",
     body: "With the views coming in, we turn them into launches and offers built on strategy that's already been tested, not a guess.",
-    cta: "Book 1:1 Strategy",
-    href: STRATEGY_BOOK_URL,
-    external: Boolean(STRATEGY_BOOK_URL),
+    cta: "Join Hot and Rich",
+    href: "/hot-and-rich",
+    external: false,
   },
   {
     num: "04",
@@ -277,7 +277,7 @@ export default function HomePageClient() {
         <div className="container-elegant relative z-10" data-aos="fade-up">
           <div className="max-w-2xl text-left">
             <h2 className="text-display mb-6 text-balance text-white drop-shadow sm:mb-8">
-              Every careful post teaches people to underestimate you.
+              Clarity & Views is the fix to every business problem
             </h2>
             <div className="space-y-6 text-lg leading-[1.75] text-white/90">
               <p>
@@ -537,9 +537,12 @@ export default function HomePageClient() {
         </div>
         <div className="relative z-10 container-elegant text-center" data-aos="fade-up">
           <div>
-            <h2 className="text-hero text-white mb-6">ICON Brand Partnership is by application, and the room is small.</h2>
+            <h2 className="text-hero text-white mb-6">Ready to Build Demand With Content That Matches Your Level?</h2>
+            <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-6">
+              Let&apos;s create the visual presence and strategic positioning that transforms your business and your life.
+            </p>
             <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
-              ICON Brand Partnership is not something you add to a cart. You apply, and Stephanie reviews every application herself. A small number of seats are open right now. Tell us about your business, what you are building toward, and the version of you you&apos;re ready to put on the screen. If it is a fit, you will hear from Stephanie within five business days.
+              By application, Stephanie reviews every one herself, and a small number of seats are open right now.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 group">

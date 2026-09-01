@@ -364,6 +364,42 @@ export default function CadencePageClient() {
         </div>
       </section>
 
+      {/* Loaded Grid companion offer */}
+      <section className="section-padding bg-[#171717] text-[#f5f0e8]" data-aos="fade-up">
+        <div className="container-elegant">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-auto lg:min-h-[420px]">
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/the%20loaded%20grid%2FKAY_8505.jpg?alt=media&token=84693866-4afc-4403-b378-61cf0aeb36e8"
+                alt="The Loaded Grid by West Rose Media"
+                fill
+                className="object-cover object-[center_65%]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f5f0e8]/70">Also from West Rose Media</p>
+              <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight sm:text-4xl">
+                Cadence schedules the posts. The Loaded Grid tells you what is worth posting.
+              </h2>
+              <div className="mt-8 space-y-5 text-lg leading-relaxed text-[#f5f0e8]/90">
+                <p>
+                  A full calendar of weak posts is still a visibility problem. The Loaded Grid is the weekly membership that tests, breaks, and repeats until the views move. Same founders who buy Cadence are the ones who need a system behind the schedule.
+                </p>
+                <p>
+                  You get the room, the weekly play, and the algorithm work. Cadence is how it actually ships. Pair them if you are done guessing on either side.
+                </p>
+              </div>
+              <div className="mt-8">
+                <Button asChild size="lg" className="bg-[#f5f0e8] text-[#171717] hover:bg-white">
+                  <Link href="/the-loaded-grid">Get Seen in The Loaded Grid</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Platforms */}
       <section className="section-padding bg-white" data-aos="fade-up">
         <div className="container-elegant">

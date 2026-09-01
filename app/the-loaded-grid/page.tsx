@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/siteLinks";
+import { CADENCE_IMAGES } from "@/lib/cadence";
 
 const STRIPE_LINK = "https://buy.stripe.com/bJe5kCgRqbTnfa38x787K1g";
 const PRICE = "$225 CAD";
@@ -548,6 +550,45 @@ export default function TheLoadedGridPage() {
             >
               Get Seen This Week
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Cadence companion offer */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 border-t border-[#C9B99A]/20 bg-[#FAF7F2]"
+        aria-labelledby="cadence-heading"
+      >
+        <div className="max-w-5xl mx-auto grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="relative min-h-[320px] overflow-hidden">
+            <Image
+              src={CADENCE_IMAGES.hero}
+              alt="Cadence by West Rose Media"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div>
+            <p className={`${frameworkKicker} mb-6`}>Also for this room</p>
+            <h2
+              id="cadence-heading"
+              className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-6"
+            >
+              Once the views start moving, keep them on a schedule.
+            </h2>
+            <p className="text-lg text-[#3D3632] mb-6">
+              The Loaded Grid is the weekly system that gets posts past the algorithm. Cadence is where those posts actually go out. Thirteen platforms, one dashboard, no wondering if you published.
+            </p>
+            <p className="text-lg text-[#3D3632] mb-10">
+              Same buyer. You need the play and you need the calendar. One without the other is a week of good intentions and a feed that still looks empty.
+            </p>
+            <Link
+              href="/cadence"
+              className="inline-block bg-[#1C1917] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#3D3632] transition-colors duration-300 rounded-none"
+            >
+              See Cadence
+            </Link>
           </div>
         </div>
       </section>
