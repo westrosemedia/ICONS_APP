@@ -60,7 +60,7 @@ const SOCIAL_PROOF = [
 const META = {
   title: "The Loaded Grid | Weekly Visibility Membership | West Rose Media",
   description:
-    "Test. Break. Repeat. A weekly membership that gets your posts past the algorithm's early tests. $225 CAD/month. Cohort 1 closes September 15.",
+    "Test. Break. Repeat. A weekly membership that gets your posts past the algorithm's early tests. $225 CAD/month.",
 };
 
 export const revalidate = 0;
@@ -128,7 +128,7 @@ const testimonials = [
 ];
 
 const tickerItems = [
-  "More views. Less drama. More money. Zero wondering what to post. Last chance to join, September 15.",
+  "More views. Less drama. More money. Zero wondering what to post.",
   "Test. Break. Repeat.",
   "Live Weekly Class",
   "Weekly Content Plays",
@@ -197,7 +197,7 @@ export default function TheLoadedGridPage() {
             Get Seen This Week
           </a>
           <p className="text-[#C9B99A] font-heading text-xl font-light mt-8">
-            {PRICE}/month. Cohort 1 closes September 15.
+            {PRICE}/month.
           </p>
         </div>
       </section>
@@ -507,8 +507,7 @@ export default function TheLoadedGridPage() {
               $225 CAD a month. Cheaper than staying stuck.
             </h2>
             <p className="text-lg text-[#FAF7F2]/90 mb-6">
-              Weekly class, weekly content plan, private community. Cohort 1 closes
-              September 15.
+              Weekly class, weekly content plan, private community.
             </p>
             <p className="text-lg text-[#FAF7F2]/90 mb-12">
               Not a one-off. It&apos;s the weekly room inside the wider West Rose
@@ -537,7 +536,7 @@ export default function TheLoadedGridPage() {
                   Enrollment
                 </p>
                 <p className="text-lg text-[#FAF7F2]/90">
-                  Closes September 15 for Cohort 1
+                  Open
                 </p>
               </div>
             </div>
@@ -605,7 +604,7 @@ export default function TheLoadedGridPage() {
             id="final-cta-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-8"
           >
-            Test. Break. Repeat. Cohort 1 closes September 15.
+            Test. Break. Repeat.
           </h2>
           <p className="text-lg text-[#FAF7F2]/90 mb-10 max-w-xl mx-auto">
             Show up this week. Bring whatever you&apos;re already posting,
@@ -621,7 +620,7 @@ export default function TheLoadedGridPage() {
             Get Seen This Week
           </a>
           <p className="text-sm text-[#FAF7F2]/60 mt-8">
-            {PRICE}/month. Cohort 1 closes September 15.
+            {PRICE}/month.
           </p>
         </div>
       </section>
