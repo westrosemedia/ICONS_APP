@@ -8,7 +8,7 @@ import EditorialGrid from "@/components/EditorialGrid";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { homePageAssets } from "@/lib/homePageAssets";
-import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
+import { SPOTLIGHT_BOOK_URL, STRATEGY_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Background anchor: horizontal % pushes subject right (text sits on dark left), vertical % for vertical framing. */
 const PROBLEM_BG_POSITION = "72% 36%";
@@ -168,6 +168,14 @@ export default function HomePageClient() {
                 className="bg-white text-black hover:bg-gray-100 whitespace-normal text-center"
               >
                 Join Hot and Rich
+              </OfferCta>
+              <OfferCta
+                href={STRATEGY_BOOK_URL}
+                external
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-black whitespace-normal text-center"
+              >
+                Book 1:1 Coaching
               </OfferCta>
             </div>
           </div>

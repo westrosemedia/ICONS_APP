@@ -6,6 +6,7 @@ import MastermindPhotoSlider from "@/components/MastermindPhotoSlider";
 
 const APPLY_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScB4fKptatWBrh-aH1SADOLSFTMk3zbbMnpJniWWEBlDT006Q/viewform";
+const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6951.jpg?alt=media&token=9100f358-a2f9-4848-b995-2eee1ff3b285",
@@ -41,7 +42,7 @@ const IMAGES = {
 const META = {
   title: "Manifesting & Marketing Mastermind | West Rose Media",
   description:
-    "Marketing strategy that converts. Manifestation that actually moves money. Six months. One room. Stephanie and Jackie. September 2026 through February 2027, with a retreat in Kananaskis.",
+    "Now taking deposits for a January 2027 start. Six months. One room. Stephanie and Jackie. Sign up and get a ticket to Wildly Wealthy Woman Live.",
 };
 
 export const revalidate = 0;
@@ -107,7 +108,9 @@ const tickerPrimary = [
   "Six months",
   "One room",
   "Stephanie + Jackie",
-  "Kananaskis February 2027",
+  "January 2027 start",
+  "Wildly Wealthy Woman Live",
+  "Kananaskis retreat",
 ];
 
 const tickerSecondary = [
@@ -283,10 +286,18 @@ export default function MastermindPage() {
             entire time.
           </p>
           <p className={`${eyebrow} mb-4 text-white/70`}>
-            September 2026 through February 2027. Retreat in Kananaskis.
+            Now taking deposits for a January 2027 start.
           </p>
           <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
-            Sign up August 14–17 and get a bonus photoshoot.
+            Sign up and get a ticket to{" "}
+            <a
+              href={WILDLY_WEALTHY_LIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-white transition-colors"
+            >
+              Wildly Wealthy Woman Live
+            </a>.
           </p>
           <Link
             href={APPLY_URL}
@@ -484,8 +495,7 @@ export default function MastermindPage() {
               id="retreat-heading"
               className={`${display} text-5xl md:text-7xl mb-8`}
             >
-              Kananaskis,{" "}
-              <span className="italic text-[#c1ff72]">February 2027</span>
+              Kananaskis
             </h2>
             <div className="space-y-5 text-lg text-white/85 leading-relaxed">
               <p>
@@ -655,10 +665,22 @@ export default function MastermindPage() {
                   </p>
                 </div>
                 <p className="text-white/70 leading-relaxed max-w-xl">
-                  Everything above, plus your spot in Kananaskis this February.
+                  Everything above, plus your spot in Kananaskis.
                   First women to join get priority rooms.
                 </p>
               </div>
+              <p className="text-lg text-white/80 leading-relaxed max-w-xl pt-2">
+                Deposits are open for a January 2027 start. Signing up includes
+                a ticket to{" "}
+                <a
+                  href={WILDLY_WEALTHY_LIVE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#c1ff72] underline underline-offset-4 hover:text-white transition-colors"
+                >
+                  Wildly Wealthy Woman Live
+                </a>.
+              </p>
               <p className="font-heading italic text-xl md:text-2xl text-white/90 pt-4 font-light">
                 The women who join do not ask whether they can afford to. They
                 ask whether they can afford not to.
@@ -738,6 +760,18 @@ export default function MastermindPage() {
             </p>
             <p className="text-lg text-black/70 max-w-xl mx-auto">
               Choose the room. Choose the team. Choose to build the movement.
+            </p>
+            <p className="text-lg text-black/80 max-w-xl mx-auto leading-relaxed">
+              Deposits are open for a January 2027 start. Signing up includes a
+              ticket to{" "}
+              <a
+                href={WILDLY_WEALTHY_LIVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-black"
+              >
+                Wildly Wealthy Woman Live
+              </a>.
             </p>
             <Link
               href={APPLY_URL}
