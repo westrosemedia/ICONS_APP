@@ -17,8 +17,6 @@ const IMAGES = {
   tapping:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8772.jpg?alt=media&token=ec7967fe-a5bb-4911-b537-5ae53ac3d342",
   room: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR8802.jpg?alt=media&token=4d2ceab7-b80b-4d87-bc7e-e074f4893700",
-  retreat:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR6965.jpg?alt=media&token=9f791e83-44d3-4022-bb61-8f3bd5a1def0",
   proof:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/_VWR7086.jpg?alt=media&token=6bf7e2b2-0eab-46cf-bc95-8a1729102797",
   leaders:
@@ -474,48 +472,6 @@ export default function MastermindPage() {
       </section>
 
       <MastermindPhotoSlider />
-
-      {/* THE RETREAT — full bleed editorial */}
-      <section
-        className="relative min-h-[90vh] flex items-end overflow-hidden"
-        aria-labelledby="retreat-heading"
-      >
-        <Image
-          src={IMAGES.retreat}
-          alt="Kananaskis retreat for the Manifesting & Marketing Mastermind"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <p className={`${eyebrow} mb-5`}>The retreat</p>
-            <h2
-              id="retreat-heading"
-              className={`${display} text-5xl md:text-7xl mb-8`}
-            >
-              Kananaskis
-            </h2>
-            <div className="space-y-5 text-lg text-white/85 leading-relaxed">
-              <p>
-                Two nights in a private log cabin between Calgary and the
-                Rockies. Forest and mountain views from every window. A
-                fireplace. A table big enough for all of us.
-              </p>
-              <p>
-                Content creation, mastermind sessions, and activities including
-                a day at Kananaskis Nordic Spa and a day in Banff.
-              </p>
-              <p>
-                This is not a bonus tacked onto the mastermind. It is where the
-                women you have been building with for six months become the
-                women you build with for the rest of your life.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Marquee items={tickerPrimary} tone="lime" />
 
