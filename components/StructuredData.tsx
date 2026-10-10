@@ -209,7 +209,7 @@ export default function StructuredData() {
     },
     "offers": {
       "@type": "Offer",
-      "price": "12000",
+      "price": "14000",
       "priceCurrency": "CAD",
       "availability": "https://schema.org/InStock"
     },

@@ -286,6 +286,9 @@ export default function MastermindPage() {
           <p className={`${eyebrow} mb-4 text-white/70`}>
             Now taking deposits for a January 2027 start.
           </p>
+          <p className="text-base md:text-lg text-white/90 mb-4 max-w-xl mx-auto">
+            In January, the full mastermind price goes up to $25,000.
+          </p>
           <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
             Sign up and get a ticket to{" "}
             <a
@@ -602,13 +605,16 @@ export default function MastermindPage() {
                     Mastermind Only
                   </h3>
                   <p className="text-[#c1ff72] text-2xl md:text-3xl font-heading font-light">
-                    $12,000 CAD
+                    $14,000 CAD
                   </p>
                 </div>
                 <p className="text-white/70 leading-relaxed max-w-xl">
                   Six months of weekly coaching, personal tapping sessions, full
                   access to Cadence and the Story Stack, and a room full of
                   women who are actually doing it.
+                </p>
+                <p className="text-white/90 leading-relaxed max-w-xl mt-4">
+                  In January, the full mastermind price goes up to $25,000.
                 </p>
               </div>
               <div className="border-t border-white/15 pt-8">
@@ -626,7 +632,8 @@ export default function MastermindPage() {
                 </p>
               </div>
               <p className="text-lg text-white/80 leading-relaxed max-w-xl pt-2">
-                Deposits are open for a January 2027 start. Signing up includes
+                Deposits are open for a January 2027 start. In January, the full
+                mastermind price goes up to $25,000. Signing up includes
                 a ticket to{" "}
                 <a
                   href={WILDLY_WEALTHY_LIVE_URL}
@@ -718,7 +725,8 @@ export default function MastermindPage() {
               Choose the room. Choose the team. Choose to build the movement.
             </p>
             <p className="text-lg text-black/80 max-w-xl mx-auto leading-relaxed">
-              Deposits are open for a January 2027 start. Signing up includes a
+              Deposits are open for a January 2027 start. In January, the full
+              mastermind price goes up to $25,000. Signing up includes a
               ticket to{" "}
               <a
                 href={WILDLY_WEALTHY_LIVE_URL}
