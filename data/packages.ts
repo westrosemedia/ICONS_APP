@@ -43,17 +43,17 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "hot-and-rich",
     title: "Hot and Rich Mastermind",
-    noteBelowTitle: "Four months of live coaching and implementation.",
+    noteBelowTitle: "Four months, beginning November 15.",
     whoFor:
       "For founders ready to build an audience and revenue system that keeps working even when platforms change.",
     blurb:
       "Stop being ignored online. Build an audience that pays you with biweekly live coaching, group support, and the exact strategy Stephanie is running right now.",
-    priceLabel: "From $3,050 CAD",
+    priceLabel: "Early bird $6,000 CAD",
     highlights: [
       { label: "Biweekly live calls with Stephanie" },
       { label: "Text support inside the group, three days a week" },
       { label: "Direct access to the strategy running in real time" },
-      { label: "Flexible payment plans available" },
+      { label: "$7,500 CAD after October 13" },
     ],
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",

@@ -95,15 +95,15 @@ export default function PackagesPage() {
                     <li>• Biweekly live calls with Stephanie</li>
                     <li>• Text support inside the group, three days a week</li>
                     <li>• Direct access to the exact strategy running right now</li>
-                    <li>• Four months of live coaching and implementation</li>
+                    <li>• Four months, beginning November 15</li>
+                    <li>• Ticket to Wildly Wealthy Woman Live</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-[#C9B99A]">Investment:</h3>
                   <ul className="space-y-3 text-[#FAF7F2]/90">
-                    <li>• One payment of $3,050 CAD</li>
-                    <li>• Four payments of $770 CAD</li>
-                    <li>• Six payments of $510 CAD</li>
+                    <li>• Early bird $6,000 CAD until October 13</li>
+                    <li>• $7,500 CAD after October 13</li>
                   </ul>
                 </div>
               </div>

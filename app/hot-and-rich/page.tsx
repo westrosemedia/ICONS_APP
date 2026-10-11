@@ -4,8 +4,9 @@ import type { Metadata } from "next";
 
 const STRIPE_PUBLISHABLE_KEY =
   "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
-const STRIPE_PRICING_TABLE_ID = "prctbl_1TuDr5CcsY3WjV3QLpGKG8Ww";
+const STRIPE_PRICING_TABLE_ID = "prctbl_1UPRdeCcsY3WjV3Qs3D0QsoQ";
 const YOUTUBE_EMBED = "https://www.youtube.com/embed/HTRDxi8J5KA?si=URp8MB-mUJpCAZ5y";
+const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
@@ -17,7 +18,7 @@ const IMAGES = {
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
   description:
-    "Four months to build an audience and a revenue system sturdy enough that losing a platform becomes a setback instead of a funeral. $3,050 CAD. Doors close September 15.",
+    "A new round of Hot and Rich starts November 15. Early bird $6,000 CAD through October 13, then $7,500 CAD. Includes a ticket to Wildly Wealthy Woman Live.",
 };
 
 export const revalidate = 0;
@@ -61,49 +62,42 @@ function StripePricingTable() {
 export default function HotAndRichPage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
-      {/* Hero */}
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
         style={{ backgroundImage: `url('${IMAGES.hero}')` }}
       >
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-6 md:px-16 max-w-4xl mx-auto py-32">
-          <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-[#C9B99A] mb-8">
-            West Rose Media presents
-          </p>
           <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight text-[#FAF7F2] mb-12">
             Hot and Rich Mastermind
           </h1>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
-              Every problem in your business comes down to two things: clarity and views. The
-              skill that rebuilt my account in 30 days, and keeps growing it since, is built on
-              exactly those two things. Not the followers. Not the algorithm&apos;s mood that week.
-              The skill.
+              Not to freak you out, but women usually find my account right before they do
+              something REALLY big.
             </p>
             <p>
-              They deleted seven years of my life in four seconds. No warning. No appeal. Just
-              gone. Since June 15, that account has grown to over 16,000 followers and nearly 3
-              million views, built from nothing.
+              I posted that sentence and it brought me 6,022 new followers on Instagram and 10,000
+              on TikTok. If you just found me, I&apos;d bet you&apos;re one of those women.
             </p>
             <p>
-              I&apos;m going to show you exactly how, because you&apos;re about to need this more
-              than you think.
+              Every problem in your business comes down to two things: clarity and views. Everything
+              I used to rebuild my account is built on exactly those two things.
+            </p>
+            <p>
+              Meta deleted seven years of my work in four seconds and gave me nowhere to appeal.
+              118 days later, the new account has 23,500 followers and 4 million views, built from
+              nothing.
+            </p>
+            <p>
+              A new round of Hot and Rich starts November 15. I&apos;m going to show you exactly how
+              I did it, because you&apos;re about to need this more than you think.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <JoinNowButton />
-            <Link
-              href="#what-happened"
-              className="inline-block border border-[#FAF7F2] text-[#FAF7F2] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#FAF7F2] hover:text-[#1C1917] transition-colors duration-300 rounded-none"
-            >
-              Read the Story
-            </Link>
-          </div>
+          <JoinNowButton />
         </div>
       </section>
 
-      {/* This is for you if */}
       <section
         className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
         aria-labelledby="for-you-heading"
@@ -113,43 +107,39 @@ export default function HotAndRichPage() {
             id="for-you-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            This is for you if.
+            This is for you if
           </h2>
           <p className="text-lg text-[#3D3632]">
-            You haven&apos;t hit a six-figure month yet. You&apos;re still building your following,
-            still figuring out what actually gets you found. This isn&apos;t for someone who already
-            has the audience and just needs a tune-up. It&apos;s for the version of you before that,
-            the one doing the work and still waiting to be discovered for it.
+            You have the offer. You have the expertise and the big idea. You haven&apos;t hit a
+            six-figure month yet, and you&apos;re still figuring out how to make people see what
+            you&apos;ve built. You know you&apos;re capable of more than your account shows right
+            now, and you&apos;re ready to be the name people find first.
           </p>
         </div>
       </section>
 
-      {/* Problem */}
       <section className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto" aria-labelledby="problem-heading">
         <div className="max-w-2xl mx-auto space-y-6">
           <h2
             id="problem-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            You&apos;re good at what you do. That was never the problem.
+            You&apos;re good at what you do. Now you need to be found for it.
           </h2>
           <p className="text-lg text-[#3D3632]">
             You know your craft. You&apos;re showing up, posting, doing the work. What&apos;s
-            missing is being found for it: the followers, the inquiries, the DMs that turn into
-            paying clients. You&apos;ve watched people with less experience than you pull ahead of
-            you, and it&apos;s started to feel less like bad luck and more like a secret you
-            weren&apos;t let in on.
+            missing is the followers, the inquiries, and the DMs that turn into paying clients.
+            You&apos;ve watched people with less experience pull ahead of you, and it&apos;s started
+            to feel like everyone else got let in on a secret.
           </p>
           <p className="text-lg text-[#3D3632]">
-            There isn&apos;t a secret. There&apos;s a mechanism, and right now you don&apos;t have
-            it yet.
+            What they have is a mechanism, and you&apos;re about to get it.
           </p>
           <p className="text-lg text-[#3D3632]">
-            Here&apos;s what I don&apos;t think you&apos;ve let yourself think about: everything
-            you&apos;re building right now lives on a platform you don&apos;t own, that runs on
-            rules you don&apos;t get to see, enforced by a system that doesn&apos;t have a human on
-            the other end of it. Which means it can all disappear before you finish reading this
-            sentence.
+            Here&apos;s the part you probably haven&apos;t let yourself think about. Everything
+            you&apos;re building lives on a platform someone else owns, runs on rules you&apos;ll
+            never get to see, and is enforced by software with zero humans checking its work. It can
+            all disappear before you finish scrolling this page.
           </p>
           <p className="text-lg text-[#3D3632] font-medium">
             I know because it happened to me on a Monday night.
@@ -157,7 +147,6 @@ export default function HotAndRichPage() {
         </div>
       </section>
 
-      {/* What actually happened */}
       <section
         id="what-happened"
         className="relative bg-cover bg-no-repeat md:bg-fixed scroll-mt-24"
@@ -181,25 +170,27 @@ export default function HotAndRichPage() {
               seven years. Birth photography, then family photography, then the version of me that
               came out at 31 and lost 11,000 followers in a single day because I stopped playing a
               role I&apos;d been cast in since childhood. I kept building anyway. Divorced, broke,
-              full custody of three kids, no income history in my own name because every account
+              full custody of three kids, and no income history in my own name because every account
               was in his. I rebuilt from that too.
             </p>
             <p>
               On June 15, I was telling that story on Instagram, the short version, the kind you
               tell in a reel. It started moving. Thirty thousand views, then climbing. Then the
               comments turned. A coordinated wave of people who&apos;d found my account specifically
-              because I said I was gay and I&apos;d left religion, mass-reporting everything
+              because I said I was gay and I&apos;d left religion started mass-reporting everything
               I&apos;d ever posted.
             </p>
             <p>
-              No human reviewed it. Meta&apos;s system doesn&apos;t work that way anymore. Enough
-              reports trip the AI and it acts on its own: account deactivated, no chance for
-              appeal, seven years gone in the time it takes to read that sentence. Every post. Every
-              piece of proof I used to point new clients to when they said &quot;I could never get
-              where you are.&quot; I used to tell them: scroll to the beginning, watch the whole
-              climb. That receipt is gone now.
+              Meta&apos;s system runs on automation now. Enough reports trip the AI and it acts on
+              its own: account deactivated, appeal button gone, seven years erased in the time it
+              takes to read that sentence. Every post. Every piece of proof I used to point new
+              clients to when they said &quot;I could never get where you are.&quot; I used to tell
+              them to scroll to the beginning and watch the whole climb. That receipt is gone now.
             </p>
-            <p>I cried the whole drive home. Then I opened my laptop and started a brand new account that night.</p>
+            <p>
+              I cried the whole drive home. Then I opened my laptop and started a brand new account
+              that night.
+            </p>
             <p className="text-[#C9B99A] font-heading text-xl font-light pt-2">
               Watch me tell the whole thing, in real time, the week it happened:
             </p>
@@ -207,13 +198,12 @@ export default function HotAndRichPage() {
         </div>
       </section>
 
-      {/* Video */}
       <section className="py-16 md:py-24 px-6 md:px-12 max-w-4xl mx-auto" aria-label="Story video">
         <div className="aspect-video w-full overflow-hidden bg-black shadow-xl">
           <iframe
             className="h-full w-full"
             src={YOUTUBE_EMBED}
-            title="Stephanie Rose tells the story of rebuilding after account deletion"
+            title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
@@ -221,7 +211,6 @@ export default function HotAndRichPage() {
         </div>
       </section>
 
-      {/* Thirty days later */}
       <section
         id="results"
         className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24"
@@ -231,25 +220,37 @@ export default function HotAndRichPage() {
           id="results-heading"
           className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-16 text-center"
         >
-          Thirty days later, and where it stands now
+          Where it stands, 118 days later
         </h2>
         <div className="max-w-2xl mx-auto space-y-6 text-lg text-[#3D3632]">
-          <p>
-            Thirty days after June 15: 7,321 followers. 493,000 views. 162,553 accounts reached,
-            all from an account that didn&apos;t exist a month before.
-          </p>
-          <p>Today: past 16,000 followers, closing in on 3 million views.</p>
-          <p>
-            At the same time, on TikTok: 6,500 followers and 2 million views, up from 3,604
-            followers and 365,700 views in the first 28 days alone.
-          </p>
+          <p>On June 15, the new account had zero followers.</p>
+          <p>Today, 118 days in, it has 23,500 followers and 4 million views on Instagram.</p>
+          <p>On TikTok, I&apos;m at 17,500 followers and 2 million views.</p>
           <p className="font-heading text-2xl font-light text-[#1C1917] text-center pt-4">
-            I&apos;m not telling you this so you feel sorry for me.
+            That&apos;s what the skill does when you keep running it.
           </p>
         </div>
       </section>
 
-      {/* Don't take my word for it */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="speed-heading"
+      >
+        <div className="max-w-2xl mx-auto">
+          <h2
+            id="speed-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            How fast it moves with the right strategy
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            When I post now, people follow me, download my freebie and buy my high-ticket offers,
+            all within 12 hours. Anyone who tells you this has to take forever just doesn&apos;t
+            know how.
+          </p>
+        </div>
+      </section>
+
       <section
         className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
         aria-labelledby="proof-heading"
@@ -259,8 +260,29 @@ export default function HotAndRichPage() {
             id="proof-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
           >
-            Don&apos;t take my word for it
+            Proof from my clients
           </h2>
+          <div className="space-y-6 text-lg text-[#3D3632] mb-12">
+            <p>
+              When one of my Hot and Rich members came to me, she was posting four times a day and
+              getting 9 views per post. Every post lost her followers. Her membership had held the
+              same 3 clients for years.
+            </p>
+            <p>Now she posts once a day and gets 60,000 views. She just sold 4 new people into her membership.</p>
+            <p>Here&apos;s what she sent me:</p>
+          </div>
+          <blockquote className="mb-12 text-center">
+            <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-6">
+              &quot;You&apos;ve challenged me, stretched me, made me laugh, made me scream, and made
+              me question myself (in the BEST way). Thank you for never letting me settle for
+              beautifully boring crappy content and hooks. You&apos;ve pushed me to remove the crutch
+              ChatGPT has been for the last several years and to truly step into this season of
+              growth.&quot;
+            </p>
+            <footer className="text-sm tracking-widest uppercase text-[#9C8E82]">
+              Hot and Rich Mastermind member
+            </footer>
+          </blockquote>
           <blockquote className="mb-12 text-center">
             <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-6">
               &quot;Every single time I work with Stephanie, I make more money.&quot;
@@ -269,20 +291,13 @@ export default function HotAndRichPage() {
               Cheryl, online coach
             </footer>
           </blockquote>
-          <div className="space-y-6 text-lg text-[#3D3632]">
-            <p>
-              One client started with a brand-new account at zero followers. She&apos;s now sitting
-              on consistent $10K months.
-            </p>
-            <p>
-              Another client, a public speaker, sold out a live event worth $40,000 to $80,000 in
-              ticket sales, using content built through this program.
-            </p>
-          </div>
+          <p className="text-lg text-[#3D3632]">
+            One client started with a brand-new account at zero followers. She&apos;s now sitting on
+            consistent $10K months.
+          </p>
         </div>
       </section>
 
-      {/* The account was never the asset */}
       <section
         className="relative bg-cover bg-center bg-no-repeat md:bg-fixed"
         style={{ backgroundImage: `url('${IMAGES.proof}')` }}
@@ -294,26 +309,22 @@ export default function HotAndRichPage() {
             id="asset-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-10"
           >
-            The account was never the asset
+            The skill is the asset
           </h2>
           <div className="space-y-6 text-[#FAF7F2]/85 leading-relaxed text-lg">
             <p>
-              The skill that rebuilt it in 30 days, and kept it growing every day since, is the
-              asset. Clarity on what I offer, and enough views that people actually see it.
-              That&apos;s what generated the first 7,321 followers, and it&apos;s the same thing
-              that&apos;s carried the account past 16,000 since. That&apos;s the one thing that
-              cannot be mass-reported, deactivated, or erased without appeal.
+              The skill that rebuilt my account is the asset. Clarity on what I offer, and enough
+              views that people see it. That&apos;s what took the account from zero to 23,500 in 118
+              days. A skill stays with you after any account is gone.
             </p>
             <p>
-              Everyone else who&apos;s lost an account this way is starting from zero with no idea
-              what to do next. I started from zero and had a plan before I got home. That gap,
-              between having a plan and not having one, is the entire mastermind.
+              Most people who lose an account this way start over with no idea what to do next. I
+              started over with a plan before I got home. Hot and Rich hands you that plan.
             </p>
           </div>
         </div>
       </section>
 
-      {/* The exact mechanism */}
       <section
         id="what-you-get"
         className="relative bg-cover bg-center bg-no-repeat md:bg-fixed scroll-mt-24"
@@ -326,14 +337,13 @@ export default function HotAndRichPage() {
             id="mechanism-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-12 text-center"
           >
-            The exact mechanism, not the vibes
+            The exact mechanism
           </h2>
           <div className="max-w-2xl mx-auto space-y-6">
             <p className="text-lg text-[#FAF7F2]/90">
-              Four months. How to build an audience and a revenue system fast enough and sturdy
-              enough that losing a platform becomes a setback instead of a funeral. The same moves
-              that took me from zero to 7,321 followers and a five-figure month in 30 days, taught
-              live, with me in the room, in real time, as I run it on my own account.
+              Four months of building an audience and a revenue system strong enough to survive
+              losing a platform. You&apos;ll learn the exact moves I&apos;m using on my own account
+              right now, taught live, with me in the room.
             </p>
             <h3 className="text-xs tracking-widest uppercase text-[#C9B99A] pt-6">
               What you get for four months
@@ -357,15 +367,49 @@ export default function HotAndRichPage() {
               </li>
             </ul>
             <p className="text-lg text-[#FAF7F2]/90 pt-4">
-              I&apos;m not going to promise you a number. I&apos;m going to hand you the system that
-              took me from zero to 7,321 followers in 30 days, and past 16,000 since, and put you
-              in the room with me for four.
+              I&apos;m going to hand you the system that took me from zero to 23,500 followers in
+              118 days, and put you in the room with me for four months.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="ticket-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="ticket-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            Your ticket to Wildly Wealthy Woman Live is included
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            Every Hot and Rich member gets a ticket to Wildly Wealthy Woman Live at the Banff
+            Springs Hotel in March 2027. I&apos;m co-hosting it with Jackie McDonald and Melissa of
+            The Retreat Alchemist. It&apos;s a gathering for mothers, daughters, sisters, friends and
+            chosen family, with sessions on money, health, motherhood, visibility, grief and legacy,
+            and fireside conversations in the mountains in winter.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            You&apos;ll spend four months building your audience with me, then walk into Banff and
+            meet me in person.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            Details:{" "}
+            <a
+              href={WILDLY_WEALTHY_LIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-[#1C1917]"
+            >
+              wildlywealthywomanlive.com
+            </a>
+          </p>
+        </div>
+      </section>
+
       <section
         id="pricing"
         className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24"
@@ -378,16 +422,16 @@ export default function HotAndRichPage() {
           >
             The price
           </h2>
-          <p className="text-lg text-[#3D3632] mb-6">
-            $3,050 CAD, one payment. Or split it: four payments of $770 CAD, or six payments of
-            $510 CAD.
-          </p>
-          <p className="text-lg text-[#3D3632] mb-10">Doors close September 15.</p>
+          <div className="space-y-4 text-lg text-[#3D3632] mb-10">
+            <p>Early bird: $6,000 CAD, October 11 to 13.</p>
+            <p>Regular price: $7,500 CAD.</p>
+            <p>The new round starts November 15.</p>
+            <p>Includes your ticket to Wildly Wealthy Woman Live, Banff, March 2027.</p>
+          </div>
           <StripePricingTable />
         </div>
       </section>
 
-      {/* Final CTA */}
       <section id="final-cta" className="bg-[#1C1917] text-[#FAF7F2]" aria-labelledby="final-cta-heading">
         <div className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
           <h2
@@ -397,23 +441,22 @@ export default function HotAndRichPage() {
             If you&apos;ve been waiting for a sign
           </h2>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
-            You&apos;ve done the identity work already. You&apos;re not confused about who you are or
-            what you&apos;re capable of. What you don&apos;t have yet is clarity on what you offer
-            and enough views for people to actually see it, on your terms, not at the mercy of an
-            algorithm that can erase you overnight.
+            You&apos;ve done the identity work already. You know who you are and what you&apos;re
+            capable of. What you need now is clarity on what you offer and enough views for people
+            to see it, on your own terms, protected from an algorithm that can erase you overnight.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-6">
-            I rebuilt mine in 30 days with nothing but the skill, and it hasn&apos;t stopped since.
-            Imagine what she builds with four months and me in the room the entire time.
+            I rebuilt mine from zero with the skill alone, and it&apos;s kept climbing for 118 days
+            straight. You get four months of that skill with me in the room the entire time, then a
+            seat in Banff at Wildly Wealthy Woman Live.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
-            Doors close September 15.
+            Early bird pricing ends October 13.
           </p>
-          <StripePricingTable />
+          <JoinNowButton />
         </div>
       </section>
 
-      {/* Mobile sticky CTA */}
       <div
         className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-[#FAF7F2] border-t border-[#C9B99A]/30 md:hidden"
         aria-label="Mobile call to action"
