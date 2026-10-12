@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 const STRIPE_PUBLISHABLE_KEY =
   "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
-const STRIPE_PRICING_TABLE_ID = "prctbl_1UPRdeCcsY3WjV3Qs3D0QsoQ";
+const STRIPE_PRICING_TABLE_ID = "prctbl_1UPnW7CcsY3WjV3QeRAgTkFI";
 const YOUTUBE_EMBED = "https://www.youtube.com/embed/HTRDxi8J5KA?si=URp8MB-mUJpCAZ5y";
 const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
 
