@@ -75,8 +75,8 @@ export default function PackagesPage() {
               Hot and Rich Mastermind
             </h2>
             <p className="text-editorial text-[#FAF7F2]/90 max-w-3xl mx-auto">
-              Four months to build an audience and revenue system sturdy enough that losing a
-              platform becomes a setback instead of a funeral.
+              Four months. Five spots. Clarity on what to say so the people watching you decide to
+              buy.
             </p>
           </motion.div>
 
@@ -92,18 +92,16 @@ export default function PackagesPage() {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-[#C9B99A]">What&apos;s included:</h3>
                   <ul className="space-y-3 text-[#FAF7F2]/90">
-                    <li>• Biweekly live calls with Stephanie</li>
-                    <li>• Text support inside the group, three days a week</li>
-                    <li>• Direct access to the exact strategy running right now</li>
-                    <li>• Four months, beginning November 15</li>
-                    <li>• Ticket to Wildly Wealthy Woman Live</li>
+                    <li>• Four months with Stephanie, beginning November 15</li>
+                    <li>• A room of five</li>
+                    <li>• The exact strategy she&apos;s running on her own account, in real time</li>
+                    <li>• Ticket to Wildly Wealthy Woman Live, Banff, March 2027</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-[#C9B99A]">Investment:</h3>
                   <ul className="space-y-3 text-[#FAF7F2]/90">
-                    <li>• Early bird $6,000 CAD until October 13</li>
-                    <li>• $7,500 CAD after October 13</li>
+                    <li>• $6,000 CAD for four months</li>
                   </ul>
                 </div>
               </div>
