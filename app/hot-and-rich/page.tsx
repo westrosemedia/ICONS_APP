@@ -1,11 +1,16 @@
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
+import InstagramReel from "@/components/InstagramReel";
 
 const STRIPE_PUBLISHABLE_KEY =
   "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
 const STRIPE_PRICING_TABLE_ID = "prctbl_1UPnW7CcsY3WjV3QeRAgTkFI";
 const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
+const INSTAGRAM_URL = "https://www.instagram.com/westrosemedia/";
+
+// Update this number by hand as spots sell. Every spot count on the page reads from here.
+const SPOTS_LEFT = 4;
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
@@ -15,8 +20,7 @@ const IMAGES = {
 
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
-  description:
-    "Hot and Rich starts November 15. Five spots. $6,000 CAD for four months with Stephanie, plus a ticket to Wildly Wealthy Woman Live in Banff, March 2027.",
+  description: `Hot and Rich starts November 15. ${SPOTS_LEFT} spots left. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff, March 2027.`,
 };
 
 export const revalidate = 0;
@@ -36,27 +40,25 @@ export const metadata: Metadata = {
 const ctaLinkClass =
   "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
 
-const forYou = [
-  "You already sell something, and the people who buy it get results",
-  "You’re getting views, and the sales aren’t coming from your content",
-  "You’ve done the freebies, the masterclasses, the seven-day video series, and almost nobody converted",
-  "You want your content to do the heavy lifting of selling, you’ve heard that’s possible, and you haven’t seen it happen yet",
-  "You want someone in your corner who looks at your actual business and sees the blind spots you can’t see from inside it",
-  "You’re tired, and you need a few wins to feel momentum again before you pour yourself back in",
+const included = [
+  "Biweekly live calls with me",
+  "Text support inside the group, three days a week",
+  "The exact strategy I'm running on my own account right now",
+  "A room small enough that I know your business inside and out",
 ];
 
 const questions = [
   {
-    q: "I’ve tried freebies and masterclasses and almost nobody converted. Why would this be different?",
-    a: "Freebies and masterclasses convert when the content in front of them is clear about who you help and what you sell. When that part is fuzzy, people take the free thing and stay exactly where they were. We fix the clarity first, so whatever you put in front of people has something to convert.",
+    q: "Do I need a big following first?",
+    a: "You can start wherever you are. I signed my first client on the new account at 1,000 followers.",
   },
   {
-    q: "I’m burnt out on my business. Should I wait until I feel ready?",
-    a: "Come as you are, tired included. The first goal is getting something to move: a post that pulls in the right people, a DM that turns into a real conversation, a sale that came from your content. Momentum is what brings the energy back.",
+    q: "I've tried freebies and masterclasses and almost nobody converted. Why would this be different?",
+    a: "Freebies and masterclasses convert when the content in front of them is clear about who you help and what you sell. When that part is fuzzy, people take the free thing and stay exactly where they were. We sharpen the message first, so whatever you put in front of people has something to convert.",
   },
   {
-    q: "What if I’m unsure about joining another container?",
-    a: "Reply to any of my emails or DM me the word MASTERMIND and ask me whatever you need to. Asking a question commits you to nothing.",
+    q: "What if I'm unsure about joining another container?",
+    a: "DM me on Instagram and ask me whatever you need to. Asking a question commits you to nothing.",
   },
 ];
 
@@ -84,6 +86,16 @@ function StripePricingTable() {
 export default function HotAndRichPage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
+      <Link
+        href="#pricing"
+        className="sticky top-[73px] z-30 block bg-[#1C1917] px-4 py-3 text-center text-[#FAF7F2] hover:bg-[#3D3632] transition-colors"
+      >
+        <p className="text-sm md:text-base tracking-wide">
+          Doors close November 15. Only {SPOTS_LEFT} spots left.{" "}
+          <span aria-hidden="true">→</span>
+        </p>
+      </Link>
+
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
         style={{ backgroundImage: `url('${IMAGES.hero}')` }}
@@ -95,21 +107,21 @@ export default function HotAndRichPage() {
           </h1>
           <div className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-12 space-y-5 text-left">
             <p>
-              Not to freak you out, but women usually find my account right before they do
-              something REALLY big.
+              Women find my account right before they get big. Usually it&apos;s in their fuck this
+              moment.
             </p>
             <p>
-              I posted that sentence and it brought me 6,022 new followers on Instagram and 10,000
-              on TikTok. If you just found me, I&apos;d bet you&apos;re one of those women.
+              You already have the clients and the results to prove you&apos;re good at what you do.
+              You&apos;ve paid people to help you get found online, you did everything they told
+              you, and you&apos;re still watching women with half your skill pass you on Instagram.
             </p>
-            <p>Every problem in your business comes down to two things: clarity and views.</p>
             <p>
-              If you&apos;re here, you probably have the views already. You&apos;re posting every
-              day, the numbers are climbing, and the sales still aren&apos;t coming from it. The
-              missing half is clarity: knowing exactly what to say so the people watching decide to
-              buy.
+              That&apos;s when you find me. It&apos;s the same moment I hit, right before I built
+              the account I have now.
             </p>
-            <p>Hot and Rich starts November 15. There are five spots.</p>
+            <p>
+              Hot and Rich starts November 15. There are {SPOTS_LEFT} spots left.
+            </p>
           </div>
           <JoinNowButton />
         </div>
@@ -117,69 +129,39 @@ export default function HotAndRichPage() {
 
       <section
         className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
-        aria-labelledby="drain-heading"
+        aria-labelledby="moment-heading"
       >
         <div className="max-w-2xl mx-auto space-y-6">
           <h2
-            id="drain-heading"
+            id="moment-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            You&apos;re putting everything into your business and getting almost nothing back
+            My fuck this moment
           </h2>
           <p className="text-lg text-[#3D3632]">
-            You spend three full days a week on content. Filming, editing, tracking your data,
-            rewriting hooks, filming again. Two reels a day, most of them talking to camera, because
-            your data says that&apos;s where the saves and shares come from.
+            I paid a marketing coach $20,000 to fix my Instagram.
           </p>
           <p className="text-lg text-[#3D3632]">
-            On paper, it&apos;s working. Tens of thousands of views a month. Keyword DMs coming in.
-            A handful of those turn into sales conversations.
+            Her advice was to post more and yap more. When I asked what to post to make sales, she
+            couldn&apos;t tell me, even though that was her whole marketing pitch for the program.
           </p>
           <p className="text-lg text-[#3D3632]">
-            Then the conversations go nowhere. When you look at where your last few clients came
-            from, it was referrals and people who already knew you. Your content didn&apos;t close
-            them.
+            I did it anyway. I&apos;d paid for it, and I assumed she knew something I didn&apos;t. I
+            watched the big accounts and copied what they were doing. I wanted to be like them more
+            than I wanted to be me.
           </p>
           <p className="text-lg text-[#3D3632]">
-            You like your content. You say the taboo thing, you share your story, you show up. Your
-            funnel looks solid. That&apos;s what makes it so maddening, because you can&apos;t find
-            where people are getting lost, so you can&apos;t fix it.
+            For years my account sat under 7k. My business was good. It was never amazing, and I
+            couldn&apos;t figure out why all that posting wasn&apos;t turning into more.
           </p>
           <p className="text-lg text-[#3D3632]">
-            It turns into a loop. What am I doing wrong? Is it the hook? The length? The CTA? You
-            end up picking apart work you actually believe in, and that wears you down in a way that
-            has nothing to do with the hours.
-          </p>
-          <p className="text-lg text-[#3D3632]">
-            Somewhere in there, your relationship with your business gets murky. It starts to feel
-            like a drain. You&apos;re someone who keeps going until things go, and lately
-            you&apos;ve been wondering how much longer you can keep doing this.
+            Then on June 15 I lost the account completely in a mass-reporting campaign. Seven years
+            of posts, gone overnight.
           </p>
           <p className="text-lg text-[#1C1917] font-medium">
-            I built Hot and Rich for exactly this point in a business.
+            That night I started a new account and made one decision. I was done listening to
+            everyone else.
           </p>
-        </div>
-      </section>
-
-      <section
-        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto border-t border-[#C9B99A]/30"
-        aria-labelledby="for-you-heading"
-      >
-        <div className="max-w-2xl mx-auto">
-          <h2
-            id="for-you-heading"
-            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
-          >
-            This is for you if
-          </h2>
-          <ul className="space-y-6 text-lg">
-            {forYou.map((item) => (
-              <li key={item} className="flex gap-4 items-start">
-                <span className="text-[#C9B99A] mt-1 shrink-0">-</span>
-                <span className="text-[#3D3632]">{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -189,105 +171,301 @@ export default function HotAndRichPage() {
           backgroundImage: `url('${IMAGES.story}')`,
           backgroundPosition: "center 33%",
         }}
-        aria-labelledby="breaking-heading"
+        aria-labelledby="quit-listening-heading"
       >
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
           <div className="max-w-2xl mx-auto space-y-6">
             <h2
-              id="breaking-heading"
+              id="quit-listening-heading"
               className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-10 text-center"
             >
-              Where it&apos;s breaking
+              What happened when I quit listening
             </h2>
             <p className="text-lg text-[#FAF7F2]/90">
-              Views get people to watch. Clarity gets them to buy. When you have the first without
-              the second, people enjoy your videos, save them, maybe follow you, and leave without
-              ever deciding you&apos;re the person to hire.
+              On the new account, I said exactly what I thought, and I said it fast. Every post was
+              about what actually matters to the women I want to work with, including the things
+              people don&apos;t love hearing.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              It usually shows up in small places. The offer gets explained at the end of a
-              two-minute video most people never finish. The sales page is beautiful and nobody can
-              tell what they&apos;re buying. The hook pulls in viewers who were never going to be
-              clients.
+              The sharper I got, the faster I grew. I turned my message into a butcher knife.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              None of those feel like big problems on their own. Together, they&apos;re the leak.
+              I signed my first client on that account at 1,000 followers. One post brought in
+              6,022 new followers. Today I&apos;m at 34,200 followers on Instagram with 2.7 million
+              views in the last 30 days, and 19,000 followers on TikTok with 1.1 million views in
+              the last 30 days. All of it since June 15.
             </p>
             <p className="text-lg text-[#FAF7F2]/90">
-              Hot and Rich finds yours. With five people in the room, I have time to look at your
-              business specifically: your content, your numbers, your offer, and where the people
-              watching you are dropping off.
+              My business grew right along with the followers.
+            </p>
+            <p className="font-heading text-2xl font-light text-[#FAF7F2] pt-4">
+              This is the moment I took my power back:
             </p>
           </div>
         </div>
       </section>
 
+      <section className="py-16 md:py-24 px-6 md:px-12 max-w-3xl mx-auto" aria-label="Instagram reel">
+        <InstagramReel />
+        <p className="text-lg text-[#3D3632] max-w-2xl mx-auto mt-10">
+          I took it back from the $20K coach who told me to post more, from the haters who
+          cancelled me for being gay, and from every voice that told me how this was supposed to be
+          done.
+        </p>
+      </section>
+
       <section
-        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
-        aria-labelledby="burned-heading"
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto border-t border-[#C9B99A]/30"
+        aria-labelledby="advice-heading"
       >
         <div className="max-w-2xl mx-auto space-y-6">
           <h2
-            id="burned-heading"
+            id="advice-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            If you&apos;ve been burned by a coach before
+            Why the advice you paid for kept you invisible
           </h2>
-          <p className="text-lg text-[#3D3632]">Bad coaching happens to good people.</p>
           <p className="text-lg text-[#3D3632]">
-            Maybe you paid for a container that promised one thing and delivered something much
-            smaller. Maybe you learned a strategy built by someone with fifteen years and eight
-            figures behind them, and it was the wrong strategy for where you are. Good strategy,
-            wrong time.
+            If you did the yap challenge and it didn&apos;t work, I can tell you why.
           </p>
           <p className="text-lg text-[#3D3632]">
-            I&apos;ve been there too. I&apos;ve paid a coach around $2,000 USD a month and walked
-            away with far less than I was promised.
+            Messy action is the number one way people break their algorithm. Every post without a
+            clear design behind it is one more random thing thrown at Instagram, and every random
+            thing makes it harder for your audience to know what you stand for. The more you throw,
+            the more of them you lose.
           </p>
           <p className="text-lg text-[#3D3632]">
-            Hot and Rich is $6,000 CAD for four months. That works out to $1,500 a month, with me
-            running the exact strategy on my own account in real time, and only five people in the
-            room so you get my full attention.
+            The women who blow up stack content that makes them the authority in their space. Each
+            post sharpens the same message, so when someone finds them, one video is enough to know
+            exactly who she is and why they should buy from her.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            A message that sharp signs clients at 1,000 followers. I&apos;ve done it, and you can
+            skip the wait for 50K.
           </p>
           <p className="text-lg text-[#1C1917] font-medium">
-            You&apos;re right to want proof before you make a bigger move. Here&apos;s mine.
+            If your coach told you to take messy action, she doesn&apos;t know social media. You did
+            exactly what you paid someone to tell you to do. Bad coaching happens to good people.
           </p>
         </div>
       </section>
 
       <section
-        id="results"
-        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed scroll-mt-24"
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="proof-heading"
+      >
+        <div className="max-w-2xl mx-auto">
+          <h2
+            id="proof-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-12 text-center"
+          >
+            Proof from my clients
+          </h2>
+          <div className="space-y-6 text-lg text-[#3D3632] mb-12">
+            <p>
+              When one of my Hot and Rich members came to me, she was posting four times a day and
+              getting 9 views per post. Every post lost her followers. Her membership had held the
+              same 3 clients for years.
+            </p>
+            <p>
+              Now she posts once a day and gets 60,000 views. She just sold 4 new people into her
+              membership.
+            </p>
+            <p>Here&apos;s what she sent me:</p>
+          </div>
+          <blockquote className="mb-12 text-center">
+            <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-6">
+              &quot;You&apos;ve challenged me, stretched me, made me laugh, made me scream, and made
+              me question myself (in the BEST way). Thank you for never letting me settle for
+              beautifully boring crappy content and hooks. You&apos;ve pushed me to remove the
+              crutch ChatGPT has been for the last several years and to truly step into this season
+              of growth.&quot;
+            </p>
+            <footer className="text-sm tracking-widest uppercase text-[#9C8E82]">
+              Hot and Rich Mastermind member
+            </footer>
+          </blockquote>
+          <blockquote className="mb-12 text-center">
+            <p className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-6">
+              &quot;Every single time I work with Stephanie, I make more money.&quot;
+            </p>
+            <footer className="text-sm tracking-widest uppercase text-[#9C8E82]">
+              Cheryl, online coach
+            </footer>
+          </blockquote>
+          <p className="text-lg text-[#3D3632]">
+            Another client started with a brand-new account at zero followers. She&apos;s now
+            sitting on consistent $10K months.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="relative bg-cover bg-center bg-no-repeat md:bg-fixed"
         style={{ backgroundImage: `url('${IMAGES.inside}')` }}
-        aria-labelledby="results-heading"
+        aria-labelledby="inside-heading"
       >
         <div className="absolute inset-0 bg-black/65" />
-        <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto">
-          <h2
-            id="results-heading"
-            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-16 text-center"
-          >
-            Where it stands, four months later
-          </h2>
-          <div className="max-w-2xl mx-auto space-y-6 text-lg text-[#FAF7F2]/90">
-            <p>On June 15, the new account had zero followers.</p>
-            <p>
-              Today it has 30,200 followers on Instagram, with 2.3 million views in the last 30
-              days.
+        <div className="relative z-10 py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <h2
+              id="inside-heading"
+              className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-10 text-center"
+            >
+              What happens inside Hot and Rich
+            </h2>
+            <p className="text-lg text-[#FAF7F2]/90">
+              You bring me your messy thought, the idea you know is good and can&apos;t quite say
+              yet. I turn it into a samurai sword that cuts through the BS and gets you clients.
             </p>
-            <p>
-              On TikTok, I&apos;m at 17,800 followers and 1.3 million views in the last 30 days.
+            <p className="text-lg text-[#FAF7F2]/90">
+              Then we do it again, every two weeks for four months, on your actual content and your
+              actual offer, until every post you make is stacking your authority.
             </p>
-            <p className="font-heading text-2xl font-light text-[#FAF7F2] text-center pt-4">
-              Four months. That&apos;s exactly how long Hot and Rich runs.
+            <p className="text-lg text-[#FAF7F2]/90">
+              The right person gets you out of your own way. In this room, that&apos;s my job.
             </p>
+            <h3 className="text-xs tracking-widest uppercase text-[#C9B99A] pt-6">
+              What&apos;s included
+            </h3>
+            <ul className="space-y-6 pt-2 text-lg">
+              {included.map((item) => (
+                <li key={item} className="flex gap-4 items-start">
+                  <span className="text-[#C9B99A] mt-1 shrink-0">-</span>
+                  <span className="text-[#FAF7F2]/90">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       <section
         className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="best-problem-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="best-problem-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            The best problem you&apos;ll have
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            When your content starts working, your DMs change. People start asking whether you have
+            room for them 1:1.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            That&apos;s what&apos;s happening to my clients right now. People are beating down their
+            door to work with them directly. It&apos;s the best problem you&apos;ll ever have.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto border-t border-[#C9B99A]/30"
+        aria-labelledby="for-you-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="for-you-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            This is for you if
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            You already sell something, and your clients get results. The part you can&apos;t crack
+            is getting found online. You&apos;ve paid people, posted every day, done the challenges,
+            and you still feel invisible to the women who should be buying from you.
+          </p>
+          <p className="text-lg text-[#1C1917] font-medium">
+            You&apos;re exactly who I built this for.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="coach-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="coach-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            About that $20K coach
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            I paid $20,000 to be told to post more. We&apos;re not doing that here.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            Hot and Rich is $6,000 CAD for four months. That&apos;s $1,500 a month, with me running
+            the same strategy on my own account in real time, in a room small enough that you get
+            my full attention.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="bg-[#1C1917] text-[#FAF7F2] py-24 md:py-32 px-6 md:px-12"
+        aria-labelledby="only-way-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="only-way-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug mb-10 text-center"
+          >
+            This is the only way to work with me until 2027
+          </h2>
+          <p className="text-lg text-[#FAF7F2]/90">
+            My 1:1 is full. Hot and Rich is the only way to work with me right now, unless you want
+            a spot on the 2027 waitlist.
+          </p>
+          <p className="text-lg text-[#FAF7F2]/90">
+            I&apos;m expanding, and I can&apos;t promise this access will be here forever.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto"
+        aria-labelledby="ticket-heading"
+      >
+        <div className="max-w-2xl mx-auto space-y-6">
+          <h2
+            id="ticket-heading"
+            className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
+          >
+            Your ticket to Wildly Wealthy Woman Live is included
+          </h2>
+          <p className="text-lg text-[#3D3632]">
+            Every Hot and Rich member gets a ticket to Wildly Wealthy Woman Live at the Banff
+            Springs Hotel in March 2027. I&apos;m co-hosting it with Jackie McDonald and Melissa of
+            The Retreat Alchemist. It&apos;s a gathering for mothers, daughters, sisters, friends
+            and chosen family, with sessions on money, health, motherhood, visibility, grief and
+            legacy, and fireside conversations in the mountains in winter.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            You&apos;ll spend four months sharpening your message with me, then walk into Banff and
+            meet me in person.
+          </p>
+          <p className="text-lg text-[#3D3632]">
+            Details:{" "}
+            <a
+              href={WILDLY_WEALTHY_LIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-[#1C1917]"
+            >
+              wildlywealthywomanlive.com
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto border-t border-[#C9B99A]/30"
         aria-labelledby="questions-heading"
       >
         <div className="max-w-2xl mx-auto">
@@ -303,7 +481,24 @@ export default function HotAndRichPage() {
                 <h3 className="font-heading text-2xl md:text-3xl font-light leading-snug text-[#1C1917] mb-4">
                   {item.q}
                 </h3>
-                <p className="text-lg text-[#3D3632]">{item.a}</p>
+                <p className="text-lg text-[#3D3632]">
+                  {item.q.startsWith("What if") ? (
+                    <>
+                      DM me on{" "}
+                      <a
+                        href={INSTAGRAM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 hover:text-[#1C1917]"
+                      >
+                        Instagram
+                      </a>{" "}
+                      and ask me whatever you need to. Asking a question commits you to nothing.
+                    </>
+                  ) : (
+                    item.a
+                  )}
+                </p>
               </div>
             ))}
           </div>
@@ -312,7 +507,7 @@ export default function HotAndRichPage() {
 
       <section
         id="pricing"
-        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-24 border-t border-[#C9B99A]/30"
+        className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto scroll-mt-36 border-t border-[#C9B99A]/30"
         aria-labelledby="pricing-heading"
       >
         <div className="text-center max-w-3xl mx-auto">
@@ -324,7 +519,9 @@ export default function HotAndRichPage() {
           </h2>
           <div className="space-y-4 text-lg text-[#3D3632] mb-10">
             <p>$6,000 CAD for four months.</p>
-            <p>Five spots. The new round starts November 15.</p>
+            <p>
+              {SPOTS_LEFT} spots left. The new round starts November 15.
+            </p>
             <p>
               Includes your ticket to{" "}
               <a
@@ -348,18 +545,18 @@ export default function HotAndRichPage() {
             id="final-cta-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#FAF7F2] mb-6"
           >
-            If you&apos;ve been waiting for a sign
+            This is your moment to take your power back
           </h2>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
-            You have the offer, the client results and the views. What&apos;s missing is clarity on
-            what to say so the people watching you buy, and someone in your corner who can see what
-            you can&apos;t.
+            My first post on the new account was the moment I took mine back. This can be yours.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-4">
-            Five spots. Four months with me in the room, then a seat in Banff at Wildly Wealthy
-            Woman Live.
+            Bring me your business and the message you haven&apos;t been able to say yet. I&apos;ll
+            help you sharpen it until the right people can&apos;t scroll past you.
           </p>
-          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">We start November 15.</p>
+          <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
+            {SPOTS_LEFT} spots. We start November 15.
+          </p>
           <JoinNowButton />
         </div>
       </section>

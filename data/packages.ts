@@ -43,16 +43,16 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "hot-and-rich",
     title: "Hot and Rich Mastermind",
-    noteBelowTitle: "Five spots. Four months, beginning November 15.",
+    noteBelowTitle: "4 spots left. Four months, beginning November 15.",
     whoFor:
-      "For founders who already have the views, and need clarity so the people watching decide to buy.",
+      "For founders who already sell and get results, and still feel invisible to the women who should be buying from them.",
     blurb:
-      "Four months with Stephanie in a room of five. She runs the exact strategy on her own account in real time, and looks at your content, numbers, and offer.",
+      "Four months of biweekly calls with Stephanie. She turns the message you can't quite say into content that gets you clients.",
     priceLabel: "$6,000 CAD",
     highlights: [
-      { label: "Four months, beginning November 15" },
-      { label: "Five spots" },
-      { label: "Strategy running in real time on Stephanie's account" },
+      { label: "Biweekly live calls with Stephanie" },
+      { label: "Text support inside the group, three days a week" },
+      { label: "The exact strategy she's running right now" },
       { label: "Ticket to Wildly Wealthy Woman Live, Banff, March 2027" },
     ],
     imageUrl:
