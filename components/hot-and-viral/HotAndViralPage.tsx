@@ -141,51 +141,6 @@ function StateButton({
   );
 }
 
-function PhoneFrame({
-  image,
-  label,
-  onOpen,
-}: {
-  image: HotAndViralImage | null;
-  label: string;
-  onOpen: (image: HotAndViralImage) => void;
-}) {
-  const frame = (
-    <figure className="mx-auto w-full max-w-[220px]">
-      <div
-        className={`relative overflow-hidden rounded-[1.75rem] border border-gray-200 bg-[#f6f4f1] shadow-sm ${
-          image ? "aspect-[9/19]" : "aspect-[3/4]"
-        }`}
-      >
-        <div className="absolute left-1/2 top-2 z-10 h-4 w-16 -translate-x-1/2 rounded-full bg-black/80" aria-hidden="true" />
-        {image ? (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            sizes="220px"
-            quality={65}
-            className="object-cover"
-          />
-        ) : (
-          <div className="flex h-full items-end justify-center px-4 pb-8">
-            <span className="text-caption text-gray-400">{label}</span>
-          </div>
-        )}
-      </div>
-      <figcaption className="mt-3 text-center text-caption">{label}</figcaption>
-    </figure>
-  );
-
-  if (!image) return frame;
-
-  return (
-    <button type="button" onClick={() => onOpen(image)} className="block w-full text-left">
-      {frame}
-    </button>
-  );
-}
-
 function ProofStill({
   image,
   label,
@@ -461,21 +416,31 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                     <p className="text-caption">
                       {member.name} · {member.role}
                     </p>
-                    <p className="mt-4 font-heading text-4xl leading-none md:text-6xl">
-                      <span className="block sm:inline">{member.beforeStat}</span>
-                      <span className="mx-2 text-gray-400 md:mx-4" aria-hidden="true">
+                    <p className="mt-4 flex max-w-full flex-wrap items-baseline gap-x-3 gap-y-2 font-heading text-4xl leading-none md:gap-x-4 md:text-6xl">
+                      <span>{member.beforeStat}</span>
+                      <span className="text-gray-400" aria-hidden="true">
                         →
                       </span>
-                      <span className="block sm:inline">{member.afterStat}</span>
+                      <span>{member.afterStat}</span>
                     </p>
                     <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-gray-700">
                       <p>{member.sentences[0]}</p>
                       <p>{member.sentences[1]}</p>
                     </div>
-                    <div className="mt-10 grid gap-8 sm:grid-cols-2">
-                      <PhoneFrame image={member.before} label="Before" onOpen={setActiveShot} />
-                      <PhoneFrame image={member.after} label="After" onOpen={setActiveShot} />
+                    <div className="mt-10 grid min-w-0 items-start gap-8 md:grid-cols-2">
+                      {member.before ? (
+                        <ProofStill image={member.before} label="Before" onOpen={setActiveShot} />
+                      ) : null}
+                      {member.after ? (
+                        <ProofStill image={member.after} label="After" onOpen={setActiveShot} />
+                      ) : null}
                     </div>
+                    {member.summary || member.profile ? (
+                      <div className="mt-8 grid min-w-0 items-start gap-8 md:grid-cols-2">
+                        {member.summary ? <ProofStill image={member.summary} onOpen={setActiveShot} /> : null}
+                        {member.profile ? <ProofStill image={member.profile} onOpen={setActiveShot} /> : null}
+                      </div>
+                    ) : null}
                   </article>
                 ))}
               </div>

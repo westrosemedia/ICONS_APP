@@ -69,6 +69,8 @@ export type MemberResult = {
   sentences: [string, string];
   before: HotAndViralImage | null;
   after: HotAndViralImage | null;
+  summary?: HotAndViralImage | null;
+  profile?: HotAndViralImage | null;
 };
 
 export type CopycatPair = {
@@ -144,7 +146,42 @@ export const cammyMore: HotAndViralImage[] = [
   },
 ];
 
-export const memberResults: MemberResult[] = [];
+export const memberResults: MemberResult[] = [
+  {
+    name: "Erin",
+    role: "Tapping and mindfulness tools for parents.",
+    beforeStat: "A few hundred views",
+    afterStat: "5,258 views",
+    sentences: [
+      "Erin teaches tapping and mindfulness for raising regulated kids.",
+      "In two months her reels went from a few hundred views to posts at 5,258 views, and the account showed 94,337 views.",
+    ],
+    before: {
+      src: "/hot-and-viral/erin-before.jpg",
+      alt: "Erin's earlier reels, with view counts of 591, 283, 286, 789, 454, 323, 723, 474 and 515",
+      width: 1158,
+      height: 2048,
+    },
+    after: {
+      src: "/hot-and-viral/erin-after.jpg",
+      alt: "Erin's later reels, with view counts of 4,552, 774, 3,471, 2,850, 5,258, 3,807, 925, 1,514 and 852",
+      width: 1160,
+      height: 2048,
+    },
+    summary: {
+      src: "/hot-and-viral/erin-summary.jpg",
+      alt: "90-day summary from August 11 to November 8, with 94,337 views, up 483.6% versus August 10, 602 followers, up 18.3%, and 93 net followers",
+      width: 1200,
+      height: 1000,
+    },
+    profile: {
+      src: "/hot-and-viral/erin-profile.jpg",
+      alt: "Profile for Erin- Tap Into Sunshine, she/her, with 108 posts, 602 followers and 553 following. Bio: Simple taping and mindfulness tools for raising regulated kids and confident caregivers.",
+      width: 1200,
+      height: 711,
+    },
+  },
+];
 
 export const winShots: HotAndViralImage[] = [
   {
