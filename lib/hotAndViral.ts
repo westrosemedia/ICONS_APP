@@ -78,9 +78,46 @@ export const copycatPairs: CopycatPair[] = [
 ];
 
 export const cammyShots: { before: HotAndViralImage | null; after: HotAndViralImage | null } = {
-  before: null,
-  after: null,
+  before: {
+    src: "/hot-and-viral/cammy-before-grid.jpg",
+    alt: "Cammy's reels when the view counts were landing between about 300 and 600",
+    width: 1206,
+    height: 1583,
+  },
+  after: {
+    src: "/hot-and-viral/cammy-after-1-4m.jpg",
+    alt: "Cammy's reel insights showing 1,417,529 views",
+    width: 900,
+    height: 1407,
+  },
 };
+
+export const cammyMore: HotAndViralImage[] = [
+  {
+    src: "/hot-and-viral/cammy-reel-420k.jpg",
+    alt: "Cammy's reel insights showing 419,979 views",
+    width: 900,
+    height: 1536,
+  },
+  {
+    src: "/hot-and-viral/cammy-reel-157k.jpg",
+    alt: "Cammy's reel insights showing 156,993 views",
+    width: 900,
+    height: 1528,
+  },
+  {
+    src: "/hot-and-viral/cammy-reel-68k.jpg",
+    alt: "Cammy's reel insights showing 68,305 views",
+    width: 900,
+    height: 1408,
+  },
+  {
+    src: "/hot-and-viral/cammy-90-days.jpg",
+    alt: "Cammy's 90-day summary with 1,388,924 views and 978 followers",
+    width: 1200,
+    height: 860,
+  },
+];
 
 export const memberResults: MemberResult[] = [];
 

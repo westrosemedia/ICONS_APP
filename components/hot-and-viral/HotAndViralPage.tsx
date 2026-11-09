@@ -8,6 +8,7 @@ import {
   HERO_IMAGE,
   STRIPE_MONTHLY_URL,
   STRIPE_YEARLY_URL,
+  cammyMore,
   cammyShots,
   coachStats,
   copy,
@@ -206,6 +207,33 @@ function PhoneFrame({
   return (
     <button type="button" onClick={() => onOpen(image)} className="block w-full text-left">
       {frame}
+    </button>
+  );
+}
+
+function ProofStill({
+  image,
+  label,
+  onOpen,
+}: {
+  image: HotAndViralImage;
+  label?: string;
+  onOpen: (image: HotAndViralImage) => void;
+}) {
+  return (
+    <button type="button" onClick={() => onOpen(image)} className="block w-full text-left">
+      <figure>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          quality={70}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="h-auto w-full rounded-xl"
+        />
+        {label ? <figcaption className="mt-3 text-center text-caption">{label}</figcaption> : null}
+      </figure>
     </button>
   );
 }
@@ -419,9 +447,20 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           </h2>
           <p className="text-editorial mt-10 max-w-2xl text-gray-700">{copy.cammy.story}</p>
           {cammyShots.before || cammyShots.after ? (
-            <div className="mt-14 grid gap-8 sm:grid-cols-2">
-              <PhoneFrame image={cammyShots.before} label="Before" onOpen={setActiveShot} />
-              <PhoneFrame image={cammyShots.after} label="After" onOpen={setActiveShot} />
+            <div className="mt-14 grid items-start gap-8 md:grid-cols-2 md:gap-10">
+              {cammyShots.before ? (
+                <ProofStill image={cammyShots.before} label="Before" onOpen={setActiveShot} />
+              ) : null}
+              {cammyShots.after ? (
+                <ProofStill image={cammyShots.after} label="After" onOpen={setActiveShot} />
+              ) : null}
+            </div>
+          ) : null}
+          {cammyMore.length > 0 ? (
+            <div className="mt-8 grid items-start gap-8 sm:grid-cols-2">
+              {cammyMore.map((shot) => (
+                <ProofStill key={shot.src} image={shot} onOpen={setActiveShot} />
+              ))}
             </div>
           ) : null}
         </div>
