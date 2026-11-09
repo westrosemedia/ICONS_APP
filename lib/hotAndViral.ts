@@ -10,8 +10,9 @@
  * (it does not fall back to UTC-7). The offsets below are that local midnight,
  * so every browser agrees even if its own timezone data is older.
  *
- * Paste the two Stripe Payment Links before 25 November. Leave them blank
- * until then: the checkout buttons only render while the doors are open.
+ * Checkout is Stephanie's Stripe pricing table. It renders only while the
+ * doors are open. STRIPE_MONTHLY_URL and STRIPE_YEARLY_URL stay empty; the
+ * pricing table replaces those two payment links.
  *
  * Instagram, TikTok, and the views line are the figures already published
  * on the Hot and Rich page. Replace them when the new profile screenshots arrive.
@@ -22,6 +23,10 @@ export const DOORS_CLOSE_AT = Date.parse("2026-11-28T00:00:00-06:00");
 
 export const STRIPE_MONTHLY_URL = "";
 export const STRIPE_YEARLY_URL = "";
+
+export const STRIPE_PRICING_TABLE_ID = "prctbl_1Ua13GCcsY3WjV3QMtZNzqaJ";
+export const STRIPE_PUBLISHABLE_KEY =
+  "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
 
 export const WAITLIST_COLLECTION = "hot_and_viral_waitlist";
 export const NEXT_ROUND_COLLECTION = "hot_and_viral_next_round";

@@ -3,11 +3,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
+import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
 import {
   COACH_IMAGE,
   HERO_IMAGE,
-  STRIPE_MONTHLY_URL,
-  STRIPE_YEARLY_URL,
   cammyMore,
   cammyShots,
   coachStats,
@@ -15,7 +14,6 @@ import {
   copycatPairs,
   countdownTarget,
   getPageState,
-  isStripeUrl,
   memberResults,
   splitRemaining,
   winShots,
@@ -143,29 +141,6 @@ function StateButton({
   );
 }
 
-function CheckoutLink({
-  href,
-  className,
-  children,
-}: {
-  href: string;
-  className: string;
-  children: string;
-}) {
-  if (!isStripeUrl(href)) {
-    return (
-      <a href="#pricing" className={className} data-stripe="missing">
-        {children}
-      </a>
-    );
-  }
-  return (
-    <a href={href} className={className} rel="noopener noreferrer">
-      {children}
-    </a>
-  );
-}
-
 function PhoneFrame({
   image,
   label,
@@ -277,9 +252,9 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
               <StateButton state="before" className="btn w-full" />
             </>
           ) : (
-            <CheckoutLink href={STRIPE_MONTHLY_URL} className="btn w-full">
+            <a href="#checkout" className="btn w-full">
               {copy.pricing.monthly.button}
-            </CheckoutLink>
+            </a>
           )}
         </div>
       </article>
@@ -299,12 +274,12 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
               <StateButton state="before" className="btn w-full bg-white text-black hover:bg-gray-100 hover:text-black" />
             </>
           ) : (
-            <CheckoutLink
-              href={STRIPE_YEARLY_URL}
+            <a
+              href="#checkout"
               className="btn w-full bg-white text-black hover:bg-gray-100 hover:text-black"
             >
               {copy.pricing.yearly.button}
-            </CheckoutLink>
+            </a>
           )}
         </div>
       </article>
@@ -619,6 +594,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <PricingCards state={state} />
           </div>
           <p className="mt-8 text-base leading-relaxed text-gray-700">{copy.pricing.cancel}</p>
+          {state === "open" ? <StripePricingTable /> : null}
         </div>
       </section>
 
