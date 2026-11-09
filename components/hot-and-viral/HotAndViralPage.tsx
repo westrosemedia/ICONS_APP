@@ -618,6 +618,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <div className="mt-10">
             <PricingCards state={state} />
           </div>
+          <p className="mt-8 text-base leading-relaxed text-gray-700">{copy.pricing.cancel}</p>
         </div>
       </section>
 

@@ -309,7 +309,7 @@ export const copy = {
   hero: {
     eyebrow: "Instagram + TikTok",
     headline:
-      "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.5 million.",
+      "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.4 million.",
     subheadline:
       "Inside Hot & Viral, I look at your account, tell you what to fix, and show you how to fix it, on Instagram and TikTok.",
     checklist: [
@@ -356,9 +356,9 @@ export const copy = {
   cammy: {
     label: "Client · Cammy",
     beforeStat: "200 views",
-    afterStat: "1.5M views",
+    afterStat: "1.4M views",
     story:
-      "Cammy had been posting for six months, and her reels kept landing around 200 views. She was showing up and filming like she'd been told. She was also saying the wrong thing in every post. I looked at her account and knew right away what to fix. We fixed her message and made sure it showed up in everything she posted. Two months later, one of her reels hit 1.5 million views.",
+      "Cammy had been posting for six months, and her reels kept landing around 200 views. She was showing up and filming like she'd been told. She was also saying the wrong thing in every post. I looked at her account and knew right away what to fix. We fixed her message and made sure it showed up in everything she posted. Two months later, one of her reels hit 1.4 million views.",
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
@@ -371,7 +371,7 @@ export const copy = {
     steps: [
       {
         title: "The Tuesday call.",
-        text: "Every Tuesday at 10am MST, I pull up member accounts live and tell you exactly what to fix. Every breakdown teaches the whole room.",
+        text: "Every Tuesday at 10am MST, I pull up member accounts live and tell you exactly what to fix. Every breakdown teaches the whole room. The calls are recorded.",
       },
       {
         title: "Instagram and TikTok.",
@@ -408,6 +408,7 @@ export const copy = {
   pricing: {
     heading: "Black Friday is half price, and it stays that way.",
     beforeNote: "Doors open November 25. Leave your email for first access.",
+    cancel: "You can cancel anytime.",
     monthly: {
       regular: "$500 CAD/month",
       sale: "$250",

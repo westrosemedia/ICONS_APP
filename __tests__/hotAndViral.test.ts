@@ -79,6 +79,13 @@ test("approved sales lines stay intact", () => {
   expect(copy.hero.buttonOpen).toBe("Join Hot & Viral");
   expect(copy.pricing.monthly.sale).toBe("$250");
   expect(copy.pricing.yearly.sale).toBe("$2,750");
+  expect(copy.hero.headline).toBe(
+    "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.4 million.",
+  );
+  expect(copy.cammy.afterStat).toBe("1.4M views");
+  expect(copy.cammy.story).toContain("one of her reels hit 1.4 million views.");
+  expect(copy.inside.steps[0].text).toContain("The calls are recorded.");
+  expect(copy.pricing.cancel).toBe("You can cancel anytime.");
   expect(copy.firstAccess.success).toBe("You're in. Watch your inbox on November 25.");
   expect(copy.closed.success).toBe("You're on the list.");
   expect(copy.closed.heading).toBe("Hot & Viral is closed.");
