@@ -377,7 +377,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-[center_72%]"
+            className="object-cover object-[78%_center]"
           />
         </div>
       </section>
