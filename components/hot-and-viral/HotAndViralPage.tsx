@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
 import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
 import {
@@ -27,12 +27,23 @@ type HotAndViralPageProps = {
 };
 
 const scrollTarget = "scroll-mt-44";
+const band = "py-16 md:py-[7.25rem]";
+const h2 =
+  "font-heading text-[2.15rem] leading-[0.98] tracking-[-0.035em] sm:text-[2.7rem] md:text-[3.25rem]";
+const lede = "max-w-[36rem] text-[17px] leading-[1.7] text-neutral-600";
+const eyebrow = "text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500";
 
-const sectionTitle =
-  "font-heading text-[1.875rem] leading-[1.15] tracking-tight text-balance sm:text-4xl md:text-[2.5rem]";
+const pill =
+  "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+const pillDark = `${pill} bg-black text-white hover:bg-neutral-800 focus-visible:ring-black`;
+const pillLight = `${pill} bg-white text-black hover:bg-neutral-100 focus-visible:ring-white focus-visible:ring-offset-black`;
 
-const shotFrame =
-  "block overflow-hidden rounded-2xl border border-gray-200 bg-white p-1.5 shadow-[0_18px_40px_-28px_rgba(0,0,0,0.7)]";
+const FEATURED_WIN_SRCS = [
+  "/hot-and-viral/views-4-9-million.jpg",
+  "/hot-and-viral/video-views-417k.jpg",
+  "/hot-and-viral/record-200k.jpg",
+  "/hot-and-viral/dashboard-62k.jpg",
+];
 
 function useTrustedNow(initialNowMs: number) {
   const [nowMs, setNowMs] = useState(initialNowMs);
@@ -96,9 +107,9 @@ function CountdownDigits({ nowMs, state }: { nowMs: number; state: Exclude<PageS
       aria-label={`${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds`}
     >
       {units.map(([unit, value]) => (
-        <div key={unit} className="min-w-[2.6rem] text-center sm:min-w-[3rem]">
+        <div key={unit} className="min-w-[2.7rem] text-center sm:min-w-[3.1rem]">
           <div className="font-heading text-[1.65rem] leading-none tabular-nums sm:text-[1.85rem]">{pad(value)}</div>
-          <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-white/65">{unit}</div>
+          <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-white/60">{unit}</div>
         </div>
       ))}
     </div>
@@ -115,18 +126,16 @@ function CountdownBanner({
   sticky?: boolean;
 }) {
   return (
-    <div
-      className={`${
-        sticky ? "sticky top-[73px] z-30" : "rounded-xl border border-white/15"
-      } bg-black text-white`}
-    >
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-1 px-4 py-2 sm:flex-row sm:justify-center sm:gap-6 sm:py-2.5">
-        <p className="text-center text-[13px] leading-tight tracking-wide sm:text-sm">
+    <div className={`${sticky ? "sticky top-[73px] z-30" : "rounded-2xl"} bg-black text-white`}>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-1 px-4 py-2.5 sm:flex-row sm:justify-center sm:gap-7">
+        <p className="text-center text-[13px] leading-tight tracking-wide sm:text-left sm:text-sm">
           {state === "before" ? copy.countdown.before : copy.countdown.open}
         </p>
         <CountdownDigits nowMs={nowMs} state={state} />
         {state === "open" ? (
-          <p className="text-center text-[13px] leading-tight tracking-wide sm:text-sm">{copy.countdown.openSuffix}</p>
+          <p className="text-center text-[13px] leading-tight tracking-wide sm:text-left sm:text-sm">
+            {copy.countdown.openSuffix}
+          </p>
         ) : null}
       </div>
     </div>
@@ -135,53 +144,141 @@ function CountdownBanner({
 
 function StateButton({
   state,
-  className,
+  tone = "dark",
+  className = "",
   children,
 }: {
   state: Exclude<PageState, "closed">;
+  tone?: "dark" | "light";
   className?: string;
   children?: string;
 }) {
   const href = state === "before" ? "#first-access" : "#pricing";
   const label = children ?? (state === "before" ? copy.hero.buttonBefore : copy.hero.buttonOpen);
   return (
-    <a href={href} className={className ?? "btn"}>
+    <a href={href} className={`${tone === "light" ? pillLight : pillDark} ${className}`}>
       {label}
     </a>
   );
 }
 
-function ProofStill({
+function CheckList({ items }: { items: readonly string[] }) {
+  return (
+    <ul className="space-y-3">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-[15px] leading-snug text-neutral-800">
+          <span
+            aria-hidden="true"
+            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black text-white"
+          >
+            <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.4">
+              <path d="M3.5 8.2 6.4 11l6.1-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function HeroHeadline({ text }: { text: string }) {
+  const parts = text.split(/(?<=\.)\s+/);
+  const display =
+    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.2rem]";
+
+  if (parts.length !== 3) {
+    return <h1 className={`${display} max-w-[16em]`}>{text}</h1>;
+  }
+
+  const [opening, bridge, close] = parts;
+  const openingLines = opening.split(/,\s*/);
+  const closeLines = close.split(/,\s*/);
+
+  return (
+    <h1>
+      <span className={display}>
+        {openingLines.length > 1 ? (
+          <>
+            <span className="block">{openingLines[0]}, </span>
+            <span className="block">{openingLines.slice(1).join(", ")} </span>
+          </>
+        ) : (
+          `${opening} `
+        )}
+      </span>
+      <span className="mt-5 block max-w-[34rem] font-sans text-[17px] font-normal leading-snug tracking-normal text-neutral-600">
+        {bridge}{" "}
+      </span>
+      <span className={`${display} mt-5`}>
+        {closeLines.length > 1 ? (
+          <>
+            <span className="block">{closeLines[0]}, </span>
+            <span className="block">{closeLines.slice(1).join(", ")}</span>
+          </>
+        ) : (
+          close
+        )}
+      </span>
+    </h1>
+  );
+}
+
+function FramedShot({
   image,
   label,
   onOpen,
+  className = "w-[210px]",
 }: {
   image: HotAndViralImage;
   label?: string;
   onOpen: (image: HotAndViralImage) => void;
+  className?: string;
 }) {
-  const wide = image.width / image.height > 1.15;
+  return (
+    <button type="button" onClick={() => onOpen(image)} className={`block max-w-full text-left ${className}`}>
+      {label ? (
+        <span className="mb-3 block text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+          {label}
+        </span>
+      ) : null}
+      <span className="block overflow-hidden rounded-[1.35rem] bg-neutral-100 shadow-[0_18px_44px_-28px_rgba(0,0,0,0.65)] ring-1 ring-black/10">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          quality={68}
+          sizes="240px"
+          className="h-auto w-full"
+        />
+      </span>
+    </button>
+  );
+}
 
+function FramedPlate({
+  image,
+  onOpen,
+}: {
+  image: HotAndViralImage;
+  onOpen: (image: HotAndViralImage) => void;
+}) {
   return (
     <button
       type="button"
       onClick={() => onOpen(image)}
-      className={`mx-auto block w-full text-left ${wide ? "max-w-xl" : "max-w-[340px]"}`}
+      className="block w-full overflow-hidden rounded-2xl bg-neutral-50 text-left shadow-[0_16px_40px_-30px_rgba(0,0,0,0.55)] ring-1 ring-black/10"
     >
-      <figure>
-        <span className={shotFrame}>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            quality={70}
-            sizes="(max-width: 768px) 340px, 340px"
-            className="h-auto w-full rounded-xl"
-          />
-        </span>
-        {label ? <figcaption className="mt-3 text-center text-caption">{label}</figcaption> : null}
-      </figure>
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        quality={68}
+        sizes="(max-width: 768px) 100vw, 360px"
+        className="h-auto w-full"
+      />
     </button>
   );
 }
@@ -210,47 +307,42 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
   const before = state === "before";
 
   return (
-    <div className="grid items-stretch gap-6 md:grid-cols-2">
-      <article className="order-2 flex flex-col rounded-xl border border-gray-200 bg-white p-8 md:order-1 md:p-10">
-        <h3 className="font-heading text-3xl">Monthly</h3>
-        <p className="mt-6 text-lg text-gray-400 line-through">{copy.pricing.monthly.regular}</p>
-        <p className="mt-2 font-heading text-6xl leading-none">{copy.pricing.monthly.sale}</p>
-        <p className="mt-2 text-sm uppercase tracking-[0.18em] text-gray-500">{copy.pricing.monthly.cadence}</p>
-        <p className="mt-6 text-editorial">{copy.pricing.monthly.lock}</p>
-        <p className="mt-2 text-sm uppercase tracking-[0.18em] text-gray-500">{copy.pricing.monthly.gst}</p>
+    <div className="grid items-stretch gap-5 md:grid-cols-2">
+      <article className="order-2 flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:order-1 md:p-9">
+        <h3 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">Monthly</h3>
+        <p className="mt-6 text-base text-neutral-400 line-through">{copy.pricing.monthly.regular}</p>
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em]">{copy.pricing.monthly.sale}</p>
+        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
+          {copy.pricing.monthly.cadence}
+        </p>
+        <p className="mt-5 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.monthly.lock}</p>
+        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
+          {copy.pricing.monthly.gst}
+        </p>
         <div className="mt-auto pt-8">
           {before ? (
-            <>
-              <p className="mb-4 text-editorial">{copy.pricing.beforeNote}</p>
-              <StateButton state="before" className="btn w-full" />
-            </>
+            <StateButton state="before" className="w-full" />
           ) : (
-            <a href="#checkout" className="btn w-full">
+            <a href="#checkout" className={`${pillDark} w-full`}>
               {copy.pricing.monthly.button}
             </a>
           )}
         </div>
       </article>
 
-      <article className="order-1 flex flex-col rounded-xl bg-black p-8 text-white md:order-2 md:p-10">
-        <p className="text-caption text-white/70">{copy.pricing.yearly.badge}</p>
-        <h3 className="mt-3 font-heading text-3xl text-white">Pay in full</h3>
-        <p className="mt-6 text-lg text-white/45 line-through">{copy.pricing.yearly.regular}</p>
-        <p className="mt-2 font-heading text-6xl leading-none text-white">{copy.pricing.yearly.sale}</p>
-        <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/60">{copy.pricing.yearly.cadence}</p>
-        <p className="mt-6 text-lg leading-relaxed text-white/90">{copy.pricing.yearly.note}</p>
-        <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/60">{copy.pricing.yearly.gst}</p>
+      <article className="order-1 flex flex-col rounded-[1.6rem] bg-black p-7 text-white md:order-2 md:p-9">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">{copy.pricing.yearly.badge}</p>
+        <h3 className="mt-3 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Pay in full</h3>
+        <p className="mt-6 text-base text-white/40 line-through">{copy.pricing.yearly.regular}</p>
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-white">{copy.pricing.yearly.sale}</p>
+        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.cadence}</p>
+        <p className="mt-5 text-[15px] leading-relaxed text-white/85">{copy.pricing.yearly.note}</p>
+        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.gst}</p>
         <div className="mt-auto pt-8">
           {before ? (
-            <>
-              <p className="mb-4 text-lg leading-relaxed text-white/90">{copy.pricing.beforeNote}</p>
-              <StateButton state="before" className="btn w-full bg-white text-black hover:bg-gray-100 hover:text-black" />
-            </>
+            <StateButton state="before" tone="light" className="w-full" />
           ) : (
-            <a
-              href="#checkout"
-              className="btn w-full bg-white text-black hover:bg-gray-100 hover:text-black"
-            >
+            <a href="#checkout" className={`${pillLight} w-full`}>
               {copy.pricing.yearly.button}
             </a>
           )}
@@ -260,10 +352,81 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
   );
 }
 
+function ResultCase({
+  id,
+  kicker,
+  before,
+  after,
+  body,
+  frames,
+  plates,
+  onOpen,
+  titleAs = "h3",
+  titleId,
+}: {
+  id?: string;
+  kicker: string;
+  before: string;
+  after: string;
+  body: ReactNode;
+  frames: { image: HotAndViralImage; label?: string }[];
+  plates?: HotAndViralImage[];
+  onOpen: (image: HotAndViralImage) => void;
+  titleAs?: "h2" | "h3";
+  titleId?: string;
+}) {
+  const Title = titleAs;
+  return (
+    <article id={id} className={id ? scrollTarget : undefined}>
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
+        <div className="min-w-0 max-w-xl">
+          <p className={eyebrow}>{kicker}</p>
+          <Title
+            id={titleId}
+            className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-heading text-[2.5rem] leading-none tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]"
+          >
+            <span>{before}</span>
+            <span className="text-neutral-300" aria-hidden="true">
+              →
+            </span>
+            <span>{after}</span>
+          </Title>
+          <div className="mt-6 max-w-[36rem] space-y-4 text-[17px] leading-[1.7] text-neutral-600">{body}</div>
+        </div>
+        {frames.length > 0 ? (
+          <div className="flex flex-col items-center gap-8 lg:items-end">
+            <div className="flex flex-wrap items-start justify-center gap-6 lg:justify-end">
+              {frames.map((frame) => (
+                <FramedShot key={frame.image.src} image={frame.image} label={frame.label} onOpen={onOpen} />
+              ))}
+            </div>
+            {plates && plates.length === 1 ? (
+              <div className="w-full max-w-[28rem]">
+                <FramedPlate image={plates[0]} onOpen={onOpen} />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+      {plates && plates.length > 1 ? (
+        <div className="mt-10 grid max-w-3xl gap-5 sm:grid-cols-2">
+          {plates.map((plate) => (
+            <FramedPlate key={plate.src} image={plate} onOpen={onOpen} />
+          ))}
+        </div>
+      ) : null}
+    </article>
+  );
+}
+
 export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPageProps) {
   const nowMs = useTrustedNow(initialNowMs);
   const state = preview ?? getPageState(nowMs);
   const [activeShot, setActiveShot] = useState<HotAndViralImage | null>(null);
+  const featuredWins = FEATURED_WIN_SRCS.map((src) => winShots.find((shot) => shot.src === src)).filter(
+    (shot): shot is HotAndViralImage => Boolean(shot),
+  );
+  const cammySummary = cammyMore.find((shot) => shot.src.endsWith("cammy-90-days.jpg")) ?? null;
 
   useEffect(() => {
     if (!activeShot) return;
@@ -283,11 +446,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
     return (
       <div className="overflow-x-clip bg-white text-black" data-state="closed">
         {preview ? <PreviewNote state="closed" /> : null}
-        <section className="container-elegant max-w-xl py-24 md:py-32">
-          <h1 className={`${sectionTitle} text-black`}>{copy.closed.heading}</h1>
-          <p className="text-editorial mt-6 text-gray-700">{copy.closed.body}</p>
-          <div className="mt-10">
-            <AccessForm list="next_round" button={copy.closed.button} success={copy.closed.success} />
+        <section className="container-elegant py-24 md:py-32">
+          <div className="max-w-xl">
+            <h1 className={`${h2} text-black`}>{copy.closed.heading}</h1>
+            <p className={`${lede} mt-6`}>{copy.closed.body}</p>
+            <div className="mt-10">
+              <AccessForm list="next_round" button={copy.closed.button} success={copy.closed.success} />
+            </div>
           </div>
         </section>
         {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
@@ -295,76 +460,103 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
     );
   }
 
+  const cammyFrames = [
+    cammyShots.before ? { image: cammyShots.before, label: "Before" } : null,
+    cammyShots.after ? { image: cammyShots.after, label: "After" } : null,
+  ].filter((frame): frame is { image: HotAndViralImage; label: string } => Boolean(frame));
+
   return (
     <div className="overflow-x-clip bg-white text-black" data-state={state}>
       {preview ? <PreviewNote state={state} /> : null}
       <CountdownBanner nowMs={nowMs} state={state} sticky />
 
-      <section className="container-elegant grid items-start gap-10 py-8 md:grid-cols-2 md:gap-14 md:py-12">
-        <div className="min-w-0">
-          <p className="text-caption mb-4">{copy.hero.eyebrow}</p>
-          <h1 className={`${sectionTitle} text-black`}>{copy.hero.headline}</h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-700 md:text-lg">{copy.hero.subheadline}</p>
-          <ul className="mt-6 space-y-3">
-            {copy.hero.checklist.map((item) => (
-              <li key={item} className="flex gap-3 text-[15px] leading-relaxed text-gray-800">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8">
-            <StateButton state={state} />
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-600">{copy.hero.underButton}</p>
+      <section className="bg-white">
+        <div className="container-elegant grid items-center gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
+          <div className="min-w-0">
+            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-black" aria-hidden="true" />
+              {copy.hero.eyebrow}
+            </p>
+            <HeroHeadline text={copy.hero.headline} />
+            <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
+            <div className="mt-8">
+              <StateButton state={state} />
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-500">{copy.hero.underButton}</p>
+            </div>
+            <div className="mt-7 max-w-md">
+              <CheckList items={copy.hero.checklist} />
+            </div>
           </div>
-        </div>
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-2xl md:justify-self-end">
-          <Image
-            src={HERO_IMAGE.src}
-            alt={HERO_IMAGE.alt}
-            fill
-            priority
-            sizes="(max-width: 768px) 90vw, 440px"
-            className="object-cover object-[72%_center]"
-          />
+
+          <div className="mx-auto w-full max-w-[400px] lg:mx-0 lg:max-w-[440px] lg:justify-self-end">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-[#eceae6] shadow-[0_24px_60px_-36px_rgba(0,0,0,0.55)] ring-1 ring-black/10">
+              <Image
+                src={HERO_IMAGE.src}
+                alt={HERO_IMAGE.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 440px"
+                className="object-cover object-[74%_24%]"
+              />
+            </div>
+            <a
+              href="#cammy"
+              className="relative z-10 -mt-10 mr-auto block w-[13.5rem] rounded-2xl bg-white p-4 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black sm:p-5"
+            >
+              <p className={eyebrow}>{copy.cammy.label}</p>
+              <p className="mt-2 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black">
+                <span className="block">{copy.cammy.beforeStat}</span>
+                <span className="mt-1 block">
+                  <span className="text-neutral-300" aria-hidden="true">
+                    →{" "}
+                  </span>
+                  {copy.cammy.afterStat}
+                </span>
+              </p>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="problem-heading">
+      <section className={`${band} bg-black text-white`} aria-labelledby="problem-heading">
         <div className="container-elegant">
-          <h2 id="problem-heading" className={`${sectionTitle} max-w-3xl`}>
+          <h2 id="problem-heading" className={`${h2} max-w-[14em] text-white`}>
             {copy.problem.heading}
           </h2>
-          <p className="text-editorial mt-6 max-w-2xl text-gray-700">{copy.problem.body}</p>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <p className="mt-6 max-w-[36rem] text-[17px] leading-[1.7] text-white/70">{copy.problem.body}</p>
+          <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3">
             {copy.problem.cards.map((card) => (
-              <article key={card.title} className="rounded-xl border border-gray-200 p-8">
-                <h3 className="font-heading text-3xl">{card.title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-gray-700">{card.text}</p>
+              <article key={card.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 md:p-7">
+                <h3 className="font-sans text-lg font-semibold tracking-tight text-white">{card.title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-white/70">{card.text}</p>
               </article>
             ))}
           </div>
-          <div className="mt-14 max-w-2xl">
-            <h3 className="font-heading text-3xl md:text-[2.5rem]">{copy.problem.triedHeading}</h3>
-            <p className="text-editorial mt-6 text-gray-700">{copy.problem.triedBody}</p>
+          <div className="mt-16 max-w-[40rem] border-t border-white/15 pt-12 md:mt-20 md:pt-14">
+            <h3 className="font-heading text-[2rem] leading-[1.02] tracking-[-0.03em] text-white md:text-[2.6rem]">
+              {copy.problem.triedHeading}
+            </h3>
+            <p className="mt-5 text-[17px] leading-[1.7] text-white/75">{copy.problem.triedBody}</p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f7f5f2] py-16 md:py-24" aria-labelledby="ai-heading">
-        <div className="container-elegant max-w-3xl">
-          <p className="text-caption mb-5">{copy.ai.eyebrow}</p>
-          <h2 id="ai-heading" className={sectionTitle}>
-            {copy.ai.heading}
-          </h2>
-          <p className="text-editorial mt-6 text-gray-700">{copy.ai.body}</p>
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="ai-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <p className={`${eyebrow} mb-5`}>{copy.ai.eyebrow}</p>
+            <h2 id="ai-heading" className={h2}>
+              {copy.ai.heading}
+            </h2>
+            <p className={`${lede} mt-6`}>{copy.ai.body}</p>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24" aria-labelledby="copycat-heading">
+      <section className={`${band} bg-white`} aria-labelledby="copycat-heading">
         <div className="container-elegant">
-          <p className="text-caption mb-5">{copy.copycats.eyebrow}</p>
-          <h2 id="copycat-heading" className={`${sectionTitle} max-w-4xl`}>
+          <p className={`${eyebrow} mb-5`}>{copy.copycats.eyebrow}</p>
+          <h2 id="copycat-heading" className={`${h2} max-w-[16em]`}>
             {copy.copycats.heading}
           </h2>
           {copycatPairs.some((pair) => pair.mine || pair.theirs) ? (
@@ -372,13 +564,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               {copycatPairs.map((pair, index) =>
                 pair.mine || pair.theirs ? (
                   <div key={index}>
-                    <div className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:items-start">
-                      {pair.mine ? <ProofStill image={pair.mine} label="Mine" onOpen={setActiveShot} /> : null}
-                      {pair.theirs ? <ProofStill image={pair.theirs} label="Theirs" onOpen={setActiveShot} /> : null}
+                    <div className="flex flex-wrap items-start gap-6 sm:gap-8">
+                      {pair.mine ? <FramedShot image={pair.mine} label="Mine" onOpen={setActiveShot} /> : null}
+                      {pair.theirs ? <FramedShot image={pair.theirs} label="Theirs" onOpen={setActiveShot} /> : null}
                     </div>
                     {pair.note ? (
-                      <div className="mt-8 flex justify-center">
-                        <ProofStill image={pair.note} onOpen={setActiveShot} />
+                      <div className="mt-8">
+                        <FramedShot image={pair.note} onOpen={setActiveShot} className="w-[240px]" />
                       </div>
                     ) : null}
                   </div>
@@ -386,119 +578,106 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               )}
             </div>
           ) : null}
-          <p className="text-editorial mx-auto mt-12 max-w-2xl text-center text-gray-700">{copy.copycats.body}</p>
+          <p className={`${lede} mt-12`}>{copy.copycats.body}</p>
         </div>
       </section>
 
-      <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="cammy-stat">
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="cammy-stat">
         <div className="container-elegant">
-          <p className="text-caption mb-6">{copy.cammy.label}</p>
-          <h2 id="cammy-stat" className="font-heading text-4xl leading-none tracking-tight sm:text-5xl md:text-6xl">
-            <span className="block md:inline">{copy.cammy.beforeStat}</span>
-            <span className="my-3 block text-gray-400 md:mx-6 md:my-0 md:inline-block" aria-hidden="true">
-              →
-            </span>
-            <span className="block md:inline">{copy.cammy.afterStat}</span>
-          </h2>
-          <p className="text-editorial mt-10 max-w-2xl text-gray-700">{copy.cammy.story}</p>
-          {cammyShots.before || cammyShots.after ? (
-            <div className="mt-10 flex flex-col items-center justify-center gap-8 sm:flex-row sm:items-start">
-              {cammyShots.before ? (
-                <ProofStill image={cammyShots.before} label="Before" onOpen={setActiveShot} />
-              ) : null}
-              {cammyShots.after ? (
-                <ProofStill image={cammyShots.after} label="After" onOpen={setActiveShot} />
-              ) : null}
-            </div>
-          ) : null}
-          {cammyMore.length > 0 ? (
-            <div className="mt-8 flex flex-wrap items-start justify-center gap-8">
-              {cammyMore.map((shot) => (
-                <ProofStill key={shot.src} image={shot} onOpen={setActiveShot} />
-              ))}
-            </div>
-          ) : null}
+          <ResultCase
+            id="cammy"
+            titleAs="h2"
+            titleId="cammy-stat"
+            kicker={copy.cammy.label}
+            before={copy.cammy.beforeStat}
+            after={copy.cammy.afterStat}
+            body={<p>{copy.cammy.story}</p>}
+            frames={cammyFrames}
+            plates={cammySummary ? [cammySummary] : []}
+            onOpen={setActiveShot}
+          />
         </div>
       </section>
 
-      {memberResults.length > 0 || winShots.length > 0 ? (
-        <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="members-heading">
+      {memberResults.length > 0 || featuredWins.length > 0 ? (
+        <section className={`${band} bg-white`} aria-labelledby="members-heading">
           <div className="container-elegant">
-            <h2 id="members-heading" className={sectionTitle}>
-              {memberResults.length > 0 ? copy.membersHeading : copy.winsHeading}
-            </h2>
             {memberResults.length > 0 ? (
-              <div className="mt-16 space-y-20">
-                {memberResults.map((member) => (
-                  <article key={member.name}>
-                    <p className="text-caption">
-                      {member.name} · {member.role}
-                    </p>
-                    <p className="mt-4 flex max-w-full flex-wrap items-baseline gap-x-3 gap-y-2 font-heading text-3xl leading-[1.05] md:gap-x-4 md:text-5xl">
-                      <span>{member.beforeStat}</span>
-                      <span className="text-gray-400" aria-hidden="true">
-                        →
-                      </span>
-                      <span>{member.afterStat}</span>
-                    </p>
-                    <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-gray-700">
-                      <p>{member.sentences[0]}</p>
-                      <p>{member.sentences[1]}</p>
-                    </div>
-                    <div className="mt-10 flex flex-col items-center justify-center gap-8 sm:flex-row sm:items-start">
-                      {member.before ? (
-                        <ProofStill image={member.before} label="Before" onOpen={setActiveShot} />
-                      ) : null}
-                      {member.after ? (
-                        <ProofStill image={member.after} label="After" onOpen={setActiveShot} />
-                      ) : null}
-                    </div>
-                    {member.summary || member.profile ? (
-                      <div className="mt-8 flex flex-wrap items-start justify-center gap-8">
-                        {member.summary ? <ProofStill image={member.summary} onOpen={setActiveShot} /> : null}
-                        {member.profile ? <ProofStill image={member.profile} onOpen={setActiveShot} /> : null}
-                      </div>
-                    ) : null}
-                  </article>
-                ))}
-              </div>
-            ) : null}
-            {winShots.length > 0 ? (
-              <div className={`${memberResults.length > 0 ? "mt-16" : "mt-12"} mx-auto max-w-5xl columns-1 gap-6 sm:columns-2 lg:columns-3`}>
-                {winShots.map((shot) => (
-                  <button
-                    key={shot.src}
-                    type="button"
-                    onClick={() => setActiveShot(shot)}
-                    className="mb-6 block w-full break-inside-avoid"
-                  >
-                    <span className={shotFrame}>
-                      <Image
-                        src={shot.src}
-                        alt={shot.alt}
-                        width={shot.width}
-                        height={shot.height}
-                        quality={60}
-                        sizes="(max-width: 768px) 340px, 320px"
-                        className="h-auto w-full rounded-xl"
+              <>
+                <h2 id="members-heading" className={`${h2} max-w-[14em]`}>
+                  {copy.membersHeading}
+                </h2>
+                <div className="mt-12 space-y-16 md:mt-16 md:space-y-20">
+                  {memberResults.map((member) => {
+                    const frames = [
+                      member.before ? { image: member.before, label: "Before" } : null,
+                      member.after ? { image: member.after, label: "After" } : null,
+                    ].filter((frame): frame is { image: HotAndViralImage; label: string } => Boolean(frame));
+                    const plates = [member.summary, member.profile].filter(
+                      (plate): plate is HotAndViralImage => Boolean(plate),
+                    );
+                    return (
+                      <ResultCase
+                        key={member.name}
+                        kicker={`${member.name} · ${member.role}`}
+                        before={member.beforeStat}
+                        after={member.afterStat}
+                        body={
+                          <>
+                            <p>{member.sentences[0]}</p>
+                            <p>{member.sentences[1]}</p>
+                          </>
+                        }
+                        frames={frames}
+                        plates={plates}
+                        onOpen={setActiveShot}
                       />
-                    </span>
-                  </button>
-                ))}
+                    );
+                  })}
+                </div>
+              </>
+            ) : (
+              <h2 id="members-heading" className={h2}>
+                {copy.winsHeading}
+              </h2>
+            )}
+            {featuredWins.length > 0 ? (
+              <div className={memberResults.length > 0 ? "mt-16 md:mt-24" : "mt-10"}>
+                {memberResults.length > 0 ? (
+                  <h3 className="font-heading text-[1.7rem] leading-none tracking-[-0.03em] md:text-[2.1rem]">
+                    {copy.winsHeading}
+                  </h3>
+                ) : null}
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {featuredWins.map((shot) => (
+                    <FramedPlate key={shot.src} image={shot} onOpen={setActiveShot} />
+                  ))}
+                </div>
               </div>
             ) : null}
           </div>
         </section>
       ) : null}
 
-      <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="coach-heading">
-        <div className="container-elegant grid items-center gap-10 md:grid-cols-2 md:gap-14">
-          <div className="min-w-0">
-            <p className="text-caption mb-5">{copy.coach.eyebrow}</p>
-            <h2 id="coach-heading" className={sectionTitle}>
+      <section className={`${band} border-t border-black/5 bg-white`} aria-labelledby="coach-heading">
+        <div className="container-elegant grid items-start gap-10 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-16">
+          <div className="order-2 lg:order-1">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.75rem] bg-[#eceae6] shadow-[0_24px_60px_-36px_rgba(0,0,0,0.5)] ring-1 ring-black/10 lg:mx-0">
+              <Image
+                src={COACH_IMAGE.src}
+                alt={COACH_IMAGE.alt}
+                fill
+                sizes="(max-width: 1024px) 90vw, 420px"
+                className="object-cover object-[center_8%]"
+              />
+            </div>
+          </div>
+          <div className="order-1 min-w-0 lg:order-2">
+            <p className={`${eyebrow} mb-5`}>{copy.coach.eyebrow}</p>
+            <h2 id="coach-heading" className={`${h2} max-w-[12em]`}>
               {copy.coach.heading}
             </h2>
-            <div className="text-editorial mt-6 space-y-5 text-gray-700">
+            <div className={`${lede} mt-6 space-y-5`}>
               <p>On June 15, 2026, Meta deleted my account after a mass-reporting campaign. Seven years of content, gone overnight.</p>
               <p>
                 I started again with zero followers and grew to {coachStats.instagramFollowers} on Instagram and{" "}
@@ -510,144 +689,138 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               </p>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-2xl md:justify-self-end">
-            <Image
-              src={COACH_IMAGE.src}
-              alt={COACH_IMAGE.alt}
-              fill
-              sizes="(max-width: 768px) 90vw, 440px"
-              className="object-cover object-[center_40%]"
-            />
+        </div>
+      </section>
+
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="inside-heading" className={h2}>
+              {copy.inside.heading}
+            </h2>
+            <ol className="mt-10">
+              {copy.inside.steps.map((step, index) => (
+                <li
+                  key={step.title}
+                  className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-black/10 py-6 first:border-t-0"
+                >
+                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-neutral-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-sans text-lg font-semibold tracking-tight text-black">{step.title}</h3>
+                    <p className="mt-2 max-w-xl text-[16px] leading-relaxed text-neutral-600">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f7f5f2] py-16 md:py-24" aria-labelledby="inside-heading">
-        <div className="container-elegant max-w-3xl">
-          <h2 id="inside-heading" className={sectionTitle}>
-            {copy.inside.heading}
-          </h2>
-          <ol className="mt-12 space-y-10">
-            {copy.inside.steps.map((step, index) => (
-              <li key={step.title} className="grid grid-cols-[auto_1fr] gap-5">
-                <span className="font-heading text-3xl text-gray-400">{index + 1}</span>
-                <div>
-                  <h3 className="font-heading text-3xl">{step.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-gray-700">{step.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+      <section className={`${band} bg-white`}>
+        <div className="container-elegant grid gap-14 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <h2 id="who-heading" className={h2}>
+              {copy.who.heading}
+            </h2>
+            <p className="mt-6 text-[17px] text-neutral-800">{copy.who.intro}</p>
+            <div className="mt-6">
+              <CheckList items={copy.who.points} />
+            </div>
+          </div>
+          <div>
+            <h2 id="only-way-heading" className={h2}>
+              {copy.onlyWay.heading}
+            </h2>
+            <p className={`${lede} mt-6`}>{copy.onlyWay.body}</p>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24" aria-labelledby="who-heading">
-        <div className="container-elegant max-w-3xl">
-          <h2 id="who-heading" className={sectionTitle}>
-            {copy.who.heading}
-          </h2>
-          <p className="mt-8 text-lg">{copy.who.intro}</p>
-          <ul className="mt-6 space-y-4">
-            {copy.who.points.map((point) => (
-              <li key={point} className="flex gap-3 text-base leading-relaxed text-gray-800">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="only-way-heading">
-        <div className="container-elegant max-w-3xl">
-          <h2 id="only-way-heading" className={sectionTitle}>
-            {copy.onlyWay.heading}
-          </h2>
-          <p className="text-editorial mt-6 text-gray-700">{copy.onlyWay.body}</p>
-        </div>
-      </section>
-
-      <section id="pricing" className={`${scrollTarget} border-t border-gray-200 py-16 md:py-24`} aria-labelledby="pricing-heading">
+      <section id="pricing" className={`${scrollTarget} ${band} bg-[#f3f0ea]`} aria-labelledby="pricing-heading">
         <div className="container-elegant">
-          <h2 id="pricing-heading" className={`${sectionTitle} max-w-3xl`}>
+          <h2 id="pricing-heading" className={`${h2} max-w-[14em]`}>
             {copy.pricing.heading}
           </h2>
-          <div className="mt-10">
-            <CountdownBanner nowMs={nowMs} state={state} />
-          </div>
+          {state === "before" ? <p className={`${lede} mt-6`}>{copy.pricing.beforeNote}</p> : null}
           <div className="mt-10">
             <PricingCards state={state} />
           </div>
-          <p className="mt-8 text-base leading-relaxed text-gray-700">{copy.pricing.cancel}</p>
-          {state === "open" ? <StripePricingTable /> : null}
+          <p className="mt-8 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.cancel}</p>
+          {state === "open" ? (
+            <div className="mt-12 rounded-[1.75rem] bg-white p-3 ring-1 ring-black/10 md:p-6">
+              <StripePricingTable />
+            </div>
+          ) : null}
         </div>
       </section>
 
       {state === "before" ? (
-        <section id="first-access" className={`${scrollTarget} scroll-mb-28 border-t border-gray-200 py-16 md:py-24`}>
-          <div className="container-elegant max-w-xl">
-            <h2 className={sectionTitle}>{copy.firstAccess.heading}</h2>
-            <p className="text-editorial mt-6 text-gray-700">{copy.firstAccess.body}</p>
-            <div className="mt-10">
-              <AccessForm
-                list="waitlist"
-                button={copy.firstAccess.button}
-                success={copy.firstAccess.success}
-              />
+        <section id="first-access" className={`${scrollTarget} scroll-mb-28 ${band} bg-white`}>
+          <div className="container-elegant">
+            <div className="max-w-xl">
+              <h2 className={h2}>{copy.firstAccess.heading}</h2>
+              <p className={`${lede} mt-6`}>{copy.firstAccess.body}</p>
+              <div className="mt-10">
+                <AccessForm list="waitlist" button={copy.firstAccess.button} success={copy.firstAccess.success} />
+              </div>
             </div>
           </div>
         </section>
       ) : null}
 
-      <section className="border-t border-gray-200 py-16 md:py-24" aria-labelledby="faq-heading">
-        <div className="container-elegant max-w-3xl">
-          <h2 id="faq-heading" className={sectionTitle}>
-            FAQ
-          </h2>
-          <div className="mt-10 divide-y divide-gray-200 border-y border-gray-200">
-            {copy.faq.map((item) => (
-              <details key={item.q} className="group py-5">
-                <summary className="cursor-pointer list-none pr-8 text-lg font-medium [&::-webkit-details-marker]:hidden">
-                  <span className="flex items-start justify-between gap-6">
-                    {item.q}
-                    <span aria-hidden="true" className="text-gray-400 group-open:hidden">
-                      +
+      <section className={`${band} border-t border-black/5 bg-white`} aria-labelledby="faq-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="faq-heading" className={h2}>
+              FAQ
+            </h2>
+            <div className="mt-8 divide-y divide-black/10 border-y border-black/10">
+              {copy.faq.map((item) => (
+                <details key={item.q} className="group py-5">
+                  <summary className="cursor-pointer list-none text-[17px] font-medium text-black [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-start justify-between gap-6">
+                      {item.q}
+                      <span aria-hidden="true" className="text-neutral-400 group-open:hidden">
+                        +
+                      </span>
+                      <span aria-hidden="true" className="hidden text-neutral-400 group-open:inline">
+                        –
+                      </span>
                     </span>
-                    <span aria-hidden="true" className="hidden text-gray-400 group-open:inline">
-                      –
-                    </span>
-                  </span>
-                </summary>
-                <p className="mt-3 max-w-2xl text-base leading-relaxed text-gray-700">{item.a}</p>
-              </details>
-            ))}
+                  </summary>
+                  <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-neutral-600">{item.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-black py-20 text-white md:py-28" aria-labelledby="final-heading">
-        <div className="container-elegant max-w-3xl text-center">
-          <h2 id="final-heading" className={`${sectionTitle} text-white`}>
-            {copy.final.heading}
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">{copy.final.body}</p>
-          <div className="mt-10">
-            <CountdownBanner nowMs={nowMs} state={state} />
-          </div>
-          <div className="mt-10">
-            <StateButton
-              state={state}
-              className="btn bg-white text-black hover:bg-gray-100 hover:text-black"
-            />
+      <section className="bg-black py-20 text-white md:py-[7.25rem]" aria-labelledby="final-heading">
+        <div className="container-elegant">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 id="final-heading" className={`${h2} text-white`}>
+              {copy.final.heading}
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-white/75">{copy.final.body}</p>
+            <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-white/15 px-4 py-5">
+              <p className="text-sm text-white/75">{state === "before" ? copy.countdown.before : copy.countdown.open}</p>
+              <div className="mt-3">
+                <CountdownDigits nowMs={nowMs} state={state} />
+              </div>
+              {state === "open" ? <p className="mt-3 text-sm text-white/70">{copy.countdown.openSuffix}</p> : null}
+            </div>
+            <div className="mt-8">
+              <StateButton state={state} tone="light" />
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
-        <StateButton
-          state={state}
-          className="btn w-full bg-white text-black hover:bg-gray-100 hover:text-black"
-        >
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+        <StateButton state={state} className="w-full">
           {state === "before" ? copy.sticky.before : copy.sticky.open}
         </StateButton>
       </div>
@@ -658,10 +831,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
 }
 
 function PreviewNote({ state }: { state: PageState }) {
-  const label =
-    state === "before" ? "before doors open" : state === "open" ? "doors open" : "doors closed";
+  const label = state === "before" ? "before doors open" : state === "open" ? "doors open" : "doors closed";
   return (
-    <p className="bg-gray-100 px-4 py-2 text-center text-xs tracking-wide text-gray-600">
+    <p className="bg-neutral-100 px-4 py-2 text-center text-xs tracking-wide text-neutral-600">
       Preview: {label}. Remove the preview from the address to follow Calgary time.
     </p>
   );

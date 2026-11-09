@@ -11,7 +11,7 @@ type AccessFormProps = {
 };
 
 const fieldClass =
-  "mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-black outline-none transition-colors focus:border-black";
+  "mt-2 w-full rounded-xl border border-black/15 bg-white px-4 py-3.5 text-base text-black outline-none transition-colors focus:border-black";
 
 export default function AccessForm({ list, button, success, id }: AccessFormProps) {
   const [name, setName] = useState("");
@@ -64,7 +64,7 @@ export default function AccessForm({ list, button, success, id }: AccessFormProp
   return (
     <form id={id} onSubmit={onSubmit} className="space-y-5" noValidate>
       <div>
-        <label htmlFor={`${list}-name`} className="text-caption text-gray-600">
+        <label htmlFor={`${list}-name`} className="text-sm font-medium text-neutral-700">
           First name
         </label>
         <input
@@ -79,7 +79,7 @@ export default function AccessForm({ list, button, success, id }: AccessFormProp
         />
       </div>
       <div>
-        <label htmlFor={`${list}-email`} className="text-caption text-gray-600">
+        <label htmlFor={`${list}-email`} className="text-sm font-medium text-neutral-700">
           Email
         </label>
         <input
@@ -99,7 +99,11 @@ export default function AccessForm({ list, button, success, id }: AccessFormProp
           {error}
         </p>
       ) : null}
-      <button type="submit" className="btn w-full sm:w-auto" disabled={pending}>
+      <button
+        type="submit"
+        className="inline-flex w-full items-center justify-center rounded-full bg-black px-7 py-3.5 text-[15px] font-semibold tracking-wide text-white transition-colors hover:bg-neutral-800 disabled:opacity-60 sm:w-auto"
+        disabled={pending}
+      >
         {pending ? "Sending" : button}
       </button>
     </form>
