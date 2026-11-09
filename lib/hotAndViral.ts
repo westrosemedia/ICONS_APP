@@ -34,10 +34,10 @@ export const HERO_IMAGE = {
 };
 
 export const COACH_IMAGE = {
-  src: "/hot-and-viral/stephanie-chair.jpg",
+  src: "/hot-and-viral/stephanie.jpg",
   alt: "Stephanie Rose",
   width: 1400,
-  height: 2100,
+  height: 2101,
 };
 
 export const coachStats = {
