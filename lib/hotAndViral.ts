@@ -34,10 +34,10 @@ export const HERO_IMAGE = {
 };
 
 export const COACH_IMAGE = {
-  src: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4",
+  src: "/hot-and-viral/stephanie.jpg",
   alt: "Stephanie Rose",
-  width: 1200,
-  height: 1500,
+  width: 1400,
+  height: 2101,
 };
 
 export const coachStats = {
