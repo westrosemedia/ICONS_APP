@@ -377,7 +377,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-[center_72%]"
+            className="object-cover"
           />
         </div>
       </section>
@@ -556,7 +556,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               alt={COACH_IMAGE.alt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-[center_32%]"
+              className="object-cover object-bottom"
             />
           </div>
         </div>
