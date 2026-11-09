@@ -423,9 +423,16 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <div className="mt-14 space-y-12">
               {copycatPairs.map((pair, index) =>
                 pair.mine || pair.theirs ? (
-                  <div key={index} className="grid items-start gap-8 sm:grid-cols-2">
-                    <PhoneFrame image={pair.mine} label="Mine" onOpen={setActiveShot} />
-                    <PhoneFrame image={pair.theirs} label="Theirs" onOpen={setActiveShot} />
+                  <div key={index}>
+                    <div className="grid items-start gap-8 sm:grid-cols-2">
+                      {pair.mine ? <ProofStill image={pair.mine} label="Mine" onOpen={setActiveShot} /> : null}
+                      {pair.theirs ? <ProofStill image={pair.theirs} label="Theirs" onOpen={setActiveShot} /> : null}
+                    </div>
+                    {pair.note ? (
+                      <div className="mx-auto mt-8 max-w-md">
+                        <ProofStill image={pair.note} onOpen={setActiveShot} />
+                      </div>
+                    ) : null}
                   </div>
                 ) : null
               )}

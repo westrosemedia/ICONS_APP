@@ -69,10 +69,30 @@ export type MemberResult = {
 export type CopycatPair = {
   mine: HotAndViralImage | null;
   theirs: HotAndViralImage | null;
+  note?: HotAndViralImage | null;
 };
 
 export const copycatPairs: CopycatPair[] = [
-  { mine: null, theirs: null },
+  {
+    mine: {
+      src: "/hot-and-viral/copycat-mine.jpg",
+      alt: "Stephanie Rose's original reel, filmed on a rooftop while holding a camera",
+      width: 900,
+      height: 1507,
+    },
+    theirs: {
+      src: "/hot-and-viral/copycat-theirs.jpg",
+      alt: "The copied reel. The other account's name is covered.",
+      width: 900,
+      height: 1651,
+    },
+    note: {
+      src: "/hot-and-viral/copycat-message.jpg",
+      alt: "A message about the copied reel. The other account's name is covered.",
+      width: 900,
+      height: 1321,
+    },
+  },
   { mine: null, theirs: null },
   { mine: null, theirs: null },
 ];
