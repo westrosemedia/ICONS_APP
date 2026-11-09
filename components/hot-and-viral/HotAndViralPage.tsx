@@ -556,7 +556,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               alt={COACH_IMAGE.alt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-bottom"
+              className="object-cover object-[center_62%]"
             />
           </div>
         </div>
