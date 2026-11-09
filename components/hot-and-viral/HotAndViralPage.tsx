@@ -431,7 +431,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         <section className="border-t border-gray-200 py-20 md:py-28" aria-labelledby="members-heading">
           <div className="container-elegant">
             <h2 id="members-heading" className="text-display">
-              {copy.membersHeading}
+              {memberResults.length > 0 ? copy.membersHeading : copy.winsHeading}
             </h2>
             {memberResults.length > 0 ? (
               <div className="mt-16 space-y-20">
@@ -460,7 +460,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               </div>
             ) : null}
             {winShots.length > 0 ? (
-              <div className="mt-20 columns-2 gap-3 md:columns-3">
+              <div className={`${memberResults.length > 0 ? "mt-20" : "mt-12"} columns-1 gap-4 sm:columns-2 lg:columns-3`}>
                 {winShots.map((shot) => (
                   <button
                     key={shot.src}

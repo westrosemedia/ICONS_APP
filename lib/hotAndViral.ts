@@ -83,7 +83,105 @@ export const cammyShots: { before: HotAndViralImage | null; after: HotAndViralIm
 };
 
 export const memberResults: MemberResult[] = [];
-export const winShots: HotAndViralImage[] = [];
+
+export const winShots: HotAndViralImage[] = [
+  {
+    src: "/hot-and-viral/views-4-9-million.jpg",
+    alt: "Account summary with 4,940,292 views and 34,711 followers",
+    width: 900,
+    height: 601,
+  },
+  {
+    src: "/hot-and-viral/views-2-2-million.jpg",
+    alt: "30-day insights with 2,243,099 views and 10,977 new followers",
+    width: 900,
+    height: 1201,
+  },
+  {
+    src: "/hot-and-viral/views-1-9-million-week.jpg",
+    alt: "7-day insights with 1,905,912 views and 12,994 new followers",
+    width: 900,
+    height: 1957,
+  },
+  {
+    src: "/hot-and-viral/reel-401k-follows.jpg",
+    alt: "Stephanie Rose reel insights with 401,794 views and 12,157 follows",
+    width: 900,
+    height: 1957,
+  },
+  {
+    src: "/hot-and-viral/video-views-417k.jpg",
+    alt: "Video analytics with 417,100 views and 9,900 new followers",
+    width: 900,
+    height: 591,
+  },
+  {
+    src: "/hot-and-viral/reel-355k.jpg",
+    alt: "Trial reel insights with 355,523 views",
+    width: 900,
+    height: 855,
+  },
+  {
+    src: "/hot-and-viral/reel-304k.jpg",
+    alt: "Trial reel insights with 304,081 views and 768 follows",
+    width: 900,
+    height: 870,
+  },
+  {
+    src: "/hot-and-viral/viewers-579k-week.jpg",
+    alt: "7-day analytics with 579,400 total viewers and 511,800 new viewers",
+    width: 900,
+    height: 1207,
+  },
+  {
+    src: "/hot-and-viral/record-200k.jpg",
+    alt: "A message celebrating a record, beside a dashboard with 200,435 views",
+    width: 900,
+    height: 652,
+  },
+  {
+    src: "/hot-and-viral/reel-171k.jpg",
+    alt: "Trial reel insights with 171,473 views and a 21 second average watch",
+    width: 900,
+    height: 849,
+  },
+  {
+    src: "/hot-and-viral/reel-95k.jpg",
+    alt: "Reel insights with 95,849 views and 4,006 follows",
+    width: 900,
+    height: 1060,
+  },
+  {
+    src: "/hot-and-viral/reel-69k.jpg",
+    alt: "Reel insights with 69,711 views and 2,785 follows",
+    width: 900,
+    height: 433,
+  },
+  {
+    src: "/hot-and-viral/dashboard-62k.jpg",
+    alt: "30-day dashboard with 62,901 views and 1,804 followers",
+    width: 900,
+    height: 620,
+  },
+  {
+    src: "/hot-and-viral/reel-57k.jpg",
+    alt: "Reel insights with 57,148 views, climbing from September 25 to October 16",
+    width: 900,
+    height: 1599,
+  },
+  {
+    src: "/hot-and-viral/message-20k.jpg",
+    alt: "A message celebrating 20,000 followers",
+    width: 900,
+    height: 352,
+  },
+  {
+    src: "/hot-and-viral/reel-10k.jpg",
+    alt: "Trial reel insights with 10,128 views and 417 comments",
+    width: 900,
+    height: 853,
+  },
+];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -206,6 +304,7 @@ export const copy = {
       "Cammy had been posting for six months, and her reels kept landing around 200 views. She was showing up and filming like she'd been told. She was also saying the wrong thing in every post. I looked at her account and knew right away what to fix. We fixed her message and made sure it showed up in everything she posted. Two months later, one of her reels hit 1.5 million views.",
   },
   membersHeading: "More accounts I've fixed",
+  winsHeading: "Views from my account and from clients.",
   coach: {
     eyebrow: "Meet your coach",
     heading: "I rebuilt from zero, in public.",
