@@ -27,17 +27,17 @@ export const WAITLIST_COLLECTION = "hot_and_viral_waitlist";
 export const NEXT_ROUND_COLLECTION = "hot_and_viral_next_round";
 
 export const HERO_IMAGE = {
-  src: "/hot-and-viral/stephanie-hall.jpg",
+  src: "/hot-and-viral/stephanie-hero.jpg",
   alt: "Stephanie Rose, founder of West Rose Media",
   width: 1400,
   height: 2100,
 };
 
 export const COACH_IMAGE = {
-  src: "/hot-and-viral/stephanie-glasses.jpg",
+  src: "/hot-and-viral/stephanie.jpg",
   alt: "Stephanie Rose",
   width: 1400,
-  height: 2100,
+  height: 2101,
 };
 
 export const coachStats = {
