@@ -27,7 +27,7 @@ export const WAITLIST_COLLECTION = "hot_and_viral_waitlist";
 export const NEXT_ROUND_COLLECTION = "hot_and_viral_next_round";
 
 export const HERO_IMAGE = {
-  src: "/hot-and-viral/stephanie-chair.jpg",
+  src: "/hot-and-viral/stephanie-suit.jpg",
   alt: "Stephanie Rose, founder of West Rose Media",
   width: 2000,
   height: 1333,
