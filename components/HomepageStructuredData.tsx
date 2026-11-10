@@ -34,9 +34,37 @@ export default function HomepageStructuredData() {
       },
       {
         "@type": "Service",
+        name: "Spotlight brand photography",
+        description:
+          "One time brand photography and vertical video for accomplished women founders. Creative direction and execution built around the woman she is becoming.",
+        provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
+        offers: {
+          "@type": "Offer",
+          price: "1921",
+          priceCurrency: "CAD",
+          url: "https://westrosemedia.sproutstudio.com/bookings",
+        },
+      },
+      {
+        "@type": "Service",
+        name: "Immersion event coverage",
+        description:
+          "Event and mastermind photography and video coverage that turns the energy in the room into content that keeps selling after the event ends.",
+        provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
+        offers: {
+          "@type": "Offer",
+          price: "6000",
+          priceCurrency: "CAD",
+          url: "https://westrosemedia.com/book/immersion",
+        },
+      },
+      {
+        "@type": "Service",
         name: "ICON Brand Partnership",
         description:
-          "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team. From $5,000 CAD per month, six or twelve month commitment, by application.",
+          "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team.",
         provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
         areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
         offers: {

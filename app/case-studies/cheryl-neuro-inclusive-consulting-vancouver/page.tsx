@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 
+import { Button } from "@/components/ui/button";
+
 export const metadata: Metadata = {
   title: "Cheryl — Neuro-Inclusive Regulation Consulting and Training Case Study",
   description:
@@ -70,7 +72,7 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
             </h2>
           </div>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_2fr] items-start">
-            <div className="relative aspect-[4/5] overflow-hidden border border-gray-200 shadow-sm">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/WhatsApp%20Image%202026-01-19%20at%2014.37.08.jpeg?alt=media&token=6a60df02-75bc-4af9-9608-61ded3a473de"
                 alt="Cheryl before image"
@@ -82,7 +84,7 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {afterImages.map((image) => (
-                <div key={image.src} className="relative w-full">
+                <div key={image.src} className="relative w-full rounded-2xl">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -116,7 +118,7 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
               Cheryl began attracting more qualified leads and significantly increased trust with organizations. They are now being hired by large non-profits and institutions that require credibility and professionalism before engaging.
             </p>
           </div>
-          <div className="mt-12 relative aspect-video overflow-hidden bg-black">
+          <div className="mt-12 relative aspect-video overflow-hidden rounded-2xl bg-black">
             <video
               className="absolute inset-0 w-full h-full object-cover"
               controls
@@ -139,7 +141,7 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
           <div className="max-w-3xl mb-10">
             <h2 className="text-display text-black">After proof — trust in action</h2>
           </div>
-          <div className="relative overflow-hidden border border-gray-200 shadow-sm max-w-2xl">
+          <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-sm max-w-2xl">
             <Image
               src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Screenshot%202026-01-19%20at%202.39.29%E2%80%AFPM.png?alt=media&token=21f726a8-04ab-49ea-8841-d88c742ed7db"
               alt="Client feedback highlighting trust, clarity, and professionalism."
@@ -166,18 +168,20 @@ export default function CherylNeuroInclusiveConsultingVancouverCaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[#4A1828]">
+      <section className="section-padding bg-black">
         <div className="container-elegant text-center">
           <h2 className="text-hero text-white mb-6">Want this for your brand?</h2>
           <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
             If you are a founder ready to turn visibility into opportunity without managing content yourself, you can apply to work with us.
           </p>
-          <Link
-            href="/apply"
-            className="inline-flex border border-white px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-white"
-          >
-            Apply for the ICON Brand Partnership
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
+              <Link href="/apply">Apply for the ICON Brand Partnership</Link>
+            </Button>
+            <Link href="/packages" className="text-white/80 hover:text-white underline underline-offset-4">
+              View one-time shoots
+            </Link>
+          </div>
         </div>
       </section>
     </main>

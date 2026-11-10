@@ -3,30 +3,18 @@
 import { usePathname } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import AgencyHeader from "@/components/agency/AgencyHeader";
-import AgencyFooter from "@/components/agency/AgencyFooter";
-import { isRedesignedPath } from "@/lib/agency";
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname() || "/";
-  const isHotAndViral =
-    pathname === "/hot-and-viral" || pathname.startsWith("/hot-and-viral/");
+  const pathname = usePathname();
+  const hideGlobalHeader = pathname === "/cadence";
 
-  if (isHotAndViral) {
-    return (
-      <div className={pathname === "/hot-and-viral" ? "pb-28 md:pb-0" : undefined}>
-        <SiteHeader />
-        <main className="w-full">{children}</main>
-        <SiteFooter />
-      </div>
-    );
-  }
+  const clearMobileOfferBar = pathname === "/hot-and-viral";
 
   return (
-    <>
-      <AgencyHeader />
-      <main className={isRedesignedPath(pathname) ? "wrm w-full" : "w-full"}>{children}</main>
-      <AgencyFooter />
-    </>
+    <div className={clearMobileOfferBar ? "pb-28 md:pb-0" : undefined}>
+      {!hideGlobalHeader && <SiteHeader />}
+      <main className="w-full">{children}</main>
+      <SiteFooter />
+    </div>
   );
 }

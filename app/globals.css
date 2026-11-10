@@ -210,16 +210,3 @@
   }
 }
 
-/* Agency redesign only. Hot & Viral is rendered outside .wrm and keeps Cormorant. */
-.wrm {
-  background: #e9e1d7;
-  color: #171515;
-}
-
-.wrm :where(h1, h2, h3, h4) {
-  font-family: var(--font-wrm-display), "Times New Roman", serif;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
-}
-
