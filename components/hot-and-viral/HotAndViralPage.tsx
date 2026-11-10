@@ -300,58 +300,50 @@ function ShotLightbox({ image, onClose }: { image: HotAndViralImage; onClose: ()
   );
 }
 
-function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
-  const before = state === "before";
-
+function PriceLine({
+  amount,
+  cadence,
+  tone,
+}: {
+  amount: string;
+  cadence: string;
+  tone: "light" | "dark";
+}) {
   return (
-    <div className="grid items-stretch gap-5 md:grid-cols-2">
-      <article className="order-2 flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:order-1 md:p-9">
-        <h3 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">Monthly</h3>
-        <p className="mt-6 text-base text-neutral-400 line-through">{copy.pricing.monthly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">
-          {copy.pricing.monthly.sale}
-        </p>
-        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
-          {copy.pricing.monthly.cadence}
-        </p>
-        <p className="mt-5 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.monthly.lock}</p>
-        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
-          {copy.pricing.monthly.gst}
-        </p>
-        <div className="mt-auto pt-8">
-          {before ? (
-            <StateButton state="before" className="w-full" />
-          ) : (
-            <a href="#checkout" className={`${pillDark} w-full`}>
-              {copy.pricing.monthly.button}
-            </a>
-          )}
-        </div>
-      </article>
+    <p
+      className={`font-heading text-[1.85rem] font-bold leading-[0.95] tracking-[-0.04em] sm:text-[2.75rem] lg:text-[3.15rem] ${
+        tone === "dark" ? "text-white" : "text-black"
+      }`}
+    >
+      <span className="text-[#f41cdc]">{amount}</span> {cadence}
+    </p>
+  );
+}
 
-      <article className="order-1 flex flex-col rounded-[1.6rem] bg-black p-7 text-white md:order-2 md:p-9">
-        <p>
-          <span className="inline-flex rounded-full bg-[#f41cdc] px-2.5 py-1 text-[11px] font-semibold leading-none text-white">
-            {copy.pricing.yearly.badge}
-          </span>
-        </p>
-        <h3 className="mt-3 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Pay in full</h3>
-        <p className="mt-6 text-base text-white/40 line-through">{copy.pricing.yearly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">{copy.pricing.yearly.sale}</p>
-        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.cadence}</p>
+function PricingCards() {
+  return (
+    <div className="grid items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-5">
+      <article className="flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:p-9">
+        <PriceLine amount={copy.pricing.monthly.amount} cadence={copy.pricing.monthly.cadence} tone="light" />
+        <p className="mt-5 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.monthly.lock}</p>
+      </article>
+      <p className="self-center text-center font-heading text-[1.35rem] font-bold tracking-[0.14em] text-black">
+        {copy.pricing.or}
+      </p>
+      <article className="flex flex-col rounded-[1.6rem] bg-black p-7 text-white md:p-9">
+        <PriceLine amount={copy.pricing.yearly.amount} cadence={copy.pricing.yearly.cadence} tone="dark" />
         <p className="mt-5 text-[15px] leading-relaxed text-white/85">{copy.pricing.yearly.note}</p>
-        <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.gst}</p>
-        <div className="mt-auto pt-8">
-          {before ? (
-            <StateButton state="before" tone="light" className="w-full" />
-          ) : (
-            <a href="#checkout" className={`${pillLight} w-full`}>
-              {copy.pricing.yearly.button}
-            </a>
-          )}
-        </div>
       </article>
     </div>
+  );
+}
+
+function PricingOfferButton({ state }: { state: Exclude<PageState, "closed"> }) {
+  const href = state === "before" ? "#first-access" : "#checkout";
+  return (
+    <a href={href} className={pillDark}>
+      {copy.pricing.button}
+    </a>
   );
 }
 
@@ -891,16 +883,51 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <h2 id="pricing-heading" className={`${h2} max-w-[16em]`}>
             {copy.pricing.heading}
           </h2>
+          <p className="mt-5 max-w-[16em] font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+            {copy.pricing.readySubhead}
+          </p>
           <div className={`${lede} mt-6 space-y-5`}>
             {copy.pricing.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          {state === "before" ? <p className={`${lede} mt-4`}>{copy.pricing.beforeNote}</p> : null}
-          <div className="mt-10">
-            <PricingCards state={state} />
+          <h3
+            id="launch-offer-heading"
+            className="mt-12 max-w-[16em] font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]"
+          >
+            {copy.pricing.offerHeading}
+          </h3>
+          <div className="mt-8">
+            <PricingCards />
           </div>
-          <p className="mt-8 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.cancel}</p>
+          <p className="mt-6 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.gst}</p>
+          <h3 className="mt-12 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+            {copy.pricing.includesHeading}
+          </h3>
+          <div className="mt-5 max-w-[40rem]">
+            <PlainList items={copy.pricing.includes} />
+          </div>
+          <h3 className="mt-12 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+            {copy.pricing.thingHeading}
+          </h3>
+          <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+            <p>{copy.pricing.thingIntro}</p>
+            {copy.pricing.windows.map((row) => (
+              <p key={row.label}>
+                <strong className="font-bold text-black">{row.label}</strong> {row.body}
+              </p>
+            ))}
+            <p>{copy.pricing.lockLine}</p>
+            <p>{copy.pricing.cancel}</p>
+            <p className="font-bold text-black">{copy.pricing.closeLine}</p>
+          </div>
+          <div className="mt-8">
+            <PricingOfferButton state={state} />
+          </div>
+          <div className={`${lede} mt-8 space-y-5`}>
+            <p>{copy.pricing.closer}</p>
+            <p>{copy.pricing.gst}</p>
+          </div>
           {state === "open" ? (
             <div className="mt-12 rounded-[1.75rem] bg-white p-3 ring-1 ring-black/10 md:p-6">
               <StripePricingTable />

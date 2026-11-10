@@ -361,16 +361,14 @@ test("approved sales lines stay intact", () => {
   expect(copy.copycats.heading).toBe("When your content becomes the blueprint, you're doing something right.");
   expect(copy.copycats.paragraphs.join(" ")).toContain("understand WHY it works");
   expect(copy.membership.heading).toBe("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
-  expect(copy.pricing.heading).toBe("Get in at the lowest price. Keep it for as long as you're a member.");
-  expect(copy.pricing.paragraphs.join(" ")).toContain(
-    "Not a temporary introductory rate.",
-  );
-  expect(copy.pricing.monthly.sale).toBe("$250");
-  expect(copy.pricing.monthly.regular).toBe("$500 CAD/month");
-  expect(copy.pricing.yearly.sale).toBe("$2,750");
-  expect(copy.pricing.yearly.note).toContain("$250 less than paying monthly for twelve months");
-  expect(copy.pricing.monthly.gst).toBe("Plus GST");
-  expect(copy.pricing.yearly.gst).toBe("Plus GST");
+  expect(copy.pricing.heading).toBe("YOUR CONTENT COULD BE REACHING A WHOLE LOT MORE PEOPLE.");
+  expect(copy.pricing.offerHeading).toBe("THE HOT & VIRAL LAUNCH OFFER");
+  expect(copy.pricing.button).toBe("YES! I WANT HOT & VIRAL");
+  expect(copy.pricing.paragraphs.join(" ")).not.toContain("Not a temporary introductory rate.");
+  expect(copy.pricing.monthly.amount).toBe("$250");
+  expect(copy.pricing.yearly.amount).toBe("$2,750");
+  expect(copy.pricing.yearly.note).toBe("That's $250 in savings compared with paying monthly for 12 months.");
+  expect(copy.pricing.gst).toBe("Plus GST.");
   expect(copy.cammy.beforeStat).toBe("200 views");
   expect(copy.cammy.afterStat).toBe("1.4M views");
   const cammy = copy.cammy.story.map((paragraph) => paragraph.text).join(" ");
@@ -383,8 +381,7 @@ test("approved sales lines stay intact", () => {
   expect(copy.membership.steps.flatMap((step) => step.paragraphs).join(" ")).toContain("The calls are recorded");
   expect(copy.faq.map((item) => item.a).join(" ")).toContain("Coaching is on the call, not in the chat.");
   expect(JSON.stringify(copy.membership).toLowerCase()).not.toContain("dm");
-  expect(copy.pricing.cancel).toContain("You can cancel anytime.");
-  expect(copy.pricing.cancel).toContain("The price lock ends when the membership ends.");
+  expect(copy.pricing.cancel).toBe("Cancel anytime.");
   expect(copy.pricing.paragraphs.join(" ").toLowerCase()).not.toContain("refund");
   expect(copy.firstAccess.success).toBe("You're in. Watch your inbox on November 25.");
   expect(copy.closed.success).toBe("You're on the list.");
@@ -400,7 +397,7 @@ test("approved sales lines stay intact", () => {
   expect(coachStats.tiktokFollowers).toBe("19,000 followers");
   expect(coachStats.viewsStat).toBe("2.7 million views in the last 30 days");
 
-  const places = [copy.hero.window, copy.countdown.line, copy.pricing.paragraphs.join(" "), copy.final.paragraphs.join(" ")];
+  const places = [copy.hero.window, copy.countdown.line, copy.final.paragraphs.join(" ")];
   for (const place of places) {
     expect(place).toContain(openingWindow);
   }
@@ -577,4 +574,98 @@ test("hot and viral keeps one quiet google reviews link and no quote block", () 
     expect(page).not.toContain(name);
     expect(copySource).not.toContain(name);
   }
+});
+
+test("pricing section is Stephanie's exact launch offer and stays behind the doors", () => {
+  expect(copy.pricing.heading).toBe("YOUR CONTENT COULD BE REACHING A WHOLE LOT MORE PEOPLE.");
+  expect(copy.pricing.readySubhead).toBe("So, are you ready to stop guessing?");
+  expect(copy.pricing.paragraphs).toEqual([
+    "You could keep trying to figure out Instagram on your own.",
+    "Keep testing random hooks. Keep changing your captions. Keep wondering why someone else's reel gets 100,000 views while yours gets 300.",
+    "Or you could get in the room with someone who knows what to look for.",
+    "Inside HOT & VIRAL, you get live coaching, real account reviews, strategic feedback and a community of people who are working towards the same thing.",
+    "And because you're joining during the launch window, you're getting access at my introductory membership rate.",
+  ]);
+  expect(copy.pricing.offerHeading).toBe("THE HOT & VIRAL LAUNCH OFFER");
+  expect(copy.pricing.monthly).toEqual({
+    amount: "$250",
+    cadence: "CAD / MONTH",
+    lock: "Your monthly rate is locked in for as long as you remain an active member.",
+  });
+  expect(copy.pricing.or).toBe("OR");
+  expect(copy.pricing.yearly).toEqual({
+    amount: "$2,750",
+    cadence: "CAD / YEAR",
+    note: "That's $250 in savings compared with paying monthly for 12 months.",
+  });
+  expect(copy.pricing.gst).toBe("Plus GST.");
+  expect(copy.pricing.includesHeading).toBe("WHAT YOU GET:");
+  expect(copy.pricing.includes).toEqual([
+    "Weekly Tuesday live coaching.",
+    "Instagram and TikTok account reviews.",
+    "Direct feedback on your content.",
+    "Live content breakdowns.",
+    "Recorded coaching calls.",
+    "Private member community.",
+    "Ongoing opportunities to learn, experiment and improve your content.",
+  ]);
+  expect(copy.pricing.thingHeading).toBe("HERE'S THE THING...");
+  expect(copy.pricing.thingIntro).toBe("This introductory price won't be available forever.");
+  expect(copy.pricing.windows).toEqual([
+    { label: "November 25–27, 2026:", body: "Join for $250 CAD/month." },
+    { label: "Spring 2027:", body: "The monthly membership price increases to $500 CAD/month." },
+  ]);
+  expect(copy.pricing.lockLine).toBe(
+    "Join during the launch window and keep your $250 monthly rate for as long as your membership remains active.",
+  );
+  expect(copy.pricing.cancel).toBe("Cancel anytime.");
+  expect(copy.pricing.closeLine).toBe("Three days to get in. Then enrollment closes until spring.");
+  expect(copy.pricing.button).toBe("YES! I WANT HOT & VIRAL");
+  expect(copy.pricing.closer).toBe(
+    "Your next reel could be the one that reaches thousands. Let's work on making that happen.",
+  );
+  expect(JSON.stringify(copy.pricing)).not.toContain("Get in at the lowest price");
+  expect(JSON.stringify(copy.pricing)).not.toContain("Join monthly");
+  expect(JSON.stringify(copy.pricing)).not.toContain("Join for the year");
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.proof.button).toBe("GET FIRST ACCESS");
+  expect(copy.membership.button).toBe("I'M READY TO GET MORE VIEWS");
+  expect(copy.rightRoom.button).toBe("YES, I'M READY. LET'S GO.");
+  expect(copy.coach.button).toBe("COME JOIN ME INSIDE HOT & VIRAL");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const pricingAt = page.indexOf('id="pricing"');
+  const receiptsAt = page.indexOf('id="receipts"');
+  const firstAccessAt = page.indexOf('id="first-access"');
+  expect(pricingAt).toBeGreaterThan(receiptsAt);
+  expect(firstAccessAt).toBeGreaterThan(pricingAt);
+  const block = page.slice(pricingAt, firstAccessAt);
+  expect(block).toContain('id="launch-offer-heading"');
+  expect(block).toContain("{copy.pricing.offerHeading}");
+  expect(block).toContain("{copy.pricing.heading}");
+  expect(block).toContain("<PricingOfferButton");
+  expect(block).toContain('className="font-bold text-black">{copy.pricing.closeLine}');
+  expect(block).toContain("<strong");
+  expect(block).toContain('state === "open" ?');
+  expect(block).toContain("<StripePricingTable />");
+  expect(block).not.toContain("Get in at the lowest price");
+  expect(block).not.toContain("Join monthly");
+  expect(block).not.toContain("Join for the year");
+  const offerFn = page.slice(page.indexOf("function PricingOfferButton"), page.indexOf("function markedText"));
+  expect(offerFn).toContain('const href = state === "before" ? "#first-access" : "#checkout"');
+  expect(offerFn).toContain("{copy.pricing.button}");
+  expect(offerFn).toContain("className={pillDark}");
+  expect(page).toContain('className="text-[#f41cdc]">{amount}</span>');
+  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain("{copy.hero.headline}");
+  expect(copy.hero.headline).toBe(
+    "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+  );
+  expect(copy.problem.heading).toBe("You're not creating content to be ignored. So why is nobody watching?");
+  expect(copy.introducing.heading).toBe("WHAT IF YOUR NEXT REEL WAS THE ONE THAT TOOK OFF?");
+  expect(copy.proof.heading).toBe("DON'T JUST TAKE MY WORD FOR IT. LOOK AT THE VIEWS.");
+  expect(copy.membership.heading).toBe("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
+  expect(copy.rightRoom.heading).toBe("LET'S MAKE SURE YOU'RE IN THE RIGHT ROOM.");
+  expect(copy.coach.heading).toBe("I'VE BEEN IN THE CONTENT GAME. AND I'VE GOT THE RECEIPTS.");
 });
