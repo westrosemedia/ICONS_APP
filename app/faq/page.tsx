@@ -6,7 +6,7 @@ export default function FaqPage() {
           <div className="max-w-3xl">
             <h1 className="text-hero text-black mb-6">Frequently Asked Questions</h1>
             <p className="text-editorial text-gray-700 mb-12">
-              This page answers common questions about working with West Rose Media, the ICON Brand Partnership, and one-time editorial shoots for entrepreneurs, consultants, and business owners.
+              This page answers common questions about working with West Rose Media and the ICON Brand Partnership.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">What if someone is not approved for the ICON Brand Partnership?</h3>
                   <p className="text-editorial text-gray-700">
-                    One-time editorial shoots may still be available depending on fit and availability.
+                    You will still hear from us. Private 1:1 coaching is by enquiry if you want another conversation with Stephanie.
                   </p>
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">What is the best way to get started?</h3>
                   <p className="text-editorial text-gray-700">
-                    The best place to start is applying for the ICON Brand Partnership or reviewing one-time shoot options.
+                    Apply for the ICON Brand Partnership, or enquire about private 1:1 coaching.
                   </p>
                 </div>
               </div>

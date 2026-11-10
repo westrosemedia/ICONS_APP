@@ -5,7 +5,7 @@ export default function StructuredData() {
     "name": "Stephanie Rose",
     "alternateName": "Stephanie Rose West Rose Media",
     "jobTitle": "Founder, Creative Director",
-    "description": "Founder of West Rose Media. Leads strategy and creative direction for brand photography, event coverage, and the ICON Brand Partnership for founders across Canada.",
+    "description": "Founder of West Rose Media, a creative growth agency based in Calgary. Leads strategy and creative direction, with photography, video, and the ICON Brand Partnership.",
     "url": "https://westrosemedia.com",
     "image": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
     "address": {
@@ -46,7 +46,7 @@ export default function StructuredData() {
     "name": "West Rose Media",
     "alternateName": ["West Rose Media Photography"],
     "url": "https://westrosemedia.com",
-    "description": "Luxury personal branding, content creation, and mastermind retreats for entrepreneurs in Canada. Professional brand photography and social media strategy.",
+    "description": "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Strategy, photography, video, and the ICON Brand Partnership. Based in Calgary.",
     "foundingDate": "2020",
     "founder": {
       "@type": "Person",
@@ -149,7 +149,7 @@ export default function StructuredData() {
     "name": "West Rose Media",
     "alternateName": "ICONS by West Rose Media",
     "url": "https://westrosemedia.com",
-    "description": "Luxury personal branding photography and business coaching for female entrepreneurs in Calgary, Alberta and across Canada. Professional brand photography, content strategy, and mastermind retreats.",
+    "description": "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Based in Calgary and working with founders across Canada.",
     "publisher": {
       "@type": "Organization",
       "name": "West Rose Media"

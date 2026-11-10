@@ -1,130 +1,83 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import AboutStructuredData from "@/components/AboutStructuredData";
-
-const storyImage =
-  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_012.jpg?alt=media&token=d22f0bf0-f15c-458c-bcc7-421c4006bc28";
-const featuredImage =
-  "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_075.jpg?alt=media&token=ae30650a-5ad9-43ed-8723-a237d5b551a4";
+import WrmButton from "@/components/agency/WrmButton";
+import { FRAME, portraits } from "@/lib/agency";
 
 export const metadata: Metadata = {
-  title: "About Stephanie Rose | Calgary Brand Photographer | West Rose Media",
-  description: "Meet Stephanie Rose, Calgary's luxury brand photographer and founder of West Rose Media. Learn about her journey building a high-end content studio that serves entrepreneurs across Canada.",
-  keywords: "Stephanie Rose, about Stephanie Rose, Calgary brand photographer, Calgary photographer, personal branding photographer, luxury photography Calgary, West Rose Media founder, brand photographer Calgary, content studio Calgary, photographer Calgary, business photography Calgary, personal brand strategist",
-  authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
-  creator: "Stephanie Rose",
-  publisher: "West Rose Media",
-  metadataBase: new URL('https://westrosemedia.com'),
-  alternates: {
-    canonical: '/about',
-  },
+  title: "About Stephanie Rose | West Rose Media",
+  description:
+    "Stephanie Rose is the founder and creative director of West Rose Media, a creative growth agency based in Calgary.",
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Stephanie Rose | Calgary Brand Photographer",
-    description: "Meet Stephanie Rose, Calgary's luxury brand photographer and founder of West Rose Media. Learn about her journey building a high-end content studio for entrepreneurs.",
-    url: 'https://westrosemedia.com/about',
-    siteName: 'West Rose Media',
+    title: "About Stephanie Rose | West Rose Media",
+    description:
+      "Founder and creative director of West Rose Media. Strategy, photography, video, and brand positioning for founders across Canada.",
+    url: "https://westrosemedia.com/about",
+    siteName: "West Rose Media",
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7',
+        url: portraits.hero,
         width: 1200,
         height: 630,
-        alt: 'Stephanie Rose - Calgary Brand Photographer',
+        alt: "Stephanie Rose",
       },
     ],
     type: "website",
     locale: "en_CA",
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Stephanie Rose | Calgary Brand Photographer',
-    description: 'Meet Stephanie Rose, Calgary\'s luxury brand photographer and founder of West Rose Media.',
-    images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
-    creator: '@westrosemedia',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 };
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight">
-                Hi, I’m
-                <br />
-                <span className="text-orange-500" style={{color: '#ff914d'}}>Stephanie Rose</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
-              </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                West Rose Media&apos;s services include the Spotlight shoot, Immersion event coverage, and the ICON Brand Partnership, a done-for-you monthly content operation. West Rose Media serves clients in Calgary, Vancouver, Toronto, and across North America.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/packages"
-                  className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
-                >
-                  Work with Us
-                </Link>
-                <Link
-                  href="/apply"
-                  className="inline-block border-2 border-black text-black px-8 py-4 rounded-xl text-lg font-medium hover:bg-black hover:text-white transition-colors"
-                >
-                  Apply for ICON Brand Partnership
-                </Link>
-              </div>
-            </div>
-            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
-              <Image
-                src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7"
-                alt="Stephanie Rose - Calgary Personal Branding Photographer"
-                fill
-                className="object-cover"
-                title="Stephanie Rose | Calgary Personal Branding Photographer"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={90}
-              />
-            </div>
+    <div className="bg-[#E9E1D7] text-[#171515]">
+      <section className="grid lg:grid-cols-12">
+        <div className={`${FRAME} py-16 lg:col-span-6 lg:max-w-none lg:py-24`}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">About Stephanie</p>
+          <h1 className="mt-4 text-[clamp(3.4rem,7vw,6.2rem)] leading-[0.88]">
+            Stephanie
+            <span className="block italic">Rose</span>
+          </h1>
+          <div className="mt-8 max-w-xl space-y-5 text-[17px] leading-[1.75]">
+            <p>
+              Stephanie Rose is the founder and creative director of West Rose Media, a creative growth agency based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
+            </p>
+            <p>
+              She leads strategy and creative direction and works alongside a team of professional photographers, videographers, and content producers. The flagship engagement is the ICON Brand Partnership. West Rose Media serves clients in Calgary, Vancouver, Toronto, and across North America.
+            </p>
           </div>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <WrmButton href="/work-with-us">Work with us</WrmButton>
+            <WrmButton href="/apply" variant="line">
+              Apply for ICON
+            </WrmButton>
+          </div>
+        </div>
+        <div className="relative min-h-[78vh] lg:col-span-6">
+          <Image
+            src={portraits.hero}
+            alt="Stephanie Rose, founder of West Rose Media"
+            fill
+            priority
+            className="object-cover object-[center_18%]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </div>
       </section>
 
-      {/* My Story Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">
-            My Story
-          </h2>
-          
-          {/* Story Image */}
-          <div
-            className="relative left-1/2 mb-12 h-[55vh] min-h-[340px] w-screen -translate-x-1/2 bg-cover bg-no-repeat md:bg-fixed"
-            style={{
-              backgroundImage: `url('${storyImage}')`,
-              backgroundPosition: "center 33%",
-            }}
-            role="img"
-            aria-label="Stephanie Rose - Personal Branding Photographer Story"
-            title="Stephanie Rose | My Story - Building West Rose Media"
+      <section>
+        <div className="relative h-[70vh] min-h-[420px]">
+          <Image
+            src={portraits.story}
+            alt="Stephanie Rose"
+            fill
+            className="object-cover object-[center_33%]"
+            sizes="100vw"
           />
-          
-          <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
+        </div>
+        <div className={`${FRAME} max-w-3xl py-16 lg:py-24`}>
+          <h2 className="text-5xl md:text-6xl">The story</h2>
+          <div className="mt-10 space-y-6 text-[17px] leading-[1.8]">
             <p>
               West Rose Media was built during a season of real, irreversible change. I built this business while leaving religion, getting divorced, coming out, and raising three kids on my own. Later, I met my partner and built a life that finally felt aligned. Through all of it, the business kept working.
             </p>
@@ -141,135 +94,86 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I Do Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">
-            What I Do
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Photography and Video for Entrepreneurs</h3>
-              <p className="text-gray-600 mb-6">
-                High-end visuals that make a business look as credible as it actually is.
-              </p>
-              <ul className="text-left text-gray-600 space-y-2">
-                <li>• Personal brand shoots</li>
-                <li>• Campaign and launch visuals</li>
-                <li>• Event coverage and behind-the-scenes content</li>
-                <li>• Reels and short-form video assets</li>
+      <section className="bg-white">
+        <div className={`${FRAME} py-20 lg:py-24`}>
+          <h2 className="text-5xl">What she does</h2>
+          <div className="mt-12 grid gap-12 border-t border-[#171515] pt-10 md:grid-cols-3">
+            <div>
+              <h3 className="text-3xl">Photography and video</h3>
+              <p className="mt-4 leading-relaxed">High-end visuals that make a business look as credible as it actually is.</p>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+                <li>Personal brand shoots</li>
+                <li>Campaign and launch visuals</li>
+                <li>Event coverage and behind-the-scenes content</li>
+                <li>Reels and short-form video assets</li>
               </ul>
             </div>
-            
-            <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">The ICON Brand Partnership</h3>
-              <p className="text-gray-600 mb-6">
+            <div>
+              <h3 className="text-3xl">ICON Brand Partnership</h3>
+              <p className="mt-4 leading-relaxed">
                 A done-for-you content operation for founders who want strategy, production, and publishing handled end to end.
               </p>
-              <ul className="text-left text-gray-600 space-y-2">
-                <li>• Strategy and content direction</li>
-                <li>• Monthly production (photo + video)</li>
-                <li>• Copy support and publishing workflows</li>
-                <li>• Consistent content that builds trust and drives inbound demand</li>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+                <li>Strategy and content direction</li>
+                <li>Monthly production, photo and video</li>
+                <li>Copy support and publishing workflows</li>
+                <li>Content that builds trust and inbound demand</li>
               </ul>
             </div>
-            
-            <div className="text-center p-8 bg-white border border-gray-200 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-black">Event and Immersion Coverage</h3>
-              <p className="text-gray-600 mb-6">
-                Multi-day content capture for founders and teams who want the room, the energy, and the results documented and leveraged.
+            <div>
+              <h3 className="text-3xl">Event coverage</h3>
+              <p className="mt-4 leading-relaxed">
+                Multi-day content capture for founders and teams who want the room, the energy, and the results documented.
               </p>
-              <ul className="text-left text-gray-600 space-y-2">
-                <li>• Event photo + video coverage</li>
-                <li>• Same-day asset delivery options</li>
-                <li>• Content built for immediate demand</li>
-                <li>• Post-event content pipeline</li>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+                <li>Event photo and video coverage</li>
+                <li>Same-day asset delivery options</li>
+                <li>Content built for immediate demand</li>
+                <li>A post-event content pipeline</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-20 px-4 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            My Philosophy
-          </h2>
-          
-          <div className="space-y-8 text-lg text-white/90 leading-relaxed">
-            <p className="text-2xl font-medium text-orange-500" style={{color: '#ff914d'}}>
-              High-end content is not an aesthetic choice. It is a trust decision.
-            </p>
-            
+      <section className="bg-[#171515] text-[#E9E1D7]">
+        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+          <h2 className="text-5xl text-white">A point of view</h2>
+          <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-white">
+            High-end content is not an aesthetic choice. It is a trust decision.
+          </p>
+          <div className="mt-8 space-y-5 text-[17px] leading-[1.75]">
             <p>
               When a founder’s online presence matches their real capability, the market responds faster. Better leads. Better opportunities. Cleaner sales conversations.
             </p>
-            <p>
-              West Rose Media is built for people who want to move. Clear direction, decisive execution, and content that looks like leadership.
-            </p>
+            <p>West Rose Media is built for people who want to move. Clear direction, decisive execution, and content that looks like leadership.</p>
           </div>
         </div>
       </section>
 
-      {/* Today Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
-            Today
-          </h2>
-          <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              West Rose Media is based in Calgary and works with clients across Canada, including Vancouver and Toronto. The work is designed for established entrepreneurs, consultants, and event-led brands who want their presence to match their level.
-            </p>
-            <p>
-              Clients leave with assets that create demand now, and a content system that keeps working long after the shoot.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div className="relative h-[68vh] min-h-[380px]">
+        <Image
+          src={portraits.featured}
+          alt="Stephanie Rose"
+          fill
+          className="object-cover object-[center_30%]"
+          sizes="100vw"
+        />
+      </div>
 
-      {/* Featured Image */}
-      <section
-        className="relative h-[65vh] min-h-[380px] bg-cover bg-no-repeat md:bg-fixed"
-        style={{
-          backgroundImage: `url('${featuredImage}')`,
-          backgroundPosition: "center 33%",
-        }}
-        role="img"
-        aria-label="Stephanie Rose - Calgary Brand Photographer and Social Media Strategist for Entrepreneurs"
-      />
-
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
-            Ready to Build Demand With Content That Matches Your Level?
+      <section>
+        <div className={`${FRAME} max-w-3xl py-20 text-left`}>
+          <h2 className="text-[clamp(2.4rem,4vw,3.8rem)] leading-[1]">
+            There&apos;s a woman behind the strategy. And she has opinions.
           </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Let's create the visual presence and strategic positioning that transforms your business and your life.
+          <p className="mt-6 text-[17px] leading-[1.75]">
+            West Rose Media is based in Calgary and works with clients across Canada, including Vancouver and Toronto. The work is designed for established entrepreneurs, consultants, and event-led brands who want their presence to match their level.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/packages"
-              className="inline-block bg-black text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-gray-800 transition-colors"
-            >
-              Work with Us
-            </Link>
-            <Link
-              href="/apply"
-              className="inline-block text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors hover:opacity-90"
-              style={{backgroundColor: '#ff914d'}}
-            >
-              Apply for ICON Brand Partnership
-            </Link>
+          <div className="mt-10">
+            <WrmButton href="/contact">Contact</WrmButton>
           </div>
         </div>
       </section>
-      
-      {/* Structured Data for SEO */}
       <AboutStructuredData />
     </div>
   );

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import HomePageClient from "./HomePageClient";
 import HomepageStructuredData from "@/components/HomepageStructuredData";
 
-const title = "West Rose Media | Brand Photography, Visibility + Strategy for Women Founders | Calgary, Vancouver, Toronto";
+const title = "West Rose Media | Creative Growth Agency";
 const description =
-  "West Rose Media gets you paid with brand photography, The Loaded Grid visibility membership, 1:1 strategy, and ICON Brand Partnership. Based in Calgary, serving Vancouver, Toronto, and beyond.";
+  "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Beautifully disruptive. Strategically brilliant. Built to be remembered.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords:
-    "brand partnership for women founders, content strategy Calgary, personal brand photography Canada, West Rose Media, ICON Brand Partnership, brand photographer Calgary, event photographer Vancouver, Toronto brand photography, Stephanie Rose",
+    "West Rose Media, Stephanie Rose, creative growth agency, ICON Brand Partnership, brand strategy, Calgary, Vancouver, Toronto",
   openGraph: {
     title,
     description,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
         width: 1200,
         height: 630,
-        alt: "West Rose Media brand photography",
+        alt: "Stephanie Rose, founder of West Rose Media",
       },
     ],
   },
