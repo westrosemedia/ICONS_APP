@@ -31,7 +31,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "icon",
     title: iconCopy.heroTitle,
-    noteBelowTitle: "By application. A small number of seats are open now.",
+    noteBelowTitle: "Open. By application. From $5,000 CAD per month.",
     whoFor:
       "ICON Brand Partnership is for established founders who want one team managing their entire content operation on an ongoing monthly basis.",
     blurb: iconCopy.intro,
@@ -43,7 +43,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "hot-and-rich",
     title: "Hot and Rich Mastermind",
-    noteBelowTitle: "4 spots left. Four months, beginning November 15.",
+    noteBelowTitle: "Opens in January. $6,000 CAD for four months.",
     whoFor:
       "For founders who already sell and get results, and still feel invisible to the women who should be buying from them.",
     blurb:

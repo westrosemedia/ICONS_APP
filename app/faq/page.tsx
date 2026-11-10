@@ -107,7 +107,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">What if someone is not approved for the ICON Brand Partnership?</h3>
                   <p className="text-editorial text-gray-700">
-                    You will still hear from us. Private 1:1 coaching is by enquiry if you want another conversation with Stephanie.
+                    You will still hear from us. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January.
                   </p>
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">What is the best way to get started?</h3>
                   <p className="text-editorial text-gray-700">
-                    Apply for the ICON Brand Partnership, or enquire about private 1:1 coaching.
+                    ICON Brand Partnership is open. Apply through the site. Private 1:1 coaching is full.
                   </p>
                 </div>
               </div>

@@ -40,7 +40,7 @@ const IMAGES = {
 const META = {
   title: "Manifesting & Marketing Mastermind | West Rose Media",
   description:
-    "Now taking deposits for a January 2027 start. Six months. One room. Stephanie and Jackie. Sign up and get a ticket to Wildly Wealthy Woman Live.",
+    "The Manifesting & Marketing Mastermind opens in January. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat. Stephanie Rose and Jackie McDonald.",
 };
 
 export const revalidate = 0;
@@ -283,11 +283,8 @@ export default function MastermindPage() {
             money. Six months. One room. Stephanie and Jackie in your corner the
             entire time.
           </p>
-          <p className={`${eyebrow} mb-4 text-white/70`}>
-            Now taking deposits for a January 2027 start.
-          </p>
-          <p className="text-base md:text-lg text-white/90 mb-4 max-w-xl mx-auto">
-            In January, the full mastermind price goes up to $25,000.
+          <p className={`${eyebrow} mb-10 text-white/70`}>
+            Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
           </p>
           <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
             Sign up and get a ticket to{" "}
@@ -614,7 +611,7 @@ export default function MastermindPage() {
                   women who are actually doing it.
                 </p>
                 <p className="text-white/90 leading-relaxed max-w-xl mt-4">
-                  In January, the full mastermind price goes up to $25,000.
+                  Opens in January.
                 </p>
               </div>
               <div className="border-t border-white/15 pt-8">
@@ -632,9 +629,8 @@ export default function MastermindPage() {
                 </p>
               </div>
               <p className="text-lg text-white/80 leading-relaxed max-w-xl pt-2">
-                Deposits are open for a January 2027 start. In January, the full
-                mastermind price goes up to $25,000. Signing up includes
-                a ticket to{" "}
+                Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
+                Signing up includes a ticket to{" "}
                 <a
                   href={WILDLY_WEALTHY_LIVE_URL}
                   target="_blank"
@@ -725,9 +721,8 @@ export default function MastermindPage() {
               Choose the room. Choose the team. Choose to build the movement.
             </p>
             <p className="text-lg text-black/80 max-w-xl mx-auto leading-relaxed">
-              Deposits are open for a January 2027 start. In January, the full
-              mastermind price goes up to $25,000. Signing up includes a
-              ticket to{" "}
+              Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
+              Signing up includes a ticket to{" "}
               <a
                 href={WILDLY_WEALTHY_LIVE_URL}
                 target="_blank"

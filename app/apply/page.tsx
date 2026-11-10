@@ -25,7 +25,7 @@ export default function ApplyPage() {
             The partnership delivers a complete content team inside her business without her having to hire one. Stephanie Rose leads strategic creative direction, brand and offer building, and business coaching. The West Rose Media team handles ongoing photography, video, social content, and launch assets. Aligned execution turns her decisions into work fast enough that every idea ships while it is still hot.
           </p>
           <p>
-            ICON runs on a 6-month or 12-month commitment. From $5,000 CAD per month. Applications are reviewed carefully. Every applicant gets a response.
+            ICON Brand Partnership is open. It runs on a 6-month or 12-month commitment. From $5,000 CAD per month. Applications are reviewed carefully. Every applicant gets a response.
           </p>
         </div>
 

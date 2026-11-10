@@ -4,7 +4,7 @@ import WorkWithUsPage from "@/components/agency/WorkWithUsPage";
 export const metadata: Metadata = {
   title: "Work With Us | West Rose Media",
   description:
-    "ICON Brand Partnership, private 1:1 coaching, and Hot & Viral.",
+    "ICON Brand Partnership is open. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind both open in January.",
   alternates: { canonical: "/work-with-us" },
 };
 

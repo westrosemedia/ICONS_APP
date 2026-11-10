@@ -1,28 +1,45 @@
-import Link from "next/link";
 import WrmButton from "@/components/agency/WrmButton";
-import { COACHING_ENQUIRY_URL, FRAME, iconCopy } from "@/lib/agency";
+import { FRAME, iconCopy } from "@/lib/agency";
 
 const offers = [
   {
     index: "01",
-    kicker: "Flagship",
+    kicker: "Flagship. Open.",
     title: "ICON Brand Partnership",
     href: "/icon",
     body: iconCopy.intro,
-    meta: "From $5,000 CAD per month. Six or twelve month commitment. By application.",
+    meta: "Open. From $5,000 CAD per month. Six or twelve month commitment. By application.",
     cta: "Read the partnership",
   },
   {
     index: "02",
-    kicker: "Private",
+    kicker: "Private. Full.",
     title: "Private 1:1 Coaching",
     href: "/coaching",
-    body: "Direct time with Stephanie on the strategy behind the brand. There is no public price and no published inclusion list. Enquire if you want to talk about fit.",
-    meta: "Availability is confirmed in the enquiry, not on this page.",
-    cta: "Enquire",
+    body: "Direct time with Stephanie on the strategy behind the brand. Private 1:1 coaching is full. There is no published price and no published list of inclusions.",
+    meta: "This offer is full.",
+    cta: "Private 1:1 is full",
   },
   {
     index: "03",
+    kicker: "Mastermind. Opens in January.",
+    title: "Hot & Rich",
+    href: "/hot-and-rich",
+    body: "Four months with Stephanie. Biweekly live calls, text support inside the group three days a week, the strategy she is running now, and a ticket to Wildly Wealthy Woman Live in Banff, March 2027.",
+    meta: "Opens in January. $6,000 CAD for four months. A separate program from Manifesting & Marketing.",
+    cta: "Hot & Rich",
+  },
+  {
+    index: "04",
+    kicker: "Mastermind. Opens in January.",
+    title: "Manifesting & Marketing",
+    href: "/mastermind",
+    body: "Stephanie Rose and Jackie McDonald. Six months of weekly coaching, personal tapping sessions, Cadence, and the Story Stack. The retreat tier adds Kananaskis. Signing up includes a ticket to Wildly Wealthy Woman Live.",
+    meta: "Opens in January. $14,000 CAD, or $20,000 CAD with the retreat. Not Hot & Rich.",
+    cta: "Manifesting & Marketing",
+  },
+  {
+    index: "05",
     kicker: "Separate page",
     title: "Hot & Viral",
     href: "/hot-and-viral",
@@ -37,11 +54,11 @@ export default function WorkWithUsPage() {
     <div className="bg-[#E9E1D7] text-[#171515]">
       <header className={`${FRAME} pb-8 pt-16 lg:pt-24`}>
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">Work with us</p>
-        <h1 className="mt-4 max-w-[14ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
-          Three ways to work together.
+        <h1 className="mt-4 max-w-[16ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
+          What is open, what is full, what opens in January.
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed">
-          ICON Brand Partnership, private 1:1 coaching, and Hot & Viral. Photography and video are part of how the studio works. They are not listed here as separate packages.
+          ICON Brand Partnership is open. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January. Hot & Viral keeps its own page.
         </p>
       </header>
 
@@ -59,36 +76,13 @@ export default function WorkWithUsPage() {
               </div>
               <div className="flex flex-col justify-between gap-8 lg:col-span-4">
                 <p className="text-sm leading-relaxed text-[#171515]/75">{offer.meta}</p>
-                {offer.href === "/coaching" ? (
-                  <div className="flex flex-col items-start gap-4">
-                    <WrmButton href={offer.href} variant="line">
-                      {offer.cta}
-                    </WrmButton>
-                    <a
-                      href={COACHING_ENQUIRY_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] uppercase tracking-[0.18em] underline underline-offset-4"
-                    >
-                      Continue the enquiry
-                    </a>
-                  </div>
-                ) : (
-                  <WrmButton href={offer.href} variant={offer.href === "/hot-and-viral" ? "solid" : "line"}>
-                    {offer.cta}
-                  </WrmButton>
-                )}
+                <WrmButton href={offer.href} variant={offer.href === "/hot-and-viral" ? "solid" : "line"}>
+                  {offer.cta}
+                </WrmButton>
               </div>
             </div>
           </article>
         ))}
-        <p className="border-t border-[#171515] pt-8 text-sm text-[#171515]/70">
-          Partnership applications go through the{" "}
-          <Link href="/apply" className="underline underline-offset-4">
-            Sprout application
-          </Link>
-          .
-        </p>
       </div>
     </div>
   );

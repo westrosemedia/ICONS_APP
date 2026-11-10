@@ -14,5 +14,7 @@ export type WorkWithUsItem = {
 export const workWithUsItems: WorkWithUsItem[] = [
   { label: "ICON Brand Partnership", href: "/icon", external: false },
   { label: "Private 1:1 Coaching", href: "/coaching", external: false },
+  { label: "Hot & Rich", href: "/hot-and-rich", external: false },
+  { label: "Manifesting & Marketing Mastermind", href: "/mastermind", external: false },
   { label: "Hot & Viral", href: "/hot-and-viral", external: false },
 ];

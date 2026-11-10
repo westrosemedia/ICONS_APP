@@ -9,8 +9,6 @@ const STRIPE_PRICING_TABLE_ID = "prctbl_1UPnW7CcsY3WjV3QeRAgTkFI";
 const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
 const INSTAGRAM_URL = "https://www.instagram.com/westrosemedia/";
 
-// Update this number by hand as spots sell. Every spot count on the page reads from here.
-const SPOTS_LEFT = 4;
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
@@ -20,7 +18,8 @@ const IMAGES = {
 
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
-  description: `Hot and Rich starts November 15. ${SPOTS_LEFT} spots left. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff, March 2027.`,
+  description:
+    "Hot and Rich opens in January. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff, March 2027.",
 };
 
 export const revalidate = 0;
@@ -91,7 +90,7 @@ export default function HotAndRichPage() {
         className="sticky top-[73px] z-30 block bg-[#1C1917] px-4 py-3 text-center text-[#FAF7F2] hover:bg-[#3D3632] transition-colors"
       >
         <p className="text-sm md:text-base tracking-wide">
-          Doors close November 15. Only {SPOTS_LEFT} spots left.{" "}
+          Opens in January. $6,000 CAD for four months.{" "}
           <span aria-hidden="true">→</span>
         </p>
       </Link>
@@ -120,7 +119,7 @@ export default function HotAndRichPage() {
               the account I have now.
             </p>
             <p>
-              Hot and Rich starts November 15. There are {SPOTS_LEFT} spots left.
+              Hot and Rich opens in January.
             </p>
           </div>
           <JoinNowButton />
@@ -416,11 +415,12 @@ export default function HotAndRichPage() {
             id="only-way-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug mb-10 text-center"
           >
-            This is the only way to work with me until 2027
+            Hot and Rich opens in January
           </h2>
           <p className="text-lg text-[#FAF7F2]/90">
-            My 1:1 is full. Hot and Rich is the only way to work with me right now, unless you want
-            a spot on the 2027 waitlist.
+            Private 1:1 coaching is full. Hot and Rich is a separate program, and it opens in January.
+            ICON Brand Partnership is open. Manifesting & Marketing is a different mastermind, and
+            it also opens in January.
           </p>
           <p className="text-lg text-[#FAF7F2]/90">
             I&apos;m expanding, and I can&apos;t promise this access will be here forever.
@@ -519,9 +519,7 @@ export default function HotAndRichPage() {
           </h2>
           <div className="space-y-4 text-lg text-[#3D3632] mb-10">
             <p>$6,000 CAD for four months.</p>
-            <p>
-              {SPOTS_LEFT} spots left. The new round starts November 15.
-            </p>
+            <p>Opens in January.</p>
             <p>
               Includes your ticket to{" "}
               <a
@@ -555,7 +553,7 @@ export default function HotAndRichPage() {
             help you sharpen it until the right people can&apos;t scroll past you.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
-            {SPOTS_LEFT} spots. We start November 15.
+            Opens in January. $6,000 CAD for four months.
           </p>
           <JoinNowButton />
         </div>

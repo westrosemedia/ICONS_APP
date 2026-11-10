@@ -212,7 +212,7 @@ export default function HomePageClient() {
               From $5,000 CAD per month
             </p>
             <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#B7A38E]">
-              Six or twelve month commitment. By application.
+              Open. Six or twelve month commitment. By application.
             </p>
             <div className="mt-8">
               <WrmButton href="/icon" variant="light">
@@ -251,13 +251,56 @@ export default function HomePageClient() {
               Private 1:1 Coaching
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">
-              Direct time with Stephanie on the strategy behind the brand. The public site does not list a price or a set of inclusions for this offer. If you want to know whether it is the right fit, enquire. Availability is part of that conversation.
+              Private 1:1 coaching is full. There is no published price and no published list of inclusions.
             </p>
             <div className="mt-8">
               <WrmButton href="/coaching" variant="line">
-                Enquire
+                Private 1:1 is full
               </WrmButton>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#171515]">
+        <div className={`${FRAME} py-20 lg:py-24`}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+            Two masterminds. Both open in January.
+          </p>
+          <div className="mt-12 grid gap-16 lg:grid-cols-2">
+            <article>
+              <h2 className="text-5xl">Hot & Rich</h2>
+              <p className="mt-6 text-[17px] leading-[1.75]">
+                A separate program from the Manifesting & Marketing Mastermind. It opens in January. $6,000 CAD for four months.
+              </p>
+              <ul className="mt-6 space-y-2 text-[16px] leading-relaxed">
+                <li>Biweekly live calls with Stephanie</li>
+                <li>Text support inside the group, three days a week</li>
+                <li>The exact strategy she is running right now</li>
+                <li>Ticket to Wildly Wealthy Woman Live, Banff, March 2027</li>
+              </ul>
+              <div className="mt-8">
+                <WrmButton href="/hot-and-rich" variant="line">
+                  Hot & Rich
+                </WrmButton>
+              </div>
+            </article>
+            <article>
+              <h2 className="text-5xl">Manifesting & Marketing</h2>
+              <p className="mt-6 text-[17px] leading-[1.75]">
+                Stephanie Rose and Jackie McDonald. Six months. It opens in January. This is not Hot & Rich.
+              </p>
+              <ul className="mt-6 space-y-2 text-[16px] leading-relaxed">
+                <li>$14,000 CAD. Weekly coaching, personal tapping sessions, Cadence, and the Story Stack.</li>
+                <li>$20,000 CAD. Everything above, plus the Kananaskis retreat.</li>
+                <li>Signing up includes a ticket to Wildly Wealthy Woman Live.</li>
+              </ul>
+              <div className="mt-8">
+                <WrmButton href="/mastermind" variant="line">
+                  Manifesting & Marketing
+                </WrmButton>
+              </div>
+            </article>
           </div>
         </div>
       </section>

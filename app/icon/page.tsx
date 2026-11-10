@@ -6,7 +6,7 @@ import { FRAME, iconCopy, portraits } from "@/lib/agency";
 export const metadata: Metadata = {
   title: "ICON Brand Partnership | West Rose Media",
   description:
-    "ICON Brand Partnership starts at $5,000 CAD per month, on a six or twelve month commitment. By application.",
+    "ICON Brand Partnership is open. From $5,000 CAD per month, on a six or twelve month commitment. By application.",
   alternates: { canonical: "/icon" },
 };
 
@@ -21,7 +21,7 @@ export default function IconPage() {
           <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">{iconCopy.intro}</p>
           <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-4xl">From $5,000 CAD / month</p>
           <p className="mt-3 text-sm uppercase tracking-[0.16em] text-[#A66A55]">
-            Six or twelve month commitment. GST included on a typical engagement.
+            Open. Six or twelve month commitment. GST included on a typical engagement.
           </p>
         </div>
         <div className="relative min-h-[64vh] lg:col-span-6">
@@ -66,9 +66,8 @@ export default function IconPage() {
           <div className="max-w-xl space-y-6 text-[17px] leading-[1.75]">
             <p>{iconCopy.bigPromise}</p>
             <p>{iconCopy.beliefShift}</p>
-            <p>{iconCopy.scarcity}</p>
             <p>
-              A small number of seats are open now. Applications are reviewed carefully. Every applicant gets a response. You do not need to live in the same city. Strategy and planning happen remotely, with content captured on scheduled shoot days and travel dates.
+              ICON Brand Partnership is open. Stephanie wants to scale it. It is by application. Every applicant gets a response. You do not need to live in the same city. Strategy and planning happen remotely, with content captured on scheduled shoot days and travel dates.
             </p>
             <p className="text-sm uppercase tracking-[0.14em] text-[#171515]/70">{iconCopy.priceLine}</p>
           </div>

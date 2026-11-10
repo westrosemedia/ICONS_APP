@@ -3,7 +3,7 @@ export default function MastermindStructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start. Signing up includes a ticket to Wildly Wealthy Woman Live and a luxury retreat in Kananaskis.",
+    "description": "The Manifesting & Marketing Mastermind opens in January. Stephanie Rose and Jackie McDonald. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat. Signing up includes a ticket to Wildly Wealthy Woman Live.",
     "startDate": "2027-01-01",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
@@ -74,7 +74,7 @@ export default function MastermindStructuredData() {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start. Signing up includes a ticket to Wildly Wealthy Woman Live.",
+    "description": "The Manifesting & Marketing Mastermind opens in January. Stephanie Rose and Jackie McDonald. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat. Signing up includes a ticket to Wildly Wealthy Woman Live.",
     "provider": {
       "@type": "Organization",
       "name": "West Rose Media",

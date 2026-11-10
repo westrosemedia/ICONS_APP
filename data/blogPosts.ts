@@ -1,5 +1,4 @@
 import type { BlogPost } from "@/types/blog";
-import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Blog post images (Firebase Storage). */
 const P = {
@@ -77,9 +76,9 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      headline: "Spotlight sessions are available now in Calgary, Vancouver, and Toronto.",
-      buttonLabel: "Book a Spotlight Shoot",
-      href: SPOTLIGHT_BOOK_URL,
+      headline: "If you want to talk about working together, start here.",
+      buttonLabel: "Work with us",
+      href: "/work-with-us",
     },
   },
 ];

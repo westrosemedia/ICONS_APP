@@ -52,6 +52,8 @@ export const agencyNav: NavLink[] = [
     children: [
       { href: "/icon", label: "ICON Brand Partnership" },
       { href: "/coaching", label: "Private 1:1 Coaching" },
+      { href: "/hot-and-rich", label: "Hot & Rich" },
+      { href: "/mastermind", label: "Manifesting & Marketing" },
       { href: "/hot-and-viral", label: "Hot & Viral" },
     ],
   },

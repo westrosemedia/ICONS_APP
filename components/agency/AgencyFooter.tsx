@@ -64,6 +64,16 @@ export default function AgencyFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/hot-and-rich" className="hover:text-white">
+                Hot & Rich
+              </Link>
+            </li>
+            <li>
+              <Link href="/mastermind" className="hover:text-white">
+                Manifesting & Marketing
+              </Link>
+            </li>
+            <li>
               <Link href="/hot-and-viral" className="hover:text-white">
                 Hot & Viral
               </Link>

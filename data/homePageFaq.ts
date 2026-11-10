@@ -2,7 +2,7 @@ export const homePageFaqItems = [
   {
     question: "What does West Rose Media do?",
     answer:
-      "West Rose Media is a creative growth agency for brands ready to make a bigger impression. The flagship offer is the ICON Brand Partnership, a monthly partnership where Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. Private 1:1 coaching is by enquiry. Hot & Viral is a separate live membership.",
+      "West Rose Media is a creative growth agency for brands ready to make a bigger impression. The flagship offer is the ICON Brand Partnership, and it is open. Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January. Hot & Viral is a separate live membership.",
   },
   {
     question: "How is this different from hiring a PR firm?",
@@ -12,12 +12,12 @@ export const homePageFaqItems = [
   {
     question: "What is the ICON Brand Partnership?",
     answer:
-      "ICON Brand Partnership is a monthly partnership where West Rose Media runs a founder's entire content operation: strategic creative direction, brand and offer building, photography, video, social content, and launch assets. It starts at $5,000 CAD per month, is built custom around the business, and runs on a six or twelve month commitment. ICON Brand Partnership is by application.",
+      "ICON Brand Partnership is open. It is a monthly partnership where West Rose Media runs a founder's entire content operation: strategic creative direction, brand and offer building, photography, video, social content, and launch assets. It starts at $5,000 CAD per month, is built custom around the business, and runs on a six or twelve month commitment. It is by application.",
   },
   {
     question: "How much does it cost to work with West Rose Media?",
     answer:
-      "ICON Brand Partnership starts at $5,000 CAD per month. Private 1:1 coaching does not have a public price. Hot & Viral is a separate membership with its own page.",
+      "ICON Brand Partnership is open and starts at $5,000 CAD per month, on a six or twelve month commitment. Private 1:1 coaching is full and does not have a public price. Hot & Rich is $6,000 CAD for four months and opens in January. The Manifesting & Marketing Mastermind opens in January at $14,000 CAD, or $20,000 CAD with the retreat. Hot & Viral is a separate membership with its own page.",
   },
   {
     question: "Where does West Rose Media work?",
@@ -27,7 +27,7 @@ export const homePageFaqItems = [
   {
     question: "Is West Rose Media accepting new clients?",
     answer:
-      "ICON Brand Partnership is by application and a small number of seats are open now. Private 1:1 coaching is by enquiry. Fit is confirmed in that conversation.",
+      "ICON Brand Partnership is open, by application. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January.",
   },
   {
     question: "Who is Stephanie Rose?",

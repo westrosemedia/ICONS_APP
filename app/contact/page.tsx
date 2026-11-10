@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
 import WrmButton from "@/components/agency/WrmButton";
-import {
-  COACHING_ENQUIRY_URL,
-  FRAME,
-  PHONE_DISPLAY,
-  PHONE_TEL,
-  PUBLIC_EMAIL,
-} from "@/lib/agency";
+import { FRAME, PHONE_DISPLAY, PHONE_TEL, PUBLIC_EMAIL } from "@/lib/agency";
 
 export const metadata: Metadata = {
   title: "Contact | West Rose Media",
   description:
-    "Contact West Rose Media. Apply for the ICON Brand Partnership, enquire about private 1:1 coaching, or call the studio.",
+    "Contact West Rose Media. ICON Brand Partnership is open. Private 1:1 coaching is full.",
   alternates: { canonical: "/contact" },
 };
 
@@ -39,13 +33,19 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="mt-10 flex flex-col items-start gap-3">
-            <WrmButton href={COACHING_ENQUIRY_URL} external variant="line">
-              Enquire about 1:1
+            <WrmButton href="/apply" variant="line">
+              Apply for ICON
+            </WrmButton>
+            <WrmButton href="/work-with-us" variant="line">
+              Work with us
             </WrmButton>
             <WrmButton href="/hot-and-viral" variant="line">
               Hot & Viral
             </WrmButton>
           </div>
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-[#171515]/80">
+            ICON Brand Partnership is open. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind both open in January.
+          </p>
         </div>
         <div id="application" className="lg:col-span-6 lg:col-start-7">
           <h2 className="text-4xl">ICON application</h2>

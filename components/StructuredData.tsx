@@ -190,7 +190,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start, with a luxury retreat in Kananaskis.",
+    "description": "The Manifesting & Marketing Mastermind opens in January. Stephanie Rose and Jackie McDonald. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat.",
     "startDate": "2027-01-01",
     "location": {
       "@type": "Place",

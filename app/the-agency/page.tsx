@@ -88,7 +88,7 @@ export default function TheAgencyPage() {
               The flagship is a partnership, not a content calendar.
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">
-              ICON Brand Partnership is the inner system: strategic creative direction, brand and offer building, photography, video, social content, and launch assets, run as one team. From $5,000 CAD per month. Six or twelve months. By application.
+              ICON Brand Partnership is open. It is the inner system: strategic creative direction, brand and offer building, photography, video, social content, and launch assets, run as one team. From $5,000 CAD per month. Six or twelve months. By application.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <WrmButton href="/icon" variant="light">
