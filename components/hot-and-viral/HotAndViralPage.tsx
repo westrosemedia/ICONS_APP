@@ -146,7 +146,7 @@ function CountdownBanner({
           <p className="text-center text-lg font-semibold tracking-wide text-white sm:text-xl lg:text-left">{label}</p>
           <CountdownDigits nowMs={nowMs} state={state} align="start" />
         </div>
-        <p className="max-w-[16rem] text-center text-[15px] font-normal leading-snug text-white sm:max-w-xs sm:text-base lg:text-left">
+        <p className="max-w-md text-center text-[15px] font-normal leading-relaxed text-white sm:text-base lg:max-w-lg lg:text-left">
           {copy.countdown.line}
         </p>
       </div>
@@ -454,34 +454,17 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <h1>
-              {copy.hero.lines.map((line, index) => (
-                <span
-                  key={line}
-                  className={
-                    index === copy.hero.lines.length - 1
-                      ? "mt-4 block max-w-[26rem] font-sans text-[1.2rem] font-medium leading-snug tracking-normal text-neutral-800 sm:text-[1.35rem]"
-                      : "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.35rem]"
-                  }
-                >
-                  {line}
-                </span>
-              ))}
+            <h1 className="max-w-[14em] font-heading text-[2.35rem] leading-[1.02] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.45rem]">
+              {copy.hero.headline}
             </h1>
-            <p className="mt-6 font-heading text-[1.85rem] leading-[1.02] tracking-[-0.03em] text-[#f41cdc] sm:text-[2.2rem]">
-              {copy.hero.windowLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
+            <div className="mt-6 max-w-[38rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              {copy.hero.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
-            </p>
-            <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
+              <p>{copy.hero.window}</p>
+            </div>
             <div className="mt-8">
               <StateButton state={state} />
-              <p className="mt-4 max-w-md text-[15px] font-medium leading-relaxed text-neutral-900">{copy.hero.price}</p>
-            </div>
-            <div className="mt-7 max-w-md">
-              <CheckList items={copy.hero.checklist} />
             </div>
           </div>
 
@@ -515,23 +498,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
 
       <section className={`${band} bg-black text-white`} aria-labelledby="problem-heading">
         <div className="container-elegant">
-          <h2 id="problem-heading" className={`${h2} max-w-[14em] text-white`}>
+          <h2 id="problem-heading" className={`${h2} max-w-[16em] text-white`}>
             {copy.problem.heading}
           </h2>
-          <p className="mt-6 max-w-[36rem] text-[17px] leading-[1.7] text-white/70">{copy.problem.body}</p>
-          <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3">
-            {copy.problem.cards.map((card) => (
-              <article key={card.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 md:p-7">
-                <h3 className="font-sans text-lg font-semibold tracking-tight text-white">{card.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/70">{card.text}</p>
-              </article>
+          <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-white/80">
+            {copy.problem.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-          <div className="mt-16 max-w-[40rem] border-t border-white/15 pt-12 md:mt-20 md:pt-14">
-            <h3 className="font-heading text-[2rem] leading-[1.02] tracking-[-0.03em] text-white md:text-[2.6rem]">
-              {copy.problem.triedHeading}
-            </h3>
-            <p className="mt-5 text-[17px] leading-[1.7] text-white/75">{copy.problem.triedBody}</p>
           </div>
         </div>
       </section>
@@ -539,11 +512,14 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="ai-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
-            <p className={`${eyebrow} mb-5`}>{copy.ai.eyebrow}</p>
-            <h2 id="ai-heading" className={h2}>
+            <h2 id="ai-heading" className={`${h2} max-w-[16em]`}>
               {copy.ai.heading}
             </h2>
-            <p className={`${lede} mt-6`}>{copy.ai.body}</p>
+            <div className={`${lede} mt-6 space-y-5`}>
+              {copy.ai.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -573,7 +549,11 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               )}
             </div>
           ) : null}
-          <p className={`${lede} mt-12`}>{copy.copycats.body}</p>
+          <div className={`${lede} mt-12 space-y-5`}>
+            {copy.copycats.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -586,7 +566,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             kicker={copy.cammy.label}
             before={copy.cammy.beforeStat}
             after={copy.cammy.afterStat}
-            body={<p>{copy.cammy.story}</p>}
+            body={
+              <>
+                {copy.cammy.story.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </>
+            }
             frames={cammyFrames}
             plates={cammySummary ? [cammySummary] : []}
             onOpen={setActiveShot}
@@ -690,22 +676,24 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
-            <h2 id="inside-heading" className={h2}>
+            <h2 id="inside-heading" className={`${h2} max-w-[16em]`}>
               {copy.inside.heading}
             </h2>
+            <div className={`${lede} mt-6 space-y-5`}>
+              {copy.inside.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <ol className="mt-10">
-              {copy.inside.steps.map((step, index) => (
+              {copy.inside.items.map((item, index) => (
                 <li
-                  key={step.title}
+                  key={item}
                   className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-black/10 py-6 first:border-t-0"
                 >
                   <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-[#f41cdc]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <div>
-                    <h3 className="font-sans text-lg font-semibold tracking-tight text-black">{step.title}</h3>
-                    <p className="mt-2 max-w-xl text-[16px] leading-relaxed text-neutral-600">{step.text}</p>
-                  </div>
+                  <p className="max-w-xl text-[17px] leading-relaxed text-neutral-800">{item}</p>
                 </li>
               ))}
             </ol>
@@ -735,10 +723,14 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
 
       <section id="pricing" className={`${scrollTarget} ${band} bg-[#f3f0ea]`} aria-labelledby="pricing-heading">
         <div className="container-elegant">
-          <h2 id="pricing-heading" className={`${h2} max-w-[14em]`}>
+          <h2 id="pricing-heading" className={`${h2} max-w-[16em]`}>
             {copy.pricing.heading}
           </h2>
-          <p className={`${lede} mt-6`}>{copy.pricing.note}</p>
+          <div className={`${lede} mt-6 space-y-5`}>
+            {copy.pricing.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           {state === "before" ? <p className={`${lede} mt-4`}>{copy.pricing.beforeNote}</p> : null}
           <div className="mt-10">
             <PricingCards state={state} />
@@ -801,7 +793,11 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <h2 id="final-heading" className={`${h2} text-white`}>
               {copy.final.heading}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-white/75">{copy.final.body}</p>
+            <div className="mx-auto mt-6 max-w-xl space-y-5 text-[17px] leading-relaxed text-white/80">
+              {copy.final.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <div className="mx-auto mt-10 max-w-3xl">
               <p className="text-lg font-semibold text-white sm:text-xl">
                 {state === "before" ? copy.countdown.before : copy.countdown.open}
@@ -809,7 +805,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
               </div>
-              <p className="mx-auto mt-4 max-w-sm text-[15px] leading-snug text-white sm:text-base">{copy.countdown.line}</p>
+              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white sm:text-base">{copy.countdown.line}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state} tone="light" />
