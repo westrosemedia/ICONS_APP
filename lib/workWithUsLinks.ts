@@ -1,4 +1,4 @@
-/** Shared nav targets for Work with Us (Spotlight / Immersion / ICON). */
+/** Booking URLs that older flows still call. Public nav uses workWithUsItems. */
 export const SPOTLIGHT_BOOK_URL =
   "https://westrosemedia.sproutstudio.com/bookings";
 
@@ -12,15 +12,7 @@ export type WorkWithUsItem = {
 };
 
 export const workWithUsItems: WorkWithUsItem[] = [
-  {
-    label: "Book a Spotlight Shoot",
-    href: SPOTLIGHT_BOOK_URL,
-    external: true,
-  },
-  { label: "Event Coverage", href: "/book/immersion", external: false },
-  {
-    label: "Apply for ICON Brand Partnership",
-    href: "/apply",
-    external: false,
-  },
+  { label: "ICON Brand Partnership", href: "/icon", external: false },
+  { label: "Private 1:1 Coaching", href: "/coaching", external: false },
+  { label: "Hot & Viral", href: "/hot-and-viral", external: false },
 ];

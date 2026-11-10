@@ -2,7 +2,7 @@ export const homePageFaqItems = [
   {
     question: "What does West Rose Media do?",
     answer:
-      "West Rose Media builds brands, content, and engaged communities for accomplished women founders across Canada. The flagship offer is the ICON Brand Partnership, a monthly partnership where Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. One time Spotlight shoots and event coverage through Immersion are also available.",
+      "West Rose Media is a creative growth agency for brands ready to make a bigger impression. The flagship offer is the ICON Brand Partnership, a monthly partnership where Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. Private 1:1 coaching is by enquiry. Hot & Viral is a separate live membership.",
   },
   {
     question: "How is this different from hiring a PR firm?",
@@ -12,12 +12,12 @@ export const homePageFaqItems = [
   {
     question: "What is the ICON Brand Partnership?",
     answer:
-      "ICON Brand Partnership is a monthly partnership where West Rose Media runs a founder's entire content operation: strategic creative direction, brand and offer building, photography, video, social content, and launch assets. It starts at $5,000 CAD per month, is built custom around the business, and has a six month minimum. ICON Brand Partnership is by application.",
+      "ICON Brand Partnership is a monthly partnership where West Rose Media runs a founder's entire content operation: strategic creative direction, brand and offer building, photography, video, social content, and launch assets. It starts at $5,000 CAD per month, is built custom around the business, and runs on a six or twelve month commitment. ICON Brand Partnership is by application.",
   },
   {
     question: "How much does it cost to work with West Rose Media?",
     answer:
-      "ICON Brand Partnership starts at $5,000 CAD per month. One time Spotlight brand shoots start at $1,921 CAD. Event and mastermind coverage through Immersion starts at $6,000 CAD.",
+      "ICON Brand Partnership starts at $5,000 CAD per month. Private 1:1 coaching does not have a public price. Hot & Viral is a separate membership with its own page.",
   },
   {
     question: "Where does West Rose Media work?",
@@ -27,11 +27,11 @@ export const homePageFaqItems = [
   {
     question: "Is West Rose Media accepting new clients?",
     answer:
-      "ICON Brand Partnership is by application and a small number of seats are open now. Spotlight shoots and Immersion event coverage are also available to book.",
+      "ICON Brand Partnership is by application and a small number of seats are open now. Private 1:1 coaching is by enquiry. Fit is confirmed in that conversation.",
   },
   {
     question: "Who is Stephanie Rose?",
     answer:
-      "Stephanie Rose is the founder of West Rose Media, a brand and content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers, videographers, and content producers. West Rose Media specializes in personal brand content and community building for women founders, coaches, and creators across Canada.",
+      "Stephanie Rose is the founder of West Rose Media, a creative growth agency based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers, videographers, and content producers. West Rose Media specializes in personal brand content and community building for women founders, coaches, and creators across Canada.",
   },
 ] as const;

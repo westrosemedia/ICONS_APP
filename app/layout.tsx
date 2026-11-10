@@ -1,5 +1,5 @@
 import "./globals.css";
-import { DM_Sans, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans, Cormorant_Garamond, Bodoni_Moda } from "next/font/google";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -24,11 +24,20 @@ const cormorantGaramond = Cormorant_Garamond({
   preload: true,
 });
 
+const bodoniModa = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-wrm-display",
+  display: "swap",
+  preload: false,
+});
+
 
 export const metadata = {
-  title: "West Rose Media | Brand Photography + Event Coverage | Calgary, Vancouver, Toronto",
-  description: "West Rose Media produces brand photography and video for established founders across Canada. Book a one-time Spotlight shoot or bring us to your next mastermind or conference event. Based in Calgary, serving Vancouver, Toronto, and beyond.",
-  keywords: "Stephanie Rose, brand photographer Calgary, event photographer Vancouver, Toronto brand photography, personal branding photographer, mastermind content coverage, West Rose Media, ICON Brand Partnership, Canadian founders",
+  title: "West Rose Media | Creative Growth Agency",
+  description: "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Strategy, photography, video, and the ICON Brand Partnership. Based in Calgary, working with founders across Canada.",
+  keywords: "Stephanie Rose, West Rose Media, creative growth agency, ICON Brand Partnership, brand strategy Calgary, personal brand photography Canada, content strategy, women founders",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -42,8 +51,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "West Rose Media | Brand Photography + Event Coverage | Canada",
-    description: "Brand photography and video for established founders. Spotlight shoots, Immersion event coverage, and ICON Brand Partnership. Calgary, Vancouver, Toronto.",
+    title: "West Rose Media | Creative Growth Agency",
+    description: "A creative growth agency for brands ready to make a bigger impression. Strategy, photography, video, and the ICON Brand Partnership. Calgary, Vancouver, Toronto.",
     url: 'https://westrosemedia.com',
     siteName: 'West Rose Media',
     images: [
@@ -51,7 +60,7 @@ export const metadata = {
         url: 'https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7',
         width: 1200,
         height: 630,
-        alt: 'Stephanie Rose - Calgary Luxury Brand Photographer and Social Media Strategist',
+        alt: 'Stephanie Rose, founder of West Rose Media',
       },
     ],
     locale: 'en_CA',
@@ -59,8 +68,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'West Rose Media | Brand Photography + Event Coverage',
-    description: 'Brand photography and video for established founders across Canada. Calgary, Vancouver, Toronto.',
+    title: 'West Rose Media | Creative Growth Agency',
+    description: 'A creative growth agency for brands ready to make a bigger impression. Based in Calgary.',
     images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
     creator: '@westrosemedia',
   },
@@ -85,7 +94,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`h-full w-full ${dmSans.variable} ${cormorantGaramond.variable}`}>
+    <html lang="en" className={`h-full w-full ${dmSans.variable} ${cormorantGaramond.variable} ${bodoniModa.variable}`}>
       <head>
         <meta name="p:domain_verify" content="12b6f42affb7537b4f78a6f420394653" />
       </head>
