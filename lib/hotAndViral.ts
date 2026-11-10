@@ -841,34 +841,65 @@ export const copy = {
     button: "Send me first access",
     success: "You're in. Watch your inbox on November 25.",
   },
+  faqHeading: "GOT QUESTIONS? I'VE GOT ANSWERS.",
+  faqButton: "I'M READY TO JOIN HOT & VIRAL",
+  // Stephanie's FAQ, exact. After the close when that heading is on the page, otherwise after pricing.
   faq: [
     {
+      q: "Do I need a big following to join?",
+      a: "Absolutely not. Hot & Viral is designed for people who want to grow their reach, whether you're starting with 200 followers or 20,000.",
+    },
+    {
       q: "Which platforms do you cover?",
-      a: "Instagram and TikTok.",
+      a: "Instagram and TikTok. We'll focus on creating content that helps you reach more people on these platforms.",
     },
     {
-      q: "When are the calls?",
-      a: "Tuesdays at 10am MST, starting December 1, 2026. The calls are recorded.",
+      q: "When are the live coaching calls?",
+      a: "Every Tuesday at 10am MST, starting December 1, 2026.",
     },
     {
-      q: "Will you look at my account?",
-      a: "Yes. Bring your account to the weekly live breakdowns on Tuesday at 10am MST. The calls are recorded, so you can rewatch them.",
+      q: "What happens during the coaching calls?",
+      a: "We review real member accounts and content, identify opportunities, discuss hooks, content ideas, messaging and ways to improve your chances of getting more reach. You can bring your own questions and content for feedback.",
     },
     {
-      q: "Do you coach in the chat group?",
-      a: "The members chat is where members ask each other. Coaching is on the call, not in the chat.",
+      q: "What if I can't attend live?",
+      a: "The coaching calls are recorded so you can catch up and revisit the sessions.",
     },
     {
-      q: "When can I buy?",
-      a: openingWindow,
+      q: "Will you personally review my account?",
+      a: "Yes, member accounts are reviewed during live coaching sessions. Account reviews are part of the group coaching experience, so individual review time isn't guaranteed on every call.",
     },
     {
-      q: "What happens to my price after these 3 days?",
-      a: "Join during this window and $250 CAD/month stays for as long as you remain a member. Not a temporary introductory rate. Annual is $2,750 CAD, $250 less than paying monthly for twelve months. Plus GST. You can cancel anytime. The price lock ends when the membership ends. In spring 2027 the price is double, $500 CAD/month.",
+      q: "Is this a course?",
+      a: "Nope. Hot & Viral is a live coaching membership. You're getting ongoing access to coaching, feedback, account breakdowns and a private community rather than a course you have to work through on your own.",
     },
     {
-      q: "I'm starting from zero. Can I join?",
-      a: "Yes. I rebuilt my own account from zero this year.",
+      q: "Will you teach me how to go viral?",
+      a: "We'll work on the strategy, content and creative decisions that can help your videos reach more people. No one can guarantee viral results, but you can learn how to create content with stronger reach potential.",
+    },
+    {
+      q: "Can I cancel anytime?",
+      a: "Yes. You can cancel your monthly membership anytime. Your introductory monthly rate stays locked in only while you remain an active member.",
+    },
+    {
+      q: "What's the annual option?",
+      a: "You can pay $2,750 CAD upfront for the year, saving $250 compared with twelve monthly payments of $250. Plus GST.",
+    },
+    {
+      q: "What happens after November 27?",
+      a: "Enrollment closes until spring 2027. The monthly membership price will then increase to $500 CAD.",
+    },
+    {
+      q: "When does the membership start?",
+      a: "Our first live coaching session is Tuesday, December 1, 2026, at 10am MST.",
+    },
+    {
+      q: "Is this for beginners?",
+      a: "Yes! You don't need to be a social media expert. You just need to be willing to learn, experiment and put what we discuss into practice.",
+    },
+    {
+      q: "Where do I sign up?",
+      a: "Right here! Click the button below to secure your place inside Hot & Viral.",
     },
   ],
   final: {

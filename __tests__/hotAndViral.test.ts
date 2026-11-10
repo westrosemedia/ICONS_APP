@@ -379,7 +379,12 @@ test("approved sales lines stay intact", () => {
   expect(copy.membership.plan.map((row) => `${row.label} ${row.value}`).join(" ")).toContain("December 1, 2026");
   expect(copy.membership.plan.map((row) => `${row.label} ${row.value}`).join(" ")).toContain("10am MST");
   expect(copy.membership.steps.flatMap((step) => step.paragraphs).join(" ")).toContain("The calls are recorded");
-  expect(copy.faq.map((item) => item.a).join(" ")).toContain("Coaching is on the call, not in the chat.");
+  expect(copy.faqHeading).toBe("GOT QUESTIONS? I'VE GOT ANSWERS.");
+  expect(copy.faq).toHaveLength(14);
+  expect(copy.faq.map((item) => item.q).join("\n")).toContain("Do I need a big following to join?");
+  expect(copy.faq.map((item) => item.a).join(" ")).toContain(
+    "individual review time isn't guaranteed on every call.",
+  );
   expect(JSON.stringify(copy.membership).toLowerCase()).not.toContain("dm");
   expect(copy.pricing.cancel).toBe("Cancel anytime.");
   expect(copy.pricing.paragraphs.join(" ").toLowerCase()).not.toContain("refund");
@@ -668,4 +673,123 @@ test("pricing section is Stephanie's exact launch offer and stays behind the doo
   expect(copy.membership.heading).toBe("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
   expect(copy.rightRoom.heading).toBe("LET'S MAKE SURE YOU'RE IN THE RIGHT ROOM.");
   expect(copy.coach.heading).toBe("I'VE BEEN IN THE CONTENT GAME. AND I'VE GOT THE RECEIPTS.");
+});
+
+
+test("FAQ is Stephanie's exact questions and sits after the close or after pricing", () => {
+  const questions = [
+    {
+      q: "Do I need a big following to join?",
+      a: "Absolutely not. Hot & Viral is designed for people who want to grow their reach, whether you're starting with 200 followers or 20,000.",
+    },
+    {
+      q: "Which platforms do you cover?",
+      a: "Instagram and TikTok. We'll focus on creating content that helps you reach more people on these platforms.",
+    },
+    {
+      q: "When are the live coaching calls?",
+      a: "Every Tuesday at 10am MST, starting December 1, 2026.",
+    },
+    {
+      q: "What happens during the coaching calls?",
+      a: "We review real member accounts and content, identify opportunities, discuss hooks, content ideas, messaging and ways to improve your chances of getting more reach. You can bring your own questions and content for feedback.",
+    },
+    {
+      q: "What if I can't attend live?",
+      a: "The coaching calls are recorded so you can catch up and revisit the sessions.",
+    },
+    {
+      q: "Will you personally review my account?",
+      a: "Yes, member accounts are reviewed during live coaching sessions. Account reviews are part of the group coaching experience, so individual review time isn't guaranteed on every call.",
+    },
+    {
+      q: "Is this a course?",
+      a: "Nope. Hot & Viral is a live coaching membership. You're getting ongoing access to coaching, feedback, account breakdowns and a private community rather than a course you have to work through on your own.",
+    },
+    {
+      q: "Will you teach me how to go viral?",
+      a: "We'll work on the strategy, content and creative decisions that can help your videos reach more people. No one can guarantee viral results, but you can learn how to create content with stronger reach potential.",
+    },
+    {
+      q: "Can I cancel anytime?",
+      a: "Yes. You can cancel your monthly membership anytime. Your introductory monthly rate stays locked in only while you remain an active member.",
+    },
+    {
+      q: "What's the annual option?",
+      a: "You can pay $2,750 CAD upfront for the year, saving $250 compared with twelve monthly payments of $250. Plus GST.",
+    },
+    {
+      q: "What happens after November 27?",
+      a: "Enrollment closes until spring 2027. The monthly membership price will then increase to $500 CAD.",
+    },
+    {
+      q: "When does the membership start?",
+      a: "Our first live coaching session is Tuesday, December 1, 2026, at 10am MST.",
+    },
+    {
+      q: "Is this for beginners?",
+      a: "Yes! You don't need to be a social media expert. You just need to be willing to learn, experiment and put what we discuss into practice.",
+    },
+    {
+      q: "Where do I sign up?",
+      a: "Right here! Click the button below to secure your place inside Hot & Viral.",
+    },
+  ];
+
+  expect(copy.faqHeading).toBe("GOT QUESTIONS? I'VE GOT ANSWERS.");
+  expect(copy.faqButton).toBe("I'M READY TO JOIN HOT & VIRAL");
+  expect(copy.faq).toEqual(questions);
+  expect(new Set(copy.faq.map((item) => item.q)).size).toBe(questions.length);
+
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.proof.button).toBe("GET FIRST ACCESS");
+  expect(copy.membership.button).toBe("I'M READY TO GET MORE VIEWS");
+  expect(copy.rightRoom.button).toBe("YES, I'M READY. LET'S GO.");
+  expect(copy.coach.button).toBe("COME JOIN ME INSIDE HOT & VIRAL");
+  expect(copy.pricing.button).toBe("YES! I WANT HOT & VIRAL");
+  expect(copy.sticky.before).toBe("I WANT IN");
+  expect(copy.sticky.open).toBe("I WANT IN");
+  expect(copy.hero.headline).not.toBe("Stop posting content that gets ignored");
+  expect(copy.hero.headline).toBe(
+    "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+  );
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");
+  const closeHeading = "SO... ARE YOU GOING TO KEEP SCROLLING OR START GETTING SEEN?";
+  const pricingAt = page.indexOf('id="pricing"');
+  const beforeFinalFaq = page.indexOf("{faqAfterClose ? null : <FaqSection");
+  const finalAt = page.indexOf('id="final-heading"');
+  const afterFinalFaq = page.indexOf("{faqAfterClose ? <FaqSection");
+  expect(pricingAt).toBeGreaterThan(-1);
+  expect(beforeFinalFaq).toBeGreaterThan(pricingAt);
+  expect(finalAt).toBeGreaterThan(beforeFinalFaq);
+  expect(afterFinalFaq).toBeGreaterThan(finalAt);
+  expect(page).toContain("{copy.faqHeading}");
+  expect(page).toContain("{copy.faqButton}");
+  expect(page).toContain("{copy.faq.map((item) => (");
+  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain("const pillDark = `${pill} bg-black text-white");
+  expect(page).toContain('state === "open"');
+  expect(page).toContain("<StripePricingTable />");
+  expect(page).not.toContain(">\n              FAQ\n");
+  if (copySource.includes(closeHeading)) {
+    expect(copy.final.heading === closeHeading || copySource.includes(closeHeading)).toBe(true);
+  }
+
+  const kept = [
+    "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+    "You're not creating content to be ignored. So why is nobody watching?",
+    "WHAT IF YOUR NEXT REEL WAS THE ONE THAT TOOK OFF?",
+    "DON'T JUST TAKE MY WORD FOR IT. LOOK AT THE VIEWS.",
+    "THIS IS WHERE WE GET INTO THE GOOD STUFF.",
+    "LET'S MAKE SURE YOU'RE IN THE RIGHT ROOM.",
+    "I'VE BEEN IN THE CONTENT GAME. AND I'VE GOT THE RECEIPTS.",
+    "YOUR CONTENT COULD BE REACHING A WHOLE LOT MORE PEOPLE.",
+    "https://www.instagram.com/stephanie.the.rose/",
+  ];
+  for (const heading of kept) {
+    expect(copySource).toContain(heading);
+  }
 });
