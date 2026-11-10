@@ -459,12 +459,14 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </h1>
             <div className="mt-6 max-w-[38rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
               {copy.hero.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph.text} className={paragraph.bold ? "font-bold text-black" : undefined}>
+                  {paragraph.text}
+                </p>
               ))}
               <p>{copy.hero.window}</p>
             </div>
             <div className="mt-8">
-              <StateButton state={state} />
+              <StateButton state={state}>{copy.hero.button}</StateButton>
             </div>
           </div>
 
@@ -503,8 +505,33 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           </h2>
           <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-white/80">
             {copy.problem.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph.text} className={paragraph.bold ? "font-bold text-white" : undefined}>
+                {paragraph.text}
+              </p>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="introducing-hot-and-viral" className={`${band} bg-white`} aria-labelledby="introducing-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="introducing-heading" className={`${h2} max-w-[14em]`}>
+              {copy.introducing.heading}
+            </h2>
+            <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.introducing.subheading}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              {copy.introducing.paragraphs.map((paragraph) => (
+                <p key={paragraph.text} className={paragraph.bold ? "font-bold text-black" : undefined}>
+                  {paragraph.text}
+                </p>
+              ))}
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.introducing.button}</StateButton>
+            </div>
           </div>
         </div>
       </section>

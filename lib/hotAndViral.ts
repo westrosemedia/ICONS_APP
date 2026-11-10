@@ -353,26 +353,147 @@ export const copy = {
       "Stop posting content that gets ignored. A 3-day window only, November 25 to 27, 2026. Then closed until spring 2027, at double the price.",
   },
   hero: {
-    eyebrow: "Stephanie Rose · West Rose",
-    headline: "Stop posting content that gets ignored.",
+    eyebrow: "HOT & VIRAL",
+    headline:
+      "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
     paragraphs: [
-      "You don't need another content calendar, another trending audio or another AI-generated caption.",
-      "You need to understand why people aren't stopping to watch, what your content is missing, and how to create posts that actually get noticed.",
-      "Inside Hot & Viral, I'll show you exactly what's holding your Instagram and TikTok content back, and how to fix it.",
-      "Your content deserves more than 200 views.",
+      {
+        text: "You know your work is good. Your clients know it. But when it comes to getting that same attention online, something isn't clicking.",
+        bold: false,
+      },
+      {
+        text: "You're trying different hooks, changing your captions, testing trending audio and doing all the things you're told you're supposed to do.",
+        bold: false,
+      },
+      {
+        text: "And yet, the views aren't moving. The right people aren't finding you. And you're starting to wonder what you're missing.",
+        bold: false,
+      },
+      {
+        text: "Here's the thing: posting more isn't necessarily the answer.",
+        bold: false,
+      },
+      {
+        text: "Sometimes it's your messaging. Sometimes it's your content strategy. Sometimes you're making small mistakes that are costing you big opportunities to get seen.",
+        bold: false,
+      },
+      {
+        text: "That's where I come in.",
+        bold: true,
+      },
+      {
+        text: "I'm Stephanie Rose, founder of West Rose Media, and I want to help you stop guessing what to post and start understanding what actually makes people pay attention.",
+        bold: false,
+      },
+      {
+        text: "Welcome to HOT & VIRAL.",
+        bold: true,
+      },
+      {
+        text: "The live content coaching room where we look at your actual account, break down your content, and figure out what needs to change.",
+        bold: false,
+      },
     ],
     window: openingWindow,
+    button: "I WANT IN",
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
   },
   problem: {
-    heading: "You're not bad at content. You're just missing something.",
+    heading: "You're not creating content to be ignored. So why is nobody watching?",
     paragraphs: [
-      "You know your industry. You know your clients. You know the work you do changes people's lives. But somehow, that isn't translating into your content.",
-      "You post consistently. You try different hooks. You experiment with trending audio. You rewrite captions, film videos and spend hours trying to figure out what the algorithm wants.",
-      "Meanwhile, someone with less experience is getting thousands of views talking about the very thing you've been trying to explain for years.",
-      "The problem isn't necessarily how often you're posting. It's what you're putting in front of people and how you're communicating it. And that's what we're going to fix.",
+      { text: "Let's be honest.", bold: false },
+      {
+        text: "You're spending time coming up with ideas, filming reels, editing videos, writing captions and trying to figure out what Instagram wants from you this week.",
+        bold: false,
+      },
+      { text: "And for what?", bold: false },
+      {
+        text: "200 views. Maybe 300. Occasionally one surprises you and hits 1,000.",
+        bold: false,
+      },
+      {
+        text: 'Meanwhile, you\'re watching other creators rack up 50K, 100K or even a million views on content that makes you wonder, "How the hell did THAT take off?"',
+        bold: false,
+      },
+      { text: "Here's what you need to understand.", bold: false },
+      {
+        text: "Going viral isn't just luck. And it's definitely not about posting more.",
+        bold: true,
+      },
+      {
+        text: "There are things that make people stop scrolling. Things that make them curious enough to keep watching. Things that make them want to share your content with someone else.",
+        bold: false,
+      },
+      {
+        text: "Your hook matters. Your topic matters. Your delivery matters. And the way you package an idea can be the difference between a reel that gets ignored and one that gets shared thousands of times.",
+        bold: false,
+      },
+      { text: "The problem?", bold: false },
+      {
+        text: "Most people are creating content without understanding why some videos take off and others don't.",
+        bold: false,
+      },
+      { text: "They're guessing.", bold: false },
+      { text: "And guessing is an expensive content strategy.", bold: false },
+      {
+        text: "It's time to understand what makes people WATCH, SHARE and FOLLOW.",
+        bold: true,
+      },
     ],
+  },
+  introducing: {
+    heading: "WHAT IF YOUR NEXT REEL WAS THE ONE THAT TOOK OFF?",
+    subheading: "Welcome to HOT & VIRAL.",
+    paragraphs: [
+      {
+        text: "This is where we stop throwing content at the wall and hoping something sticks.",
+        bold: false,
+      },
+      {
+        text: "Hot & Viral is my live content coaching membership where we get inside your Instagram and TikTok accounts, look at what you're creating, and figure out how to give your content a much better chance of getting seen.",
+        bold: false,
+      },
+      { text: "We're talking about the hooks that make people stop scrolling.", bold: false },
+      { text: "The ideas that make people curious.", bold: false },
+      { text: "The videos people watch right to the end.", bold: false },
+      { text: "The content people can't help but share.", bold: false },
+      {
+        text: "And the little things that can make a BIG difference to how far your content travels.",
+        bold: false,
+      },
+      { text: "And here's what makes this different.", bold: true },
+      {
+        text: "I'm not handing you another course with 47 lessons you'll never finish.",
+        bold: false,
+      },
+      {
+        text: "I'm not giving you a generic list of trending audio and telling you to go figure it out.",
+        bold: false,
+      },
+      { text: "We're working on YOUR content.", bold: false },
+      { text: "YOUR account.", bold: false },
+      { text: "YOUR ideas.", bold: false },
+      {
+        text: "Every Tuesday, I bring my experience, my strategic eyes and my honest feedback into the room.",
+        bold: false,
+      },
+      {
+        text: "You get to see what I'm seeing, understand why I'm recommending changes, and learn how to apply those strategies to your own content.",
+        bold: false,
+      },
+      {
+        text: "Because the goal isn't to make one lucky reel go viral.",
+        bold: false,
+      },
+      {
+        text: "It's to get better at creating content that has the potential to reach people far beyond your current audience.",
+        bold: false,
+      },
+      { text: "More reach. More views. More opportunities to go viral.", bold: true },
+      { text: "That's what we're working towards inside HOT & VIRAL.", bold: false },
+    ],
+    button: "I WANT IN",
   },
   ai: {
     heading: "AI can write you a caption. It can't build your point of view.",
@@ -519,8 +640,8 @@ export const copy = {
     line: openingWindow,
   },
   sticky: {
-    before: "Get first access",
-    open: "Join Hot & Viral",
+    before: "I WANT IN",
+    open: "I WANT IN",
   },
   duplicate: "This email is already on the list.",
 };
