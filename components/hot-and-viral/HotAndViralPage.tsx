@@ -9,7 +9,6 @@ import {
   HERO_IMAGE,
   cammyMore,
   cammyShots,
-  coachStats,
   copy,
   copycatPairs,
   countdownTarget,
@@ -728,39 +727,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </section>
       ) : null}
 
-      <section className={`${band} border-t border-black/5 bg-white`} aria-labelledby="coach-heading">
-        <div className="container-elegant grid items-start gap-10 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-16">
-          <div className="order-2 lg:order-1">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.75rem] bg-[#eceae6] shadow-[0_24px_60px_-36px_rgba(0,0,0,0.5)] ring-1 ring-black/10 lg:mx-0">
-              <Image
-                src={COACH_IMAGE.src}
-                alt={COACH_IMAGE.alt}
-                fill
-                sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover object-[center_8%]"
-              />
-            </div>
-          </div>
-          <div className="order-1 min-w-0 lg:order-2">
-            <p className={`${eyebrow} mb-5`}>{copy.coach.eyebrow}</p>
-            <h2 id="coach-heading" className={`${h2} max-w-[12em]`}>
-              {copy.coach.heading}
-            </h2>
-            <div className={`${lede} mt-6 space-y-5`}>
-              <p>On June 15, 2026, Meta deleted my account after a mass-reporting campaign. Seven years of content, gone overnight.</p>
-              <p>
-                I started again with zero followers and grew to {coachStats.instagramFollowers} on Instagram and{" "}
-                {coachStats.tiktokFollowers} on TikTok, with {coachStats.viewsStat}.
-              </p>
-              <p>
-                I&apos;m a photographer and videographer, and I&apos;ve spent years building brands for women who are
-                excellent at what they do.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="good-stuff" className={`${band} bg-[#f3f0ea]`} aria-labelledby="good-stuff-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
@@ -873,6 +839,48 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </div>
             <div className="mt-8">
               <StateButton state={state}>{copy.rightRoom.button}</StateButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="receipts" className={`${band} border-t border-black/10 bg-white`} aria-labelledby="coach-heading">
+        <div className="container-elegant grid items-start gap-10 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-16">
+          <div className="order-2 lg:order-1">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.75rem] bg-[#eceae6] shadow-[0_24px_60px_-36px_rgba(0,0,0,0.5)] ring-1 ring-black/10 lg:mx-0">
+              <Image
+                src={COACH_IMAGE.src}
+                alt={COACH_IMAGE.alt}
+                fill
+                sizes="(max-width: 1024px) 90vw, 420px"
+                className="object-cover object-[center_8%]"
+              />
+            </div>
+          </div>
+          <div className="order-1 min-w-0 lg:order-2">
+            <h2 id="coach-heading" className={`${h2} max-w-[14em]`}>
+              {copy.coach.heading}
+            </h2>
+            <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.coach.subheading}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.coach.beforeInstagram} />
+              <p className="font-bold text-black">{copy.coach.instagramLead}</p>
+              <p>
+                <a
+                  href={copy.coach.instagramHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-black underline decoration-black/30 underline-offset-4 hover:decoration-black"
+                >
+                  {copy.coach.instagramName}
+                </a>
+              </p>
+              <CopyParagraphs paragraphs={copy.coach.afterInstagram} />
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.coach.button}</StateButton>
             </div>
           </div>
         </div>

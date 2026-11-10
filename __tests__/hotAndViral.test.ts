@@ -485,6 +485,72 @@ test("right room is Stephanie's exact words and sits before pricing", () => {
   expect(page).toContain("{copy.introducing.button}");
 });
 
+test("receipts section is Stephanie's exact words, after the right room and before pricing", () => {
+  expect(copy.coach.heading).toBe("I'VE BEEN IN THE CONTENT GAME. AND I'VE GOT THE RECEIPTS.");
+  expect(copy.coach.subheading).toBe("I'm Stephanie Rose. And I know what it takes to get people watching.");
+  expect(copy.coach.beforeInstagram.map((paragraph) => paragraph.text)).toEqual([
+    "I've spent years creating content, building brands, growing audiences and helping business owners get their work seen.",
+    "I've seen reels take off. I've watched accounts grow. I've helped clients go from wondering why nobody was watching to reaching audiences they never thought possible.",
+    "But I've also had to start over myself.",
+    "On June 15, 2026, my Instagram account was deleted after a mass-reporting campaign.",
+    "Seven years of content. Gone.",
+    "Instead of letting that be the end of the story, I started again.",
+    "I rebuilt my Instagram account to 34,200 followers and grew my TikTok to 19,000 followers, with 2.7 million views in a 30-day period at the time those results were recorded.",
+    "Why am I telling you this?",
+    "Because I don't teach content strategy from the sidelines.",
+    "I'm in it. I'm testing ideas, watching what works, paying attention to what changes, and constantly looking at how content gets discovered and shared.",
+    "And I LOVE figuring out why one reel gets 200 views while another reaches millions.",
+    "That's the experience I bring into Hot & Viral.",
+    "I'm not going to tell you there's one magic formula or that every reel will go viral.",
+    "But I can teach you how to approach your content more strategically, recognize opportunities, and give your videos a stronger chance of getting seen.",
+    "And if you want to see what I'm talking about, come follow along.",
+  ]);
+  expect(copy.coach.instagramLead).toBe("Find me on Instagram:");
+  expect(copy.coach.instagramName).toBe("Stephanie Rose – @stephanie.the.rose");
+  expect(copy.coach.instagramHref).toBe("https://www.instagram.com/stephanie.the.rose/");
+  expect(copy.coach.afterInstagram.map((paragraph) => paragraph.text)).toEqual([
+    "Come see what I'm creating, what I'm testing and what I'm learning.",
+    "Because I'm not just teaching this stuff.",
+    "I'm doing it, too.",
+  ]);
+  expect(copy.coach.button).toBe("COME JOIN ME INSIDE HOT & VIRAL");
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.proof.button).toBe("GET FIRST ACCESS");
+  expect(copy.membership.button).toBe("I'M READY TO GET MORE VIEWS");
+  expect(copy.rightRoom.button).toBe("YES, I'M READY. LET'S GO.");
+  expect(copy.sticky.before).toBe("I WANT IN");
+  expect(copy.sticky.open).toBe("I WANT IN");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");
+  const rightRoomAt = page.indexOf('id="right-room"');
+  const receiptsAt = page.indexOf('id="receipts"');
+  const pricingAt = page.indexOf('id="pricing"');
+  expect(rightRoomAt).toBeGreaterThan(-1);
+  expect(receiptsAt).toBeGreaterThan(rightRoomAt);
+  expect(pricingAt).toBeGreaterThan(receiptsAt);
+  const block = page.slice(receiptsAt, pricingAt);
+  expect(block).toContain("{copy.coach.heading}");
+  expect(block).toContain("{copy.coach.subheading}");
+  expect(block).toContain('className="font-bold text-black">{copy.coach.instagramLead}');
+  expect(block).toContain("href={copy.coach.instagramHref}");
+  expect(block).toContain('target="_blank"');
+  expect(block).toContain('rel="noreferrer"');
+  expect(block).toContain("{copy.coach.instagramName}");
+  expect(block).toContain("{copy.coach.button}");
+  expect(block).toContain("COACH_IMAGE.src");
+  expect(block).not.toContain("{copy.hero.button}");
+  expect(block).not.toContain("{copy.rightRoom.button}");
+  expect(block).not.toContain("{copy.membership.button}");
+  expect(page).not.toContain("Meet your coach");
+  expect(page).not.toContain("I rebuilt from zero, in public.");
+  expect(copySource).toContain("https://www.instagram.com/stephanie.the.rose/");
+  expect(copySource).toContain("/hot-and-viral/stephanie-camera.jpg");
+  expect(copySource).not.toContain("Meet your coach");
+  expect(copySource).not.toContain("I rebuilt from zero, in public.");
+});
+
 test("hot and viral keeps one quiet google reviews link and no quote block", () => {
   const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
   const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");

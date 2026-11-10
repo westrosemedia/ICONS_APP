@@ -584,9 +584,60 @@ export const copy = {
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
+  // Stephanie's receipts section, exact. Sits after the right-room section and before pricing.
   coach: {
-    eyebrow: "Meet your coach",
-    heading: "I rebuilt from zero, in public.",
+    heading: "I'VE BEEN IN THE CONTENT GAME. AND I'VE GOT THE RECEIPTS.",
+    subheading: "I'm Stephanie Rose. And I know what it takes to get people watching.",
+    beforeInstagram: [
+      {
+        text: "I've spent years creating content, building brands, growing audiences and helping business owners get their work seen.",
+        bold: false,
+      },
+      {
+        text: "I've seen reels take off. I've watched accounts grow. I've helped clients go from wondering why nobody was watching to reaching audiences they never thought possible.",
+        bold: false,
+      },
+      { text: "But I've also had to start over myself.", bold: false },
+      {
+        text: "On June 15, 2026, my Instagram account was deleted after a mass-reporting campaign.",
+        bold: false,
+      },
+      { text: "Seven years of content. Gone.", bold: false },
+      { text: "Instead of letting that be the end of the story, I started again.", bold: false },
+      {
+        text: "I rebuilt my Instagram account to 34,200 followers and grew my TikTok to 19,000 followers, with 2.7 million views in a 30-day period at the time those results were recorded.",
+        bold: false,
+      },
+      { text: "Why am I telling you this?", bold: false },
+      { text: "Because I don't teach content strategy from the sidelines.", bold: false },
+      {
+        text: "I'm in it. I'm testing ideas, watching what works, paying attention to what changes, and constantly looking at how content gets discovered and shared.",
+        bold: false,
+      },
+      {
+        text: "And I LOVE figuring out why one reel gets 200 views while another reaches millions.",
+        bold: false,
+      },
+      { text: "That's the experience I bring into Hot & Viral.", bold: false },
+      {
+        text: "I'm not going to tell you there's one magic formula or that every reel will go viral.",
+        bold: false,
+      },
+      {
+        text: "But I can teach you how to approach your content more strategically, recognize opportunities, and give your videos a stronger chance of getting seen.",
+        bold: false,
+      },
+      { text: "And if you want to see what I'm talking about, come follow along.", bold: false },
+    ],
+    instagramLead: "Find me on Instagram:",
+    instagramName: "Stephanie Rose – @stephanie.the.rose",
+    instagramHref: "https://www.instagram.com/stephanie.the.rose/",
+    afterInstagram: [
+      { text: "Come see what I'm creating, what I'm testing and what I'm learning.", bold: false },
+      { text: "Because I'm not just teaching this stuff.", bold: false },
+      { text: "I'm doing it, too.", bold: false },
+    ],
+    button: "COME JOIN ME INSIDE HOT & VIRAL",
   },
   membership: {
     heading: "THIS IS WHERE WE GET INTO THE GOOD STUFF.",
