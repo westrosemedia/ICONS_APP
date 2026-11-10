@@ -36,7 +36,6 @@ const pill =
   "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 const pillDark = `${pill} bg-black text-white hover:bg-neutral-800 focus-visible:ring-black`;
 const pillLight = `${pill} bg-white text-black hover:bg-neutral-100 focus-visible:ring-white focus-visible:ring-offset-black`;
-const pillWantIn = `${pill} bg-[#f41cdc] text-white hover:bg-[#d919c4] focus-visible:ring-[#f41cdc]`;
 
 const GOOGLE_REVIEWS_SHARE_URL = "https://share.google/O5Gl6uzN8JRq35a59";
 
@@ -161,15 +160,14 @@ function StateButton({
   children,
 }: {
   state: Exclude<PageState, "closed">;
-  tone?: "dark" | "light" | "wantIn";
+  tone?: "dark" | "light";
   className?: string;
   children?: string;
 }) {
   const href = state === "before" ? "#first-access" : "#pricing";
   const label = children ?? (state === "before" ? copy.hero.buttonBefore : copy.hero.buttonOpen);
-  const toneClass = tone === "light" ? pillLight : tone === "wantIn" ? pillWantIn : pillDark;
   return (
-    <a href={href} className={`${toneClass} ${className}`}>
+    <a href={href} className={`${tone === "light" ? pillLight : pillDark} ${className}`}>
       {label}
     </a>
   );
@@ -547,9 +545,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <p>{copy.hero.window}</p>
             </div>
             <div className="mt-8">
-              <StateButton state={state} tone="wantIn">
-                {copy.hero.button}
-              </StateButton>
+              <StateButton state={state}>{copy.hero.button}</StateButton>
             </div>
           </div>
 
@@ -618,9 +614,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               ))}
             </div>
             <div className="mt-8">
-              <StateButton state={state} tone="wantIn">
-                {copy.introducing.button}
-              </StateButton>
+              <StateButton state={state}>{copy.introducing.button}</StateButton>
             </div>
           </div>
         </div>
@@ -986,7 +980,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
-        <StateButton state={state} tone="wantIn" className="w-full">
+        <StateButton state={state} className="w-full">
           {state === "before" ? copy.sticky.before : copy.sticky.open}
         </StateButton>
       </div>

@@ -257,9 +257,10 @@ test("proof block is Stephanie's exact Cammy and Erin words", () => {
   expect(page).not.toContain("Erin teaches tapping");
   expect(page).not.toContain("Stop posting content that gets ignored");
   expect(page).not.toContain("You're posting into silence");
-  expect(page).toContain("const pillDark = ");
-  expect(page).toContain("bg-[#f41cdc]");
-  expect(page.match(/tone="wantIn"/g)?.length).toBe(3);
+  expect(page).toContain("const pillDark = `${pill} bg-black text-white");
+  expect(page).toContain("text-[#f41cdc]");
+  expect(page).not.toContain("pillWantIn");
+  expect(page).not.toContain('tone="wantIn"');
 });
 
 test("membership section is Stephanie's exact words, after proof and before pricing", () => {
