@@ -353,15 +353,49 @@ export const copy = {
       "Stop posting content that gets ignored. A 3-day window only, November 25 to 27, 2026. Then closed until spring 2027, at double the price.",
   },
   hero: {
-    eyebrow: "Stephanie Rose · West Rose",
-    headline: "Stop posting content that gets ignored.",
+    eyebrow: "HOT & VIRAL",
+    headline:
+      "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
     paragraphs: [
-      "You don't need another content calendar, another trending audio or another AI-generated caption.",
-      "You need to understand why people aren't stopping to watch, what your content is missing, and how to create posts that actually get noticed.",
-      "Inside Hot & Viral, I'll show you exactly what's holding your Instagram and TikTok content back, and how to fix it.",
-      "Your content deserves more than 200 views.",
+      {
+        text: "You know your work is good. Your clients know it. But when it comes to getting that same attention online, something isn't clicking.",
+        bold: false,
+      },
+      {
+        text: "You're trying different hooks, changing your captions, testing trending audio and doing all the things you're told you're supposed to do.",
+        bold: false,
+      },
+      {
+        text: "And yet, the views aren't moving. The right people aren't finding you. And you're starting to wonder what you're missing.",
+        bold: false,
+      },
+      {
+        text: "Here's the thing: posting more isn't necessarily the answer.",
+        bold: false,
+      },
+      {
+        text: "Sometimes it's your messaging. Sometimes it's your content strategy. Sometimes you're making small mistakes that are costing you big opportunities to get seen.",
+        bold: false,
+      },
+      {
+        text: "That's where I come in.",
+        bold: true,
+      },
+      {
+        text: "I'm Stephanie Rose, founder of West Rose Media, and I want to help you stop guessing what to post and start understanding what actually makes people pay attention.",
+        bold: false,
+      },
+      {
+        text: "Welcome to HOT & VIRAL.",
+        bold: true,
+      },
+      {
+        text: "The live content coaching room where we look at your actual account, break down your content, and figure out what needs to change.",
+        bold: false,
+      },
     ],
     window: openingWindow,
+    button: "I WANT IN",
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
   },
@@ -519,8 +553,8 @@ export const copy = {
     line: openingWindow,
   },
   sticky: {
-    before: "Get first access",
-    open: "Join Hot & Viral",
+    before: "I WANT IN",
+    open: "I WANT IN",
   },
   duplicate: "This email is already on the list.",
 };

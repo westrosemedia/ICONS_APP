@@ -81,15 +81,30 @@ test("signup blocks empty and badly formed emails and keeps a clean address", ()
 test("approved sales lines stay intact", () => {
   expect(copy.meta.title).toBe("Hot & Viral | West Rose Media");
   expect(copy.meta.description).toContain("November 25 to 27");
-  expect(copy.hero.headline).toBe("Stop posting content that gets ignored.");
+  expect(copy.hero.eyebrow).toBe("HOT & VIRAL");
+  expect(copy.hero.headline).toBe(
+    "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+  );
+  expect(copy.hero.paragraphs.map((paragraph) => paragraph.text)).toEqual([
+    "You know your work is good. Your clients know it. But when it comes to getting that same attention online, something isn't clicking.",
+    "You're trying different hooks, changing your captions, testing trending audio and doing all the things you're told you're supposed to do.",
+    "And yet, the views aren't moving. The right people aren't finding you. And you're starting to wonder what you're missing.",
+    "Here's the thing: posting more isn't necessarily the answer.",
+    "Sometimes it's your messaging. Sometimes it's your content strategy. Sometimes you're making small mistakes that are costing you big opportunities to get seen.",
+    "That's where I come in.",
+    "I'm Stephanie Rose, founder of West Rose Media, and I want to help you stop guessing what to post and start understanding what actually makes people pay attention.",
+    "Welcome to HOT & VIRAL.",
+    "The live content coaching room where we look at your actual account, break down your content, and figure out what needs to change.",
+  ]);
+  expect(copy.hero.paragraphs.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "That's where I come in.",
+    "Welcome to HOT & VIRAL.",
+  ]);
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.sticky.before).toBe("I WANT IN");
+  expect(copy.sticky.open).toBe("I WANT IN");
   expect(copy.hero.buttonBefore).toBe("Get first access");
   expect(copy.hero.buttonOpen).toBe("Join Hot & Viral");
-  expect(copy.hero.paragraphs).toEqual([
-    "You don't need another content calendar, another trending audio or another AI-generated caption.",
-    "You need to understand why people aren't stopping to watch, what your content is missing, and how to create posts that actually get noticed.",
-    "Inside Hot & Viral, I'll show you exactly what's holding your Instagram and TikTok content back, and how to fix it.",
-    "Your content deserves more than 200 views.",
-  ]);
   expect(copy.problem.heading).toBe("You're not bad at content. You're just missing something.");
   expect(copy.problem.paragraphs.join(" ")).toContain(
     "The problem isn't necessarily how often you're posting. It's what you're putting in front of people and how you're communicating it.",
