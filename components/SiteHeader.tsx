@@ -1,47 +1,31 @@
 import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
+import PrimaryNav from "@/components/PrimaryNav";
+import { PHOTO_GALLERIES_URL } from "@/lib/siteNav";
 
 const SHOW_NAV = true;
-const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
 
 export default function SiteHeader() {
   if (!SHOW_NAV) return null;
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm sticky top-0 z-40">
-      <div className="container-elegant py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <span className="text-elegant text-xl tracking-wide">West Rose Media</span>
+    <header className="sticky top-0 z-40 h-header overflow-visible border-b border-black/10 bg-paper text-black">
+      <div className="container-elegant flex h-full items-center justify-between gap-6">
+        <Link href="/" className="flex shrink-0 items-center gap-3">
+          <span className="h-4 w-px bg-accent" aria-hidden="true" />
+          <span className="font-heading text-[1.45rem] font-medium leading-none tracking-[-0.02em] text-black sm:text-[1.65rem]">
+            West Rose Media
+          </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/about" className="text-gray-600 hover:text-black transition-colors duration-200">
-            About
-          </Link>
-          <Link href="/packages" className="text-gray-600 hover:text-black transition-colors duration-200">
-            Packages
-          </Link>
-          <Link href="/cadence" className="text-gray-600 hover:text-black transition-colors duration-200">
-            Cadence
-          </Link>
-          <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors duration-200">
-            Case studies
-          </Link>
-          <Link
-            href="/login"
-            className="text-gray-600 hover:text-black transition-colors duration-200 font-medium"
-          >
-            Sign in
-          </Link>
-          <a
-            href={PHOTO_GALLERIES_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
-          >
+        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
+          <nav aria-label="Primary">
+            <PrimaryNav className="flex items-center gap-5 xl:gap-7" />
+          </nav>
+          <a href={PHOTO_GALLERIES_URL} target="_blank" rel="noopener noreferrer" className="nav-button shrink-0">
             View Photo Galleries
           </a>
-        </nav>
+        </div>
 
         <MobileNavigation />
       </div>

@@ -60,8 +60,8 @@ export default function SocialMediaLinks() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <span className="text-gray-600 text-sm font-medium">Follow me:</span>
+    <div className="flex flex-col items-start gap-3">
+      <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-black/50">Follow me:</span>
       <div className="flex items-center gap-4">
         {socialLinks.map((social) => (
           <Link
@@ -69,7 +69,7 @@ export default function SocialMediaLinks() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-black transition-colors duration-200"
+            className="text-black/50 transition-colors duration-200 hover:text-black"
             aria-label={
               social.name === "Google Reviews"
                 ? "Read West Rose Media Google reviews"

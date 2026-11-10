@@ -1,75 +1,64 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const PHOTO_GALLERIES_URL = "https://westrosemedia.sproutstudio.com/galleries";
+import { usePathname } from "next/navigation";
+import PrimaryNav from "@/components/PrimaryNav";
+import { PHOTO_GALLERIES_URL } from "@/lib/siteNav";
 
 export default function MobileNavigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const previousPath = useRef(pathname);
+
+  useEffect(() => {
+    if (previousPath.current === pathname) return;
+    previousPath.current = pathname;
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <>
-      {/* Mobile Menu Button */}
       <button
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="md:hidden p-2 text-gray-600 hover:text-black transition-colors"
+        type="button"
+        className="inline-flex h-11 w-11 items-center justify-center text-black lg:hidden"
+        aria-expanded={open}
+        aria-controls="site-menu"
+        aria-label={open ? "Close menu" : "Open menu"}
+        onClick={() => setOpen((value) => !value)}
       >
-        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        {open ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
       </button>
 
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <nav className="container-elegant py-4 flex flex-col gap-4">
-            <Link 
-              href="/about" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link 
-              href="/packages" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Packages
-            </Link>
-            <Link 
-              href="/cadence" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Cadence
-            </Link>
-            <Link 
-              href="/case-studies" 
-              className="text-gray-600 hover:text-black transition-colors duration-200 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Case studies
-            </Link>
-            <Link
-              href="/login"
-              className="inline-flex w-fit items-center justify-center rounded-lg border border-black px-5 py-2.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Sign in
-            </Link>
+      {open ? (
+        <div id="site-menu" className="absolute inset-x-0 top-full z-50 border-b border-black/10 bg-paper lg:hidden">
+          <nav className="container-elegant flex flex-col py-6" aria-label="Mobile">
+            <PrimaryNav
+              onNavigate={() => setOpen(false)}
+              className="flex flex-col"
+              linkClassName="w-full border-b border-black/10 py-4 text-[13px] tracking-[0.18em]"
+            />
             <a
               href={PHOTO_GALLERIES_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-fit items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-gray-800"
-              onClick={() => setMobileMenuOpen(false)}
+              className="nav-button mt-6 w-fit"
+              onClick={() => setOpen(false)}
             >
               View Photo Galleries
             </a>
           </nav>
         </div>
-      )}
+      ) : null}
     </>
   );
 }

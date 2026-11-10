@@ -17,6 +17,14 @@ const config: Config = {
       colors: {
         black: "#000000",
         white: "#ffffff",
+        /* Warm paper. Keep hex in sync with --wrm-paper in app/globals.css. */
+        paper: {
+          DEFAULT: "#f7f4ef",
+          50: "#fbf9f6",
+          100: "#f7f4ef",
+          200: "#efeae3",
+        },
+        /* West Rose red. Used sparingly. Do not retint Hot & Viral with this. */
         accent: {
           DEFAULT: "#ff3131",
           50: "#fff5f5",
@@ -24,6 +32,10 @@ const config: Config = {
           500: "#ff3131",
           600: "#e62e2e",
           700: "#cc2626",
+        },
+        /* Instagram magenta for Hot & Viral stat pops only. Not a second brand accent. */
+        magenta: {
+          DEFAULT: "#f41cdc",
         },
         gray: {
           50: "#fafafa",
@@ -61,6 +73,13 @@ const config: Config = {
         "18": "4.5rem",
         "88": "22rem",
         "128": "32rem",
+        gutter: "var(--wrm-gutter)",
+        section: "var(--wrm-section-y)",
+        header: "var(--wrm-header-height)",
+      },
+      letterSpacing: {
+        editorial: "0.16em",
+        masthead: "-0.03em",
       },
       fontSize: {
         /* ~20% larger than default for display / heading sizes */
@@ -73,9 +92,15 @@ const config: Config = {
         "7xl": ["5.4rem", { lineHeight: "1" }],
         "8xl": ["7.2rem", { lineHeight: "1" }],
         "9xl": ["9.6rem", { lineHeight: "1" }],
+        /* Later phases. Existing text-hero / text-display classes are unchanged. */
+        masthead: ["clamp(3.5rem, 8vw, 6.75rem)", { lineHeight: "0.94", letterSpacing: "-0.035em" }],
+        headline: ["clamp(2.25rem, 4vw, 3.75rem)", { lineHeight: "1.02", letterSpacing: "-0.03em" }],
+        title: ["clamp(1.75rem, 2.5vw, 2.5rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
+        eyebrow: ["0.6875rem", { lineHeight: "1.3", letterSpacing: "0.16em" }],
       },
       lineHeight: {
         relaxed: "1.8",
+        headline: "1.05",
       },
     },
   },
