@@ -443,6 +443,59 @@ export const copy = {
       },
     ],
   },
+  introducing: {
+    heading: "WHAT IF YOUR NEXT REEL WAS THE ONE THAT TOOK OFF?",
+    subheading: "Welcome to HOT & VIRAL.",
+    paragraphs: [
+      {
+        text: "This is where we stop throwing content at the wall and hoping something sticks.",
+        bold: false,
+      },
+      {
+        text: "Hot & Viral is my live content coaching membership where we get inside your Instagram and TikTok accounts, look at what you're creating, and figure out how to give your content a much better chance of getting seen.",
+        bold: false,
+      },
+      { text: "We're talking about the hooks that make people stop scrolling.", bold: false },
+      { text: "The ideas that make people curious.", bold: false },
+      { text: "The videos people watch right to the end.", bold: false },
+      { text: "The content people can't help but share.", bold: false },
+      {
+        text: "And the little things that can make a BIG difference to how far your content travels.",
+        bold: false,
+      },
+      { text: "And here's what makes this different.", bold: true },
+      {
+        text: "I'm not handing you another course with 47 lessons you'll never finish.",
+        bold: false,
+      },
+      {
+        text: "I'm not giving you a generic list of trending audio and telling you to go figure it out.",
+        bold: false,
+      },
+      { text: "We're working on YOUR content.", bold: false },
+      { text: "YOUR account.", bold: false },
+      { text: "YOUR ideas.", bold: false },
+      {
+        text: "Every Tuesday, I bring my experience, my strategic eyes and my honest feedback into the room.",
+        bold: false,
+      },
+      {
+        text: "You get to see what I'm seeing, understand why I'm recommending changes, and learn how to apply those strategies to your own content.",
+        bold: false,
+      },
+      {
+        text: "Because the goal isn't to make one lucky reel go viral.",
+        bold: false,
+      },
+      {
+        text: "It's to get better at creating content that has the potential to reach people far beyond your current audience.",
+        bold: false,
+      },
+      { text: "More reach. More views. More opportunities to go viral.", bold: true },
+      { text: "That's what we're working towards inside HOT & VIRAL.", bold: false },
+    ],
+    button: "I WANT IN",
+  },
   ai: {
     heading: "AI can write you a caption. It can't build your point of view.",
     paragraphs: [

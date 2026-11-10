@@ -518,6 +518,29 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
+      <section id="introducing-hot-and-viral" className={`${band} bg-white`} aria-labelledby="introducing-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="introducing-heading" className={`${h2} max-w-[14em]`}>
+              {copy.introducing.heading}
+            </h2>
+            <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.introducing.subheading}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              {copy.introducing.paragraphs.map((paragraph) => (
+                <p key={paragraph.text} className={paragraph.bold ? "font-bold text-black" : undefined}>
+                  {paragraph.text}
+                </p>
+              ))}
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.introducing.button}</StateButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="ai-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">

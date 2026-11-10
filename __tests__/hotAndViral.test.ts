@@ -78,7 +78,7 @@ test("signup blocks empty and badly formed emails and keeps a clean address", ()
   });
 });
 
-test("hero opening is Stephanie's exact words", () => {
+test("hero, section 2, and introducing hot and viral are Stephanie's exact words", () => {
   expect(copy.hero.eyebrow).toBe("HOT & VIRAL");
   expect(copy.hero.headline).toBe(
     "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
@@ -110,17 +110,7 @@ test("hero opening is Stephanie's exact words", () => {
   expect(heroText).not.toContain("Someone with less experience just passed you.");
   expect(heroText).not.toContain("Stop posting content that gets ignored.");
 
-  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
-  expect(page).toContain("<h1");
-  expect(page).toContain("{copy.hero.headline}");
-  expect(page).toContain("{copy.hero.button}");
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
-});
-
-test("section 2 is why the content is not working, in Stephanie's exact words", () => {
-  expect(copy.problem.heading).toBe(
-    "You're not creating content to be ignored. So why is nobody watching?",
-  );
+  expect(copy.problem.heading).toBe("You're not creating content to be ignored. So why is nobody watching?");
   expect(copy.problem.paragraphs.map((paragraph) => paragraph.text)).toEqual([
     "Let's be honest.",
     "You're spending time coming up with ideas, filming reels, editing videos, writing captions and trying to figure out what Instagram wants from you this week.",
@@ -153,6 +143,49 @@ test("section 2 is why the content is not working, in Stephanie's exact words", 
   expect(copySource).toContain("200 views. Maybe 300. Occasionally one surprises you and hits 1,000.");
   expect(copySource).not.toContain("200 views. 347. Maybe 600.");
   expect(copySource).not.toContain("200. Then 347. Then 600.");
+
+
+  expect(copy.introducing.heading).toBe("WHAT IF YOUR NEXT REEL WAS THE ONE THAT TOOK OFF?");
+  expect(copy.introducing.subheading).toBe("Welcome to HOT & VIRAL.");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.introducing.paragraphs.map((paragraph) => paragraph.text)).toEqual([
+    "This is where we stop throwing content at the wall and hoping something sticks.",
+    "Hot & Viral is my live content coaching membership where we get inside your Instagram and TikTok accounts, look at what you're creating, and figure out how to give your content a much better chance of getting seen.",
+    "We're talking about the hooks that make people stop scrolling.",
+    "The ideas that make people curious.",
+    "The videos people watch right to the end.",
+    "The content people can't help but share.",
+    "And the little things that can make a BIG difference to how far your content travels.",
+    "And here's what makes this different.",
+    "I'm not handing you another course with 47 lessons you'll never finish.",
+    "I'm not giving you a generic list of trending audio and telling you to go figure it out.",
+    "We're working on YOUR content.",
+    "YOUR account.",
+    "YOUR ideas.",
+    "Every Tuesday, I bring my experience, my strategic eyes and my honest feedback into the room.",
+    "You get to see what I'm seeing, understand why I'm recommending changes, and learn how to apply those strategies to your own content.",
+    "Because the goal isn't to make one lucky reel go viral.",
+    "It's to get better at creating content that has the potential to reach people far beyond your current audience.",
+    "More reach. More views. More opportunities to go viral.",
+    "That's what we're working towards inside HOT & VIRAL.",
+  ]);
+  expect(copy.introducing.paragraphs.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "And here's what makes this different.",
+    "More reach. More views. More opportunities to go viral.",
+  ]);
+
+  const problemAt = page.indexOf('id="problem-heading"');
+  const introducingAt = page.indexOf('id="introducing-heading"');
+  const copycatAt = page.indexOf('id="copycat-heading"');
+  expect(problemAt).toBeGreaterThan(-1);
+  expect(introducingAt).toBeGreaterThan(problemAt);
+  expect(copycatAt).toBeGreaterThan(introducingAt);
+  expect(page).toContain("{copy.hero.button}");
+  expect(page).toContain("{copy.introducing.button}");
+  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  const introducingBlock = page.slice(introducingAt, copycatAt);
+  expect(introducingBlock).toContain("copy.introducing.paragraphs.map");
+  expect(introducingBlock).not.toContain("<li");
 });
 
 test("approved sales lines stay intact", () => {
