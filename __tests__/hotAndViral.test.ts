@@ -246,9 +246,12 @@ test("hot and viral keeps one quiet google reviews link and no quote block", () 
   const shareUrl = "https://share.google/O5Gl6uzN8JRq35a59";
 
   expect(page.split(shareUrl).length - 1).toBe(1);
+  expect(page).toContain("href={GOOGLE_REVIEWS_SHARE_URL}");
   expect(page).toContain('target="_blank"');
   expect(page).toContain('rel="noreferrer"');
   expect(page).toContain("Read the Google reviews");
+  expect(page).toContain("The reviews are on the West Rose Media Google listing.");
+  expect(page).not.toContain("https://www.google.com/search?q=west+rose+media+reviews");
   expect(page).not.toContain("googleReviews");
   expect(page).not.toContain("blockquote");
   expect(page).not.toContain("5.0 from 33");

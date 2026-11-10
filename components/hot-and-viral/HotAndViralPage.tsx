@@ -454,7 +454,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <h1 className="max-w-[14em] font-heading text-[2.35rem] leading-[1.02] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.45rem]">
+            <h1 className="max-w-[20em] font-heading text-[2.05rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.4rem] lg:text-[2.65rem]">
               {copy.hero.headline}
             </h1>
             <div className="mt-6 max-w-[38rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
@@ -854,16 +854,21 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
 
 function GoogleReviewsLink({ className = "" }: { className?: string }) {
   return (
-    <p className={className}>
-      <a
-        href={GOOGLE_REVIEWS_SHARE_URL}
-        target="_blank"
-        rel="noreferrer"
-        className="text-sm text-neutral-500 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-800"
-      >
-        Read the Google reviews
-      </a>
-    </p>
+    <div className={className}>
+      <p className="max-w-md text-[16px] leading-relaxed text-neutral-700">
+        The reviews are on the West Rose Media Google listing.
+      </p>
+      <p className="mt-4">
+        <a
+          href={GOOGLE_REVIEWS_SHARE_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="text-sm text-neutral-500 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-800"
+        >
+          Read the Google reviews
+        </a>
+      </p>
+    </div>
   );
 }
 
