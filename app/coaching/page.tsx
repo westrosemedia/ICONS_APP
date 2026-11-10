@@ -22,7 +22,6 @@ export default function CoachingPage() {
             <p>
               Private 1:1 coaching is direct time with Stephanie Rose on the strategy behind the brand. It is full.
             </p>
-            <p>There is no published price and no published list of inclusions.</p>
             <p>
               ICON Brand Partnership is open. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January.
             </p>

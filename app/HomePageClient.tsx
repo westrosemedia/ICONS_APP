@@ -251,7 +251,7 @@ export default function HomePageClient() {
               Private 1:1 Coaching
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">
-              Private 1:1 coaching is full. There is no published price and no published list of inclusions.
+              Private 1:1 coaching is full.
             </p>
             <div className="mt-8">
               <WrmButton href="/coaching" variant="line">

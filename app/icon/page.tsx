@@ -67,7 +67,7 @@ export default function IconPage() {
             <p>{iconCopy.bigPromise}</p>
             <p>{iconCopy.beliefShift}</p>
             <p>
-              ICON Brand Partnership is open. Stephanie wants to scale it. It is by application. Every applicant gets a response. You do not need to live in the same city. Strategy and planning happen remotely, with content captured on scheduled shoot days and travel dates.
+              ICON Brand Partnership is open. It is by application. Every applicant gets a response. You do not need to live in the same city. Strategy and planning happen remotely, with content captured on scheduled shoot days and travel dates.
             </p>
             <p className="text-sm uppercase tracking-[0.14em] text-[#171515]/70">{iconCopy.priceLine}</p>
           </div>
