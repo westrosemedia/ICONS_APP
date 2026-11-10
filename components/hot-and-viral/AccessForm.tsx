@@ -101,7 +101,7 @@ export default function AccessForm({ list, button, success, id }: AccessFormProp
       ) : null}
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold tracking-wide text-white transition-colors hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-60 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-full bg-black px-7 py-3.5 text-[15px] font-semibold tracking-wide text-white transition-colors hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:opacity-60 sm:w-auto"
         disabled={pending}
       >
         {pending ? "Sending" : button}
