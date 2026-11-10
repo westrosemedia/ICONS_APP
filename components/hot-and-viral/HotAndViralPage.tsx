@@ -843,12 +843,25 @@ function GoogleReviews({ className = "" }: { className?: string }) {
         >
           {copy.googleReviews.heading}
         </h2>
-        <p className="mt-4 max-w-md text-[16px] leading-relaxed text-neutral-700">{copy.googleReviews.line}</p>
+        <p className="mt-4 text-[15px] font-semibold tracking-wide text-neutral-800">
+          <span className="text-[#f41cdc]" aria-hidden="true">
+            ★{" "}
+          </span>
+          {copy.googleReviews.rating}
+        </p>
+        <div className="mt-6 space-y-5">
+          {copy.googleReviews.quotes.map((review) => (
+            <blockquote key={review.name} className="border-t border-black/10 pt-5">
+              <p className="text-[16px] leading-relaxed text-neutral-800">&ldquo;{review.quote}&rdquo;</p>
+              <footer className="mt-2 text-sm font-medium text-neutral-600">{review.name}</footer>
+            </blockquote>
+          ))}
+        </div>
         <a
           href={GOOGLE_REVIEWS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex text-[16px] font-semibold text-[#f41cdc] underline decoration-2 underline-offset-4"
+          className={`${pillDark} mt-6 w-full sm:w-auto`}
         >
           {copy.googleReviews.link}
         </a>

@@ -131,16 +131,24 @@ test("approved sales lines stay intact", () => {
   expect(copy.closed.body).toContain("$500 CAD/month");
 });
 
-test("google reviews link is the West Rose Media listing and quotes nothing unread", () => {
+test("google reviews are the public West Rose Media listing", () => {
   expect(GOOGLE_REVIEWS_URL).toBe(
-    "https://www.google.com/search?q=west+rose+media+reviews#mpd=~14691031191379244407/customers/reviews",
+    "https://www.google.com/maps/place/West+Rose+Media/data=!4m8!3m7!1s0x5371a555217479bd:0x1149d4fc16cd44a3!8m2!3d47.3983188!4d-101.17042!9m1!1b1!16s%2Fg%2F11jfqlm41d",
   );
+  expect(copy.googleReviews.heading).toBe("They wrote this on Google.");
+  expect(copy.googleReviews.rating).toBe("5.0 from 33 Google reviews");
   expect(copy.googleReviews.link).toBe("Read the Google reviews");
-  expect(copy.googleReviews.line).toBe("The reviews are on the West Rose Media Google listing.");
-  expect(copy.googleReviews.quotes).toEqual([]);
+  expect(copy.googleReviews.quotes.map((review) => review.name)).toEqual(["Brooke", "Abby", "Gigi", "Whitney"]);
+  expect(copy.googleReviews.quotes[0].quote).toBe(
+    "Stephanie is an absolute pro and has such a gift for capturing your best self.",
+  );
+  expect(copy.googleReviews.quotes[1].quote).toBe(
+    "Working with Stephanie Rose is a choice I\u2019d make again a hundred times over.",
+  );
   const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
   expect(page).toContain("href={GOOGLE_REVIEWS_URL}");
   expect(page).toContain('target="_blank"');
   expect(page).toContain('rel="noopener noreferrer"');
-  expect(page).not.toMatch(/[0-9](\.[0-9])?\s*stars?/i);
+  expect(page).toContain("copy.googleReviews.quotes.map");
+  expect(page).toContain("copy.googleReviews.link");
 });
