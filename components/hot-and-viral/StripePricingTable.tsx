@@ -4,7 +4,7 @@ import Script from "next/script";
 import { useEffect, useRef } from "react";
 import { STRIPE_PRICING_TABLE_ID, STRIPE_PUBLISHABLE_KEY } from "@/lib/hotAndViral";
 
-const scrollTarget = "scroll-mt-56 scroll-mb-28";
+const scrollTarget = "scroll-mt-80 scroll-mb-28";
 
 /**
  * Stripe's pricing table is a custom element. React drops unknown attributes

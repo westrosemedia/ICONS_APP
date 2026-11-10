@@ -5,6 +5,7 @@
  * Doors open Wednesday 25 November 2026 at 12:00am and stay open through
  * Friday 27 November 2026. The page switches to closed at Saturday
  * 28 November 2026 at 12:00am, the end of 11:59pm Friday.
+ * The next opening is spring 2027, at double the price ($500 CAD/month).
  *
  * In the current timezone data, Calgary stays on UTC-6 after 1 November 2026
  * (it does not fall back to UTC-7). The offsets below are that local midnight,
@@ -346,61 +347,70 @@ export const copy = {
   meta: {
     title: "Hot & Viral | West Rose Media",
     description:
-      "Weekly live coaching on Instagram and TikTok growth. Doors open November 25 to 27 only, at half price for Black Friday.",
+      "3 days to buy. November 25 to 27. Then closed until spring 2027, at double the price. $250 CAD/month in this window.",
   },
   hero: {
-    eyebrow: "Instagram + TikTok",
-    headline:
-      "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.4 million.",
+    eyebrow: "Stephanie Rose · West Rose",
+    lines: [
+      "You're posting into silence.",
+      "200 views. 347. Maybe 600.",
+      "Someone with less experience just passed you.",
+    ],
+    windowLines: [
+      "3 days only.",
+      "Then it is closed until spring\u00A02027.",
+      "At double the price.",
+    ],
     subheadline:
-      "Inside Hot & Viral, I look at your account, tell you what to fix, and show you how to fix it, on Instagram and TikTok.",
+      "I'm Stephanie. I open the account and I see it. What you're saying. Why it dies at 200. What to change. She posted into that silence for six months. Two months later, 1.4 million.",
+    price:
+      "This window is $250 CAD/month, locked for as long as you remain a member. Spring 2027 is $500 CAD/month. Plus GST.",
     checklist: [
-      "Weekly live coaching every Tuesday at 10am MST, with real member accounts broken down on the call",
-      "A members chat group and a separate wins group",
-      "Instagram and TikTok strategy in the same room",
+      "Tuesdays at 10am MST. I open the account on the call.",
+      "The calls are recorded.",
+      "Coaching is on the call, not in the chat.",
+      "Instagram and TikTok, in the same room.",
     ],
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
-    underButton: "Black Friday only. $250 CAD/month, locked for life. Doors open November 25 to 27.",
   },
   problem: {
-    heading: "You're good at what you do. Your views haven't caught up yet.",
-    body: "You know your stuff. Your clients get results. You've filmed, posted, rewritten captions at midnight and watched the same number come back again.",
+    heading: "200. Then 347. Then 600.",
+    body: "You know your work. Your clients get the result. You filmed it, posted it, rewrote the caption at midnight, and the number came back the same.",
     cards: [
       {
-        title: "Stuck at 200",
-        text: "You post, you check your insights, and the views barely reach past the people who already follow you.",
+        title: "200",
+        text: "You post. You check. It barely clears the people who already follow you.",
       },
       {
-        title: "Out-shouted",
-        text: "Accounts that know half of what you know keep pulling a million views right past you.",
+        title: "Passed",
+        text: "Someone with less experience is getting the views. You keep opening the account that passed you.",
       },
       {
         title: "Guessing",
-        text: "You can't tell which part of the post is the problem, so you change everything and learn nothing.",
+        text: "You can't tell which part of the post is the problem, so you change all of it and learn nothing.",
       },
     ],
-    triedHeading: "What you've already tried",
+    triedHeading: "You already did the homework.",
     triedBody:
-      "The course. The coach who said to post three times a day. Trending audio, talking to camera, text on screen. Every one of them handed you more to post. What's holding your account back is what you're saying and how it shows up in the post, and that's the part I can see the second I open your account.",
+      "The course. The coach who said post three times a day. Trending audio, talking to camera, text on the screen. All of it gave you more to post. What's holding the account back is what you're saying, and how it shows up. I see it the second I open it.",
   },
   ai: {
     eyebrow: "About that AI",
-    heading: "You've probably asked AI to help with your posts. It can't make you go viral.",
-    body: "AI only pulls from the past. It writes from what already worked for millions of other people, which is why your post comes out sounding like everyone else's. We're building the future. The posts that blow up say something your audience hasn't heard yet, in a way only you can say it.",
+    heading: "AI can write the post. It can't see why it died.",
+    body: "It pulls from what already worked for everybody else. That's why your caption sounds like the last ten you scrolled. The posts that move say something your people haven't heard, the way only you say it.",
   },
   copycats: {
     eyebrow: "Proof",
-    heading:
-      "You've tried the courses, the coaches and posting every single day. Meanwhile, accounts with 700k followers are copying my posts word for word.",
-    body: "When the biggest accounts in your industry are taking notes from my page, you know where the growth is coming from. Inside Hot & Viral, I teach you what they're copying.",
+    heading: "700k-follower accounts are copying my posts word for word.",
+    body: "You took the course. You hired the coach. You posted every single day. They're still lifting the line off my page. Inside Hot & Viral I show you what they're copying, so you can see it in your own.",
   },
   cammy: {
     label: "Client · Cammy",
     beforeStat: "200 views",
     afterStat: "1.4M views",
     story:
-      "Cammy had been posting for six months, and her reels kept landing around 200 views. She was showing up and filming like she'd been told. She was also saying the wrong thing in every post. I looked at her account and knew right away what to fix. We fixed her message and made sure it showed up in everything she posted. Two months later, one of her reels hit 1.4 million views.",
+      "Cammy posted for six months. The reels sat around 200 views. She was showing up. She was filming the way she'd been told. She was saying the wrong thing in every post. I opened the account and I knew what to change. We fixed the message and made it show up in the post. Two months later, one reel hit 1.4 million views. That was her account. I can see what's wrong with yours, and what to change. I can't promise the same number.",
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
@@ -409,53 +419,54 @@ export const copy = {
     heading: "I rebuilt from zero, in public.",
   },
   inside: {
-    heading: "What happens inside Hot & Viral",
+    heading: "What you walk into",
     steps: [
       {
-        title: "The Tuesday call.",
-        text: "Every Tuesday at 10am MST, I pull up member accounts live and tell you exactly what to fix. Every breakdown teaches the whole room. The calls are recorded.",
+        title: "Tuesday, 10am MST.",
+        text: "Starting December 1, 2026. I pull a member's account up on the call and say what to change. The whole room hears it. The calls are recorded.",
       },
       {
         title: "Instagram and TikTok.",
-        text: "Two platforms, one strategy, built around your message.",
+        text: "Two platforms. One look at the message, and how it shows up in the post.",
       },
       {
-        title: "The chat group.",
-        text: "Ask questions, share drafts and swap ideas with women doing the same work.",
+        title: "The chat.",
+        text: "Members talk to each other. Drafts, questions, what they're posting.",
       },
       {
         title: "The wins group.",
         text: "Where the screenshots go when a reel takes off.",
       },
       {
-        title: "One place for coaching.",
-        text: "Everything happens on the call. Show up Tuesday and leave knowing what to fix.",
+        title: "Coaching is on the call.",
+        text: "Coaching is on the call, not in the chat. Show up Tuesday. Leave knowing what to change.",
       },
     ],
   },
   who: {
-    heading: "Where brave, smart, dedicated women get seen",
+    heading: "You keep checking the insights.",
     intro: "This is for you if:",
     points: [
-      "You're excellent at what you do and your views don't show it yet",
-      "You're ready to say the thing on camera you've been holding back",
-      "You'll show up on Tuesdays and post what we work on",
-      "You want growth on Instagram, TikTok or both",
+      "You're excellent at the work and the views don't show it",
+      "You're ready to say the thing you've been holding back on camera",
+      "You'll show up Tuesday and post what we change",
+      "You want this on Instagram, TikTok, or both",
     ],
   },
   onlyWay: {
     heading: "This is the only way to work with me right now.",
-    body: "My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. Hot & Viral is open for three days, November 25 to 27. When the doors close Friday at 11:59pm MST, the group locks, and there's no date set for it to open again.",
+    body: "My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. Hot & Viral is open for 3 days, November 25 to 27. Friday at 11:59pm MST it closes. It does not open again until spring 2027, and the price will be double.",
   },
   pricing: {
-    heading: "Black Friday is half price, and it stays that way.",
-    beforeNote: "Doors open November 25. Leave your email for first access.",
+    heading: "3 days at $250. Then the price doubles.",
+    note: "November 25 to 27 is the only buy window. Then it is closed until spring 2027, at double the price. $500 CAD/month.",
+    beforeNote: "Doors open November 25 at 12:00am MST. Leave your email and the link lands the minute they open.",
     cancel: "You can cancel anytime.",
     monthly: {
       regular: "$500 CAD/month",
       sale: "$250",
       cadence: "CAD/month",
-      lock: "Locked for life while you stay a member",
+      lock: "Locked for as long as you remain a member. In spring 2027 this is double, $500 CAD/month.",
       gst: "Plus GST",
       button: "Join monthly",
     },
@@ -463,15 +474,15 @@ export const copy = {
       regular: "$5,500 CAD/year",
       sale: "$2,750",
       cadence: "CAD for the year",
-      note: "One payment, twelve months, and $250 CAD less than paying monthly",
+      note: "$2,750 CAD. $250 less than twelve monthly payments. This price is the 3-day window. Then closed until spring 2027, when the month is double.",
       gst: "Plus GST",
       button: "Join for the year",
       badge: "Best value",
     },
   },
   firstAccess: {
-    heading: "Get in first.",
-    body: "Doors open Wednesday November 25 at 12:00am MST. Leave your email and the link lands in your inbox the minute they open.",
+    heading: "Get there before it opens.",
+    body: "Doors open Wednesday, November 25 at 12:00am MST. They close Friday, November 27 at 11:59pm MST. 3 days only. Then it is closed until spring 2027, at double the price. Leave your email and the link lands the minute they open.",
     button: "Send me first access",
     success: "You're in. Watch your inbox on November 25.",
   },
@@ -482,19 +493,23 @@ export const copy = {
     },
     {
       q: "When are the calls?",
-      a: "Tuesdays at 10am MST, starting December 1, 2026.",
+      a: "Tuesdays at 10am MST, starting December 1, 2026. The calls are recorded.",
     },
     {
       q: "Will you look at my account?",
-      a: "I break down member accounts live every week, and every breakdown teaches the whole call what to fix.",
+      a: "I open member accounts live on the Tuesday call and say what to change. The whole room hears it.",
     },
     {
       q: "Do you coach in the chat group?",
-      a: "All coaching happens live on Tuesday's call. The chat group is where members connect, ask each other questions and share what's working.",
+      a: "Coaching is on the call, not in the chat. The chat is where members talk to each other.",
     },
     {
-      q: "What happens to my price after Black Friday?",
-      a: "Your $250 CAD/month stays locked for as long as you're a member.",
+      q: "When can I buy?",
+      a: "3 days only. Wednesday, November 25, 2026 at 12:00am MST through Friday, November 27 at 11:59pm MST. Then it is closed until spring 2027, at double the price.",
+    },
+    {
+      q: "What happens to my price after these 3 days?",
+      a: "Your $250 CAD/month stays locked for as long as you remain a member. The year is $2,750 CAD, $250 less than twelve monthly payments. Plus GST. In spring 2027 the price is double, $500 CAD/month.",
     },
     {
       q: "I'm starting from zero. Can I join?",
@@ -502,23 +517,31 @@ export const copy = {
     },
   ],
   final: {
-    heading: "Doors close Friday at 11:59pm MST.",
-    body: "Bring your account to Tuesday's call and I'll show you exactly what to fix.",
+    heading: "3 days. Then spring 2027. Double the price.",
+    body: "Friday, November 27, 11:59pm MST, the doors shut. That is the only buy window. It does not open again until spring 2027, and it will be $500 CAD/month. This window is $250 CAD/month, locked for as long as you remain a member. Bring your account to the Tuesday call. I'll show you what to change.",
   },
   closed: {
     heading: "Hot & Viral is closed.",
-    body: "The doors were open November 25 to 27, 2026, and there's no date set for the next round. Leave your email and you'll hear first if it opens again.",
+    body: "The only buy window was November 25 to 27, 2026. It opens again in spring 2027, at double the price. $500 CAD/month. Leave your email and you'll hear first.",
     button: "Tell me first",
     success: "You're on the list.",
   },
   countdown: {
-    before: "Black Friday only. Doors open in",
+    before: "Doors open in",
     open: "Doors close in",
-    openSuffix: "Half price closes with them.",
+    // The buy window is November 25–27. Digits come from the live clock, not from this line.
+    line: "3 days only. Then it is closed until spring\u00A02027, at double the price.",
   },
   sticky: {
     before: "Get first access",
     open: "Join Hot & Viral",
+  },
+  googleReviews: {
+    heading: "Google reviews",
+    line: "The reviews are on the West Rose Media Google listing.",
+    link: "Read the Google reviews",
+    // Google blocked the review text. Nothing here was copied from the listing.
+    quotes: [] as const,
   },
   duplicate: "This email is already on the list.",
 };

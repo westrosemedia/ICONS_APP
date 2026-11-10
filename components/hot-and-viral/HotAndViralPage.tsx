@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
 import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
+import { GOOGLE_REVIEWS_URL } from "@/lib/siteLinks";
 import {
   COACH_IMAGE,
   HERO_IMAGE,
@@ -26,7 +27,7 @@ type HotAndViralPageProps = {
   initialNowMs: number;
 };
 
-const scrollTarget = "scroll-mt-44";
+const scrollTarget = "scroll-mt-80";
 const band = "py-16 md:py-[7.25rem]";
 const h2 =
   "font-heading text-[2.15rem] leading-[0.98] tracking-[-0.035em] sm:text-[2.7rem] md:text-[3.25rem]";
@@ -89,7 +90,15 @@ function pad(value: number) {
   return String(value).padStart(2, "0");
 }
 
-function CountdownDigits({ nowMs, state }: { nowMs: number; state: Exclude<PageState, "closed"> }) {
+function CountdownDigits({
+  nowMs,
+  state,
+  align = "center",
+}: {
+  nowMs: number;
+  state: Exclude<PageState, "closed">;
+  align?: "center" | "start";
+}) {
   const target = countdownTarget(state) ?? nowMs;
   const parts = splitRemaining(target - nowMs);
   const label = state === "before" ? copy.countdown.before : copy.countdown.open;
@@ -102,14 +111,16 @@ function CountdownDigits({ nowMs, state }: { nowMs: number; state: Exclude<PageS
 
   return (
     <div
-      className="flex justify-center gap-2.5 sm:gap-4"
+      className={`flex gap-2 sm:gap-4 lg:gap-6 ${align === "start" ? "justify-center lg:justify-start" : "justify-center"}`}
       role="timer"
-      aria-label={`${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds`}
+      aria-label={`${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds. ${copy.countdown.line}`}
     >
       {units.map(([unit, value]) => (
-        <div key={unit} className="min-w-[2.7rem] text-center sm:min-w-[3.1rem]">
-          <div className="font-heading text-[1.65rem] leading-none tabular-nums text-[#f41cdc] sm:text-[1.85rem]">{pad(value)}</div>
-          <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-white/60">{unit}</div>
+        <div key={unit} className="min-w-[4.4rem] text-center sm:min-w-[5.4rem] lg:min-w-[6.75rem]">
+          <div className="font-heading text-[3.5rem] leading-none tabular-nums tracking-[-0.04em] text-[#f41cdc] sm:text-[4.75rem] lg:text-[6.25rem]">
+            {pad(value)}
+          </div>
+          <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px]">{unit}</div>
         </div>
       ))}
     </div>
@@ -125,18 +136,18 @@ function CountdownBanner({
   state: Exclude<PageState, "closed">;
   sticky?: boolean;
 }) {
+  const label = state === "before" ? copy.countdown.before : copy.countdown.open;
+
   return (
-    <div className={`${sticky ? "sticky top-[73px] z-30" : "rounded-2xl"} bg-black text-white`}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-1 px-4 py-2.5 sm:flex-row sm:justify-center sm:gap-7">
-        <p className="text-center text-[13px] leading-tight tracking-wide sm:text-left sm:text-sm">
-          {state === "before" ? copy.countdown.before : copy.countdown.open}
+    <div className={`${sticky ? "sticky top-[73px] z-30" : ""} bg-black text-white`}>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-4 sm:py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-8 lg:py-6">
+        <div className="flex w-full flex-col items-center gap-2 lg:w-auto lg:items-start">
+          <p className="text-center text-lg font-semibold tracking-wide text-white sm:text-xl lg:text-left">{label}</p>
+          <CountdownDigits nowMs={nowMs} state={state} align="start" />
+        </div>
+        <p className="max-w-[16rem] text-center text-[15px] font-normal leading-snug text-white sm:max-w-xs sm:text-base lg:text-left">
+          {copy.countdown.line}
         </p>
-        <CountdownDigits nowMs={nowMs} state={state} />
-        {state === "open" ? (
-          <p className="text-center text-[13px] leading-tight tracking-wide sm:text-left sm:text-sm">
-            {copy.countdown.openSuffix}
-          </p>
-        ) : null}
       </div>
     </div>
   );
@@ -179,48 +190,6 @@ function CheckList({ items }: { items: readonly string[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-function HeroHeadline({ text }: { text: string }) {
-  const parts = text.split(/(?<=\.)\s+/);
-  const display =
-    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] sm:text-[3.05rem] lg:text-[3.2rem]";
-
-  if (parts.length !== 3) {
-    return <h1 className={`${display} max-w-[16em] text-black`}>{text}</h1>;
-  }
-
-  const [opening, bridge, close] = parts;
-  const openingLines = opening.split(/,\s*/);
-  const closeLines = close.split(/,\s*/);
-
-  return (
-    <h1>
-      <span className={`${display} text-black`}>
-        {openingLines.length > 1 ? (
-          <>
-            <span className="block">{openingLines[0]}, </span>
-            <span className="block">{openingLines.slice(1).join(", ")} </span>
-          </>
-        ) : (
-          `${opening} `
-        )}
-      </span>
-      <span className="mt-5 block max-w-[34rem] font-sans text-[17px] font-normal leading-snug tracking-normal text-neutral-600">
-        {bridge}{" "}
-      </span>
-      <span className={`${display} mt-5 text-black`}>
-        {closeLines.length > 1 ? (
-          <>
-            <span className="block">{closeLines[0]}, </span>
-            <span className="block text-[#f41cdc]">{closeLines.slice(1).join(", ")}</span>
-          </>
-        ) : (
-          close
-        )}
-      </span>
-    </h1>
   );
 }
 
@@ -459,6 +428,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <div className="mt-10">
               <AccessForm list="next_round" button={copy.closed.button} success={copy.closed.success} />
             </div>
+            <GoogleReviews className="mt-16" />
           </div>
         </section>
         {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
@@ -477,17 +447,37 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       <CountdownBanner nowMs={nowMs} state={state} sticky />
 
       <section className="bg-white">
-        <div className="container-elegant grid items-center gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
+        <div className="container-elegant grid items-start gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
           <div className="min-w-0">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
               <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <HeroHeadline text={copy.hero.headline} />
+            <h1>
+              {copy.hero.lines.map((line, index) => (
+                <span
+                  key={line}
+                  className={
+                    index === copy.hero.lines.length - 1
+                      ? "mt-4 block max-w-[26rem] font-sans text-[1.2rem] font-medium leading-snug tracking-normal text-neutral-800 sm:text-[1.35rem]"
+                      : "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.35rem]"
+                  }
+                >
+                  {line}
+                </span>
+              ))}
+            </h1>
+            <p className="mt-6 font-heading text-[1.85rem] leading-[1.02] tracking-[-0.03em] text-[#f41cdc] sm:text-[2.2rem]">
+              {copy.hero.windowLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
             <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
             <div className="mt-8">
               <StateButton state={state} />
-              <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-500">{copy.hero.underButton}</p>
+              <p className="mt-4 max-w-md text-[15px] font-medium leading-relaxed text-neutral-900">{copy.hero.price}</p>
             </div>
             <div className="mt-7 max-w-md">
               <CheckList items={copy.hero.checklist} />
@@ -694,6 +684,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </div>
           </div>
         </div>
+        <div className="container-elegant">
+          <GoogleReviews className="mt-12 md:mt-16" />
+        </div>
       </section>
 
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
@@ -747,7 +740,8 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <h2 id="pricing-heading" className={`${h2} max-w-[14em]`}>
             {copy.pricing.heading}
           </h2>
-          {state === "before" ? <p className={`${lede} mt-6`}>{copy.pricing.beforeNote}</p> : null}
+          <p className={`${lede} mt-6`}>{copy.pricing.note}</p>
+          {state === "before" ? <p className={`${lede} mt-4`}>{copy.pricing.beforeNote}</p> : null}
           <div className="mt-10">
             <PricingCards state={state} />
           </div>
@@ -809,12 +803,14 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               {copy.final.heading}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-white/75">{copy.final.body}</p>
-            <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-white/15 px-4 py-5">
-              <p className="text-sm text-white/75">{state === "before" ? copy.countdown.before : copy.countdown.open}</p>
+            <div className="mx-auto mt-10 max-w-3xl">
+              <p className="text-lg font-semibold text-white sm:text-xl">
+                {state === "before" ? copy.countdown.before : copy.countdown.open}
+              </p>
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
               </div>
-              {state === "open" ? <p className="mt-3 text-sm text-white/70">{copy.countdown.openSuffix}</p> : null}
+              <p className="mx-auto mt-4 max-w-sm text-[15px] leading-snug text-white sm:text-base">{copy.countdown.line}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state} tone="light" />
@@ -830,6 +826,33 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       </div>
 
       {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
+    </div>
+  );
+}
+
+function GoogleReviews({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <div
+        id="google-reviews"
+        className="max-w-xl scroll-mt-80 rounded-[1.75rem] border border-black/10 bg-[#f3f0ea] px-6 py-7 sm:px-8 sm:py-8"
+      >
+        <h2
+          id="google-reviews-heading"
+          className="font-heading text-[1.7rem] leading-[1.05] tracking-[-0.03em] text-black md:text-[2.1rem]"
+        >
+          {copy.googleReviews.heading}
+        </h2>
+        <p className="mt-4 max-w-md text-[16px] leading-relaxed text-neutral-700">{copy.googleReviews.line}</p>
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex text-[16px] font-semibold text-[#f41cdc] underline decoration-2 underline-offset-4"
+        >
+          {copy.googleReviews.link}
+        </a>
+      </div>
     </div>
   );
 }
