@@ -108,7 +108,7 @@ function CountdownDigits({ nowMs, state }: { nowMs: number; state: Exclude<PageS
     >
       {units.map(([unit, value]) => (
         <div key={unit} className="min-w-[2.7rem] text-center sm:min-w-[3.1rem]">
-          <div className="font-heading text-[1.65rem] leading-none tabular-nums sm:text-[1.85rem]">{pad(value)}</div>
+          <div className="font-heading text-[1.65rem] leading-none tabular-nums text-[#f41cdc] sm:text-[1.85rem]">{pad(value)}</div>
           <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-white/60">{unit}</div>
         </div>
       ))}
@@ -185,10 +185,10 @@ function CheckList({ items }: { items: readonly string[] }) {
 function HeroHeadline({ text }: { text: string }) {
   const parts = text.split(/(?<=\.)\s+/);
   const display =
-    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.2rem]";
+    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] sm:text-[3.05rem] lg:text-[3.2rem]";
 
   if (parts.length !== 3) {
-    return <h1 className={`${display} max-w-[16em]`}>{text}</h1>;
+    return <h1 className={`${display} max-w-[16em] text-black`}>{text}</h1>;
   }
 
   const [opening, bridge, close] = parts;
@@ -197,7 +197,7 @@ function HeroHeadline({ text }: { text: string }) {
 
   return (
     <h1>
-      <span className={display}>
+      <span className={`${display} text-black`}>
         {openingLines.length > 1 ? (
           <>
             <span className="block">{openingLines[0]}, </span>
@@ -210,11 +210,11 @@ function HeroHeadline({ text }: { text: string }) {
       <span className="mt-5 block max-w-[34rem] font-sans text-[17px] font-normal leading-snug tracking-normal text-neutral-600">
         {bridge}{" "}
       </span>
-      <span className={`${display} mt-5`}>
+      <span className={`${display} mt-5 text-black`}>
         {closeLines.length > 1 ? (
           <>
             <span className="block">{closeLines[0]}, </span>
-            <span className="block">{closeLines.slice(1).join(", ")}</span>
+            <span className="block text-[#f41cdc]">{closeLines.slice(1).join(", ")}</span>
           </>
         ) : (
           close
@@ -311,7 +311,9 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
       <article className="order-2 flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:order-1 md:p-9">
         <h3 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">Monthly</h3>
         <p className="mt-6 text-base text-neutral-400 line-through">{copy.pricing.monthly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em]">{copy.pricing.monthly.sale}</p>
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">
+          {copy.pricing.monthly.sale}
+        </p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
           {copy.pricing.monthly.cadence}
         </p>
@@ -331,10 +333,14 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
       </article>
 
       <article className="order-1 flex flex-col rounded-[1.6rem] bg-black p-7 text-white md:order-2 md:p-9">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">{copy.pricing.yearly.badge}</p>
+        <p>
+          <span className="inline-flex rounded-full bg-[#f41cdc] px-2.5 py-1 text-[11px] font-semibold leading-none text-white">
+            {copy.pricing.yearly.badge}
+          </span>
+        </p>
         <h3 className="mt-3 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Pay in full</h3>
         <p className="mt-6 text-base text-white/40 line-through">{copy.pricing.yearly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-white">{copy.pricing.yearly.sale}</p>
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">{copy.pricing.yearly.sale}</p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.cadence}</p>
         <p className="mt-5 text-[15px] leading-relaxed text-white/85">{copy.pricing.yearly.note}</p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.gst}</p>
@@ -386,10 +392,10 @@ function ResultCase({
             className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-heading text-[2.5rem] leading-none tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]"
           >
             <span>{before}</span>
-            <span className="text-neutral-300" aria-hidden="true">
+            <span className="text-[#f41cdc]" aria-hidden="true">
               →
             </span>
-            <span>{after}</span>
+            <span className="text-[#f41cdc]">{after}</span>
           </Title>
           <div className="mt-6 max-w-[36rem] space-y-4 text-[17px] leading-[1.7] text-neutral-600">{body}</div>
         </div>
@@ -474,7 +480,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         <div className="container-elegant grid items-center gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
           <div className="min-w-0">
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-black" aria-hidden="true" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
             <HeroHeadline text={copy.hero.headline} />
@@ -506,10 +512,8 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <p className={eyebrow}>{copy.cammy.label}</p>
               <p className="mt-2 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black">
                 <span className="block">{copy.cammy.beforeStat}</span>
-                <span className="mt-1 block">
-                  <span className="text-neutral-300" aria-hidden="true">
-                    →{" "}
-                  </span>
+                <span className="mt-1 block text-[#f41cdc]">
+                  <span aria-hidden="true">→ </span>
                   {copy.cammy.afterStat}
                 </span>
               </p>
@@ -704,7 +708,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                   key={step.title}
                   className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-black/10 py-6 first:border-t-0"
                 >
-                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-neutral-400">
+                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-[#f41cdc]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
