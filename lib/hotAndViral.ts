@@ -536,30 +536,5 @@ export const copy = {
     before: "Get first access",
     open: "Join Hot & Viral",
   },
-  googleReviews: {
-    heading: "They wrote this on Google.",
-    rating: "5.0 from 33 Google reviews",
-    link: "Read the Google reviews",
-    quotes: [
-      {
-        name: "Brooke",
-        quote: "Stephanie is an absolute pro and has such a gift for capturing your best self.",
-      },
-      {
-        name: "Abby",
-        quote: "Working with Stephanie Rose is a choice I\u2019d make again a hundred times over.",
-      },
-      {
-        name: "Gigi",
-        quote:
-          "Stephanie is the real deal. She\u2019s grounded, raw, honest + brings an undeniable fire to every space she leads.",
-      },
-      {
-        name: "Whitney",
-        quote:
-          "I have worked with Stephanie on many projects, personal and professional, and can not recommend her enough!",
-      },
-    ],
-  },
   duplicate: "This email is already on the list.",
 };

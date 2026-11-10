@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
 import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
-import { GOOGLE_REVIEWS_URL } from "@/lib/siteLinks";
 import {
   COACH_IMAGE,
   HERO_IMAGE,
@@ -38,6 +37,8 @@ const pill =
   "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 const pillDark = `${pill} bg-black text-white hover:bg-neutral-800 focus-visible:ring-black`;
 const pillLight = `${pill} bg-white text-black hover:bg-neutral-100 focus-visible:ring-white focus-visible:ring-offset-black`;
+
+const GOOGLE_REVIEWS_SHARE_URL = "https://share.google/O5Gl6uzN8JRq35a59";
 
 const FEATURED_WIN_SRCS = [
   "/hot-and-viral/views-4-9-million.jpg",
@@ -428,7 +429,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <div className="mt-10">
               <AccessForm list="next_round" button={copy.closed.button} success={copy.closed.success} />
             </div>
-            <GoogleReviews className="mt-16" />
+            <GoogleReviewsLink className="mt-10" />
           </div>
         </section>
         {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
@@ -684,9 +685,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </div>
           </div>
         </div>
-        <div className="container-elegant">
-          <GoogleReviews className="mt-12 md:mt-16" />
-        </div>
       </section>
 
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
@@ -792,6 +790,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                 </details>
               ))}
             </div>
+            <GoogleReviewsLink className="mt-8" />
           </div>
         </div>
       </section>
@@ -830,43 +829,18 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
   );
 }
 
-function GoogleReviews({ className = "" }: { className?: string }) {
+function GoogleReviewsLink({ className = "" }: { className?: string }) {
   return (
-    <div className={className}>
-      <div
-        id="google-reviews"
-        className="max-w-xl scroll-mt-80 rounded-[1.75rem] border border-black/10 bg-[#f3f0ea] px-6 py-7 sm:px-8 sm:py-8"
+    <p className={className}>
+      <a
+        href={GOOGLE_REVIEWS_SHARE_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm text-neutral-500 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-800"
       >
-        <h2
-          id="google-reviews-heading"
-          className="font-heading text-[1.7rem] leading-[1.05] tracking-[-0.03em] text-black md:text-[2.1rem]"
-        >
-          {copy.googleReviews.heading}
-        </h2>
-        <p className="mt-4 text-[15px] font-semibold tracking-wide text-neutral-800">
-          <span className="text-[#f41cdc]" aria-hidden="true">
-            ★{" "}
-          </span>
-          {copy.googleReviews.rating}
-        </p>
-        <div className="mt-6 space-y-5">
-          {copy.googleReviews.quotes.map((review) => (
-            <blockquote key={review.name} className="border-t border-black/10 pt-5">
-              <p className="text-[16px] leading-relaxed text-neutral-800">&ldquo;{review.quote}&rdquo;</p>
-              <footer className="mt-2 text-sm font-medium text-neutral-600">{review.name}</footer>
-            </blockquote>
-          ))}
-        </div>
-        <a
-          href={GOOGLE_REVIEWS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${pillDark} mt-6 w-full sm:w-auto`}
-        >
-          {copy.googleReviews.link}
-        </a>
-      </div>
-    </div>
+        Read the Google reviews
+      </a>
+    </p>
   );
 }
 

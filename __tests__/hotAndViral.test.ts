@@ -11,7 +11,6 @@ import {
   splitRemaining,
   validateSignup,
 } from "../lib/hotAndViral";
-import { GOOGLE_REVIEWS_URL } from "../lib/siteLinks";
 
 function calgaryPart(ms: number, type: Intl.DateTimeFormatPartTypes) {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -131,24 +130,23 @@ test("approved sales lines stay intact", () => {
   expect(copy.closed.body).toContain("$500 CAD/month");
 });
 
-test("google reviews are the public West Rose Media listing", () => {
-  expect(GOOGLE_REVIEWS_URL).toBe(
-    "https://www.google.com/maps/place/West+Rose+Media/data=!4m8!3m7!1s0x5371a555217479bd:0x1149d4fc16cd44a3!8m2!3d47.3983188!4d-101.17042!9m1!1b1!16s%2Fg%2F11jfqlm41d",
-  );
-  expect(copy.googleReviews.heading).toBe("They wrote this on Google.");
-  expect(copy.googleReviews.rating).toBe("5.0 from 33 Google reviews");
-  expect(copy.googleReviews.link).toBe("Read the Google reviews");
-  expect(copy.googleReviews.quotes.map((review) => review.name)).toEqual(["Brooke", "Abby", "Gigi", "Whitney"]);
-  expect(copy.googleReviews.quotes[0].quote).toBe(
-    "Stephanie is an absolute pro and has such a gift for capturing your best self.",
-  );
-  expect(copy.googleReviews.quotes[1].quote).toBe(
-    "Working with Stephanie Rose is a choice I\u2019d make again a hundred times over.",
-  );
+test("hot and viral keeps one quiet google reviews link and no quote block", () => {
   const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
-  expect(page).toContain("href={GOOGLE_REVIEWS_URL}");
+  const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");
+  const shareUrl = "https://share.google/O5Gl6uzN8JRq35a59";
+
+  expect(page.split(shareUrl).length - 1).toBe(1);
   expect(page).toContain('target="_blank"');
-  expect(page).toContain('rel="noopener noreferrer"');
-  expect(page).toContain("copy.googleReviews.quotes.map");
-  expect(page).toContain("copy.googleReviews.link");
+  expect(page).toContain('rel="noreferrer"');
+  expect(page).toContain("Read the Google reviews");
+  expect(page).not.toContain("googleReviews");
+  expect(page).not.toContain("blockquote");
+  expect(page).not.toContain("5.0 from 33");
+  expect(copySource).not.toContain("googleReviews");
+  expect(copySource).not.toContain("5.0 from 33");
+
+  for (const name of ["Brooke", "Abby", "Gigi", "Whitney"]) {
+    expect(page).not.toContain(name);
+    expect(copySource).not.toContain(name);
+  }
 });
