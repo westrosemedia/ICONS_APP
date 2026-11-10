@@ -74,18 +74,30 @@ test("signup blocks empty and badly formed emails and keeps a clean address", ()
 });
 
 test("approved sales lines stay intact", () => {
+  const text = JSON.stringify(copy);
   expect(copy.meta.title).toBe("Hot & Viral | West Rose Media");
   expect(copy.meta.description).toContain("November 25 to 27");
+  expect(copy.hero.buttonBefore).toBe("Get first access");
   expect(copy.hero.buttonOpen).toBe("Join Hot & Viral");
   expect(copy.pricing.monthly.sale).toBe("$250");
+  expect(copy.pricing.monthly.regular).toBe("$500 CAD/month");
   expect(copy.pricing.yearly.sale).toBe("$2,750");
-  expect(copy.hero.headline).toBe(
-    "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.4 million.",
-  );
+  expect(copy.pricing.yearly.note).toContain("$250 CAD less than paying monthly for the year");
+  expect(copy.hero.headline).toBe("Stop posting content that gets ignored.");
+  expect(copy.hero.deserves).toBe("Your content deserves more than 200 views.");
+  expect(copy.hero.proofBefore).toBe("200 views");
+  expect(copy.hero.proofAfter).toBe("1.4 million");
+  expect(copy.hero.underButton).toContain("locked for as long as you remain a member");
+  expect(copy.cammy.beforeStat).toBe("200 views");
   expect(copy.cammy.afterStat).toBe("1.4M views");
-  expect(copy.cammy.story).toContain("one of her reels hit 1.4 million views.");
+  expect(copy.cammy.story.join(" ")).toContain("one reel hit 1.4 million views.");
+  expect(copy.cammy.story.join(" ")).toContain("She didn't need to become someone else on camera.");
   expect(copy.inside.steps[0].text).toContain("The calls are recorded.");
-  expect(copy.pricing.cancel).toBe("You can cancel anytime.");
+  expect(copy.inside.steps[2].text).toContain("Coaching happens on the call, not in the chat.");
+  expect(copy.pricing.cancel.startsWith("You can cancel anytime.")).toBe(true);
+  expect(copy.pricing.monthly.lock).toBe("Locked for as long as you remain a member.");
+  expect(text.toLowerCase()).not.toContain("locked for life");
+  expect(text.toLowerCase()).not.toContain("for life");
   expect(copy.firstAccess.success).toBe("You're in. Watch your inbox on November 25.");
   expect(copy.closed.success).toBe("You're on the list.");
   expect(copy.closed.heading).toBe("Hot & Viral is closed.");

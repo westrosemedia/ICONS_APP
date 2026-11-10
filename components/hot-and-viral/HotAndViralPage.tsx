@@ -35,7 +35,7 @@ const eyebrow = "text-[11px] font-semibold uppercase tracking-[0.2em] text-neutr
 
 const pill =
   "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
-const pillDark = `${pill} bg-accent text-white hover:bg-accent-600 focus-visible:ring-accent`;
+const pillDark = `${pill} bg-black text-white hover:bg-neutral-800 focus-visible:ring-black`;
 const pillLight = `${pill} bg-white text-black hover:bg-neutral-100 focus-visible:ring-white focus-visible:ring-offset-black`;
 
 const FEATURED_WIN_SRCS = [
@@ -108,7 +108,7 @@ function CountdownDigits({ nowMs, state }: { nowMs: number; state: Exclude<PageS
     >
       {units.map(([unit, value]) => (
         <div key={unit} className="min-w-[2.7rem] text-center sm:min-w-[3.1rem]">
-          <div className="font-heading text-[1.65rem] leading-none tabular-nums sm:text-[1.85rem]">{pad(value)}</div>
+          <div className="font-heading text-[1.65rem] leading-none tabular-nums text-[#f41cdc] sm:text-[1.85rem]">{pad(value)}</div>
           <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-white/60">{unit}</div>
         </div>
       ))}
@@ -128,7 +128,7 @@ function CountdownBanner({
   return (
     <div className={`${sticky ? "sticky top-[73px] z-30" : "rounded-2xl"} bg-black text-white`}>
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-1 px-4 py-2.5 sm:flex-row sm:justify-center sm:gap-7">
-        <p className="text-center text-[13px] leading-tight tracking-wide text-accent sm:text-left sm:text-sm">
+        <p className="text-center text-[13px] leading-tight tracking-wide sm:text-left sm:text-sm">
           {state === "before" ? copy.countdown.before : copy.countdown.open}
         </p>
         <CountdownDigits nowMs={nowMs} state={state} />
@@ -182,45 +182,25 @@ function CheckList({ items }: { items: readonly string[] }) {
   );
 }
 
-function HeroHeadline({ text }: { text: string }) {
-  const parts = text.split(/(?<=\.)\s+/);
+function HeroHeadline() {
   const display =
-    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] sm:text-[3.05rem] lg:text-[3.2rem]";
-
-  if (parts.length !== 3) {
-    return <h1 className={`${display} max-w-[16em] text-black`}>{text}</h1>;
-  }
-
-  const [opening, bridge, close] = parts;
-  const openingLines = opening.split(/,\s*/);
-  const closeLines = close.split(/,\s*/);
+    "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-balance sm:text-[3.05rem] lg:text-[3.2rem]";
 
   return (
-    <h1>
-      <span className={`${display} text-black`}>
-        {openingLines.length > 1 ? (
-          <>
-            <span className="block">{openingLines[0]}, </span>
-            <span className="block">{openingLines.slice(1).join(", ")} </span>
-          </>
-        ) : (
-          `${opening} `
-        )}
-      </span>
-      <span className="mt-5 block max-w-[34rem] font-sans text-[17px] font-normal leading-snug tracking-normal text-neutral-600">
-        {bridge}{" "}
-      </span>
-      <span className={`${display} mt-5 text-accent`}>
-        {closeLines.length > 1 ? (
-          <>
-            <span className="block">{closeLines[0]}, </span>
-            <span className="block">{closeLines.slice(1).join(", ")}</span>
-          </>
-        ) : (
-          close
-        )}
-      </span>
-    </h1>
+    <div>
+      <h1 className={`${display} max-w-[12em] text-black`}>{copy.hero.headline}</h1>
+      <p className="mt-5 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
+      <p className="mt-6 text-[17px] font-medium leading-snug text-black">{copy.hero.deserves}</p>
+      <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">{copy.cammy.label}</p>
+      <p className="mt-2 font-heading text-[1.9rem] leading-none tracking-[-0.03em] text-black sm:text-[2.25rem]">
+        <span>{copy.hero.proofBefore}</span>
+        <span className="text-[#f41cdc]" aria-hidden="true">
+          {" "}
+          →{" "}
+        </span>
+        <span className="text-[#f41cdc]">{copy.hero.proofAfter}</span>
+      </p>
+    </div>
   );
 }
 
@@ -311,7 +291,7 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
       <article className="order-2 flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:order-1 md:p-9">
         <h3 className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">Monthly</h3>
         <p className="mt-6 text-base text-neutral-400 line-through">{copy.pricing.monthly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-accent">
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">
           {copy.pricing.monthly.sale}
         </p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
@@ -334,15 +314,15 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
 
       <article className="order-1 flex flex-col rounded-[1.6rem] bg-black p-7 text-white md:order-2 md:p-9">
         <p>
-          <span className="inline-flex rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold leading-none text-white">
+          <span className="inline-flex rounded-full bg-[#f41cdc] px-2.5 py-1 text-[11px] font-semibold leading-none text-white">
             {copy.pricing.yearly.badge}
           </span>
         </p>
         <h3 className="mt-3 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Pay in full</h3>
         <p className="mt-6 text-base text-white/40 line-through">{copy.pricing.yearly.regular}</p>
-        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-white">{copy.pricing.yearly.sale}</p>
+        <p className="mt-1 font-heading text-[4.5rem] leading-none tracking-[-0.04em] text-[#f41cdc]">{copy.pricing.yearly.sale}</p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.cadence}</p>
-        <p className="mt-5 text-[15px] leading-relaxed text-white/85">{copy.pricing.yearly.note}</p>
+        <p className="mt-5 text-[17px] font-medium leading-snug text-white">{copy.pricing.yearly.note}</p>
         <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/55">{copy.pricing.yearly.gst}</p>
         <div className="mt-auto pt-8">
           {before ? (
@@ -392,10 +372,10 @@ function ResultCase({
             className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-heading text-[2.5rem] leading-none tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]"
           >
             <span>{before}</span>
-            <span className="text-neutral-300" aria-hidden="true">
+            <span className="text-[#f41cdc]" aria-hidden="true">
               →
             </span>
-            <span className="text-accent">{after}</span>
+            <span className="text-[#f41cdc]">{after}</span>
           </Title>
           <div className="mt-6 max-w-[36rem] space-y-4 text-[17px] leading-[1.7] text-neutral-600">{body}</div>
         </div>
@@ -480,17 +460,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         <div className="container-elegant grid items-center gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
           <div className="min-w-0">
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <HeroHeadline text={copy.hero.headline} />
-            <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
+            <HeroHeadline />
             <div className="mt-8">
               <StateButton state={state} />
-              <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-500">{copy.hero.underButton}</p>
-            </div>
-            <div className="mt-7 max-w-md">
-              <CheckList items={copy.hero.checklist} />
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-500">{copy.hero.underButton}</p>
             </div>
           </div>
 
@@ -512,11 +488,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <p className={eyebrow}>{copy.cammy.label}</p>
               <p className="mt-2 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black">
                 <span className="block">{copy.cammy.beforeStat}</span>
-                <span className="mt-1 block">
-                  <span className="text-neutral-300" aria-hidden="true">
-                    →{" "}
-                  </span>
-                  <span className="text-accent">{copy.cammy.afterStat}</span>
+                <span className="mt-1 block text-[#f41cdc]">
+                  <span aria-hidden="true">→ </span>
+                  {copy.cammy.afterStat}
                 </span>
               </p>
             </a>
@@ -526,28 +500,18 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
 
       <section className={`${band} bg-black text-white`} aria-labelledby="problem-heading">
         <div className="container-elegant">
-          <h2 id="problem-heading" className={`${h2} max-w-[14em] text-white`}>
+          <h2 id="problem-heading" className={`${h2} max-w-[14em] text-balance text-white`}>
             {copy.problem.heading}
           </h2>
-          <p className="mt-6 max-w-[36rem] text-[17px] leading-[1.7] text-white/70">{copy.problem.body}</p>
-          <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3">
-            {copy.problem.cards.map((card) => (
-              <article key={card.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 md:p-7">
-                <h3 className="font-sans text-lg font-semibold tracking-tight text-white">{card.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/70">{card.text}</p>
-              </article>
+          <div className="mt-6 max-w-[38rem] space-y-5 text-[17px] leading-[1.7] text-white/75">
+            {copy.problem.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-          <div className="mt-16 max-w-[40rem] border-t border-white/15 pt-12 md:mt-20 md:pt-14">
-            <h3 className="font-heading text-[2rem] leading-[1.02] tracking-[-0.03em] text-white md:text-[2.6rem]">
-              {copy.problem.triedHeading}
-            </h3>
-            <p className="mt-5 text-[17px] leading-[1.7] text-white/75">{copy.problem.triedBody}</p>
           </div>
         </div>
       </section>
 
-      <section className={`${band} bg-[#fff1ef]`} aria-labelledby="ai-heading">
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="ai-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
             <p className={`${eyebrow} mb-5`}>{copy.ai.eyebrow}</p>
@@ -562,7 +526,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       <section className={`${band} bg-white`} aria-labelledby="copycat-heading">
         <div className="container-elegant">
           <p className={`${eyebrow} mb-5`}>{copy.copycats.eyebrow}</p>
-          <h2 id="copycat-heading" className={`${h2} max-w-[16em]`}>
+          <h2 id="copycat-heading" className={`${h2} max-w-[16em] text-balance`}>
             {copy.copycats.heading}
           </h2>
           {copycatPairs.some((pair) => pair.mine || pair.theirs) ? (
@@ -588,7 +552,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-[#fff1ef]`} aria-labelledby="cammy-stat">
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="cammy-stat">
         <div className="container-elegant">
           <ResultCase
             id="cammy"
@@ -597,7 +561,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             kicker={copy.cammy.label}
             before={copy.cammy.beforeStat}
             after={copy.cammy.afterStat}
-            body={<p>{copy.cammy.story}</p>}
+            body={
+              <>
+                {copy.cammy.story.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </>
+            }
             frames={cammyFrames}
             plates={cammySummary ? [cammySummary] : []}
             onOpen={setActiveShot}
@@ -698,19 +668,20 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-[#fff1ef]`} aria-labelledby="inside-heading">
+      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
-            <h2 id="inside-heading" className={h2}>
+            <h2 id="inside-heading" className={`${h2} max-w-[16em] text-balance`}>
               {copy.inside.heading}
             </h2>
+            <p className={`${lede} mt-6`}>{copy.inside.intro}</p>
             <ol className="mt-10">
               {copy.inside.steps.map((step, index) => (
                 <li
                   key={step.title}
                   className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-black/10 py-6 first:border-t-0"
                 >
-                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-accent">
+                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-[#f41cdc]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -744,12 +715,13 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section id="pricing" className={`${scrollTarget} ${band} bg-[#fff1ef]`} aria-labelledby="pricing-heading">
+      <section id="pricing" className={`${scrollTarget} ${band} bg-[#f3f0ea]`} aria-labelledby="pricing-heading">
         <div className="container-elegant">
-          <h2 id="pricing-heading" className={`${h2} max-w-[14em]`}>
+          <h2 id="pricing-heading" className={`${h2} max-w-[16em] text-balance`}>
             {copy.pricing.heading}
           </h2>
-          {state === "before" ? <p className={`${lede} mt-6`}>{copy.pricing.beforeNote}</p> : null}
+          <p className={`${lede} mt-6`}>{copy.pricing.lede}</p>
+          {state === "before" ? <p className={`${lede} mt-4`}>{copy.pricing.beforeNote}</p> : null}
           <div className="mt-10">
             <PricingCards state={state} />
           </div>
@@ -807,19 +779,19 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       <section className="bg-black py-20 text-white md:py-[7.25rem]" aria-labelledby="final-heading">
         <div className="container-elegant">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 id="final-heading" className={`${h2} text-white`}>
+            <h2 id="final-heading" className={`${h2} text-balance text-white`}>
               {copy.final.heading}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-white/75">{copy.final.body}</p>
             <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-white/15 px-4 py-5">
-              <p className="text-sm text-accent">{state === "before" ? copy.countdown.before : copy.countdown.open}</p>
+              <p className="text-sm text-white/75">{state === "before" ? copy.countdown.before : copy.countdown.open}</p>
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
               </div>
               {state === "open" ? <p className="mt-3 text-sm text-white/70">{copy.countdown.openSuffix}</p> : null}
             </div>
             <div className="mt-8">
-              <StateButton state={state} className="focus-visible:ring-offset-black" />
+              <StateButton state={state} tone="light" />
             </div>
           </div>
         </div>

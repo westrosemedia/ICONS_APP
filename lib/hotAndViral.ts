@@ -346,61 +346,45 @@ export const copy = {
   meta: {
     title: "Hot & Viral | West Rose Media",
     description:
-      "Weekly live coaching on Instagram and TikTok growth. Doors open November 25 to 27 only, at half price for Black Friday.",
+      "Stop posting content that gets ignored. Instagram and TikTok coaching, open November 25 to 27. $250 CAD/month, locked for as long as you remain a member.",
   },
   hero: {
     eyebrow: "Instagram + TikTok",
-    headline:
-      "Six months of posting, 200 views. I looked at her account and knew right away what to fix. Two months later, 1.4 million.",
+    headline: "Stop posting content that gets ignored.",
     subheadline:
-      "Inside Hot & Viral, I look at your account, tell you what to fix, and show you how to fix it, on Instagram and TikTok.",
-    checklist: [
-      "Weekly live coaching every Tuesday at 10am MST, with real member accounts broken down on the call",
-      "A members chat group and a separate wins group",
-      "Instagram and TikTok strategy in the same room",
-    ],
+      "You don't need another content calendar, trending audio, or AI caption. You need to see why people aren't stopping, what the content is missing, and how to make posts that get noticed. Inside Hot & Viral, I show you what's holding your Instagram and TikTok content back, and how to fix it.",
+    deserves: "Your content deserves more than 200 views.",
+    proofBefore: "200 views",
+    proofAfter: "1.4 million",
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
-    underButton: "Black Friday only. $250 CAD/month, locked for life. Doors open November 25 to 27.",
+    underButton: "$250 CAD/month, locked for as long as you remain a member. Doors open November 25 to 27.",
   },
   problem: {
-    heading: "You're good at what you do. Your views haven't caught up yet.",
-    body: "You know your stuff. Your clients get results. You've filmed, posted, rewritten captions at midnight and watched the same number come back again.",
-    cards: [
-      {
-        title: "Stuck at 200",
-        text: "You post, you check your insights, and the views barely reach past the people who already follow you.",
-      },
-      {
-        title: "Out-shouted",
-        text: "Accounts that know half of what you know keep pulling a million views right past you.",
-      },
-      {
-        title: "Guessing",
-        text: "You can't tell which part of the post is the problem, so you change everything and learn nothing.",
-      },
+    heading: "You're not bad at content. You're just missing something.",
+    paragraphs: [
+      "You know your work. You post, you try hooks, you try trending audio, you rewrite the caption, and you still see 200, 347, maybe 600.",
+      "Someone with less experience is getting thousands of views on the thing you've been trying to explain for years. The problem is what you're putting in front of people, and how you're saying it. That's what I'm going to fix.",
     ],
-    triedHeading: "What you've already tried",
-    triedBody:
-      "The course. The coach who said to post three times a day. Trending audio, talking to camera, text on screen. Every one of them handed you more to post. What's holding your account back is what you're saying and how it shows up in the post, and that's the part I can see the second I open your account.",
   },
   ai: {
-    eyebrow: "About that AI",
-    heading: "You've probably asked AI to help with your posts. It can't make you go viral.",
-    body: "AI only pulls from the past. It writes from what already worked for millions of other people, which is why your post comes out sounding like everyone else's. We're building the future. The posts that blow up say something your audience hasn't heard yet, in a way only you can say it.",
+    eyebrow: "Using AI",
+    heading: "AI can write you a caption. It can't build your point of view.",
+    body: "Using AI for hooks and captions is fine. When everyone asks the same tools the same questions, the posts sound the same. Your audience needs your perspective. Inside Hot & Viral, I help you find what makes the content yours, and turn that into posts people stop for.",
   },
   copycats: {
     eyebrow: "Proof",
-    heading:
-      "You've tried the courses, the coaches and posting every single day. Meanwhile, accounts with 700k followers are copying my posts word for word.",
-    body: "When the biggest accounts in your industry are taking notes from my page, you know where the growth is coming from. Inside Hot & Viral, I teach you what they're copying.",
+    heading: "When your content becomes the blueprint, you're doing something right.",
+    body: "Accounts with hundreds of thousands of followers have recreated my posts, sometimes word for word. That happens when an idea is said in a way people stop, watch, and share. Inside Hot & Viral, I'm not teaching you to copy someone else. I teach you why it works, and how to make your own version that sounds like you.",
   },
   cammy: {
     label: "Client · Cammy",
     beforeStat: "200 views",
     afterStat: "1.4M views",
-    story:
-      "Cammy had been posting for six months, and her reels kept landing around 200 views. She was showing up and filming like she'd been told. She was also saying the wrong thing in every post. I looked at her account and knew right away what to fix. We fixed her message and made sure it showed up in everything she posted. Two months later, one of her reels hit 1.4 million views.",
+    story: [
+      "Cammy spent six months showing up and doing what she was told. Her videos weren't reaching new people. I could see the message wasn't connecting. We changed how she communicated her expertise and carried that through the content. Two months later, one reel hit 1.4 million views.",
+      "She didn't need to become someone else on camera. She needed to say what she already knew differently.",
+    ],
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
@@ -409,38 +393,38 @@ export const copy = {
     heading: "I rebuilt from zero, in public.",
   },
   inside: {
-    heading: "What happens inside Hot & Viral",
+    heading: "Imagine knowing exactly what to post next.",
+    intro:
+      "No more guessing whether a post will work. No more spending hours on a caption that still sounds wrong. No more watching someone else's reel and wondering why yours didn't move.",
     steps: [
       {
-        title: "The Tuesday call.",
-        text: "Every Tuesday at 10am MST, I pull up member accounts live and tell you exactly what to fix. Every breakdown teaches the whole room. The calls are recorded.",
+        title: "Tuesday account breakdowns.",
+        text: "Every Tuesday at 10am MST, I look at real member accounts and tell you what I would change. The calls are recorded. Missing Tuesday doesn't mean missing the breakdown.",
       },
       {
         title: "Instagram and TikTok.",
-        text: "Two platforms, one strategy, built around your message.",
+        text: "One strategy, both platforms.",
       },
       {
-        title: "The chat group.",
-        text: "Ask questions, share drafts and swap ideas with women doing the same work.",
+        title: "A members chat.",
+        text: "Share drafts and ask each other questions. Coaching happens on the call, not in the chat.",
       },
       {
-        title: "The wins group.",
-        text: "Where the screenshots go when a reel takes off.",
+        title: "A wins group.",
+        text: "For the posts that take off.",
       },
       {
-        title: "One place for coaching.",
-        text: "Everything happens on the call. Show up Tuesday and leave knowing what to fix.",
+        title: "Recorded calls.",
+        text: "Rewatch the breakdown whenever you need it.",
       },
     ],
   },
   who: {
-    heading: "Where brave, smart, dedicated women get seen",
+    heading: "For women who are excellent at what they do.",
     intro: "This is for you if:",
     points: [
-      "You're excellent at what you do and your views don't show it yet",
-      "You're ready to say the thing on camera you've been holding back",
-      "You'll show up on Tuesdays and post what we work on",
-      "You want growth on Instagram, TikTok or both",
+      "Your views don't show the work yet",
+      "You're ready to say what you already know, differently",
     ],
   },
   onlyWay: {
@@ -448,14 +432,15 @@ export const copy = {
     body: "My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. Hot & Viral is open for three days, November 25 to 27. When the doors close Friday at 11:59pm MST, the group locks, and there's no date set for it to open again.",
   },
   pricing: {
-    heading: "Black Friday is half price, and it stays that way.",
+    heading: "Get in at the lowest price. Keep it for as long as you're a member.",
+    lede: "Hot & Viral will be $500 CAD/month. This opening is half price. Join now and $250 CAD/month stays for as long as you remain a member. Not an intro rate that jumps later.",
     beforeNote: "Doors open November 25. Leave your email for first access.",
-    cancel: "You can cancel anytime.",
+    cancel: "You can cancel anytime. The locked price ends when the membership ends.",
     monthly: {
       regular: "$500 CAD/month",
       sale: "$250",
       cadence: "CAD/month",
-      lock: "Locked for life while you stay a member",
+      lock: "Locked for as long as you remain a member.",
       gst: "Plus GST",
       button: "Join monthly",
     },
@@ -463,7 +448,7 @@ export const copy = {
       regular: "$5,500 CAD/year",
       sale: "$2,750",
       cadence: "CAD for the year",
-      note: "One payment, twelve months, and $250 CAD less than paying monthly",
+      note: "$250 CAD less than paying monthly for the year.",
       gst: "Plus GST",
       button: "Join for the year",
       badge: "Best value",
@@ -481,29 +466,49 @@ export const copy = {
       a: "Instagram and TikTok.",
     },
     {
+      q: "Do I need a certain number of followers?",
+      a: "No. Starting from zero is fine. I rebuilt my own account from zero this year.",
+    },
+    {
+      q: "What if I've never had a viral post?",
+      a: "Cammy was stuck around 200 views. The work is the message, not a viral history.",
+    },
+    {
       q: "When are the calls?",
       a: "Tuesdays at 10am MST, starting December 1, 2026.",
     },
     {
-      q: "Will you look at my account?",
-      a: "I break down member accounts live every week, and every breakdown teaches the whole call what to fix.",
+      q: "Will you actually review my account?",
+      a: "Yes. Live on the Tuesday call. Every breakdown teaches the room.",
     },
     {
-      q: "Do you coach in the chat group?",
-      a: "All coaching happens live on Tuesday's call. The chat group is where members connect, ask each other questions and share what's working.",
+      q: "Are the calls recorded?",
+      a: "Yes. The calls are recorded.",
     },
     {
-      q: "What happens to my price after Black Friday?",
-      a: "Your $250 CAD/month stays locked for as long as you're a member.",
+      q: "What if I can't attend Tuesday?",
+      a: "Watch the recording. Missing Tuesday doesn't mean missing the breakdown.",
     },
     {
-      q: "I'm starting from zero. Can I join?",
-      a: "Yes. I rebuilt my own account from zero this year.",
+      q: "Where does coaching happen?",
+      a: "On the Tuesday call. The chat is for members to share drafts and ask each other questions. Coaching is not in the chat.",
+    },
+    {
+      q: "What happens to my price?",
+      a: "$250 CAD/month stays for as long as you remain a member. Not an intro rate that jumps later. The locked price ends when the membership ends.",
+    },
+    {
+      q: "Can I cancel?",
+      a: "Yes, anytime. The locked price applies while you stay a member.",
+    },
+    {
+      q: "Are more views the same as sales?",
+      a: "No. Views are not the same as sales. The work is getting the right people to stop and watch.",
     },
   ],
   final: {
-    heading: "Doors close Friday at 11:59pm MST.",
-    body: "Bring your account to Tuesday's call and I'll show you exactly what to fix.",
+    heading: "Stop guessing. Understand what makes someone stop scrolling and want to hear more.",
+    body: "That's what Hot & Viral is. Doors open for a short window, November 25 to 27. Get in and lock $250 CAD/month for as long as you remain a member.",
   },
   closed: {
     heading: "Hot & Viral is closed.",
