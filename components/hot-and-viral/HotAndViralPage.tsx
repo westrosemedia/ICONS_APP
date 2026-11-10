@@ -356,11 +356,47 @@ function PricingCards({ state }: { state: Exclude<PageState, "closed"> }) {
   );
 }
 
+function markedText(text: string, marks: readonly string[] | undefined, boldClass: string): ReactNode {
+  if (!marks?.length) return text;
+  const pattern = new RegExp(`(${marks.map((mark) => mark.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+  return text
+    .split(pattern)
+    .filter((part) => part.length > 0)
+    .map((part, index) =>
+      marks.includes(part) ? (
+        <strong key={`${part}-${index}`} className={`font-bold ${boldClass}`}>
+          {part}
+        </strong>
+      ) : (
+        part
+      ),
+    );
+}
+
+function SalesCopy({
+  paragraphs,
+  boldClass = "text-black",
+}: {
+  paragraphs: readonly { text: string; bold?: boolean; marks?: readonly string[] }[];
+  boldClass?: string;
+}) {
+  return (
+    <>
+      {paragraphs.map((paragraph) => (
+        <p key={paragraph.text} className={paragraph.bold ? `font-bold ${boldClass}` : undefined}>
+          {paragraph.bold ? paragraph.text : markedText(paragraph.text, paragraph.marks, boldClass)}
+        </p>
+      ))}
+    </>
+  );
+}
+
 function ResultCase({
   id,
   kicker,
   before,
   after,
+  heading,
   body,
   frames,
   plates,
@@ -369,9 +405,10 @@ function ResultCase({
   titleId,
 }: {
   id?: string;
-  kicker: string;
-  before: string;
-  after: string;
+  kicker?: string;
+  before?: string;
+  after?: string;
+  heading?: string;
   body: ReactNode;
   frames: { image: HotAndViralImage; label?: string }[];
   plates?: HotAndViralImage[];
@@ -384,17 +421,26 @@ function ResultCase({
     <article id={id} className={id ? scrollTarget : undefined}>
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
         <div className="min-w-0 max-w-xl">
-          <p className={eyebrow}>{kicker}</p>
-          <Title
-            id={titleId}
-            className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-heading text-[2.5rem] leading-none tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]"
-          >
-            <span>{before}</span>
-            <span className="text-[#f41cdc]" aria-hidden="true">
-              →
-            </span>
-            <span className="text-[#f41cdc]">{after}</span>
-          </Title>
+          {kicker ? <p className={eyebrow}>{kicker}</p> : null}
+          {heading ? (
+            <Title
+              id={titleId}
+              className={`${kicker ? "mt-4" : ""} font-heading text-[1.85rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.15rem]`}
+            >
+              {heading}
+            </Title>
+          ) : (
+            <Title
+              id={titleId}
+              className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-heading text-[2.5rem] leading-none tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]"
+            >
+              <span>{before}</span>
+              <span className="text-[#f41cdc]" aria-hidden="true">
+                →
+              </span>
+              <span className="text-[#f41cdc]">{after}</span>
+            </Title>
+          )}
           <div className="mt-6 max-w-[36rem] space-y-4 text-[17px] leading-[1.7] text-neutral-600">{body}</div>
         </div>
         {frames.length > 0 ? (
@@ -469,6 +515,12 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
     cammyShots.before ? { image: cammyShots.before, label: "Before" } : null,
     cammyShots.after ? { image: cammyShots.after, label: "After" } : null,
   ].filter((frame): frame is { image: HotAndViralImage; label: string } => Boolean(frame));
+  const erin = memberResults.find((member) => member.name === "Erin") ?? null;
+  const erinFrames = [
+    erin?.before ? { image: erin.before, label: "Before" } : null,
+    erin?.after ? { image: erin.after, label: "After" } : null,
+  ].filter((frame): frame is { image: HotAndViralImage; label: string } => Boolean(frame));
+  const erinPlates = [erin?.summary, erin?.profile].filter((plate): plate is HotAndViralImage => Boolean(plate));
 
   return (
     <div className="overflow-x-clip bg-white text-black" data-state={state}>
@@ -569,7 +621,51 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="ai-heading">
+      <section id="proof" className={`${band} bg-[#f3f0ea]`} aria-labelledby="proof-heading">
+        <div className="container-elegant">
+          <h2 id="proof-heading" className={`${h2} max-w-[14em]`}>
+            {copy.proof.heading}
+          </h2>
+          <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+            {copy.proof.subheading}
+          </p>
+          <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+            <SalesCopy paragraphs={copy.proof.paragraphs} />
+          </div>
+          <div className="mt-16 space-y-16 md:mt-20 md:space-y-20">
+            <ResultCase
+              id="cammy"
+              titleId="cammy-stat"
+              heading={copy.proof.cammyHeading}
+              body={<SalesCopy paragraphs={copy.cammy.story} />}
+              frames={cammyFrames}
+              plates={cammySummary ? [cammySummary] : []}
+              onOpen={setActiveShot}
+            />
+            <ResultCase
+              id="erin"
+              heading={copy.proof.erinHeading}
+              body={<SalesCopy paragraphs={copy.proof.erinParagraphs} />}
+              frames={erinFrames}
+              plates={erinPlates}
+              onOpen={setActiveShot}
+            />
+          </div>
+          <div className="mt-16 max-w-3xl md:mt-20">
+            <h3 className="font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.proof.closingHeading}
+            </h3>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <SalesCopy paragraphs={copy.proof.closing} />
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.proof.button}</StateButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${band} border-t border-black/10 bg-[#f3f0ea]`} aria-labelledby="ai-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
             <h2 id="ai-heading" className={`${h2} max-w-[16em]`}>
@@ -617,85 +713,17 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="cammy-stat">
-        <div className="container-elegant">
-          <ResultCase
-            id="cammy"
-            titleAs="h2"
-            titleId="cammy-stat"
-            kicker={copy.cammy.label}
-            before={copy.cammy.beforeStat}
-            after={copy.cammy.afterStat}
-            body={
-              <>
-                {copy.cammy.story.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </>
-            }
-            frames={cammyFrames}
-            plates={cammySummary ? [cammySummary] : []}
-            onOpen={setActiveShot}
-          />
-        </div>
-      </section>
-
-      {memberResults.length > 0 || featuredWins.length > 0 ? (
+      {featuredWins.length > 0 ? (
         <section className={`${band} bg-white`} aria-labelledby="members-heading">
           <div className="container-elegant">
-            {memberResults.length > 0 ? (
-              <>
-                <h2 id="members-heading" className={`${h2} max-w-[14em]`}>
-                  {copy.membersHeading}
-                </h2>
-                <div className="mt-12 space-y-16 md:mt-16 md:space-y-20">
-                  {memberResults.map((member) => {
-                    const frames = [
-                      member.before ? { image: member.before, label: "Before" } : null,
-                      member.after ? { image: member.after, label: "After" } : null,
-                    ].filter((frame): frame is { image: HotAndViralImage; label: string } => Boolean(frame));
-                    const plates = [member.summary, member.profile].filter(
-                      (plate): plate is HotAndViralImage => Boolean(plate),
-                    );
-                    return (
-                      <ResultCase
-                        key={member.name}
-                        kicker={`${member.name} · ${member.role}`}
-                        before={member.beforeStat}
-                        after={member.afterStat}
-                        body={
-                          <>
-                            <p>{member.sentences[0]}</p>
-                            <p>{member.sentences[1]}</p>
-                          </>
-                        }
-                        frames={frames}
-                        plates={plates}
-                        onOpen={setActiveShot}
-                      />
-                    );
-                  })}
-                </div>
-              </>
-            ) : (
-              <h2 id="members-heading" className={h2}>
-                {copy.winsHeading}
-              </h2>
-            )}
-            {featuredWins.length > 0 ? (
-              <div className={memberResults.length > 0 ? "mt-16 md:mt-24" : "mt-10"}>
-                {memberResults.length > 0 ? (
-                  <h3 className="font-heading text-[1.7rem] leading-none tracking-[-0.03em] md:text-[2.1rem]">
-                    {copy.winsHeading}
-                  </h3>
-                ) : null}
-                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {featuredWins.map((shot) => (
-                    <FramedPlate key={shot.src} image={shot} onOpen={setActiveShot} />
-                  ))}
-                </div>
-              </div>
-            ) : null}
+            <h2 id="members-heading" className={h2}>
+              {copy.winsHeading}
+            </h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {featuredWins.map((shot) => (
+                <FramedPlate key={shot.src} image={shot} onOpen={setActiveShot} />
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
@@ -733,30 +761,64 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
+      <section id="good-stuff" className={`${band} bg-[#f3f0ea]`} aria-labelledby="good-stuff-heading">
         <div className="container-elegant">
           <div className="max-w-3xl">
-            <h2 id="inside-heading" className={`${h2} max-w-[16em]`}>
-              {copy.inside.heading}
+            <h2 id="good-stuff-heading" className={`${h2} max-w-[16em]`}>
+              {copy.membership.heading}
             </h2>
+            <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.membership.subheading}
+            </p>
             <div className={`${lede} mt-6 space-y-5`}>
-              {copy.inside.paragraphs.map((paragraph) => (
+              {copy.membership.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <ol className="mt-10">
-              {copy.inside.items.map((item, index) => (
-                <li
-                  key={item}
-                  className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-black/10 py-6 first:border-t-0"
-                >
-                  <span className="pt-1 font-sans text-sm font-semibold tabular-nums text-[#f41cdc]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <p className="max-w-xl text-[17px] leading-relaxed text-neutral-800">{item}</p>
-                </li>
+            <div className="mt-12 space-y-12">
+              {copy.membership.steps.map((step) => (
+                <div key={step.title}>
+                  <h3 className="font-heading text-[1.35rem] leading-[1.15] tracking-[-0.03em] text-black sm:text-[1.55rem]">
+                    {step.title}
+                  </h3>
+                  <div className="mt-4 max-w-xl space-y-4 text-[17px] leading-relaxed text-neutral-800">
+                    {step.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                    {"bullets" in step && step.bullets ? (
+                      <ul className="list-disc space-y-2 pl-5">
+                        {step.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {"after" in step && step.after
+                      ? step.after.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))
+                      : null}
+                  </div>
+                </div>
               ))}
-            </ol>
+            </div>
+            <h3 className="mt-14 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.membership.planHeading}
+            </h3>
+            <div className="mt-6 max-w-xl space-y-3 text-[17px] leading-relaxed text-neutral-800">
+              {copy.membership.plan.map((row) => (
+                <p key={row.label}>
+                  <strong className="font-bold text-black">{row.label}</strong> {row.value}
+                </p>
+              ))}
+            </div>
+            <div className={`${lede} mt-6 space-y-5`}>
+              {copy.membership.closing.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.membership.button}</StateButton>
+            </div>
           </div>
         </div>
       </section>

@@ -176,16 +176,175 @@ test("hero, section 2, and introducing hot and viral are Stephanie's exact words
 
   const problemAt = page.indexOf('id="problem-heading"');
   const introducingAt = page.indexOf('id="introducing-heading"');
+  const proofAt = page.indexOf('id="proof-heading"');
   const copycatAt = page.indexOf('id="copycat-heading"');
   expect(problemAt).toBeGreaterThan(-1);
   expect(introducingAt).toBeGreaterThan(problemAt);
-  expect(copycatAt).toBeGreaterThan(introducingAt);
+  expect(proofAt).toBeGreaterThan(introducingAt);
+  expect(copycatAt).toBeGreaterThan(proofAt);
   expect(page).toContain("{copy.hero.button}");
   expect(page).toContain("{copy.introducing.button}");
   expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
-  const introducingBlock = page.slice(introducingAt, copycatAt);
+  const introducingBlock = page.slice(introducingAt, proofAt);
   expect(introducingBlock).toContain("copy.introducing.paragraphs.map");
+  expect(introducingBlock).toContain("{copy.introducing.button}");
   expect(introducingBlock).not.toContain("<li");
+  expect(introducingBlock).not.toContain("copy.proof.button");
+});
+
+test("proof block is Stephanie's exact Cammy and Erin words", () => {
+  expect(copy.proof.heading).toBe("DON'T JUST TAKE MY WORD FOR IT. LOOK AT THE VIEWS.");
+  expect(copy.proof.subheading).toBe("Real accounts. Real content. Real reach.");
+  expect(copy.proof.paragraphs.map((paragraph) => paragraph.text)).toEqual([
+    "I'm not here to tell you that getting millions of views is possible without showing you what that can look like.",
+    "Let's look at a couple of examples.",
+  ]);
+  expect(copy.proof.cammyHeading).toBe("CAMMY: FROM 200 VIEWS TO 1.4 MILLION.");
+  expect(copy.cammy.story.map((paragraph) => paragraph.text)).toEqual([
+    "Cammy had been posting consistently for six months.",
+    "Her reels were averaging around 200 views.",
+    "She was creating content, showing up and putting in the effort, but her videos weren't reaching the people she wanted to reach.",
+    "We worked on her content strategy, looked at how she was communicating her ideas, and identified opportunities to make her videos more compelling.",
+    "Two months later?",
+    "One of her reels reached 1.4 MILLION VIEWS.",
+    "That's what can happen when you stop guessing and start understanding what makes people watch and share.",
+  ]);
+  expect(copy.cammy.story.find((paragraph) => paragraph.marks)?.marks).toEqual(["1.4 MILLION VIEWS"]);
+  expect(copy.proof.erinHeading).toBe("ERIN: FROM A FEW HUNDRED VIEWS TO THOUSANDS.");
+  expect(copy.proof.erinParagraphs.map((paragraph) => paragraph.text)).toEqual([
+    "Erin creates content around tapping and mindfulness for parents.",
+    "Her reels were getting a few hundred views, and she wanted to reach more people who needed what she had to offer.",
+    "We worked on her content and started making strategic changes.",
+    "The result?",
+    "One reel reached 5,258 VIEWS, and her account generated 94,337 VIEWS OVER 90 DAYS.",
+    "That's more people discovering her content, more opportunities to connect with her audience, and a whole lot more eyes on her work.",
+  ]);
+  expect(copy.proof.erinParagraphs.find((paragraph) => paragraph.marks)?.marks).toEqual([
+    "5,258 VIEWS",
+    "94,337 VIEWS OVER 90 DAYS",
+  ]);
+  expect(copy.proof.closingHeading).toBe("AND THIS IS WHY I LOVE WHAT I DO.");
+  expect(copy.proof.closing.map((paragraph) => paragraph.text)).toEqual([
+    "Because sometimes the difference between content that gets 200 views and content that gets thousands isn't that you need to become a different creator.",
+    "You need to understand what makes people stop scrolling.",
+    "And that's exactly what we're going to work on inside HOT & VIRAL.",
+    "Your next big-view reel could be closer than you think.",
+  ]);
+  expect(copy.proof.closing.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "Your next big-view reel could be closer than you think.",
+  ]);
+  expect(copy.proof.button).toBe("GET FIRST ACCESS");
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.sticky.before).toBe("I WANT IN");
+  expect(copy.sticky.open).toBe("I WANT IN");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const proofBlock = page.slice(page.indexOf('id="proof"'), page.indexOf('id="ai-heading"'));
+  expect(proofBlock).toContain("frames={cammyFrames}");
+  expect(proofBlock).toContain("frames={erinFrames}");
+  expect(proofBlock).toContain("plates={cammySummary ? [cammySummary] : []}");
+  expect(proofBlock).toContain("plates={erinPlates}");
+  expect(proofBlock).toContain("{copy.proof.button}");
+  expect(proofBlock).not.toContain("{copy.hero.button}");
+  expect(proofBlock).not.toContain("{copy.introducing.button}");
+  expect(page).toContain('w-[210px]');
+  expect(page).toContain("lg:grid-cols-[minmax(0,1fr)_auto]");
+  expect(page).toContain('label: "Before"');
+  expect(page).toContain('label: "After"');
+  expect(page.match(/copy\.proof\.button/g)?.length).toBe(1);
+  expect(page).not.toContain("She needed to communicate what she already knew differently.");
+  expect(page).not.toContain("Erin teaches tapping");
+  expect(page).not.toContain("Stop posting content that gets ignored");
+  expect(page).not.toContain("You're posting into silence");
+});
+
+test("membership section is Stephanie's exact words, after proof and before pricing", () => {
+  expect(copy.membership.heading).toBe("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
+  expect(copy.membership.subheading).toBe(
+    "You're not joining another content library. You're getting access to my brain.",
+  );
+  expect(copy.membership.intro).toEqual([
+    "Hot & Viral is built around one thing: helping you create content that gets more attention.",
+    "And we're doing it together.",
+    "Here's what happens when you become a member.",
+  ]);
+  expect(copy.membership.steps.map((step) => step.title)).toEqual([
+    "01. LIVE CONTENT COACHING EVERY TUESDAY",
+    "02. LIVE ACCOUNT BREAKDOWNS",
+    "03. REPLAYS YOU CAN WATCH AGAIN",
+    "04. YOUR PRIVATE HOT & VIRAL COMMUNITY",
+    "05. A ROOM FULL OF CONTENT IDEAS AND MOMENTUM",
+  ]);
+  expect(copy.membership.steps[0]?.paragraphs).toEqual([
+    "This is where the magic happens.",
+    "Every Tuesday, we get together live and work on real content from real accounts.",
+    "Bring your Instagram or TikTok account. Bring the reel that's flopped. Bring the idea you're not sure how to execute.",
+    "I'll look at what's happening, share what I'm seeing, and give you practical feedback on what I'd change.",
+    "No generic advice. No guessing. We're talking about YOUR content.",
+  ]);
+  expect(copy.membership.steps[1]?.paragraphs).toEqual([
+    "Ever wish you could look over someone's shoulder while they figure out why their content isn't working?",
+    "That's exactly why we review accounts together.",
+    "I'll pull up member accounts and walk through the content, looking at things like:",
+  ]);
+  expect(copy.membership.steps[1]?.bullets).toEqual([
+    "Hooks that need more punch.",
+    "Content ideas with bigger reach potential.",
+    "Why a reel might be losing people's attention.",
+    "Opportunities to make content more shareable.",
+    "Ways to create stronger curiosity and interest.",
+  ]);
+  expect(copy.membership.steps[1]?.after).toEqual([
+    "And here's the bonus: even when we're reviewing someone else's account, you're learning how to look at your own differently.",
+  ]);
+  expect(copy.membership.steps[2]?.paragraphs).toEqual([
+    "Can't make a Tuesday call? Want to revisit something we discussed?",
+    "The calls are recorded so you can go back and revisit the coaching, ideas and feedback.",
+    "Because sometimes the lightbulb moment happens the second time you hear something.",
+  ]);
+  expect(copy.membership.steps[3]?.paragraphs).toEqual([
+    "You'll also get access to our private member space.",
+    "Share your reels. Ask questions. Celebrate your wins. Get inspired by what other members are creating.",
+    "It's a room full of people who understand what it's like to put yourself out there and want their content to reach more people.",
+  ]);
+  expect(copy.membership.steps[4]?.paragraphs).toEqual([
+    "One of the biggest challenges with content is figuring out what to create next.",
+    "Being surrounded by other business owners who are experimenting, learning and sharing ideas can help you see opportunities you might have missed.",
+    "You'll start looking at content differently.",
+    "And hopefully, you'll never look at a reel the same way again.",
+  ]);
+  expect(copy.membership.planHeading).toBe("HERE'S THE PLAN.");
+  expect(copy.membership.plan).toEqual([
+    { label: "Live coaching:", value: "Tuesdays at 10am MST." },
+    { label: "Starting:", value: "December 1, 2026." },
+    { label: "Platforms:", value: "Instagram and TikTok." },
+    { label: "Access:", value: "Live coaching, call replays and private member community." },
+  ]);
+  expect(copy.membership.closing).toEqual([
+    "Bring your account, bring your questions, and bring your willingness to experiment.",
+    "I'll bring the strategy, the feedback and the fresh set of eyes.",
+  ]);
+  expect(copy.membership.button).toBe("I'M READY TO GET MORE VIEWS");
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+  expect(copy.proof.button).toBe("GET FIRST ACCESS");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");
+  const proofAt = page.indexOf('id="proof-heading"');
+  const goodAt = page.indexOf('id="good-stuff-heading"');
+  const pricingAt = page.indexOf('id="pricing"');
+  expect(proofAt).toBeGreaterThan(-1);
+  expect(goodAt).toBeGreaterThan(proofAt);
+  expect(pricingAt).toBeGreaterThan(goodAt);
+  expect(page).toContain("{copy.membership.heading}");
+  expect(page).toContain("{copy.membership.button}");
+  expect(page).toContain("<strong");
+  expect(page).not.toContain("Imagine knowing exactly what to post next.");
+  expect(copySource).not.toContain("Imagine knowing exactly what to post next.");
+  expect(page).toContain("w-[210px]");
+  expect(page).toContain("lg:grid-cols-[minmax(0,1fr)_auto]");
 });
 
 test("approved sales lines stay intact", () => {
@@ -197,7 +356,7 @@ test("approved sales lines stay intact", () => {
   expect(copy.ai.heading).toBe("AI can write you a caption. It can't build your point of view.");
   expect(copy.copycats.heading).toBe("When your content becomes the blueprint, you're doing something right.");
   expect(copy.copycats.paragraphs.join(" ")).toContain("understand WHY it works");
-  expect(copy.inside.heading).toBe("Imagine knowing exactly what to post next.");
+  expect(copy.membership.heading).toBe("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
   expect(copy.pricing.heading).toBe("Get in at the lowest price. Keep it for as long as you're a member.");
   expect(copy.pricing.paragraphs.join(" ")).toContain(
     "Not a temporary introductory rate.",
@@ -210,15 +369,16 @@ test("approved sales lines stay intact", () => {
   expect(copy.pricing.yearly.gst).toBe("Plus GST");
   expect(copy.cammy.beforeStat).toBe("200 views");
   expect(copy.cammy.afterStat).toBe("1.4M views");
-  const cammy = copy.cammy.story.join(" ");
-  expect(cammy).toContain("1.4 million views");
-  expect(cammy).toContain("She needed to communicate what she already knew differently.");
+  const cammy = copy.cammy.story.map((paragraph) => paragraph.text).join(" ");
+  expect(cammy).toContain("1.4 MILLION VIEWS");
+  expect(cammy).toContain("Cammy had been posting consistently for six months.");
+  expect(cammy).not.toContain("She needed to communicate what she already knew differently.");
   expect(cammy.toLowerCase()).not.toContain("can't promise");
-  expect(copy.inside.items[0]).toContain("The calls are recorded.");
-  expect(copy.inside.items[0]).toContain("December 1, 2026");
-  expect(copy.inside.items[0]).toContain("10am MST");
-  expect(copy.inside.items.join(" ")).toContain("Coaching is on the call, not in the chat.");
-  expect(copy.inside.items.join(" ").toLowerCase()).not.toContain("dm");
+  expect(copy.membership.plan.map((row) => `${row.label} ${row.value}`).join(" ")).toContain("December 1, 2026");
+  expect(copy.membership.plan.map((row) => `${row.label} ${row.value}`).join(" ")).toContain("10am MST");
+  expect(copy.membership.steps.flatMap((step) => step.paragraphs).join(" ")).toContain("The calls are recorded");
+  expect(copy.faq.map((item) => item.a).join(" ")).toContain("Coaching is on the call, not in the chat.");
+  expect(JSON.stringify(copy.membership).toLowerCase()).not.toContain("dm");
   expect(copy.pricing.cancel).toContain("You can cancel anytime.");
   expect(copy.pricing.cancel).toContain("The price lock ends when the membership ends.");
   expect(copy.pricing.paragraphs.join(" ").toLowerCase()).not.toContain("refund");

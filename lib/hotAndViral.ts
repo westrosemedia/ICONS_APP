@@ -154,8 +154,8 @@ export const memberResults: MemberResult[] = [
     beforeStat: "A few hundred views",
     afterStat: "5,258 views",
     sentences: [
-      "Erin teaches tapping and mindfulness for raising regulated kids.",
-      "In two months her reels went from a few hundred views to posts at 5,258 views, and the account showed 94,337 views.",
+      "Erin creates content around tapping and mindfulness for parents.",
+      "One reel reached 5,258 VIEWS, and her account generated 94,337 VIEWS OVER 90 DAYS.",
     ],
     before: {
       src: "/hot-and-viral/erin-before.jpg",
@@ -518,10 +518,69 @@ export const copy = {
     beforeStat: "200 views",
     afterStat: "1.4M views",
     story: [
-      "Cammy had been consistently creating content for six months. She was showing up, filming and doing everything she'd been told to do. But her videos weren't reaching new people.",
-      "When I looked at her account, I could see what was missing. Her message wasn't connecting the way it needed to. We worked on changing how she communicated her expertise and making sure that message carried through her content. Two months later, one of her reels reached 1.4 million views.",
-      "She didn't need to become someone else on camera. She needed to communicate what she already knew differently.",
+      { text: "Cammy had been posting consistently for six months.", bold: false },
+      { text: "Her reels were averaging around 200 views.", bold: false },
+      {
+        text: "She was creating content, showing up and putting in the effort, but her videos weren't reaching the people she wanted to reach.",
+        bold: false,
+      },
+      {
+        text: "We worked on her content strategy, looked at how she was communicating her ideas, and identified opportunities to make her videos more compelling.",
+        bold: false,
+      },
+      { text: "Two months later?", bold: false },
+      {
+        text: "One of her reels reached 1.4 MILLION VIEWS.",
+        bold: false,
+        marks: ["1.4 MILLION VIEWS"],
+      },
+      {
+        text: "That's what can happen when you stop guessing and start understanding what makes people watch and share.",
+        bold: false,
+      },
     ],
+  },
+  proof: {
+    heading: "DON'T JUST TAKE MY WORD FOR IT. LOOK AT THE VIEWS.",
+    subheading: "Real accounts. Real content. Real reach.",
+    paragraphs: [
+      {
+        text: "I'm not here to tell you that getting millions of views is possible without showing you what that can look like.",
+        bold: false,
+      },
+      { text: "Let's look at a couple of examples.", bold: false },
+    ],
+    cammyHeading: "CAMMY: FROM 200 VIEWS TO 1.4 MILLION.",
+    erinHeading: "ERIN: FROM A FEW HUNDRED VIEWS TO THOUSANDS.",
+    erinParagraphs: [
+      { text: "Erin creates content around tapping and mindfulness for parents.", bold: false },
+      {
+        text: "Her reels were getting a few hundred views, and she wanted to reach more people who needed what she had to offer.",
+        bold: false,
+      },
+      { text: "We worked on her content and started making strategic changes.", bold: false },
+      { text: "The result?", bold: false },
+      {
+        text: "One reel reached 5,258 VIEWS, and her account generated 94,337 VIEWS OVER 90 DAYS.",
+        bold: false,
+        marks: ["5,258 VIEWS", "94,337 VIEWS OVER 90 DAYS"],
+      },
+      {
+        text: "That's more people discovering her content, more opportunities to connect with her audience, and a whole lot more eyes on her work.",
+        bold: false,
+      },
+    ],
+    closingHeading: "AND THIS IS WHY I LOVE WHAT I DO.",
+    closing: [
+      {
+        text: "Because sometimes the difference between content that gets 200 views and content that gets thousands isn't that you need to become a different creator.",
+        bold: false,
+      },
+      { text: "You need to understand what makes people stop scrolling.", bold: false },
+      { text: "And that's exactly what we're going to work on inside HOT & VIRAL.", bold: false },
+      { text: "Your next big-view reel could be closer than you think.", bold: true },
+    ],
+    button: "GET FIRST ACCESS",
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
@@ -529,19 +588,81 @@ export const copy = {
     eyebrow: "Meet your coach",
     heading: "I rebuilt from zero, in public.",
   },
-  inside: {
-    heading: "Imagine knowing exactly what to post next.",
-    paragraphs: [
-      "No more sitting down to create content and wondering whether it's going to work. No more spending three hours writing a caption that still doesn't sound right. No more looking at someone else's viral reel and wondering why you can't seem to get the same results.",
-      "Inside Hot & Viral, you'll have a place to bring your questions, get your account looked at, learn from real examples and understand what needs to change.",
+  membership: {
+    heading: "THIS IS WHERE WE GET INTO THE GOOD STUFF.",
+    subheading: "You're not joining another content library. You're getting access to my brain.",
+    intro: [
+      "Hot & Viral is built around one thing: helping you create content that gets more attention.",
+      "And we're doing it together.",
+      "Here's what happens when you become a member.",
     ],
-    items: [
-      "Weekly live account breakdowns on Tuesday at 10am MST, starting December 1, 2026. The calls are recorded.",
-      "Instagram and TikTok strategy.",
-      "A members chat where members ask each other. Coaching is on the call, not in the chat.",
-      "A wins group.",
-      "Recorded calls you can rewatch.",
+    steps: [
+      {
+        title: "01. LIVE CONTENT COACHING EVERY TUESDAY",
+        paragraphs: [
+          "This is where the magic happens.",
+          "Every Tuesday, we get together live and work on real content from real accounts.",
+          "Bring your Instagram or TikTok account. Bring the reel that's flopped. Bring the idea you're not sure how to execute.",
+          "I'll look at what's happening, share what I'm seeing, and give you practical feedback on what I'd change.",
+          "No generic advice. No guessing. We're talking about YOUR content.",
+        ],
+      },
+      {
+        title: "02. LIVE ACCOUNT BREAKDOWNS",
+        paragraphs: [
+          "Ever wish you could look over someone's shoulder while they figure out why their content isn't working?",
+          "That's exactly why we review accounts together.",
+          "I'll pull up member accounts and walk through the content, looking at things like:",
+        ],
+        bullets: [
+          "Hooks that need more punch.",
+          "Content ideas with bigger reach potential.",
+          "Why a reel might be losing people's attention.",
+          "Opportunities to make content more shareable.",
+          "Ways to create stronger curiosity and interest.",
+        ],
+        after: [
+          "And here's the bonus: even when we're reviewing someone else's account, you're learning how to look at your own differently.",
+        ],
+      },
+      {
+        title: "03. REPLAYS YOU CAN WATCH AGAIN",
+        paragraphs: [
+          "Can't make a Tuesday call? Want to revisit something we discussed?",
+          "The calls are recorded so you can go back and revisit the coaching, ideas and feedback.",
+          "Because sometimes the lightbulb moment happens the second time you hear something.",
+        ],
+      },
+      {
+        title: "04. YOUR PRIVATE HOT & VIRAL COMMUNITY",
+        paragraphs: [
+          "You'll also get access to our private member space.",
+          "Share your reels. Ask questions. Celebrate your wins. Get inspired by what other members are creating.",
+          "It's a room full of people who understand what it's like to put yourself out there and want their content to reach more people.",
+        ],
+      },
+      {
+        title: "05. A ROOM FULL OF CONTENT IDEAS AND MOMENTUM",
+        paragraphs: [
+          "One of the biggest challenges with content is figuring out what to create next.",
+          "Being surrounded by other business owners who are experimenting, learning and sharing ideas can help you see opportunities you might have missed.",
+          "You'll start looking at content differently.",
+          "And hopefully, you'll never look at a reel the same way again.",
+        ],
+      },
     ],
+    planHeading: "HERE'S THE PLAN.",
+    plan: [
+      { label: "Live coaching:", value: "Tuesdays at 10am MST." },
+      { label: "Starting:", value: "December 1, 2026." },
+      { label: "Platforms:", value: "Instagram and TikTok." },
+      { label: "Access:", value: "Live coaching, call replays and private member community." },
+    ],
+    closing: [
+      "Bring your account, bring your questions, and bring your willingness to experiment.",
+      "I'll bring the strategy, the feedback and the fresh set of eyes.",
+    ],
+    button: "I'M READY TO GET MORE VIEWS",
   },
   who: {
     heading: "You keep checking the insights.",
