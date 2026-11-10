@@ -454,7 +454,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <h1 className="max-w-[16em] font-heading text-[2.05rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.45rem] lg:text-[2.7rem]">
+            <h1 className="max-w-[20em] font-heading text-[2.05rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.4rem] lg:text-[2.65rem]">
               {copy.hero.headline}
             </h1>
             <div className="mt-6 max-w-[38rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
