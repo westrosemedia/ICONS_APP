@@ -841,9 +841,58 @@ export const copy = {
     button: "Send me first access",
     success: "You're in. Watch your inbox on November 25.",
   },
+  // Stephanie's closing section, exact. Sits after the pricing section and before the FAQ.
+  close: {
+    heading: "SO... ARE YOU GOING TO KEEP SCROLLING OR START GETTING SEEN?",
+    paragraphs: [
+      {
+        text: "You know that feeling when you post a reel and keep checking to see if the views have moved?",
+        bold: false,
+      },
+      { text: "Refreshing.", bold: false },
+      { text: "Checking again.", bold: false },
+      { text: "Wondering if this one is finally going to take off.", bold: false },
+      {
+        text: "Imagine spending less time guessing and more time understanding what makes people stop, watch and share your content.",
+        bold: false,
+      },
+      {
+        text: "Imagine opening your Instagram insights and seeing numbers you haven't seen before.",
+        bold: false,
+      },
+      {
+        text: "Imagine your content reaching people who have never heard of you, discovering your business and sharing your videos with their own audiences.",
+        bold: false,
+      },
+      { text: "That's what we're working towards inside HOT & VIRAL.", bold: false },
+      { text: "I'm not promising you overnight fame or guaranteed millions of views.", bold: false },
+      {
+        text: "I'm giving you access to my experience, my strategic eyes and live coaching to help you create content with bigger reach potential.",
+        bold: false,
+      },
+      { text: "You can keep trying to figure it out alone. Or you can get in the room.", bold: true },
+    ],
+    subhead: "THE DOORS OPEN NOVEMBER 25–27, 2026.",
+    offer: [
+      { text: "$250 CAD/month.", bold: false },
+      {
+        text: "Your introductory monthly price is locked in while your membership remains active.",
+        bold: false,
+      },
+      { text: "Or save $250 with the annual option at $2,750 CAD.", bold: false },
+      { text: "Plus GST.", bold: false },
+      {
+        text: "After the launch, enrollment closes until spring 2027, when the monthly price increases to $500 CAD.",
+        bold: false,
+      },
+      { text: "Three days. One opportunity to join at the introductory rate.", bold: false },
+      { text: "READY TO GET HOT & VIRAL?", bold: true },
+    ],
+    button: "GET MY FIRST ACCESS",
+    signoff: "Let's get your content the attention it deserves.",
+  },
   faqHeading: "GOT QUESTIONS? I'VE GOT ANSWERS.",
   faqButton: "I'M READY TO JOIN HOT & VIRAL",
-  // Stephanie's FAQ, exact. After the close when that heading is on the page, otherwise after pricing.
   faq: [
     {
       q: "Do I need a big following to join?",

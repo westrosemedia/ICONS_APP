@@ -38,7 +38,6 @@ const pillDark = `${pill} bg-black text-white hover:bg-neutral-800 focus-visible
 const pillLight = `${pill} bg-white text-black hover:bg-neutral-100 focus-visible:ring-white focus-visible:ring-offset-black`;
 
 const GOOGLE_REVIEWS_SHARE_URL = "https://share.google/O5Gl6uzN8JRq35a59";
-const CLOSE_HEADING = "SO... ARE YOU GOING TO KEEP SCROLLING OR START GETTING SEEN?";
 
 const FEATURED_WIN_SRCS = [
   "/hot-and-viral/views-4-9-million.jpg",
@@ -151,42 +150,6 @@ function CountdownBanner({
         </p>
       </div>
     </div>
-  );
-}
-
-function FaqSection({ state }: { state: Exclude<PageState, "closed"> }) {
-  return (
-    <section id="faq" className={`${band} border-t border-black/5 bg-white`} aria-labelledby="faq-heading">
-      <div className="container-elegant">
-        <div className="max-w-3xl">
-          <h2 id="faq-heading" className={h2}>
-            {copy.faqHeading}
-          </h2>
-          <div className="mt-8 divide-y divide-black/10 border-y border-black/10">
-            {copy.faq.map((item) => (
-              <details key={item.q} className="group py-5">
-                <summary className="cursor-pointer list-none text-[17px] font-medium text-black [&::-webkit-details-marker]:hidden">
-                  <span className="flex items-start justify-between gap-6">
-                    {item.q}
-                    <span aria-hidden="true" className="text-neutral-400 group-open:hidden">
-                      +
-                    </span>
-                    <span aria-hidden="true" className="hidden text-neutral-400 group-open:inline">
-                      –
-                    </span>
-                  </span>
-                </summary>
-                <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-neutral-600">{item.a}</p>
-              </details>
-            ))}
-          </div>
-          <div className="mt-8">
-            <StateButton state={state}>{copy.faqButton}</StateButton>
-          </div>
-          <GoogleReviewsLink className="mt-8" />
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -500,7 +463,6 @@ function ResultCase({
 export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPageProps) {
   const nowMs = useTrustedNow(initialNowMs);
   const state = preview ?? getPageState(nowMs);
-  const faqAfterClose = JSON.stringify(copy).includes(CLOSE_HEADING);
   const [activeShot, setActiveShot] = useState<HotAndViralImage | null>(null);
   const featuredWins = FEATURED_WIN_SRCS.map((src) => winShots.find((shot) => shot.src === src)).filter(
     (shot): shot is HotAndViralImage => Boolean(shot),
@@ -974,6 +936,29 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
+      <section id="close" className={`${band} border-t border-black/10 bg-white`} aria-labelledby="close-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="close-heading" className={`${h2} max-w-[14em]`}>
+              {copy.close.heading}
+            </h2>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.close.paragraphs} />
+            </div>
+            <p className="mt-10 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.close.subhead}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.close.offer} />
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.close.button}</StateButton>
+            </div>
+            <p className="mt-8 max-w-[40rem] text-[17px] leading-[1.75] text-neutral-700">{copy.close.signoff}</p>
+          </div>
+        </div>
+      </section>
+
       {state === "before" ? (
         <section id="first-access" className={`${scrollTarget} scroll-mb-28 ${band} bg-white`}>
           <div className="container-elegant">
@@ -988,7 +973,37 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </section>
       ) : null}
 
-      {faqAfterClose ? null : <FaqSection state={state} />}
+      <section id="faq" className={`${band} border-t border-black/5 bg-white`} aria-labelledby="faq-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="faq-heading" className={h2}>
+              {copy.faqHeading}
+            </h2>
+            <div className="mt-8 divide-y divide-black/10 border-y border-black/10">
+              {copy.faq.map((item) => (
+                <details key={item.q} className="group py-5">
+                  <summary className="cursor-pointer list-none text-[17px] font-medium text-black [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-start justify-between gap-6">
+                      {item.q}
+                      <span aria-hidden="true" className="text-neutral-400 group-open:hidden">
+                        +
+                      </span>
+                      <span aria-hidden="true" className="hidden text-neutral-400 group-open:inline">
+                        –
+                      </span>
+                    </span>
+                  </summary>
+                  <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-neutral-600">{item.a}</p>
+                </details>
+              ))}
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.faqButton}</StateButton>
+            </div>
+            <GoogleReviewsLink className="mt-8" />
+          </div>
+        </div>
+      </section>
 
       <section className="bg-black py-20 text-white md:py-[7.25rem]" aria-labelledby="final-heading">
         <div className="container-elegant">
@@ -1016,8 +1031,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           </div>
         </div>
       </section>
-
-      {faqAfterClose ? <FaqSection state={state} /> : null}
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
         <StateButton state={state} className="w-full">
