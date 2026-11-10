@@ -77,6 +77,83 @@ test("signup blocks empty and badly formed emails and keeps a clean address", ()
   });
 });
 
+test("hero opening is Stephanie's exact words", () => {
+  expect(copy.hero.eyebrow).toBe("HOT & VIRAL");
+  expect(copy.hero.headline).toBe(
+    "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+  );
+  expect(copy.hero.paragraphs.map((paragraph) => paragraph.text)).toEqual([
+    "You know your work is good. Your clients know it. But when it comes to getting that same attention online, something isn't clicking.",
+    "You're trying different hooks, changing your captions, testing trending audio and doing all the things you're told you're supposed to do.",
+    "And yet, the views aren't moving. The right people aren't finding you. And you're starting to wonder what you're missing.",
+    "Here's the thing: posting more isn't necessarily the answer.",
+    "Sometimes it's your messaging. Sometimes it's your content strategy. Sometimes you're making small mistakes that are costing you big opportunities to get seen.",
+    "That's where I come in.",
+    "I'm Stephanie Rose, founder of West Rose Media, and I want to help you stop guessing what to post and start understanding what actually makes people pay attention.",
+    "Welcome to HOT & VIRAL.",
+    "The live content coaching room where we look at your actual account, break down your content, and figure out what needs to change.",
+  ]);
+  expect(copy.hero.paragraphs.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "That's where I come in.",
+    "Welcome to HOT & VIRAL.",
+  ]);
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.sticky.before).toBe("I WANT IN");
+  expect(copy.sticky.open).toBe("I WANT IN");
+
+  const heroText = [copy.hero.eyebrow, copy.hero.headline, ...copy.hero.paragraphs.map((paragraph) => paragraph.text)].join(
+    "\n",
+  );
+  expect(heroText).not.toContain("200 views. 347. Maybe 600.");
+  expect(heroText).not.toContain("You're posting into silence.");
+  expect(heroText).not.toContain("Someone with less experience just passed you.");
+  expect(heroText).not.toContain("Stop posting content that gets ignored.");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  expect(page).toContain("<h1");
+  expect(page).toContain("{copy.hero.headline}");
+  expect(page).toContain("{copy.hero.button}");
+  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+});
+
+test("section 2 is why the content is not working, in Stephanie's exact words", () => {
+  expect(copy.problem.heading).toBe(
+    "You're not creating content to be ignored. So why is nobody watching?",
+  );
+  expect(copy.problem.paragraphs.map((paragraph) => paragraph.text)).toEqual([
+    "Let's be honest.",
+    "You're spending time coming up with ideas, filming reels, editing videos, writing captions and trying to figure out what Instagram wants from you this week.",
+    "And for what?",
+    "200 views. Maybe 300. Occasionally one surprises you and hits 1,000.",
+    'Meanwhile, you\'re watching other creators rack up 50K, 100K or even a million views on content that makes you wonder, "How the hell did THAT take off?"',
+    "Here's what you need to understand.",
+    "Going viral isn't just luck. And it's definitely not about posting more.",
+    "There are things that make people stop scrolling. Things that make them curious enough to keep watching. Things that make them want to share your content with someone else.",
+    "Your hook matters. Your topic matters. Your delivery matters. And the way you package an idea can be the difference between a reel that gets ignored and one that gets shared thousands of times.",
+    "The problem?",
+    "Most people are creating content without understanding why some videos take off and others don't.",
+    "They're guessing.",
+    "And guessing is an expensive content strategy.",
+    "It's time to understand what makes people WATCH, SHARE and FOLLOW.",
+  ]);
+  expect(copy.problem.paragraphs.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "Going viral isn't just luck. And it's definitely not about posting more.",
+    "It's time to understand what makes people WATCH, SHARE and FOLLOW.",
+  ]);
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  expect(page).toContain('id="why-the-content-is-not-working"');
+  expect(page).toContain("{copy.problem.heading}");
+  expect(page).toContain("copy.problem.paragraphs.map");
+  expect(page).not.toContain("copy.problem.cards");
+  expect(page).not.toContain("200 views. 347. Maybe 600.");
+
+  const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");
+  expect(copySource).toContain("200 views. Maybe 300. Occasionally one surprises you and hits 1,000.");
+  expect(copySource).not.toContain("200 views. 347. Maybe 600.");
+  expect(copySource).not.toContain("200. Then 347. Then 600.");
+});
+
 test("approved sales lines stay intact", () => {
   expect(copy.meta.title).toBe("Hot & Viral | West Rose Media");
   expect(copy.meta.description).toContain("November 25 to 27");

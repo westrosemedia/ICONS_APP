@@ -454,19 +454,8 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
               {copy.hero.eyebrow}
             </p>
-            <h1>
-              {copy.hero.lines.map((line, index) => (
-                <span
-                  key={line}
-                  className={
-                    index === copy.hero.lines.length - 1
-                      ? "mt-4 block max-w-[26rem] font-sans text-[1.2rem] font-medium leading-snug tracking-normal text-neutral-800 sm:text-[1.35rem]"
-                      : "block font-heading text-[2.35rem] leading-[0.94] tracking-[-0.035em] text-black sm:text-[3.05rem] lg:text-[3.35rem]"
-                  }
-                >
-                  {line}
-                </span>
-              ))}
+            <h1 className="max-w-[16em] font-heading text-[2.05rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.45rem] lg:text-[2.7rem]">
+              {copy.hero.headline}
             </h1>
             <p className="mt-6 font-heading text-[1.85rem] leading-[1.02] tracking-[-0.03em] text-[#f41cdc] sm:text-[2.2rem]">
               {copy.hero.windowLines.map((line) => (
@@ -475,9 +464,15 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                 </span>
               ))}
             </p>
-            <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.65] text-neutral-600">{copy.hero.subheadline}</p>
+            <div className="mt-6 max-w-[34rem] space-y-4 text-[17px] leading-[1.65] text-neutral-600">
+              {copy.hero.paragraphs.map((paragraph) => (
+                <p key={paragraph.text} className={paragraph.bold ? "font-bold text-black" : undefined}>
+                  {paragraph.text}
+                </p>
+              ))}
+            </div>
             <div className="mt-8">
-              <StateButton state={state} />
+              <StateButton state={state}>{copy.hero.button}</StateButton>
               <p className="mt-4 max-w-md text-[15px] font-medium leading-relaxed text-neutral-900">{copy.hero.price}</p>
             </div>
             <div className="mt-7 max-w-md">
@@ -513,25 +508,22 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
-      <section className={`${band} bg-black text-white`} aria-labelledby="problem-heading">
+      {/* Why the content is not working */}
+      <section
+        id="why-the-content-is-not-working"
+        className={`${band} bg-black text-white`}
+        aria-labelledby="problem-heading"
+      >
         <div className="container-elegant">
-          <h2 id="problem-heading" className={`${h2} max-w-[14em] text-white`}>
+          <h2 id="problem-heading" className={`${h2} max-w-[16em] text-white`}>
             {copy.problem.heading}
           </h2>
-          <p className="mt-6 max-w-[36rem] text-[17px] leading-[1.7] text-white/70">{copy.problem.body}</p>
-          <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3">
-            {copy.problem.cards.map((card) => (
-              <article key={card.title} className="rounded-2xl border border-white/12 bg-white/[0.04] p-6 md:p-7">
-                <h3 className="font-sans text-lg font-semibold tracking-tight text-white">{card.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/70">{card.text}</p>
-              </article>
+          <div className="mt-8 max-w-[36rem] space-y-4 text-[17px] leading-[1.7] text-white/75">
+            {copy.problem.paragraphs.map((paragraph) => (
+              <p key={paragraph.text} className={paragraph.bold ? "font-bold text-white" : undefined}>
+                {paragraph.text}
+              </p>
             ))}
-          </div>
-          <div className="mt-16 max-w-[40rem] border-t border-white/15 pt-12 md:mt-20 md:pt-14">
-            <h3 className="font-heading text-[2rem] leading-[1.02] tracking-[-0.03em] text-white md:text-[2.6rem]">
-              {copy.problem.triedHeading}
-            </h3>
-            <p className="mt-5 text-[17px] leading-[1.7] text-white/75">{copy.problem.triedBody}</p>
           </div>
         </div>
       </section>

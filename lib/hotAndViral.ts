@@ -350,19 +350,52 @@ export const copy = {
       "3 days to buy. November 25 to 27. Then closed until spring 2027, at double the price. $250 CAD/month in this window.",
   },
   hero: {
-    eyebrow: "Stephanie Rose · West Rose",
-    lines: [
-      "You're posting into silence.",
-      "200 views. 347. Maybe 600.",
-      "Someone with less experience just passed you.",
+    eyebrow: "HOT & VIRAL",
+    headline:
+      "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
+    paragraphs: [
+      {
+        text: "You know your work is good. Your clients know it. But when it comes to getting that same attention online, something isn't clicking.",
+        bold: false,
+      },
+      {
+        text: "You're trying different hooks, changing your captions, testing trending audio and doing all the things you're told you're supposed to do.",
+        bold: false,
+      },
+      {
+        text: "And yet, the views aren't moving. The right people aren't finding you. And you're starting to wonder what you're missing.",
+        bold: false,
+      },
+      {
+        text: "Here's the thing: posting more isn't necessarily the answer.",
+        bold: false,
+      },
+      {
+        text: "Sometimes it's your messaging. Sometimes it's your content strategy. Sometimes you're making small mistakes that are costing you big opportunities to get seen.",
+        bold: false,
+      },
+      {
+        text: "That's where I come in.",
+        bold: true,
+      },
+      {
+        text: "I'm Stephanie Rose, founder of West Rose Media, and I want to help you stop guessing what to post and start understanding what actually makes people pay attention.",
+        bold: false,
+      },
+      {
+        text: "Welcome to HOT & VIRAL.",
+        bold: true,
+      },
+      {
+        text: "The live content coaching room where we look at your actual account, break down your content, and figure out what needs to change.",
+        bold: false,
+      },
     ],
     windowLines: [
       "3 days only.",
       "Then it is closed until spring\u00A02027.",
       "At double the price.",
     ],
-    subheadline:
-      "I'm Stephanie. I open the account and I see it. What you're saying. Why it dies at 200. What to change. She posted into that silence for six months. Two months later, 1.4 million.",
     price:
       "This window is $250 CAD/month, locked for as long as you remain a member. Spring 2027 is $500 CAD/month. Plus GST.",
     checklist: [
@@ -371,29 +404,53 @@ export const copy = {
       "Coaching is on the call, not in the chat.",
       "Instagram and TikTok, in the same room.",
     ],
+    button: "I WANT IN",
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
   },
+  // Why the content is not working. Stephanie's section 2, exact.
   problem: {
-    heading: "200. Then 347. Then 600.",
-    body: "You know your work. Your clients get the result. You filmed it, posted it, rewrote the caption at midnight, and the number came back the same.",
-    cards: [
+    heading: "You're not creating content to be ignored. So why is nobody watching?",
+    paragraphs: [
+      { text: "Let's be honest.", bold: false },
       {
-        title: "200",
-        text: "You post. You check. It barely clears the people who already follow you.",
+        text: "You're spending time coming up with ideas, filming reels, editing videos, writing captions and trying to figure out what Instagram wants from you this week.",
+        bold: false,
+      },
+      { text: "And for what?", bold: false },
+      {
+        text: "200 views. Maybe 300. Occasionally one surprises you and hits 1,000.",
+        bold: false,
       },
       {
-        title: "Passed",
-        text: "Someone with less experience is getting the views. You keep opening the account that passed you.",
+        text: 'Meanwhile, you\'re watching other creators rack up 50K, 100K or even a million views on content that makes you wonder, "How the hell did THAT take off?"',
+        bold: false,
+      },
+      { text: "Here's what you need to understand.", bold: false },
+      {
+        text: "Going viral isn't just luck. And it's definitely not about posting more.",
+        bold: true,
       },
       {
-        title: "Guessing",
-        text: "You can't tell which part of the post is the problem, so you change all of it and learn nothing.",
+        text: "There are things that make people stop scrolling. Things that make them curious enough to keep watching. Things that make them want to share your content with someone else.",
+        bold: false,
+      },
+      {
+        text: "Your hook matters. Your topic matters. Your delivery matters. And the way you package an idea can be the difference between a reel that gets ignored and one that gets shared thousands of times.",
+        bold: false,
+      },
+      { text: "The problem?", bold: false },
+      {
+        text: "Most people are creating content without understanding why some videos take off and others don't.",
+        bold: false,
+      },
+      { text: "They're guessing.", bold: false },
+      { text: "And guessing is an expensive content strategy.", bold: false },
+      {
+        text: "It's time to understand what makes people WATCH, SHARE and FOLLOW.",
+        bold: true,
       },
     ],
-    triedHeading: "You already did the homework.",
-    triedBody:
-      "The course. The coach who said post three times a day. Trending audio, talking to camera, text on the screen. All of it gave you more to post. What's holding the account back is what you're saying, and how it shows up. I see it the second I open it.",
   },
   ai: {
     eyebrow: "About that AI",
@@ -533,8 +590,8 @@ export const copy = {
     line: "3 days only. Then it is closed until spring\u00A02027, at double the price.",
   },
   sticky: {
-    before: "Get first access",
-    open: "Join Hot & Viral",
+    before: "I WANT IN",
+    open: "I WANT IN",
   },
   duplicate: "This email is already on the list.",
 };
