@@ -525,5 +525,12 @@ export const copy = {
     before: "Get first access",
     open: "Join Hot & Viral",
   },
+  googleReviews: {
+    heading: "Google reviews",
+    line: "The reviews are on the West Rose Media Google listing.",
+    link: "Read the Google reviews",
+    // Google blocked the review text. Nothing here was copied from the listing.
+    quotes: [] as const,
+  },
   duplicate: "This email is already on the list.",
 };

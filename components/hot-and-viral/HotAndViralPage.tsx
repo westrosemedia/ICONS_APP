@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
 import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
+import { GOOGLE_REVIEWS_URL } from "@/lib/siteLinks";
 import {
   COACH_IMAGE,
   HERO_IMAGE,
@@ -439,6 +440,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <div className="mt-10">
               <AccessForm list="next_round" button={copy.closed.button} success={copy.closed.success} />
             </div>
+            <GoogleReviews className="mt-16" />
           </div>
         </section>
         {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
@@ -666,6 +668,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </div>
           </div>
         </div>
+        <div className="container-elegant">
+          <GoogleReviews className="mt-12 md:mt-16" />
+        </div>
       </section>
 
       <section className={`${band} bg-[#f3f0ea]`} aria-labelledby="inside-heading">
@@ -804,6 +809,33 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
       </div>
 
       {activeShot ? <ShotLightbox image={activeShot} onClose={() => setActiveShot(null)} /> : null}
+    </div>
+  );
+}
+
+function GoogleReviews({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <div
+        id="google-reviews"
+        className="max-w-xl scroll-mt-44 rounded-[1.75rem] border border-black/10 bg-[#f3f0ea] px-6 py-7 sm:px-8 sm:py-8"
+      >
+        <h2
+          id="google-reviews-heading"
+          className="font-heading text-[1.7rem] leading-[1.05] tracking-[-0.03em] text-black md:text-[2.1rem]"
+        >
+          {copy.googleReviews.heading}
+        </h2>
+        <p className="mt-4 max-w-md text-[16px] leading-relaxed text-neutral-700">{copy.googleReviews.line}</p>
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex text-[16px] font-semibold text-[#f41cdc] underline decoration-2 underline-offset-4"
+        >
+          {copy.googleReviews.link}
+        </a>
+      </div>
     </div>
   );
 }

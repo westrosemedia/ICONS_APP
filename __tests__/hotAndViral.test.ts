@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import {
   DOORS_CLOSE_AT,
   DOORS_OPEN_AT,
@@ -7,6 +9,7 @@ import {
   splitRemaining,
   validateSignup,
 } from "../lib/hotAndViral";
+import { GOOGLE_REVIEWS_URL } from "../lib/siteLinks";
 
 function calgaryPart(ms: number, type: Intl.DateTimeFormatPartTypes) {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -101,4 +104,21 @@ test("approved sales lines stay intact", () => {
   expect(copy.firstAccess.success).toBe("You're in. Watch your inbox on November 25.");
   expect(copy.closed.success).toBe("You're on the list.");
   expect(copy.closed.heading).toBe("Hot & Viral is closed.");
+});
+
+test("google reviews link is the West Rose Media listing and quotes nothing unread", () => {
+  expect(GOOGLE_REVIEWS_URL).toBe(
+    "https://www.google.com/search?q=west+rose+media+reviews#mpd=~14691031191379244407/customers/reviews",
+  );
+  expect(copy.googleReviews.link).toBe("Read the Google reviews");
+  expect(copy.googleReviews.line).toBe("The reviews are on the West Rose Media Google listing.");
+  expect(copy.googleReviews.quotes).toEqual([]);
+  const page = fs.readFileSync(
+    path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"),
+    "utf8",
+  );
+  expect(page).toContain("href={GOOGLE_REVIEWS_URL}");
+  expect(page).toContain('target="_blank"');
+  expect(page).toContain('rel="noopener noreferrer"');
+  expect(page).not.toMatch(/[0-9](\.[0-9])?\s*stars?/i);
 });
