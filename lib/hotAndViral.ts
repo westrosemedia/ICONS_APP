@@ -553,6 +553,66 @@ export const copy = {
       "You want this on Instagram, TikTok, or both",
     ],
   },
+  // Stephanie's right-room section, exact. Sits after the membership section and before pricing.
+  rightRoom: {
+    heading: "LET'S MAKE SURE YOU'RE IN THE RIGHT ROOM.",
+    forYouSubhead: "Hot & Viral is for you if...",
+    forYou: [
+      {
+        text: "You're a business owner, creator or entrepreneur who is tired of creating content that nobody seems to see.",
+        bold: false,
+      },
+      {
+        text: "You're ready for more than another list of Instagram tips.",
+        bold: false,
+      },
+      {
+        text: "You want to understand what makes people stop scrolling, watch your videos, share your content and discover your account.",
+        bold: false,
+      },
+      {
+        text: "You're willing to experiment, try different approaches and actually put the coaching into practice.",
+        bold: false,
+      },
+    ],
+    mightBeLabel: "You might be:",
+    mightBe: [
+      "Posting regularly but struggling to get past a few hundred views.",
+      "Watching other accounts take off and wondering what you're missing.",
+      "Getting views on some reels but struggling to repeat that success.",
+      "Running out of fresh ideas that have the potential to reach new audiences.",
+      "Spending hours creating content that barely gets any traction.",
+      "Ready to stop treating every reel like a guessing game.",
+      "Excited about the possibility of reaching thousands, hundreds of thousands or even millions of people.",
+    ],
+    qualifiers: [
+      { text: "You don't need a massive following to join.", bold: true },
+      { text: "You don't need to be an experienced content creator.", bold: false },
+      {
+        text: "You just need to be willing to learn, experiment and get your content in front of more people.",
+        bold: false,
+      },
+    ],
+    notForYouSubhead: "Hot & Viral probably isn't for you if...",
+    notForYou: [
+      "You want guaranteed viral results.",
+      "You expect someone else to create all your content for you.",
+      "You're not willing to take feedback or try something different.",
+      "You want another course to buy, download and never open.",
+    ],
+    closing: [
+      {
+        text: "I'm here to help you get better at creating content with reach potential.",
+        bold: false,
+      },
+      { text: "But you have to be willing to show up and do the work.", bold: false },
+      {
+        text: "If you're ready to stop playing small with your content, you're in the right room.",
+        bold: true,
+      },
+    ],
+    button: "YES, I'M READY. LET'S GO.",
+  },
   onlyWay: {
     heading: "This is the only way to work with me right now.",
     body: `My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. ${openingWindow}`,

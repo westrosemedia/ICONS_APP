@@ -261,6 +261,70 @@ test("approved sales lines stay intact", () => {
   expect(copy.closed.body).toContain("$500 CAD/month");
 });
 
+test("right room is Stephanie's exact words and sits before pricing", () => {
+  expect(copy.rightRoom.heading).toBe("LET'S MAKE SURE YOU'RE IN THE RIGHT ROOM.");
+  expect(copy.rightRoom.forYouSubhead).toBe("Hot & Viral is for you if...");
+  expect(copy.rightRoom.forYou.map((paragraph) => paragraph.text)).toEqual([
+    "You're a business owner, creator or entrepreneur who is tired of creating content that nobody seems to see.",
+    "You're ready for more than another list of Instagram tips.",
+    "You want to understand what makes people stop scrolling, watch your videos, share your content and discover your account.",
+    "You're willing to experiment, try different approaches and actually put the coaching into practice.",
+  ]);
+  expect(copy.rightRoom.mightBeLabel).toBe("You might be:");
+  expect(copy.rightRoom.mightBe).toEqual([
+    "Posting regularly but struggling to get past a few hundred views.",
+    "Watching other accounts take off and wondering what you're missing.",
+    "Getting views on some reels but struggling to repeat that success.",
+    "Running out of fresh ideas that have the potential to reach new audiences.",
+    "Spending hours creating content that barely gets any traction.",
+    "Ready to stop treating every reel like a guessing game.",
+    "Excited about the possibility of reaching thousands, hundreds of thousands or even millions of people.",
+  ]);
+  expect(copy.rightRoom.qualifiers.map((paragraph) => paragraph.text)).toEqual([
+    "You don't need a massive following to join.",
+    "You don't need to be an experienced content creator.",
+    "You just need to be willing to learn, experiment and get your content in front of more people.",
+  ]);
+  expect(copy.rightRoom.qualifiers.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "You don't need a massive following to join.",
+  ]);
+  expect(copy.rightRoom.notForYouSubhead).toBe("Hot & Viral probably isn't for you if...");
+  expect(copy.rightRoom.notForYou).toEqual([
+    "You want guaranteed viral results.",
+    "You expect someone else to create all your content for you.",
+    "You're not willing to take feedback or try something different.",
+    "You want another course to buy, download and never open.",
+  ]);
+  expect(copy.rightRoom.closing.map((paragraph) => paragraph.text)).toEqual([
+    "I'm here to help you get better at creating content with reach potential.",
+    "But you have to be willing to show up and do the work.",
+    "If you're ready to stop playing small with your content, you're in the right room.",
+  ]);
+  expect(copy.rightRoom.closing.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
+    "If you're ready to stop playing small with your content, you're in the right room.",
+  ]);
+  expect(copy.rightRoom.button).toBe("YES, I'M READY. LET'S GO.");
+  expect(copy.hero.button).toBe("I WANT IN");
+  expect(copy.introducing.button).toBe("I WANT IN");
+
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const rightRoomAt = page.indexOf('id="right-room"');
+  const pricingAt = page.indexOf('id="pricing"');
+  const membershipAt = page.indexOf("THIS IS WHERE WE GET INTO THE GOOD STUFF.");
+  expect(rightRoomAt).toBeGreaterThan(-1);
+  expect(pricingAt).toBeGreaterThan(rightRoomAt);
+  if (membershipAt !== -1) expect(rightRoomAt).toBeGreaterThan(membershipAt);
+  const block = page.slice(rightRoomAt, pricingAt);
+  expect(block).toContain("{copy.rightRoom.heading}");
+  expect(block).toContain("{copy.rightRoom.forYouSubhead}");
+  expect(block).toContain("{copy.rightRoom.notForYouSubhead}");
+  expect(block).toContain("{copy.rightRoom.button}");
+  expect(block).toContain("<StateButton");
+  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain("{copy.hero.button}");
+  expect(page).toContain("{copy.introducing.button}");
+});
+
 test("hot and viral keeps one quiet google reviews link and no quote block", () => {
   const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
   const copySource = fs.readFileSync(path.join(__dirname, "../lib/hotAndViral.ts"), "utf8");

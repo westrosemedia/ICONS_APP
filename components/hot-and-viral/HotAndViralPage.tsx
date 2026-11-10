@@ -174,6 +174,34 @@ function StateButton({
   );
 }
 
+function CopyParagraphs({
+  paragraphs,
+  boldClass = "text-black",
+}: {
+  paragraphs: readonly { text: string; bold?: boolean }[];
+  boldClass?: string;
+}) {
+  return (
+    <>
+      {paragraphs.map((paragraph) => (
+        <p key={paragraph.text} className={paragraph.bold ? `font-bold ${boldClass}` : undefined}>
+          {paragraph.text}
+        </p>
+      ))}
+    </>
+  );
+}
+
+function PlainList({ items }: { items: readonly string[] }) {
+  return (
+    <ul className="list-disc space-y-3 pl-5 text-[17px] leading-[1.7] text-neutral-800">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
 function CheckList({ items }: { items: readonly string[] }) {
   return (
     <ul className="space-y-3">
@@ -749,6 +777,41 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               {copy.onlyWay.heading}
             </h2>
             <p className={`${lede} mt-6`}>{copy.onlyWay.body}</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="right-room" className={`${band} border-t border-black/10 bg-white`} aria-labelledby="right-room-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="right-room-heading" className={`${h2} max-w-[14em]`}>
+              {copy.rightRoom.heading}
+            </h2>
+            <p className="mt-5 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.rightRoom.forYouSubhead}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.rightRoom.forYou} />
+              <p>{copy.rightRoom.mightBeLabel}</p>
+            </div>
+            <div className="mt-5 max-w-[40rem]">
+              <PlainList items={copy.rightRoom.mightBe} />
+            </div>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.rightRoom.qualifiers} />
+            </div>
+            <p className="mt-10 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.rightRoom.notForYouSubhead}
+            </p>
+            <div className="mt-5 max-w-[40rem]">
+              <PlainList items={copy.rightRoom.notForYou} />
+            </div>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.rightRoom.closing} />
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.rightRoom.button}</StateButton>
+            </div>
           </div>
         </div>
       </section>
