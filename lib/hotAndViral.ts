@@ -343,11 +343,14 @@ export function validateSignup(input: {
   return { ok: true, name, email };
 }
 
+export const openingWindow =
+  "This is a 3-day window only, Wednesday November 25, 2026 at 12:00am MST through Friday November 27, 2026 at 11:59pm MST. Then it is closed until spring 2027, when the price is double ($500 CAD/month).";
+
 export const copy = {
   meta: {
     title: "Hot & Viral | West Rose Media",
     description:
-      "3 days to buy. November 25 to 27. Then closed until spring 2027, at double the price. $250 CAD/month in this window.",
+      "You're showing up. You're posting. You're putting in the work. A 3-day window only, November 25 to 27, 2026. Then closed until spring 2027, at double the price.",
   },
   hero: {
     eyebrow: "HOT & VIRAL",
@@ -391,19 +394,7 @@ export const copy = {
         bold: false,
       },
     ],
-    windowLines: [
-      "3 days only.",
-      "Then it is closed until spring\u00A02027.",
-      "At double the price.",
-    ],
-    price:
-      "This window is $250 CAD/month, locked for as long as you remain a member. Spring 2027 is $500 CAD/month. Plus GST.",
-    checklist: [
-      "Tuesdays at 10am MST. I open the account on the call.",
-      "The calls are recorded.",
-      "Coaching is on the call, not in the chat.",
-      "Instagram and TikTok, in the same room.",
-    ],
+    window: openingWindow,
     button: "I WANT IN",
     buttonBefore: "Get first access",
     buttonOpen: "Join Hot & Viral",
@@ -453,21 +444,31 @@ export const copy = {
     ],
   },
   ai: {
-    eyebrow: "About that AI",
-    heading: "AI can write the post. It can't see why it died.",
-    body: "It pulls from what already worked for everybody else. That's why your caption sounds like the last ten you scrolled. The posts that move say something your people haven't heard, the way only you say it.",
+    heading: "AI can write you a caption. It can't build your point of view.",
+    paragraphs: [
+      "You've probably used AI to come up with hooks, captions, content ideas and even entire posting strategies. And there's nothing wrong with that. But here's the problem.",
+      "When everyone is using the same tools, asking similar questions and pulling from the same pool of content, everything starts sounding the same.",
+      "Your audience doesn't need another version of something they've already scrolled past. They need your perspective. Your experience. Your opinions. Your way of explaining something.",
+      "Inside Hot & Viral, I'll help you identify what makes your content different and turn that into a strategy people actually want to watch.",
+    ],
   },
   copycats: {
     eyebrow: "Proof",
-    heading: "700k-follower accounts are copying my posts word for word.",
-    body: "You took the course. You hired the coach. You posted every single day. They're still lifting the line off my page. Inside Hot & Viral I show you what they're copying, so you can see it in your own.",
+    heading: "When your content becomes the blueprint, you're doing something right.",
+    paragraphs: [
+      "I've watched accounts with hundreds of thousands of followers recreate my content, sometimes almost word for word. That's not an accident. It's what happens when you understand how to communicate an idea in a way that makes people stop, watch and share.",
+      "Inside Hot & Viral, I'm not teaching you to copy what's already working for someone else. I'm teaching you how to understand WHY it works, and how to create your own version that actually sounds like you.",
+    ],
   },
   cammy: {
     label: "Client · Cammy",
     beforeStat: "200 views",
     afterStat: "1.4M views",
-    story:
-      "Cammy posted for six months. The reels sat around 200 views. She was showing up. She was filming the way she'd been told. She was saying the wrong thing in every post. I opened the account and I knew what to change. We fixed the message and made it show up in the post. Two months later, one reel hit 1.4 million views. That was her account. I can see what's wrong with yours, and what to change. I can't promise the same number.",
+    story: [
+      "Cammy had been consistently creating content for six months. She was showing up, filming and doing everything she'd been told to do. But her videos weren't reaching new people.",
+      "When I looked at her account, I could see what was missing. Her message wasn't connecting the way it needed to. We worked on changing how she communicated her expertise and making sure that message carried through her content. Two months later, one of her reels reached 1.4 million views.",
+      "She didn't need to become someone else on camera. She needed to communicate what she already knew differently.",
+    ],
   },
   membersHeading: "More accounts I've fixed",
   winsHeading: "Views from my account and from clients.",
@@ -476,28 +477,17 @@ export const copy = {
     heading: "I rebuilt from zero, in public.",
   },
   inside: {
-    heading: "What you walk into",
-    steps: [
-      {
-        title: "Tuesday, 10am MST.",
-        text: "Starting December 1, 2026. I pull a member's account up on the call and say what to change. The whole room hears it. The calls are recorded.",
-      },
-      {
-        title: "Instagram and TikTok.",
-        text: "Two platforms. One look at the message, and how it shows up in the post.",
-      },
-      {
-        title: "The chat.",
-        text: "Members talk to each other. Drafts, questions, what they're posting.",
-      },
-      {
-        title: "The wins group.",
-        text: "Where the screenshots go when a reel takes off.",
-      },
-      {
-        title: "Coaching is on the call.",
-        text: "Coaching is on the call, not in the chat. Show up Tuesday. Leave knowing what to change.",
-      },
+    heading: "Imagine knowing exactly what to post next.",
+    paragraphs: [
+      "No more sitting down to create content and wondering whether it's going to work. No more spending three hours writing a caption that still doesn't sound right. No more looking at someone else's viral reel and wondering why you can't seem to get the same results.",
+      "Inside Hot & Viral, you'll have a place to bring your questions, get your account looked at, learn from real examples and understand what needs to change.",
+    ],
+    items: [
+      "Weekly live account breakdowns on Tuesday at 10am MST, starting December 1, 2026. The calls are recorded.",
+      "Instagram and TikTok strategy.",
+      "A members chat where members ask each other. Coaching is on the call, not in the chat.",
+      "A wins group.",
+      "Recorded calls you can rewatch.",
     ],
   },
   who: {
@@ -512,18 +502,23 @@ export const copy = {
   },
   onlyWay: {
     heading: "This is the only way to work with me right now.",
-    body: "My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. Hot & Viral is open for 3 days, November 25 to 27. Friday at 11:59pm MST it closes. It does not open again until spring 2027, and the price will be double.",
+    body: `My 1:1 coaching is sold out. ICON Brand Partnership is sold out. The mastermind is closed. ${openingWindow}`,
   },
   pricing: {
-    heading: "3 days at $250. Then the price doubles.",
-    note: "November 25 to 27 is the only buy window. Then it is closed until spring 2027, at double the price. $500 CAD/month.",
-    beforeNote: "Doors open November 25 at 12:00am MST. Leave your email and the link lands the minute they open.",
-    cancel: "You can cancel anytime.",
+    heading: "Get in at the lowest price. Keep it for as long as you're a member.",
+    paragraphs: [
+      "Hot & Viral will be $500 CAD per month. This opening is half price. Join during this window and $250 CAD/month stays for as long as you remain a member. Not a temporary introductory rate.",
+      "Annual is $2,750 CAD, $250 less than paying monthly for twelve months. Plus GST.",
+      "You can cancel anytime. The price lock ends when the membership ends.",
+      openingWindow,
+    ],
+    beforeNote: "Leave your email and the link lands the minute the doors open.",
+    cancel: "You can cancel anytime. The price lock ends when the membership ends.",
     monthly: {
       regular: "$500 CAD/month",
       sale: "$250",
       cadence: "CAD/month",
-      lock: "Locked for as long as you remain a member. In spring 2027 this is double, $500 CAD/month.",
+      lock: "$250 CAD/month stays for as long as you remain a member. Not a temporary introductory rate. The price lock ends when the membership ends.",
       gst: "Plus GST",
       button: "Join monthly",
     },
@@ -531,7 +526,7 @@ export const copy = {
       regular: "$5,500 CAD/year",
       sale: "$2,750",
       cadence: "CAD for the year",
-      note: "$2,750 CAD. $250 less than twelve monthly payments. This price is the 3-day window. Then closed until spring 2027, when the month is double.",
+      note: "$2,750 CAD, $250 less than paying monthly for twelve months.",
       gst: "Plus GST",
       button: "Join for the year",
       badge: "Best value",
@@ -539,7 +534,7 @@ export const copy = {
   },
   firstAccess: {
     heading: "Get there before it opens.",
-    body: "Doors open Wednesday, November 25 at 12:00am MST. They close Friday, November 27 at 11:59pm MST. 3 days only. Then it is closed until spring 2027, at double the price. Leave your email and the link lands the minute they open.",
+    body: `${openingWindow} Leave your email and the link lands the minute the doors open.`,
     button: "Send me first access",
     success: "You're in. Watch your inbox on November 25.",
   },
@@ -554,19 +549,19 @@ export const copy = {
     },
     {
       q: "Will you look at my account?",
-      a: "I open member accounts live on the Tuesday call and say what to change. The whole room hears it.",
+      a: "Yes. Bring your account to the weekly live breakdowns on Tuesday at 10am MST. The calls are recorded, so you can rewatch them.",
     },
     {
       q: "Do you coach in the chat group?",
-      a: "Coaching is on the call, not in the chat. The chat is where members talk to each other.",
+      a: "The members chat is where members ask each other. Coaching is on the call, not in the chat.",
     },
     {
       q: "When can I buy?",
-      a: "3 days only. Wednesday, November 25, 2026 at 12:00am MST through Friday, November 27 at 11:59pm MST. Then it is closed until spring 2027, at double the price.",
+      a: openingWindow,
     },
     {
       q: "What happens to my price after these 3 days?",
-      a: "Your $250 CAD/month stays locked for as long as you remain a member. The year is $2,750 CAD, $250 less than twelve monthly payments. Plus GST. In spring 2027 the price is double, $500 CAD/month.",
+      a: "Join during this window and $250 CAD/month stays for as long as you remain a member. Not a temporary introductory rate. Annual is $2,750 CAD, $250 less than paying monthly for twelve months. Plus GST. You can cancel anytime. The price lock ends when the membership ends. In spring 2027 the price is double, $500 CAD/month.",
     },
     {
       q: "I'm starting from zero. Can I join?",
@@ -574,20 +569,23 @@ export const copy = {
     },
   ],
   final: {
-    heading: "3 days. Then spring 2027. Double the price.",
-    body: "Friday, November 27, 11:59pm MST, the doors shut. That is the only buy window. It does not open again until spring 2027, and it will be $500 CAD/month. This window is $250 CAD/month, locked for as long as you remain a member. Bring your account to the Tuesday call. I'll show you what to change.",
+    heading: "You don't need to keep guessing.",
+    paragraphs: [
+      "You need to understand what makes people stop scrolling, what makes them watch, and what makes them want to hear more from you. That's what we're building inside Hot & Viral. The doors are open for three days. Get in, and lock $250 CAD/month for as long as you remain a member. Then it is closed until spring 2027, at double the price.",
+      openingWindow,
+    ],
   },
   closed: {
     heading: "Hot & Viral is closed.",
-    body: "The only buy window was November 25 to 27, 2026. It opens again in spring 2027, at double the price. $500 CAD/month. Leave your email and you'll hear first.",
+    body: "Wednesday November 25, 2026 at 12:00am MST through Friday November 27, 2026 at 11:59pm MST was the only window. It is closed until spring 2027, when the price is double ($500 CAD/month). Leave your email and you'll hear first.",
     button: "Tell me first",
     success: "You're on the list.",
   },
   countdown: {
     before: "Doors open in",
     open: "Doors close in",
-    // The buy window is November 25–27. Digits come from the live clock, not from this line.
-    line: "3 days only. Then it is closed until spring\u00A02027, at double the price.",
+    // Digits come from the live clock via splitRemaining. This line does not hardcode a day count.
+    line: openingWindow,
   },
   sticky: {
     before: "I WANT IN",
