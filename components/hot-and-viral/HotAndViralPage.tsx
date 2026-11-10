@@ -936,6 +936,29 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
         </div>
       </section>
 
+      <section id="close" className={`${band} border-t border-black/10 bg-white`} aria-labelledby="close-heading">
+        <div className="container-elegant">
+          <div className="max-w-3xl">
+            <h2 id="close-heading" className={`${h2} max-w-[14em]`}>
+              {copy.close.heading}
+            </h2>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.close.paragraphs} />
+            </div>
+            <p className="mt-10 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
+              {copy.close.subhead}
+            </p>
+            <div className="mt-6 max-w-[40rem] space-y-5 text-[17px] leading-[1.75] text-neutral-700">
+              <CopyParagraphs paragraphs={copy.close.offer} />
+            </div>
+            <div className="mt-8">
+              <StateButton state={state}>{copy.close.button}</StateButton>
+            </div>
+            <p className="mt-8 max-w-[40rem] text-[17px] leading-[1.75] text-neutral-700">{copy.close.signoff}</p>
+          </div>
+        </div>
+      </section>
+
       {state === "before" ? (
         <section id="first-access" className={`${scrollTarget} scroll-mb-28 ${band} bg-white`}>
           <div className="container-elegant">
