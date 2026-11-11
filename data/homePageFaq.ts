@@ -2,7 +2,7 @@ export const homePageFaqItems = [
   {
     question: "What does West Rose Media do?",
     answer:
-      "West Rose Media is a creative growth agency for brands ready to make a bigger impression. The flagship offer is the ICON Brand Partnership, and it is open. Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January. Hot & Viral is a separate live membership.",
+      "West Rose Media builds brands, content, and engaged communities for accomplished women founders across Canada. The flagship offer is the ICON Brand Partnership, and it is open. Stephanie Rose and the West Rose Media team run strategy, creative direction, photography, video, social content, and launch assets as one in-house team. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January. Hot & Viral is a separate live membership.",
   },
   {
     question: "How is this different from hiring a PR firm?",
@@ -32,6 +32,6 @@ export const homePageFaqItems = [
   {
     question: "Who is Stephanie Rose?",
     answer:
-      "Stephanie Rose is the founder of West Rose Media, a creative growth agency based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers, videographers, and content producers. West Rose Media specializes in personal brand content and community building for women founders, coaches, and creators across Canada.",
+      "Stephanie Rose is the founder of West Rose Media, a brand and content studio based in Calgary, Alberta. She leads strategy and creative direction for every client and works alongside a team of professional photographers, videographers, and content producers. West Rose Media specializes in personal brand content and community building for women founders, coaches, and creators across Canada.",
   },
 ] as const;

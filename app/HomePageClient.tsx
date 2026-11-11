@@ -82,28 +82,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="wrm-rise">
-        <div className={`${FRAME} flex min-h-[calc(100svh-4.5rem)] max-w-none flex-col justify-end py-20`}>
-          <h2 className="max-w-[12ch] text-[clamp(3rem,6.4vw,5.8rem)] leading-[0.9] text-[#F4F4F4]">
-            Pretty is not a strategy.
-          </h2>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed">
-            Your clients refer you without being asked. Women you worked with a year ago still message you about what changed for them. Then someone clicks your profile, and the woman they find online is two sizes smaller than the one who earned all of it.
-          </p>
-          <div className="mt-10">
-            <WrmButton href="/the-agency" variant="line">
-              The agency
-            </WrmButton>
-          </div>
-        </div>
-      </section>
-
       <section>
-        <div className={`${FRAME} pb-4 pt-24 lg:pt-32`}>
-          <h2 className="max-w-[10ch] text-[clamp(3rem,6vw,5.6rem)] leading-[0.9] text-[#F4F4F4]">
-            Look at the views.
-          </h2>
-        </div>
         {proofs.map((proof) => (
           <figure key={proof.image.src} className="border-t border-[#CCCCCE]/20">
             <div className={`${FRAME} grid items-start gap-8 py-12 lg:grid-cols-12 lg:gap-12 lg:py-16`}>
@@ -163,9 +142,12 @@ export default function HomePageClient() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/35 to-[#020405]/10" />
           <div className={`${FRAME} relative z-10 flex min-h-[calc(100svh-4.5rem)] max-w-none flex-col justify-end pb-16`}>
-            <h2 className="max-w-[14ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95] text-[#F4F4F4]">
-              There&apos;s a woman behind the strategy. And she has opinions.
+            <h2 className="max-w-xl text-[clamp(2rem,4vw,3.2rem)] leading-[1.15] text-[#F4F4F4]">
+              Stephanie Rose
             </h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#F4F4F4]">
+              Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.
+            </p>
             <div className="mt-10">
               <WrmButton href="/about" variant="camel">
                 About Stephanie

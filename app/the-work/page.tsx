@@ -14,11 +14,10 @@ export const metadata: Metadata = {
 export default function TheWorkPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <PaletteBand blue="The work" camel="On the record" />
+      <PaletteBand />
       <header className={`${FRAME} pb-6 pt-12 lg:pt-16`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The work</p>
-        <h1 className="mt-4 max-w-[12ch] text-[clamp(3.4rem,7vw,6.4rem)] leading-[0.88]">
-          On the record.
+        <h1 className="max-w-[12ch] text-[clamp(3.4rem,7vw,6.4rem)] leading-[0.88]">
+          The work
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed">
           Jen, Cheryl, and Jackie. The names, industries, photographs, and results already published on this site.

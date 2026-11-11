@@ -58,7 +58,7 @@ export const agencyNav: NavLink[] = [
     ],
   },
   { href: "/about", label: "About Stephanie" },
-  { href: "/blog", label: "The Journal" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 

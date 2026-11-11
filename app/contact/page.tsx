@@ -18,7 +18,7 @@ export default function ContactPage() {
       <div className={`${FRAME} grid gap-16 py-12 lg:grid-cols-12 lg:py-16`}>
         <div className="lg:col-span-5">
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Contact</p>
-          <h1 className="mt-4 text-[clamp(3.2rem,6vw,5.5rem)] leading-[0.9]">Write, call, or apply.</h1>
+          <h1 className="mt-4 text-[clamp(3.2rem,6vw,5.5rem)] leading-[0.9]">Contact</h1>
           <div className="mt-10 space-y-6 text-lg">
             <p>
               <a href={PHONE_TEL} className="border-b border-[#CCCCCE]/25">

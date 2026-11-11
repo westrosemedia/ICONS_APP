@@ -56,7 +56,7 @@ export default function WorkWithUsPage() {
       <PaletteBand />
       <header className={`${FRAME} flex min-h-[calc(100svh-10rem)] flex-col justify-end pb-16 pt-16`}>
         <h1 className="max-w-[14ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
-          What is open, what is full, what opens in January.
+          Work with us
         </h1>
         <div className="mt-10">
           <WrmButton href="/apply" variant="blue">

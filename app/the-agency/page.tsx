@@ -11,21 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/the-agency" },
 };
 
-const practices = [
-  {
-    title: "Direction",
-    body: "Stephanie leads strategy and creative direction. Goals, positioning, and the version of the brand that should be in public are set before anyone picks up a camera.",
-  },
-  {
-    title: "Making",
-    body: "Photography and video for founders, campaigns, and live rooms. The point is credibility, not a prettier grid.",
-  },
-  {
-    title: "Publishing",
-    body: "Social content and launch assets, edited and prepared so execution does not fall back on the founder.",
-  },
-];
-
 export default function TheAgencyPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
@@ -43,7 +28,7 @@ export default function TheAgencyPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/45 to-[#020405]/20" />
         <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
           <h1 className="wrm-fade-late max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88] text-[#F4F4F4]">
-            Built to be remembered.
+            The Agency
           </h1>
           <div className="wrm-fade-late mt-10">
             <WrmButton href="/work-with-us" variant="blue">
@@ -68,21 +53,6 @@ export default function TheAgencyPage() {
             <p>
               West Rose Media is built for people who want to move. Clear direction, decisive execution, and content that looks like leadership.
             </p>
-            <p>Pretty is not a strategy.</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className={`${FRAME} py-20 lg:py-28`}>
-          <p className="text-[11px] uppercase tracking-[0.28em] text-[#CCCCCE]">How the work is held</p>
-          <div className="mt-12 grid gap-12 border-t border-[#CCCCCE]/25 pt-12 md:grid-cols-3">
-            {practices.map((item) => (
-              <div key={item.title} className="border-t border-[#2D4B70] pt-6 md:border-t-0 md:border-l md:pl-6 md:pt-0 md:first:border-l-0 md:first:pl-0">
-                <h2 className="text-4xl">{item.title}</h2>
-                <p className="mt-4 text-[16px] leading-relaxed">{item.body}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -91,7 +61,7 @@ export default function TheAgencyPage() {
         <div className={`${FRAME} grid items-end gap-10 py-20 lg:grid-cols-12 lg:py-24`}>
           <div className="lg:col-span-7">
             <h2 className="max-w-[16ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95] text-white">
-              The flagship is a partnership, not a content calendar.
+              ICON Brand Partnership
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">
               ICON Brand Partnership is open. It is the inner system: strategic creative direction, brand and offer building, photography, video, social content, and launch assets, run as one team. <span className="text-[#916545]">From $5,000 CAD per month.</span> Six or twelve months. By application.

@@ -11,7 +11,7 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
 
   return (
     <article className="bg-[#020405] text-[#CCCCCE]">
-      <PaletteBand blue="The Journal" camel="Stephanie Rose" />
+      <PaletteBand />
       <header>
         <div className="relative h-[70vh] min-h-[320px] w-full">
           <Image
@@ -24,7 +24,7 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
           />
         </div>
         <div className="mx-auto w-[90%] max-w-4xl px-5 py-12 md:px-6 md:py-16">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">The Journal</p>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">Blog</p>
           <h1 className="mt-4 text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.02]">{post.title}</h1>
         </div>
       </header>

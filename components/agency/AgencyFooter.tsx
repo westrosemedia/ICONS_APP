@@ -24,7 +24,7 @@ export default function AgencyFooter() {
             West Rose Media
           </p>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-[#CCCCCE]/80">
-            A creative growth agency for brands ready to make a bigger impression. Based in Calgary.
+            A brand and content studio based in Calgary.
           </p>
           <p className="mt-6 text-sm">
             <a href={PHONE_TEL} className="hover:text-white">

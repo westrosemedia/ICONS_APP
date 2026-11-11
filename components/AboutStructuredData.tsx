@@ -25,7 +25,7 @@ export default function AboutStructuredData() {
       "@type": "Person",
       "name": "Stephanie Rose",
       "jobTitle": "Founder and Creative Director, West Rose Media",
-      "description": "Founder and creative director of West Rose Media, a creative growth agency based in Calgary. She leads strategy and creative direction, with photography, video, and content for founders across Canada.",
+      "description": "Founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary. She leads strategy and creative direction, with photography, video, and content for founders across Canada.",
       "url": "https://westrosemedia.com/about",
       "image": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
       "address": {

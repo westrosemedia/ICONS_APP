@@ -8,7 +8,7 @@ import { FRAME, portraits } from "@/lib/agency";
 export const metadata: Metadata = {
   title: "About Stephanie Rose | West Rose Media",
   description:
-    "Stephanie Rose is the founder and creative director of West Rose Media, a creative growth agency based in Calgary.",
+    "Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Stephanie Rose | West Rose Media",
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
           <div className="max-w-xl space-y-5 text-[17px] leading-[1.75]">
             <p>
-              Stephanie Rose is the founder and creative director of West Rose Media, a creative growth agency based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
+              Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
             </p>
             <p>
               She leads strategy and creative direction and works alongside a team of professional photographers, videographers, and content producers. The flagship engagement is the ICON Brand Partnership. West Rose Media serves clients in Calgary, Vancouver, Toronto, and across North America.
@@ -148,8 +148,7 @@ export default function AboutPage() {
 
       <section className="bg-[#020405] text-[#CCCCCE]">
         <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
-          <h2 className="text-5xl text-white">A point of view</h2>
-          <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-white">
+          <p className="font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-white">
             High-end content is not an aesthetic choice. It is a trust decision.
           </p>
           <div className="mt-8 space-y-5 text-[17px] leading-[1.75]">
@@ -173,10 +172,7 @@ export default function AboutPage() {
 
       <section>
         <div className={`${FRAME} max-w-3xl py-20 text-left`}>
-          <h2 className="text-[clamp(2.4rem,4vw,3.8rem)] leading-[1]">
-            There&apos;s a woman behind the strategy. And she has opinions.
-          </h2>
-          <p className="mt-6 text-[17px] leading-[1.75]">
+          <p className="text-[17px] leading-[1.75]">
             West Rose Media is based in Calgary and works with clients across Canada, including Vancouver and Toronto. The work is designed for established entrepreneurs, consultants, and event-led brands who want their presence to match their level.
           </p>
           <div className="mt-10">

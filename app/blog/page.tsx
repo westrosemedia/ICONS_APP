@@ -6,22 +6,17 @@ import { blogPosts } from "@/data/blogPosts";
 import { FRAME } from "@/lib/agency";
 
 export const metadata: Metadata = {
-  title: "The Journal | West Rose Media",
-  description:
-    "The Journal. Editorial notes from West Rose Media on brand, content, and being remembered.",
+  title: "Blog | West Rose Media",
+  description: "Blog from West Rose Media.",
   alternates: { canonical: "/blog" },
 };
 
 export default function BlogIndexPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <PaletteBand blue="The Journal" camel="Already published" />
+      <PaletteBand />
       <div className={`${FRAME} py-12 lg:py-16`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The Journal</p>
-        <h1 className="mt-4 max-w-[12ch] text-[clamp(3.2rem,7vw,6rem)] leading-[0.9]">The Journal</h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed">
-          Notes already published by the studio. The archive is not padded with new essays.
-        </p>
+        <h1 className="max-w-[12ch] text-[clamp(3.2rem,7vw,6rem)] leading-[0.9]">Blog</h1>
 
         <ul className="mt-16 border-t border-[#CCCCCE]/25">
           {blogPosts.map((post) => (
