@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WrmButton from "@/components/agency/WrmButton";
 import { homePageFaqItems } from "@/data/homePageFaq";
-import { FRAME, iconCopy, portraits } from "@/lib/agency";
+import { FRAME, portraits } from "@/lib/agency";
 import { homepageResults } from "@/lib/clientResults";
 
 const openingPictures = [
@@ -20,18 +20,15 @@ export default function HomePageClient() {
             <h1 className="mt-8 max-w-[8.5em] text-[clamp(2.5rem,4.4vw,4.5rem)] font-normal uppercase leading-[0.88]">
               The art of being impossible to ignore.
             </h1>
-            <div className="mt-8 max-w-md space-y-4 text-lg leading-relaxed text-[#CCCCCE]">
-              <p>
-                You get a brand that is sexy, edgy, and cool, the kind people compliment you on, with views high enough that you are taken seriously and you sell out what you want to sell.
-              </p>
-              <p>It is seamless, because I have worked on so many brands and the results are already public.</p>
-              <p>Everyone online is obsessed with me, and it is easy to see why.</p>
-            </div>
-            <p className="mt-10">
-              <Link href="/work-with-us" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
-                Work with us
-              </Link>
+            <p className="mt-8 max-w-md text-lg leading-relaxed text-[#CCCCCE]">
+              For founders who want a brand people compliment, views that get them taken seriously, and a business that sells out.
             </p>
+            <p className="mt-4 max-w-md text-lg leading-relaxed text-[#F4F4F4]">Working with me is seamless.</p>
+            <div className="mt-10">
+              <WrmButton href="/apply" variant="line">
+                Apply for ICON
+              </WrmButton>
+            </div>
           </div>
           <div className="grid gap-5 px-5 pb-8 sm:px-8 lg:grid-rows-2 lg:py-8 lg:pl-2 lg:pr-14">
             {openingPictures.map((picture) => (
@@ -51,11 +48,50 @@ export default function HomePageClient() {
       </section>
 
       <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
-        <div className={`${FRAME} py-20 lg:py-28`}>
+        <div className={`${FRAME} max-w-3xl space-y-5 py-20 text-lg leading-relaxed lg:py-28`}>
           <div className="h-0.5 w-16 bg-[#2D4B70]" />
-          <p className="mt-8 max-w-xl text-lg leading-relaxed">
-            These are posts from the studio, and the views on them.
+          <p>The brand does not get compliments.</p>
+          <p>The views do not match the business.</p>
+          <p>Selling still feels hard.</p>
+        </div>
+      </section>
+
+      <section className="bg-[#020405] text-[#CCCCCE]">
+        <div className={`${FRAME} max-w-3xl space-y-5 py-20 text-lg leading-relaxed lg:py-28`}>
+          <div className="h-0.5 w-16 bg-[#916545]" />
+          <p>The brand and the views come from the same work.</p>
+          <p>I lead it, so you do not assemble a team.</p>
+          <p>
+            You get monthly strategy intensives and a working roadmap, full content execution with a trusted thought partner, and publishing and analytics.
           </p>
+        </div>
+      </section>
+
+      <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
+        <div className={`${FRAME} max-w-3xl space-y-8 py-20 text-lg leading-relaxed lg:py-28`}>
+          <div className="h-0.5 w-16 bg-[#2D4B70]" />
+          <h2 className="max-w-[14ch] text-[clamp(2.4rem,4.5vw,3.8rem)] leading-[1] text-[#020405]">
+            ICON Brand Partnership
+          </h2>
+          <p>ICON is where I run the brand and the views together.</p>
+          <p>It is open, from $5,000 CAD per month, on a six or twelve month commitment, by application.</p>
+          <WrmButton href="/apply" variant="ink">
+            Apply for ICON
+          </WrmButton>
+          <p>Private 1:1 is direct time with me on the strategy behind the brand. It is full.</p>
+          <p>
+            Hot & Rich is four months with me on the strategy I am running now. It opens in January at $6,000 CAD. Biweekly live calls, text support inside the group three days a week, and a ticket to Wildly Wealthy Woman Live in Banff, March 2027.
+          </p>
+          <p>
+            Manifesting & Marketing is six months with Stephanie Rose and Jackie McDonald. It opens in January at $14,000 CAD, or $20,000 CAD with the retreat. Weekly coaching, personal tapping sessions, Cadence, and the Story Stack. The retreat adds Kananaskis. Signing up includes a ticket to Wildly Wealthy Woman Live.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#020405] text-[#CCCCCE]">
+        <div className={`${FRAME} py-20 lg:py-28`}>
+          <div className="h-0.5 w-16 bg-[#916545]" />
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#F4F4F4]">These are the views.</p>
           <div className="mt-16 grid gap-x-16 gap-y-20 sm:grid-cols-2">
             {homepageResults.map((result) => (
               <figure key={result.image.src} className="flex flex-col">
@@ -67,36 +103,42 @@ export default function HomePageClient() {
                   sizes="(max-width: 640px) 100vw, 42vw"
                   className="mx-auto h-auto max-h-[460px] w-auto max-w-full object-contain"
                 />
-                <figcaption className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#404042]">
+                <figcaption className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#CCCCCE]">
                   {result.caption}
                 </figcaption>
               </figure>
             ))}
           </div>
-          <p className="mt-16 text-lg">
-            <Link href="/results" className="border-b border-[#2D4B70] pb-0.5 text-[#020405]">
-              Client results
+          <p className="mt-16 max-w-xl text-lg leading-relaxed text-[#F4F4F4]">
+            Everyone online is obsessed with me, and it is easy to see why.
+          </p>
+          <p className="mt-8 text-lg">
+            <Link href="/results" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
+              Read the client results
             </Link>
           </p>
         </div>
       </section>
 
-      <section className="bg-[#020405] text-[#CCCCCE]">
-        <div className={`${FRAME} max-w-3xl space-y-8 py-20 text-lg leading-relaxed lg:py-28`}>
-          <div className="h-0.5 w-16 bg-[#916545]" />
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Work with us</p>
-          <h2 className="max-w-[12ch] text-[clamp(2.4rem,4.5vw,3.8rem)] leading-[1] text-[#F4F4F4]">
-            {iconCopy.heroTitle}
-          </h2>
-          <p>
-            ICON Brand Partnership is open. It starts at $5,000 CAD per month, on a six or twelve month commitment, by application. Monthly strategy intensives and a working roadmap, full content execution with a trusted thought partner, and publishing and analytics that drive real decisions.{" "}
-            <Link href="/apply" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
-              Apply for ICON
-            </Link>
-          </p>
-          <p>Private 1:1 coaching is full.</p>
-          <p>Hot & Rich opens in January at $6,000 CAD for four months.</p>
-          <p>Manifesting & Marketing opens in January at $14,000 CAD, or $20,000 CAD with the retreat.</p>
+      <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
+        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+          <div className="h-0.5 w-16 bg-[#2D4B70]" />
+          <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed">
+            <p>Apply. Every applicant gets a response.</p>
+            <p>Strategy and the work are handled with me.</p>
+            <p>ICON is open, from $5,000 CAD per month, for six or twelve months. Private 1:1 is full.</p>
+          </div>
+          <h2 className="mt-16 text-5xl text-[#020405]">Questions</h2>
+          <div className="mt-10 border-t border-[#CCCCCE]">
+            {homePageFaqItems.map((item) => (
+              <details key={item.question} className="border-b border-[#CCCCCE] py-5">
+                <summary className="cursor-pointer list-none font-[family-name:var(--font-wrm-display)] text-2xl leading-snug text-[#020405]">
+                  {item.question}
+                </summary>
+                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#404042]">{item.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,26 +163,13 @@ export default function HomePageClient() {
               West Rose Media was built during a season of real, irreversible change. I built this business while leaving religion, getting divorced, coming out, and raising three kids on my own. Later, I met my partner and built a life that finally felt aligned. Through all of it, the business kept working.
             </p>
           </div>
-          <div className="mt-10">
-            <WrmButton href="/about" variant="ink">
-              About Stephanie
+          <div className="mt-10 flex flex-col items-start gap-5">
+            <WrmButton href="/apply" variant="ink">
+              Apply for ICON
             </WrmButton>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#020405] text-[#CCCCCE]">
-        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
-          <h2 className="text-5xl text-[#F4F4F4]">Questions</h2>
-          <div className="mt-10 border-t border-[#666668]">
-            {homePageFaqItems.map((item) => (
-              <details key={item.question} className="border-b border-[#666668] py-5">
-                <summary className="cursor-pointer list-none font-[family-name:var(--font-wrm-display)] text-2xl leading-snug text-[#F4F4F4]">
-                  {item.question}
-                </summary>
-                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#CCCCCE]">{item.answer}</p>
-              </details>
-            ))}
+            <Link href="/work-with-us" className="border-b border-[#2D4B70] pb-0.5 text-[#020405]">
+              Work with us
+            </Link>
           </div>
         </div>
       </section>
