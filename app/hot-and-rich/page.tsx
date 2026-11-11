@@ -2,6 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
 import InstagramReel from "@/components/InstagramReel";
+import PaletteBand from "@/components/agency/PaletteBand";
 
 const STRIPE_PUBLISHABLE_KEY =
   "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
@@ -85,15 +86,9 @@ function StripePricingTable() {
 export default function HotAndRichPage() {
   return (
     <div className="bg-[#020405] text-[#F4F4F4] min-h-screen">
-      <Link
-        href="#pricing"
-        className="sticky top-[73px] z-30 block border-b border-[#CCCCCE]/20 bg-[#020405] px-4 py-3 text-center text-[#F4F4F4] hover:bg-[#2D4B70] transition-colors"
-      >
-        <p className="text-sm md:text-base tracking-wide">
-          Opens in January. $6,000 CAD for four months.{" "}
-          <span aria-hidden="true">→</span>
-        </p>
-      </Link>
+      <div className="sticky top-[73px] z-30">
+        <PaletteBand href="#pricing" blue="Opens in January." camel="$6,000 CAD for four months." />
+      </div>
 
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"

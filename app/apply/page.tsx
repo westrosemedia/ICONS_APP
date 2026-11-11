@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME } from "@/lib/agency";
 
 export const metadata: Metadata = {
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 export default function ApplyPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <section className={`${FRAME} max-w-3xl py-16 lg:py-24`}>
+      <PaletteBand blue="ICON" camel="Apply" />
+      <section className={`${FRAME} max-w-3xl py-12 lg:py-16`}>
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Application</p>
         <h1 className="mt-4 text-[clamp(2.8rem,6vw,4.8rem)] leading-[0.95]">
           Apply for the ICON Brand Partnership

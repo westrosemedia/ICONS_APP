@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SproutStudioLeadForm from "@/components/SproutStudioLeadForm";
+import PaletteBand from "@/components/agency/PaletteBand";
 import WrmButton from "@/components/agency/WrmButton";
 import { FRAME, PHONE_DISPLAY, PHONE_TEL, PUBLIC_EMAIL } from "@/lib/agency";
 
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <div className={`${FRAME} grid gap-16 py-16 lg:grid-cols-12 lg:py-24`}>
+      <PaletteBand blue="Contact" camel="Calgary" />
+      <div className={`${FRAME} grid gap-16 py-12 lg:grid-cols-12 lg:py-16`}>
         <div className="lg:col-span-5">
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Contact</p>
           <h1 className="mt-4 text-[clamp(3.2rem,6vw,5.5rem)] leading-[0.9]">Write, call, or apply.</h1>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME, portraits } from "@/lib/agency";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function CoachingPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
+      <PaletteBand blue="Private 1:1" camel="This is full" />
       <section className="grid lg:grid-cols-12">
         <div className={`${FRAME} py-16 lg:col-span-6 lg:max-w-none lg:py-24`}>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Private</p>

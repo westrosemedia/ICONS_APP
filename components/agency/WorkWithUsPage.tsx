@@ -1,4 +1,5 @@
 import WrmButton from "@/components/agency/WrmButton";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME, iconCopy } from "@/lib/agency";
 
 const offers = [
@@ -52,7 +53,8 @@ const offers = [
 export default function WorkWithUsPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <header className={`${FRAME} pb-8 pt-16 lg:pt-24`}>
+      <PaletteBand blue="Open, full, January" camel="Work with us" />
+      <header className={`${FRAME} pb-8 pt-12 lg:pt-16`}>
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Work with us</p>
         <h1 className="mt-4 max-w-[16ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
           What is open, what is full, what opens in January.

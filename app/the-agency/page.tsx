@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import WrmButton from "@/components/agency/WrmButton";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME, portraits } from "@/lib/agency";
 
 export const metadata: Metadata = {
@@ -28,25 +29,29 @@ const practices = [
 export default function TheAgencyPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <header className="relative min-h-[100svh] overflow-hidden">
-        <Image
-          src={portraits.featured}
-          alt="Stephanie Rose"
-          fill
-          priority
-          className="object-cover object-[center_22%] wrm-ken"
-          sizes="100vw"
-        />
+      <header className="relative flex min-h-[calc(100svh-4.5rem)] flex-col">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src={portraits.featured}
+            alt="Stephanie Rose"
+            fill
+            priority
+            className="object-cover object-[center_22%] wrm-ken"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/45 to-[#020405]/20" />
-        <div className={`${FRAME} relative z-10 flex min-h-[100svh] max-w-none flex-col justify-end pb-16 pt-28`}>
+        <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
           <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The agency</p>
-          <div className="wrm-fade mt-5 h-px w-16 bg-[#2D4B70]" />
           <h1 className="wrm-fade-late mt-6 max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88] text-[#F4F4F4]">
             Built to be remembered.
           </h1>
           <p className="wrm-fade-late mt-8 max-w-xl text-lg leading-relaxed text-[#F4F4F4]">
             High-end photography and video for social media. Strategy and publishing stay in the same studio. Based in Calgary, with shoots in Vancouver and Toronto.
           </p>
+        </div>
+        <div className="relative z-10">
+          <PaletteBand />
         </div>
       </header>
 

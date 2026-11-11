@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import AboutStructuredData from "@/components/AboutStructuredData";
+import PaletteBand from "@/components/agency/PaletteBand";
 import WrmButton from "@/components/agency/WrmButton";
 import { FRAME, portraits } from "@/lib/agency";
 
@@ -31,22 +32,27 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <Image
-          src={portraits.hero}
-          alt="Stephanie Rose, founder of West Rose Media"
-          fill
-          priority
-          className="object-cover object-[center_18%] wrm-ken"
-          sizes="100vw"
-        />
+      <section className="relative flex min-h-[calc(100svh-4.5rem)] flex-col">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src={portraits.hero}
+            alt="Stephanie Rose, founder of West Rose Media"
+            fill
+            priority
+            className="object-cover object-[center_18%] wrm-ken"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/35 to-[#020405]/15" />
-        <div className={`${FRAME} relative z-10 flex min-h-[100svh] max-w-none flex-col justify-end pb-16 pt-28`}>
+        <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
           <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">About Stephanie</p>
           <h1 className="wrm-fade-late mt-4 text-[clamp(4rem,9vw,8rem)] leading-[0.84] text-[#F4F4F4]">
             Stephanie
-            <span className="block italic">Rose</span>
+            <span className="block italic text-[#916545]">Rose</span>
           </h1>
+        </div>
+        <div className="relative z-10">
+          <PaletteBand blue="Founder" camel="Calgary" />
         </div>
       </section>
 

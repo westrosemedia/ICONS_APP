@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/types/blog";
+import PaletteBand from "@/components/agency/PaletteBand";
 
 const column =
   "max-w-[680px] w-[90%] md:w-full mx-auto px-5 md:px-6 text-[18px] md:text-[20px] leading-[1.8] text-[#CCCCCE]";
@@ -10,6 +11,7 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
 
   return (
     <article className="bg-[#020405] text-[#CCCCCE]">
+      <PaletteBand blue="The Journal" camel="Stephanie Rose" />
       <header>
         <div className="relative h-[70vh] min-h-[320px] w-full">
           <Image

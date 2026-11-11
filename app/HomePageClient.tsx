@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CinematicVideo from "@/components/agency/CinematicVideo";
+import PaletteBand from "@/components/agency/PaletteBand";
 import WrmButton from "@/components/agency/WrmButton";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { FRAME, iconCopy, portraits } from "@/lib/agency";
@@ -36,14 +37,6 @@ const capabilities = [
   },
 ];
 
-type ProofPlate = {
-  image: HotAndViralImage;
-  name?: string;
-  lines: string[];
-  className?: string;
-  sizes: string;
-};
-
 function proofImage(src: string): HotAndViralImage {
   const pool: Array<HotAndViralImage | null> = [
     ...winShots,
@@ -64,135 +57,64 @@ function proofImage(src: string): HotAndViralImage {
   return image;
 }
 
-const erinAfter = proofImage("/hot-and-viral/erin-after.jpg");
-
-const phoneProof: ProofPlate[] = [
+const proofs = [
+  {
+    image: proofImage("/hot-and-viral/erin-after.jpg"),
+    name: "Erin",
+    sentence:
+      "Erin’s later reels show view counts of 4,552, 774, 3,471, 2,850, 5,258, 3,807, 925, 1,514 and 852.",
+  },
   {
     image: proofImage("/hot-and-viral/cammy-after-1-4m.jpg"),
     name: "Cammy",
-    lines: ["1,417,529 views"],
-    sizes: "(max-width: 768px) 100vw, 33vw",
+    sentence: "Cammy’s reel insights show 1,417,529 views.",
   },
   {
     image: proofImage("/hot-and-viral/reel-401k-follows.jpg"),
     name: "Stephanie Rose",
-    lines: ["401,794 views", "12,157 follows"],
-    sizes: "(max-width: 768px) 100vw, 33vw",
-  },
-  {
-    image: proofImage("/hot-and-viral/cammy-reel-420k.jpg"),
-    name: "Cammy",
-    lines: ["419,979 views"],
-    sizes: "(max-width: 768px) 100vw, 33vw",
-  },
-];
-
-const statProof: ProofPlate[] = [
-  {
-    image: proofImage("/hot-and-viral/views-4-9-million.jpg"),
-    lines: ["4,940,292 views", "34,711 followers"],
-    className: "lg:col-span-7",
-    sizes: "(max-width: 1024px) 100vw, 58vw",
-  },
-  {
-    image: proofImage("/hot-and-viral/views-2-2-million.jpg"),
-    lines: ["30-day insights", "2,243,099 views", "10,977 new followers"],
-    className: "lg:col-span-5",
-    sizes: "(max-width: 1024px) 100vw, 40vw",
-  },
-  {
-    image: proofImage("/hot-and-viral/views-1-9-million-week.jpg"),
-    lines: ["7-day insights", "1,905,912 views", "12,994 new followers"],
-    className: "lg:col-span-5",
-    sizes: "(max-width: 1024px) 100vw, 40vw",
-  },
-  {
-    image: proofImage("/hot-and-viral/cammy-90-days.jpg"),
-    name: "Cammy",
-    lines: ["1,388,924 views", "978 followers"],
-    sizes: "(max-width: 1024px) 100vw, 58vw",
+    sentence: "Stephanie Rose’s reel insights show 401,794 views and 12,157 follows.",
   },
   {
     image: proofImage("/hot-and-viral/erin-summary.jpg"),
     name: "Erin",
-    lines: [
-      "August 11 to November 8",
-      "94,337 views, up 483.6% versus August 10",
-      "602 followers, up 18.3%",
-      "93 net followers",
-    ],
-    sizes: "(max-width: 1024px) 100vw, 58vw",
+    sentence:
+      "From August 11 to November 8, Erin’s account had 94,337 views, up 483.6% versus August 10, 602 followers, up 18.3%, and 93 net followers.",
   },
   {
-    image: proofImage("/hot-and-viral/video-views-417k.jpg"),
-    lines: ["417,100 views", "9,900 new followers"],
-    className: "lg:col-span-7",
-    sizes: "(max-width: 1024px) 100vw, 58vw",
+    image: proofImage("/hot-and-viral/cammy-90-days.jpg"),
+    name: "Cammy",
+    sentence: "Cammy’s 90-day summary shows 1,388,924 views and 978 followers.",
   },
 ];
-
-function ProofFigure({
-  plate,
-  tone = "ink",
-}: {
-  plate: ProofPlate;
-  tone?: "ink" | "light";
-}) {
-  const nameColor = "text-[#CCCCCE]";
-  const lineColor = tone === "light" ? "text-[#CCCCCE]/85" : "text-[#CCCCCE]/75";
-
-  return (
-    <figure className={plate.className}>
-      <Image
-        src={plate.image.src}
-        alt={plate.image.alt}
-        width={plate.image.width}
-        height={plate.image.height}
-        sizes={plate.sizes}
-        className="h-auto w-full ring-1 ring-[#CCCCCE]/15"
-      />
-      <figcaption className="mt-4">
-        {plate.name ? (
-          <p className={`text-[11px] font-medium uppercase tracking-[0.22em] ${nameColor}`}>
-            {plate.name}
-          </p>
-        ) : null}
-        <div className={plate.name ? "mt-2" : undefined}>
-          {plate.lines.map((line) => (
-            <p key={line} className={`text-[15px] leading-relaxed ${lineColor}`}>
-              {line}
-            </p>
-          ))}
-        </div>
-      </figcaption>
-    </figure>
-  );
-}
 
 export default function HomePageClient() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative flex min-h-[calc(100svh-4.5rem)] flex-col">
+        <div className="absolute inset-0 overflow-hidden">
           <CinematicVideo src={homePageAssets.topVideo} poster={homePageAssets.topVideoStill} />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/50 to-[#020405]/25" />
-        <div className={`${FRAME} relative z-10 flex min-h-[100svh] max-w-none flex-col justify-end pb-16 pt-28`}>
+        <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
           <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
             West Rose Media
           </p>
-          <div className="wrm-fade mt-5 h-px w-16 bg-[#2D4B70]" />
           <h1 className="wrm-fade-late mt-6 max-w-[8em] text-[clamp(2.7rem,6.6vw,6.2rem)] font-normal uppercase leading-[0.84] text-[#F4F4F4]">
             The art of being
-            <span className="mt-2 block italic">impossible to ignore.</span>
+            <span className="mt-2 block italic text-[#916545]">impossible to ignore.</span>
           </h1>
           <p className="wrm-fade-late mt-8 text-lg text-[#F4F4F4]">Stephanie Rose. Calgary.</p>
           <div className="wrm-fade-late mt-10 flex flex-col gap-3 sm:flex-row">
-            <WrmButton href="/the-agency">The agency</WrmButton>
-            <WrmButton href="/work-with-us" variant="line">
+            <WrmButton href="/the-agency" variant="blue">
+              The agency
+            </WrmButton>
+            <WrmButton href="/work-with-us" variant="camel">
               Work with us
             </WrmButton>
           </div>
+        </div>
+        <div className="relative z-10">
+          <PaletteBand />
         </div>
       </section>
 
@@ -287,79 +209,33 @@ export default function HomePageClient() {
             Real accounts. Real content. Real reach.
           </p>
 
-          <figure className="mt-16 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
-              <Image
-                src={erinAfter.src}
-                alt={erinAfter.alt}
-                width={erinAfter.width}
-                height={erinAfter.height}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="h-auto w-full lg:max-w-[640px]"
-              />
-            </div>
-            <figcaption className="lg:sticky lg:top-24 lg:col-span-4 lg:col-start-9 lg:self-start">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#CCCCCE]">
-                Erin
-              </p>
-              <p className="mt-4 font-[family-name:var(--font-wrm-display)] text-5xl leading-[0.95] md:text-6xl">
-                5,258 views
-              </p>
-              <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-[#CCCCCE]/80">
-                {erinAfter.alt}
-              </p>
-            </figcaption>
-          </figure>
         </div>
 
-        <div className="mt-20 bg-[#404042] text-[#CCCCCE] lg:mt-28">
-          <div className={`${FRAME} grid gap-14 py-16 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-3 lg:py-24`}>
-            {phoneProof.map((plate) => (
-              <figure key={plate.image.src} className="flex flex-col">
-                <div className="flex items-end justify-center lg:h-[70vh] lg:max-h-[780px] lg:min-h-[520px]">
+        <div className="mt-8">
+          {proofs.map((proof) => (
+            <figure key={proof.image.src} className="border-t border-[#CCCCCE]/25">
+              <div className={`${FRAME} grid items-start gap-10 py-16 lg:grid-cols-12 lg:gap-16 lg:py-24`}>
+                <div className="lg:col-span-6">
                   <Image
-                    src={plate.image.src}
-                    alt={plate.image.alt}
-                    width={plate.image.width}
-                    height={plate.image.height}
-                    sizes={plate.sizes}
-                    className="h-auto w-full object-contain lg:h-full lg:w-auto lg:max-w-full"
+                    src={proof.image.src}
+                    alt={proof.image.alt}
+                    width={proof.image.width}
+                    height={proof.image.height}
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="mx-auto h-auto max-h-[78vh] w-full object-contain"
                   />
                 </div>
-                <figcaption className="mt-6">
-                  {plate.name ? (
-                    <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#CCCCCE]">
-                      {plate.name}
-                    </p>
-                  ) : null}
-                  <div className="mt-2">
-                    {plate.lines.map((line) => (
-                      <p key={line} className="text-[15px] leading-relaxed text-[#CCCCCE]/85">
-                        {line}
-                      </p>
-                    ))}
-                  </div>
+                <figcaption className="lg:col-span-5 lg:col-start-8">
+                  <p className="inline-block bg-[#2D4B70] px-5 py-3 font-[family-name:var(--font-wrm-display)] text-4xl leading-none text-[#F4F4F4] md:text-5xl">
+                    {proof.name}
+                  </p>
+                  <p className="mt-6 max-w-md font-[family-name:var(--font-wrm-display)] text-[clamp(1.6rem,2.4vw,2.15rem)] italic leading-snug text-[#916545]">
+                    {proof.sentence}
+                  </p>
                 </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-
-        <div className={`${FRAME} grid gap-16 py-20 lg:gap-24 lg:py-28`}>
-          <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-10">
-            <ProofFigure plate={statProof[0]} />
-            <ProofFigure plate={statProof[1]} />
-          </div>
-          <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-10">
-            <ProofFigure plate={statProof[2]} />
-            <div className="grid content-start gap-16 lg:col-span-7">
-              <ProofFigure plate={statProof[3]} />
-              <ProofFigure plate={statProof[4]} />
-            </div>
-          </div>
-          <div className="grid lg:grid-cols-12">
-            <ProofFigure plate={statProof[5]} />
-          </div>
+              </div>
+            </figure>
+          ))}
         </div>
       </section>
 

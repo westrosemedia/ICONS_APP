@@ -7,6 +7,10 @@ const variants = {
     "border-[#CCCCCE] bg-transparent text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#020405]",
   light:
     "border-[#F4F4F4] bg-transparent text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#020405]",
+  blue:
+    "border-[#2D4B70] bg-[#2D4B70] text-[#F4F4F4] hover:border-[#F4F4F4] hover:bg-[#020405]",
+  camel:
+    "border-[#916545] bg-[#916545] text-[#F4F4F4] hover:border-[#F4F4F4] hover:bg-[#020405]",
 } as const;
 
 export default function WrmButton({

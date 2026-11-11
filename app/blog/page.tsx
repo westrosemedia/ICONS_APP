@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { blogPosts } from "@/data/blogPosts";
 import { FRAME } from "@/lib/agency";
 
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <div className={`${FRAME} py-16 lg:py-24`}>
+      <PaletteBand blue="The Journal" camel="Already published" />
+      <div className={`${FRAME} py-12 lg:py-16`}>
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The Journal</p>
         <h1 className="mt-4 max-w-[12ch] text-[clamp(3.2rem,7vw,6rem)] leading-[0.9]">The Journal</h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed">

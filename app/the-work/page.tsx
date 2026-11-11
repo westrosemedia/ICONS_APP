@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+import PaletteBand from "@/components/agency/PaletteBand";
 import { clientStudies, FRAME } from "@/lib/agency";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 export default function TheWorkPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <header className={`${FRAME} pb-6 pt-16 lg:pt-24`}>
+      <PaletteBand blue="The work" camel="On the record" />
+      <header className={`${FRAME} pb-6 pt-12 lg:pt-16`}>
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The work</p>
         <h1 className="mt-4 max-w-[12ch] text-[clamp(3.4rem,7vw,6.4rem)] leading-[0.88]">
           On the record.
