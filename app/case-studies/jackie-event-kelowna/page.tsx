@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 
-import { Button } from "@/components/ui/button";
-
 export const metadata: Metadata = {
   title: "Jackie — Event Case Study",
   description:
@@ -104,7 +102,7 @@ export default function JackieEventKelownaCaseStudyPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {eventImages.map((image) => (
-              <div key={image.src} className="rounded-2xl overflow-hidden bg-white">
+              <div key={image.src} className="overflow-hidden bg-white">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -133,20 +131,18 @@ export default function JackieEventKelownaCaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-black">
+      <section className="section-padding bg-[#4A1828]">
         <div className="container-elegant text-center">
           <h2 className="text-hero text-white mb-6">Want this for your brand?</h2>
           <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
             If you are a founder ready to turn visibility into opportunity without managing content yourself, you can apply to work with us.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
-              <Link href="/apply">Apply for the ICON Brand Partnership</Link>
-            </Button>
-            <Link href="/packages" className="text-white/80 hover:text-white underline underline-offset-4">
-              View Event and Immersion Packages
-            </Link>
-          </div>
+          <Link
+            href="/apply"
+            className="inline-flex border border-white px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-white"
+          >
+            Apply for the ICON Brand Partnership
+          </Link>
         </div>
       </section>
     </main>

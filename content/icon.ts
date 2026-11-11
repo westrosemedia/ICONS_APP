@@ -14,7 +14,7 @@ export const iconCopy = {
     "Free access to ICON Society while you are active"
   ],
   beliefShift:
-    "This is not about posting more. This is about becoming the face of your category. You cannot lead a market with average content and scattered delivery.",
+    "You become the face of your category. You cannot lead a market with average content and scattered delivery.",
   priceLine:
     "Custom monthly retainer. Typical engagement from five thousand CAD per month. GST included.",
   scarcity:

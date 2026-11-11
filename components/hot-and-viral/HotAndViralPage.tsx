@@ -12,6 +12,7 @@ import {
   copy,
   copycatPairs,
   countdownTarget,
+  openingWindow,
   getPageState,
   memberResults,
   splitRemaining,
@@ -94,10 +95,12 @@ function CountdownDigits({
   nowMs,
   state,
   align = "center",
+  compact = false,
 }: {
   nowMs: number;
   state: Exclude<PageState, "closed">;
   align?: "center" | "start";
+  compact?: boolean;
 }) {
   const target = countdownTarget(state) ?? nowMs;
   const parts = splitRemaining(target - nowMs);
@@ -108,12 +111,28 @@ function CountdownDigits({
     ["Minutes", parts.minutes],
     ["Seconds", parts.seconds],
   ] as const;
+  const ariaLabel = `${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds`;
+
+  if (compact) {
+    return (
+      <div className="flex items-baseline justify-center gap-2.5 whitespace-nowrap sm:gap-4" role="timer" aria-label={ariaLabel}>
+        {units.map(([unit, value]) => (
+          <span key={unit} className="text-center">
+            <span className="font-heading text-[1.05rem] leading-none tabular-nums tracking-[-0.03em] text-[#f41cdc] sm:text-xl">
+              {pad(value)}
+            </span>
+            <span className="ml-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-white/70 sm:text-[10px]">{unit}</span>
+          </span>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
       className={`flex gap-2 sm:gap-4 lg:gap-6 ${align === "start" ? "justify-center lg:justify-start" : "justify-center"}`}
       role="timer"
-      aria-label={`${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds. ${copy.countdown.line}`}
+      aria-label={ariaLabel}
     >
       {units.map(([unit, value]) => (
         <div key={unit} className="min-w-[4.4rem] text-center sm:min-w-[5.4rem] lg:min-w-[6.75rem]">
@@ -136,18 +155,10 @@ function CountdownBanner({
   state: Exclude<PageState, "closed">;
   sticky?: boolean;
 }) {
-  const label = state === "before" ? copy.countdown.before : copy.countdown.open;
-
   return (
     <div className={`${sticky ? "sticky top-[73px] z-30" : ""} bg-black text-white`}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-4 sm:py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-8 lg:py-6">
-        <div className="flex w-full flex-col items-center gap-2 lg:w-auto lg:items-start">
-          <p className="text-center text-lg font-semibold tracking-wide text-white sm:text-xl lg:text-left">{label}</p>
-          <CountdownDigits nowMs={nowMs} state={state} align="start" />
-        </div>
-        <p className="max-w-md text-center text-[15px] font-normal leading-relaxed text-white sm:text-base lg:max-w-lg lg:text-left">
-          {copy.countdown.line}
-        </p>
+      <div className="px-3 py-1.5 sm:py-2">
+        <CountdownDigits nowMs={nowMs} state={state} compact />
       </div>
     </div>
   );
@@ -534,7 +545,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                   {paragraph.text}
                 </p>
               ))}
-              <p>{copy.hero.window}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state}>{copy.hero.button}</StateButton>
@@ -796,7 +806,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <h2 id="only-way-heading" className={h2}>
               {copy.onlyWay.heading}
             </h2>
-            <p className={`${lede} mt-6`}>{copy.onlyWay.body}</p>
+            <p className={`${lede} mt-6`}>{copy.onlyWay.body.replace(openingWindow, "").replace(/\s+/g, " ").trim()}</p>
           </div>
         </div>
       </section>
@@ -964,7 +974,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <div className="container-elegant">
             <div className="max-w-xl">
               <h2 className={h2}>{copy.firstAccess.heading}</h2>
-              <p className={`${lede} mt-6`}>{copy.firstAccess.body}</p>
+              <p className={`${lede} mt-6`}>{copy.firstAccess.body.replace(openingWindow, "").replace(/\s+/g, " ").trim()}</p>
               <div className="mt-10">
                 <AccessForm list="waitlist" button={copy.firstAccess.button} success={copy.firstAccess.success} />
               </div>
@@ -1012,9 +1022,11 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               {copy.final.heading}
             </h2>
             <div className="mx-auto mt-6 max-w-xl space-y-5 text-[17px] leading-relaxed text-white/80">
-              {copy.final.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {copy.final.paragraphs
+                .filter((paragraph) => paragraph !== openingWindow)
+                .map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
             </div>
             <div className="mx-auto mt-10 max-w-3xl">
               <p className="text-lg font-semibold text-white sm:text-xl">
@@ -1023,7 +1035,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
               </div>
-              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white sm:text-base">{copy.countdown.line}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state} tone="light" />

@@ -5,7 +5,7 @@ export default function StructuredData() {
     "name": "Stephanie Rose",
     "alternateName": "Stephanie Rose West Rose Media",
     "jobTitle": "Founder, Creative Director",
-    "description": "Founder of West Rose Media. Leads strategy and creative direction for brand photography, event coverage, and the ICON Brand Partnership for founders across Canada.",
+    "description": "Founder of West Rose Media, a brand and content studio based in Calgary. Leads strategy and creative direction, with photography, video, and the ICON Brand Partnership.",
     "url": "https://westrosemedia.com",
     "image": "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7",
     "address": {
@@ -46,7 +46,7 @@ export default function StructuredData() {
     "name": "West Rose Media",
     "alternateName": ["West Rose Media Photography"],
     "url": "https://westrosemedia.com",
-    "description": "Luxury personal branding, content creation, and mastermind retreats for entrepreneurs in Canada. Professional brand photography and social media strategy.",
+    "description": "West Rose Media is a brand and content studio based in Calgary. Strategy, photography, video, and the ICON Brand Partnership.",
     "foundingDate": "2020",
     "founder": {
       "@type": "Person",
@@ -149,7 +149,7 @@ export default function StructuredData() {
     "name": "West Rose Media",
     "alternateName": "ICONS by West Rose Media",
     "url": "https://westrosemedia.com",
-    "description": "Luxury personal branding photography and business coaching for female entrepreneurs in Calgary, Alberta and across Canada. Professional brand photography, content strategy, and mastermind retreats.",
+    "description": "West Rose Media is a brand and content studio based in Calgary and working with founders across Canada.",
     "publisher": {
       "@type": "Organization",
       "name": "West Rose Media"
@@ -190,7 +190,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start, with a luxury retreat in Kananaskis.",
+    "description": "The Manifesting & Marketing Mastermind opens in January. Stephanie Rose and Jackie McDonald. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat.",
     "startDate": "2027-01-01",
     "location": {
       "@type": "Place",

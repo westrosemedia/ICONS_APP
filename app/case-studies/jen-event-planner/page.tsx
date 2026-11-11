@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 
-import { Button } from "@/components/ui/button";
-
 export const metadata: Metadata = {
   title: "Jen — Event Planner Case Study",
   description:
@@ -83,7 +81,7 @@ export default function JenEventPlannerCaseStudyPage() {
         <div className="container-elegant">
           <div className="grid gap-4 md:grid-cols-3">
             {proofImages.map((image) => (
-              <div key={image.src} className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <div key={image.src} className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -107,7 +105,7 @@ export default function JenEventPlannerCaseStudyPage() {
             </h2>
           </div>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_2fr] items-start">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+            <div className="relative aspect-[4/5] overflow-hidden border border-gray-200 shadow-sm">
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/WhatsApp%20Image%202026-01-16%20at%2015.14.54.jpeg?alt=media&token=8abf239e-10ec-4fbf-b351-906a817a60b2"
                 alt="Jen event planner before image"
@@ -119,7 +117,7 @@ export default function JenEventPlannerCaseStudyPage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {afterImages.map((image) => (
-                <div key={image.src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+                <div key={image.src} className="relative aspect-[3/4] overflow-hidden">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -189,15 +187,18 @@ export default function JenEventPlannerCaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-black">
+      <section className="section-padding bg-[#4A1828]">
         <div className="container-elegant text-center">
           <h2 className="text-hero text-white mb-6">Want this for your brand?</h2>
           <p className="text-editorial text-white/90 max-w-2xl mx-auto mb-10">
             If you are a founder ready to turn visibility into opportunity without managing content yourself, you can apply to work with us.
           </p>
-          <Button asChild size="lg" className="group bg-white text-black hover:bg-gray-100">
-            <Link href="/packages">Work with Us</Link>
-          </Button>
+          <Link
+            href="/work-with-us"
+            className="inline-flex border border-white px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-white"
+          >
+            Work with us
+          </Link>
         </div>
       </section>
     </main>

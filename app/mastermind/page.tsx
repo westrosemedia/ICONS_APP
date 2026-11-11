@@ -40,7 +40,7 @@ const IMAGES = {
 const META = {
   title: "Manifesting & Marketing Mastermind | West Rose Media",
   description:
-    "Now taking deposits for a January 2027 start. Six months. One room. Stephanie and Jackie. Sign up and get a ticket to Wildly Wealthy Woman Live.",
+    "The Manifesting & Marketing Mastermind opens in January. $14,000 CAD, or $20,000 CAD with the Kananaskis retreat. Stephanie Rose and Jackie McDonald.",
 };
 
 export const revalidate = 0;
@@ -129,7 +129,7 @@ const whatYouGet = [
   },
   {
     title: "The Story Stack",
-    body: "Stephanie's five-story content framework. You are not creating from scratch. You are running the rotation.",
+    body: "Stephanie's five-story content framework. You are running the rotation.",
     image: IMAGES.inside,
     alt: "The Story Stack content framework",
   },
@@ -283,11 +283,8 @@ export default function MastermindPage() {
             money. Six months. One room. Stephanie and Jackie in your corner the
             entire time.
           </p>
-          <p className={`${eyebrow} mb-4 text-white/70`}>
-            Now taking deposits for a January 2027 start.
-          </p>
-          <p className="text-base md:text-lg text-white/90 mb-4 max-w-xl mx-auto">
-            In January, the full mastermind price goes up to $25,000.
+          <p className={`${eyebrow} mb-10 text-white/70`}>
+            Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
           </p>
           <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
             Sign up and get a ticket to{" "}
@@ -354,8 +351,7 @@ export default function MastermindPage() {
                 </p>
                 <p>
                   You get on a call with a handful of women building at the
-                  level you&apos;re trying to reach, not the level you already
-                  left behind. Someone asks the question you&apos;ve been
+                  level you&apos;re trying to reach. Someone asks the question you&apos;ve been
                   sitting with for six months. Someone else already solved it.
                 </p>
                 <p>
@@ -386,8 +382,7 @@ export default function MastermindPage() {
               <p>
                 Most women stay stuck for one of two reasons. They don&apos;t
                 have a system, just ideas they&apos;re reinventing from scratch
-                every week. Or their messaging is off, they&apos;re talking at
-                their audience instead of turning followers into people who
+                every week. Or their messaging needs to turn followers into people who
                 finish their sentences and beg to work with them. Fix both, and
                 every post stops being a guessing game and every sale stops
                 feeling like convincing someone.
@@ -558,14 +553,11 @@ export default function MastermindPage() {
               watching it get sold as magic, and got burned badly enough by it
               herself that she built her own rule: she never sells a strategy
               until she&apos;s proven it works on six to ten real clients first.
-              That&apos;s the whole premise of the mastermind. Not theory. Not a
-              framework she read about. A system she&apos;s already run.
+              That&apos;s the whole premise of the mastermind. A system she&apos;s already run.
             </p>
             <p className="text-lg text-white/80 leading-relaxed">
               Jackie created the Wildly Wealthy Woman meditation and built
-              Tapping School from an 800-square-foot house as a single mom. Her
-              work isn&apos;t about needing her forever. She teaches the tool,
-              not dependency on her. Nervous system work, identity work, and the
+              Tapping School from an 800-square-foot house as a single mom. She teaches the tool. Nervous system work, identity work, and the
               version of you who can actually hold what you&apos;re building.
             </p>
             <p className="text-[#c1ff72] font-heading italic text-xl md:text-2xl font-light">
@@ -614,7 +606,7 @@ export default function MastermindPage() {
                   women who are actually doing it.
                 </p>
                 <p className="text-white/90 leading-relaxed max-w-xl mt-4">
-                  In January, the full mastermind price goes up to $25,000.
+                  Opens in January.
                 </p>
               </div>
               <div className="border-t border-white/15 pt-8">
@@ -632,9 +624,8 @@ export default function MastermindPage() {
                 </p>
               </div>
               <p className="text-lg text-white/80 leading-relaxed max-w-xl pt-2">
-                Deposits are open for a January 2027 start. In January, the full
-                mastermind price goes up to $25,000. Signing up includes
-                a ticket to{" "}
+                Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
+                Signing up includes a ticket to{" "}
                 <a
                   href={WILDLY_WEALTHY_LIVE_URL}
                   target="_blank"
@@ -725,9 +716,8 @@ export default function MastermindPage() {
               Choose the room. Choose the team. Choose to build the movement.
             </p>
             <p className="text-lg text-black/80 max-w-xl mx-auto leading-relaxed">
-              Deposits are open for a January 2027 start. In January, the full
-              mastermind price goes up to $25,000. Signing up includes a
-              ticket to{" "}
+              Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.
+              Signing up includes a ticket to{" "}
               <a
                 href={WILDLY_WEALTHY_LIVE_URL}
                 target="_blank"

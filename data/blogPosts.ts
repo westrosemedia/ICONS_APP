@@ -1,5 +1,4 @@
 import type { BlogPost } from "@/types/blog";
-import { SPOTLIGHT_BOOK_URL } from "@/lib/workWithUsLinks";
 
 /** Blog post images (Firebase Storage). */
 const P = {
@@ -57,7 +56,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "body",
         paragraphs: [
-          "The problem is not the quality of the photographer. It is that a good photo and a strategic brand photo are completely different things. One captures what you look like. The other captures who you are, who you serve, and why you are the obvious choice. That second thing requires someone who understands your brand, your positioning, and exactly what your ideal client needs to feel before they reach out.",
+          "A good photo and a strategic brand photo are completely different things. One captures what you look like. The other captures who you are, who you serve, and why you are the obvious choice. That second thing requires someone who understands your brand, your positioning, and exactly what your ideal client needs to feel before they reach out.",
         ],
       },
       { type: "imageBreak", imageUrl: P.break2, alt: "Creative direction during a brand shoot" },
@@ -77,9 +76,9 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     cta: {
-      headline: "Spotlight sessions are available now in Calgary, Vancouver, and Toronto.",
-      buttonLabel: "Book a Spotlight Shoot",
-      href: SPOTLIGHT_BOOK_URL,
+      headline: "If you want to talk about working together, start here.",
+      buttonLabel: "Work with us",
+      href: "/work-with-us",
     },
   },
 ];

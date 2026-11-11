@@ -1,0 +1,97 @@
+import WrmButton from "@/components/agency/WrmButton";
+import { FRAME, iconCopy } from "@/lib/agency";
+
+const offers = [
+  {
+    index: "01",
+    kicker: "Flagship. Open.",
+    title: "ICON Brand Partnership",
+    href: "/icon",
+    body: iconCopy.intro,
+    meta: "Open. From $5,000 CAD per month. Six or twelve month commitment. By application.",
+    cta: "Read the partnership",
+  },
+  {
+    index: "02",
+    kicker: "Private. Full.",
+    title: "Private 1:1 Coaching",
+    href: "/coaching",
+    body: "Direct time with Stephanie on the strategy behind the brand. Private 1:1 coaching is full.",
+    meta: "This offer is full.",
+    cta: "Private 1:1 is full",
+  },
+  {
+    index: "03",
+    kicker: "Mastermind. Opens in January.",
+    title: "Hot & Rich",
+    href: "/hot-and-rich",
+    body: "Four months with Stephanie. Biweekly live calls, text support inside the group three days a week, the strategy she is running now, and a ticket to Wildly Wealthy Woman Live in Banff, March 2027.",
+    meta: "Opens in January. $6,000 CAD for four months.",
+    cta: "Hot & Rich",
+  },
+  {
+    index: "04",
+    kicker: "Mastermind. Opens in January.",
+    title: "Manifesting & Marketing",
+    href: "/mastermind",
+    body: "Stephanie Rose and Jackie McDonald. Six months of weekly coaching, personal tapping sessions, Cadence, and the Story Stack. The retreat tier adds Kananaskis. Signing up includes a ticket to Wildly Wealthy Woman Live.",
+    meta: "Opens in January. $14,000 CAD, or $20,000 CAD with the retreat.",
+    cta: "Manifesting & Marketing",
+  },
+  {
+    index: "05",
+    kicker: "Membership",
+    title: "Hot & Viral",
+    href: "/hot-and-viral",
+    body: "A live membership for getting your content seen. Dates, price, and how to join are on its own page.",
+    meta: "Open the page for the current window.",
+    cta: "Enter Hot & Viral",
+  },
+];
+
+export default function WorkWithUsPage() {
+  return (
+    <div className="bg-[#020405] text-[#CCCCCE]">
+      <header className="wrm-ink bg-[#F4F4F4] text-[#404042]">
+        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Open</p>
+          <div className="mt-5 h-0.5 w-16 bg-[#2D4B70]" />
+          <h1 className="mt-6 max-w-[12ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9] text-[#020405]">
+            Work with us
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed">
+            ICON Brand Partnership is open, from $5,000 CAD per month, on a six or twelve month commitment. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind open in January.
+          </p>
+          <div className="mt-10">
+            <WrmButton href="/apply" variant="ink">
+              Apply for ICON
+            </WrmButton>
+          </div>
+        </div>
+      </header>
+
+      <div className={`${FRAME} pb-24`}>
+        {offers.map((offer) => (
+          <article key={offer.href} className="border-t border-[#CCCCCE]/25 py-12 lg:py-16">
+            <div className="grid gap-8 lg:grid-cols-12">
+              <p className="font-[family-name:var(--font-wrm-display)] text-4xl text-[#CCCCCE] lg:col-span-2">
+                {offer.index}
+              </p>
+              <div className="lg:col-span-6">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">{offer.kicker}</p>
+                <h2 className="mt-3 text-[clamp(2.2rem,4vw,3.6rem)] leading-[1]">{offer.title}</h2>
+                <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">{offer.body}</p>
+              </div>
+              <div className="flex flex-col justify-between gap-8 lg:col-span-4">
+                <p className="text-sm leading-relaxed text-[#CCCCCE]/75">{offer.meta}</p>
+                <WrmButton href={offer.href} variant={offer.href === "/hot-and-viral" ? "solid" : "line"}>
+                  {offer.cta}
+                </WrmButton>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
