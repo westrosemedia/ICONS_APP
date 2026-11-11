@@ -5,45 +5,53 @@ import { homePageFaqItems } from "@/data/homePageFaq";
 import { FRAME, portraits } from "@/lib/agency";
 import { homepageResults } from "@/lib/clientResults";
 
-const openingPictures = [
-  { src: portraits.hero, alt: "Stephanie Rose", position: "object-[center_18%]" },
-  { src: portraits.still, alt: "Stephanie Rose", position: "object-[center_30%]" },
+const openingFrames = [
+  {
+    src: portraits.featured,
+    alt: "Stephanie Rose",
+    position: "object-[center_22%] xl:object-[center_18%]",
+  },
+  {
+    src: "/hot-and-viral/stephanie-suit.jpg",
+    alt: "Stephanie Rose",
+    position: "object-[72%_center] xl:object-center",
+  },
 ];
 
 export default function HomePageClient() {
   return (
     <div>
-      <section className="bg-[#020405] text-[#F4F4F4]">
-        <div className="grid min-h-[calc(100svh-3.5rem)] lg:grid-cols-2">
-          <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-14 lg:py-12">
-            <div className="h-0.5 w-12 bg-[#916545]" />
-            <h1 className="mt-8 max-w-[8.5em] text-[clamp(2.5rem,4.4vw,4.5rem)] font-normal uppercase leading-[0.88]">
+      <section className="relative -mt-[62px] bg-[#020405] text-[#F4F4F4]">
+        <div className="sticky top-0 z-10 flex h-[100svh] items-end xl:items-center">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,#020405_0%,rgba(2,4,5,0.94)_16%,rgba(2,4,5,0.55)_30%,transparent_46%)] xl:bg-[linear-gradient(90deg,#020405_0%,rgba(2,4,5,0.92)_12%,rgba(2,4,5,0.62)_24%,rgba(2,4,5,0.18)_36%,transparent_48%)]" />
+          <div className="relative z-10 w-full px-5 pb-12 pt-[4.5rem] sm:px-8 sm:pb-14 xl:max-w-[34rem] xl:px-14 xl:pb-0 xl:pt-0">
+            <h1 className="max-w-[12ch] text-[clamp(2.35rem,7vw,4.5rem)] font-normal uppercase leading-[0.86] xl:max-w-[10ch] xl:text-[clamp(3rem,4.2vw,4.6rem)]">
               The art of being impossible to ignore.
             </h1>
-            <p className="mt-8 max-w-md text-lg leading-relaxed text-[#CCCCCE]">
+            <p className="mt-4 max-w-md text-[15px] leading-snug text-[#F4F4F4] sm:mt-6 sm:text-lg sm:leading-relaxed">
               For founders who want a brand people compliment, views that get them taken seriously, and a business that sells out.
             </p>
-            <p className="mt-4 max-w-md text-lg leading-relaxed text-[#F4F4F4]">Working with me is seamless.</p>
-            <div className="mt-10">
+            <div className="mt-5 sm:mt-8">
               <WrmButton href="/apply" variant="solid">
                 Apply for ICON
               </WrmButton>
             </div>
+            <p className="mt-3 text-sm leading-relaxed text-[#F4F4F4] sm:mt-4 sm:text-base">Working with me is seamless.</p>
           </div>
-          <div className="grid gap-3 px-5 pb-5 sm:px-8 lg:grid-rows-[1.4fr_1fr] lg:py-3 lg:pl-0 lg:pr-3">
-            {openingPictures.map((picture) => (
-              <div key={picture.src} className="relative min-h-[38vh] overflow-hidden lg:min-h-0">
-                <Image
-                  src={picture.src}
-                  alt={picture.alt}
-                  fill
-                  priority
-                  className={`object-cover ${picture.position}`}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            ))}
-          </div>
+        </div>
+        <div className="-mt-[100svh]">
+          {openingFrames.map((frame) => (
+            <div key={frame.src} className="relative h-[100svh]">
+              <Image
+                src={frame.src}
+                alt={frame.alt}
+                fill
+                priority
+                className={`object-cover ${frame.position}`}
+                sizes="100vw"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
