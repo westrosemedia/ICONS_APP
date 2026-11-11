@@ -182,9 +182,9 @@ export default function HomePageClient() {
             West Rose Media
           </p>
           <div className="wrm-fade mt-5 h-px w-16 bg-[#2D4B70]" />
-          <h1 className="wrm-fade-late mt-6 max-w-[11ch] text-[clamp(3.6rem,7.4vw,7.2rem)] leading-[0.84] text-[#F4F4F4]">
-            High-end photography
-            <span className="mt-3 block font-normal italic">for social media.</span>
+          <h1 className="wrm-fade-late mt-6 max-w-[8em] text-[clamp(2.7rem,6.6vw,6.2rem)] font-normal uppercase leading-[0.84] text-[#F4F4F4]">
+            The art of being
+            <span className="mt-2 block italic">impossible to ignore.</span>
           </h1>
           <p className="wrm-fade-late mt-8 text-lg text-[#F4F4F4]">Stephanie Rose. Calgary.</p>
           <div className="wrm-fade-late mt-10 flex flex-col gap-3 sm:flex-row">
@@ -204,7 +204,7 @@ export default function HomePageClient() {
               className="px-6 py-4 text-[11px] uppercase tracking-[0.28em] text-[#CCCCCE]"
               aria-hidden={copy === 1}
             >
-              High-end photography · Video · Social content · Calgary · Vancouver · Toronto ·
+              The art of being impossible to ignore · Stephanie Rose · Calgary · Vancouver · Toronto ·
             </p>
           ))}
         </div>
