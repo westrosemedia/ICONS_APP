@@ -17,6 +17,7 @@ export { GOOGLE_REVIEWS_URL, iconCopy };
 export const redesignedRoots = [
   "/the-agency",
   "/the-work",
+  "/results",
   "/work-with-us",
   "/packages",
   "/icon",
@@ -46,6 +47,7 @@ export const agencyNav: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/the-agency", label: "The Agency" },
   { href: "/the-work", label: "The Work" },
+  { href: "/results", label: "Results" },
   {
     href: "/work-with-us",
     label: "Work with us",
