@@ -2,7 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import WrmButton from "@/components/agency/WrmButton";
 import { homePageFaqItems } from "@/data/homePageFaq";
-import { clientStudies, FRAME, iconCopy, portraits } from "@/lib/agency";
+import { FRAME, iconCopy, portraits } from "@/lib/agency";
+import {
+  cammyMore,
+  cammyShots,
+  memberResults,
+  winShots,
+  type HotAndViralImage,
+} from "@/lib/hotAndViral";
 import { homePageAssets } from "@/lib/homePageAssets";
 
 const capabilities = [
@@ -27,6 +34,139 @@ const capabilities = [
     body: "Positioning, offers, and the public story, aligned so the woman online matches the one who already earned the room.",
   },
 ];
+
+type ProofPlate = {
+  image: HotAndViralImage;
+  name?: string;
+  lines: string[];
+  className?: string;
+  sizes: string;
+};
+
+function proofImage(src: string): HotAndViralImage {
+  const pool: Array<HotAndViralImage | null> = [
+    ...winShots,
+    ...cammyMore,
+    cammyShots.before,
+    cammyShots.after,
+    ...memberResults.flatMap((member) => [
+      member.before,
+      member.after,
+      member.summary ?? null,
+      member.profile ?? null,
+    ]),
+  ];
+  const image = pool.find((item) => item?.src === src);
+  if (!image) {
+    throw new Error(`Homepage proof image is missing: ${src}`);
+  }
+  return image;
+}
+
+const erinAfter = proofImage("/hot-and-viral/erin-after.jpg");
+
+const phoneProof: ProofPlate[] = [
+  {
+    image: proofImage("/hot-and-viral/cammy-after-1-4m.jpg"),
+    name: "Cammy",
+    lines: ["1,417,529 views"],
+    sizes: "(max-width: 768px) 100vw, 33vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/reel-401k-follows.jpg"),
+    name: "Stephanie Rose",
+    lines: ["401,794 views", "12,157 follows"],
+    sizes: "(max-width: 768px) 100vw, 33vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/cammy-reel-420k.jpg"),
+    name: "Cammy",
+    lines: ["419,979 views"],
+    sizes: "(max-width: 768px) 100vw, 33vw",
+  },
+];
+
+const statProof: ProofPlate[] = [
+  {
+    image: proofImage("/hot-and-viral/views-4-9-million.jpg"),
+    lines: ["4,940,292 views", "34,711 followers"],
+    className: "lg:col-span-7",
+    sizes: "(max-width: 1024px) 100vw, 58vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/views-2-2-million.jpg"),
+    lines: ["30-day insights", "2,243,099 views", "10,977 new followers"],
+    className: "lg:col-span-5",
+    sizes: "(max-width: 1024px) 100vw, 40vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/views-1-9-million-week.jpg"),
+    lines: ["7-day insights", "1,905,912 views", "12,994 new followers"],
+    className: "lg:col-span-5",
+    sizes: "(max-width: 1024px) 100vw, 40vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/cammy-90-days.jpg"),
+    name: "Cammy",
+    lines: ["1,388,924 views", "978 followers"],
+    sizes: "(max-width: 1024px) 100vw, 58vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/erin-summary.jpg"),
+    name: "Erin",
+    lines: [
+      "August 11 to November 8",
+      "94,337 views, up 483.6% versus August 10",
+      "602 followers, up 18.3%",
+      "93 net followers",
+    ],
+    sizes: "(max-width: 1024px) 100vw, 58vw",
+  },
+  {
+    image: proofImage("/hot-and-viral/video-views-417k.jpg"),
+    lines: ["417,100 views", "9,900 new followers"],
+    className: "lg:col-span-7",
+    sizes: "(max-width: 1024px) 100vw, 58vw",
+  },
+];
+
+function ProofFigure({
+  plate,
+  tone = "ink",
+}: {
+  plate: ProofPlate;
+  tone?: "ink" | "light";
+}) {
+  const nameColor = tone === "light" ? "text-[#B7A38E]" : "text-[#A66A55]";
+  const lineColor = tone === "light" ? "text-[#E9E1D7]/80" : "text-[#171515]/75";
+
+  return (
+    <figure className={plate.className}>
+      <Image
+        src={plate.image.src}
+        alt={plate.image.alt}
+        width={plate.image.width}
+        height={plate.image.height}
+        sizes={plate.sizes}
+        className="h-auto w-full ring-1 ring-[#171515]/10"
+      />
+      <figcaption className="mt-4">
+        {plate.name ? (
+          <p className={`text-[11px] font-medium uppercase tracking-[0.22em] ${nameColor}`}>
+            {plate.name}
+          </p>
+        ) : null}
+        <div className={plate.name ? "mt-2" : undefined}>
+          {plate.lines.map((line) => (
+            <p key={line} className={`text-[15px] leading-relaxed ${lineColor}`}>
+              {line}
+            </p>
+          ))}
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function HomePageClient() {
   return (
@@ -123,52 +263,89 @@ export default function HomePageClient() {
       </section>
 
       <section className="bg-white">
-        <div className={`${FRAME} py-20 lg:py-28`}>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
-                The work
-              </p>
-              <h2 className="mt-4 max-w-[12ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95]">
-                Real clients. Documented results.
-              </h2>
-            </div>
-            <WrmButton href="/the-work" variant="line">
-              Explore the work
-            </WrmButton>
-          </div>
+        <div className={`${FRAME} pt-20 lg:pt-28`}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+            The views
+          </p>
+          <h2 className="mt-4 max-w-[12ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95]">
+            Look at the views.
+          </h2>
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-[#171515]/80">
+            Real accounts. Real content. Real reach.
+          </p>
 
-          <div className="mt-16 space-y-20">
-            {clientStudies.map((study, index) => (
-              <article
-                key={study.href}
-                className="grid items-end gap-8 border-t border-[#171515]/15 pt-10 lg:grid-cols-12"
-              >
-                <div className={`relative aspect-[4/5] lg:col-span-7 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+          <figure className="mt-16 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <Image
+                src={erinAfter.src}
+                alt={erinAfter.alt}
+                width={erinAfter.width}
+                height={erinAfter.height}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="h-auto w-full lg:max-w-[640px]"
+              />
+            </div>
+            <figcaption className="lg:sticky lg:top-24 lg:col-span-4 lg:col-start-9 lg:self-start">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#A66A55]">
+                Erin
+              </p>
+              <p className="mt-4 font-[family-name:var(--font-wrm-display)] text-5xl leading-[0.95] md:text-6xl">
+                5,258 views
+              </p>
+              <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-[#171515]/80">
+                {erinAfter.alt}
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div className="mt-20 bg-[#171515] text-[#E9E1D7] lg:mt-28">
+          <div className={`${FRAME} grid gap-14 py-16 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-3 lg:py-24`}>
+            {phoneProof.map((plate) => (
+              <figure key={plate.image.src} className="flex flex-col">
+                <div className="flex items-end justify-center lg:h-[70vh] lg:max-h-[780px] lg:min-h-[520px]">
                   <Image
-                    src={study.image}
-                    alt={study.imageAlt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    src={plate.image.src}
+                    alt={plate.image.alt}
+                    width={plate.image.width}
+                    height={plate.image.height}
+                    sizes={plate.sizes}
+                    className="h-auto w-full object-contain lg:h-full lg:w-auto lg:max-w-full"
                   />
                 </div>
-                <div className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-[#A66A55]">
-                    0{index + 1} — {study.place}
-                  </p>
-                  <h3 className="mt-3 text-5xl md:text-6xl">{study.name}</h3>
-                  <p className="mt-4 text-sm uppercase tracking-[0.16em]">{study.industry}</p>
-                  <p className="mt-6 text-xl leading-snug">{study.result}</p>
-                  <Link
-                    href={study.href}
-                    className="mt-8 inline-block border-b border-[#171515] pb-1 text-[11px] uppercase tracking-[0.2em]"
-                  >
-                    Read the study
-                  </Link>
-                </div>
-              </article>
+                <figcaption className="mt-6">
+                  {plate.name ? (
+                    <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#B7A38E]">
+                      {plate.name}
+                    </p>
+                  ) : null}
+                  <div className="mt-2">
+                    {plate.lines.map((line) => (
+                      <p key={line} className="text-[15px] leading-relaxed text-[#E9E1D7]/85">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </figcaption>
+              </figure>
             ))}
+          </div>
+        </div>
+
+        <div className={`${FRAME} grid gap-16 py-20 lg:gap-24 lg:py-28`}>
+          <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-10">
+            <ProofFigure plate={statProof[0]} />
+            <ProofFigure plate={statProof[1]} />
+          </div>
+          <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-10">
+            <ProofFigure plate={statProof[2]} />
+            <div className="grid content-start gap-16 lg:col-span-7">
+              <ProofFigure plate={statProof[3]} />
+              <ProofFigure plate={statProof[4]} />
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-12">
+            <ProofFigure plate={statProof[5]} />
           </div>
         </div>
       </section>
