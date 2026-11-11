@@ -94,10 +94,12 @@ function CountdownDigits({
   nowMs,
   state,
   align = "center",
+  compact = false,
 }: {
   nowMs: number;
   state: Exclude<PageState, "closed">;
   align?: "center" | "start";
+  compact?: boolean;
 }) {
   const target = countdownTarget(state) ?? nowMs;
   const parts = splitRemaining(target - nowMs);
@@ -108,12 +110,28 @@ function CountdownDigits({
     ["Minutes", parts.minutes],
     ["Seconds", parts.seconds],
   ] as const;
+  const ariaLabel = `${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds`;
+
+  if (compact) {
+    return (
+      <div className="flex items-baseline justify-center gap-2.5 whitespace-nowrap sm:gap-4" role="timer" aria-label={ariaLabel}>
+        {units.map(([unit, value]) => (
+          <span key={unit} className="text-center">
+            <span className="font-heading text-[1.05rem] leading-none tabular-nums tracking-[-0.03em] text-[#f41cdc] sm:text-xl">
+              {pad(value)}
+            </span>
+            <span className="ml-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-white/70 sm:text-[10px]">{unit}</span>
+          </span>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
       className={`flex gap-2 sm:gap-4 lg:gap-6 ${align === "start" ? "justify-center lg:justify-start" : "justify-center"}`}
       role="timer"
-      aria-label={`${label} ${parts.days} days ${parts.hours} hours ${parts.minutes} minutes ${parts.seconds} seconds. ${copy.countdown.line}`}
+      aria-label={`${ariaLabel}. ${copy.countdown.line}`}
     >
       {units.map(([unit, value]) => (
         <div key={unit} className="min-w-[4.4rem] text-center sm:min-w-[5.4rem] lg:min-w-[6.75rem]">
@@ -136,18 +154,10 @@ function CountdownBanner({
   state: Exclude<PageState, "closed">;
   sticky?: boolean;
 }) {
-  const label = state === "before" ? copy.countdown.before : copy.countdown.open;
-
   return (
     <div className={`${sticky ? "sticky top-[73px] z-30" : ""} bg-black text-white`}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-4 sm:py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-8 lg:py-6">
-        <div className="flex w-full flex-col items-center gap-2 lg:w-auto lg:items-start">
-          <p className="text-center text-lg font-semibold tracking-wide text-white sm:text-xl lg:text-left">{label}</p>
-          <CountdownDigits nowMs={nowMs} state={state} align="start" />
-        </div>
-        <p className="max-w-md text-center text-[15px] font-normal leading-relaxed text-white sm:text-base lg:max-w-lg lg:text-left">
-          {copy.countdown.line}
-        </p>
+      <div className="px-3 py-1.5 sm:py-2">
+        <CountdownDigits nowMs={nowMs} state={state} compact />
       </div>
     </div>
   );
