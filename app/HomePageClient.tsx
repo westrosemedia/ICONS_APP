@@ -1,48 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
-import CinematicVideo from "@/components/agency/CinematicVideo";
 import WrmButton from "@/components/agency/WrmButton";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { FRAME, iconCopy, portraits } from "@/lib/agency";
 import { homepageResults } from "@/lib/clientResults";
-import { homePageAssets } from "@/lib/homePageAssets";
+
+const openingPictures = [
+  { src: portraits.hero, alt: "Stephanie Rose", position: "object-[center_18%]" },
+  { src: portraits.still, alt: "Stephanie Rose", position: "object-[center_30%]" },
+];
 
 export default function HomePageClient() {
   return (
     <div>
-      <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
-        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Stephanie Rose</p>
-          <div className="mt-5 h-0.5 w-16 bg-[#2D4B70]" />
-          <h1 className="mt-8 max-w-[11em] text-[clamp(2.8rem,6.2vw,5.6rem)] font-normal uppercase leading-[0.88] text-[#020405]">
-            The art of being impossible to ignore.
-          </h1>
-          <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-[#404042]">
-            <p>
+      <section className="bg-[#020405] text-[#F4F4F4]">
+        <div className="grid min-h-[calc(100svh-3.5rem)] lg:grid-cols-2">
+          <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-14 lg:py-12">
+            <div className="h-0.5 w-12 bg-[#916545]" />
+            <h1 className="mt-8 max-w-[8.5em] text-[clamp(2.5rem,4.4vw,4.5rem)] font-normal uppercase leading-[0.88]">
+              The art of being impossible to ignore.
+            </h1>
+            <p className="mt-8 max-w-md text-lg leading-relaxed text-[#CCCCCE]">
               Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.
             </p>
-            <p>
-              She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
+            <p className="mt-10">
+              <Link href="/work-with-us" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
+                Work with us
+              </Link>
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-[#020405] text-[#CCCCCE]">
-        <div className="relative min-h-[78vh] overflow-hidden">
-          <div className="absolute inset-0">
-            <CinematicVideo src={homePageAssets.topVideo} poster={homePageAssets.topVideoStill} />
+          <div className="grid gap-5 px-5 pb-8 sm:px-8 lg:grid-rows-2 lg:py-8 lg:pl-2 lg:pr-14">
+            {openingPictures.map((picture) => (
+              <div key={picture.src} className="relative min-h-[38vh] overflow-hidden lg:min-h-0">
+                <Image
+                  src={picture.src}
+                  alt={picture.alt}
+                  fill
+                  priority
+                  className={`object-cover ${picture.position}`}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
-        <p className={`${FRAME} py-6 text-sm tracking-wide text-[#CCCCCE]`}>
-          Stephanie Rose, founder of West Rose Media.
-        </p>
       </section>
 
       <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
         <div className={`${FRAME} py-20 lg:py-28`}>
           <div className="h-0.5 w-16 bg-[#2D4B70]" />
-          <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Results</p>
+          <p className="mt-8 max-w-xl text-lg leading-relaxed">
+            These are posts from the studio, and the views on them.
+          </p>
           <div className="mt-16 grid gap-x-16 gap-y-20 sm:grid-cols-2">
             {homepageResults.map((result) => (
               <figure key={result.image.src} className="flex flex-col">
@@ -81,21 +90,9 @@ export default function HomePageClient() {
               Apply for ICON
             </Link>
           </p>
-          <h2 className="pt-4 text-3xl text-[#F4F4F4]">Private 1:1 coaching</h2>
-          <p>Private 1:1 coaching is direct time with Stephanie Rose on the strategy behind the brand. It is full.</p>
-          <h2 className="pt-4 text-3xl text-[#F4F4F4]">Hot & Rich</h2>
-          <p>
-            Hot & Rich opens in January. It is $6,000 CAD for four months with Stephanie: biweekly live calls, text support inside the group three days a week, the strategy she is running now, and a ticket to Wildly Wealthy Woman Live in Banff, March 2027.
-          </p>
-          <h2 className="pt-4 text-3xl text-[#F4F4F4]">Manifesting & Marketing</h2>
-          <p>
-            Manifesting & Marketing opens in January. Stephanie Rose and Jackie McDonald. It is $14,000 CAD, or $20,000 CAD with the retreat. Six months of weekly coaching, personal tapping sessions, Cadence, and the Story Stack. The retreat tier adds Kananaskis. Signing up includes a ticket to Wildly Wealthy Woman Live.
-          </p>
-          <p>
-            <Link href="/work-with-us" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
-              Work with us
-            </Link>
-          </p>
+          <p>Private 1:1 coaching is full.</p>
+          <p>Hot & Rich opens in January at $6,000 CAD for four months.</p>
+          <p>Manifesting & Marketing opens in January at $14,000 CAD, or $20,000 CAD with the retreat.</p>
         </div>
       </section>
 
