@@ -37,7 +37,7 @@ export default function ApplyPage() {
             <p>This partnership is best suited for founders who:</p>
             <ul className="space-y-2">
               <li>Are already generating consistent revenue</li>
-              <li>See brand and visibility as a growth lever, not a nice to have</li>
+              <li>See brand and visibility as a growth lever</li>
               <li>Want a strategic partner to handle content end to end</li>
               <li>Are comfortable investing several thousand dollars per month in their brand</li>
             </ul>

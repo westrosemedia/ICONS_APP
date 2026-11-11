@@ -391,7 +391,7 @@ export default function HotAndRichPage() {
             About that $20K coach
           </h2>
           <p className="text-lg text-[#CCCCCE]">
-            I paid $20,000 to be told to post more. We&apos;re not doing that here.
+            I paid $20,000 to be told to post more.
           </p>
           <p className="text-lg text-[#CCCCCE]">
             Hot and Rich is $6,000 CAD for four months. That&apos;s $1,500 a month, with me running

@@ -44,7 +44,7 @@ export default function TheAgencyPage() {
       <section className="wrm-rise bg-[#404042]">
         <div className={`${FRAME} grid gap-10 py-20 lg:grid-cols-12 lg:py-28`}>
           <h2 className="text-[clamp(2.4rem,4vw,4rem)] leading-[0.95] lg:col-span-5">
-            High-end content is not an aesthetic choice. It is a trust decision.
+            High-end content is a trust decision.
           </h2>
           <div className="max-w-xl space-y-6 text-[17px] leading-[1.75] lg:col-span-6 lg:col-start-7">
             <p>

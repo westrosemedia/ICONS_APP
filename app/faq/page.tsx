@@ -17,7 +17,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">What does West Rose Media do?</h3>
                   <p className="text-editorial text-gray-700">
-                    West Rose Media provides high-end photography, video, and done-for-you content execution for established entrepreneurs and business owners. The focus is on authority, trust, and inbound demand rather than trends or volume posting.
+                    West Rose Media provides high-end photography, video, and done-for-you content execution for established entrepreneurs and business owners. The focus is on authority, trust, and inbound demand.
                   </p>
                 </div>
                 <div>
@@ -29,7 +29,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">How is this different from hiring a photographer or social media manager?</h3>
                   <p className="text-editorial text-gray-700">
-                    West Rose Media combines strategy, photography, video, and publishing into a single system. Clients are not coordinating freelancers or managing content logistics.
+                    West Rose Media combines strategy, photography, video, and publishing into a single system.
                   </p>
                 </div>
                 <div>
@@ -41,7 +41,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">How involved does the founder need to be?</h3>
                   <p className="text-editorial text-gray-700">
-                    Founders are involved in strategy and approvals, not daily posting or production management.
+                    Founders are involved in strategy and approvals.
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function FaqPage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-black mb-3">Is West Rose Media a good fit for early-stage businesses?</h3>
                   <p className="text-editorial text-gray-700">
-                    West Rose Media is best suited for established businesses rather than early-stage startups.
+                    West Rose Media is best suited for established businesses.
                   </p>
                 </div>
                 <div>
