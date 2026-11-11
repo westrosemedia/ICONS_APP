@@ -25,12 +25,12 @@ export default function HomePageClient() {
             </p>
             <p className="mt-4 max-w-md text-lg leading-relaxed text-[#F4F4F4]">Working with me is seamless.</p>
             <div className="mt-10">
-              <WrmButton href="/apply" variant="line">
+              <WrmButton href="/apply" variant="solid">
                 Apply for ICON
               </WrmButton>
             </div>
           </div>
-          <div className="grid gap-5 px-5 pb-8 sm:px-8 lg:grid-rows-2 lg:py-8 lg:pl-2 lg:pr-14">
+          <div className="grid gap-3 px-5 pb-5 sm:px-8 lg:grid-rows-[1.4fr_1fr] lg:py-3 lg:pl-0 lg:pr-3">
             {openingPictures.map((picture) => (
               <div key={picture.src} className="relative min-h-[38vh] overflow-hidden lg:min-h-0">
                 <Image
@@ -48,22 +48,35 @@ export default function HomePageClient() {
       </section>
 
       <section className="wrm-ink bg-[#F4F4F4] text-[#404042]">
-        <div className={`${FRAME} max-w-3xl space-y-5 py-20 text-lg leading-relaxed lg:py-28`}>
+        <div className={`${FRAME} max-w-4xl space-y-8 py-24 lg:py-32`}>
           <div className="h-0.5 w-16 bg-[#2D4B70]" />
-          <p>The brand does not get compliments.</p>
-          <p>The views do not match the business.</p>
-          <p>Selling still feels hard.</p>
+          <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.12] text-[#020405]">
+            The brand does not get compliments.
+          </p>
+          <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.12] text-[#020405]">
+            The views do not match the business.
+          </p>
+          <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.12] text-[#020405]">
+            Selling still feels hard.
+          </p>
         </div>
       </section>
 
       <section className="bg-[#020405] text-[#CCCCCE]">
-        <div className={`${FRAME} max-w-3xl space-y-5 py-20 text-lg leading-relaxed lg:py-28`}>
+        <div className={`${FRAME} max-w-3xl py-24 lg:py-32`}>
           <div className="h-0.5 w-16 bg-[#916545]" />
-          <p>The brand and the views come from the same work.</p>
-          <p>I lead it, so you do not assemble a team.</p>
-          <p>
+          <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,4vw,3.2rem)] leading-[1.15] text-[#F4F4F4]">
+            The brand and the views come from the same work.
+          </p>
+          <p className="mt-6 text-lg leading-relaxed">I lead it, so you do not assemble a team.</p>
+          <p className="mt-4 text-lg leading-relaxed">
             You get monthly strategy intensives and a working roadmap, full content execution with a trusted thought partner, and publishing and analytics.
           </p>
+          <div className="mt-10">
+            <WrmButton href="/apply" variant="solid">
+              Apply for ICON
+            </WrmButton>
+          </div>
         </div>
       </section>
 
@@ -103,7 +116,7 @@ export default function HomePageClient() {
                   sizes="(max-width: 640px) 100vw, 42vw"
                   className="mx-auto h-auto max-h-[460px] w-auto max-w-full object-contain"
                 />
-                <figcaption className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-[#CCCCCE]">
+                <figcaption className="mx-auto mt-6 max-w-sm text-lg leading-relaxed text-[#F4F4F4]">
                   {result.caption}
                 </figcaption>
               </figure>
