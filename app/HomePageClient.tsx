@@ -20,9 +20,13 @@ export default function HomePageClient() {
             <h1 className="mt-8 max-w-[8.5em] text-[clamp(2.5rem,4.4vw,4.5rem)] font-normal uppercase leading-[0.88]">
               The art of being impossible to ignore.
             </h1>
-            <p className="mt-8 max-w-md text-lg leading-relaxed text-[#CCCCCE]">
-              Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.
-            </p>
+            <div className="mt-8 max-w-md space-y-4 text-lg leading-relaxed text-[#CCCCCE]">
+              <p>
+                You get a brand that is sexy, edgy, and cool, the kind people compliment you on, with views high enough that you are taken seriously and you sell out what you want to sell.
+              </p>
+              <p>It is seamless, because I have worked on so many brands and the results are already public.</p>
+              <p>Everyone online is obsessed with me, and it is easy to see why.</p>
+            </div>
             <p className="mt-10">
               <Link href="/work-with-us" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
                 Work with us
@@ -109,9 +113,14 @@ export default function HomePageClient() {
         <div className="flex flex-col justify-center bg-[#F4F4F4] px-5 py-16 text-[#404042] sm:px-8 lg:px-16">
           <div className="h-0.5 w-12 bg-[#2D4B70]" />
           <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Stephanie Rose</p>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed">
-            West Rose Media was built during a season of real, irreversible change. I built this business while leaving religion, getting divorced, coming out, and raising three kids on my own. Later, I met my partner and built a life that finally felt aligned. Through all of it, the business kept working.
-          </p>
+          <div className="mt-6 max-w-xl space-y-5 text-lg leading-relaxed">
+            <p>
+              Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.
+            </p>
+            <p>
+              West Rose Media was built during a season of real, irreversible change. I built this business while leaving religion, getting divorced, coming out, and raising three kids on my own. Later, I met my partner and built a life that finally felt aligned. Through all of it, the business kept working.
+            </p>
+          </div>
           <div className="mt-10">
             <WrmButton href="/about" variant="ink">
               About Stephanie
