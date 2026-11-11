@@ -12,6 +12,7 @@ import {
   copy,
   copycatPairs,
   countdownTarget,
+  openingWindow,
   getPageState,
   memberResults,
   splitRemaining,
@@ -131,7 +132,7 @@ function CountdownDigits({
     <div
       className={`flex gap-2 sm:gap-4 lg:gap-6 ${align === "start" ? "justify-center lg:justify-start" : "justify-center"}`}
       role="timer"
-      aria-label={`${ariaLabel}. ${copy.countdown.line}`}
+      aria-label={ariaLabel}
     >
       {units.map(([unit, value]) => (
         <div key={unit} className="min-w-[4.4rem] text-center sm:min-w-[5.4rem] lg:min-w-[6.75rem]">
@@ -544,7 +545,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
                   {paragraph.text}
                 </p>
               ))}
-              <p>{copy.hero.window}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state}>{copy.hero.button}</StateButton>
@@ -806,7 +806,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <h2 id="only-way-heading" className={h2}>
               {copy.onlyWay.heading}
             </h2>
-            <p className={`${lede} mt-6`}>{copy.onlyWay.body}</p>
+            <p className={`${lede} mt-6`}>{copy.onlyWay.body.replace(openingWindow, "").replace(/\s+/g, " ").trim()}</p>
           </div>
         </div>
       </section>
@@ -974,7 +974,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <div className="container-elegant">
             <div className="max-w-xl">
               <h2 className={h2}>{copy.firstAccess.heading}</h2>
-              <p className={`${lede} mt-6`}>{copy.firstAccess.body}</p>
+              <p className={`${lede} mt-6`}>{copy.firstAccess.body.replace(openingWindow, "").replace(/\s+/g, " ").trim()}</p>
               <div className="mt-10">
                 <AccessForm list="waitlist" button={copy.firstAccess.button} success={copy.firstAccess.success} />
               </div>
@@ -1022,9 +1022,11 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               {copy.final.heading}
             </h2>
             <div className="mx-auto mt-6 max-w-xl space-y-5 text-[17px] leading-relaxed text-white/80">
-              {copy.final.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {copy.final.paragraphs
+                .filter((paragraph) => paragraph !== openingWindow)
+                .map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
             </div>
             <div className="mx-auto mt-10 max-w-3xl">
               <p className="text-lg font-semibold text-white sm:text-xl">
@@ -1033,7 +1035,6 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
               </div>
-              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white sm:text-base">{copy.countdown.line}</p>
             </div>
             <div className="mt-8">
               <StateButton state={state} tone="light" />
