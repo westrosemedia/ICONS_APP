@@ -42,13 +42,14 @@ export default function TheAgencyPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/45 to-[#020405]/20" />
         <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
-          <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">The agency</p>
-          <h1 className="wrm-fade-late mt-6 max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88] text-[#F4F4F4]">
+          <h1 className="wrm-fade-late max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88] text-[#F4F4F4]">
             Built to be remembered.
           </h1>
-          <p className="wrm-fade-late mt-8 max-w-xl text-lg leading-relaxed text-[#F4F4F4]">
-            High-end photography and video for social media. Strategy and publishing stay in the same studio. Based in Calgary, with shoots in Vancouver and Toronto.
-          </p>
+          <div className="wrm-fade-late mt-10">
+            <WrmButton href="/work-with-us" variant="blue">
+              Work with us
+            </WrmButton>
+          </div>
         </div>
         <div className="relative z-10">
           <PaletteBand />

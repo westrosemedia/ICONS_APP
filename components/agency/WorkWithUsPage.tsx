@@ -53,15 +53,16 @@ const offers = [
 export default function WorkWithUsPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <PaletteBand blue="Open, full, January" camel="Work with us" />
-      <header className={`${FRAME} pb-8 pt-12 lg:pt-16`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Work with us</p>
-        <h1 className="mt-4 max-w-[16ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
+      <PaletteBand />
+      <header className={`${FRAME} flex min-h-[calc(100svh-10rem)] flex-col justify-end pb-16 pt-16`}>
+        <h1 className="max-w-[14ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
           What is open, what is full, what opens in January.
         </h1>
-        <p className="mt-8 max-w-xl text-lg leading-relaxed">
-          ICON Brand Partnership is open. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind are separate programs, and both open in January. Hot & Viral keeps its own page.
-        </p>
+        <div className="mt-10">
+          <WrmButton href="/apply" variant="blue">
+            Apply for ICON
+          </WrmButton>
+        </div>
       </header>
 
       <div className={`${FRAME} pb-24`}>
