@@ -34,6 +34,16 @@ export default function HomepageStructuredData() {
       },
       {
         "@type": "Service",
+        name: "High-end photography for social media",
+        serviceType: "Photography",
+        description:
+          "High-end photography, video, and social content for founders. Stephanie Rose leads strategy and creative direction. West Rose Media is based in Calgary and photographs in Calgary, Vancouver, and Toronto.",
+        provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
+        areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
+        url: "https://westrosemedia.com",
+      },
+      {
+        "@type": "Service",
         name: "ICON Brand Partnership",
         description:
           "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team. From $5,000 CAD per month, six or twelve month commitment, by application.",

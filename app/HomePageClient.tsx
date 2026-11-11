@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CinematicVideo from "@/components/agency/CinematicVideo";
 import WrmButton from "@/components/agency/WrmButton";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { FRAME, iconCopy, portraits } from "@/lib/agency";
@@ -137,8 +138,8 @@ function ProofFigure({
   plate: ProofPlate;
   tone?: "ink" | "light";
 }) {
-  const nameColor = tone === "light" ? "text-[#B7A38E]" : "text-[#A66A55]";
-  const lineColor = tone === "light" ? "text-[#E9E1D7]/80" : "text-[#171515]/75";
+  const nameColor = "text-[#CCCCCE]";
+  const lineColor = tone === "light" ? "text-[#CCCCCE]/85" : "text-[#CCCCCE]/75";
 
   return (
     <figure className={plate.className}>
@@ -148,7 +149,7 @@ function ProofFigure({
         width={plate.image.width}
         height={plate.image.height}
         sizes={plate.sizes}
-        className="h-auto w-full ring-1 ring-[#171515]/10"
+        className="h-auto w-full ring-1 ring-[#CCCCCE]/15"
       />
       <figcaption className="mt-4">
         {plate.name ? (
@@ -170,49 +171,71 @@ function ProofFigure({
 
 export default function HomePageClient() {
   return (
-    <div className="bg-[#E9E1D7] text-[#171515]">
-      <section className="grid min-h-[calc(100svh-73px)] lg:grid-cols-12">
-        <div className={`${FRAME} flex flex-col justify-end py-16 lg:col-span-6 lg:max-w-none lg:py-20 lg:pr-10`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+    <div className="bg-[#020405] text-[#CCCCCE]">
+      <section className="relative min-h-[100svh] overflow-hidden">
+        <div className="absolute inset-0">
+          <CinematicVideo src={homePageAssets.topVideo} poster={homePageAssets.topVideoStill} />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/50 to-[#020405]/25" />
+        <div className={`${FRAME} relative z-10 flex min-h-[100svh] max-w-none flex-col justify-end pb-16 pt-28`}>
+          <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
             West Rose Media
           </p>
-          <h1 className="mt-6 text-[clamp(3.1rem,5.6vw,5.4rem)] uppercase leading-[0.88]">
-            <span className="block">The art of being</span>
-            <span className="mt-3 block font-normal normal-case italic leading-[0.92]">
-              impossible to ignore.
-            </span>
+          <div className="wrm-fade mt-5 h-px w-16 bg-[#2D4B70]" />
+          <h1 className="wrm-fade-late mt-6 max-w-[11ch] text-[clamp(3.6rem,7.4vw,7.2rem)] leading-[0.84] text-[#F4F4F4]">
+            High-end photography
+            <span className="mt-3 block font-normal italic">for social media.</span>
           </h1>
-          <p className="mt-8 max-w-md text-lg leading-relaxed">
-            Beautifully disruptive. Strategically brilliant. Built to be remembered.
-          </p>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-[#171515]/80">
-            West Rose Media is a creative growth agency for brands ready to make a bigger impression.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <WrmButton href="/the-work">Explore the work</WrmButton>
+          <p className="wrm-fade-late mt-8 text-lg text-[#F4F4F4]">Stephanie Rose. Calgary.</p>
+          <div className="wrm-fade-late mt-10 flex flex-col gap-3 sm:flex-row">
+            <WrmButton href="/the-agency">The agency</WrmButton>
             <WrmButton href="/work-with-us" variant="line">
               Work with us
             </WrmButton>
           </div>
         </div>
-        <div className="relative min-h-[72vh] lg:col-span-6 lg:min-h-full">
-          <Image
-            src={portraits.hero}
-            alt="Stephanie Rose, founder of West Rose Media"
-            fill
-            priority
-            className="object-cover object-[center_18%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+      </section>
+
+      <div className="overflow-hidden border-y border-[#CCCCCE]/15">
+        <div className="wrm-marquee flex w-max">
+          {[0, 1].map((copy) => (
+            <p
+              key={copy}
+              className="px-6 py-4 text-[11px] uppercase tracking-[0.28em] text-[#CCCCCE]"
+              aria-hidden={copy === 1}
+            >
+              High-end photography · Video · Social content · Calgary · Vancouver · Toronto ·
+            </p>
+          ))}
+        </div>
+      </div>
+
+      <section className="relative min-h-[92vh] overflow-hidden">
+        <Image
+          src={portraits.hero}
+          alt="Stephanie Rose, founder of West Rose Media"
+          fill
+          priority
+          className="object-cover object-[center_18%] wrm-ken"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/25 to-transparent" />
+        <div className={`${FRAME} relative z-10 flex min-h-[92vh] max-w-none flex-col justify-end pb-16`}>
+          <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(3.2rem,7vw,6.4rem)] leading-[0.88] text-[#F4F4F4]">
+            Stephanie Rose
+          </p>
         </div>
       </section>
 
-      <section className="border-t border-[#171515]/15 bg-white">
+      <section className="wrm-rise border-t border-[#CCCCCE]/15">
         <div className={`${FRAME} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
-          <h2 className="text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95] lg:col-span-5">
+          <h2 className="text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95] text-[#F4F4F4] lg:col-span-5">
             Pretty is not a strategy.
           </h2>
           <div className="max-w-xl space-y-6 text-[17px] leading-[1.75] lg:col-span-6 lg:col-start-7">
+            <p>
+              West Rose Media makes high-end photography and video for social media, then holds the strategy and the publishing in the same studio.
+            </p>
             <p>
               Your clients refer you without being asked. Women you worked with a year ago still message you about what changed for them. Then someone clicks your profile, and the woman they find online is two sizes smaller than the one who earned all of it.
             </p>
@@ -220,57 +243,47 @@ export default function HomePageClient() {
               A PR firm asks a gatekeeper to validate you and rents you borrowed authority. The day the coverage stops, the momentum stops with it. West Rose Media builds the audience you own. The trust compounds in public, and it keeps working after any single feature would have faded.
             </p>
             <p>Your brand deserves more than another content calendar.</p>
+            <WrmButton href="/the-agency" variant="line">
+              The agency
+            </WrmButton>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#171515]">
-        <video
-          className="mx-auto max-h-[82vh] w-full object-cover"
-          src={homePageAssets.topVideo}
-          poster={homePageAssets.topVideoStill}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-        />
-      </section>
-
       <section>
         <div className={`${FRAME} py-20 lg:py-28`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
             Capabilities
           </p>
           <h2 className="mt-4 max-w-[14ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95]">
             What the studio actually does.
           </h2>
-          <div className="mt-14 border-t border-[#171515]">
+          <div className="mt-14 border-t border-[#CCCCCE]/25">
             {capabilities.map((item) => (
               <div
                 key={item.num}
-                className="grid gap-4 border-b border-[#171515] py-8 md:grid-cols-12 md:items-baseline md:gap-8"
+                className="grid gap-4 border-b border-[#CCCCCE]/25 py-8 md:grid-cols-12 md:items-baseline md:gap-8"
               >
-                <p className="font-[family-name:var(--font-wrm-display)] text-3xl text-[#A66A55] md:col-span-2">
+                <p className="font-[family-name:var(--font-wrm-display)] text-3xl text-[#CCCCCE] md:col-span-2">
                   {item.num}
                 </p>
                 <h3 className="text-3xl md:col-span-4">{item.title}</h3>
-                <p className="text-[16px] leading-relaxed text-[#171515]/80 md:col-span-6">{item.body}</p>
+                <p className="text-[16px] leading-relaxed text-[#CCCCCE]/80 md:col-span-6">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#020405]">
         <div className={`${FRAME} pt-20 lg:pt-28`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
             The views
           </p>
           <h2 className="mt-4 max-w-[12ch] text-[clamp(2.6rem,5vw,4.6rem)] leading-[0.95]">
             Look at the views.
           </h2>
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-[#171515]/80">
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-[#CCCCCE]/80">
             Real accounts. Real content. Real reach.
           </p>
 
@@ -286,20 +299,20 @@ export default function HomePageClient() {
               />
             </div>
             <figcaption className="lg:sticky lg:top-24 lg:col-span-4 lg:col-start-9 lg:self-start">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#A66A55]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#CCCCCE]">
                 Erin
               </p>
               <p className="mt-4 font-[family-name:var(--font-wrm-display)] text-5xl leading-[0.95] md:text-6xl">
                 5,258 views
               </p>
-              <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-[#171515]/80">
+              <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-[#CCCCCE]/80">
                 {erinAfter.alt}
               </p>
             </figcaption>
           </figure>
         </div>
 
-        <div className="mt-20 bg-[#171515] text-[#E9E1D7] lg:mt-28">
+        <div className="mt-20 bg-[#404042] text-[#CCCCCE] lg:mt-28">
           <div className={`${FRAME} grid gap-14 py-16 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:grid-cols-3 lg:py-24`}>
             {phoneProof.map((plate) => (
               <figure key={plate.image.src} className="flex flex-col">
@@ -315,13 +328,13 @@ export default function HomePageClient() {
                 </div>
                 <figcaption className="mt-6">
                   {plate.name ? (
-                    <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#B7A38E]">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#CCCCCE]">
                       {plate.name}
                     </p>
                   ) : null}
                   <div className="mt-2">
                     {plate.lines.map((line) => (
-                      <p key={line} className="text-[15px] leading-relaxed text-[#E9E1D7]/85">
+                      <p key={line} className="text-[15px] leading-relaxed text-[#CCCCCE]/85">
                         {line}
                       </p>
                     ))}
@@ -353,7 +366,7 @@ export default function HomePageClient() {
       <section>
         <div className={`${FRAME} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
           <div className="lg:col-span-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
               Point of view
             </p>
             <h2 className="mt-4 text-[clamp(2.6rem,5vw,4.4rem)] leading-[0.95]">
@@ -367,28 +380,28 @@ export default function HomePageClient() {
             <p>
               A photo that is almost right. A caption you talked yourself down from. A profile that still looks like where you were two years ago. Each one tells a buyer you are operating below the level she needs.
             </p>
-            <p className="font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-[#4A1828]">
+            <p className="font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-[#F4F4F4]">
               Stop blending in. Start building a brand people remember.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#4A1828] text-[#E9E1D7]">
+      <section className="bg-[#404042] text-[#CCCCCE]">
         <div className={`${FRAME} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
           <div className="lg:col-span-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#B7A38E]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
               Flagship
             </p>
             <h2 className="mt-4 text-[clamp(2.8rem,5vw,5rem)] leading-[0.92] text-white">
               {iconCopy.heroTitle}
             </h2>
             <p className="mt-6 max-w-md text-xl text-white">{iconCopy.heroSubtitle}</p>
-            <p className="mt-6 max-w-xl text-[17px] leading-[1.75] text-[#E9E1D7]/90">{iconCopy.intro}</p>
-            <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-3xl text-white">
+            <p className="mt-6 max-w-xl text-[17px] leading-[1.75] text-[#CCCCCE]/90">{iconCopy.intro}</p>
+            <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-3xl text-[#916545]">
               From $5,000 CAD per month
             </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#B7A38E]">
+            <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#CCCCCE]">
               Open. Six or twelve month commitment. By application.
             </p>
             <div className="mt-8">
@@ -397,31 +410,31 @@ export default function HomePageClient() {
               </WrmButton>
             </div>
           </div>
-          <div className="relative min-h-[420px] lg:col-span-5 lg:col-start-8">
+          <div className="relative min-h-[420px] overflow-hidden lg:col-span-5 lg:col-start-8">
             <Image
               src={portraits.icon}
               alt="ICON Brand Partnership"
               fill
-              className="object-cover object-[center_30%]"
+              className="object-cover object-[center_30%] wrm-ken"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
         </div>
       </section>
 
-      <section className="border-t border-[#171515]/15">
+      <section className="border-t border-[#CCCCCE]/15">
         <div className={`${FRAME} grid items-center gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
-          <div className="relative aspect-[4/5] lg:col-span-5">
+          <div className="relative aspect-[4/5] overflow-hidden lg:col-span-5">
             <Image
               src={portraits.featured}
               alt="Stephanie Rose"
               fill
-              className="object-cover object-[center_20%]"
+              className="object-cover object-[center_20%] wrm-ken"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
               Private
             </p>
             <h2 className="mt-4 text-[clamp(2.6rem,4.5vw,4.4rem)] leading-[0.95]">
@@ -439,9 +452,9 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="border-t border-[#171515]">
+      <section className="border-t border-[#CCCCCE]/25">
         <div className={`${FRAME} py-20 lg:py-24`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
             Two masterminds. Both open in January.
           </p>
           <div className="mt-12 grid gap-16 lg:grid-cols-2">
@@ -482,34 +495,34 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="border-y border-[#171515]">
+      <section className="border-y border-[#CCCCCE]/25">
         <div className={`${FRAME} flex flex-col items-start justify-between gap-6 py-10 md:flex-row md:items-center`}>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-[#A66A55]">Also</p>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">Also</p>
             <h2 className="mt-2 text-4xl md:text-5xl">Hot & Viral</h2>
           </div>
           <Link
             href="/hot-and-viral"
-            className="border-b border-[#171515] pb-1 text-[12px] uppercase tracking-[0.22em]"
+            className="border-b border-[#CCCCCE]/50 pb-1 text-[12px] uppercase tracking-[0.22em]"
           >
             Enter Hot & Viral
           </Link>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#020405]">
         <div className={`${FRAME} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
-          <div className="relative min-h-[520px] lg:col-span-6">
+          <div className="relative min-h-[520px] overflow-hidden lg:col-span-6">
             <Image
               src={portraits.story}
               alt="Stephanie Rose"
               fill
-              className="object-cover object-[center_30%]"
+              className="object-cover object-[center_30%] wrm-ken"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">
               Founder
             </p>
             <h2 className="mt-4 text-[clamp(2.4rem,4vw,3.8rem)] leading-[1]">
@@ -532,7 +545,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-[#171515] text-[#E9E1D7]">
+      <section className="bg-[#020405] text-[#CCCCCE]">
         <div className={`${FRAME} py-24 text-left lg:py-32`}>
           <h2 className="max-w-[16ch] text-[clamp(2.8rem,6vw,5.4rem)] leading-[0.92] text-white">
             Stop blending in. Start building a brand people remember.
@@ -551,13 +564,13 @@ export default function HomePageClient() {
       <section>
         <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
           <h2 className="text-5xl">Questions</h2>
-          <div className="mt-10 border-t border-[#171515]/20">
+          <div className="mt-10 border-t border-[#CCCCCE]/20">
             {homePageFaqItems.map((item) => (
-              <details key={item.question} className="border-b border-[#171515]/20 py-5">
+              <details key={item.question} className="border-b border-[#CCCCCE]/20 py-5">
                 <summary className="cursor-pointer list-none font-[family-name:var(--font-wrm-display)] text-2xl leading-snug">
                   {item.question}
                 </summary>
-                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#171515]/80">{item.answer}</p>
+                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-[#CCCCCE]/80">{item.answer}</p>
               </details>
             ))}
           </div>

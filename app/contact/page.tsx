@@ -12,23 +12,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#E9E1D7] text-[#171515]">
+    <div className="bg-[#020405] text-[#CCCCCE]">
       <div className={`${FRAME} grid gap-16 py-16 lg:grid-cols-12 lg:py-24`}>
         <div className="lg:col-span-5">
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">Contact</p>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Contact</p>
           <h1 className="mt-4 text-[clamp(3.2rem,6vw,5.5rem)] leading-[0.9]">Write, call, or apply.</h1>
           <div className="mt-10 space-y-6 text-lg">
             <p>
-              <a href={PHONE_TEL} className="border-b border-[#171515]">
+              <a href={PHONE_TEL} className="border-b border-[#CCCCCE]/25">
                 {PHONE_DISPLAY}
               </a>
             </p>
             <p>
-              <a href={`mailto:${PUBLIC_EMAIL}`} className="border-b border-[#171515]">
+              <a href={`mailto:${PUBLIC_EMAIL}`} className="border-b border-[#CCCCCE]/25">
                 {PUBLIC_EMAIL}
               </a>
             </p>
-            <p className="max-w-sm text-base leading-relaxed text-[#171515]/80">
+            <p className="max-w-sm text-base leading-relaxed text-[#CCCCCE]/80">
               Calgary, Alberta. Strategy can happen remotely. Photography and video are scheduled in Calgary, Vancouver, Toronto, and on travel dates.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function ContactPage() {
               Hot & Viral
             </WrmButton>
           </div>
-          <p className="mt-6 max-w-sm text-base leading-relaxed text-[#171515]/80">
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-[#CCCCCE]/80">
             ICON Brand Partnership is open. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind both open in January.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
           <p className="mt-4 max-w-md text-[16px] leading-relaxed">
             The partnership application is the Sprout Studio form. Every applicant gets a response.
           </p>
-          <div className="mt-8 bg-white p-4 sm:p-8">
+          <div className="mt-8 bg-[#CCCCCE] p-4 text-[#020405] sm:p-8">
             <SproutStudioLeadForm leadFormId="1860679" className="w-full flex justify-center" />
           </div>
         </div>

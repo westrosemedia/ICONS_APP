@@ -30,15 +30,29 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#E9E1D7] text-[#171515]">
-      <section className="grid lg:grid-cols-12">
-        <div className={`${FRAME} py-16 lg:col-span-6 lg:max-w-none lg:py-24`}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">About Stephanie</p>
-          <h1 className="mt-4 text-[clamp(3.4rem,7vw,6.2rem)] leading-[0.88]">
+    <div className="bg-[#020405] text-[#CCCCCE]">
+      <section className="relative min-h-[100svh] overflow-hidden">
+        <Image
+          src={portraits.hero}
+          alt="Stephanie Rose, founder of West Rose Media"
+          fill
+          priority
+          className="object-cover object-[center_18%] wrm-ken"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/35 to-[#020405]/15" />
+        <div className={`${FRAME} relative z-10 flex min-h-[100svh] max-w-none flex-col justify-end pb-16 pt-28`}>
+          <p className="wrm-fade text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">About Stephanie</p>
+          <h1 className="wrm-fade-late mt-4 text-[clamp(4rem,9vw,8rem)] leading-[0.84] text-[#F4F4F4]">
             Stephanie
             <span className="block italic">Rose</span>
           </h1>
-          <div className="mt-8 max-w-xl space-y-5 text-[17px] leading-[1.75]">
+        </div>
+      </section>
+
+      <section className="wrm-rise">
+        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+          <div className="max-w-xl space-y-5 text-[17px] leading-[1.75]">
             <p>
               Stephanie Rose is the founder and creative director of West Rose Media, a creative growth agency based in Calgary, Alberta, Canada. She works with established founders, coaches, and entrepreneurs across Canada, specializing in brand photography, video content, and strategic brand positioning.
             </p>
@@ -53,25 +67,15 @@ export default function AboutPage() {
             </WrmButton>
           </div>
         </div>
-        <div className="relative min-h-[78vh] lg:col-span-6">
-          <Image
-            src={portraits.hero}
-            alt="Stephanie Rose, founder of West Rose Media"
-            fill
-            priority
-            className="object-cover object-[center_18%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </div>
       </section>
 
       <section>
-        <div className="relative h-[70vh] min-h-[420px]">
+        <div className="relative h-[70vh] min-h-[420px] overflow-hidden">
           <Image
             src={portraits.story}
             alt="Stephanie Rose"
             fill
-            className="object-cover object-[center_33%]"
+            className="object-cover object-[center_33%] wrm-ken"
             sizes="100vw"
           />
         </div>
@@ -94,10 +98,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#404042]">
         <div className={`${FRAME} py-20 lg:py-24`}>
           <h2 className="text-5xl">What she does</h2>
-          <div className="mt-12 grid gap-12 border-t border-[#171515] pt-10 md:grid-cols-3">
+          <div className="mt-12 grid gap-12 border-t border-[#CCCCCE]/25 pt-10 md:grid-cols-3">
             <div>
               <h3 className="text-3xl">Photography and video</h3>
               <p className="mt-4 leading-relaxed">High-end visuals that make a business look as credible as it actually is.</p>
@@ -136,7 +140,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#171515] text-[#E9E1D7]">
+      <section className="bg-[#020405] text-[#CCCCCE]">
         <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
           <h2 className="text-5xl text-white">A point of view</h2>
           <p className="mt-8 font-[family-name:var(--font-wrm-display)] text-3xl italic leading-snug text-white">
@@ -151,12 +155,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="relative h-[68vh] min-h-[380px]">
+      <div className="relative h-[68vh] min-h-[380px] overflow-hidden">
         <Image
           src={portraits.featured}
           alt="Stephanie Rose"
           fill
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[center_30%] wrm-ken"
           sizes="100vw"
         />
       </div>

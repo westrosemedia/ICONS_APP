@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import HomePageClient from "./HomePageClient";
 import HomepageStructuredData from "@/components/HomepageStructuredData";
 
-const title = "West Rose Media | Creative Growth Agency";
+const title = "High-End Photography for Social Media | West Rose Media";
 const description =
-  "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Beautifully disruptive. Strategically brilliant. Built to be remembered.";
+  "West Rose Media is Stephanie Rose’s studio for high-end photography for social media. Photography, video, and the strategy behind the posts. Based in Calgary.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords:
-    "West Rose Media, Stephanie Rose, creative growth agency, ICON Brand Partnership, brand strategy, Calgary, Vancouver, Toronto",
+    "high-end photography for social media, West Rose Media, Stephanie Rose, photography, video, social content, Calgary, Vancouver, Toronto",
   openGraph: {
     title,
     description,

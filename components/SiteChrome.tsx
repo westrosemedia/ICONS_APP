@@ -23,10 +23,10 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-[#020405]">
       <AgencyHeader />
       <main className={isRedesignedPath(pathname) ? "wrm w-full" : "w-full"}>{children}</main>
       <AgencyFooter />
-    </>
+    </div>
   );
 }

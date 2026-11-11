@@ -51,9 +51,9 @@ const offers = [
 
 export default function WorkWithUsPage() {
   return (
-    <div className="bg-[#E9E1D7] text-[#171515]">
+    <div className="bg-[#020405] text-[#CCCCCE]">
       <header className={`${FRAME} pb-8 pt-16 lg:pt-24`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">Work with us</p>
+        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Work with us</p>
         <h1 className="mt-4 max-w-[16ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
           What is open, what is full, what opens in January.
         </h1>
@@ -64,18 +64,18 @@ export default function WorkWithUsPage() {
 
       <div className={`${FRAME} pb-24`}>
         {offers.map((offer) => (
-          <article key={offer.href} className="border-t border-[#171515] py-12 lg:py-16">
+          <article key={offer.href} className="border-t border-[#CCCCCE]/25 py-12 lg:py-16">
             <div className="grid gap-8 lg:grid-cols-12">
-              <p className="font-[family-name:var(--font-wrm-display)] text-4xl text-[#A66A55] lg:col-span-2">
+              <p className="font-[family-name:var(--font-wrm-display)] text-4xl text-[#CCCCCE] lg:col-span-2">
                 {offer.index}
               </p>
               <div className="lg:col-span-6">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-[#A66A55]">{offer.kicker}</p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">{offer.kicker}</p>
                 <h2 className="mt-3 text-[clamp(2.2rem,4vw,3.6rem)] leading-[1]">{offer.title}</h2>
                 <p className="mt-6 max-w-xl text-[17px] leading-[1.75]">{offer.body}</p>
               </div>
               <div className="flex flex-col justify-between gap-8 lg:col-span-4">
-                <p className="text-sm leading-relaxed text-[#171515]/75">{offer.meta}</p>
+                <p className="text-sm leading-relaxed text-[#CCCCCE]/75">{offer.meta}</p>
                 <WrmButton href={offer.href} variant={offer.href === "/hot-and-viral" ? "solid" : "line"}>
                   {offer.cta}
                 </WrmButton>

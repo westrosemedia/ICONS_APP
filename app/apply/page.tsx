@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <div className="bg-[#E9E1D7] text-[#171515]">
+    <div className="bg-[#020405] text-[#CCCCCE]">
       <section className={`${FRAME} max-w-3xl py-16 lg:py-24`}>
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#A66A55]">Application</p>
+        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#CCCCCE]">Application</p>
         <h1 className="mt-4 text-[clamp(2.8rem,6vw,4.8rem)] leading-[0.95]">
           Apply for the ICON Brand Partnership
         </h1>
@@ -66,7 +66,7 @@ export default function ApplyPage() {
           </div>
         </div>
 
-        <div id="application" className="mt-14 bg-white p-4 sm:p-8">
+        <div id="application" className="mt-14 bg-[#CCCCCE] p-4 text-[#020405] sm:p-8">
           <SproutStudioLeadForm leadFormId="1860679" className="w-full flex justify-center" />
         </div>
       </section>

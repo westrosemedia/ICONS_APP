@@ -17,7 +17,7 @@ export const homePageFaqItems = [
   {
     question: "How much does it cost to work with West Rose Media?",
     answer:
-      "ICON Brand Partnership is open and starts at $5,000 CAD per month, on a six or twelve month commitment. Private 1:1 coaching is full and does not have a public price. Hot & Rich is $6,000 CAD for four months and opens in January. The Manifesting & Marketing Mastermind opens in January at $14,000 CAD, or $20,000 CAD with the retreat. Hot & Viral is a separate membership with its own page.",
+      "ICON Brand Partnership is open and starts at $5,000 CAD per month, on a six or twelve month commitment. Private 1:1 coaching is full. Hot & Rich is $6,000 CAD for four months and opens in January. The Manifesting & Marketing Mastermind opens in January at $14,000 CAD, or $20,000 CAD with the retreat. Hot & Viral is a separate membership with its own page.",
   },
   {
     question: "Where does West Rose Media work?",

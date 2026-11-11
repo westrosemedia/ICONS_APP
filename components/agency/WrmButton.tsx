@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const variants = {
   solid:
-    "border-[#4A1828] bg-[#4A1828] text-white hover:border-[#171515] hover:bg-[#171515]",
+    "border-[#F4F4F4] bg-[#F4F4F4] text-[#020405] hover:border-[#CCCCCE] hover:bg-[#CCCCCE]",
   line:
-    "border-[#171515] bg-transparent text-[#171515] hover:bg-[#171515] hover:text-[#E9E1D7]",
+    "border-[#CCCCCE] bg-transparent text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#020405]",
   light:
-    "border-[#E9E1D7] bg-transparent text-[#E9E1D7] hover:bg-[#E9E1D7] hover:text-[#4A1828]",
+    "border-[#F4F4F4] bg-transparent text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#020405]",
 } as const;
 
 export default function WrmButton({

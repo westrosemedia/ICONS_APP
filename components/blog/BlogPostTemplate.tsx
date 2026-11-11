@@ -3,13 +3,13 @@ import Link from "next/link";
 import type { BlogPost } from "@/types/blog";
 
 const column =
-  "max-w-[680px] w-[90%] md:w-full mx-auto px-5 md:px-6 text-[18px] md:text-[20px] leading-[1.8] text-[#171515]";
+  "max-w-[680px] w-[90%] md:w-full mx-auto px-5 md:px-6 text-[18px] md:text-[20px] leading-[1.8] text-[#CCCCCE]";
 
 export default function BlogPostTemplate({ post }: { post: BlogPost }) {
   const external = post.cta.href.startsWith("http");
 
   return (
-    <article className="bg-[#E9E1D7] text-[#171515]">
+    <article className="bg-[#020405] text-[#CCCCCE]">
       <header>
         <div className="relative h-[70vh] min-h-[320px] w-full">
           <Image
@@ -22,7 +22,7 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
           />
         </div>
         <div className="mx-auto w-[90%] max-w-4xl px-5 py-12 md:px-6 md:py-16">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#A66A55]">The Journal</p>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]">The Journal</p>
           <h1 className="mt-4 text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.02]">{post.title}</h1>
         </div>
       </header>
@@ -45,7 +45,7 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
         }
         if (block.type === "pullquote") {
           return (
-            <section key={index} className="my-8 bg-[#4A1828] px-6 py-16 text-white">
+            <section key={index} className="my-8 bg-[#404042] px-6 py-16 text-white">
               <blockquote className="mx-auto max-w-3xl text-center font-[family-name:var(--font-wrm-display)] text-2xl italic leading-snug md:text-4xl">
                 “{block.quote}”
               </blockquote>
@@ -62,14 +62,14 @@ export default function BlogPostTemplate({ post }: { post: BlogPost }) {
         return null;
       })}
 
-      <section className="mt-10 bg-[#171515] px-6 py-16 text-[#E9E1D7]">
+      <section className="mt-10 bg-[#020405] px-6 py-16 text-[#CCCCCE]">
         <div className="mx-auto max-w-2xl">
           <p className="font-[family-name:var(--font-wrm-display)] text-3xl leading-snug text-white">
             {post.cta.headline}
           </p>
           <Link
             href={post.cta.href}
-            className="mt-8 inline-flex border border-[#E9E1D7] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[#E9E1D7]"
+            className="mt-8 inline-flex border border-[#CCCCCE] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[#CCCCCE]"
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             {post.cta.buttonLabel}

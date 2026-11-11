@@ -36,8 +36,8 @@ const bodoniModa = Bodoni_Moda({
 
 export const metadata = {
   title: "West Rose Media | Creative Growth Agency",
-  description: "West Rose Media is a creative growth agency for brands ready to make a bigger impression. Strategy, photography, video, and the ICON Brand Partnership. Based in Calgary, working with founders across Canada.",
-  keywords: "Stephanie Rose, West Rose Media, creative growth agency, ICON Brand Partnership, brand strategy Calgary, personal brand photography Canada, content strategy, women founders",
+  description: "West Rose Media is Stephanie Rose’s studio for high-end photography for social media. Photography, video, and strategy. Based in Calgary.",
+  keywords: "high-end photography for social media, Stephanie Rose, West Rose Media, photography, video, social content, Calgary",
   authors: [{ name: "Stephanie Rose", url: "https://westrosemedia.com" }],
   creator: "Stephanie Rose",
   publisher: "West Rose Media",
@@ -51,8 +51,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "West Rose Media | Creative Growth Agency",
-    description: "A creative growth agency for brands ready to make a bigger impression. Strategy, photography, video, and the ICON Brand Partnership. Calgary, Vancouver, Toronto.",
+    title: "High-End Photography for Social Media | West Rose Media",
+    description: "West Rose Media is Stephanie Rose’s studio for high-end photography for social media. Photography, video, and strategy. Based in Calgary.",
     url: 'https://westrosemedia.com',
     siteName: 'West Rose Media',
     images: [
@@ -68,8 +68,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'West Rose Media | Creative Growth Agency',
-    description: 'A creative growth agency for brands ready to make a bigger impression. Based in Calgary.',
+    title: 'High-End Photography for Social Media | West Rose Media',
+    description: 'West Rose Media is Stephanie Rose’s studio for high-end photography for social media. Based in Calgary.',
     images: ['https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_040.jpg?alt=media&token=74762637-c9c9-4191-8e9b-359b293c0cc7'],
     creator: '@westrosemedia',
   },
