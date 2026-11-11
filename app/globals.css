@@ -226,6 +226,10 @@
   color: #f4f4f4;
 }
 
+.wrm .wrm-ink :where(h1, h2, h3, h4) {
+  color: #020405;
+}
+
 @keyframes wrm-fade {
   from {
     opacity: 0;

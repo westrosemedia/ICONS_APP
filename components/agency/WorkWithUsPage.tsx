@@ -1,5 +1,4 @@
 import WrmButton from "@/components/agency/WrmButton";
-import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME, iconCopy } from "@/lib/agency";
 
 const offers = [
@@ -53,15 +52,21 @@ const offers = [
 export default function WorkWithUsPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <PaletteBand />
-      <header className={`${FRAME} flex min-h-[calc(100svh-10rem)] flex-col justify-end pb-16 pt-16`}>
-        <h1 className="max-w-[14ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9]">
-          Work with us
-        </h1>
-        <div className="mt-10">
-          <WrmButton href="/apply" variant="blue">
-            Apply for ICON
-          </WrmButton>
+      <header className="wrm-ink bg-[#F4F4F4] text-[#404042]">
+        <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Open</p>
+          <div className="mt-5 h-0.5 w-16 bg-[#2D4B70]" />
+          <h1 className="mt-6 max-w-[12ch] text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.9] text-[#020405]">
+            Work with us
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed">
+            ICON Brand Partnership is open, from $5,000 CAD per month, on a six or twelve month commitment. Private 1:1 coaching is full. Hot & Rich and the Manifesting & Marketing Mastermind open in January.
+          </p>
+          <div className="mt-10">
+            <WrmButton href="/apply" variant="ink">
+              Apply for ICON
+            </WrmButton>
+          </div>
         </div>
       </header>
 

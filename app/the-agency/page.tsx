@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import WrmButton from "@/components/agency/WrmButton";
-import PaletteBand from "@/components/agency/PaletteBand";
 import { FRAME, portraits } from "@/lib/agency";
 
 export const metadata: Metadata = {
@@ -14,30 +13,38 @@ export const metadata: Metadata = {
 export default function TheAgencyPage() {
   return (
     <div className="bg-[#020405] text-[#CCCCCE]">
-      <header className="relative flex min-h-[calc(100svh-4.5rem)] flex-col">
-        <div className="absolute inset-0 overflow-hidden">
+      <header>
+        <div className="wrm-ink bg-[#F4F4F4] text-[#404042]">
+          <div className={`${FRAME} max-w-3xl py-20 lg:py-28`}>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#916545]">Calgary</p>
+            <div className="mt-5 h-0.5 w-16 bg-[#2D4B70]" />
+            <h1 className="mt-6 max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88]">
+              The Agency
+            </h1>
+            <div className="mt-6 max-w-xl space-y-5 text-lg leading-relaxed">
+              <p>
+                Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.
+              </p>
+              <p>
+                She leads strategy and creative direction and works alongside a team of professional photographers, videographers, and content producers. The flagship engagement is the ICON Brand Partnership.
+              </p>
+            </div>
+            <div className="mt-10">
+              <WrmButton href="/work-with-us" variant="ink">
+                Work with us
+              </WrmButton>
+            </div>
+          </div>
+        </div>
+        <div className="relative min-h-[72vh] overflow-hidden">
           <Image
             src={portraits.featured}
             alt="Stephanie Rose"
             fill
             priority
-            className="object-cover object-[center_22%] wrm-ken"
+            className="object-cover object-[center_22%]"
             sizes="100vw"
           />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020405] via-[#020405]/45 to-[#020405]/20" />
-        <div className={`${FRAME} relative z-10 flex flex-1 max-w-none flex-col justify-end pb-10 pt-16`}>
-          <h1 className="wrm-fade-late max-w-[12ch] text-[clamp(3.4rem,7vw,6.6rem)] leading-[0.88] text-[#F4F4F4]">
-            The Agency
-          </h1>
-          <div className="wrm-fade-late mt-10">
-            <WrmButton href="/work-with-us" variant="blue">
-              Work with us
-            </WrmButton>
-          </div>
-        </div>
-        <div className="relative z-10">
-          <PaletteBand />
         </div>
       </header>
 

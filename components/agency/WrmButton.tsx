@@ -11,6 +11,9 @@ const variants = {
     "border-[#2D4B70] bg-[#2D4B70] text-[#F4F4F4] hover:border-[#F4F4F4] hover:bg-[#020405]",
   camel:
     "border-[#916545] bg-[#916545] text-[#F4F4F4] hover:border-[#F4F4F4] hover:bg-[#020405]",
+  ink: "border-[#020405] bg-[#020405] text-[#F4F4F4] hover:bg-[#404042]",
+  quiet:
+    "border-[#404042] bg-transparent text-[#404042] hover:bg-[#020405] hover:text-[#F4F4F4]",
 } as const;
 
 export default function WrmButton({
