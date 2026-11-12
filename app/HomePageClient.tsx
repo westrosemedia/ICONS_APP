@@ -252,25 +252,22 @@ export default function HomePageClient() {
                 ICON Brand Partnership
               </p>
               <p data-home-reveal data-home-reveal-delay="400">
-                ICON is where I run the brand and the views together.
+                Monthly strategy intensives and a working roadmap for the brand.
               </p>
               <p data-home-reveal data-home-reveal-delay="500">
-                It is open, from $5,000 CAD per month, on a six or twelve month commitment, by application.
+                Full content execution for the posts. They are planned, filmed, written, edited, scheduled, and measured.
               </p>
-              <div data-home-reveal data-home-reveal-delay="600">
+              <p data-home-reveal data-home-reveal-delay="600">
+                Publishing and analytics that drive real decisions, for the views, the saves, the shares, and the work that makes money.
+              </p>
+              <p data-home-reveal data-home-reveal-delay="700">
+                Exclusive access to The Vault, a private content creation suite, and free access to ICON Society while you are active.
+              </p>
+              <div data-home-reveal data-home-reveal-delay="800">
                 <WrmButton href="/apply" variant="ink">
                   Apply for ICON
                 </WrmButton>
               </div>
-              <p data-home-reveal data-home-reveal-delay="700">
-                Private 1:1 is direct time with me on the strategy behind the brand. It is full.
-              </p>
-              <p data-home-reveal data-home-reveal-delay="800">
-                Hot & Rich is four months with me on the strategy I am running now. It opens in January at $6,000 CAD. Biweekly live calls, text support inside the group three days a week, and a ticket to Wildly Wealthy Woman Live in Banff, March 2027.
-              </p>
-              <p data-home-reveal data-home-reveal-delay="900">
-                Manifesting & Marketing is six months with Stephanie Rose and Jackie McDonald. It opens in January at $14,000 CAD, or $20,000 CAD with the retreat. Weekly coaching, personal tapping sessions, Cadence, and the Story Stack. The retreat adds Kananaskis. Signing up includes a ticket to Wildly Wealthy Woman Live.
-              </p>
               </div>
             </div>
           </div>
