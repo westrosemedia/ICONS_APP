@@ -66,13 +66,26 @@ export default function HomePageClient() {
   return (
     <div>
       <section className="relative -mt-[62px] min-h-[100svh] bg-[#020405] text-[#F4F4F4]">
-        <Picture
-          src={pictures.opening}
-          alt="Stephanie Rose"
-          position="object-[center_20%]"
-          priority
-          sizes="100vw"
-        />
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-[center_20%] lg:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={pictures.opening}
+          aria-label="Stephanie Rose"
+        >
+          <source src="/home/wrm-web-vert.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 hidden lg:block">
+          <Picture
+            src={pictures.opening}
+            alt="Stephanie Rose"
+            position="object-[center_20%]"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,#020405_0%,rgba(2,4,5,0.92)_18%,rgba(2,4,5,0.45)_34%,transparent_52%)] xl:bg-[linear-gradient(90deg,#020405_0%,rgba(2,4,5,0.9)_12%,rgba(2,4,5,0.55)_26%,rgba(2,4,5,0.12)_40%,transparent_52%)]" />
         <HomeReveal className="relative z-10 flex min-h-[100svh] items-end px-5 pb-12 pt-28 sm:px-8 sm:pb-16 xl:items-center xl:px-14 xl:pb-0">
           <div className="w-full max-w-[34rem]">
