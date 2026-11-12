@@ -320,10 +320,9 @@ export default function HomePageClient() {
                 Stephanie Rose
               </p>
               <div className="mt-6 max-w-xl space-y-5 text-lg leading-relaxed">
-                <p data-home-reveal data-home-reveal-delay="400">Apply. Every applicant gets a response.</p>
-                <p data-home-reveal data-home-reveal-delay="500">Strategy and the work are handled with me.</p>
+                <p data-home-reveal data-home-reveal-delay="400">Strategy and the work are handled with me.</p>
                 <p data-home-reveal data-home-reveal-delay="600">
-                  ICON is open, from $5,000 CAD per month, for six or twelve months. Private 1:1 is full.
+                  ICON is open. The smallest level of the ICON Brand Partnership is $3,500 CAD per month, for six or twelve months. Private 1:1 is full.
                 </p>
                 <p data-home-reveal data-home-reveal-delay="700">
                   Stephanie Rose is the founder and creative director of West Rose Media, a premium brand photography and content studio based in Calgary, Alberta, Canada.

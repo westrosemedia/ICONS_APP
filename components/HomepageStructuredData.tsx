@@ -46,12 +46,12 @@ export default function HomepageStructuredData() {
         "@type": "Service",
         name: "ICON Brand Partnership",
         description:
-          "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team. From $5,000 CAD per month, six or twelve month commitment, by application.",
+          "Monthly brand partnership for accomplished women founders where West Rose Media runs strategy, creative direction, photography, video, social content, and launch assets as one in-house team. The smallest level is $3,500 CAD per month, six or twelve month commitment, by application.",
         provider: { "@type": "Organization", name: "West Rose Media", url: "https://westrosemedia.com" },
         areaServed: ["Calgary, Alberta, Canada", "Vancouver, British Columbia, Canada", "Toronto, Ontario, Canada", "Canada"],
         offers: {
           "@type": "Offer",
-          price: "5000",
+          price: "3500",
           priceCurrency: "CAD",
           url: "https://westrosemedia.com/apply",
         },
