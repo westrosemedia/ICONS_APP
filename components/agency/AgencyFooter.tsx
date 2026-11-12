@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { homeSectionContainer } from "@/components/home/homeStyles";
 import {
   agencyNav,
   GOOGLE_REVIEWS_URL,
@@ -15,127 +16,115 @@ const social = [
   { label: "YouTube", href: "https://www.youtube.com/@westrosemedia" },
 ];
 
+const offerLinks = [
+  { href: "/icon", label: "ICON Brand Partnership" },
+  { href: "/coaching", label: "Private 1:1 Coaching" },
+  { href: "/hot-and-rich", label: "Hot & Rich" },
+  { href: "/mastermind", label: "Manifesting & Marketing" },
+  { href: "/hot-and-viral", label: "Hot & Viral" },
+];
+
 export default function AgencyFooter() {
   return (
     <footer className="border-t border-[#CCCCCE]/15 bg-[#020405] text-[#CCCCCE]">
-      <div className="mx-auto grid w-full max-w-[1440px] gap-14 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:px-14 lg:py-20">
-        <div className="lg:col-span-4">
-          <p className="font-[family-name:var(--font-wrm-display)] text-4xl leading-none tracking-[-0.03em]">
-            West Rose Media
-          </p>
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-[#CCCCCE]/80">
-            A brand and content studio based in Calgary.
-          </p>
-          <p className="mt-6 text-sm">
-            <a href={PHONE_TEL} className="hover:text-white">
-              {PHONE_DISPLAY}
-            </a>
-            <br />
-            <a href={`mailto:${PUBLIC_EMAIL}`} className="hover:text-white">
-              {PUBLIC_EMAIL}
-            </a>
-          </p>
-        </div>
-
-        <div className="lg:col-span-3">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#916545]">Navigate</p>
-          <ul className="mt-5 space-y-2 text-sm">
-            {agencyNav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:text-white">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="lg:col-span-3">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#916545]">Work with us</p>
-          <ul className="mt-5 space-y-2 text-sm">
-            <li>
-              <Link href="/icon" className="hover:text-white">
-                ICON Brand Partnership
-              </Link>
-            </li>
-            <li>
-              <Link href="/coaching" className="hover:text-white">
-                Private 1:1 Coaching
-              </Link>
-            </li>
-            <li>
-              <Link href="/hot-and-rich" className="hover:text-white">
-                Hot & Rich
-              </Link>
-            </li>
-            <li>
-              <Link href="/mastermind" className="hover:text-white">
-                Manifesting & Marketing
-              </Link>
-            </li>
-            <li>
-              <Link href="/hot-and-viral" className="hover:text-white">
-                Hot & Viral
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="lg:col-span-2">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#916545]">Utility</p>
-          <ul className="mt-5 space-y-2 text-sm">
-            <li>
-              <Link href="/login" className="hover:text-white">
-                Sign in
-              </Link>
-            </li>
-            <li>
-              <a href={PHOTO_GALLERIES_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                Photo galleries
+      <div className={`${homeSectionContainer} flex flex-col lg:min-h-[400px] lg:justify-between`}>
+        <div className="grid gap-10 py-6 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <div>
+            <p className="font-[family-name:var(--font-wrm-display)] text-4xl leading-none tracking-[-0.03em]">
+              West Rose Media
+            </p>
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-[#CCCCCE]/80">
+              A brand and content studio based in Calgary.
+            </p>
+            <p className="mt-6 text-sm">
+              <a href={PHONE_TEL} className="hover:text-white">
+                {PHONE_DISPLAY}
               </a>
-            </li>
-            <li>
-              <Link href="/cadence" className="hover:text-white">
-                Cadence
-              </Link>
-            </li>
-            <li>
-              <Link href="/podcast" className="hover:text-white">
-                Podcast
-              </Link>
-            </li>
-            <li>
-              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                Google reviews
+              <br />
+              <a href={`mailto:${PUBLIC_EMAIL}`} className="hover:text-white">
+                {PUBLIC_EMAIL}
               </a>
-            </li>
-            <li>
-              <Link href="/privacy" className="hover:text-white">
-                Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="hover:text-white">
-                Terms
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </p>
+          </div>
 
-      <div className="border-t border-[#CCCCCE]/15">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-5 py-6 text-[11px] uppercase tracking-[0.18em] text-[#CCCCCE]/70 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-14">
-          <p>© {new Date().getFullYear()} West Rose Media</p>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {social.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 text-sm leading-5">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#916545]">Navigate</p>
+              <ul className="mt-3 space-y-0.5">
+                {agencyNav.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="hover:text-white">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-[#916545]">Work with us</p>
+              <ul className="mt-3 space-y-0.5">
+                {offerLinks.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="hover:text-white">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#916545]">Utility</p>
+              <ul className="mt-3 space-y-0.5">
+                <li>
+                  <Link href="/login" className="hover:text-white">
+                    Sign in
+                  </Link>
+                </li>
+                <li>
+                  <a href={PHOTO_GALLERIES_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                    Photo galleries
+                  </a>
+                </li>
+                <li>
+                  <Link href="/cadence" className="hover:text-white">
+                    Cadence
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/podcast" className="hover:text-white">
+                    Podcast
+                  </Link>
+                </li>
+                <li>
+                  <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                    Google reviews
+                  </a>
+                </li>
+                <li>
+                  <Link href="/privacy" className="hover:text-white">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-white">
+                    Terms
+                  </Link>
+                </li>
+              </ul>
+              <ul className="mt-4 space-y-0.5">
+                {social.map((item) => (
+                  <li key={item.href}>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <p className="border-t border-[#CCCCCE]/15 py-3 text-[11px] uppercase tracking-[0.18em] text-[#CCCCCE]/70">
+          © {new Date().getFullYear()} West Rose Media
+        </p>
       </div>
     </footer>
   );

@@ -308,3 +308,10 @@
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  [data-home-reveal]:not([data-home-revealed]) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
