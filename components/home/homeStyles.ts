@@ -1,5 +1,5 @@
 /**
- * Shared homepage styles. Not imported anywhere yet. Do not apply these until a later step.
+ * Shared homepage styles. Apply only on the homepage sections that name them.
  * Desktop is the lg breakpoint (1024px), the same step the homepage uses for its desktop layout.
  * Fonts already on the branch: Bodoni Moda is --font-wrm-display, DM Sans is --font-dm-sans.
  *

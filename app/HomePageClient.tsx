@@ -1,58 +1,44 @@
 import Image from "next/image";
 import Link from "next/link";
 import WrmButton from "@/components/agency/WrmButton";
+import {
+  homeBody,
+  homeEyebrowOnDark,
+  homeEyebrowOnLight,
+  homeSectionContainer,
+  homeSectionHeading,
+  homeSectionPadding,
+} from "@/components/home/homeStyles";
 import { homePageFaqItems } from "@/data/homePageFaq";
 import { FRAME, portraits } from "@/lib/agency";
-import { homePageAssets } from "@/lib/homePageAssets";
-import { homepageResults } from "@/lib/clientResults";
 
 const pictures = {
   opening: portraits.featured,
-  problem: portraits.still,
   approach:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/KR_SR_080.jpg?alt=media&token=d485b703-9e16-48e0-baeb-09c3e7dc0f35",
   offers:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_037.jpg?alt=media&token=04a83038-59fe-447a-8f3b-99900c5db7f1",
-  cammy:
-    "/hot-and-viral/stephanie-suit.jpg",
-  erin:
-    "/hot-and-viral/stephanie-camera.jpg",
-  erinAccount:
-    "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_003.jpg?alt=media&token=62172af0-d2ad-4af1-a500-eb8a48d795a3",
   obsessed:
     "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/Selects_038.jpg?alt=media&token=93446e09-e15f-4253-add9-a4ba78f05bdf",
 } as const;
 
-const proofLines = [
-  {
-    src: homePageAssets.topVideo,
-    poster: portraits.hero,
-    alt: "Stephanie Rose",
-    line: homepageResults[1].caption,
-    video: true,
-    position: "object-center",
-  },
-  {
-    src: pictures.cammy,
-    alt: "Stephanie Rose",
-    line: homepageResults[0].caption,
-    video: false,
-    position: "object-[center_40%] lg:object-center",
-  },
-  {
-    src: pictures.erin,
-    alt: "Stephanie Rose",
-    line: homepageResults[2].caption,
-    video: false,
-    position: "object-[center_30%]",
-  },
-  {
-    src: pictures.erinAccount,
-    alt: "Stephanie Rose",
-    line: homepageResults[3].caption,
-    video: false,
-    position: "object-[center_40%]",
-  },
+const heroStats = [
+  { number: "2.7M", caption: "views in the last 30 days across the accounts we run" },
+  { number: "82.9k", caption: "followers across Instagram and TikTok" },
+  { number: "1,000+", caption: "founders photographed" },
+  { number: "10 years", caption: "in business" },
+] as const;
+
+const problemLines = [
+  "The brand does not get compliments.",
+  "The views do not match the business.",
+  "Selling still feels hard.",
+] as const;
+
+const resultStats = [
+  { number: "1.4M", caption: "views on a single client reel" },
+  { number: "401.8k", caption: "views and 12,157 new followers from one of my reels" },
+  { number: "483.6%", caption: "growth in one client\u2019s views from August to November" },
 ] as const;
 
 function Picture({
@@ -80,7 +66,7 @@ export default function HomePageClient() {
         <Picture
           src={pictures.opening}
           alt="Stephanie Rose"
-          position="object-[center_22%] xl:object-[center_18%]"
+          position="object-[center_20%]"
           priority
           sizes="100vw"
         />
@@ -103,46 +89,60 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      <section className="bg-[#020405] text-[#F4F4F4]">
-        <div className="grid lg:min-h-[100svh] lg:grid-cols-2">
-          <div className="relative min-h-[78vh] lg:min-h-full">
-            <Picture
-              src={pictures.problem}
-              alt="Stephanie Rose"
-              position="object-[center_28%]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-16 lg:py-24">
-            <div className="max-w-xl space-y-5">
-              <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.08]">
-                The brand does not get compliments.
-              </p>
-              <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.08]">
-                The views do not match the business.
-              </p>
-              <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.08]">
-                Selling still feels hard.
-              </p>
-            </div>
+      <section className="bg-[#F4F4F4]">
+        <div className={`${homeSectionContainer} py-[56px]`}>
+          <div className="grid grid-cols-2 lg:grid-cols-4">
+            {heroStats.map((stat, index) => (
+              <div
+                key={stat.number}
+                className={`py-2 ${index % 2 === 1 ? "border-l border-[#404042]/15 pl-5" : "pr-5"} ${
+                  index > 1 ? "mt-8 lg:mt-0" : ""
+                } ${index > 0 ? "lg:border-l lg:border-[#404042]/15 lg:pl-8" : ""} ${index < 3 ? "lg:pr-8" : ""}`}
+              >
+                <p className="font-[family-name:var(--font-wrm-display)] text-[48px] leading-none text-[#020405]">
+                  {stat.number}
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-dm-sans)] text-[14px] leading-snug text-[#404042]">
+                  {stat.caption}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      <section className="bg-[#020405]">
+        <div className={`${homeSectionContainer} ${homeSectionPadding}`}>
+          {problemLines.map((line, index) => (
+            <p
+              key={line}
+              className={`${homeSectionHeading} text-left leading-[1.05] text-[#F4F4F4] ${
+                index > 0
+                  ? "relative mt-10 before:absolute before:inset-x-0 before:top-[-20px] before:h-px before:bg-[#CCCCCE]/15"
+                  : ""
+              }`}
+            >
+              {line}
+            </p>
+          ))}
+        </div>
+      </section>
+
       <section className="bg-[#F4F4F4] text-[#020405]">
-        <div className="grid lg:min-h-[100svh] lg:grid-cols-2">
-          <div className="relative min-h-[78vh] lg:order-2 lg:min-h-full">
-            <Picture
-              src={pictures.approach}
-              alt="Stephanie Rose"
-              position="object-[center_36%]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-16 lg:py-24">
-            <div className="h-0.5 w-12 bg-[#916545]" />
-            <div className="mt-8 max-w-xl">
-              <p className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.08]">
+        <div className={`${homeSectionContainer} ${homeSectionPadding}`}>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="relative min-h-[70vh] lg:order-2 lg:min-h-[640px]">
+              <Picture
+                src={pictures.approach}
+                alt="Stephanie Rose"
+                position="object-[center_36%]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <div className="h-0.5 w-12 bg-[#916545]" />
+              <p className={`${homeEyebrowOnLight} mt-8`}>HOW IT WORKS</p>
+              <p className="mt-4 font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.08]">
                 The brand and the views come from the same work.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-[#404042]">I lead it, so you do not assemble a team.</p>
@@ -155,6 +155,28 @@ export default function HomePageClient() {
                 </WrmButton>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#020405]">
+        <div className={`${homeSectionContainer} ${homeSectionPadding}`}>
+          <p className={homeEyebrowOnDark}>RESULTS</p>
+          <h2 className={`${homeSectionHeading} mt-5 text-[#F4F4F4]`}>The numbers</h2>
+          <div className="mt-14 grid grid-cols-1 gap-12 lg:mt-16 lg:grid-cols-3 lg:gap-0">
+            {resultStats.map((stat, index) => (
+              <div
+                key={stat.number}
+                className={`${index > 0 ? "lg:border-l lg:border-[#CCCCCE]/15 lg:pl-10" : ""} ${
+                  index < resultStats.length - 1 ? "lg:pr-10" : ""
+                }`}
+              >
+                <p className="font-[family-name:var(--font-wrm-display)] text-[56px] leading-none text-[#F4F4F4] lg:text-[88px]">
+                  {stat.number}
+                </p>
+                <p className={`${homeBody} mt-4 leading-snug text-[#CCCCCE]`}>{stat.caption}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -191,31 +213,6 @@ export default function HomePageClient() {
           </div>
         </div>
       </section>
-
-      {proofLines.map((proof, index) => (
-        <section key={proof.line} className="bg-[#020405] text-[#F4F4F4]">
-          <div className={`${FRAME} grid items-center gap-8 py-12 lg:grid-cols-12 lg:gap-14 lg:py-20`}>
-            <div className={`relative min-h-[78vh] overflow-hidden lg:col-span-8 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-              {proof.video ? (
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  src={proof.src}
-                  poster={proof.poster}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              ) : (
-                <Picture src={proof.src} alt={proof.alt} position={proof.position} sizes="(max-width: 1024px) 100vw, 62vw" />
-              )}
-            </div>
-            <p className={`max-w-sm text-lg leading-relaxed text-[#F4F4F4] lg:col-span-4 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-              {proof.line}
-            </p>
-          </div>
-        </section>
-      ))}
 
       <section className="relative min-h-[100svh] bg-[#020405] text-[#F4F4F4]">
         <Picture
