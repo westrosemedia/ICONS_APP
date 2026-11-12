@@ -33,14 +33,14 @@ const heroStats = [
 ] as const;
 
 const problemLines = [
-  "A brand people compliment.",
-  "Views that get you taken seriously.",
-  "A business that sells out.",
+  "What the algorithm actually wants.",
+  "Views, saves, and shares.",
+  "Posts that go viral and make money.",
 ] as const;
 
 const resultStats = [
-  { number: "1.4M", caption: "views on a single client reel" },
-  { number: "401.8k", caption: "views and 12,157 new followers from one of my reels" },
+  { number: "1.4M", caption: "client reels in the 1 million club" },
+  { number: "12,157", caption: "new followers from one reel" },
   { number: "483.6%", caption: "growth in one client\u2019s views from August to November" },
 ] as const;
 
@@ -111,7 +111,7 @@ export default function HomePageClient() {
               </WrmButton>
             </div>
             <p data-home-reveal data-home-reveal-delay="300" className="mt-3 text-sm leading-relaxed text-[#F4F4F4] sm:mt-4 sm:text-base">
-              Working with me is seamless.
+              Posts the algorithm pushes.
             </p>
           </div>
         </HomeReveal>
@@ -184,10 +184,10 @@ export default function HomePageClient() {
                 The brand and the views come from the <em className="italic">same work</em>.
               </p>
               <p data-home-reveal data-home-reveal-delay="400" className="mt-6 text-lg leading-relaxed text-[#404042]">
-                I lead it, so you do not assemble a team.
+                Posts built for what the algorithm actually wants.
               </p>
               <p data-home-reveal data-home-reveal-delay="500" className="mt-4 text-lg leading-relaxed text-[#404042]">
-                You get monthly strategy intensives and a working roadmap, full content execution with a trusted thought partner, and publishing and analytics.
+                Views, saves, and shares, so the right people find you, the work goes viral, and you make money.
               </p>
               <div data-home-reveal data-home-reveal-delay="600" className="mt-8">
                 <WrmButton href="/apply" variant="ink">
@@ -292,7 +292,7 @@ export default function HomePageClient() {
               data-home-reveal-delay="0"
               className="font-[family-name:var(--font-wrm-display)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.12] text-[#F4F4F4]"
             >
-              Everyone online is obsessed with me, and it is easy to see why.
+              Posts that get saved, shared, and pushed, so the right people find you and buy.
             </p>
             <p data-home-reveal data-home-reveal-delay="100" className="mt-8 text-lg">
               <Link href="/results" className="border-b border-[#916545] pb-0.5 text-[#F4F4F4]">
