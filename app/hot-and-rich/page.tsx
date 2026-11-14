@@ -6,11 +6,13 @@ import InstagramReel from "@/components/InstagramReel";
 const STRIPE_PUBLISHABLE_KEY =
   "pk_live_51MSOJeCcsY3WjV3Q0h4k8hC7da1piQaQSHx6ukPgWe3hkxDR4GsmfEDah7RoIkH6k9Qln3ups7flMXSS3kuAMhdL005i3wmuav";
 const STRIPE_PRICING_TABLE_ID = "prctbl_1UPnW7CcsY3WjV3QeRAgTkFI";
-const WILDLY_WEALTHY_LIVE_URL = "https://www.wildlywealthywomanlive.com/";
+const WILDLY_WEALTHY_LIVE_URL = "https://www.jackiemcdonald.ca/wildly-wealthy-woman-live";
 const INSTAGRAM_URL = "https://www.instagram.com/westrosemedia/";
 
 // Update this number by hand as spots sell. Every spot count on the page reads from here.
-const SPOTS_LEFT = 4;
+const SPOTS_LEFT = 2;
+const START_DATE = "November 16";
+const FIRST_CALL = "November 19";
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
@@ -20,7 +22,7 @@ const IMAGES = {
 
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
-  description: `Hot and Rich starts November 15. ${SPOTS_LEFT} spots left. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff, March 2027.`,
+  description: `Hot and Rich starts ${START_DATE}. First call ${FIRST_CALL}. ${SPOTS_LEFT} spots left. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff, March 2027.`,
 };
 
 export const revalidate = 0;
@@ -41,10 +43,11 @@ const ctaLinkClass =
   "inline-block bg-[#FAF7F2] text-[#1C1917] px-10 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#E8E4DD] transition-colors duration-300 rounded-none";
 
 const included = [
-  "Biweekly live calls with me",
+  `Biweekly live calls with me. First call is ${FIRST_CALL}`,
   "Text support inside the group, three days a week",
   "The exact strategy I'm running on my own account right now",
   "A room small enough that I know your business inside and out",
+  "A ticket to Wildly Wealthy Woman Live",
 ];
 
 const questions = [
@@ -61,6 +64,71 @@ const questions = [
     a: "DM me on Instagram and ask me whatever you need to. Asking a question commits you to nothing.",
   },
 ];
+
+function TicketLink({ className }: { className?: string }) {
+  return (
+    <a
+      href={WILDLY_WEALTHY_LIVE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      Includes a ticket to Wildly Wealthy Woman Live
+    </a>
+  );
+}
+
+function RunningTicker() {
+  const phrases = [
+    `Starts ${START_DATE}`,
+    `First call ${FIRST_CALL}`,
+    `Only ${SPOTS_LEFT} spots left`,
+  ];
+
+  return (
+    <div className="sticky top-[73px] z-30 bg-[#1C1917] text-[#FAF7F2] border-b border-[#C9B99A]/40">
+      <div className="overflow-hidden motion-reduce:hidden">
+        <div className="flex w-max animate-marquee whitespace-nowrap py-3 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex items-center" aria-hidden={copy === 1}>
+              {phrases.map((phrase) => (
+                <span
+                  key={`${copy}-${phrase}`}
+                  className="mx-5 md:mx-8 text-[11px] md:text-xs tracking-[0.22em] uppercase"
+                >
+                  {phrase}
+                  <span className="ml-5 md:ml-8 text-[#C9B99A]" aria-hidden>
+                    ·
+                  </span>
+                </span>
+              ))}
+              <span className="mx-5 md:mx-8 text-[11px] md:text-xs tracking-[0.22em] uppercase">
+                {copy === 0 ? (
+                  <TicketLink className="underline underline-offset-4 hover:text-[#C9B99A]" />
+                ) : (
+                  <a
+                    href={WILDLY_WEALTHY_LIVE_URL}
+                    tabIndex={-1}
+                    className="underline underline-offset-4"
+                  >
+                    Includes a ticket to Wildly Wealthy Woman Live
+                  </a>
+                )}
+                <span className="ml-5 md:ml-8 text-[#C9B99A]" aria-hidden>
+                  ·
+                </span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="hidden motion-reduce:block px-4 py-3 text-center text-sm tracking-wide">
+        Starts {START_DATE}. First call {FIRST_CALL}. Only {SPOTS_LEFT} spots left.{" "}
+        <TicketLink className="underline underline-offset-4 hover:text-[#C9B99A]" />.
+      </p>
+    </div>
+  );
+}
 
 function JoinNowButton({ className }: { className?: string }) {
   return (
@@ -86,15 +154,7 @@ function StripePricingTable() {
 export default function HotAndRichPage() {
   return (
     <div className="bg-[#FAF7F2] text-[#1C1917] min-h-screen">
-      <Link
-        href="#pricing"
-        className="sticky top-[73px] z-30 block bg-[#1C1917] px-4 py-3 text-center text-[#FAF7F2] hover:bg-[#3D3632] transition-colors"
-      >
-        <p className="text-sm md:text-base tracking-wide">
-          Doors close November 15. Only {SPOTS_LEFT} spots left.{" "}
-          <span aria-hidden="true">→</span>
-        </p>
-      </Link>
+      <RunningTicker />
 
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat md:bg-fixed"
@@ -120,7 +180,8 @@ export default function HotAndRichPage() {
               the account I have now.
             </p>
             <p>
-              Hot and Rich starts November 15. There are {SPOTS_LEFT} spots left.
+              Hot and Rich starts {START_DATE}. The first call is {FIRST_CALL}. There are{" "}
+              {SPOTS_LEFT} spots left.
             </p>
           </div>
           <JoinNowButton />
@@ -458,7 +519,7 @@ export default function HotAndRichPage() {
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:text-[#1C1917]"
             >
-              wildlywealthywomanlive.com
+              jackiemcdonald.ca/wildly-wealthy-woman-live
             </a>
           </p>
         </div>
@@ -520,7 +581,7 @@ export default function HotAndRichPage() {
           <div className="space-y-4 text-lg text-[#3D3632] mb-10">
             <p>$6,000 CAD for four months.</p>
             <p>
-              {SPOTS_LEFT} spots left. The new round starts November 15.
+              {SPOTS_LEFT} spots left. The new round starts {START_DATE}. First call is {FIRST_CALL}.
             </p>
             <p>
               Includes your ticket to{" "}
@@ -555,7 +616,7 @@ export default function HotAndRichPage() {
             help you sharpen it until the right people can&apos;t scroll past you.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
-            {SPOTS_LEFT} spots. We start November 15.
+            {SPOTS_LEFT} spots. We start {START_DATE}. First call {FIRST_CALL}.
           </p>
           <JoinNowButton />
         </div>

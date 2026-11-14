@@ -43,7 +43,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
   {
     key: "hot-and-rich",
     title: "Hot and Rich Mastermind",
-    noteBelowTitle: "4 spots left. Four months, beginning November 15.",
+    noteBelowTitle: "2 spots left. Four months, beginning November 16. First call November 19.",
     whoFor:
       "For founders who already sell and get results, and still feel invisible to the women who should be buying from them.",
     blurb:

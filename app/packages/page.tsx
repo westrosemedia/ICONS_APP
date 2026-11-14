@@ -75,8 +75,8 @@ export default function PackagesPage() {
               Hot and Rich Mastermind
             </h2>
             <p className="text-editorial text-[#FAF7F2]/90 max-w-3xl mx-auto">
-              Four months. 4 spots left. $6,000 CAD. Your ticket to Wildly Wealthy Woman Live is
-              included.
+              Four months. Starts November 16. First call November 19. 2 spots left. $6,000 CAD.
+              Your ticket to Wildly Wealthy Woman Live is included.
             </p>
           </motion.div>
 
