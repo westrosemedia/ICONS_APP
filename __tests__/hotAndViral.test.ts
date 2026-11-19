@@ -5,6 +5,7 @@ import {
   DOORS_OPEN_AT,
   coachStats,
   copy,
+  countdownTarget,
   getPageState,
   memberResults,
   openingWindow,
@@ -27,13 +28,14 @@ function calgaryPart(ms: number, type: Intl.DateTimeFormatPartTypes) {
   return parts.find((part) => part.type === type)?.value;
 }
 
-test("doors open Wednesday November 25 2026 at midnight in Calgary", () => {
-  expect(calgaryPart(DOORS_OPEN_AT, "weekday")).toBe("Wednesday");
+test("doors are already open as of Thursday November 19 2026 at midnight in Calgary", () => {
+  expect(calgaryPart(DOORS_OPEN_AT, "weekday")).toBe("Thursday");
   expect(calgaryPart(DOORS_OPEN_AT, "month")).toBe("November");
-  expect(calgaryPart(DOORS_OPEN_AT, "day")).toBe("25");
+  expect(calgaryPart(DOORS_OPEN_AT, "day")).toBe("19");
   expect(calgaryPart(DOORS_OPEN_AT, "year")).toBe("2026");
   expect(calgaryPart(DOORS_OPEN_AT, "hour")).toBe("00");
   expect(calgaryPart(DOORS_OPEN_AT, "minute")).toBe("00");
+  expect(getPageState(Date.parse("2026-11-19T12:00:00-06:00"))).toBe("open");
 });
 
 test("doors close as Saturday November 28 2026 begins in Calgary", () => {
@@ -48,6 +50,12 @@ test("page state follows the three door windows", () => {
   expect(getPageState(DOORS_OPEN_AT - 1)).toBe("before");
   expect(getPageState(DOORS_OPEN_AT)).toBe("open");
   expect(getPageState(DOORS_CLOSE_AT + 1000)).toBe("closed");
+});
+
+test("countdown always runs to the close", () => {
+  expect(countdownTarget("before")).toBe(DOORS_CLOSE_AT);
+  expect(countdownTarget("open")).toBe(DOORS_CLOSE_AT);
+  expect(countdownTarget("closed")).toBeNull();
 });
 
 test("countdown shows days hours minutes and seconds", () => {
@@ -353,7 +361,7 @@ test("membership section is Stephanie's exact words, after proof and before pric
 
 test("approved sales lines stay intact", () => {
   expect(copy.meta.title).toBe("Hot & Viral | West Rose Media");
-  expect(copy.meta.description).toContain("November 25 to 27");
+  expect(copy.meta.description).toContain("Open now through November 27, 2026");
   expect(copy.hero.buttonBefore).toBe("Get first access");
   expect(copy.hero.buttonOpen).toBe("Join Hot & Viral");
   expect(copy.hero.window).toBe(openingWindow);
@@ -617,14 +625,16 @@ test("pricing section is Stephanie's exact launch offer and stays behind the doo
   expect(copy.pricing.thingHeading).toBe("HERE'S THE THING...");
   expect(copy.pricing.thingIntro).toBe("This introductory price won't be available forever.");
   expect(copy.pricing.windows).toEqual([
-    { label: "November 25–27, 2026:", body: "Join for $250 CAD/month." },
+    { label: "Through November 27, 2026:", body: "Join for $250 CAD/month." },
     { label: "Spring 2027:", body: "The monthly membership price increases to $500 CAD/month." },
   ]);
   expect(copy.pricing.lockLine).toBe(
     "Join during the launch window and keep your $250 monthly rate for as long as your membership remains active.",
   );
   expect(copy.pricing.cancel).toBe("Cancel anytime.");
-  expect(copy.pricing.closeLine).toBe("Three days to get in. Then enrollment closes until spring.");
+  expect(copy.pricing.closeLine).toBe(
+    "Enrollment closes Friday, November 27, 2026 at 11:59pm MST. Then it stays closed until spring.",
+  );
   expect(copy.pricing.button).toBe("YES! I WANT HOT & VIRAL");
   expect(copy.pricing.closer).toBe(
     "Your next reel could be the one that reaches thousands. Let's work on making that happen.",
@@ -693,14 +703,14 @@ test("close is Stephanie's exact words, after pricing and before the FAQ", () =>
   expect(copy.close.paragraphs.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
     "You can keep trying to figure it out alone. Or you can get in the room.",
   ]);
-  expect(copy.close.subhead).toBe("THE DOORS OPEN NOVEMBER 25\u201327, 2026.");
+  expect(copy.close.subhead).toBe("THE OFFER ENDS NOVEMBER 27, 2026.");
   expect(copy.close.offer.map((paragraph) => paragraph.text)).toEqual([
     "$250 CAD/month.",
     "Your introductory monthly price is locked in while your membership remains active.",
     "Or save $250 with the annual option at $2,750 CAD.",
     "Plus GST.",
     "After the launch, enrollment closes until spring 2027, when the monthly price increases to $500 CAD.",
-    "Three days. One opportunity to join at the introductory rate.",
+    "Open now through Friday, November 27, 2026 at 11:59pm MST. One opportunity to join at the introductory rate.",
     "READY TO GET HOT & VIRAL?",
   ]);
   expect(copy.close.offer.filter((paragraph) => paragraph.bold).map((paragraph) => paragraph.text)).toEqual([
