@@ -2,9 +2,10 @@
  * Hot & Viral sales page.
  *
  * Door times are Calgary wall-clock instants in America/Edmonton.
- * Doors open Wednesday 25 November 2026 at 12:00am and stay open through
- * Friday 27 November 2026. The page switches to closed at Saturday
- * 28 November 2026 at 12:00am, the end of 11:59pm Friday.
+ * The launch offer is available to purchase now. Doors opened Thursday
+ * 19 November 2026 at 12:00am and stay open through Friday 27 November 2026.
+ * The page switches to closed at Saturday 28 November 2026 at 12:00am,
+ * the end of 11:59pm Friday. The countdown runs to that close.
  * The next opening is spring 2027, at double the price ($500 CAD/month).
  *
  * In the current timezone data, Calgary stays on UTC-6 after 1 November 2026
@@ -19,7 +20,7 @@
  * on the Hot and Rich page. Replace them when the new profile screenshots arrive.
  */
 
-export const DOORS_OPEN_AT = Date.parse("2026-11-25T00:00:00-06:00");
+export const DOORS_OPEN_AT = Date.parse("2026-11-19T00:00:00-06:00");
 export const DOORS_CLOSE_AT = Date.parse("2026-11-28T00:00:00-06:00");
 
 export const STRIPE_MONTHLY_URL = "";
@@ -297,9 +298,8 @@ export function getPageState(nowMs: number): PageState {
 }
 
 export function countdownTarget(state: PageState): number | null {
-  if (state === "before") return DOORS_OPEN_AT;
-  if (state === "open") return DOORS_CLOSE_AT;
-  return null;
+  if (state === "closed") return null;
+  return DOORS_CLOSE_AT;
 }
 
 export type CountdownParts = {
@@ -344,13 +344,13 @@ export function validateSignup(input: {
 }
 
 export const openingWindow =
-  "This is a 3-day window only, Wednesday November 25, 2026 at 12:00am MST through Friday November 27, 2026 at 11:59pm MST. Then it is closed until spring 2027, when the price is double ($500 CAD/month).";
+  "Open now through Friday November 27, 2026 at 11:59pm MST. Then it is closed until spring 2027, when the price is double ($500 CAD/month).";
 
 export const copy = {
   meta: {
     title: "Hot & Viral | West Rose Media",
     description:
-      "You're showing up. You're posting. You're putting in the work. A 3-day window only, November 25 to 27, 2026. Then closed until spring 2027, at double the price.",
+      "You're showing up. You're posting. You're putting in the work. Open now through November 27, 2026. Then closed until spring 2027, at double the price.",
   },
   hero: {
     eyebrow: "HOT & VIRAL",
@@ -825,13 +825,13 @@ export const copy = {
     thingHeading: "HERE'S THE THING...",
     thingIntro: "This introductory price won't be available forever.",
     windows: [
-      { label: "November 25–27, 2026:", body: "Join for $250 CAD/month." },
+      { label: "Through November 27, 2026:", body: "Join for $250 CAD/month." },
       { label: "Spring 2027:", body: "The monthly membership price increases to $500 CAD/month." },
     ],
     lockLine:
       "Join during the launch window and keep your $250 monthly rate for as long as your membership remains active.",
     cancel: "Cancel anytime.",
-    closeLine: "Three days to get in. Then enrollment closes until spring.",
+    closeLine: "Enrollment closes Friday, November 27, 2026 at 11:59pm MST. Then it stays closed until spring.",
     button: "YES! I WANT HOT & VIRAL",
     closer: "Your next reel could be the one that reaches thousands. Let's work on making that happen.",
   },
@@ -872,7 +872,7 @@ export const copy = {
       },
       { text: "You can keep trying to figure it out alone. Or you can get in the room.", bold: true },
     ],
-    subhead: "THE DOORS OPEN NOVEMBER 25–27, 2026.",
+    subhead: "THE OFFER ENDS NOVEMBER 27, 2026.",
     offer: [
       { text: "$250 CAD/month.", bold: false },
       {
@@ -885,7 +885,10 @@ export const copy = {
         text: "After the launch, enrollment closes until spring 2027, when the monthly price increases to $500 CAD.",
         bold: false,
       },
-      { text: "Three days. One opportunity to join at the introductory rate.", bold: false },
+      {
+        text: "Open now through Friday, November 27, 2026 at 11:59pm MST. One opportunity to join at the introductory rate.",
+        bold: false,
+      },
       { text: "READY TO GET HOT & VIRAL?", bold: true },
     ],
     button: "GET MY FIRST ACCESS",
@@ -954,13 +957,13 @@ export const copy = {
   final: {
     heading: "You don't need to keep guessing.",
     paragraphs: [
-      "You need to understand what makes people stop scrolling, what makes them watch, and what makes them want to hear more from you. That's what we're building inside Hot & Viral. The doors are open for three days. Get in, and lock $250 CAD/month for as long as you remain a member. Then it is closed until spring 2027, at double the price.",
+      "You need to understand what makes people stop scrolling, what makes them watch, and what makes them want to hear more from you. That's what we're building inside Hot & Viral. The doors are open now. Get in, and lock $250 CAD/month for as long as you remain a member. Then it is closed until spring 2027, at double the price.",
       openingWindow,
     ],
   },
   closed: {
     heading: "Hot & Viral is closed.",
-    body: "Wednesday November 25, 2026 at 12:00am MST through Friday November 27, 2026 at 11:59pm MST was the only window. It is closed until spring 2027, when the price is double ($500 CAD/month). Leave your email and you'll hear first.",
+    body: "The launch offer closed at the end of Friday November 27, 2026 at 11:59pm MST. It is closed until spring 2027, when the price is double ($500 CAD/month). Leave your email and you'll hear first.",
     button: "Tell me first",
     success: "You're on the list.",
   },

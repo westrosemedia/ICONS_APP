@@ -102,7 +102,7 @@ function CountdownDigits({
 }) {
   const target = countdownTarget(state) ?? nowMs;
   const parts = splitRemaining(target - nowMs);
-  const label = state === "before" ? copy.countdown.before : copy.countdown.open;
+  const label = copy.countdown.open;
   const units = [
     ["Days", parts.days],
     ["Hours", parts.hours],
@@ -137,7 +137,7 @@ function CountdownBanner({
   state: Exclude<PageState, "closed">;
   sticky?: boolean;
 }) {
-  const label = state === "before" ? copy.countdown.before : copy.countdown.open;
+  const label = copy.countdown.open;
 
   return (
     <div className={`${sticky ? "sticky top-[73px] z-30" : ""} bg-black text-white`}>
@@ -1017,7 +1017,7 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             </div>
             <div className="mx-auto mt-10 max-w-3xl">
               <p className="text-lg font-semibold text-white sm:text-xl">
-                {state === "before" ? copy.countdown.before : copy.countdown.open}
+                {copy.countdown.open}
               </p>
               <div className="mt-3">
                 <CountdownDigits nowMs={nowMs} state={state} />
