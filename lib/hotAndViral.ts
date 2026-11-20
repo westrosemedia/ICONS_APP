@@ -2,9 +2,11 @@
  * Hot & Viral sales page.
  *
  * Door times are Calgary wall-clock instants in America/Edmonton.
- * Doors open Wednesday 25 November 2026 at 12:00am and stay open through
- * Friday 27 November 2026. The page switches to closed at Saturday
- * 28 November 2026 at 12:00am, the end of 11:59pm Friday.
+ * Doors opened Friday 20 November 2026 at 12:00am so the offer is open now,
+ * and they stay open through Friday 27 November 2026. The page switches to
+ * closed at Saturday 28 November 2026 at 12:00am, the end of 11:59pm Friday.
+ * While the doors are open the countdown runs to that close, and checkout
+ * is on the page.
  * The next opening is spring 2027, at double the price ($500 CAD/month).
  *
  * In the current timezone data, Calgary stays on UTC-6 after 1 November 2026
@@ -19,7 +21,7 @@
  * on the Hot and Rich page. Replace them when the new profile screenshots arrive.
  */
 
-export const DOORS_OPEN_AT = Date.parse("2026-11-25T00:00:00-06:00");
+export const DOORS_OPEN_AT = Date.parse("2026-11-20T00:00:00-06:00");
 export const DOORS_CLOSE_AT = Date.parse("2026-11-28T00:00:00-06:00");
 
 export const STRIPE_MONTHLY_URL = "";
