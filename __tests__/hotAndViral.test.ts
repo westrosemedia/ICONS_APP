@@ -5,6 +5,7 @@ import {
   DOORS_OPEN_AT,
   coachStats,
   copy,
+  countdownTarget,
   getPageState,
   memberResults,
   openingWindow,
@@ -27,13 +28,21 @@ function calgaryPart(ms: number, type: Intl.DateTimeFormatPartTypes) {
   return parts.find((part) => part.type === type)?.value;
 }
 
-test("doors open Wednesday November 25 2026 at midnight in Calgary", () => {
-  expect(calgaryPart(DOORS_OPEN_AT, "weekday")).toBe("Wednesday");
+test("doors are already open as of Friday November 20 2026 at midnight in Calgary", () => {
+  expect(calgaryPart(DOORS_OPEN_AT, "weekday")).toBe("Friday");
   expect(calgaryPart(DOORS_OPEN_AT, "month")).toBe("November");
-  expect(calgaryPart(DOORS_OPEN_AT, "day")).toBe("25");
+  expect(calgaryPart(DOORS_OPEN_AT, "day")).toBe("20");
   expect(calgaryPart(DOORS_OPEN_AT, "year")).toBe("2026");
   expect(calgaryPart(DOORS_OPEN_AT, "hour")).toBe("00");
   expect(calgaryPart(DOORS_OPEN_AT, "minute")).toBe("00");
+});
+
+test("while the offer is open the countdown runs to the close and checkout is the live state", () => {
+  const duringOffer = Date.parse("2026-11-20T15:07:00-06:00");
+  expect(getPageState(duringOffer)).toBe("open");
+  expect(countdownTarget("open")).toBe(DOORS_CLOSE_AT);
+  expect(countdownTarget("before")).toBe(DOORS_OPEN_AT);
+  expect(countdownTarget("closed")).toBeNull();
 });
 
 test("doors close as Saturday November 28 2026 begins in Calgary", () => {
