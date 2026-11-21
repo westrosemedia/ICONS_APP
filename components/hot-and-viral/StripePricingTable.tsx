@@ -4,7 +4,7 @@ import Script from "next/script";
 import { useEffect, useRef } from "react";
 import { STRIPE_PRICING_TABLE_ID, STRIPE_PUBLISHABLE_KEY } from "@/lib/hotAndViral";
 
-const scrollTarget = "scroll-mt-80 scroll-mb-28";
+const scrollTarget = "scroll-mt-[22rem] scroll-mb-28";
 
 /**
  * Stripe's pricing table is a custom element. React drops unknown attributes
@@ -25,12 +25,10 @@ export default function StripePricingTable() {
   return (
     <>
       <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
-      {/* @ts-expect-error stripe-pricing-table is a Stripe custom element */}
-      <stripe-pricing-table
-        id="checkout"
-        ref={ref}
-        className={`${scrollTarget} block w-full max-w-full`}
-      />
+      <div id="checkout" className={scrollTarget}>
+        {/* @ts-expect-error stripe-pricing-table is a Stripe custom element */}
+        <stripe-pricing-table ref={ref} className="block w-full max-w-full" />
+      </div>
     </>
   );
 }

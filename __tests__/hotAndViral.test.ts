@@ -206,7 +206,7 @@ test("hero, section 2, and introducing hot and viral are Stephanie's exact words
   expect(copycatAt).toBeGreaterThan(proofAt);
   expect(page).toContain("{copy.hero.button}");
   expect(page).toContain("{copy.introducing.button}");
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain('state === "before" ? "#first-access" : "#checkout"');
   const introducingBlock = page.slice(introducingAt, proofAt);
   expect(introducingBlock).toContain("copy.introducing.paragraphs.map");
   expect(introducingBlock).toContain("{copy.introducing.button}");
@@ -508,7 +508,7 @@ test("right room is Stephanie's exact words and sits before pricing", () => {
   expect(block).toContain("{copy.rightRoom.notForYouSubhead}");
   expect(block).toContain("{copy.rightRoom.button}");
   expect(block).toContain("<StateButton");
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain('state === "before" ? "#first-access" : "#checkout"');
   expect(page).toContain("{copy.hero.button}");
   expect(page).toContain("{copy.introducing.button}");
 });
@@ -684,7 +684,7 @@ test("pricing section is Stephanie's exact launch offer and stays behind the doo
   expect(offerFn).toContain("{copy.pricing.button}");
   expect(offerFn).toContain("className={pillDark}");
   expect(page).toContain('className="text-[#f41cdc]">{amount}</span>');
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain('state === "before" ? "#first-access" : "#checkout"');
   expect(page).toContain("{copy.hero.headline}");
   expect(copy.hero.headline).toBe(
     "You're showing up. You're posting. You're putting in the work. So why are your reels still struggling to get past 300 views?",
@@ -765,7 +765,7 @@ test("close is Stephanie's exact words, after pricing and before the FAQ", () =>
   expect(block).toContain("<StateButton");
   expect(block).not.toContain("{copy.hero.button}");
   expect(block).not.toContain("{copy.pricing.button}");
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain('state === "before" ? "#first-access" : "#checkout"');
   expect(page).toContain("const pillDark = `${pill} bg-black text-white");
   expect(page).toContain('state === "open" ?');
   expect(page).toContain("<StripePricingTable />");
@@ -867,7 +867,7 @@ test("FAQ is Stephanie's exact questions and sits after the close", () => {
   expect(finalAt).toBeGreaterThan(faqAt);
   expect(page).toContain("{copy.faqHeading}");
   expect(page).toContain("{copy.faqButton}");
-  expect(page).toContain('state === "before" ? "#first-access" : "#pricing"');
+  expect(page).toContain('state === "before" ? "#first-access" : "#checkout"');
   expect(page).toContain("const pillDark = `${pill} bg-black text-white");
   expect(page).toContain('state === "open" ?');
   expect(page).toContain("<StripePricingTable />");

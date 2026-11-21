@@ -200,7 +200,7 @@ function StateButton({
   className?: string;
   children?: string;
 }) {
-  const href = state === "before" ? "#first-access" : "#pricing";
+  const href = state === "before" ? "#first-access" : "#checkout";
   const label = children ?? (state === "before" ? copy.hero.buttonBefore : copy.hero.buttonOpen);
   return (
     <a href={href} className={`${tone === "light" ? pillLight : pillDark} ${className}`}>
