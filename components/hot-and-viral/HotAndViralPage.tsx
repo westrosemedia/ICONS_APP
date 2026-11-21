@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
-import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
+import StripePricingTable, { RegularPriceBanner } from "@/components/hot-and-viral/StripePricingTable";
 import {
   COACH_IMAGE,
   HERO_VIDEO,
@@ -360,7 +360,14 @@ function PricingCards() {
   return (
     <div className="grid items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-5">
       <article className="flex flex-col rounded-[1.6rem] bg-white p-7 shadow-[0_18px_50px_-36px_rgba(0,0,0,0.45)] ring-1 ring-black/10 md:p-9">
-        <PriceLine amount={copy.pricing.monthly.amount} cadence={copy.pricing.monthly.cadence} tone="light" />
+        <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#f41cdc]">{copy.pricing.regular.line}</p>
+        <p className="mt-3 font-heading text-[2.4rem] leading-none tracking-[-0.04em] text-neutral-500 line-through decoration-[#f41cdc] decoration-[3px] sm:text-[3rem]">
+          {copy.pricing.regular.amount}
+          <span className="ml-2 text-[0.9rem] font-semibold tracking-normal">{copy.pricing.regular.cadence}</span>
+        </p>
+        <div className="mt-4">
+          <PriceLine amount={copy.pricing.monthly.amount} cadence={copy.pricing.monthly.cadence} tone="light" />
+        </div>
         <p className="mt-5 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.monthly.lock}</p>
       </article>
       <p className="self-center text-center font-heading text-[1.35rem] font-bold tracking-[0.14em] text-black">
@@ -917,6 +924,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             {copy.pricing.offerHeading}
           </h3>
           <div className="mt-8">
+            <RegularPriceBanner />
+          </div>
+          <div className="mt-5">
             <PricingCards />
           </div>
           <p className="mt-6 text-[15px] font-semibold leading-relaxed text-neutral-900">{copy.pricing.currency}</p>

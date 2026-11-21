@@ -807,6 +807,13 @@ export const copy = {
       "And because you're joining during the launch window, you're getting access at my introductory membership rate.",
     ],
     offerHeading: "THE HOT & VIRAL LAUNCH OFFER",
+    regular: {
+      line: "The regular price is double.",
+      amount: "$500",
+      cadence: "CAD / MONTH",
+      after: "CAD / MONTH after this window",
+      now: "CAD / MONTH now",
+    },
     monthly: {
       amount: "$250",
       cadence: "CAD / MONTH",

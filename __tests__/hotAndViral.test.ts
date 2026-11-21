@@ -615,6 +615,13 @@ test("pricing section is Stephanie's exact launch offer and stays behind the doo
     "And because you're joining during the launch window, you're getting access at my introductory membership rate.",
   ]);
   expect(copy.pricing.offerHeading).toBe("THE HOT & VIRAL LAUNCH OFFER");
+  expect(copy.pricing.regular).toEqual({
+    line: "The regular price is double.",
+    amount: "$500",
+    cadence: "CAD / MONTH",
+    after: "CAD / MONTH after this window",
+    now: "CAD / MONTH now",
+  });
   expect(copy.pricing.monthly).toEqual({
     amount: "$250",
     cadence: "CAD / MONTH",
