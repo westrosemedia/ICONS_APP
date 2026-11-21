@@ -41,6 +41,11 @@ export const HERO_IMAGE = {
   height: 1333,
 };
 
+export const HERO_VIDEO = {
+  src: "/hot-and-viral/wrm-web.mp4",
+  poster: "/hot-and-viral/wrm-web-poster.jpg",
+};
+
 export const COACH_IMAGE = {
   src: "/hot-and-viral/stephanie-camera.jpg",
   alt: "Stephanie Rose photographing in a hall",

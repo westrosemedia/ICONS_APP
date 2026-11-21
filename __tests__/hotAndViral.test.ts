@@ -3,6 +3,7 @@ import path from "path";
 import {
   DOORS_CLOSE_AT,
   DOORS_OPEN_AT,
+  HERO_VIDEO,
   coachStats,
   copy,
   countdownTarget,
@@ -85,6 +86,18 @@ test("signup blocks empty and badly formed emails and keeps a clean address", ()
     name: "Stephanie",
     email: "stephanie@westrosemedia.com",
   });
+});
+
+test("the hero is the film with HOT and VIRAL over it", () => {
+  expect(HERO_VIDEO.src).toBe("/hot-and-viral/wrm-web.mp4");
+  expect(HERO_VIDEO.poster).toBe("/hot-and-viral/wrm-web-poster.jpg");
+  const page = fs.readFileSync(path.join(__dirname, "../components/hot-and-viral/HotAndViralPage.tsx"), "utf8");
+  const hero = page.slice(page.indexOf("function HeroFilm"), page.indexOf("function pad"));
+  expect(hero).toContain("HERO_VIDEO.src");
+  expect(hero).toContain("HERO_VIDEO.poster");
+  expect(hero).toContain("{copy.hero.eyebrow}");
+  expect(hero).toContain("<video");
+  expect(page.indexOf("<HeroFilm />")).toBeLessThan(page.indexOf("<CountdownBanner"));
 });
 
 test("hero, section 2, and introducing hot and viral are Stephanie's exact words", () => {

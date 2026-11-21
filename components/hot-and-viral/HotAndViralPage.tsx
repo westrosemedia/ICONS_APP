@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import AccessForm from "@/components/hot-and-viral/AccessForm";
 import StripePricingTable from "@/components/hot-and-viral/StripePricingTable";
 import {
   COACH_IMAGE,
-  HERO_IMAGE,
+  HERO_VIDEO,
   cammyMore,
   cammyShots,
   copy,
@@ -85,6 +85,44 @@ function useTrustedNow(initialNowMs: number) {
   }, [initialNowMs]);
 
   return nowMs;
+}
+
+function HeroFilm() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.pause();
+      return;
+    }
+    void video.play().catch(() => {
+      // Autoplay can be blocked. The poster stays in place.
+    });
+  }, []);
+
+  return (
+    <section className="relative bg-black" aria-label={copy.hero.eyebrow}>
+      <video
+        ref={videoRef}
+        className="h-[calc(100svh-73px)] min-h-[32rem] w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={HERO_VIDEO.poster}
+      >
+        <source src={HERO_VIDEO.src} type="video/mp4" />
+      </video>
+      <div className="pointer-events-none absolute inset-0 bg-black/35" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-5">
+        <p className="text-center font-heading text-[clamp(2.6rem,10vw,8.75rem)] leading-[0.82] tracking-[-0.045em] whitespace-nowrap text-white drop-shadow-[0_10px_28px_rgba(0,0,0,0.55)]">
+          {copy.hero.eyebrow}
+        </p>
+      </div>
+    </section>
+  );
 }
 
 function pad(value: number) {
@@ -514,15 +552,12 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
   return (
     <div className="overflow-x-clip bg-white text-black" data-state={state}>
       {preview ? <PreviewNote state={state} /> : null}
+      <HeroFilm />
       <CountdownBanner nowMs={nowMs} state={state} sticky />
 
       <section className="bg-white">
-        <div className="container-elegant grid items-start gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] lg:gap-14 lg:py-16">
-          <div className="min-w-0">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#f41cdc]" aria-hidden="true" />
-              {copy.hero.eyebrow}
-            </p>
+        <div className="container-elegant py-10 md:py-14 lg:py-16">
+          <div className="min-w-0 max-w-[40rem]">
             <h1 className="max-w-[20em] font-heading text-[2.05rem] leading-[1.08] tracking-[-0.03em] text-black sm:text-[2.4rem] lg:text-[2.65rem]">
               {copy.hero.headline}
             </h1>
@@ -536,22 +571,9 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
             <div className="mt-8">
               <StateButton state={state}>{copy.hero.button}</StateButton>
             </div>
-          </div>
-
-          <div className="mx-auto w-full max-w-[400px] lg:mx-0 lg:max-w-[440px] lg:justify-self-end">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-[#eceae6] shadow-[0_24px_60px_-36px_rgba(0,0,0,0.55)] ring-1 ring-black/10">
-              <Image
-                src={HERO_IMAGE.src}
-                alt={HERO_IMAGE.alt}
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 440px"
-                className="object-cover object-[74%_24%]"
-              />
-            </div>
             <a
               href="#cammy"
-              className="relative z-10 -mt-10 mr-auto block w-[13.5rem] rounded-2xl bg-white p-4 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black sm:p-5"
+              className="mt-10 block w-[13.5rem] rounded-2xl bg-white p-4 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black sm:p-5"
             >
               <p className={eyebrow}>{copy.cammy.label}</p>
               <p className="mt-2 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black">
