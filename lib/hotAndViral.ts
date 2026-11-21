@@ -818,6 +818,7 @@ export const copy = {
       cadence: "CAD / YEAR",
       note: "That's $250 in savings compared with paying monthly for 12 months.",
     },
+    currency: "Prices are in CAD.",
     gst: "Plus GST.",
     includesHeading: "WHAT YOU GET:",
     includes: [

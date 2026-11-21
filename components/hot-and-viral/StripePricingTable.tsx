@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useRef } from "react";
-import { STRIPE_PRICING_TABLE_ID, STRIPE_PUBLISHABLE_KEY } from "@/lib/hotAndViral";
+import { STRIPE_PRICING_TABLE_ID, STRIPE_PUBLISHABLE_KEY, copy } from "@/lib/hotAndViral";
 
 const scrollTarget = "scroll-mt-[22rem] scroll-mb-28";
 
@@ -26,6 +26,9 @@ export default function StripePricingTable() {
     <>
       <Script async src="https://js.stripe.com/v3/pricing-table.js" strategy="afterInteractive" />
       <div id="checkout" className={scrollTarget}>
+        <p className="mb-4 text-center text-[15px] font-semibold tracking-wide text-neutral-900">
+          {copy.pricing.currency}
+        </p>
         {/* @ts-expect-error stripe-pricing-table is a Stripe custom element */}
         <stripe-pricing-table ref={ref} className="block w-full max-w-full" />
       </div>

@@ -390,6 +390,7 @@ test("approved sales lines stay intact", () => {
   expect(copy.pricing.monthly.amount).toBe("$250");
   expect(copy.pricing.yearly.amount).toBe("$2,750");
   expect(copy.pricing.yearly.note).toBe("That's $250 in savings compared with paying monthly for 12 months.");
+  expect(copy.pricing.currency).toBe("Prices are in CAD.");
   expect(copy.pricing.gst).toBe("Plus GST.");
   expect(copy.cammy.beforeStat).toBe("200 views");
   expect(copy.cammy.afterStat).toBe("1.4M views");
@@ -625,6 +626,7 @@ test("pricing section is Stephanie's exact launch offer and stays behind the doo
     cadence: "CAD / YEAR",
     note: "That's $250 in savings compared with paying monthly for 12 months.",
   });
+  expect(copy.pricing.currency).toBe("Prices are in CAD.");
   expect(copy.pricing.gst).toBe("Plus GST.");
   expect(copy.pricing.includesHeading).toBe("WHAT YOU GET:");
   expect(copy.pricing.includes).toEqual([

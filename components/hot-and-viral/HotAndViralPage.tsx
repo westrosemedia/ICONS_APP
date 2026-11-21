@@ -919,7 +919,8 @@ export default function HotAndViralPage({ preview, initialNowMs }: HotAndViralPa
           <div className="mt-8">
             <PricingCards />
           </div>
-          <p className="mt-6 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.gst}</p>
+          <p className="mt-6 text-[15px] font-semibold leading-relaxed text-neutral-900">{copy.pricing.currency}</p>
+          <p className="mt-1 text-[15px] leading-relaxed text-neutral-700">{copy.pricing.gst}</p>
           <h3 className="mt-12 font-heading text-[1.65rem] leading-[1.05] tracking-[-0.03em] text-black sm:text-[2rem]">
             {copy.pricing.includesHeading}
           </h3>
