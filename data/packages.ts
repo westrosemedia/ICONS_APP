@@ -53,7 +53,7 @@ export const PACKAGE_SUMMARIES: PackageSummary[] = [
       { label: "Biweekly live calls with Stephanie" },
       { label: "Text support inside the group, three days a week" },
       { label: "The exact strategy she's running right now" },
-      { label: "Ticket to Wildly Wealthy Woman Live in Banff" },
+      { label: "Ticket to Wildly Wealthy Woman Live in Banff if you join before January 1. Not included after January 1" },
     ],
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",

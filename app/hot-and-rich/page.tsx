@@ -11,6 +11,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/westrosemedia/";
 
 // Update this number by hand as spots sell. Every spot count on the page reads from here.
 const SPOTS_LEFT = 2;
+const TICKET_CUTOFF = "January 1";
 
 const IMAGES = {
   hero: "https://firebasestorage.googleapis.com/v0/b/iconsapp-fa44c.firebasestorage.app/o/car%2FS%26K_ENGAGEMENT_FINALS_47.jpg?alt=media&token=0596c414-5c23-483c-837c-54c3c79a51fd",
@@ -20,7 +21,7 @@ const IMAGES = {
 
 const META = {
   title: "Hot and Rich Mastermind | West Rose Media",
-  description: `${SPOTS_LEFT} spots left. $6,000 CAD for four months. Every member gets a ticket to Wildly Wealthy Woman Live in Banff.`,
+  description: `${SPOTS_LEFT} spots left. $6,000 CAD for four months. Join before ${TICKET_CUTOFF} and you get a ticket to Wildly Wealthy Woman Live in Banff. Join after ${TICKET_CUTOFF} and you do not.`,
 };
 
 export const revalidate = 0;
@@ -45,7 +46,7 @@ const included = [
   "Text support inside the group, three days a week",
   "The exact strategy I'm running on my own account right now",
   "A room small enough that I know your business inside and out",
-  "A ticket to Wildly Wealthy Woman Live",
+  `A ticket to Wildly Wealthy Woman Live if you join before ${TICKET_CUTOFF}. Not included after ${TICKET_CUTOFF}`,
 ];
 
 const questions = [
@@ -71,13 +72,17 @@ function TicketLink({ className }: { className?: string }) {
       rel="noopener noreferrer"
       className={className}
     >
-      Includes a ticket to Wildly Wealthy Woman Live
+      Ticket to Wildly Wealthy Woman Live
     </a>
   );
 }
 
 function RunningTicker() {
-  const phrases = [`Only ${SPOTS_LEFT} spots left`];
+  const phrases = [
+    `Only ${SPOTS_LEFT} spots left`,
+    `Ticket included before ${TICKET_CUTOFF}`,
+    `Not included after ${TICKET_CUTOFF}`,
+  ];
 
   return (
     <div className="sticky top-[73px] z-30 bg-[#1C1917] text-[#FAF7F2] border-b border-[#C9B99A]/40">
@@ -105,7 +110,7 @@ function RunningTicker() {
                     tabIndex={-1}
                     className="underline underline-offset-4"
                   >
-                    Includes a ticket to Wildly Wealthy Woman Live
+                    Ticket to Wildly Wealthy Woman Live
                   </a>
                 )}
                 <span className="ml-5 md:ml-8 text-[#C9B99A]" aria-hidden>
@@ -117,7 +122,8 @@ function RunningTicker() {
         </div>
       </div>
       <p className="hidden motion-reduce:block px-4 py-3 text-center text-sm tracking-wide">
-        Only {SPOTS_LEFT} spots left.{" "}
+        Only {SPOTS_LEFT} spots left. Ticket included before {TICKET_CUTOFF}. Not included
+        after {TICKET_CUTOFF}.{" "}
         <TicketLink className="underline underline-offset-4 hover:text-[#C9B99A]" />.
       </p>
     </div>
@@ -174,6 +180,10 @@ export default function HotAndRichPage() {
               the account I have now.
             </p>
             <p>There are {SPOTS_LEFT} spots left.</p>
+            <p className="text-[#FAF7F2] font-medium">
+              Join before {TICKET_CUTOFF} and you get a ticket to Wildly Wealthy Woman Live. Join
+              after {TICKET_CUTOFF} and you do not.
+            </p>
           </div>
           <JoinNowButton />
         </div>
@@ -485,18 +495,22 @@ export default function HotAndRichPage() {
             id="ticket-heading"
             className="font-heading text-3xl md:text-5xl font-light leading-snug text-[#1C1917] mb-10 text-center"
           >
-            Your ticket to Wildly Wealthy Woman Live is included
+            Join before {TICKET_CUTOFF} and the ticket is yours
           </h2>
+          <p className="text-lg text-[#1C1917] font-medium">
+            Join before {TICKET_CUTOFF} and you get a ticket to Wildly Wealthy Woman Live. Join
+            after {TICKET_CUTOFF} and you do not.
+          </p>
           <p className="text-lg text-[#3D3632]">
-            Every Hot and Rich member gets a ticket to Wildly Wealthy Woman Live at the Banff
-            Springs Hotel. I&apos;m co-hosting it with Jackie McDonald and Melissa of
+            The ticket is to Wildly Wealthy Woman Live at the Banff Springs Hotel. I&apos;m
+            co-hosting it with Jackie McDonald and Melissa of
             The Retreat Alchemist. It&apos;s a gathering for mothers, daughters, sisters, friends
             and chosen family, with sessions on money, health, motherhood, visibility, grief and
             legacy, and fireside conversations in the mountains in winter.
           </p>
           <p className="text-lg text-[#3D3632]">
-            You&apos;ll spend four months sharpening your message with me, then walk into Banff and
-            meet me in person.
+            Join before {TICKET_CUTOFF}, spend four months sharpening your message with me, then
+            walk into Banff and meet me in person.
           </p>
           <p className="text-lg text-[#3D3632]">
             Details:{" "}
@@ -568,8 +582,8 @@ export default function HotAndRichPage() {
           <div className="space-y-4 text-lg text-[#3D3632] mb-10">
             <p>$6,000 CAD for four months.</p>
             <p>{SPOTS_LEFT} spots left.</p>
-            <p>
-              Includes your ticket to{" "}
+            <p className="font-medium text-[#1C1917]">
+              Join before {TICKET_CUTOFF} and this includes your ticket to{" "}
               <a
                 href={WILDLY_WEALTHY_LIVE_URL}
                 target="_blank"
@@ -578,7 +592,7 @@ export default function HotAndRichPage() {
               >
                 Wildly Wealthy Woman Live
               </a>{" "}
-              in Banff.
+              in Banff. Join after {TICKET_CUTOFF} and the ticket is not included.
             </p>
           </div>
           <StripePricingTable />
@@ -601,7 +615,8 @@ export default function HotAndRichPage() {
             help you sharpen it until the right people can&apos;t scroll past you.
           </p>
           <p className="text-lg text-[#FAF7F2]/90 max-w-2xl mx-auto mb-10">
-            {SPOTS_LEFT} spots left.
+            {SPOTS_LEFT} spots left. Join before {TICKET_CUTOFF} and the ticket to Wildly Wealthy
+            Woman Live is included. After {TICKET_CUTOFF}, it is not.
           </p>
           <JoinNowButton />
         </div>

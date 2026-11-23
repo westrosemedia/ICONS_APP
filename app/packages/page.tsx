@@ -76,7 +76,7 @@ export default function PackagesPage() {
             </h2>
             <p className="text-editorial text-[#FAF7F2]/90 max-w-3xl mx-auto">
               Four months. 2 spots left. $6,000 CAD.
-              Your ticket to Wildly Wealthy Woman Live is included.
+              Join before January 1 and your ticket to Wildly Wealthy Woman Live is included. Join after January 1 and it is not.
             </p>
           </motion.div>
 
@@ -95,7 +95,7 @@ export default function PackagesPage() {
                     <li>• Biweekly live calls with Stephanie</li>
                     <li>• Text support inside the group, three days a week</li>
                     <li>• The exact strategy she&apos;s running right now</li>
-                    <li>• Ticket to Wildly Wealthy Woman Live in Banff</li>
+                    <li>• Ticket to Wildly Wealthy Woman Live in Banff if you join before January 1. Not included after January 1</li>
                   </ul>
                 </div>
                 <div>
