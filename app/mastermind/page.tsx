@@ -40,7 +40,7 @@ const IMAGES = {
 const META = {
   title: "Manifesting & Marketing Mastermind | West Rose Media",
   description:
-    "Now taking deposits for a January 2027 start. Six months. One room. Stephanie and Jackie. Sign up and get a ticket to Wildly Wealthy Woman Live.",
+    "Six months. One room. Stephanie and Jackie. Sign up and get a ticket to Wildly Wealthy Woman Live.",
 };
 
 export const revalidate = 0;
@@ -106,7 +106,6 @@ const tickerPrimary = [
   "Six months",
   "One room",
   "Stephanie + Jackie",
-  "January 2027 start",
   "Wildly Wealthy Woman Live",
   "Kananaskis retreat",
 ];
@@ -282,12 +281,6 @@ export default function MastermindPage() {
             Marketing strategy that converts. Manifestation that actually moves
             money. Six months. One room. Stephanie and Jackie in your corner the
             entire time.
-          </p>
-          <p className={`${eyebrow} mb-4 text-white/70`}>
-            Now taking deposits for a January 2027 start.
-          </p>
-          <p className="text-base md:text-lg text-white/90 mb-4 max-w-xl mx-auto">
-            In January, the full mastermind price goes up to $25,000.
           </p>
           <p className="text-sm md:text-base text-[#c1ff72] mb-10 max-w-xl mx-auto leading-relaxed">
             Sign up and get a ticket to{" "}
@@ -613,9 +606,6 @@ export default function MastermindPage() {
                   access to Cadence and the Story Stack, and a room full of
                   women who are actually doing it.
                 </p>
-                <p className="text-white/90 leading-relaxed max-w-xl mt-4">
-                  In January, the full mastermind price goes up to $25,000.
-                </p>
               </div>
               <div className="border-t border-white/15 pt-8">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 mb-4">
@@ -632,9 +622,7 @@ export default function MastermindPage() {
                 </p>
               </div>
               <p className="text-lg text-white/80 leading-relaxed max-w-xl pt-2">
-                Deposits are open for a January 2027 start. In January, the full
-                mastermind price goes up to $25,000. Signing up includes
-                a ticket to{" "}
+                Signing up includes a ticket to{" "}
                 <a
                   href={WILDLY_WEALTHY_LIVE_URL}
                   target="_blank"
@@ -708,9 +696,6 @@ export default function MastermindPage() {
       >
         <div className="bg-[#c1ff72] text-black py-24 md:py-32 px-6 md:px-10">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-black/60">
-              Close
-            </p>
             <h2
               id="close-heading"
               className={`${display} text-4xl md:text-6xl lg:text-7xl text-black`}
@@ -725,9 +710,7 @@ export default function MastermindPage() {
               Choose the room. Choose the team. Choose to build the movement.
             </p>
             <p className="text-lg text-black/80 max-w-xl mx-auto leading-relaxed">
-              Deposits are open for a January 2027 start. In January, the full
-              mastermind price goes up to $25,000. Signing up includes a
-              ticket to{" "}
+              Signing up includes a ticket to{" "}
               <a
                 href={WILDLY_WEALTHY_LIVE_URL}
                 target="_blank"

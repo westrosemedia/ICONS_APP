@@ -3,9 +3,7 @@ export default function MastermindStructuredData() {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start. Signing up includes a ticket to Wildly Wealthy Woman Live and a luxury retreat in Kananaskis.",
-    "startDate": "2027-01-01",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "description": "6-month luxury mastermind combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Signing up includes a ticket to Wildly Wealthy Woman Live and a luxury retreat in Kananaskis.",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "location": [
       {
@@ -74,7 +72,7 @@ export default function MastermindStructuredData() {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Manifesting & Marketing Mastermind",
-    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Deposits are open for a January 2027 start. Signing up includes a ticket to Wildly Wealthy Woman Live.",
+    "description": "6-month intensive mastermind program combining marketing strategy that converts and manifestation that moves money. Stephanie Rose and Jackie McDonald. Signing up includes a ticket to Wildly Wealthy Woman Live.",
     "provider": {
       "@type": "Organization",
       "name": "West Rose Media",
@@ -90,7 +88,6 @@ export default function MastermindStructuredData() {
         "name": "Jackie McDonald"
       }
     ],
-    "timeRequired": "P6M",
     "keywords": "mastermind, business coaching, entrepreneur program, brand strategy, content creation, tapping therapy"
   };
 
